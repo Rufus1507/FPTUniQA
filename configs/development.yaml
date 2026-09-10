@@ -1,0 +1,26 @@
+# Cấu hình môi trường phát triển cục bộ (Development)
+environment: "development"
+debug: true
+
+logging:
+  level: "DEBUG"
+  format: "text"
+  log_file: "logs/development.log"
+
+retrieval:
+  dense:
+    device: "cpu" # Sử dụng CPU khi phát triển cục bộ
+  bm25:
+    top_k: 10
+  rrf:
+    hybrid_top_k: 8
+
+reranking:
+  enabled: true
+  device: "cpu"
+  top_n: 3
+
+api:
+  host: "127.0.0.1"
+  port: 8000
+  reload: true

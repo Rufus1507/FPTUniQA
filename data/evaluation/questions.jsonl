@@ -1,0 +1,6 @@
+{"q_id": "Q001", "query": "Sinh viên được đăng ký tối đa bao nhiêu tín chỉ trong một học kỳ chính?", "category": "dao_tao", "expected_doc_ids": ["doc_001"]}
+{"q_id": "Q002", "query": "Nếu bị điểm F thì sinh viên phải xử lý như thế nào?", "category": "dao_tao", "expected_doc_ids": ["doc_002"]}
+{"q_id": "Q003", "query": "Điều kiện chuẩn đầu ra ngoại ngữ để được xét tốt nghiệp là gì?", "category": "tot_nghiep", "expected_doc_ids": ["doc_003"]}
+{"q_id": "Q004", "query": "Tiêu chuẩn để nhận học bổng khuyến khích học tập loại Xuất sắc?", "category": "hoc_bong", "expected_doc_ids": ["doc_004"]}
+{"q_id": "Q005", "query": "Bị cảnh báo học tập bao nhiêu lần thì bị buộc thôi học?", "category": "ky_luat", "expected_doc_ids": ["doc_005"]}
+{"q_id": "Q006", "query": "Một tín chỉ ngành Khoa học máy tính có học phí bao nhiêu?", "category": "hoc_phi", "expected_doc_ids": ["structured_data"]}

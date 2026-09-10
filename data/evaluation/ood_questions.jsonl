@@ -1,0 +1,5 @@
+{"q_id": "OOD_001", "query": "Thủ đô của nước Pháp là thành phố nào?", "domain": "geography", "expected_action": "reject"}
+{"q_id": "OOD_002", "query": "Cách nấu món phở bò truyền thống ngon nhất?", "domain": "cooking", "expected_action": "reject"}
+{"q_id": "OOD_003", "query": "Giá vàng hôm nay tại thị trường Hà Nội tăng hay giảm?", "domain": "finance", "expected_action": "reject"}
+{"q_id": "OOD_004", "query": "Hướng dẫn cài đặt hệ điều hành Windows 11 trên máy tính ảo?", "domain": "tech_general", "expected_action": "reject"}
+{"q_id": "OOD_005", "query": "Đội tuyển bóng đá nào vô địch World Cup 2022?", "domain": "sports", "expected_action": "reject"}

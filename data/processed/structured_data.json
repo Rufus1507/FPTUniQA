@@ -1,0 +1,59 @@
+{
+  "academic_year": "2023-2024",
+  "tuition_rates": [
+    {
+      "faculty": "Công nghệ Thông tin",
+      "major_code": "7480201",
+      "major_name": "Khoa học Máy tính",
+      "credit_price_vnd": 650000,
+      "standard_credits_per_term": 16,
+      "estimated_term_tuition_vnd": 10400000
+    },
+    {
+      "faculty": "Công nghệ Thông tin",
+      "major_code": "7480103",
+      "major_name": "Kỹ thuật Phần mềm",
+      "credit_price_vnd": 650000,
+      "standard_credits_per_term": 16,
+      "estimated_term_tuition_vnd": 10400000
+    },
+    {
+      "faculty": "Kinh tế & Quản trị Kinh doanh",
+      "major_code": "7340101",
+      "major_name": "Quản trị Kinh doanh",
+      "credit_price_vnd": 550000,
+      "standard_credits_per_term": 15,
+      "estimated_term_tuition_vnd": 8250000
+    },
+    {
+      "faculty": "Ngoại ngữ",
+      "major_code": "7220201",
+      "major_name": "Ngôn ngữ Anh",
+      "credit_price_vnd": 500000,
+      "standard_credits_per_term": 15,
+      "estimated_term_tuition_vnd": 7500000
+    }
+  ],
+  "graduation_requirements": [
+    {
+      "program": "Kỹ sư Công nghệ Thông tin",
+      "total_credits": 150,
+      "mandatory_credits": 120,
+      "elective_credits": 30,
+      "internship_credits": 10,
+      "thesis_credits": 10,
+      "min_gpa": 2.0,
+      "foreign_language": "TOEIC 550 hoặc IELTS 5.5"
+    },
+    {
+      "program": "Cử nhân Quản trị Kinh doanh",
+      "total_credits": 135,
+      "mandatory_credits": 105,
+      "elective_credits": 30,
+      "internship_credits": 6,
+      "thesis_credits": 9,
+      "min_gpa": 2.0,
+      "foreign_language": "TOEIC 500 hoặc IELTS 5.0"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "corpus_version": "1.0.0",
+  "generated_at": "2024-06-01T10:00:00Z",
+  "total_documents": 5,
+  "supported_cohorts": [
+    "K2020",
+    "K2021",
+    "K2022",
+    "K2023",
+    "K2024"
+  ],
+  "categories": [
+    "dao_tao",
+    "hoc_phi",
+    "tot_nghiep",
+    "hoc_bong",
+    "ky_luat"
+  ],
+  "documents_manifest": [
+    {
+      "doc_id": "QC-2023-01",
+      "title": "Quy chế đào tạo trình độ đại học theo hệ thống tín chỉ",
+      "issue_date": "2023-08-01",
+      "effective_date": "2023-09-01",
+      "signatory": "Hiệu trưởng"
+    },
+    {
+      "doc_id": "HB-2023-02",
+      "title": "Quy định về việc xét cấp học bổng khuyến khích học tập",
+      "issue_date": "2023-08-10",
+      "effective_date": "2023-08-15",
+      "signatory": "Phòng Công tác Sinh viên"
+    }
+  ]
+}

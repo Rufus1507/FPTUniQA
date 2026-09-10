@@ -1,0 +1,6 @@
+{"q_id": "Q001", "golden_answer": "Sinh viên có học lực bình thường được đăng ký tối đa 24 tín chỉ trong mỗi học kỳ chính (tối thiểu 14 tín chỉ). Sinh viên có học lực yếu chỉ được đăng ký tối đa 14 tín chỉ.", "citations": ["doc_001"]}
+{"q_id": "Q002", "golden_answer": "Điểm F tương ứng 0.0 điểm, sinh viên nhận điểm F bắt buộc phải đăng ký học lại học phần đó.", "citations": ["doc_002"]}
+{"q_id": "Q003", "golden_answer": "Chuẩn đầu ra Ngoại ngữ để tốt nghiệp yêu cầu đạt chứng chỉ TOEIC 550 hoặc IELTS 5.5 hoặc các chứng chỉ tương đương.", "citations": ["doc_003"]}
+{"q_id": "Q004", "golden_answer": "Để nhận học bổng loại Xuất sắc, sinh viên cần đạt điểm trung bình GPA từ 3.6 trở lên, điểm rèn luyện từ 90 trở lên và không có học phần nào bị điểm F trong kỳ.", "citations": ["doc_004"]}
+{"q_id": "Q005", "golden_answer": "Sinh viên bị cảnh báo kết quả học tập 3 lần liên tiếp sẽ bị buộc thôi học.", "citations": ["doc_005"]}
+{"q_id": "Q006", "golden_answer": "Ngành Khoa học Máy tính có mức học phí là 650.000 VNĐ cho một tín chỉ.", "citations": ["structured_data"]}
