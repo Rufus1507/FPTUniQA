@@ -18,7 +18,12 @@ def main():
     docs = read_jsonl(corpus_path)
     logger.info(f"Tổng số tài liệu: {len(docs)}")
 
-    bm25 = BM25Retriever()
+    bm25_cfg = config.get("retrieval", {}).get("bm25", {})
+    bm25 = BM25Retriever(
+        k1=bm25_cfg.get("k1", 1.5),
+        b=bm25_cfg.get("b", 0.75),
+        tokenizer_type=bm25_cfg.get("tokenizer", "pyvi"),
+    )
     logger.info("Đang xây dựng chỉ mục BM25...")
     bm25.index(docs)
 

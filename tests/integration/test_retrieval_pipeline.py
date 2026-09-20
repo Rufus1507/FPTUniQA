@@ -7,7 +7,7 @@ from university_qa.utils.io import read_jsonl
 def test_hybrid_retrieval_pipeline():
     docs = read_jsonl("tests/fixtures/sample_corpus.jsonl")
     retriever = HybridRetriever()
-    retriever.index(docs)
+    retriever.build_index(docs)
 
     results = retriever.retrieve("tối đa bao nhiêu tín chỉ", top_k=2)
     assert len(results) > 0

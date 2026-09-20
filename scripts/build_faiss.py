@@ -31,8 +31,12 @@ def main():
         metric=dense_cfg.get("metric", "inner_product"),
     )
 
+    import time
     logger.info("Đang sinh vector embeddings và tạo chỉ mục FAISS...")
-    retriever.index(docs)
+    start_time = time.time()
+    retriever.build_index(docs)
+    elapsed = time.time() - start_time
+    logger.info(f"Thời gian lập chỉ mục FAISS: {elapsed:.2f}s")
 
     retriever.save(output_dir)
     logger.info(f"Đã lưu chỉ mục FAISS thành công tại: {output_dir}")

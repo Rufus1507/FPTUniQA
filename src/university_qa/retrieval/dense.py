@@ -20,47 +20,82 @@ class DenseRetriever:
         self.embedding_model = embedding_model or EmbeddingModel()
         self.dimension = dimension
         self.metric = metric
-        self.index: Optional[faiss.Index] = None
+        self._faiss_index: Optional[faiss.Index] = None
         self.documents: List[Dict[str, Any]] = []
 
     def _init_index(self):
         if self.metric == "inner_product":
-            self.index = faiss.IndexFlatIP(self.dimension)
+            self._faiss_index = faiss.IndexFlatIP(self.dimension)
         else:
-            self.index = faiss.IndexFlatL2(self.dimension)
+            self._faiss_index = faiss.IndexFlatL2(self.dimension)
 
-    def index(self, documents: List[Dict[str, Any]]) -> None:
+    def build_index(self, documents: List[Dict[str, Any]]) -> None:
         """Sinh vector và thêm vào chỉ mục FAISS."""
         self.documents = documents
         texts = [f"{d.get('title', '')}: {d.get('text', '')}" for d in documents]
         embeddings = self.embedding_model.embed_documents(texts)
+        
+        if self.metric == "inner_product":
+            faiss.normalize_L2(embeddings)
 
         self.dimension = embeddings.shape[1]
         self._init_index()
-        self.index.add(embeddings)
+        self._faiss_index.add(embeddings)
 
-    def retrieve(self, query: str, top_k: int = 10) -> List[Tuple[Dict[str, Any], float]]:
+    def retrieve(self, query: str, top_k: int = 10, metadata_filter: Optional[Dict[str, Any]] = None) -> List[Tuple[Dict[str, Any], float]]:
         """Truy vấn top-k văn bản tương đồng vector."""
-        if self.index is None or not self.documents:
+        if self._faiss_index is None or not self.documents:
             return []
 
         query_emb = self.embedding_model.embed_query(query).reshape(1, -1)
-        distances, indices = self.index.search(query_emb, min(top_k, len(self.documents)))
+        if self.metric == "inner_product":
+            faiss.normalize_L2(query_emb)
+            
+        search_k = min(top_k * 5 if metadata_filter else top_k, len(self.documents))
+        distances, indices = self._faiss_index.search(query_emb, search_k)
 
         results = []
         for dist, idx in zip(distances[0], indices[0]):
             if idx != -1 and idx < len(self.documents):
-                results.append((self.documents[idx], float(dist)))
+                doc = self.documents[idx]
+                if metadata_filter:
+                    doc_meta = doc.get("metadata", {})
+                    match = all(doc_meta.get(k) == v for k, v in metadata_filter.items())
+                    if not match:
+                        continue
+                results.append((doc, float(dist)))
+        
+        results = sorted(results, key=lambda x: x[1], reverse=True)[:top_k]
         return results
+
+    def retrieve_contract2(self, query: str, top_k: int = 10, metadata_filter: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
+        results = self.retrieve(query, top_k, metadata_filter)
+        output = []
+        for doc, score in results:
+            output.append({
+                "doc_id": doc.get("id", doc.get("doc_id")),
+                "text": doc.get("text", ""),
+                "score": score,
+                "source": doc.get("title", ""),
+                "retrieval_strategy": "dense",
+                "metadata": doc.get("metadata", {})
+            })
+        return output
 
     def save(self, dir_path: Union[str, Path]) -> None:
         """Lưu file index FAISS và metadata documents."""
         path = Path(dir_path)
         path.mkdir(parents=True, exist_ok=True)
-        if self.index is not None:
-            faiss.write_index(self.index, str(path / "dense.index"))
+        if self._faiss_index is not None:
+            faiss.write_index(self._faiss_index, str(path / "dense.index"))
         with open(path / "documents.json", "w", encoding="utf-8") as f:
             json.dump(self.documents, f, ensure_ascii=False, indent=2)
+        with open(path / "meta.json", "w", encoding="utf-8") as f:
+            json.dump({
+                "dimension": self.dimension,
+                "metric": self.metric,
+                "model_name": self.embedding_model.model_name
+            }, f, ensure_ascii=False, indent=2)
 
     def load(self, dir_path: Union[str, Path]) -> None:
         """Nạp lại FAISS index và danh sách documents."""
@@ -70,6 +105,6 @@ class DenseRetriever:
         if not index_file.exists() or not doc_file.exists():
             raise FileNotFoundError(f"Không tìm thấy index FAISS tại {path}")
 
-        self.index = faiss.read_index(str(index_file))
+        self._faiss_index = faiss.read_index(str(index_file))
         with open(doc_file, "r", encoding="utf-8") as f:
             self.documents = json.load(f)
