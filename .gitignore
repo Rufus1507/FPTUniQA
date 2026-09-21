@@ -4,11 +4,13 @@ __pycache__/
 *$py.class
 *.so
 
-# Caches
+# Caches & Test artifacts
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
 .cache/
+.coverage
+htmlcov/
 
 # Distribution / packaging
 build/
@@ -17,26 +19,26 @@ dist/
 .eggs/
 
 # Virtual environments & uv
-.venv
 .venv/
 venv/
 env/
 ENV/
 .uv/
-uv.lock
 
-# Environment variables & secrets
+# Environment variables & secrets (TUYỆT ĐỐI KHÔNG PUSH .env)
 .env
 .env.*
 !.env.example
 *.pem
 *.key
 
-# Data rules: Do not commit raw or interim data files
+# Data rules: Do not commit raw, interim or large processed data files
 data/raw/*
 !data/raw/.gitkeep
 data/interim/*
 !data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
 
 # Model weights & large vector indexes
 *.bin
@@ -48,10 +50,14 @@ data/interim/*
 *.index
 *.pkl
 
-# Logs
+# Logs & temporary response files (Chỉ giữ lại file rỗng .gitkeep)
 logs/*
 !logs/.gitkeep
 *.log
+*.jsonl
+!tests/fixtures/*.jsonl
+response*.json
+scratch/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/

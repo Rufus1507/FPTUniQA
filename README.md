@@ -1,122 +1,129 @@
-# 🎓 University QA - Hệ Thống Hỏi Đáp Đào Tạo & Tuyển Sinh (RAG)
+# 🎓 FPT University Academic QA - Hệ Thống Hỏi Đáp Học Vụ (TMG301 - Tuần 1)
 
-Hệ thống Hỏi - Đáp thông minh dành cho trường đại học ứng dụng kỹ thuật **RAG (Retrieval-Augmented Generation)** tiên tiến, kết hợp tìm kiếm lai (**Hybrid Search: BM25 + Vector FAISS**), bộ tái xếp hạng (**Cross-Encoder Reranker**), bộ điều khiển intent và mô hình sinh ngôn ngữ lớn (LLM) chống ảo giác với trích dẫn minh bạch.
+Hệ thống Hỏi - Đáp thông minh dành cho sinh viên Đại học FPT ứng dụng kỹ thuật **RAG (Retrieval-Augmented Generation)**. 
 
-Dự án được quản lý gói và môi trường bằng **[uv](https://github.com/astral-sh/uv)** - công cụ Python cực nhanh và hiện đại.
-
----
-
-## 🏗️ Kiến Trúc Hệ Thống
-
-```mermaid
-flowchart LR
-    User([Người dùng]) --> QueryModule[Query Processing<br/>Chuẩn hóa & Ý định]
-    QueryModule --> HybridRetrieval[Hybrid Retrieval<br/>BM25 + FAISS + RRF]
-    HybridRetrieval --> Reranker[Cross-Encoder Reranker]
-    Reranker --> Generation[Generation & Context<br/>Prompt + LLM + Citations]
-    Generation --> API[FastAPI / Streamlit]
-    API --> User
-```
-
-1. **Data Layer (`src/university_qa/data/`)**: Trích xuất, chuẩn hóa, phân đoạn ngữ nghĩa (chunking có overlap), sinh metadata cohort và parser bảng biểu dữ liệu cấu trúc (học phí, tín chỉ).
-2. **Retrieval Layer (`src/university_qa/retrieval/`)**: Kết hợp Dense Retrieval (mE5 / BGE-M3 + FAISS) và Sparse Retrieval (BM25 tiếng Việt), hợp nhất thứ hạng bằng **Reciprocal Rank Fusion (RRF)**.
-3. **Reranking Layer (`src/university_qa/reranking/`)**: Lọc sâu và tái chấm điểm bằng mô hình Cross-Encoder (`bge-reranker-large` / `v2-m3`).
-4. **Query & Intent Layer (`src/university_qa/query/`)**: Phân loại ý định (Factoid, Tra cứu bảng, Ngoài miền OOD), chuẩn hóa từ viết tắt và viết lại câu hỏi đa lượt.
-5. **Generation Layer (`src/university_qa/generation/`)**: Ghép context tối ưu, prompt kỹ nghệ nghiêm ngặt chống bịa đặt (hallucination), trích dẫn citation chính xác nguồn văn bản.
-6. **Scientific Evaluation (`src/university_qa/evaluation/`)**: Đánh giá đa chiều với Hit@K, MRR, NDCG, Faithfulness và tỷ lệ từ chối câu hỏi OOD.
+Bản phát hành này đại diện cho **Tuần 1 (Scope TV3)**: Khung sườn hoàn chỉnh (end-to-end skeleton) kết nối từ **Frontend (Streamlit)** -> **Backend API (FastAPI)** -> **RAG Pipeline (Query Normalizer + Mock Retriever + Context Builder + Strict Grounding Prompt + LLM Client + Citation Extraction)**.
 
 ---
 
-## ⚡ Cài Đặt và Khởi Chạy với `uv`
+## ⚡ Hướng Dẫn Chạy Thử Nhanh (Dành Cho TV1 & TV2)
 
-### 1. Yêu cầu tiên quyết
-- Đã cài đặt `uv` (Xem hướng dẫn: `curl -LsSf https://astral.sh/uv/install.sh | sh` hoặc trên Windows: `winget install --id=astral-sh.uv`).
-- Python >= 3.10
+### Bước 1: Cài đặt thư viện phụ thuộc
 
-### 2. Cài đặt môi trường ảo và dependencies
+Sử dụng môi trường Python (>= 3.10) và công cụ quản lý gói `uv` (hoặc `pip` thông thường):
+
 ```bash
 cd university-qa
 
-# Khởi tạo môi trường ảo với uv
-uv venv
-
-# Cài đặt toàn bộ dependencies theo pyproject.toml
+# Cài đặt qua uv (khuyến nghị - cực nhanh):
 uv sync
-```
 
-### 3. Cấu hình biến môi trường
-Tạo file `.env` từ file mẫu `.env.example`:
-```bash
-cp .env.example .env
-# Chỉnh sửa API key OpenAI hoặc Gemini trong .env
-```
-
-### 4. Chuẩn bị dữ liệu và lập chỉ mục
-```bash
-# Xử lý dữ liệu thô sang corpus sạch
-uv run python scripts/ingest_data.py
-
-# Xây dựng chỉ mục BM25 và FAISS
-uv run python scripts/build_bm25.py
-uv run python scripts/build_faiss.py
-```
-
-### 5. Chạy Backend API (FastAPI)
-```bash
-uv run uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
-# API Docs Swagger: http://localhost:8000/docs
-```
-
-### 6. Chạy Frontend Giao Diện (Streamlit)
-```bash
-uv run streamlit run frontend/app.py
-```
-
-### 7. Chạy kiểm thử tự động (Tests)
-```bash
-uv run pytest tests/
-```
-
-### 8. Đánh giá thực nghiệm (Evaluation)
-```bash
-uv run python scripts/evaluate.py
+# Hoặc cài đặt qua pip truyền thống:
+pip install -r requirements.txt
 ```
 
 ---
 
-## 📂 Cấu Trúc Dự Án
+### Bước 2: Thiết lập biến môi trường
+
+Tạo file `.env` từ file mẫu `.env.example`:
+
+```bash
+cp .env.example .env
+```
+
+Mở file `.env` và kiểm tra các thông số:
+- `ANTHROPIC_API_KEY`: Điền API key Anthropic Claude của bạn (nếu chưa có key, hệ thống sẽ tự động bật **chế độ Fallback Mock LLM** để pipeline vẫn chạy thông suốt không bị gián đoạn).
+- `API_BASE_URL`: Mặc định `http://localhost:8000`
+
+---
+
+### Bước 3: Khởi chạy Backend API (FastAPI)
+
+Mở một cửa sổ Terminal và chạy:
+
+```bash
+# Khởi chạy server FastAPI:
+uv run uvicorn api.main:app --reload
+
+# Hoặc bằng uvicorn trực tiếp:
+uvicorn api.main:app --reload
+```
+
+- Server sẽ hoạt động tại: `http://localhost:8000`
+- Kiểm tra trạng thái máy chủ: `http://localhost:8000/healthz`
+- Tài liệu API tương tác (Swagger UI): `http://localhost:8000/docs`
+
+---
+
+### Bước 4: Khởi chạy Giao diện Người Dùng (Streamlit)
+
+Mở một cửa sổ Terminal thứ hai và chạy:
+
+```bash
+# Khởi chạy ứng dụng Streamlit:
+uv run streamlit run frontend/app.py
+
+# Hoặc bằng streamlit trực tiếp:
+streamlit run frontend/app.py
+```
+
+- Ứng dụng sẽ tự động mở tại trình duyệt: `http://localhost:8501`
+- Bạn có thể nhập các câu hỏi mẫu có sẵn trong sidebar hoặc câu hỏi như:
+  > *"Điều kiện để không bị cảnh cáo học vụ là gì?"*
+  > *"Điều kiện xét tốt nghiệp đại học như thế nào?"*
+
+---
+
+## 📂 Cấu Trúc Mã Nguồn TV3 Tuần 1
 
 ```
 university-qa/
-├── configs/                  # File cấu hình YAML (base, dev, eval, prod)
-├── data/                     # Dữ liệu raw, interim, processed, evaluation
-├── src/university_qa/        # Source code chính gồm 8 modules RAG
-│   ├── data/                 # TV1: ETL & Chunking & Structured parser
-│   ├── retrieval/            # TV2: BM25, FAISS, Embedding, RRF
-│   ├── reranking/            # TV2: Cross-Encoder Reranker
-│   ├── query/                # TV3: Normalizer, Rewriting, Intent classifier
-│   ├── generation/           # TV3: LLM API, Prompts, Citations
-│   ├── pipeline/             # TV2+TV3: RAG pipeline & Conversational flow
-│   ├── evaluation/           # Cả nhóm: Benchmark & Scientific metrics
-│   └── utils/                # Tiện ích logger JSONL, config loader, I/O
-├── api/                      # Backend FastAPI (/api/v1/query, /healthz)
-├── frontend/                 # Giao diện người dùng Streamlit
-├── scripts/                  # Scripts build index, ETL, chạy pipeline, eval
-├── tests/                    # Unit tests và integration tests với Pytest
-├── notebooks/                # Jupyter notebooks nghiên cứu thực nghiệm
-├── experiments/              # Kết quả đo lường đối sánh (baseline, hybrid, rerank)
-└── docs/                     # Tài liệu kỹ thuật contracts & specifications
+├── api/
+│   ├── main.py                     # Khởi tạo FastAPI App và cấu hình CORS Middleware
+│   ├── schemas.py                  # Pydantic models: QueryRequest, Citation, QueryResponse
+│   └── routes/
+│       ├── health.py               # Endpoint GET /healthz
+│       └── qa.py                   # Endpoint POST /api/v1/query
+│
+├── frontend/
+│   └── app.py                      # Giao diện Streamlit: input, loading spinner, expandable citations
+│
+├── src/university_qa/
+│   ├── query/
+│   │   ├── normalizer.py           # Chuẩn hóa Unicode NFC, khoảng trắng, lowercase
+│   │   ├── rewriting.py            # TODO: Triển khai ở Tuần 5-6
+│   │   └── intent.py               # TODO: Triển khai ở Tuần 5-6
+│   │
+│   ├── retrieval/
+│   │   └── mock_retriever.py       # Dữ liệu giả lập FPTU tuân theo Retrieval Contract
+│   │
+│   ├── generation/
+│   │   ├── prompt.py               # SYSTEM_PROMPT chống ảo giác & hàm build_prompt()
+│   │   ├── context.py              # format_context() đánh số [Nguồn N] - title - category
+│   │   ├── llm.py                  # LLMClient bọc Anthropic API và fallback an toàn
+│   │   └── citation.py             # extract_citations() parse [Nguồn N] thành danh sách có cấu trúc
+│   │
+│   ├── pipeline/
+│   │   └── rag_pipeline.py         # RAGPipeline điều phối luồng 7 bước hoàn chỉnh
+│   │
+│   └── utils/
+│       ├── config.py               # Quản lý đối tượng cấu hình tập trung từ .env
+│       └── logger.py               # Ghi log chuẩn định dạng JSONL vào logs/pipeline_events.jsonl
+│
+├── docs/
+│   ├── retrieval_contract.md       # Hợp đồng interface bắt buộc cho TV2 Tuần 2
+│   └── api.md                      # Đặc tả REST API
+│
+├── logs/                           # Lưu trữ log vận hành JSONL
+├── requirements.txt                # Danh sách thư viện Python
+├── .env.example                    # File cấu hình mẫu
+└── pyproject.toml                  # Cấu hình dự án cho uv
 ```
 
 ---
 
-## 👥 Phân Công Trách Nhiệm
-- **TV1**: Tiền xử lý dữ liệu, trích xuất cấu trúc văn bản quy chế, chunking theo ngữ nghĩa, xây dựng metadata và bộ phân tích bảng học phí.
-- **TV2**: Thiết kế bộ tìm kiếm lai Hybrid Search (BM25 + Vector FAISS), thuật toán RRF và tích hợp mô hình Reranker.
-- **TV3**: Xử lý truy vấn, phân loại ý định, kết nối LLM sinh câu trả lời, thiết kế prompt chống ảo giác, xây dựng REST API và Web UI.
-- **Cả nhóm**: Thiết kế bộ dữ liệu benchmark, đo đạc chỉ số (MRR, NDCG, Faithfulness) và viết báo cáo khoa học.
+## 📋 Ghi Chú Dành Cho TV2 (Tuần 2)
 
----
-
-## 📜 Giấy Phép
-Dự án được cấp phép theo giấy phép [MIT](LICENSE).
+TV2 cần đọc kỹ tài liệu [docs/retrieval_contract.md](docs/retrieval_contract.md) trước khi bắt tay cài đặt tầng tìm kiếm thật.
+Trong Tuần 2, TV2 chỉ cần thay thế hàm `retrieve` trong `src/university_qa/pipeline/rag_pipeline.py` mà không cần sửa đổi bất kỳ logic nào ở tầng API, Prompt hay Frontend!

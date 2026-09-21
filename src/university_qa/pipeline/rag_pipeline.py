@@ -1,135 +1,264 @@
-"""Dòng chảy RAG chuẩn cho truy vấn đơn. Phụ trách: TV2 + TV3."""
+"""Dòng chảy RAG chuẩn (RAG Pipeline) kết nối các module từ Query -> Retrieval -> Generation. Phụ trách: TV3."""
 
-import sys
+import time
 from typing import Any, Dict, List, Optional
-from university_qa.data.structured import StructuredDataParser
-from university_qa.generation.citation import CitationExtractor
-from university_qa.generation.context import ContextBuilder
+from university_qa.generation.citation import extract_citations
+from university_qa.generation.context import format_context
+from university_qa.generation.guardrails import check_hallucination
 from university_qa.generation.llm import LLMClient
-from university_qa.generation.prompt import PromptManager
-from university_qa.query.intent import IntentClassifier, QueryIntent
-from university_qa.query.normalizer import QueryNormalizer
-from university_qa.reranking.cross_encoder import CrossEncoderReranker
-from university_qa.retrieval.retriever import HybridRetriever
-from university_qa.utils.config import load_config
-from university_qa.utils.io import read_jsonl
-from university_qa.utils.logger import get_logger
+from university_qa.generation.prompt import SYSTEM_PROMPT, build_prompt
+from university_qa.query.normalizer import normalize_query
+from university_qa.query.rewriting import rewrite_query
+from university_qa.query.semantic_parser import parse_query
+from university_qa.query.router import route_query, execute_structured_lookup
+# Nhập hàm retrieve từ mock_retriever nội bộ TV3 trong pipeline
+from university_qa.pipeline.mock_retriever import retrieve
+from university_qa.utils.config import config
+from university_qa.utils.logger import get_logger, log_pipeline_event, log_query_event
 
 logger = get_logger("university_qa.rag_pipeline")
 
 
+class SessionManager:
+    """Quản lý trạng thái ngữ cảnh hội thoại in-memory theo session_id (Tuần 5)."""
+
+    def __init__(self):
+        self._sessions: Dict[str, List[Dict[str, Any]]] = {}
+
+    def get_history(self, session_id: str) -> List[Dict[str, Any]]:
+        return self._sessions.get(session_id, [])
+
+    def add_turn(
+        self,
+        session_id: str,
+        query: str,
+        rewritten_query: str,
+        answer: str,
+        parsed_query: Optional[Dict[str, Any]] = None,
+        route_chosen: Optional[str] = None,
+    ) -> None:
+        if session_id not in self._sessions:
+            self._sessions[session_id] = []
+        self._sessions[session_id].append({
+            "query": query,
+            "rewritten_query": rewritten_query,
+            "answer": answer,
+            "parsed_query": parsed_query,
+            "route_chosen": route_chosen,
+        })
+
+    def clear(self, session_id: Optional[str] = None) -> None:
+        if session_id:
+            self._sessions.pop(session_id, None)
+        else:
+            self._sessions.clear()
+
+
 class RAGPipeline:
-    """Pipeline RAG tích hợp đầy đủ các thành phần."""
+    """Pipeline điều phối toàn bộ quy trình Hỏi - Đáp học vụ đa lượt."""
 
     def __init__(
         self,
-        config: Optional[Dict[str, Any]] = None,
-        retriever: Optional[HybridRetriever] = None,
-        reranker: Optional[CrossEncoderReranker] = None,
         llm_client: Optional[LLMClient] = None,
-        structured_parser: Optional[StructuredDataParser] = None,
+        top_k: Optional[int] = None,
+        score_threshold: float = 0.3,
     ):
-        self.config = config or load_config()
-        self.normalizer = QueryNormalizer()
-        self.intent_classifier = IntentClassifier()
+        self.llm = llm_client or LLMClient()
+        self.top_k = top_k or config.default_top_k
+        self.score_threshold = score_threshold
+        self.session_manager = SessionManager()
+        logger.info(f"Khởi tạo RAGPipeline với top_k={self.top_k}, score_threshold={self.score_threshold}")
 
-        self.retriever = retriever or HybridRetriever()
-        self.reranker = reranker or CrossEncoderReranker()
-        self.llm_client = llm_client or LLMClient()
-        self.context_builder = ContextBuilder()
+    def answer(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
+        """Thực thi luồng RAG kết hợp Query Rewriting đa lượt, Semantic Parsing, Routing và Guardrails Tuần 6."""
+        start_time = time.time()
+        logger.info(f"Bắt đầu xử lý truy vấn: '{query}' (session_id={session_id})")
 
-        structured_path = self.config.get("data", {}).get(
-            "structured_path", "data/processed/structured_data.json"
-        )
-        self.structured_parser = structured_parser or StructuredDataParser(structured_path)
+        try:
+            # Lấy lịch sử hội thoại của session (nếu có)
+            history = self.session_manager.get_history(session_id) if session_id else []
+            turn_index = len(history) + 1
 
-    def load_corpus(self, corpus_path: Optional[str] = None) -> None:
-        """Nạp corpus văn bản và lập chỉ mục cho bộ tìm kiếm."""
-        path = corpus_path or self.config.get("data", {}).get(
-            "corpus_path", "data/processed/corpus.jsonl"
-        )
-        docs = read_jsonl(path)
-        logger.info(f"Đang lập chỉ mục {len(docs)} tài liệu từ {path}")
-        self.retriever.index(docs)
+            # Bước 1: Query Rewriting đa lượt (Chạy trước Semantic Parser)
+            rewritten_query = rewrite_query(query, history=history)
+            clean_query = normalize_query(rewritten_query)
+            logger.info(f"Query sau khi Rewriting: '{rewritten_query}' (gốc: '{query}')")
 
-    def run(self, query: str, top_k: int = 5) -> Dict[str, Any]:
-        """Thực thi toàn bộ luồng RAG cho một câu truy vấn."""
-        # 1. Chuẩn hóa câu hỏi
-        normalized_query = self.normalizer.normalize(query)
-        logger.debug(f"Query gốc: {query} -> Chuẩn hóa: {normalized_query}")
+            # Bước 2: Semantic Parsing (Contract 3) trên câu hỏi đã viết lại
+            parsed_query = parse_query(rewritten_query)
+            logger.debug(f"Bước 2 - ParsedQuery: intent={parsed_query.intent}, slots={parsed_query.slots}")
 
-        # 2. Phân loại ý định
-        intent, confidence = self.intent_classifier.classify(normalized_query)
-        logger.debug(f"Ý định: {intent} (độ tin cậy: {confidence:.2f})")
+            # Bước 3: Điều phối qua Router (TV3)
+            route_res = route_query(parsed_query)
+            route_chosen = str(route_res)
+            clarification_msg = getattr(route_res, "clarification", None)
 
-        # 3. Xử lý trường hợp Ngoài miền (OOD) - Chống ảo giác
-        if intent == QueryIntent.OOD:
+            retrieved_chunks: List[Dict] = []
+            final_context = ""
+            answer_fallback = False
+            possible_hallucination = False
+            ungrounded_numbers: List[str] = []
+
+            # Nhánh 0: Độ tin cậy thấp (Guardrail an toàn Tuần 6 - confidence < 0.5)
+            if route_chosen == "uncertain":
+                answer_text = clarification_msg or "Hệ thống chưa chắc chắn về câu hỏi này (độ tin cậy phân tích thấp). Vui lòng diễn đạt rõ hơn hoặc cung cấp thêm thông tin học vụ cụ thể."
+                final_context = ""
+                citations = []
+                answer_fallback = True
+
+            # Nhánh 1: Structured Lookup (Tra cứu trực tiếp biểu phí - Zero Hallucination)
+            elif route_chosen == "structured_lookup":
+                lookup_res = execute_structured_lookup(parsed_query.slots)
+                answer_text = lookup_res["answer"]
+                final_context = str(lookup_res.get("data") or "")
+                if lookup_res.get("found"):
+                    citations = [{
+                        "doc_id": "MOCK_TUITION_TABLE",
+                        "title": "Biểu phí tuyển sinh ĐH FPT",
+                        "source": lookup_res.get("source", "Biểu phí tuyển sinh ĐH FPT"),
+                    }]
+                    retrieved_chunks = [lookup_res["data"]] if lookup_res.get("data") else []
+                else:
+                    citations = []
+                    answer_fallback = True
+
+            # Nhánh 2: Hỏi làm rõ thông tin thiếu (Clarification)
+            elif route_chosen == "clarification":
+                answer_text = clarification_msg or "Vui lòng cung cấp thêm thông tin để tôi có thể hỗ trợ bạn chính xác nhất."
+                final_context = ""
+                citations = []
+                answer_fallback = False
+
+            # Nhánh 3: Ngoài phạm vi (OOD)
+            elif route_chosen == "ood":
+                answer_text = "Xin lỗi, tôi không tìm thấy thông tin liên quan trong tài liệu hiện có."
+                final_context = ""
+                citations = []
+                answer_fallback = True
+
+            # Nhánh 4: RAG Pipeline (Tra cứu quy chế qua mock_retriever)
+            else:
+                retrieved_chunks = retrieve(
+                    clean_query,
+                    top_k=self.top_k,
+                    score_threshold=self.score_threshold,
+                    parsed_query=parsed_query,
+                )
+                logger.debug(f"Đã truy xuất {len(retrieved_chunks)} chunks tài liệu đạt ngưỡng {self.score_threshold}")
+
+                if not retrieved_chunks:
+                    logger.warning(f"Kích hoạt Answer Fallback (intent={parsed_query.intent}, retrieved_count=0)")
+                    answer_fallback = True
+                    answer_text = "Xin lỗi, tôi không tìm thấy thông tin liên quan trong tài liệu hiện có."
+                    final_context = ""
+                    citations = []
+                else:
+                    answer_fallback = False
+                    context_text = format_context(retrieved_chunks)
+                    final_context = context_text
+                    user_prompt = build_prompt(query=clean_query, context_chunks=retrieved_chunks)
+                    answer_text = self.llm.generate(
+                        system_prompt=SYSTEM_PROMPT,
+                        user_prompt=user_prompt,
+                    )
+                    citations = extract_citations(answer=answer_text, context_chunks=retrieved_chunks)
+
+                    # Guardrail hậu kỳ: Kiểm tra ảo giác số liệu không có trong context (Tuần 6)
+                    hallucination_check = check_hallucination(answer=answer_text, context=context_text)
+                    possible_hallucination = hallucination_check["possible_hallucination"]
+                    ungrounded_numbers = hallucination_check["ungrounded_numbers"]
+                    if possible_hallucination:
+                        logger.warning(f"Guardrail cảnh báo: Số liệu có thể bị ảo giác trong câu trả lời: {ungrounded_numbers}")
+
+            # Lưu lượt hội thoại vào session_manager
+            if session_id:
+                self.session_manager.add_turn(
+                    session_id=session_id,
+                    query=query,
+                    rewritten_query=rewritten_query,
+                    answer=answer_text,
+                    parsed_query=parsed_query.model_dump(),
+                    route_chosen=route_chosen,
+                )
+
+            # Đo lường thời gian thực thi (latency)
+            latency_ms = (time.time() - start_time) * 1000.0
+
+            # Ghi Structured Log đầy đủ 7 trường theo đúng kế hoạch gốc kèm cờ Guardrail
+            log_query_event(
+                original_query=query,
+                rewritten_query=rewritten_query,
+                parsed_query=parsed_query.model_dump(),
+                retrieved_docs=retrieved_chunks,
+                reranked_docs=None,  # Ghi chú rõ: chưa có TV2 (reranker thật)
+                final_context=final_context,
+                citations=citations,
+                answer=answer_text,
+                route_chosen=route_chosen,
+                answer_fallback=answer_fallback,
+                possible_hallucination=possible_hallucination,
+                ungrounded_numbers=ungrounded_numbers,
+                session_id=session_id,
+                turn_index=turn_index,
+                latency_ms=latency_ms,
+            )
+
+            # Ghi log sự kiện hoàn thành dạng JSONL
+            log_pipeline_event(
+                query=query,
+                latency_ms=latency_ms,
+                status="SUCCESS",
+                extra={
+                    "session_id": session_id,
+                    "turn_index": turn_index,
+                    "rewritten_query": rewritten_query,
+                    "route_chosen": route_chosen,
+                    "retrieved_count": len(retrieved_chunks),
+                    "citations_count": len(citations),
+                    "answer_fallback": answer_fallback,
+                    "possible_hallucination": possible_hallucination,
+                    "ungrounded_numbers": ungrounded_numbers,
+                },
+            )
+            logger.info(f"Hoàn thành truy vấn trong {latency_ms:.2f}ms (route: {route_chosen}, hallucination: {possible_hallucination})")
+
+            # Bước 7: Trả về kết quả hoàn chỉnh
             return {
+                "answer": answer_text,
+                "citations": citations,
                 "query": query,
-                "normalized_query": normalized_query,
-                "intent": intent.value,
-                "answer": PromptManager.OOD_REJECTION_PROMPT,
-                "retrieved_documents": [],
-                "citations": [],
+                "original_query": query,
+                "rewritten_query": rewritten_query,
+                "route": route_chosen,
+                "parsed_query": parsed_query.model_dump(),
+                "session_id": session_id,
+                "turn_index": turn_index,
+                "possible_hallucination": possible_hallucination,
+                "ungrounded_numbers": ungrounded_numbers,
             }
 
-        # 4. Tra cứu dữ liệu cấu trúc (Học phí / bảng tính) nếu có
-        structured_matches = []
-        if intent == QueryIntent.STRUCTURED:
-            structured_matches = self.structured_parser.get_tuition_by_major(normalized_query)
-
-        # 5. Tìm kiếm văn bản lai (Hybrid Retrieval: BM25 + FAISS)
-        candidate_docs_with_scores = self.retriever.retrieve(
-            query=normalized_query, top_k=top_k * 2
-        )
-        candidates = [doc for doc, _ in candidate_docs_with_scores]
-
-        # 6. Tái xếp hạng bằng Cross-Encoder Reranker
-        if candidates:
-            reranked_docs_with_scores = self.reranker.rerank(
-                query=normalized_query, documents=candidates, top_n=top_k
+        except Exception as e:
+            latency_ms = (time.time() - start_time) * 1000.0
+            logger.error(f"Lỗi trong quá trình thực thi RAGPipeline: {e}", exc_info=True)
+            log_pipeline_event(
+                query=query,
+                latency_ms=latency_ms,
+                status="ERROR",
+                message=str(e),
             )
-            final_docs = [doc for doc, _ in reranked_docs_with_scores]
-        else:
-            final_docs = []
-
-        # 7. Ghép ngữ cảnh
-        context = self.context_builder.build_context(
-            documents=final_docs, structured_info=structured_matches
-        )
-
-        # 8. Sinh câu trả lời qua LLM
-        prompt = PromptManager.format_rag_prompt(query=query, context=context)
-        llm_answer = self.llm_client.generate(
-            prompt=prompt, system_instruction=PromptManager.SYSTEM_PROMPT
-        )
-
-        # 9. Trích xuất nguồn trích dẫn (Citations)
-        citations = CitationExtractor.extract_from_answer_and_docs(llm_answer, final_docs)
-
-        return {
-            "query": query,
-            "normalized_query": normalized_query,
-            "intent": intent.value,
-            "answer": llm_answer,
-            "retrieved_documents": final_docs,
-            "citations": citations,
-        }
+            raise e
 
 
 def main():
-    """Hàm chạy dòng lệnh CLI."""
+    """Hàm chạy thử nghiệm pipeline nhanh trên terminal."""
     pipeline = RAGPipeline()
-    try:
-        pipeline.load_corpus()
-    except Exception as e:
-        logger.warning(f"Chưa nạp corpus: {e}")
-
-    query = sys.argv[1] if len(sys.argv) > 1 else "Sinh viên được đăng ký tối đa bao nhiêu tín chỉ?"
-    print(f"\n[?] Câu hỏi: {query}")
-    result = pipeline.run(query)
-    print(f"\n[*] Trả lời:\n{result['answer']}")
-    print(f"\n[*] Nguồn tham chiếu: {len(result['citations'])} tài liệu")
+    test_query = "Điều kiện để không bị cảnh cáo học vụ là gì?"
+    print(f"\n[?] Câu hỏi: {test_query}")
+    res = pipeline.answer(test_query)
+    print(f"\n[*] Trả lời:\n{res['answer']}")
+    print(f"\n[*] Citations ({len(res['citations'])}):")
+    for cit in res["citations"]:
+        print(f"  - [{cit['doc_id']}] {cit['title']} ({cit['source']})")
 
 
 if __name__ == "__main__":

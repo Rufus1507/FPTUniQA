@@ -1,45 +1,49 @@
-"""Đọc và hợp nhất các file cấu hình YAML."""
+"""Quản lý cấu hình tập trung cho toàn bộ ứng dụng bằng python-dotenv."""
 
 import os
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, Optional
-import yaml
+_project_root = Path(__file__).resolve().parent.parent.parent.parent
+_env_path = _project_root / ".env"
+
+try:
+    from dotenv import load_dotenv
+    if _env_path.exists():
+        load_dotenv(dotenv_path=_env_path)
+    else:
+        load_dotenv()
+except ImportError:
+    # Đọc thủ công file .env nếu thư viện python-dotenv chưa được cài đặt
+    if _env_path.exists():
+        with open(_env_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    key, val = line.split("=", 1)
+                    os.environ.setdefault(key.strip(), val.strip().strip("'\""))
 
 
-def _deep_update(source: Dict[str, Any], overrides: Dict[str, Any]) -> Dict[str, Any]:
-    """Cập nhật đệ quy dict nguồn bằng các giá trị override."""
-    for key, value in overrides.items():
-        if isinstance(value, dict) and key in source and isinstance(source[key], dict):
-            source[key] = _deep_update(source[key], value)
-        else:
-            source[key] = value
-    return source
+@dataclass(frozen=True)
+class AppConfig:
+    """Đối tượng cấu hình duy nhất chứa tất cả các biến môi trường."""
+
+    # Cấu hình API Server
+    api_host: str = os.getenv("API_HOST", "0.0.0.0")
+    api_port: int = int(os.getenv("API_PORT", "8000"))
+    api_base_url: str = os.getenv("API_BASE_URL", "http://localhost:8000")
+    environment: str = os.getenv("ENVIRONMENT", "development")
+
+    # Cấu hình LLM Provider (OpenAI-compatible hoặc Anthropic)
+    llm_base_url: str = os.getenv("LLM_BASE_URL", "http://localhost:20128/v1")
+    llm_api_key: str = os.getenv("LLM_API_KEY", "")
+    anthropic_api_key: str = os.getenv("ANTHROPIC_API_KEY", "")
+    model_name: str = os.getenv("MODEL_NAME", "gemini/gemini-3.5-flash-lite")
+    llm_timeout: int = int(os.getenv("LLM_TIMEOUT", "60"))
+
+    # Cấu hình Retrieval & Pipeline
+    default_top_k: int = int(os.getenv("DEFAULT_TOP_K", "5"))
+    log_dir: str = os.getenv("LOG_DIR", "logs")
 
 
-def load_config(
-    config_path: Optional[str] = None,
-    base_path: str = "configs/base.yaml",
-) -> Dict[str, Any]:
-    """Tải file cấu hình cơ sở và ghi đè bằng cấu hình môi trường tương ứng."""
-    config: Dict[str, Any] = {}
-
-    # Đọc base config
-    if os.path.exists(base_path):
-        with open(base_path, "r", encoding="utf-8") as f:
-            base_config = yaml.safe_load(f) or {}
-            config = base_config
-
-    # Ghi đè bằng môi trường cụ thể nếu có
-    if config_path and os.path.exists(config_path):
-        with open(config_path, "r", encoding="utf-8") as f:
-            env_config = yaml.safe_load(f) or {}
-            config = _deep_update(config, env_config)
-    elif os.environ.get("ENVIRONMENT"):
-        env_name = os.environ.get("ENVIRONMENT", "development")
-        env_file = Path(f"configs/{env_name}.yaml")
-        if env_file.exists():
-            with open(env_file, "r", encoding="utf-8") as f:
-                env_config = yaml.safe_load(f) or {}
-                config = _deep_update(config, env_config)
-
-    return config
+# Khởi tạo singleton Config dùng chung
+config = AppConfig()
