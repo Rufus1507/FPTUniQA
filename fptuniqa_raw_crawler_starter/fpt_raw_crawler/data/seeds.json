@@ -1,0 +1,21 @@
+{
+  "seed_urls": [
+    "https://daihoc.fpt.edu.vn/tuyen-sinh/",
+    "https://daihoc.fpt.edu.vn/thong-bao-tuyen-sinh/thong-bao-tuyen-sinh-truong-dai-hoc-fpt-he-dai-hoc-chinh-quy-nam-2026/",
+    "https://daihoc.fpt.edu.vn/hcmtuyensinh/",
+    "https://daihoc.fpt.edu.vn/hn/tuyen-sinh",
+    "https://daihoc.fpt.edu.vn/quy-nhon/tuyen-sinh-co-so-quy-nhon/",
+    "https://daihoc.fpt.edu.vn/can-tho-tuyen-sinh/",
+    "https://daihoc.fpt.edu.vn/hoc-phi-tai-campus-tp-ho-chi-minh/",
+    "https://daihoc.fpt.edu.vn/hoc-phi-tai-campus-da-nang/",
+    "https://daihoc.fpt.edu.vn/hoc-phi-tai-campus-quy-nhon/",
+    "https://daihoc.fpt.edu.vn/hoc-phi-tai-campus-can-tho/",
+    "https://daihoc.fpt.edu.vn/hoc-bong/",
+    "https://daihoc.fpt.edu.vn/hoc-bong/faq-hoc-bong/",
+    "https://daihoc.fpt.edu.vn/hcm/huong-dan-thu-tuc-nhap-hoc-nam-2026/"
+  ],
+  "allowed_domains": [
+    "daihoc.fpt.edu.vn"
+  ],
+  "note": "Mục Campus Hà Nội trong tài liệu chưa có URL cụ thể."
+}

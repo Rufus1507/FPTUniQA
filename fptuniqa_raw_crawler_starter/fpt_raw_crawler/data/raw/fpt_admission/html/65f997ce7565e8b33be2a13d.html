@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.5",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),this},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||!t.src||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e=window){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();
+</script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuyển sinh Đại học FPT Hà Nội 2026: Điểm chuẩn, Xác nhận nhập học</title>
+<link data-rocket-prefetch href="https://analytics.tiktok.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://s.eclick.vn" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://connect.facebook.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.clarity.ms" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.google-analytics.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://analytics.ahrefs.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://googleads.g.doubleclick.net" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://s.zzcdn.me" rel="dns-prefetch">
+<link data-rocket-preload as="style" data-wpr-hosted-gf-parameters="family=Roboto:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;700;900&display=swap" href="https://daihoc.fpt.edu.vn/wp-content/cache/fonts/1/google-fonts/css/2/e/0/fa72437095486bf9da30b680f78f3.css" rel="preload">
+<link crossorigin data-rocket-preload as="font" href="https://daihoc.fpt.edu.vn/wp-content/cache/fonts/1/google-fonts/fonts/s/roboto/v51/KFO5CnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmkCXkaWzU.woff2" rel="preload">
+<link crossorigin data-rocket-preload as="font" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/webfonts/fa-solid-900.woff2" rel="preload">
+<link data-wpr-hosted-gf-parameters="family=Roboto:ital,wght@0,100..900;1,100..900&family=Roboto:wght@400;500;700;900&display=swap" href="https://daihoc.fpt.edu.vn/wp-content/cache/fonts/1/google-fonts/css/2/e/0/fa72437095486bf9da30b680f78f3.css" media="print" onload="this.media=&#039;all&#039;" rel="stylesheet">
+<noscript data-wpr-hosted-gf-parameters=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&#038;family=Roboto:wght@400;500;700;900&#038;display=swap"></noscript><link rel="preload" data-rocket-preload as="image" href="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/campus-desktop.webp" fetchpriority="high">
+    <link rel="icon" type="image/png"
+        href="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh/pic/icon.png">
+    <meta name="description"
+        content="Tuyển sinh Trường Đại học FPT cơ sở Hà Nội 2026: điểm chuẩn trúng tuyển 18 điểm (Khoa học máy tính 21 điểm), mã trường FPT, tiếp tục nhận hồ sơ xét tuyển bổ sung từ 10/8. Đăng ký tư vấn ngay.">
+    <meta name="keywords"
+        content="đại học fpt, tuyển sinh fpt, fpt hà nội, điểm chuẩn fpt, điểm chuẩn đại học fpt 2026, điểm sàn fpt, xét tuyển bổ sung fpt 2026, mã trường fpt, mã ngành fpt, cách tính điểm xét tuyển fpt, học phí fpt, ngành học fpt">
+    <meta name="theme-color" content="#F37021">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://daihoc.fpt.edu.vn/hn/tuyen-sinh/">
+    <!-- Google tag (gtag.js) consent mode dataLayer added by Site Kit -->
+<script type="rocketlazyloadscript" id="google_gtagjs-js-consent-mode-data-layer">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {"ad_personalization":"denied","ad_storage":"denied","ad_user_data":"denied","analytics_storage":"denied","functionality_storage":"denied","security_storage":"denied","personalization_storage":"denied","region":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"],"wait_for_update":500});
+window._googlesitekitConsentCategoryMap = {"statistics":["analytics_storage"],"marketing":["ad_storage","ad_user_data","ad_personalization"],"functional":["functionality_storage","security_storage"],"preferences":["personalization_storage"]};
+window._googlesitekitConsents = {"ad_personalization":"denied","ad_storage":"denied","ad_user_data":"denied","analytics_storage":"denied","functionality_storage":"denied","security_storage":"denied","personalization_storage":"denied","region":["AT","BE","BG","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GR","HR","HU","IE","IS","IT","LI","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"],"wait_for_update":500};
+</script>
+<!-- End Google tag (gtag.js) consent mode dataLayer added by Site Kit -->
+
+<!-- Tối ưu hóa công cụ tìm kiếm bởi Rank Math PRO - https://rankmath.com/ -->
+<title>Tuyển sinh &#8211; Trường Đại học FPT</title>
+<meta name="robots" content="follow, index"/>
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Trường Đại học FPT" />
+<meta property="og:updated_time" content="2026-05-05T17:05:25+07:00" />
+<meta property="og:image" content="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/01/z7616329246615_4e5bbbd0d1e8e01cfc2168f23327d5ee-1024x576.avif" />
+<meta property="og:image:secure_url" content="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/01/z7616329246615_4e5bbbd0d1e8e01cfc2168f23327d5ee-1024x576.avif" />
+<meta property="og:image:width" content="1024" />
+<meta property="og:image:height" content="576" />
+<meta property="og:image:alt" content="Tuyển sinh" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://daihoc.fpt.edu.vn/wp-content/uploads/2026/01/z7616329246615_4e5bbbd0d1e8e01cfc2168f23327d5ee-1024x576.avif" />
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"https://daihoc.fpt.edu.vn","name":"Trang ch\u1ee7"}},{"@type":"ListItem","position":"2","item":{"@id":"https://daihoc.fpt.edu.vn/hn/tuyen-sinh/","name":"Tuy\u1ec3n sinh"}}]}]}</script>
+<!-- /Plugin SEO WordPress Rank Math -->
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" title="oNhúng (JSON)" type="application/json+oembed" href="https://daihoc.fpt.edu.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdaihoc.fpt.edu.vn%2Fhn%2Ftuyen-sinh%2F" />
+<link rel="alternate" title="oNhúng (XML)" type="text/xml+oembed" href="https://daihoc.fpt.edu.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdaihoc.fpt.edu.vn%2Fhn%2Ftuyen-sinh%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="wp-block-styles-placeholder-inline-css">
+:root { --wp-internal-comment: "Placeholder for wp_hoist_late_printed_styles() to replace with the block styles printed at wp_footer." }
+/*# sourceURL=wp-block-styles-placeholder-inline-css */
+</style>
+<style id="wp-global-styles-placeholder-inline-css">
+:root { --wp-internal-comment: "Placeholder for wp_hoist_late_printed_styles() to replace with the global-styles printed at wp_footer." }
+/*# sourceURL=wp-global-styles-placeholder-inline-css */
+</style>
+<style id="dominant-color-styles-inline-css">
+img[data-dominant-color]:not(.has-transparency) { background-color: var(--dominant-color); }
+/*# sourceURL=dominant-color-styles-inline-css */
+</style>
+
+<link data-minify="1" rel='stylesheet' id='fptu-fontawesome-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/ajax/libs/font-awesome/7.0.1/css/all.min.css?ver=1786606380' media='all' />
+<link data-minify="1" rel='stylesheet' id='fptu-main-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/css/style.css?ver=1786606380' media='all' />
+<link data-minify="1" rel='stylesheet' id='fptu-custom-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/css/style_2.css?ver=1786606380' media='all' />
+<link data-minify="1" rel='stylesheet' id='swiper-css-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/npm/swiper@10/swiper-bundle.min.css?ver=1786606380' media='all' />
+<link data-minify="1" rel='stylesheet' id='fptu-custom-hcm-css' href='https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/css/style_hcm.css?ver=1786606380' media='all' />
+<script id="real3d-flipbook-global-js-extra">
+var flipbookOptions_global = {"pages":[],"pdfUrl":"","printPdfUrl":"","tableOfContent":[],"id":"","bookId":"","date":"","lightboxThumbnailUrl":"","mode":"normal","viewMode":"webgl","rangeChunkSize":"256","minPixelRatio":"1","pdfTextLayer":"true","zoomMin":"0.9","zoomStep":"2","zoomSize":"","zoomReset":"false","doubleClickZoom":"true","pageDrag":"true","singlePageMode":"false","pageFlipDuration":"1","sound":"true","startPage":"1","pageNumberOffset":"0","deeplinking":{"enabled":"false","prefix":""},"responsiveView":"true","responsiveViewTreshold":"768","responsiveViewRatio":"1","minimalView":"true","minimalViewBreakpoint":"600","cover":"true","backCover":"true","scaleCover":"false","pageCaptions":"false","height":"400","responsiveHeight":"true","containerRatio":"","thumbnailsOnStart":"false","contentOnStart":"false","searchOnStart":"","searchResultsThumbs":"false","tableOfContentCloseOnClick":"true","thumbsCloseOnClick":"true","autoplayOnStart":"false","autoplayInterval":"3000","autoplayLoop":"true","autoplayStartPage":"1","rightToLeft":"false","pageWidth":"","pageHeight":"","thumbSize":"130","logoImg":"","logoUrl":"","logoUrlTarget":"","logoCSS":"position:absolute;left:0;top:0;","menuSelector":"","zIndex":"auto","preloaderText":"","googleAnalyticsTrackingCode":"","pdfBrowserViewerIfIE":"false","modeMobile":"","viewModeMobile":"","aspectMobile":"","aspectRatioMobile":"0.71","singlePageModeIfMobile":"false","logoHideOnMobile":"false","mobile":{"thumbnailsOnStart":"false","contentOnStart":"false","pagesInMemory":"6","bitmapResizeHeight":"","bitmapResizeQuality":"","currentPage":{"enabled":"false"},"pdfUrl":"","minimalViewBreakpoint":"360","zoomMin":"","autoplayInterval":""},"lightboxCssClass":"","lightboxLink":"","lightboxLinkNewWindow":"true","lightboxBackground":"rgb(81, 85, 88)","lightboxBackgroundPattern":"","lightboxBackgroundImage":"","lightboxContainerCSS":"display:inline-block;padding:10px;","lightboxThumbnailHeight":"300","lightboxThumbnailUrlCSS":"display:block;","lightboxThumbnailInfo":"false","lightboxThumbnailInfoText":"","lightboxThumbnailInfoCSS":"top: 0;  width: 100%; height: 100%; font-size: 16px; color: #000; background: rgba(255,255,255,.8); ","showTitle":"false","showDate":"false","hideThumbnail":"false","lightboxText":"","lightboxTextCSS":"display:block;","lightboxTextPosition":"top","lightBoxOpened":"false","lightBoxFullscreen":"false","lightboxStartPage":"","lightboxMarginV":"0","lightboxMarginH":"0","lights":"true","lightPositionX":"0","lightPositionY":"150","lightPositionZ":"1400","lightIntensity":"0.6","shadows":"true","shadowMapSize":"2048","shadowOpacity":"0.2","shadowDistance":"15","pageHardness":"2","coverHardness":"2","pageRoughness":"1","pageMetalness":"0","pageSegmentsW":"6","pageSegmentsH":"1","pagesInMemory":"20","bitmapResizeHeight":"","bitmapResizeQuality":"","pageMiddleShadowSize":"4","pageMiddleShadowColorL":"#7F7F7F","pageMiddleShadowColorR":"#AAAAAA","antialias":"false","pan":"0","tilt":"0","rotateCameraOnMouseDrag":"true","panMax":"20","panMin":"-20","tiltMax":"0","tiltMin":"0","currentPage":{"enabled":"true","title":"Current page","hAlign":"left","vAlign":"top"},"btnAutoplay":{"enabled":"true","title":"Autoplay"},"btnNext":{"enabled":"true","title":"Next Page"},"btnLast":{"enabled":"false","title":"Last Page"},"btnPrev":{"enabled":"true","title":"Previous Page"},"btnFirst":{"enabled":"false","title":"First Page"},"btnZoomIn":{"enabled":"true","title":"Zoom in"},"btnZoomOut":{"enabled":"true","title":"Zoom out"},"btnToc":{"enabled":"true","title":"Table of Contents"},"btnThumbs":{"enabled":"true","title":"Pages"},"btnShare":{"enabled":"true","title":"Share"},"btnNotes":{"enabled":"false","title":"Notes"},"btnDownloadPages":{"enabled":"false","url":"","title":"Download pages"},"btnDownloadPdf":{"enabled":"true","url":"","title":"Download PDF","forceDownload":"true","openInNewWindow":"true"},"btnSound":{"enabled":"true","title":"Sound"},"btnExpand":{"enabled":"true","title":"Toggle fullscreen"},"btnSingle":{"enabled":"true","title":"Toggle single page"},"btnSearch":{"enabled":"false","title":"Search"},"search":{"enabled":"false","title":"Search"},"btnBookmark":{"enabled":"false","title":"Bookmark"},"btnPrint":{"enabled":"true","title":"Print"},"btnTools":{"enabled":"true","title":"Tools"},"btnClose":{"enabled":"true","title":"Close"},"whatsapp":{"enabled":"true"},"twitter":{"enabled":"true"},"facebook":{"enabled":"true"},"pinterest":{"enabled":"true"},"email":{"enabled":"true"},"linkedin":{"enabled":"true"},"digg":{"enabled":"false"},"reddit":{"enabled":"false"},"shareUrl":"","shareTitle":"","shareImage":"","layout":"1","iconSet":"fontawesome","progressBar":{"enabled":"false"},"skin":"light","useFontAwesome5":"true","sideNavigationButtons":"true","menuNavigationButtons":"false","backgroundColor":"rgb(81, 85, 88)","backgroundPattern":"","backgroundImage":"","backgroundTransparent":"false","menuBackground":"","menuShadow":"","menuMargin":"0","menuPadding":"0","menuOverBook":"false","menuFloating":"false","menuTransparent":"false","menu2Background":"","menu2Shadow":"","menu2Margin":"0","menu2Padding":"0","menu2OverBook":"true","menu2Floating":"false","menu2Transparent":"true","skinColor":"","skinBackground":"","hideMenu":"false","menuAlignHorizontal":"center","btnColor":"","btnColorHover":"","btnBackground":"none","btnRadius":"0","btnMargin":"0","btnSize":"18","btnPaddingV":"10","btnPaddingH":"10","btnShadow":"","btnTextShadow":"","btnBorder":"","arrowColor":"#fff","arrowColorHover":"#fff","arrowBackground":"rgba(0,0,0,0)","arrowBackgroundHover":"rgba(0, 0, 0, .15)","arrowRadius":"4","arrowMargin":"4","arrowSize":"40","arrowPadding":"10","arrowTextShadow":"0px 0px 1px rgba(0, 0, 0, 1)","arrowBorder":"","closeBtnColorHover":"#FFF","closeBtnBackground":"rgba(0,0,0,.4)","closeBtnRadius":"0","closeBtnMargin":"0","closeBtnSize":"20","closeBtnPadding":"5","closeBtnTextShadow":"","closeBtnBorder":"","floatingBtnColor":"","floatingBtnColorHover":"","floatingBtnBackground":"","floatingBtnBackgroundHover":"","floatingBtnRadius":"","floatingBtnMargin":"","floatingBtnSize":"","floatingBtnPadding":"","floatingBtnShadow":"","floatingBtnTextShadow":"","floatingBtnBorder":"","currentPageMarginV":"5","currentPageMarginH":"5","arrowsAlwaysEnabledForNavigation":"true","arrowsDisabledNotFullscreen":"true","touchSwipeEnabled":"true","fitToWidth":"false","rightClickEnabled":"true","linkColor":"rgba(0, 0, 0, 0)","linkColorHover":"rgba(255, 255, 0, 1)","linkOpacity":"0.4","linkTarget":"_blank","pdfAutoLinks":"false","disableRange":"false","strings":{"print":"Print","printLeftPage":"Print left page","printRightPage":"Print right page","printCurrentPage":"Print current page","printAllPages":"Print all pages","download":"Download","downloadLeftPage":"Download left page","downloadRightPage":"Download right page","downloadCurrentPage":"Download current page","downloadAllPages":"Download all pages","bookmarks":"Bookmarks","bookmarkLeftPage":"Bookmark left page","bookmarkRightPage":"Bookmark right page","bookmarkCurrentPage":"Bookmark current page","search":"Search","findInDocument":"Find in document","pagesFoundContaining":"pages found containing","noMatches":"No matches","matchesFound":"matches found","page":"Page","matches":"matches","thumbnails":"Thumbnails","tableOfContent":"Table of Contents","share":"Share","pressEscToClose":"Press ESC to close","password":"Password","addNote":"Add note","typeInYourNote":"Type in your note..."},"access":"free","backgroundMusic":"","backgroundMusicOnAutoplay":"false","cornerCurl":"false","pdfTools":{"pageHeight":1500,"thumbHeight":200,"quality":0.8,"textLayer":"true","autoConvert":"true"},"slug":"","convertPDFLinks":"true","convertPDFLinksWithClass":"","convertPDFLinksWithoutClass":"","overridePDFEmbedder":"true","overrideDflip":"true","overrideWonderPDFEmbed":"true","override3DFlipBook":"true","overridePDFjsViewer":"true","resumeReading":"false","previewPages":"","previewMode":"","pageTextureSize":"3000","pageTextureSizeSmall":"1500","pageTextureSizeMobile":"","pageTextureSizeMobileSmall":"1000","icons":"FontAwesome"};
+//# sourceURL=real3d-flipbook-global-js-extra
+</script>
+<script type="rocketlazyloadscript" id="jquery-core-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="jquery-migrate-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" data-rocket-defer defer></script>
+<link rel="https://api.w.org/" href="https://daihoc.fpt.edu.vn/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://daihoc.fpt.edu.vn/wp-json/wp/v2/campus_page/120951" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://daihoc.fpt.edu.vn/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.1" />
+<link rel='shortlink' href='https://daihoc.fpt.edu.vn/?p=120951' />
+<meta name="generator" content="auto-sizes 1.8.0">
+<meta name="generator" content="dominant-color-images 1.3.0">
+<meta name="generator" content="Site Kit by Google 1.187.0" /><script type="rocketlazyloadscript">
+    window.EnrollmentOSConfig = {
+        endpoint: 'https://crmfu.fpt.edu.vn/api/tracking',
+        token: 'a9ebc64c8de4811bed86c148c3901916088ecd8ba6a95c3584cc86d283e99244',
+        admissionYear: 2026,
+        autoPageView: true,
+        sessionTtlMinutes: 30,
+        debug: false
+    };
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://crmfu.fpt.edu.vn/js/enrollment-os-tracking.js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://crmfu.fpt.edu.vn/js/enrollment-os-form-integration.js" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript">
+    document.addEventListener('DOMContentLoaded', function () {
+        if (!window.EnrollmentOS) {
+            return;
+        }
+
+        function findValue(form, selectors) {
+            for (var i = 0; i < selectors.length; i++) {
+                var input = form.querySelector(selectors[i]);
+                if (input && input.value) {
+                    return input.value.trim();
+                }
+            }
+
+            return '';
+        }
+
+        function enrollmentOSDelayedIdentify(phone, email) {
+            if (!window.EnrollmentOS || (!phone && !email)) {
+                return;
+            }
+
+            setTimeout(function () {
+                window.EnrollmentOS.identify({
+                    phone: phone,
+                    email: email,
+                    source_type: 'website_form_delayed',
+                    confidence: 90
+                });
+            }, 5000);
+        }
+
+        document.querySelectorAll('form').forEach(function (form) {
+            form.addEventListener('submit', function () {
+                var phone = findValue(form, [
+                    '[name="phone"]',
+                    '[name="tel"]',
+                    '[name="mobile"]',
+                    '[name="so_dien_thoai"]',
+                    '[name="soDienThoai"]',
+                    'input[type="tel"]'
+                ]);
+
+                var email = findValue(form, [
+                    '[name="email"]',
+                    'input[type="email"]'
+                ]);
+
+                window.EnrollmentOS.track('submit_form', {
+                    entity_type: 'website_form',
+                    entity_id: form.id || form.getAttribute('name') || window.location.pathname,
+                    payload: {
+                        form_id: form.id || null,
+                        form_name: form.getAttribute('name') || null,
+                        page_url: window.location.href,
+                        has_phone: !!phone,
+                        has_email: !!email
+                    }
+                });
+
+                if (phone || email) {
+                    window.EnrollmentOS.identify({
+                        phone: phone,
+                        email: email,
+                        source_type: 'website_form',
+                        confidence: 90
+                    });
+
+                    enrollmentOSDelayedIdentify(phone, email);
+                }
+            }, true);
+        });
+    });
+</script><meta name="generator" content="performance-lab 4.2.0; plugins: auto-sizes, dominant-color-images, embed-optimizer, image-prioritizer, performant-translations, nocache-bfcache, speculation-rules, webp-uploads">
+<meta name="generator" content="performant-translations 1.2.0">
+<meta name="generator" content="webp-uploads 2.7.1">
+<meta name="generator" content="speculation-rules 1.7.0">
+<meta name="generator" content="optimization-detective 1.0.0-beta7">
+<meta name="generator" content="embed-optimizer 1.0.0-beta6">
+<meta name="generator" content="image-prioritizer 1.0.0-beta4">
+<link rel="icon" href="https://daihoc.fpt.edu.vn/wp-content/uploads/2025/12/cropped-cropped-favicon-4-192x192-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://daihoc.fpt.edu.vn/wp-content/uploads/2025/12/cropped-cropped-favicon-4-192x192-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://daihoc.fpt.edu.vn/wp-content/uploads/2025/12/cropped-cropped-favicon-4-192x192-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://daihoc.fpt.edu.vn/wp-content/uploads/2025/12/cropped-cropped-favicon-4-192x192-1-270x270.png" />
+<style id="wp-custom-css">
+.popup-top a img {
+max-width: 140px;
+max-height: 40px;
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+.recruitment-method-bg img {
+    max-height: 496px;
+}
+
+.admission-page .overview-hero .banner img, .overview-hero .banner iframe, .overview-hero .banner video {
+    object-fit: contain !important;
+}
+</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://daihoc.fpt.edu.vn/hn/tuyen-sinh/">
+    <meta property="og:title" content="Tuyển sinh Đại học FPT Hà Nội 2026: Điểm chuẩn, Xác nhận nhập học">
+    <meta property="og:description"
+        content="Điểm chuẩn trúng tuyển 18 điểm (riêng Khoa học máy tính 21 điểm), mã trường FPT, mã ngành, cách tính điểm, học phí và các phương thức xét tuyển tại Trường Đại học FPT cơ sở Hà Nội 2026.">
+    <meta property="og:image"
+        content="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh/pic/thum-thong-tin-tuyen-sinh-truong-dai-hoc-fpt.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Trường Đại học FPT">
+    <meta property="og:locale" content="vi_VN">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://daihoc.fpt.edu.vn/hn/tuyen-sinh/">
+    <meta name="twitter:title" content="Tuyển sinh Đại học FPT Hà Nội 2026: Điểm chuẩn, Xác nhận nhập học">
+    <meta name="twitter:description"
+        content="Điểm chuẩn trúng tuyển 18 điểm (riêng Khoa học máy tính 21 điểm), mã trường FPT, mã ngành, cách tính điểm, học phí và các phương thức xét tuyển tại Trường Đại học FPT cơ sở Hà Nội 2026.">
+    <meta name="twitter:image"
+        content="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh/pic/thum-thong-tin-tuyen-sinh-truong-dai-hoc-fpt.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/campus-desktop.webp" fetchpriority="high">
+    
+    <link data-minify="1" rel="stylesheet" href="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/ajax/libs/font-awesome/6.4.0/css/all.min.css?ver=1786606831"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link data-minify="1" rel="stylesheet" href="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/ajax/libs/font-awesome/6.4.0/css/all.min.css?ver=1786606831">
+    </noscript>
+    <link data-minify="1" rel="stylesheet" href="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/style.css?ver=1786606831">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-53RSV23');</script>
+    <!-- End Google Tag Manager -->
+    <script type="rocketlazyloadscript" data-minify="1" async="" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/ztr/ztracker.js?ver=1786606832"></script>
+<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.20.5" data-wpr-features="wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_auto_preload_fonts wpr_automatic_lazy_rendering wpr_oci wpr_minify_css wpr_cdn wpr_preload_links wpr_host_fonts_locally wpr_desktop" /></head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53RSV23" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header  class="header" id="header">
+        <div  class="container header-container">
+            <div  class="logo">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20160%2048'%3E%3C/svg%3E" alt="Trường Đại học FPT cơ sở Hà Nội" width="160"
+                    height="48" style="height: 48px; width: auto; object-fit: contain;" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/logo-truong-dai-hoc-fpt.png"><noscript><img src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/logo-truong-dai-hoc-fpt.png" alt="Trường Đại học FPT cơ sở Hà Nội" width="160"
+                    height="48" style="height: 48px; width: auto; object-fit: contain;"></noscript>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#chuong-trinh">Chương trình đào tạo</a></li>
+                    <li><a href="#phuong-thuc">Tuyển sinh</a></li>
+                    <li><a href="#chinh-sach">Ưu đãi tài chính</a></li>
+                    <li><a href="#hoc-phi">Học phí</a></li>
+                    <li><a href="#faq">Hỏi đáp (FAQ)</a></li>
+                </ul>
+            </nav>
+            <a href="#hero-form" class="btn btn-primary btn-pill">Đăng ký tư vấn</a>
+            <div  class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section  class="hero" id="hero">
+        <div  class="hero-bg"></div>
+        <div  class="hero-overlay"></div>
+        <div  class="hero-shapes">
+            <div  class="shape shape-orange"></div>
+            <div  class="shape shape-accent"></div>
+        </div>
+
+        <div  class="container hero-container">
+            <div  class="hero-content">
+                <h1 class="hero-title">Thông tin tuyển sinh<br><span class="text-gradient">Trường Đại học FPT<br>cơ sở
+                        Hà Nội</span></h1>
+                <p class="hero-subtitle">Tuyển sinh đại học chính quy năm 2026 tại Trường Đại học FPT cơ sở Hà Nội.
+                    Thông
+                    tin phương thức xét tuyển, học phí và đăng ký tư vấn chọn ngành phù hợp.</p>
+                <div class="hero-score-banner">
+                    <div class="hero-score-main">
+                        <div class="hero-score-item">
+                            <span class="hero-score-label">Điểm chuẩn trúng tuyển năm 2026</span>
+                            <span class="hero-score-num">18 ĐIỂM</span>
+                        </div>
+                        <span class="hero-score-divider"></span>
+                        <div class="hero-score-item">
+                            <span class="hero-score-label">Mã trường Đại học FPT</span>
+                            <span class="hero-score-num">FPT</span>
+                        </div>
+                    </div>
+                    <p class="hero-score-note">*Riêng ngành Khoa học máy tính, điểm chuẩn trúng tuyển là 21 điểm.</p>
+                    <p class="hero-score-sub">Nhà trường tiếp tục nhận hồ sơ xét tuyển bổ sung ở một số ngành còn chỉ
+                        tiêu. Đăng ký xét tuyển và nhập học trực tuyến từ <strong>8h00 ngày 10/08/2026</strong>.</p>
+                </div>
+                <a href="https://daihoc.fpt.edu.vn/dang-ky-dai-hoc-fpt" class="btn btn-pill hero-cta" target="_blank"
+                    rel="noopener">
+                    <span>Đăng ký nhập học</span>
+                    <i class="fas fa-arrow-right hero-cta-arrow" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <div  class="hero-form-wrapper" id="hero-form">
+                <div class="glass-card form-card">
+                    <form action="#" method="POST" id="leadForm">
+                        <!-- UTM Tracking Fields -->
+                        <input type="hidden" id="utm_source" name="utm_source" value="">
+                        <input type="hidden" id="utm_medium" name="utm_medium" value="">
+                        <input type="hidden" id="utm_campaign" name="utm_campaign" value="">
+                        <input type="hidden" id="utm_term" name="utm_term" value="">
+                        <input type="hidden" id="utm_content" name="utm_content" value="">
+
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Họ và tên*" required aria-label="Họ và tên">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email*" required aria-label="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Số điện thoại*" required
+                                aria-label="Số điện thoại" pattern="^(0[0-9]{9}|\+[0-9]{10,14})$"
+                                title="Vui lòng nhập chính xác 10 số (VD: 0987654321) hoặc số quốc tế (VD: +84987654321)">
+                        </div>
+                        <div class="form-group">
+                            <select id="province" required aria-label="Tỉnh hoặc Thành phố">
+                                <option value="" disabled selected>Tỉnh/ Thành phố*</option>
+                                <option value="Bắc Ninh">Bắc Ninh</option>
+                                <option value="Cao Bằng">Cao Bằng</option>
+                                <option value="Điện Biên">Điện Biên</option>
+                                <option value="Hà Nội">Hà Nội</option>
+                                <option value="Hải Phòng">Hải Phòng</option>
+                                <option value="Hưng Yên">Hưng Yên</option>
+                                <option value="Lai Châu">Lai Châu</option>
+                                <option value="Lạng Sơn">Lạng Sơn</option>
+                                <option value="Lào Cai">Lào Cai</option>
+                                <option value="Nghệ An">Nghệ An</option>
+                                <option value="Ninh Bình">Ninh Bình</option>
+                                <option value="Phú Thọ">Phú Thọ</option>
+                                <option value="Quảng Ninh">Quảng Ninh</option>
+                                <option value="Sơn La">Sơn La</option>
+                                <option value="Thái Nguyên">Thái Nguyên</option>
+                                <option value="Thanh Hóa">Thanh Hóa</option>
+                                <option value="Tuyên Quang">Tuyên Quang</option>
+                                <option value="Tỉnh Khác">Tỉnh Khác</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="searchable-select" id="majorSelectWrapper">
+                                <input type="text" id="majorSearch" placeholder="Chọn chương trình đào tạo*"
+                                    autocomplete="off" aria-label="Chọn chương trình đào tạo">
+                                <input type="hidden" id="major" name="major" value="">
+                                <i class="fas fa-chevron-down searchable-arrow"></i>
+                                <div class="searchable-dropdown" id="majorDropdown">
+                                    <div class="searchable-option" data-value="Công nghệ thông tin">Công nghệ thông tin
+                                    </div>
+                                    <div class="searchable-option"
+                                        data-value="Robot và Trí tuệ nhân tạo (Định hướng UAV và Humanoid)">Robot và Trí
+                                        tuệ nhân tạo (Định hướng UAV và Humanoid)</div>
+                                    <div class="searchable-option" data-value="Kỹ thuật phần mềm">Kỹ thuật phần mềm
+                                    </div>
+                                    <div class="searchable-option" data-value="Trí tuệ nhân tạo">Trí tuệ nhân tạo</div>
+                                    <div class="searchable-option" data-value="Khoa học dữ liệu ứng dụng">Khoa học dữ
+                                        liệu ứng dụng</div>
+                                    <div class="searchable-option" data-value="An toàn thông tin">An toàn thông tin
+                                    </div>
+                                    <div class="searchable-option" data-value="Thiết kế vi mạch bán dẫn">Thiết kế vi
+                                        mạch bán dẫn</div>
+                                    <div class="searchable-option" data-value="Công nghệ ô tô số">Công nghệ ô tô số
+                                    </div>
+                                    <div class="searchable-option" data-value="Hệ thống thông tin">Hệ thống thông tin
+                                    </div>
+                                    <div class="searchable-option" data-value="Thiết kế đồ hoạ và mỹ thuật số">Thiết kế
+                                        đồ hoạ và mỹ thuật số</div>
+                                    <div class="searchable-option" data-value="Truyền thông đa phương tiện">Truyền thông
+                                        đa phương tiện</div>
+                                    <div class="searchable-option" data-value="Quan hệ công chúng">Quan hệ công chúng
+                                    </div>
+                                    <div class="searchable-option" data-value="Truyền thông Marketing tích hợp">Truyền
+                                        thông Marketing tích hợp</div>
+                                    <div class="searchable-option" data-value="Truyền thông thương hiệu">Truyền thông
+                                        thương hiệu</div>
+                                    <div class="searchable-option" data-value="Ngôn ngữ Anh">Ngôn ngữ Anh</div>
+                                    <div class="searchable-option" data-value="Tiếng Anh thương mại">Tiếng Anh thương
+                                        mại</div>
+                                    <div class="searchable-option" data-value="Ngôn ngữ Hàn Quốc">Ngôn ngữ Hàn Quốc
+                                    </div>
+                                    <div class="searchable-option" data-value="Tiếng Hàn thương mại">Tiếng Hàn thương
+                                        mại</div>
+                                    <div class="searchable-option" data-value="Ngôn ngữ Trung Quốc">Ngôn ngữ Trung Quốc
+                                    </div>
+                                    <div class="searchable-option" data-value="Tiếng Trung thương mại">Tiếng Trung
+                                        thương mại</div>
+                                    <div class="searchable-option" data-value="Luật">Luật</div>
+                                    <div class="searchable-option" data-value="Luật kinh tế">Luật kinh tế</div>
+                                    <div class="searchable-option" data-value="Marketing">Marketing</div>
+                                    <div class="searchable-option" data-value="Kinh doanh quốc tế">Kinh doanh quốc tế
+                                    </div>
+                                    <div class="searchable-option" data-value="Thương mại điện tử">Thương mại điện tử
+                                    </div>
+                                    <div class="searchable-option" data-value="Quản trị kinh doanh">Quản trị kinh doanh
+                                    </div>
+                                    <div class="searchable-option" data-value="Quản trị giải trí và sự kiện">Quản trị
+                                        giải trí và sự kiện</div>
+                                    <div class="searchable-option" data-value="Quản trị trải nghiệm khách hàng">Quản trị
+                                        trải nghiệm khách hàng</div>
+                                    <div class="searchable-option" data-value="Quản trị thu mua">Quản trị thu mua</div>
+                                    <div class="searchable-option"
+                                        data-value="Phân tích kinh doanh (Business Analytics)">Phân tích kinh doanh
+                                        (Business Analytics)</div>
+                                    <div class="searchable-option"
+                                        data-value="Logistics và Quản lý chuỗi cung ứng toàn cầu">Logistics và Quản lý
+                                        chuỗi cung ứng toàn cầu</div>
+                                    <div class="searchable-option" data-value="Công nghệ tài chính (Fintech)">Công nghệ
+                                        tài chính (Fintech)</div>
+                                    <div class="searchable-option" data-value="Tài chính doanh nghiệp">Tài chính doanh
+                                        nghiệp</div>
+                                    <div class="searchable-option" data-value="Tài chính thông minh">Tài chính thông
+                                        minh</div>
+                                    <div class="searchable-option" data-value="Tài chính ngân hàng">Tài chính ngân hàng
+                                    </div>
+                                    <div class="searchable-option" data-value="Trí tuệ nhân tạo và Khoa học dữ liệu">Trí
+                                        tuệ nhân tạo và Khoa học dữ liệu</div>
+                                    <div class="searchable-option" data-value="An ninh mạng và an toàn số">An ninh mạng
+                                        và an toàn số</div>
+                                    <div class="searchable-no-result" style="display:none;">Không tìm thấy ngành phù hợp
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-block btn-glow submit-btn-custom"
+                            aria-label="Đăng ký tư vấn">
+                            Đăng ký tư vấn
+                        </button>
+
+                        <p class="form-disclaimer">*Đồng ý để dữ liệu cá nhân của Anh/Chị được thu thập trên trang này,
+                            được xử lý và lưu trữ bởi Trường Đại học FPT (đơn vị thành viên của Công ty TNHH Giáo dục
+                            FPT hay còn gọi là Tổ chức giáo dục FPT) cho mục đích và theo điều kiện đã được công bố tại
+                            Quy định bảo vệ dữ liệu cá nhân của Tổ chức giáo dục FPT.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section  class="achievements-section" style="padding: 80px 0; background-color: var(--white);">
+        <div  class="container">
+            <h2 class="section-title"
+                style="text-transform: uppercase; color: var(--primary-orange); margin-bottom: 50px;">Trường Đại học tại
+                Việt Nam<br>Đạt chuẩn Quốc tế</h2>
+
+            <div  class="achievements-grid">
+                <div class="achievement-item">
+                    <i class="fas fa-chart-line achievement-icon"></i>
+                    <h3 class="achievement-title">XẾP HẠNG 14</h3>
+                    <p class="achievement-desc">Thế giới theo tiêu chí Việc làm tốt &amp; Tăng trưởng kinh tế (SDG8) - THE
+                        Impact Ratings 2026</p>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-graduation-cap achievement-icon"></i>
+                    <h3 class="achievement-title">XẾP HẠNG 87</h3>
+                    <p class="achievement-desc">Thế giới về Giáo dục chất lượng (SDG4) và <strong
+                            style="color: var(--primary-orange);">đứng đầu Việt Nam</strong> - THE Impact Ratings
+                        2026</p>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-globe-americas achievement-icon"></i>
+                    <h3 class="achievement-title">XẾP HẠNG 201-300</h3>
+                    <p class="achievement-desc">Trường đại học có tác động phát triển bền vững hàng đầu thế giới - THE
+                        Impact Ratings 2026</p>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-users achievement-icon"></i>
+                    <h3 class="achievement-title">50+</h3>
+                    <p class="achievement-desc">Câu lạc bộ sinh viên</p>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-map-marked-alt achievement-icon"></i>
+                    <h3 class="achievement-title">300+</h3>
+                    <p class="achievement-desc">Đơn vị đối tác toàn cầu</p>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-building achievement-icon"></i>
+                    <h3 class="achievement-title">30Ha</h3>
+                    <p class="achievement-desc">Khuôn viên xanh tại Hoà Lạc</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategies Section -->
+    <section  class="strategies-section" style="padding: 0 0 80px 0; background-color: var(--white);">
+        <div  class="container">
+            <h2 class="section-title"
+                style="text-transform: uppercase; color: var(--primary-orange); margin-bottom: 50px;">Dẫn đầu 3 chiến
+                lược đào tạo nhân lực bền vững</h2>
+
+            <div  class="strategies-grid">
+                <div class="strategy-card">
+                    <h3>Công nghệ</h3>
+                    <p>Công nghệ là năng lực cốt lõi của sinh viên FPTU, được tích hợp xuyên suốt trong mọi chương trình
+                        đào tạo. Sinh viên được trang bị tư duy công nghệ hiện đại và khả năng ứng dụng nền tảng số, dữ
+                        liệu và trí tuệ nhân tạo để giải quyết các vấn đề thực tiễn, làm việc hiệu quả hơn và thích ứng
+                        nhanh với sự biến đổi của thị trường lao động.</p>
+                    <i class="fas fa-microchip strategy-watermark"></i>
+                </div>
+                <div class="strategy-card">
+                    <h3>Khởi nghiệp</h3>
+                    <p>Khởi nghiệp tại FPTU được tích hợp trực tiếp trong chương trình đào tạo như một năng lực cốt lõi.
+                        Sinh viên không chỉ học để làm việc, mà học để làm chủ - thông qua các học phần dự án, học kỳ
+                        doanh nghiệp (OJT) và hệ sinh thái đổi mới sáng tạo, từ đó chủ động tạo ra giá trị và bứt phá
+                        trên mọi con đường nghề nghiệp.</p>
+                    <i class="fas fa-rocket strategy-watermark"></i>
+                </div>
+                <div class="strategy-card">
+                    <h3>Toàn cầu hóa</h3>
+                    <p>Sở hữu mạng lưới hơn 300 đối tác tại gần 40 quốc gia, FPTU mang đến cho sinh viên môi trường học
+                        tập và trải nghiệm quốc tế toàn diện. Thông qua đào tạo hai ngôn ngữ trong chương trình học,
+                        cùng các hoạt động trao đổi và thực tập quốc tế, sinh viên sẵn sàng làm việc trong môi trường
+                        toàn cầu với tư duy hội nhập và bản sắc Việt Nam.</p>
+                    <i class="fas fa-globe-asia strategy-watermark"></i>
+                </div>
+            </div>
+            <!-- Carousel dots (mobile only) -->
+            <div  class="strategy-dots" style="display: none;">
+                <button class="strategy-dot active" data-index="0"></button>
+                <button class="strategy-dot" data-index="1"></button>
+                <button class="strategy-dot" data-index="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Majors Section (Chương trình đào tạo) -->
+    <section  class="majors-new" id="chuong-trinh">
+        <div  class="container">
+            <div  class="majors-header-container">
+                <div class="majors-title-wrapper">
+                    <h2>CHƯƠNG TRÌNH ĐÀO TẠO</h2>
+                </div>
+                <p class="majors-subtitle">Tại Trường Đại học FPT - Campus Hà Nội</p>
+                <div class="school-code-badge">
+                    <span class="school-code-label">Mã trường</span>
+                    <span class="school-code-value">FPT</span>
+                    <span class="school-code-note">Nhập mã <strong>FPT</strong> trên hệ thống của Bộ GD&amp;ĐT, sau đó chọn mã ngành bên dưới.</span>
+                </div>
+            </div>
+
+            <div  class="majors-columns-grid">
+                <!-- Column 1 -->
+                <div class="majors-col">
+                    <div class="major-group">
+                        <div class="major-group-header">Ngành Công nghệ thông tin<span class="major-code">Mã ngành: 7480201</span></div>
+                        <ul class="major-group-list">
+                            <li>Công nghệ thông tin</li>
+                            <li>Robot và Trí tuệ nhân tạo (Định hướng UAV và Humanoid)</li>
+                            <li>Kỹ thuật phần mềm</li>
+                            <li>Trí tuệ nhân tạo</li>
+                            <li>Khoa học dữ liệu ứng dụng</li>
+                            <li>An toàn thông tin</li>
+                            <li>Thiết kế vi mạch bán dẫn</li>
+                            <li>Công nghệ ô tô số</li>
+                            <li>Hệ thống thông tin</li>
+                            <li>Thiết kế đồ họa và mỹ thuật số</li>
+                        </ul>
+                    </div>
+                    <div class="major-group">
+                        <div class="major-group-header">Ngành Khoa học máy tính<span class="major-code">Mã ngành: 7480101</span></div>
+                        <ul class="major-group-list">
+                            <li>Trí tuệ nhân tạo và Khoa học dữ liệu</li>
+                            <li>An ninh mạng và an toàn số</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="majors-col">
+                    <div class="major-group">
+                        <div class="major-group-header">Ngành Quản trị kinh doanh<span class="major-code">Mã ngành: 7340101</span></div>
+                        <ul class="major-group-list">
+                            <li>Marketing</li>
+                            <li>Kinh doanh quốc tế</li>
+                            <li>Thương mại điện tử</li>
+                            <li>Quản trị kinh doanh</li>
+                            <li>Quản trị giải trí và sự kiện</li>
+                            <li>Quản trị trải nghiệm khách hàng</li>
+                            <li>Quản trị thu mua</li>
+                            <li>Phân tích kinh doanh (Business Analytics)</li>
+                            <li>Logistics và Quản lý chuỗi cung ứng toàn cầu</li>
+                            <li>Công nghệ tài chính (Fintech)</li>
+                            <li>Tài chính doanh nghiệp</li>
+                            <li>Tài chính thông minh</li>
+                            <li>Tài chính ngân hàng</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="majors-col">
+                    <div class="major-group">
+                        <div class="major-group-header">Ngành Công nghệ truyền thông<span class="major-code">Mã ngành: 7320106</span></div>
+                        <ul class="major-group-list">
+                            <li>Truyền thông đa phương tiện</li>
+                            <li>Quan hệ công chúng</li>
+                            <li>Truyền thông Marketing tích hợp</li>
+                            <li>Truyền thông thương hiệu</li>
+                        </ul>
+                    </div>
+                    <div class="major-group">
+                        <div class="major-group-header">Ngành Luật<span class="major-code">Mã ngành: 7380101</span></div>
+                        <ul class="major-group-list">
+                            <li>Luật</li>
+                            <li>Luật kinh tế</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="majors-col">
+                    <div class="major-group">
+                        <div class="major-group-header">Ngành Ngôn ngữ Anh<span class="major-code">Mã ngành: 7220201</span></div>
+                        <ul class="major-group-list">
+                            <li>Ngôn ngữ Anh</li>
+                            <li>Tiếng Anh thương mại</li>
+                        </ul>
+                    </div>
+                    <div class="major-group">
+                        <div class="major-group-header">Ngành Ngôn ngữ Hàn Quốc<span class="major-code">Mã ngành: 7220210</span></div>
+                        <ul class="major-group-list">
+                            <li>Ngôn ngữ Hàn Quốc</li>
+                            <li>Tiếng Hàn thương mại</li>
+                        </ul>
+                    </div>
+                    <div class="major-group">
+                        <div class="major-group-header">Ngành Ngôn ngữ Trung Quốc<span class="major-code">Mã ngành: 7220204</span></div>
+                        <ul class="major-group-list">
+                            <li>Ngôn ngữ Trung Quốc</li>
+                            <li>Tiếng Trung thương mại</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div data-wpr-lazyrender="1" class="majors-cta">
+                <a href="#hero-form" class="btn btn-primary btn-pill btn-glow"
+                    style="background: var(--primary-orange); color: white; border: none; padding: 15px 40px; font-weight: bold; font-size: 1.1rem; border-radius: 50px;"
+                    aria-label="Đăng ký tư vấn">Đăng ký ngay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Section -->
+    <section data-wpr-lazyrender="1" class="admission-split" id="phuong-thuc" style="padding-top: 80px; padding-bottom: 80px;">
+        <div  class="container" style="text-align: center; margin-bottom: 50px;">
+            <h2 class="section-title"
+                style="color: var(--primary-orange); text-transform: uppercase; margin-bottom: 20px;">Phương thức tuyển
+                sinh</h2>
+        </div>
+        <div  class="split-container policy-container-stretch">
+            <div  class="split-image policy-img-box">
+                <picture style="width: 100%; height: 100%;">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20533'%3E%3C/svg%3E"
+                        alt="Phương thức tuyển sinh FPT" width="800" height="533"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/dang-ky-tham-quan-campus-1-20260324095924-7epye.webp"><noscript><img src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/dang-ky-tham-quan-campus-1-20260324095924-7epye.webp"
+                        alt="Phương thức tuyển sinh FPT" width="800" height="533" loading="lazy"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);"></noscript>
+                </picture>
+            </div>
+            <div  class="split-content policy-content-box adm-content-box" style="padding: 0 40px;">
+                <p class="admission-intro">Trường Đại học FPT tuyển sinh hệ đại học chính quy năm 2026 theo
+                    phương thức kết hợp kết quả kỳ thi tốt nghiệp THPT với kết quả học tập THPT, nhằm đánh giá toàn diện
+                    năng lực học tập của thí sinh và mở rộng cơ hội tiếp cận môi trường đào tạo đại học gắn với thực
+                    tiễn.</p>
+
+                <!-- Desktop Tab (≥ 768px) -->
+                <div class="adm-tab-wrap">
+                    <div class="adm-tab-bar" role="tablist">
+                        <button class="adm-tab-btn active" role="tab" data-adm-tab="1">Cách tính điểm</button>
+                        <button class="adm-tab-btn" role="tab" data-adm-tab="2">Đối tượng dự tuyển</button>
+                        <button class="adm-tab-btn" role="tab" data-adm-tab="3">Lưu ý</button>
+                    </div>
+
+                    <!-- Panel 1 -->
+                    <div class="adm-tab-panel active" data-adm-panel="1">
+                        <div class="adm-formula-card">
+                            <p class="adm-formula">ĐXT = ĐKH + ĐKK + ĐƯT</p>
+                            <p class="adm-formula-note">ĐXT (điểm xét tuyển) làm tròn đến hàng phần trăm sau khi đã cộng
+                                điểm khuyến khích và điểm ưu tiên.</p>
+                        </div>
+                        <div class="adm-formula-card">
+                            <p class="adm-formula">
+                                <span class="adm-formula-eq">
+                                    <span>ĐKH =</span>
+                                    <span class="adm-frac">
+                                        <span class="adm-frac-num">Điểm thi THPT + (ĐTB lớp 12) × 3</span>
+                                        <span class="adm-frac-den">2</span>
+                                    </span>
+                                </span>
+                            </p>
+                            <p class="adm-formula-note">ĐKH – điểm kết hợp; ĐTB lớp 12 – điểm trung bình lớp 12.</p>
+                        </div>
+                        <ul class="adm-dash-list">
+                            <li><strong>Điểm thi THPT quy định như sau:</strong>
+                                <ul style="list-style-type: disc; margin-left: 20px; margin-top: 5px;">
+                                    <li><strong>Tổ hợp Axx</strong> = Điểm Toán + Điểm môn 2 + Điểm môn 3; áp dụng đối
+                                        với thí sinh đăng ký vào tất cả các ngành.</li>
+                                    <li><strong>Tổ hợp Cxx</strong> = Điểm Văn + Điểm môn 2 + Điểm môn 3; áp dụng đối
+                                        với thí sinh đăng ký vào các ngành ngoài các ngành Công nghệ thông tin và Khoa
+                                        học máy tính.</li>
+                                </ul>
+                            </li>
+                            <li>Trường hợp thí sinh sử dụng chứng chỉ ngoại ngữ (để miễn thi tốt nghiệp môn ngoại ngữ)
+                                đăng ký xét tuyển đại học, điểm quy đổi kết quả chứng chỉ ngoại ngữ và điểm xét môn
+                                ngoại ngữ áp dụng theo PHỤ LỤC – ĐIỂM KHUYẾN KHÍCH VÀ ĐIỂM QUY ĐỔI CÁC CHỨNG CHỈ NGOẠI
+                                NGỮ.</li>
+                            <li>Điểm trung bình lớp 12 là điểm trung bình cộng của tất cả môn học được đánh giá bằng
+                                điểm số của năm học lớp 12.</li>
+                            <li><strong>ĐKK (điểm khuyến khích)</strong> dành cho các đối tượng thí sinh có chứng chỉ
+                                ngoại ngữ áp dụng theo PHỤ LỤC – ĐIỂM KHUYẾN KHÍCH VÀ ĐIỂM QUY ĐỔI CÁC CHỨNG CHỈ NGOẠI
+                                NGỮ.</li>
+                            <li><strong>ĐƯT (điểm ưu tiên)</strong> theo quy định tại Điều 7 Quy chế tuyển sinh của Bộ
+                                GDĐT.</li>
+                            <li>ĐKK và ĐƯT được xác định đảm bảo quy tắc ĐXT (điểm xét tuyển) không vượt quá 30 theo quy
+                                định tại điểm d khoản 2 Điều 6 và khoản 4 Điều 7 Quy chế tuyển sinh của Bộ GDĐT.</li>
+                            <li>Chứng chỉ ngoại ngữ chỉ được dùng cho quy đổi điểm môn ngoại ngữ trong tổ hợp xét tuyển
+                                hoặc sử dụng cho điểm khuyến khích.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Panel 2 -->
+                    <div class="adm-tab-panel" data-adm-panel="2">
+                        <ul class="adm-dash-list">
+                            <li>Người dự tuyển được xác định tại thời điểm xét tuyển trước khi công bố kết quả xét tuyển
+                                chính thức là người đã được công nhận tốt nghiệp THPT của Việt Nam hoặc của nước ngoài
+                                được công nhận trình độ tương đương với THPT của Việt Nam do các đơn vị chức năng xác
+                                định.</li>
+                        </ul>
+                        <p class="adm-note-text">Người dự tuyển phải đáp ứng các điều kiện về ngưỡng đầu vào theo quy
+                            định tại Điều 9 Quy chế tuyển sinh đại học, tuyển sinh cao đẳng ngành Giáo dục Mầm non ban
+                            hành kèm theo Thông tư số 06/2026/TT-BGDĐT ngày 15/02/2026 của Bộ trưởng Bộ Giáo dục và Đào
+                            tạo (sau đây gọi tắt là Quy chế tuyển sinh của Bộ GDĐT); Có đủ sức khoẻ để học tập theo quy
+                            định hiện hành; Có đủ thông tin cá nhân, hồ sơ dự tuyển theo quy định.</p>
+                    </div>
+
+                    <!-- Panel 3 -->
+                    <div class="adm-tab-panel" data-adm-panel="3">
+                        <ul class="adm-dash-list">
+                            <li>Trường thực hiện xét tuyển thẳng theo quy định của Bộ Giáo dục và Đào tạo.</li>
+                            <li>Ưu tiên xét tuyển các thí sinh sau đây nếu đáp ứng sàn chất lượng:
+                                <ul style="list-style-type: disc; margin-left: 20px; margin-top: 5px;">
+                                    <li>Thí sinh tốt nghiệp THPT nước ngoài, tốt nghiệp THPT các trường thuộc Tổ chức
+                                        Giáo dục FPT.</li>
+                                    <li>Thí sinh có các chứng chỉ hoặc văn bằng: Chứng chỉ APTECH HDSE/ADSE, ARENA
+                                        ADIM, SKILLKING, JETKING; Tốt nghiệp chương trình BTEC HND, Melbourne
+                                        Polytechnic, FUNiX Software Engineering, Cao đẳng FPT Polytechnic.</li>
+                                </ul>
+                            </li>
+                            <li>Các thí sinh đăng ký học ngành Luật phải đảm bảo điều kiện ngưỡng đầu vào theo quy định
+                                tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển sinh của Bộ
+                                GDĐT.</li>
+                            <li>Với thí sinh thi tốt nghiệp năm 2026 phải có điểm tổng điểm 03 môn thi kỳ thi tốt nghiệp
+                                THPT theo tổ hợp Axx hoặc Cxx đạt tối thiểu <strong>15,00 điểm</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Accordion (< 768px) -->
+                <div class="adm-accordion">
+                    <div class="adm-acc-item open">
+                        <button class="adm-acc-header">
+                            <span>Cách tính điểm xét tuyển</span>
+                            <svg class="adm-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <polyline points="3,5 8,11 13,5" />
+                            </svg>
+                        </button>
+                        <div class="adm-acc-body">
+                            <div class="adm-acc-inner">
+                                <div class="adm-formula-card">
+                                    <p class="adm-formula">ĐXT = ĐKH + ĐKK + ĐƯT</p>
+                                    <p class="adm-formula-note" style="margin-top: 8px;">ĐXT (điểm xét tuyển) làm tròn
+                                        đến hàng phần trăm sau khi đã cộng điểm khuyến khích và điểm ưu tiên.</p>
+                                </div>
+                                <div class="adm-formula-card">
+                                    <p class="adm-formula">
+                                        <span class="adm-formula-eq">
+                                            <span>ĐKH =</span>
+                                            <span class="adm-frac">
+                                                <span class="adm-frac-num">Điểm thi THPT + (ĐTB lớp 12) × 3</span>
+                                                <span class="adm-frac-den">2</span>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p class="adm-formula-note" style="margin-top: 8px;">ĐKH – điểm kết hợp; ĐTB lớp 12 –
+                                        điểm trung bình lớp 12.</p>
+                                </div>
+                                <ul class="adm-dash-list">
+                                    <li><strong>Điểm thi THPT quy định như sau:</strong>
+                                        <ul style="list-style-type: disc; margin-left: 20px; margin-top: 5px;">
+                                            <li><strong>Tổ hợp Axx</strong> = Điểm Toán + Điểm môn 2 + Điểm môn 3; áp
+                                                dụng đối với thí sinh đăng ký vào tất cả các ngành.</li>
+                                            <li><strong>Tổ hợp Cxx</strong> = Điểm Văn + Điểm môn 2 + Điểm môn 3; áp
+                                                dụng đối với thí sinh đăng ký vào các ngành ngoài các ngành Công nghệ
+                                                thông tin và Khoa học máy tính.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Trường hợp thí sinh sử dụng chứng chỉ ngoại ngữ (để miễn thi tốt nghiệp môn
+                                        ngoại ngữ) đăng ký xét tuyển đại học, điểm quy đổi kết quả chứng chỉ ngoại ngữ
+                                        và điểm xét môn ngoại ngữ áp dụng theo PHỤ LỤC – ĐIỂM KHUYẾN KHÍCH VÀ ĐIỂM QUY
+                                        ĐỔI CÁC CHỨNG CHỈ NGOẠI NGỮ.</li>
+                                    <li>Điểm trung bình lớp 12 là điểm trung bình cộng của tất cả môn học được đánh giá
+                                        bằng điểm số của năm học lớp 12.</li>
+                                    <li><strong>ĐKK (điểm khuyến khích)</strong> dành cho các đối tượng thí sinh có
+                                        chứng chỉ ngoại ngữ áp dụng theo PHỤ LỤC – ĐIỂM KHUYẾN KHÍCH VÀ ĐIỂM QUY ĐỔI CÁC
+                                        CHỨNG CHỈ NGOẠI NGỮ.</li>
+                                    <li><strong>ĐƯT (điểm ưu tiên)</strong> theo quy định tại Điều 7 Quy chế tuyển sinh
+                                        của Bộ GDĐT.</li>
+                                    <li>ĐKK và ĐƯT được xác định đảm bảo quy tắc ĐXT (điểm xét tuyển) không vượt quá 30
+                                        theo quy định tại điểm d khoản 2 Điều 6 và khoản 4 Điều 7 Quy chế tuyển sinh của
+                                        Bộ GDĐT.</li>
+                                    <li>Chứng chỉ ngoại ngữ chỉ được dùng cho quy đổi điểm môn ngoại ngữ trong tổ hợp
+                                        xét tuyển hoặc sử dụng cho điểm khuyến khích.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="adm-acc-item">
+                        <button class="adm-acc-header">
+                            <span>Đối tượng dự tuyển</span>
+                            <svg class="adm-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <polyline points="3,5 8,11 13,5" />
+                            </svg>
+                        </button>
+                        <div class="adm-acc-body">
+                            <div class="adm-acc-inner">
+                                <ul class="adm-dash-list">
+                                    <li>Người dự tuyển được xác định tại thời điểm xét tuyển trước khi công bố kết quả
+                                        xét tuyển chính thức là người đã được công nhận tốt nghiệp THPT của Việt Nam hoặc
+                                        của nước ngoài được công nhận trình độ tương đương với THPT của Việt Nam do các
+                                        đơn vị chức năng xác định.</li>
+                                </ul>
+                                <p class="adm-note-text">Người dự tuyển phải đáp ứng các điều kiện về ngưỡng đầu vào
+                                    theo quy định tại Điều 9 Quy chế tuyển sinh đại học, tuyển sinh cao đẳng ngành Giáo
+                                    dục Mầm non ban hành kèm theo Thông tư số 06/2026/TT-BGDĐT ngày 15/02/2026 của Bộ
+                                    trưởng Bộ Giáo dục và Đào tạo (sau đây gọi tắt là Quy chế tuyển sinh của Bộ GDĐT);
+                                    Có đủ sức khoẻ để học tập theo quy định hiện hành; Có đủ thông tin cá nhân, hồ sơ dự
+                                    tuyển theo quy định.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="adm-acc-item">
+                        <button class="adm-acc-header">
+                            <span>Lưu ý</span>
+                            <svg class="adm-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <polyline points="3,5 8,11 13,5" />
+                            </svg>
+                        </button>
+                        <div class="adm-acc-body">
+                            <div class="adm-acc-inner">
+                                <ul class="adm-dash-list">
+                                    <li>Trường thực hiện xét tuyển thẳng theo quy định của Bộ Giáo dục và Đào tạo.</li>
+                                    <li>Ưu tiên xét tuyển các thí sinh sau đây nếu đáp ứng sàn chất lượng:
+                                        <ul style="list-style-type: disc; margin-left: 20px; margin-top: 5px;">
+                                            <li>Thí sinh tốt nghiệp THPT nước ngoài, tốt nghiệp THPT các trường thuộc Tổ
+                                                chức Giáo dục FPT.</li>
+                                            <li>Thí sinh có các chứng chỉ hoặc văn bằng: Chứng chỉ APTECH HDSE/ADSE,
+                                                ARENA ADIM, SKILLKING, JETKING; Tốt nghiệp chương trình BTEC HND,
+                                                Melbourne Polytechnic, FUNiX Software Engineering, Cao đẳng FPT
+                                                Polytechnic.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Các thí sinh đăng ký học ngành Luật phải đảm bảo điều kiện ngưỡng đầu vào theo
+                                        quy định tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển
+                                        sinh của Bộ GDĐT.</li>
+                                    <li>Với thí sinh thi tốt nghiệp năm 2026 phải có điểm tổng điểm 03 môn thi kỳ thi
+                                        tốt nghiệp THPT theo tổ hợp Axx hoặc Cxx đạt tối thiểu <strong>15,00
+                                            điểm</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px; text-align: center;">
+                    <a href="#hero-form" class="btn btn-primary btn-pill btn-glow"
+                        style="background: var(--primary-orange); color: white; border: none; padding: 15px 40px; font-weight: bold; font-size: 1.1rem; border-radius: 50px;"
+                        aria-label="Đăng ký tư vấn">Đăng ký ngay</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Timeline Sub-section -->
+    <section data-wpr-lazyrender="1" class="adm-timeline-section" id="lich-trinh">
+        <div  class="container">
+            <!-- Connector line to parent section -->
+            <div  class="adm-timeline-connector">
+                <div class="connector-line"></div>
+                <div class="connector-dot"></div>
+            </div>
+
+            <div  class="adm-timeline-card">
+                <div class="adm-timeline-header">
+                    <div class="adm-timeline-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Lịch trình tuyển sinh dự kiến</h3>
+                </div>
+
+                <p class="adm-timeline-intro">Thời gian dự kiến tuyển sinh các đợt trong năm:</p>
+
+                <div class="adm-timeline-items">
+                    <div class="adm-timeline-item">
+                        <div class="timeline-marker">
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-line"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-badge">Đợt 1</span>
+                            <p>Theo lịch trình chung của Bộ Giáo dục và Đào tạo.</p>
+                        </div>
+                    </div>
+                    <div class="adm-timeline-item">
+                        <div class="timeline-marker">
+                            <span class="timeline-dot"></span>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-badge secondary">Các đợt bổ sung</span>
+                            <p>Căn cứ vào kết quả đợt tuyển sinh trước đó và sẽ được thông báo khi trường chưa tuyển đủ
+                                số lượng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="adm-timeline-footer">
+                    <button class="btn-phuluc" id="btnOpenPhuluc" aria-label="Xem phụ lục bảng tham chiếu">
+                        <i class="fas fa-file-alt"></i>
+                        <span>PHỤ LỤC – Bảng tham chiếu quy đổi chứng chỉ ngoại ngữ</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup: Phụ lục bảng tham chiếu -->
+    <div  class="phuluc-overlay" id="phulucOverlay">
+        <div  class="phuluc-modal">
+            <div  class="phuluc-modal-header">
+                <h3><i class="fas fa-file-alt"></i> PHỤ LỤC – ĐIỂM KHUYẾN KHÍCH VÀ ĐIỂM QUY ĐỔI CÁC CHỨNG CHỈ NGOẠI NGỮ
+                </h3>
+                <button class="phuluc-close" id="btnClosePhuluc" aria-label="Đóng">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div  class="phuluc-modal-body">
+                <div class="phuluc-table-wrap">
+                    <table class="phuluc-table">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Điểm<br>KK<br>thang<br>30</th>
+                                <th rowspan="2">Điểm<br>quy<br>đổi<br>thang<br>10</th>
+                                <th rowspan="2">IELTS<br>Academic</th>
+                                <th rowspan="2">VSTEP</th>
+                                <th rowspan="2">Aptis<br>Esol</th>
+                                <th rowspan="2">PEIC</th>
+                                <th rowspan="2">PTE<br>Academic</th>
+                                <th rowspan="2">Linguaskill</th>
+                                <th rowspan="2">Cambridge Assessment<br>English</th>
+                                <th rowspan="2">Cambridge<br>English<br>Tests</th>
+                                <th colspan="4">TOEIC</th>
+                                <th rowspan="2">TOEFL<br>IBT</th>
+                                <th rowspan="2">TOEFL<br>ITP</th>
+                                <th rowspan="2">JNPT</th>
+                                <th rowspan="2">DELF/<br>DALF</th>
+                                <th rowspan="2">TCF</th>
+                                <th colspan="2">HSK+HSKK</th>
+                                <th rowspan="2">TOPIK</th>
+                            </tr>
+                            <tr>
+                                <th>Nghe</th>
+                                <th>Nói</th>
+                                <th>Đọc</th>
+                                <th>Viết</th>
+                                <th>HSK</th>
+                                <th>HSKK</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0,3</td>
+                                <td>8,0</td>
+                                <td>5.0</td>
+                                <td>5.5</td>
+                                <td>80-120</td>
+                                <td>Level 2</td>
+                                <td>31-38</td>
+                                <td>140-159</td>
+                                <td>B1 Preliminary/<br>B1 Business Preliminary</td>
+                                <td>PET<br>(140-159)</td>
+                                <td>275-395</td>
+                                <td>125-150</td>
+                                <td>275-380</td>
+                                <td>120-140</td>
+                                <td>30-45</td>
+                                <td>450-499</td>
+                                <td>N4<br>(145-180)</td>
+                                <td>DELF A2<br>(50-70)</td>
+                                <td>200-249</td>
+                                <td>HSK3<br>(241-300)</td>
+                                <td>HSKK Sơ cấp<br>(60-100)</td>
+                                <td>TOPIK 3<br>(135-149)</td>
+                            </tr>
+                            <tr>
+                                <td>0,6</td>
+                                <td>8,5</td>
+                                <td>5.5</td>
+                                <td>6.0-6.5</td>
+                                <td>121-134</td>
+                                <td>Level 3<br>(Pass)</td>
+                                <td>39-46</td>
+                                <td>160-166</td>
+                                <td>B2 First/B2 Business Vantage<br>(160-172/Pass at Grade C)</td>
+                                <td>FCE<br>(160-166)</td>
+                                <td>400-428</td>
+                                <td>160-163</td>
+                                <td>385-406</td>
+                                <td>150-156</td>
+                                <td>46-61</td>
+                                <td>500-541</td>
+                                <td>N3<br>(95-120)</td>
+                                <td>DELF A2<br>(71-100)</td>
+                                <td>250-299</td>
+                                <td>HSK 4<br>(180-210)</td>
+                                <td>HSKK Trung cấp<br>(60-100)</td>
+                                <td>TOPIK 4<br>(150-162)</td>
+                            </tr>
+                            <tr>
+                                <td>0,9</td>
+                                <td>9,0</td>
+                                <td>6.0</td>
+                                <td>7.0-7.5</td>
+                                <td>135-148</td>
+                                <td>Level 3<br>(Pass with Merit)</td>
+                                <td>47-54</td>
+                                <td>167-173</td>
+                                <td>B2 First/B2 Business Vantage<br>(173-179/Pass at Grade B)</td>
+                                <td>FCE<br>(167-173)</td>
+                                <td>429-457</td>
+                                <td>164-167</td>
+                                <td>407-428</td>
+                                <td>157-163</td>
+                                <td>62-77</td>
+                                <td>542-583</td>
+                                <td>N3<br>(121-149)</td>
+                                <td>DELF B1<br>(50-70)</td>
+                                <td>300-349</td>
+                                <td>HSK 4<br>(211-240)</td>
+                                <td>HSKK Trung cấp<br>(60-100)</td>
+                                <td>TOPIK 4<br>(163-175)</td>
+                            </tr>
+                            <tr>
+                                <td>1,2</td>
+                                <td>9,5</td>
+                                <td>6.5</td>
+                                <td>8.0</td>
+                                <td>149-160</td>
+                                <td>Level 3<br>(Pass with Distinction)</td>
+                                <td>55-62</td>
+                                <td>174-179</td>
+                                <td>B2 First/B2 Business Vantage<br>(180-190/Pass at Grade A)</td>
+                                <td>FCE<br>(174-179)</td>
+                                <td>458-485</td>
+                                <td>168-170</td>
+                                <td>429-450</td>
+                                <td>164-170</td>
+                                <td>78-93</td>
+                                <td>584-626</td>
+                                <td>N3<br>(150-180)</td>
+                                <td>DELF B1<br>(71-100)</td>
+                                <td>350-399</td>
+                                <td>HSK 4<br>(241-300)</td>
+                                <td>HSKK Trung cấp<br>(60-100)</td>
+                                <td>TOPIK 4<br>(176-189)</td>
+                            </tr>
+                            <tr>
+                                <td>1,5</td>
+                                <td>10</td>
+                                <td>7.0-9.0</td>
+                                <td>8.5-10</td>
+                                <td>161-180</td>
+                                <td>Level 4-Level 5<br>(Pass)</td>
+                                <td>63-90</td>
+                                <td>180-210</td>
+                                <td>C1 Advanced/<br>C1 Business Higher<br>(180-210) hoặc<br>C2 Proficiency (200-230)
+                                </td>
+                                <td>CAE<br>(180-199)<br>hoặc CPE<br>(200-230)</td>
+                                <td>490-495</td>
+                                <td>180-200</td>
+                                <td>455-495</td>
+                                <td>180-200</td>
+                                <td>91-120</td>
+                                <td>627-677</td>
+                                <td>N2<br>(90-180)<br>N1<br>(100-180)</td>
+                                <td>DELF B2<br>(50-100)<br>DALF C1<br>(50-100)<br>DALF C2<br>(50-100)</td>
+                                <td>400-699</td>
+                                <td>HSK 5<br>(180-300)<br>HSK 6<br>(180-300)</td>
+                                <td>HSKK Cao cấp<br>(60-100)</td>
+                                <td>TOPIK 5<br>(190-229)<br>TOPIK 6<br>(230-300)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-top: 15px; padding: 10px 0;">
+                    <p style="font-size: 0.95rem; color: #333; margin: 0; line-height: 1.5;">Ghi chú: Đối với chứng chỉ
+                        TOEIC, điểm khuyến khích và điểm quy đổi được tính là trung bình cộng của điểm khuyến khích và
+                        điểm quy đổi cho 4 kỹ năng Nghe, Nói, Đọc, Viết</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Policy Section -->
+    <section data-wpr-lazyrender="1" class="policy-split policy-bg" id="chinh-sach">
+        <div  class="container" style="text-align: center; margin-bottom: 50px;">
+            <h2 class="section-title" style="color: var(--white); margin-bottom: 20px;">Chính sách ưu tiên & hỗ trợ tài
+                chính</h2>
+        </div>
+
+        <div  class="split-container reverse policy-container-stretch">
+            <div  class="split-image policy-img-box">
+                <picture id="tab1-img" class="policy-tab-img active">
+                    <source media="(max-width: 768px)"
+                        data-lazy-srcset="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/khuon-vien-truong-dai-hoc-fpt-20260325071557-6wwts.webp">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20533'%3E%3C/svg%3E" alt="Khuôn viên FPT"
+                        width="800" height="533"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/khuon-vien-truong-dai-hoc-fpt-20260325071557-6wwts.webp"><noscript><img src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/khuon-vien-truong-dai-hoc-fpt-20260325071557-6wwts.webp" alt="Khuôn viên FPT"
+                        width="800" height="533" loading="lazy"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);"></noscript>
+                </picture>
+                <picture id="tab2-img" class="policy-tab-img">
+                    <source media="(max-width: 768px)" data-lazy-srcset="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/students.webp">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20900%20600'%3E%3C/svg%3E" alt="Sinh viên Trường Đại học FPT" width="900" height="600"
+                       
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/students.webp"><noscript><img src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/students.webp" alt="Sinh viên Trường Đại học FPT" width="900" height="600"
+                        loading="lazy"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);"></noscript>
+                </picture>
+                <picture id="tab3-img" class="policy-tab-img">
+                    <source media="(max-width: 768px)" data-lazy-srcset="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/hotro-khoinghiep.webp">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20900%20600'%3E%3C/svg%3E" alt="Hỗ trợ khởi nghiệp" width="900" height="600"
+                       
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/hotro-khoinghiep.webp"><noscript><img src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/hotro-khoinghiep.webp" alt="Hỗ trợ khởi nghiệp" width="900" height="600"
+                        loading="lazy"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);"></noscript>
+                </picture>
+            </div>
+            <div  class="split-content policy-content-box">
+
+                <div class="policy-card-wrapper">
+                    <!-- Policy Tabs -->
+                    <div class="policy-tabs">
+                        <button class="policy-tab-btn active" data-target="tab1">Chính sách ưu tiên</button>
+                        <button class="policy-tab-btn" data-target="tab2">Chính sách ưu đãi học phí</button>
+                        <button class="policy-tab-btn" data-target="tab3" style="white-space: normal;">Chính sách Hỗ trợ
+                            học tập – nghiên cứu – hội nhập – khởi nghiệp</button>
+                    </div>
+
+                    <div class="policy-card">
+                        <div id="tab1" class="policy-tab-content active">
+                            <h3 class="policy-card-title">Điểm ưu tiên đối tượng và khu vực</h3>
+                            <p>Điểm ưu tiên đối tượng và khu vực thực hiện theo quy định của Quy chế tuyển sinh của Bộ
+                                GDĐT.</p>
+                            <p style="margin-top: 16px;">Thí sinh là sinh viên thế hệ 1<strong>*</strong> được cộng
+                                <strong>1,5 điểm</strong> vào Điểm xét tuyển.
+                            </p>
+                            <p style="margin-top: 16px; font-size: 0.9rem; color: #666; line-height: 1.7;">
+                                <strong>*</strong> Sinh viên thế hệ 1 (First-Generation Student): là người đầu tiên
+                                trong gia đình (gồm phụ huynh hoặc người bảo trợ và tất cả anh chị em ruột) học đại học.
+                                Khi đăng ký xét tuyển, sinh viên thế hệ 1 cần nộp Đơn đăng ký ưu tiên xét tuyển có xác
+                                nhận của nơi làm việc của bố mẹ hoặc địa phương theo mẫu của Trường Đại học FPT.
+                            </p>
+                        </div>
+
+                        <!-- Tab 2 -->
+                        <div id="tab2" class="policy-tab-content">
+                            <h3 class="policy-card-title">Chính sách ưu đãi học phí</h3>
+                            <p>Từ năm 2026, Trường Đại học FPT triển khai các chính sách ưu đãi học phí nhằm hỗ trợ
+                                người học và góp phần phát triển nguồn nhân lực chất lượng cao cho các vùng kinh tế
+                                trọng điểm của đất nước:</p>
+                            <ul>
+                                <li>- Ưu đãi 30% học phí cho tất cả thí sinh thuộc Khu vực 1 năm 2026, hỗ trợ các em có
+                                    điều kiện kinh tế khó khăn tiếp cận môi trường giáo dục tiên tiến.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Tab 3 -->
+                        <div id="tab3" class="policy-tab-content">
+                            <h3 class="policy-card-title">Chính sách Hỗ trợ học tập – nghiên cứu – hội nhập – khởi
+                                nghiệp</h3>
+                            <p>Bên cạnh ưu đãi học phí, Trường Đại học FPT triển khai hệ thống chính sách hỗ trợ toàn
+                                diện nhằm khuyến khích sinh viên phát triển năng lực và trải nghiệm trong suốt quá trình
+                                học tập:</p>
+                            <ul>
+                                <li style="margin-bottom: 8px;">• <strong>Khen thưởng học tập và rèn luyện:</strong>
+                                    Sinh viên có kết quả học tập và rèn luyện tốt được khen thưởng theo từng học kỳ.
+                                </li>
+                                <li style="margin-bottom: 8px;">• <strong>Cơ hội học tập quốc tế:</strong> 100% sinh
+                                    viên FPTU có cơ hội tham gia một học kỳ học tập tại nước ngoài, mở rộng trải nghiệm
+                                    và năng lực hội nhập toàn cầu.</li>
+                                <li style="margin-bottom: 8px;">• <strong>Khuyến khích nghiên cứu khoa học:</strong>
+                                    Sinh viên được hỗ trợ 30 triệu đồng/năm để tham dự các hội nghị khoa học quốc tế;
+                                    các công bố khoa học chất lượng cao được thưởng lên tới 100 triệu đồng/bài.</li>
+                                <li style="margin-bottom: 8px;">• <strong>Hỗ trợ khởi nghiệp:</strong> Các dự án khởi
+                                    nghiệp của sinh viên được tài trợ 50 triệu đồng/dự án, tạo điều kiện biến ý tưởng
+                                    sáng tạo thành sản phẩm và giá trị thực tiễn.</li>
+                            </ul>
+                            <p style="margin-top: 16px;">Thông qua hệ thống chính sách tài chính và hỗ trợ phát triển
+                                toàn diện này, Trường Đại học FPT không chỉ giảm gánh nặng chi phí học tập, mà còn đồng
+                                hành cùng sinh viên trên hành trình tri thức, đầu tư trực tiếp vào năng lực học tập,
+                                nghiên cứu, hội nhập quốc tế và khởi nghiệp – để mỗi sinh viên có thể tự tin kiến tạo
+                                tương lai của chính mình.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Học Phí - Tabbed by Khối Ngành -->
+    <section  class="tuition-section" id="hoc-phi">
+        <div  class="container">
+            <div  class="tuition-header">
+                <span class="tuition-badge"><i class="fas fa-graduation-cap"></i> Khóa K22 – Nhập học 2026</span>
+                <h2 class="section-title"
+                    style="text-transform: uppercase; color: var(--primary-orange); margin-bottom: 8px;">HỌC PHÍ TRƯỜNG
+                    ĐẠI HỌC FPT</h2>
+                <p class="tuition-campus">Tại campus Hà Nội</p>
+                <p class="tuition-note">*Học phí áp dụng cho tân sinh viên khóa K22 (nhập học năm 2026)<br>*Học phí dưới
+                    đây là học phí mỗi học kỳ</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div  class="tuition-tabs" id="tuitionTabs">
+                <button class="tuition-tab active" data-tab="cntt"><i class="fas fa-laptop-code"></i> <span>Công nghệ
+                        thông tin</span></button>
+                <button class="tuition-tab" data-tab="truyenthong"><i class="fas fa-bullhorn"></i> <span>CN Truyền
+                        thông</span></button>
+                <button class="tuition-tab" data-tab="qtkd"><i class="fas fa-chart-line"></i> <span>Quản trị Kinh
+                        doanh</span></button>
+                <button class="tuition-tab" data-tab="luat"><i class="fas fa-balance-scale"></i>
+                    <span>Luật</span></button>
+                <button class="tuition-tab" data-tab="ngonngu"><i class="fas fa-language"></i> <span>Các ngành Ngôn
+                        ngữ</span></button>
+                <button class="tuition-tab" data-tab="khmt"><i class="fas fa-brain"></i> <span>Khoa học Máy
+                        tính</span></button>
+            </div>
+
+            <!-- Tab Content Panels -->
+            <div  class="tuition-panels">
+
+                <!-- CNTT -->
+                <div class="tuition-panel active" id="panel-cntt">
+                    <div class="tuition-box">
+                        <div class="tuition-box-header">
+                            <span class="tuition-box-label">NGÀNH CÔNG NGHỆ THÔNG TIN</span>
+                        </div>
+                        <div class="tuition-box-body">
+
+                            <div class="tuition-fee-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Học kỳ 1 – Học kỳ 3</th>
+                                            <th>Học kỳ 4 – Học kỳ 6</th>
+                                            <th>Học kỳ 7 – Học kỳ 9</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>31.600.000</td>
+                                            <td>33.600.000</td>
+                                            <td>35.800.000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CN Truyền thông -->
+                <div class="tuition-panel" id="panel-truyenthong">
+                    <div class="tuition-box">
+                        <div class="tuition-box-header">
+                            <span class="tuition-box-label">NGÀNH CÔNG NGHỆ TRUYỀN THÔNG</span>
+                        </div>
+                        <div class="tuition-box-body">
+
+                            <div class="tuition-fee-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Học kỳ 1 – Học kỳ 3</th>
+                                            <th>Học kỳ 4 – Học kỳ 6</th>
+                                            <th>Học kỳ 7 – Học kỳ 9</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>31.600.000</td>
+                                            <td>33.600.000</td>
+                                            <td>35.800.000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QTKD -->
+                <div class="tuition-panel" id="panel-qtkd">
+                    <div class="tuition-box">
+                        <div class="tuition-box-header">
+                            <span class="tuition-box-label">NGÀNH QUẢN TRỊ KINH DOANH</span>
+                        </div>
+                        <div class="tuition-box-body">
+
+                            <div class="tuition-fee-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Học kỳ 1 – Học kỳ 3</th>
+                                            <th>Học kỳ 4 – Học kỳ 6</th>
+                                            <th>Học kỳ 7 – Học kỳ 9</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>31.600.000</td>
+                                            <td>33.600.000</td>
+                                            <td>35.800.000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luật -->
+                <div class="tuition-panel" id="panel-luat">
+                    <div class="tuition-box">
+                        <div class="tuition-box-header">
+                            <span class="tuition-box-label">NGÀNH LUẬT</span>
+                        </div>
+                        <div class="tuition-box-body">
+
+                            <div class="tuition-fee-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Học kỳ 1 – Học kỳ 3</th>
+                                            <th>Học kỳ 4 – Học kỳ 6</th>
+                                            <th>Học kỳ 7 – Học kỳ 9</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>22.120.000</td>
+                                            <td>23.520.000</td>
+                                            <td>25.060.000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ngôn ngữ -->
+                <div class="tuition-panel" id="panel-ngonngu">
+                    <div class="tuition-box">
+                        <div class="tuition-box-header">
+                            <span class="tuition-box-label">CÁC NGÀNH NGÔN NGỮ</span>
+                        </div>
+                        <div class="tuition-box-body">
+
+                            <div class="tuition-fee-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Học kỳ 1 – Học kỳ 3</th>
+                                            <th>Học kỳ 4 – Học kỳ 6</th>
+                                            <th>Học kỳ 7 – Học kỳ 9</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>22.120.000</td>
+                                            <td>23.520.000</td>
+                                            <td>25.060.000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KHMT -->
+                <div class="tuition-panel" id="panel-khmt">
+                    <div class="tuition-box">
+                        <div class="tuition-box-header">
+                            <span class="tuition-box-label">NGÀNH KHOA HỌC MÁY TÍNH</span>
+                        </div>
+                        <div class="tuition-box-body">
+
+                            <div class="tuition-fee-table tuition-fee-contact">
+                                <p class="tuition-contact-text"><i class="fas fa-info-circle"></i> Liên hệ tư vấn để
+                                    biết thêm chi tiết học phí chương trình Cử nhân tài năng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer notes -->
+            <div  class="tuition-footer-notes">
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Sinh viên mới nhập học sẽ nộp <strong>học phí kỳ định
+                            hướng</strong>: KV1: 9.170.000đ, các khu vực khác: 13.100.000đ</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Ưu đãi 30% học phí</strong> cho tất cả thí sinh
+                        thuộc Khu vực 1, hỗ trợ các em có điều kiện kinh tế khó khăn tiếp cận môi trường giáo dục tiên
+                        tiến.</li>
+                    <li><i class="fas fa-check-circle"></i> Sinh viên có chứng chỉ <strong>tiếng Anh IELTS 6.0 trở lên
+                            (hoặc tương đương)</strong> sẽ vào thẳng học kỳ chuyên ngành. Có tối đa 6 mức tiếng Anh, học
+                        phí KV1: 9.170.000đ/mức, các KV khác: 13.100.000đ/mức.</li>
+                    <li><i class="fas fa-check-circle"></i> Từ HK4 sẽ tăng 6,3% so với HK1, HK7 sẽ tăng 6,5% so với HK4.
+                    </li>
+                </ul>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#hero-form" class="btn btn-primary btn-pill btn-glow"
+                        style="background: var(--primary-orange); color: white; border: none; padding: 15px 40px; font-weight: bold; font-size: 1.1rem; border-radius: 50px;">Đăng
+                        ký tư vấn học phí</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section  class="faq-section" id="faq">
+        <div  class="container">
+            <h2 class="section-title">Câu Hỏi Thường Gặp</h2>
+            <p class="faq-subtitle">Giải đáp nhanh những thắc mắc phổ biến nhất về tuyển sinh Trường Đại học FPT cơ sở
+                Hà Nội</p>
+            <div  class="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-number">01</span>
+                        <h4 class="faq-title">Học phí tiếng Anh dự bị tại Trường Đại học FPT cơ sở Hà Nội bao nhiêu?
+                        </h4>
+                        <div class="faq-icon-wrap"><i class="fas fa-plus faq-icon"></i></div>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-divider"></div>
+                        <p>Tại Trường Đại học FPT cơ sở Hà Nội, sinh viên sẽ được xếp lớp theo trình độ tiếng Anh dựa
+                            trên kết quả bài kiểm tra đầu vào, nhằm xây dựng lộ trình học tập phù hợp với từng cá nhân.
+                        </p>
+                        <p>Chương trình này bao gồm tối đa 6 mức học, mỗi mức kéo dài 2 tháng. Học phí cho mỗi mức là:
+                            13.100.000đ/mức</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-number">02</span>
+                        <h4 class="faq-title">Trường đại học FPT cơ sở có đào tạo ngành học nào?</h4>
+                        <div class="faq-icon-wrap"><i class="fas fa-plus faq-icon"></i></div>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-divider"></div>
+                        <p>Trường Đại học FPT cơ sở Hà Nội đào tạo 37 chuyên ngành. Cụ thể như sau:</p>
+                        <p>– CÔNG NGHỆ THÔNG TIN, bao gồm các chương trình đào tạo: Trí tuệ nhân tạo, Công nghệ thông
+                            tin, Robot và Trí tuệ nhân tạo (Định hướng UAV và Humanoid), Khoa học dữ liệu ứng dụng, An
+                            toàn thông tin, Công nghệ ô tô số, Hệ thống thông tin, Kỹ
+                            thuật phần mềm, Thiết kế đồ họa và mỹ thuật số, Vi mạch bán dẫn.</p>
+                        <p>– QUẢN TRỊ KINH DOANH, bao gồm các chương trình đào tạo: Marketing, Kinh doanh quốc tế, Quản
+                            trị kinh doanh, Quản trị giải trí và sự kiện, Quản trị trải nghiệm khách hàng, Quản trị thu
+                            mua, Logistics & Quản lý chuỗi cung ứng toàn cầu, Công nghệ tài chính (Fintech), Tài chính
+                            doanh nghiệp, Tài chính thông minh, Tài chính ngân hàng, Thương mại điện tử, Phân tích kinh
+                            doanh (Business Analytics).</p>
+                        <p>– CÔNG NGHỆ TRUYỀN THÔNG, bao gồm các chương trình đào tạo: Quan hệ công chúng, Truyền thông
+                            đa phương tiện, Truyền thông thương hiệu, Truyền thông Marketing tích hợp.</p>
+                        <p>– LUẬT, bao gồm các chương trình đào tạo: Luật, Luật kinh tế.</p>
+                        <p>– NGÔN NGỮ, bao gồm các chương trình đào tạo: Ngôn ngữ Anh, Tiếng Anh thương mại, Ngôn ngữ
+                            Hàn Quốc, Tiếng Hàn thương mại, Ngôn ngữ Trung Quốc, Tiếng Trung thương mại.</p>
+                        <p>– Cử nhân tài năng KHOA HỌC MÁY TÍNH, bao gồm các chương trình đào tạo: Trí tuệ nhân tạo và
+                            Khoa học dữ liệu, An ninh mạng và an toàn số.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-number">03</span>
+                        <h4 class="faq-title">Trường có ký túc xá không?</h4>
+                        <div class="faq-icon-wrap"><i class="fas fa-plus faq-icon"></i></div>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-divider"></div>
+                        <p>Trường Đại học FPT cơ sở Hà Nội có ký túc xá nằm ngay trong khuôn viên nhà trường, thuận tiện
+                            cho sinh viên trong sinh hoạt và học tập.</p>
+                        <p>Ký túc xá gồm các hạng phòng: phòng 3, phòng 4 và phòng 6. Tất cả các hạng phòng đều được
+                            trang bị điều hòa, đáp ứng nhu cầu sinh hoạt cơ bản của sinh viên.</p>
+                        <p>Bên cạnh ký túc xá, khu vực xung quanh trường có hệ thống nhà trọ đa dạng, giúp sinh viên dễ
+                            dàng lựa chọn chỗ ở phù hợp với nhu cầu và điều kiện cá nhân.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-number">04</span>
+                        <h4 class="faq-title">Cơ hội việc làm của sinh viên Trường Đại học FPT</h4>
+                        <div class="faq-icon-wrap"><i class="fas fa-plus faq-icon"></i></div>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-divider"></div>
+                        <p>Trường Đại học FPT đào tạo theo 3 trụ cột chiến lược: Công nghệ – Khởi nghiệp – Toàn cầu hóa,
+                            hướng tới phát triển nguồn nhân lực chất lượng cao, có năng lực hội nhập quốc tế và thích
+                            ứng bền vững với thị trường lao động.</p>
+                        <p>Nhà trường sở hữu mạng lưới hơn 300 đối tác doanh nghiệp tại hơn 30 quốc gia, gắn đào tạo với
+                            thực tiễn, công nghệ hiện đại và nhu cầu nhân lực, giúp sinh viên định hướng nghề nghiệp sớm
+                            và tích lũy kinh nghiệm ngay trong quá trình học.</p>
+                        <p>100% sinh viên thực tập tại doanh nghiệp từ năm thứ 3, đồng thời được trang bị kỹ năng nghề
+                            nghiệp, kỹ năng viết CV, xây dựng thương hiệu cá nhân và kết nối mạng lưới cựu sinh viên FPT
+                            toàn cầu.</p>
+                        <p>Sau khi tốt nghiệp, sinh viên Trường Đại học FPT có tỷ lệ việc làm cao, mức thu nhập hấp dẫn;
+                            19% cựu sinh viên đang làm việc tại các quốc gia phát triển và 100% sinh viên có cơ hội làm
+                            việc tại Tập đoàn FPT cùng nhiều doanh nghiệp lớn trong và ngoài nước.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-number">05</span>
+                        <h4 class="faq-title">Điểm chuẩn trúng tuyển năm 2026 là bao nhiêu và cách tính điểm xét tuyển
+                            như thế nào?</h4>
+                        <div class="faq-icon-wrap"><i class="fas fa-plus faq-icon"></i></div>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-divider"></div>
+                        <p><strong>Điểm chuẩn trúng tuyển</strong> hệ đại học chính quy năm 2026 của Trường Đại học FPT
+                            là <strong>18 điểm</strong> đối với các ngành đào tạo; riêng ngành Khoa học máy tính là
+                            <strong>21 điểm</strong>. Bên cạnh đó, thí sinh thi tốt nghiệp năm 2026 cần đạt tối thiểu
+                            <strong>15,00 điểm</strong> tổng 3 môn thi tốt nghiệp THPT theo tổ hợp Axx hoặc Cxx theo Quy
+                            chế tuyển sinh của Bộ GD&amp;ĐT.</p>
+                        <p>Nhà trường <strong>tiếp tục nhận hồ sơ xét tuyển bổ sung</strong> ở một số ngành còn chỉ tiêu.
+                            Thí sinh đăng ký xét tuyển và làm thủ tục nhập học trực tuyến từ <strong>8h00 ngày
+                                10/08/2026</strong>.</p>
+                        <p><strong>Cách tính điểm xét tuyển:</strong> ĐXT = ĐKH + ĐKK + ĐƯT. Trong đó, ĐKH (điểm kết hợp)
+                            = (Điểm thi THPT + (Điểm TB lớp 12) × 3) / 2.</p>
+                        <p>Điểm thi THPT tính theo: Tổ hợp Axx = Toán + môn 2 + môn 3 (áp dụng cho tất cả các ngành); Tổ
+                            hợp Cxx = Văn + môn 2 + môn 3 (áp dụng cho các ngành ngoài Công nghệ thông tin và Khoa học máy
+                            tính). ĐKK là điểm khuyến khích (dành cho thí sinh có chứng chỉ ngoại ngữ), ĐƯT là điểm ưu
+                            tiên theo Điều 7 Quy chế tuyển sinh của Bộ GD&amp;ĐT. ĐXT được làm tròn đến hàng phần trăm và
+                            không vượt quá 30.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer data-wpr-lazyrender="1" class="footer">
+        <div  class="container footer-grid">
+            <div  class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2060'%3E%3C/svg%3E" alt="Trường Đại học FPT cơ sở Hà Nội" width="200"
+                        height="60"
+                        style="height: 60px; width: auto; object-fit: contain; filter: brightness(0) invert(1);" data-lazy-src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/logo-truong-dai-hoc-fpt.png"><noscript><img src="https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/pic/logo-truong-dai-hoc-fpt.png" alt="Trường Đại học FPT cơ sở Hà Nội" width="200"
+                        height="60"
+                        style="height: 60px; width: auto; object-fit: contain; filter: brightness(0) invert(1);"></noscript>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/DaihocFPTHaNoi" target="_blank" rel="noopener"
+                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@fptuniversity" target="_blank" rel="noopener"
+                        aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@daihocfpthanoi7750" target="_blank" rel="noopener"
+                        aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/daihoc_fpt/" target="_blank" rel="noopener"
+                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://zalo.me/328357630187151219" target="_blank" rel="noopener" aria-label="Zalo">
+                        <svg viewBox="0 0 48 18" width="32" height="12" fill="currentColor" aria-hidden="true"
+                            role="img">
+                            <text x="24" y="9" text-anchor="middle" dominant-baseline="central"
+                                font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700"
+                                letter-spacing="-1">Zalo</text>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div  class="footer-col">
+                <h4>Trường Đại học FPT - Cơ sở Hà Nội</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29
+                        Đại lộ Thăng Long, Xã Hòa Lạc, TP. Hà Nội</li>
+                    <li><i class="fas fa-phone-alt"></i> Hotline: (024) 7300 5588</li>
+                    <li><i class="fas fa-envelope"></i> Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c38393529223f252224242d2223250c2a3c3862292839623a22">[email&#160;protected]</a></li>
+                    <li><i class="fas fa-globe"></i> Website: https://daihoc.fpt.edu.vn/hn/</li>
+                </ul>
+            </div>
+
+            <div  class="footer-col">
+                <h4>Liên kết nhanh</h4>
+                <ul class="quick-links">
+                    <li><a href="#chuong-trinh">Chương trình đào tạo</a></li>
+                    <li><a href="#phuong-thuc">Tuyển sinh</a></li>
+                    <li><a href="#chinh-sach">Ưu đãi tài chính</a></li>
+                    <li><a href="#hoc-phi">Học phí</a></li>
+                    <li><a href="#faq">Hỏi đáp (FAQ)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div  class="footer-bottom">
+            <div  class="container">
+                <p>&copy; 2026 Trường Đại học FPT cơ sở Hà Nội. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh-v3/script.js?ver=1786606832" defer></script>
+
+    <!--Start of Fchat.vn-->
+    <script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/assets/embed/webchat.js?ver=1786606832"
+        async="async"></script>
+    <!--End of Fchat.vn-->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollegeOrUniversity",
+          "@id": "https://daihoc.fpt.edu.vn/hn/#college",
+          "name": "Trường Đại học FPT - Cơ sở Hà Nội",
+          "url": "https://daihoc.fpt.edu.vn/hn/",
+          "telephone": "+84 24 7300 5588",
+          "logo": "https://daihoc.fpt.edu.vn/wp-content/themes/fpt-university/template-parts/hn-tuyen-sinh/pic/logo-truong-dai-hoc-fpt.png",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Khu Giáo dục và Đào tạo - Khu Công nghệ cao Hòa Lạc - Km29 Đại lộ Thăng Long",
+            "addressLocality": "Xã Hòa Lạc",
+            "addressRegion": "Hà Nội",
+            "addressCountry": "VN"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://daihoc.fpt.edu.vn/hn/tuyen-sinh/#webpage",
+          "url": "https://daihoc.fpt.edu.vn/hn/tuyen-sinh/",
+          "name": "Tuyển sinh - Trường Đại học FPT cơ sở Hà Nội",
+          "about": { "@id": "https://daihoc.fpt.edu.vn/hn/#college" },
+          "mainEntity": [
+            { "@id": "https://daihoc.fpt.edu.vn/hn/tuyen-sinh/#program-list" },
+            { "@id": "https://daihoc.fpt.edu.vn/hn/tuyen-sinh/#faq" }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://daihoc.fpt.edu.vn/hn/tuyen-sinh/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://daihoc.fpt.edu.vn/hn/" },
+            { "@type": "ListItem", "position": 2, "name": "Tuyển sinh", "item": "https://daihoc.fpt.edu.vn/hn/tuyen-sinh/" }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://daihoc.fpt.edu.vn/hn/tuyen-sinh/#program-list",
+          "name": "Danh sách ngành và chuyên ngành đào tạo tại Trường Đại học FPT cơ sở Hà Nội",
+          "itemListOrder": "https://schema.org/ItemListUnordered",
+          "numberOfItems": 37,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Công nghệ thông tin" },
+            { "@type": "ListItem", "position": 2, "name": "Kỹ thuật phần mềm" },
+            { "@type": "ListItem", "position": 3, "name": "Trí tuệ nhân tạo" },
+            { "@type": "ListItem", "position": 4, "name": "Khoa học dữ liệu ứng dụng" },
+            { "@type": "ListItem", "position": 5, "name": "An toàn thông tin" },
+            { "@type": "ListItem", "position": 6, "name": "Vi mạch bán dẫn" },
+            { "@type": "ListItem", "position": 7, "name": "Công nghệ ô tô số" },
+            { "@type": "ListItem", "position": 8, "name": "Hệ thống thông tin" },
+            { "@type": "ListItem", "position": 9, "name": "Thiết kế đồ hoạ và mỹ thuật số" },
+            { "@type": "ListItem", "position": 10, "name": "Truyền thông đa phương tiện" },
+            { "@type": "ListItem", "position": 11, "name": "Quan hệ công chúng" },
+            { "@type": "ListItem", "position": 12, "name": "Truyền thông Marketing tích hợp" },
+            { "@type": "ListItem", "position": 13, "name": "Truyền thông thương hiệu" },
+            { "@type": "ListItem", "position": 14, "name": "Ngôn ngữ Anh" },
+            { "@type": "ListItem", "position": 15, "name": "Tiếng Anh thương mại" },
+            { "@type": "ListItem", "position": 16, "name": "Ngôn ngữ Hàn Quốc" },
+            { "@type": "ListItem", "position": 17, "name": "Tiếng Hàn thương mại" },
+            { "@type": "ListItem", "position": 18, "name": "Ngôn ngữ Trung Quốc" },
+            { "@type": "ListItem", "position": 19, "name": "Tiếng Trung thương mại" },
+            { "@type": "ListItem", "position": 20, "name": "Luật" },
+            { "@type": "ListItem", "position": 21, "name": "Luật kinh tế" },
+            { "@type": "ListItem", "position": 22, "name": "Marketing" },
+            { "@type": "ListItem", "position": 23, "name": "Kinh doanh quốc tế" },
+            { "@type": "ListItem", "position": 24, "name": "Thương mại điện tử" },
+            { "@type": "ListItem", "position": 25, "name": "Quản trị kinh doanh" },
+            { "@type": "ListItem", "position": 26, "name": "Quản trị giải trí và sự kiện" },
+            { "@type": "ListItem", "position": 27, "name": "Quản trị trải nghiệm khách hàng" },
+            { "@type": "ListItem", "position": 28, "name": "Quản trị thu mua" },
+            { "@type": "ListItem", "position": 29, "name": "Phân tích kinh doanh (Business Analytics)" },
+            { "@type": "ListItem", "position": 30, "name": "Logistics và Quản lý chuỗi cung ứng toàn cầu" },
+            { "@type": "ListItem", "position": 31, "name": "Công nghệ tài chính (Fintech)" },
+            { "@type": "ListItem", "position": 32, "name": "Tài chính doanh nghiệp" },
+            { "@type": "ListItem", "position": 33, "name": "Tài chính thông minh" },
+            { "@type": "ListItem", "position": 34, "name": "Tài chính ngân hàng" },
+            { "@type": "ListItem", "position": 35, "name": "Trí tuệ nhân tạo và Khoa học dữ liệu" },
+            { "@type": "ListItem", "position": 36, "name": "An ninh mạng và an toàn số" },
+            { "@type": "ListItem", "position": 37, "name": "Robot và Trí tuệ nhân tạo (Định hướng UAV và Humanoid)" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://daihoc.fpt.edu.vn/hn/tuyen-sinh/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Học phí tiếng Anh dự bị tại Trường Đại học FPT cơ sở Hà Nội bao nhiêu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sinh viên được xếp lớp theo trình độ tiếng Anh dựa trên kết quả bài kiểm tra đầu vào, xây dựng lộ trình học phù hợp với từng cá nhân. Chương trình gồm tối đa 6 mức học, mỗi mức kéo dài 2 tháng, học phí mỗi mức là 13.100.000đ."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Trường đại học FPT cơ sở có đào tạo ngành học nào?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Trường Đại học FPT cơ sở Hà Nội đào tạo 37 chuyên ngành thuộc các lĩnh vực: Công nghệ thông tin, Quản trị kinh doanh, Công nghệ truyền thông, Luật, Ngôn ngữ và Cử nhân tài năng Khoa học máy tính."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Trường có ký túc xá không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Trường có ký túc xá nằm ngay trong khuôn viên, gồm các hạng phòng 3, phòng 4 và phòng 6, đều được trang bị điều hòa. Khu vực xung quanh trường cũng có hệ thống nhà trọ đa dạng cho sinh viên lựa chọn."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Cơ hội việc làm của sinh viên Trường Đại học FPT",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Trường đào tạo theo 3 trụ cột Công nghệ – Khởi nghiệp – Toàn cầu hóa, có mạng lưới hơn 300 đối tác doanh nghiệp tại hơn 30 quốc gia. 100% sinh viên thực tập tại doanh nghiệp từ năm thứ 3; 19% cựu sinh viên làm việc tại các quốc gia phát triển và 100% sinh viên có cơ hội làm việc tại Tập đoàn FPT cùng nhiều doanh nghiệp lớn."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Điểm chuẩn trúng tuyển năm 2026 là bao nhiêu và cách tính điểm xét tuyển như thế nào?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Điểm chuẩn trúng tuyển hệ đại học chính quy năm 2026 là 18 điểm đối với các ngành đào tạo, riêng ngành Khoa học máy tính là 21 điểm. Thí sinh cần đạt tối thiểu 15,00 điểm tổng 3 môn thi tốt nghiệp THPT theo tổ hợp Axx hoặc Cxx. Điểm xét tuyển (ĐXT) = ĐKH + ĐKK + ĐƯT, trong đó ĐKH = (Điểm thi THPT + Điểm trung bình lớp 12 x 3) / 2, làm tròn đến hàng phần trăm và không vượt quá 30. Nhà trường tiếp tục nhận hồ sơ xét tuyển bổ sung, đăng ký xét tuyển và nhập học trực tuyến từ 8h00 ngày 10/08/2026."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <script type="speculationrules">
+{"prerender":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/fpt-university/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prerender, .no-prerender a"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"moderate"}]}
+</script>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<script id="real3d-flipbook-forntend-js-extra">
+var r3d_frontend = {"rootFolder":"https://daihoc.fpt.edu.vn/wp-content/plugins/real3d-flipbook-lite/","version":"5.3"};
+//# sourceURL=real3d-flipbook-forntend-js-extra
+</script>
+<script type="rocketlazyloadscript" data-minify="1" id="real3d-flipbook-forntend-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/plugins/real3d-flipbook-lite/js/frontend.js?ver=1786606380" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/hn/tuyen-sinh/|/openday/|/openday-da-nang/|/openday-quy-nhon/|/can-tho/fptufest/|/hn/campus-tour/|/can-tho/tuyen-sinh-2026/|/hcm/|/hn/|/da-nang/|/can-tho/|/quy-nhon/|/wp-content/themes/fpt-university/assets/css/single-event.css/|/hn/tuyen-sinh-1/|/can-tho-tuyen-sinh/|/hcm/fisat/|/hn/futuretalk/|/quy-nhon/hoi-thao-phu-huynh-2026/|/can-tho/quan-tam-xet-tuyen/|/can-tho/dang-ky-kv1/|/hn/nganh-cong-nghe-thong-tin/|/workshop-dong-hanh-cung-2k8/|/dang-ky-tu-van-tuyen-sinh-2026/|/hn/fptucamp/|/kiem-tra-dieu-kien-xet-tuyen-fptu/|/kiem-tra-dieu-kien-xet-tuyen-fptu/|/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://daihoc.fpt.edu.vn","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script type="rocketlazyloadscript" data-minify="1" id="swiper-js-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/npm/swiper@10/swiper-bundle.min.js?ver=1786606380" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" id="fptu-main-js-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/js/index.js?ver=1786606380" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" id="fptu-custom-js-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/js/script.js?ver=1786606380" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" data-minify="1" id="fptu-hcm-js-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/cache/min/1/wp-content/themes/fpt-university/assets/js/script_hcm.js?ver=1786606380" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="sweetalert2-js" data-rocket-src="https://cdn.jsdelivr.net/npm/sweetalert2@11" data-rocket-defer defer></script>
+<script type="rocketlazyloadscript" id="demo-lead-inline-js-after">
+(function(){
+  // ===== UTM helper =====
+  function getUtmParams(){
+    var params = new URLSearchParams(window.location.search);
+    var keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content", "utm_bts"];
+    var utm = {};
+    keys.forEach(function(k){ if(params.get(k)) utm[k] = params.get(k); });
+    return utm;
+  }
+
+  var form = document.getElementById('demoForm');
+  if(!form) return;
+  var btn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // Honeypot
+    var hpEl = document.getElementById('website');
+    if(hpEl && hpEl.value){ return; }
+
+    // Collect
+    var data = {
+      role:           document.getElementById('role')?.value?.trim(),
+      name:           document.getElementById('name')?.value?.trim(),
+      phone:          document.getElementById('phone')?.value?.trim(),
+      email:          document.getElementById('email')?.value?.trim(),
+      province:       document.getElementById('province')?.value?.trim(),
+      school:         document.getElementById('school')?.value?.trim(),
+      lop:            document.getElementById('lop')?.value?.trim(),
+      major:          document.getElementById('major')?.value?.trim(),
+      campus:         document.getElementById('campus')?.value?.trim(),
+      hoctrainghiem:  document.getElementById('hoctrainghiem')?.value?.trim(),
+      event_name:    (document.querySelector('input[name="event_name"]')?.value || '').trim(),
+      event_time:     document.getElementById('event_time')?.value?.trim(),
+      utm:            getUtmParams(),
+      ref:            window.location.href
+    };
+
+    // Validate
+    var phoneOk = /^(0|\+84)\d{9,10}$/.test((data.phone||'').replace(/\s+/g,''));
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email||'');
+    if(!phoneOk){ Swal.fire('⚠️ Thông báo', 'Số điện thoại không hợp lệ.', 'warning'); return; }
+    if(!emailOk){ Swal.fire('⚠️ Thông báo', 'Email không hợp lệ.', 'warning'); return; }
+
+    // Disable button + show loading
+    if(btn){ btn.disabled = true; btn.dataset.originalText = btn.textContent; btn.textContent = 'Đang gửi...'; }
+    Swal.fire({
+      title: 'Đang gửi đăng ký...',
+      html: 'Vui lòng đợi trong giây lát',
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      didOpen: () => { Swal.showLoading(); }
+    });
+
+    // Send
+    fetch("https://daihoc.fpt.edu.vn/wp-json/demo/v1/lead", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-WP-Nonce': '4ecbb85808'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(async function (r) {
+      let json = null;
+      try { json = await r.json(); } catch(e) {}
+
+      // Success -> redirect immediately (keep loading until navigate)
+      if (r.ok && json && json.ok) {
+        var url = new URL('https://daihoc.fpt.edu.vn/dang-ky-thanh-cong-openday/');
+        if (json.code) url.searchParams.set('code', json.code);
+        window.location.href = url.toString();
+        return;
+      }
+
+      // Error -> close loading then show message
+      Swal.close();
+
+      // Duplicate registered
+      var isDuplicate = json && json.code === 'da_dang_ky' && (json.data?.status === 400);
+      if (isDuplicate) {
+        Swal.fire({
+          title: '⚠️ Đã đăng ký trước đó',
+          text: json.message || 'Số điện thoại này đã đăng ký cho sự kiện này tại campus này. Vui lòng kiểm tra email!',
+          icon: 'info',
+          confirmButtonText: 'Đã hiểu',
+          confirmButtonColor: '#00c2ff'
+        });
+        return;
+      }
+
+      var msg = (json && (json.message || json.data?.message)) || 'Gửi thất bại. Vui lòng thử lại.';
+      Swal.fire('❌ Lỗi', msg, 'error');
+    })
+    .catch(function (err) {
+      console.error(err);
+      Swal.close();
+      Swal.fire('❌ Lỗi mạng', 'Không thể gửi dữ liệu. Vui lòng thử lại.', 'error');
+    })
+    .finally(function () {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = btn.dataset.originalText || 'Gửi đăng ký';
+      }
+    });
+  });
+})();
+//# sourceURL=demo-lead-inline-js-after
+</script>
+<script type="rocketlazyloadscript" id="googlesitekit-consent-mode-js" data-rocket-src="https://daihoc.fpt.edu.vn/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-consent-mode-755f1678e260138d789e.js" data-rocket-defer defer></script>
+        <script type="rocketlazyloadscript" data-cfasync="false">
+            window.dFlipLocation = 'https://daihoc.fpt.edu.vn/wp-content/plugins/3d-flipbook-dflip-lite/assets/';
+            window.dFlipWPGlobal = {"text":{"toggleSound":"Turn on\/off Sound","toggleThumbnails":"Toggle Thumbnails","toggleOutline":"Toggle Outline\/Bookmark","previousPage":"Previous Page","nextPage":"Next Page","toggleFullscreen":"Toggle Fullscreen","zoomIn":"Zoom In","zoomOut":"Zoom Out","toggleHelp":"Toggle Help","singlePageMode":"Single Page Mode","doublePageMode":"Double Page Mode","downloadPDFFile":"Download PDF File","gotoFirstPage":"Goto First Page","gotoLastPage":"Goto Last Page","share":"Share","mailSubject":"I wanted you to see this FlipBook","mailBody":"Check out this site {{url}}","loading":"DearFlip: Loading "},"viewerType":"flipbook","moreControls":"download,pageMode,startPage,endPage,sound","hideControls":"","scrollWheel":"false","backgroundColor":"#777","backgroundImage":"","height":"auto","paddingLeft":"20","paddingRight":"20","controlsPosition":"bottom","duration":800,"soundEnable":"true","enableDownload":"true","showSearchControl":"false","showPrintControl":"false","enableAnnotation":false,"enableAnalytics":"false","webgl":"true","hard":"none","maxTextureSize":"1600","rangeChunkSize":"524288","zoomRatio":1.5,"stiffness":3,"pageMode":"0","singlePageMode":"0","pageSize":"0","autoPlay":"false","autoPlayDuration":5000,"autoPlayStart":"false","linkTarget":"2","sharePrefix":"flipbook-"};
+        </script>
+      <script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://daihoc.fpt.edu.vn/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"56c6dd7e4ecf4947aa540f48289e45af","spa":2}' crossorigin="anonymous"></script>
+</body>
+
+</html><!-- Rocket no webp -->
+<!-- plugin=object-cache-pro client=phpredis metric#hits=2076 metric#misses=16 metric#hit-ratio=99.2 metric#bytes=792901 metric#prefetches=66 metric#store-reads=31 metric#store-writes=31 metric#store-hits=85 metric#store-misses=6 metric#sql-queries=48 metric#ms-total=997.23 metric#ms-cache=12.95 metric#ms-cache-avg=0.2123 metric#ms-cache-ratio=1.3 -->

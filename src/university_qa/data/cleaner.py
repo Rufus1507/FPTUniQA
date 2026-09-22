@@ -24,6 +24,30 @@ def clean_vietnamese_text(text: str) -> str:
     return text.strip()
 
 
+def normalize_vnd_amounts(text: str) -> str:
+    """
+    Chuẩn hóa định dạng số tiền VND trong văn bản.
+
+    Ví dụ: "31.600.000" -> "31,600,000 VND"
+    Chú ý: Trong tiếng Việt, dấu chấm thường dùng làm phân cách hàng nghìn.
+    Hàm này chuẩn hóa về định dạng không mơ hồ và gắn đơn vị VND rõ ràng.
+    """
+    # Pattern: chuỗi số có dấu chấm phân cách, ví dụ 22.120.000 hoặc 1.250.000
+    def _reformat_vnd(m: re.Match) -> str:
+        raw = m.group(0)
+        # Xóa tất cả dấu chấm -> số nguyên, rồi thêm " VND"
+        numeric = raw.replace(".", "")
+        if len(numeric) >= 4:  # ít nhất 4 chữ số thì mới là số tiền
+            # Format lại với dấu phẩy (chuẩn quốc tế)
+            formatted = f"{int(numeric):,}"
+            return f"{formatted} VND"
+        return raw
+
+    # Chỉ áp dụng cho số tiền có ít nhất 2 cụm ngàn (>= 6 chữ số)
+    text = re.sub(r"\b\d{1,3}(?:\.\d{3}){1,}\b", _reformat_vnd, text)
+    return text
+
+
 def remove_headers_footers(text: str, patterns: list = None) -> str:
     """Loại bỏ số trang, tiêu đề đầu/cuối trang từ file trích xuất PDF."""
     if patterns is None:
@@ -36,3 +60,34 @@ def remove_headers_footers(text: str, patterns: list = None) -> str:
     for pat in patterns:
         cleaned = re.sub(pat, "", cleaned, flags=re.MULTILINE)
     return clean_vietnamese_text(cleaned)
+
+
+def deduplicate_whitespace_lines(text: str) -> str:
+    """Xóa các dòng chỉ chứa khoảng trắng và thu gọn dòng trống thừa."""
+    lines = text.splitlines()
+    cleaned_lines = []
+    prev_blank = False
+    for line in lines:
+        if not line.strip():
+            if not prev_blank:
+                cleaned_lines.append("")
+            prev_blank = True
+        else:
+            cleaned_lines.append(line)
+            prev_blank = False
+    return "\n".join(cleaned_lines).strip()
+
+
+def clean_document_text(text: str, normalize_numbers: bool = True) -> str:
+    """
+    Pipeline làm sạch đầy đủ cho văn bản tài liệu tuyển sinh FPT.
+
+    Args:
+        text: Văn bản thô cần làm sạch.
+        normalize_numbers: Nếu True, chuẩn hóa số tiền VND.
+    """
+    text = clean_vietnamese_text(text)
+    if normalize_numbers:
+        text = normalize_vnd_amounts(text)
+    text = deduplicate_whitespace_lines(text)
+    return text
