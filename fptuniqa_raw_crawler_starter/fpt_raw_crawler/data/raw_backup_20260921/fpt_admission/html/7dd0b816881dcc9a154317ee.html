@@ -1,0 +1,2379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+            <title>Đăng ký hồ sơ 2026 | Trường Đại học FPT</title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="_token" content="Hvh7CroiIfXcUAV07S9HbgU3Xl2US707vDo0mMv5">
+
+    <link rel="shortcut icon" href="/dang-ky-dai-hoc-fpt/public/favicon.ico">
+
+    <!-- plugin css -->
+    <link media="all" type="text/css" rel="stylesheet" href="/dang-ky-dai-hoc-fpt/public/assets/plugins/@mdi/font/css/materialdesignicons.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="/dang-ky-dai-hoc-fpt/public/assets/plugins/perfect-scrollbar/perfect-scrollbar.css">
+    <!-- end plugin css -->
+
+    <!-- plugin css -->
+    <style>
+    body {
+        overflow: auto !important;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .login-2026 {
+        position: relative;
+        z-index: 2;
+        min-height: 100svh;
+        width: 100%;
+        padding: 24px 16px;
+        color: #0f172a;
+    }
+
+    .login-2026.content-wrapper {
+        margin-top: 8px !important;
+    }
+
+    .login-2026-shell {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        width: min(1240px, 100%);
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    .login-2026-hero,
+    .login-2026-panel {
+        border: 1px solid rgba(255, 255, 255, .42);
+        background: rgba(255, 255, 255, .92);
+        box-shadow: 0 24px 70px rgba(15, 23, 42, .22);
+        backdrop-filter: blur(18px);
+    }
+
+    .login-2026-hero {
+        min-height: 220px;
+        overflow: hidden;
+        border-radius: 24px;
+        padding: 24px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background:
+            linear-gradient(160deg, rgba(127, 29, 29, .88), rgba(234, 88, 12, .58)),
+            url("/dang-ky-dai-hoc-fpt/public/assets/images/auth/scholarship/bg-2026.png") center/cover no-repeat;
+        color: #fff;
+    }
+
+    .login-2026-brand {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 9px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .16);
+        padding: 7px 10px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .02em;
+    }
+
+    .login-2026-mark {
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: #fff;
+        color: #ea580c;
+        font-weight: 900;
+    }
+
+    .login-2026-hero h1 {
+        max-width: 560px;
+        margin: 22px 0 12px;
+        font-size: clamp(32px, 3vw, 44px);
+        line-height: 1.02;
+        font-weight: 850;
+        letter-spacing: 0;
+    }
+
+    .login-2026-hero p {
+        max-width: 520px;
+        margin: 0;
+        color: rgba(255, 255, 255, .86);
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .login-2026-steps {
+        display: grid;
+        gap: 11px;
+        margin-top: 28px;
+    }
+
+    .login-2026-step {
+        position: relative;
+        display: flex;
+        gap: 13px;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 16px;
+        background:
+            linear-gradient(135deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, .08)),
+            linear-gradient(90deg, rgba(234, 88, 12, .38), rgba(249, 115, 22, .18));
+        padding: 12px 14px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.35;
+        text-shadow: 0 1px 1px rgba(15, 23, 42, .18);
+        box-shadow:
+            inset 0 0 0 1px rgba(255, 255, 255, .18),
+            0 12px 26px rgba(127, 29, 29, .14);
+    }
+
+    .login-2026-step::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 4px;
+        background: linear-gradient(180deg, #fff7ed, #fdba74);
+    }
+
+    .login-2026-step span {
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #fff7ed;
+        color: #c2410c;
+        font-size: 13px;
+        font-weight: 900;
+        text-shadow: none;
+        box-shadow: 0 8px 18px rgba(127, 29, 29, .2);
+    }
+
+    .login-2026-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1.12fr) minmax(340px, .88fr);
+        border-radius: 24px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .login-2026-card {
+        min-width: 0;
+        padding: 26px 30px;
+        background: #fff;
+    }
+
+    .login-2026-card + .login-2026-card {
+        border-top: 0;
+    }
+
+    .login-2026-panel > .login-2026-card:not(.login-2026-register) {
+        order: 2;
+        border-left: 1px solid #e2e8f0;
+        background: linear-gradient(180deg, #fff7ed 0%, #fff 58%);
+    }
+
+    .login-2026-register {
+        order: 1;
+        background: #fff;
+    }
+
+    .login-2026-eyebrow {
+        margin: 0 0 8px;
+        color: #ea580c !important;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+
+    .login-2026-title {
+        margin: 0;
+        color: #0f172a;
+        font-size: clamp(24px, 2.2vw, 32px);
+        line-height: 1.15;
+        font-weight: 850;
+    }
+
+    .login-2026-copy {
+        margin: 10px 0 0;
+        color: #475569;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .login-2026-actions {
+        display: grid;
+        gap: 12px;
+        margin-top: 22px;
+    }
+
+    .login-2026-button,
+    .login-2026-panel .btn,
+    .login-2026-panel button.submit-btn {
+        display: inline-flex !important;
+        min-height: 48px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: 0 !important;
+        border-radius: 14px !important;
+        background: #ea580c !important;
+        padding: 12px 18px !important;
+        color: #fff !important;
+        font-size: 15px !important;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        text-decoration: none !important;
+        box-shadow: 0 14px 28px rgba(234, 88, 12, .24);
+        transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .login-2026-button:hover,
+    .login-2026-panel .btn:hover,
+    .login-2026-panel button.submit-btn:hover {
+        background: #c2410c !important;
+        box-shadow: 0 18px 34px rgba(194, 65, 12, .28);
+        transform: translateY(-1px);
+    }
+
+    .login-2026-button-secondary,
+    .login-2026-panel .btn-show-register,
+    .login-2026-panel .btn-primary.btn-sm {
+        width: auto !important;
+        min-height: 38px;
+        border: 1px solid #fed7aa !important;
+        background: #fff7ed !important;
+        color: #c2410c !important;
+        box-shadow: none;
+        padding: 9px 14px !important;
+        font-size: 14px !important;
+    }
+
+    .login-2026-link {
+        color: #c2410c;
+        font-size: 14px;
+        font-weight: 750;
+        text-decoration: none;
+    }
+
+    .login-2026-link:hover {
+        color: #9a3412;
+        text-decoration: underline;
+    }
+
+    .login-2026-inline {
+        display: none;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 18px;
+        border-radius: 18px;
+        background: #f8fafc;
+        padding: 14px 16px;
+        color: #475569;
+        font-size: 14px;
+        font-weight: 650;
+    }
+
+    .login-2026-alert {
+        margin-bottom: 16px;
+        border-radius: 18px;
+        border: 1px solid #bbf7d0;
+        background: #f0fdf4;
+        padding: 14px 16px;
+        color: #166534;
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .form-signin > .login-2026-alert {
+        margin-top: 16px;
+    }
+
+    .login-2026-alert.is-danger {
+        border-color: #fecaca;
+        background: #fef2f2;
+        color: #991b1b;
+    }
+
+    .login-2026-alert ul {
+        margin: 8px 0 0;
+        padding-left: 18px;
+    }
+
+    .login-2026-register {
+        margin-top: 0;
+    }
+
+    .login-2026-register .container-register.d-none {
+        display: block !important;
+    }
+
+    .login-2026-register .container-register {
+        margin-top: 20px;
+    }
+
+    .login-2026-mobile-login {
+        display: none;
+    }
+
+    .login-2026-fixed-register {
+        display: none;
+    }
+
+    .login-2026-fixed-register-arrow {
+        display: inline-flex;
+        width: 28px;
+        height: 28px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #ea580c;
+        color: #fff;
+        font-size: 18px;
+        line-height: 1;
+        animation: login-2026-arrow-bounce 1.2s ease-in-out infinite;
+    }
+
+    .login-2026-fixed-register.is-login-target .login-2026-fixed-register-arrow {
+        animation-name: login-2026-arrow-bounce-up;
+    }
+
+    @keyframes  login-2026-arrow-bounce {
+        0%, 100% {
+            transform: translateY(-2px);
+        }
+
+        50% {
+            transform: translateY(4px);
+        }
+    }
+
+    @keyframes  login-2026-arrow-bounce-up {
+        0%, 100% {
+            transform: translateY(2px);
+        }
+
+        50% {
+            transform: translateY(-4px);
+        }
+    }
+
+    .login-2026-register .form-creater-user-title,
+    .login-2026-register h4 {
+        margin: 0 0 16px !important;
+        color: #0f172a;
+        font-size: 20px;
+        line-height: 1.25;
+        font-weight: 850;
+        text-align: left !important;
+    }
+
+    .login-2026-register .form-creater-nominator-container,
+    .login-2026-register .form-creater-user-container {
+        border-radius: 20px;
+        border: 1px solid #e2e8f0;
+        background: #fff;
+        padding: 22px;
+    }
+
+    .login-2026-register .form-creater-user-container + p,
+    .login-2026-register p {
+        color: #64748b;
+        font-size: 13px;
+    }
+
+    .login-2026-register > .login-2026-copy {
+        color: #475569;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .login-2026-register hr {
+        margin: 18px 0;
+        border: 0;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .login-2026-register .row {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        column-gap: 18px;
+        row-gap: 14px;
+        align-items: start;
+        justify-content: stretch !important;
+        margin: 0 !important;
+    }
+
+    .login-2026-register .row.d-flex {
+        display: grid !important;
+    }
+
+    .login-2026-register [class*="col-"] {
+        grid-column: span 12;
+        max-width: none !important;
+        width: auto !important;
+        padding: 0 !important;
+    }
+
+    .login-2026-register .col-sm-3,
+    .login-2026-register .col-sm-4,
+    .login-2026-register .col-sm-6,
+    .login-2026-register .col-lg-6 {
+        grid-column: span 6;
+    }
+
+    .login-2026-register .col-sm-12,
+    .login-2026-register .col-12 {
+        grid-column: span 12;
+    }
+
+    .login-2026-register .form-creater-user-container > .row.form-group,
+    .login-2026-register .form-creater-user-container > .form-group,
+    .login-2026-register .form-creater-nominator-container > .row {
+        margin-bottom: 16px !important;
+    }
+
+    .login-2026-register .form-group,
+    .login-2026-register .input-field {
+        margin: 0 0 14px !important;
+    }
+
+    .login-2026-register .input-field label,
+    .login-2026-register .form-label,
+    .login-2026-register label {
+        display: block;
+        margin-bottom: 7px;
+        color: #334155;
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 1.35;
+    }
+
+    .login-2026-register .input-field label.required:after {
+        content: ' (*)';
+        color: #dc2626;
+        font-weight: 850;
+    }
+
+    .login-2026-register .form-control,
+    .login-2026-register .custom-select,
+    .login-2026-register input,
+    .login-2026-register select {
+        width: 100% !important;
+        min-height: 46px !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 12px !important;
+        background-color: #fff !important;
+        padding: 10px 13px !important;
+        color: #0f172a !important;
+        font-size: 14px !important;
+        line-height: 1.35 !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .login-2026-register .form-control:focus,
+    .login-2026-register .custom-select:focus,
+    .login-2026-register input:focus,
+    .login-2026-register select:focus {
+        border-color: #fb923c !important;
+        box-shadow: 0 0 0 4px rgba(251, 146, 60, .18) !important;
+    }
+
+    .login-2026-register .invalid-feedback {
+        margin-top: 6px;
+        color: #dc2626;
+        font-size: 13px;
+        font-weight: 650;
+    }
+
+    .login-2026-register .form-check {
+        display: flex !important;
+        gap: 12px;
+        align-items: flex-start;
+        border-radius: 14px;
+        background: #f8fafc;
+        padding: 13px 14px;
+        min-width: 0;
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    .login-2026-register .form-check-input {
+        position: static !important;
+        flex: 0 0 18px;
+        min-height: 18px !important;
+        width: 18px !important;
+        min-width: 18px !important;
+        margin: 2px 0 0 !important;
+        padding: 0 !important;
+    }
+
+    .login-2026-register .form-check-label {
+        display: block !important;
+        flex: 1 1 auto;
+        max-width: none !important;
+        width: auto !important;
+        min-width: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        color: #475569 !important;
+        font-size: 12px !important;
+        font-weight: 550 !important;
+        line-height: 1.55;
+        overflow-wrap: normal;
+        word-break: normal;
+        white-space: normal !important;
+    }
+
+    .login-2026-register .form-check-label a {
+        color: #c2410c;
+        font-weight: 800;
+    }
+
+    .login-2026-register .btn-verifyOTP-container {
+        display: grid;
+        gap: 8px;
+    }
+
+    .login-2026-register span.font-italic {
+        color: #64748b;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 750;
+    }
+
+    .login-2026-register #verifyOTP.btn-disabled,
+    .login-2026-register #verifyOTP.btn-disabled::after {
+        background-color: #94a3b8 !important;
+        border-color: #94a3b8 !important;
+        cursor: not-allowed;
+        content: "";
+    }
+
+    .login-2026-register .select2-container {
+        width: 100% !important;
+    }
+
+    .login-2026-register .select2-container .select2-selection--single {
+        height: 46px !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 12px !important;
+        padding: 7px 12px;
+    }
+
+    .login-2026-register .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 44px !important;
+    }
+
+    .login-2026-login-form {
+        margin-top: 20px;
+        border: 1px solid #fed7aa;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, .96);
+        padding: 22px;
+        box-shadow: 0 22px 50px rgba(154, 52, 18, .12);
+    }
+
+    .login-2026-login-form .form-login-account style {
+        display: none;
+    }
+
+    .login-2026-login-form .form-login-account .form-group {
+        margin-bottom: 16px;
+    }
+
+    .login-2026-login-form .form-login-account label {
+        display: block;
+        margin-bottom: 8px;
+        color: #334155;
+        font-size: 13px;
+        font-weight: 800;
+    }
+
+    .login-2026-login-form .form-login-account .input-group {
+        display: flex;
+        overflow: hidden;
+        border: 1px solid #cbd5e1;
+        border-radius: 14px;
+        background: #fff;
+    }
+
+    .login-2026-login-form .form-login-account .form-control {
+        width: 100%;
+        min-height: 48px;
+        border: 0 !important;
+        border-radius: 0 !important;
+        padding: 11px 14px !important;
+        color: #0f172a;
+        font-size: 15px;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    .login-2026-login-form .form-login-account .input-group:focus-within {
+        border-color: #fb923c;
+        box-shadow: 0 0 0 4px rgba(251, 146, 60, .18);
+    }
+
+    .login-2026-login-form .form-login-account .input-group-append {
+        display: flex;
+        flex: 0 0 48px;
+    }
+
+    .login-2026-login-form .form-login-account #show-password {
+        width: 48px;
+        min-height: 48px;
+        border: 0 !important;
+        border-left: 1px solid #e2e8f0 !important;
+        border-radius: 0 !important;
+        background: #f8fafc !important;
+        color: #334155 !important;
+        box-shadow: none !important;
+    }
+
+    .login-2026-login-form .form-login-account .submit-btn {
+        display: inline-flex !important;
+        width: 100%;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        border: 0 !important;
+        border-radius: 14px !important;
+        background: #ea580c !important;
+        color: #fff !important;
+        font-size: 15px !important;
+        font-weight: 800 !important;
+        box-shadow: 0 14px 28px rgba(234, 88, 12, .24);
+    }
+
+    .login-2026-login-form .form-login-account .link {
+        color: #c2410c;
+        font-size: 14px;
+        font-weight: 750;
+        text-decoration: none;
+    }
+
+    .login-2026-login-form .form-login-account .divider {
+        margin: 22px 0 !important;
+    }
+
+    .login-2026-login-form .form-login-account .hr-text {
+        background: #fff;
+    }
+
+    .login-2026-login-form .form-login-account .g-login {
+        display: inline-flex !important;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 14px !important;
+        background: #fff !important;
+        color: #334155 !important;
+        font-size: 14px !important;
+        font-weight: 750 !important;
+        box-shadow: none !important;
+    }
+
+    .login-2026-auth-modal .modal-dialog {
+        width: min(520px, calc(100vw - 28px));
+        max-width: 520px;
+        margin: 24px auto;
+    }
+
+    .login-2026-auth-modal .modal-content {
+        overflow: hidden;
+        border: 1px solid rgba(226, 232, 240, .9);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, .98);
+        box-shadow: 0 26px 70px rgba(15, 23, 42, .32);
+    }
+
+    .login-2026-auth-modal .login-modal-head {
+        padding: 24px 28px 8px;
+        text-align: left;
+    }
+
+    .login-2026-auth-modal .login-modal-head h3 {
+        margin: 0;
+        color: #0f172a;
+        font-size: 26px;
+        line-height: 1.2;
+        font-weight: 850;
+    }
+
+    .login-2026-auth-modal .modal-body {
+        padding: 12px 28px 28px !important;
+    }
+
+    .login-2026-auth-modal .modal-body .row,
+    .login-2026-auth-modal .modal-body [class*="col-"] {
+        display: block;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0 !important;
+    }
+
+    .login-2026-auth-modal .form-login-account style {
+        display: none;
+    }
+
+    .login-2026-auth-modal .form-login-account .form-group {
+        margin-bottom: 16px;
+    }
+
+    .login-2026-auth-modal .form-login-account label {
+        display: block;
+        margin-bottom: 8px;
+        color: #334155;
+        font-size: 13px;
+        font-weight: 800;
+    }
+
+    .login-2026-auth-modal .form-login-account .input-group {
+        display: flex;
+        overflow: hidden;
+        border: 1px solid #cbd5e1;
+        border-radius: 14px;
+        background: #fff;
+    }
+
+    .login-2026-auth-modal .form-login-account .form-control {
+        width: 100%;
+        min-height: 48px;
+        border: 0 !important;
+        border-radius: 0 !important;
+        padding: 11px 14px !important;
+        color: #0f172a;
+        font-size: 15px;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    .login-2026-auth-modal .form-login-account .input-group:focus-within {
+        border-color: #fb923c;
+        box-shadow: 0 0 0 4px rgba(251, 146, 60, .18);
+    }
+
+    .login-2026-auth-modal .form-login-account .input-group-append {
+        display: flex;
+        flex: 0 0 48px;
+    }
+
+    .login-2026-auth-modal .form-login-account #show-password {
+        width: 48px;
+        min-height: 48px;
+        border: 0 !important;
+        border-left: 1px solid #e2e8f0 !important;
+        border-radius: 0 !important;
+        background: #f8fafc !important;
+        color: #334155 !important;
+        box-shadow: none !important;
+    }
+
+    .login-2026-auth-modal .form-login-account .submit-btn {
+        display: inline-flex !important;
+        width: 100%;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        border: 0 !important;
+        border-radius: 14px !important;
+        background: #ea580c !important;
+        color: #fff !important;
+        font-size: 15px !important;
+        font-weight: 800 !important;
+        box-shadow: 0 14px 28px rgba(234, 88, 12, .24);
+    }
+
+    .login-2026-auth-modal .form-login-account .link {
+        color: #c2410c;
+        font-size: 14px;
+        font-weight: 750;
+        text-decoration: none;
+    }
+
+    .login-2026-auth-modal .form-login-account .divider {
+        margin: 22px 0 !important;
+    }
+
+    .login-2026-auth-modal .form-login-account .hr-text {
+        background: #fff;
+    }
+
+    .login-2026-auth-modal .form-login-account .g-login {
+        display: inline-flex !important;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 14px !important;
+        background: #fff !important;
+        color: #334155 !important;
+        font-size: 14px !important;
+        font-weight: 750 !important;
+        box-shadow: none !important;
+    }
+
+    body.login-2026-modal-open .modal-backdrop,
+    body:has(.login-2026) .modal-backdrop {
+        z-index: 9998 !important;
+        background: rgba(15, 23, 42, .62) !important;
+        backdrop-filter: blur(10px);
+        opacity: 1 !important;
+    }
+
+    body.login-2026-modal-open .modal,
+    body:has(.login-2026) .modal {
+        z-index: 9999 !important;
+    }
+
+    @media (max-width: 980px) {
+        .login-2026-shell {
+            grid-template-columns: 1fr;
+        }
+
+        .login-2026-panel {
+            grid-template-columns: 1fr;
+        }
+
+        .login-2026-panel > .login-2026-card:not(.login-2026-register) {
+            border-top: 1px solid #e2e8f0;
+            border-left: 0;
+        }
+
+        .login-2026-hero {
+            position: relative;
+            top: auto;
+            min-height: 260px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .login-2026.content-wrapper {
+            margin-top: 0 !important;
+            padding: 4px 10px 82px !important;
+        }
+
+        .login-2026-shell {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .login-2026-hero,
+        .login-2026-panel {
+            border-radius: 18px;
+        }
+
+        .login-2026-hero {
+            order: 1;
+            min-height: auto;
+            padding: 12px;
+        }
+
+        .login-2026-hero h1 {
+            margin: 12px 0 6px;
+            font-size: 21px;
+            line-height: 1.12;
+        }
+
+        .login-2026-hero p {
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .login-2026-brand {
+            max-width: 100%;
+            padding: 6px 9px;
+            font-size: 10px;
+        }
+
+        .login-2026-mark {
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+        }
+
+        .login-2026-panel {
+            order: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-2026-card {
+            padding: 16px;
+        }
+
+        .login-2026-login-form {
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 14px 30px rgba(154, 52, 18, .1);
+        }
+
+        .login-2026-login-form .form-login-account .divider {
+            margin: 10px 0 !important;
+        }
+
+        .login-2026-login-form .form-login-account .divider .hr-divider {
+            margin: 12px 0 !important;
+        }
+
+        .login-2026-login-form .form-login-account .form-group.mt-3 {
+            margin-top: 10px !important;
+            margin-bottom: 0 !important;
+        }
+
+        .login-2026-panel > .login-2026-card:not(.login-2026-register) {
+            order: 1;
+            border-top: 0;
+            border-left: 0;
+        }
+
+        .login-2026-register {
+            order: 2;
+            border-top: 1px solid #e2e8f0;
+            scroll-margin-top: 12px;
+        }
+
+        .login-2026:not(.is-register-open) .login-2026-register {
+            display: none;
+        }
+
+        .login-2026-fixed-register {
+            position: fixed;
+            right: 14px;
+            bottom: calc(14px + env(safe-area-inset-bottom));
+            z-index: 9997;
+            display: inline-flex;
+            min-height: 46px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid #fed7aa;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .96);
+            padding: 8px 8px 8px 16px;
+            color: #9a3412 !important;
+            font-size: 13px;
+            font-weight: 850;
+            text-decoration: none !important;
+            box-shadow: 0 18px 38px rgba(15, 23, 42, .22);
+            backdrop-filter: blur(12px);
+        }
+
+        .login-2026-title {
+            font-size: 22px;
+        }
+
+        .login-2026-copy {
+            margin-top: 8px;
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .login-2026-actions {
+            margin-top: 14px;
+        }
+
+        .login-2026-register .container-register.d-none {
+            display: none !important;
+        }
+
+        .login-2026.is-register-open .login-2026-register .container-register.d-none {
+            display: block !important;
+        }
+
+        .login-2026-register .form-creater-nominator-container,
+        .login-2026-register .form-creater-user-container {
+            border-radius: 16px;
+            padding: 14px;
+        }
+
+        .login-2026-register .row {
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+        }
+
+        .login-2026-register .form-group,
+        .login-2026-register .input-field {
+            margin-bottom: 10px !important;
+        }
+
+        .login-2026-register .form-control,
+        .login-2026-register .custom-select,
+        .login-2026-register input,
+        .login-2026-register select {
+            min-height: 42px !important;
+            border-radius: 10px !important;
+            padding: 9px 11px !important;
+            font-size: 13px !important;
+        }
+
+        .login-2026-register .col-sm-3,
+        .login-2026-register .col-sm-4,
+        .login-2026-register .col-sm-6,
+        .login-2026-register .col-lg-6,
+        .login-2026-register [class*="col-"] {
+            grid-column: span 1;
+        }
+    }
+</style>
+    <!-- end plugin css -->
+
+    <!-- common css -->
+    <link media="all" type="text/css" rel="stylesheet" href="/dang-ky-dai-hoc-fpt/public/css/app.css">
+    <link media="all" type="text/css" rel="stylesheet" href="/dang-ky-dai-hoc-fpt/public/css/common.css">
+    <!-- end common css -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <link href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css" rel="stylesheet">
+
+    <link
+        href="https://unpkg.com/bootstrap-table@1.18.3/dist/extensions/fixed-columns/bootstrap-table-fixed-columns.min.css"
+        rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/dang-ky-dai-hoc-fpt/public/js/suneditor.min.js"></script>
+    <script src="/dang-ky-dai-hoc-fpt/public/js/axios.min.js"></script>
+    <script src="/dang-ky-dai-hoc-fpt/public/assets/js/moment.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            /* font-size: 12pt; */
+            /* line-height: 1.5; */
+        }
+
+        .bg-fixed-bottom {
+            min-height: 100svh;
+            display: flex;
+            justify-content: center;
+            background: radial-gradient(ellipse at 42% 50%, #d45008 0%, #a51c0c 38%, #5a0d0d 65%, #100202 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: var(--safeY) var(--safeX);
+            width: 100svw;
+            height: 100svh;
+            overflow: hidden;
+        }
+        .d-none {
+            display: none !important;
+        }
+        .bg-gray-50,.badge-gray-50 {
+            background-color: #6f7173;
+        }
+        .content-wrapper{
+            background: unset;
+            z-index: 1;
+            margin-top: 60px  !important;
+        }
+        .preview-image-iframe{
+            width:300px; height:auto; border:0;
+        }
+
+        .bg-fixed-bottom::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(1200px 700px at 55% 35%, rgba(0, 0, 0, .06), rgba(0, 0, 0, .48));
+            pointer-events: none;
+            animation: overlayIn .7s var(--ease) both;
+        }
+
+        p {
+            font-size: 12.5pt;
+            line-height: 1.5;
+        }
+
+        .bar-panel {
+            width: 10.5vw;
+            /* height: 10px; */
+            margin-right: -5px;
+        }
+
+        .modal {
+            z-index: 9999 !important;
+        }
+        .modal-backdrop{
+            z-index: unset;
+        }
+
+        .step-active {
+            background: linear-gradient(270deg, #21a583, #2bd9f5, #2bf54d, #c72bf5);
+            background-size: 800% 800%;
+
+            -webkit-animation: aniBackground 15s ease infinite;
+            -moz-animation: aniBackground 15s ease infinite;
+            animation: aniBackground 15s ease infinite;
+        }
+
+        .step-title-container {
+            width: 100%;
+            align-content: flex-end;
+        }
+
+        .btn-fpt {
+            background-color: #f27124;
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        .step-title {
+            display: block;
+            position: relative;
+            bottom: 0;
+            right: 10px;
+            font-size: 0.7rem;
+            text-wrap: nowrap;
+            color: #fff;
+            text-align: right;
+        }
+
+        .title-upload {
+            font-weight: 600;
+        }
+
+        @-webkit-keyframes aniBackground {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        @-moz-keyframes aniBackground {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        @keyframes  aniBackground {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        .only-pc {
+            display: block;
+        }
+
+        .only-mobile {
+            display: none;
+        }
+
+        .form-check .form-check-label .input-helper:before {
+            border: 0px;
+        }
+
+        input.is-valid,
+        select.is-valid {
+            border-color: #ff7300 !important;
+        }
+
+        .subtile-name {
+            font-size: 12px;
+            color: #666;
+
+        }
+
+        .toast.show {
+            z-index: 999999;
+        }
+
+        .toast.hide,
+        .toast {
+            z-index: -999999;
+        }
+
+        .content-container {
+            padding: 20px;
+            border-radius: 15px;
+            background-color:#fff;
+            margin:auto;
+            width:80vw;
+            margin-bottom: 20px;
+        }
+        .section-container{
+            padding:5px 10px;
+        }
+        .input-group-text-sm {
+            padding: .25rem .5rem;
+            font-size: .875rem;
+            line-height: 1.5;
+            border-radius: .2rem;
+        }
+        .navbar{
+            background: linear-gradient(120deg, #E81F24, #F55C1A, #FF8B12) !important;
+        }
+
+        @media  only screen and (max-width:768px) {
+            .navbar-toggler-right {
+                /* display: none; */
+            }
+
+            .only-pc {
+                display: none !important;
+            }
+
+            .only-mobile {
+                display: block;
+            }
+            .content-container {
+                width: 100%;
+                padding-right: 12.5px;
+                padding-left: 12.5px;
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 20px;
+            }
+            .section-container{
+                padding:5px 0px;
+            }
+            .preview-image-iframe{
+                width:100%; height:auto; border:0;
+            }
+            .card .card-body {
+                padding: 5px !important;
+            }
+        }
+
+        .navbar.default-layout {
+            box-shadow: 28px 6px 190px -49px rgba(0, 0, 0, 0.12);
+            -webkit-box-shadow: 28px 6px 190px -49px rgba(0, 0, 0, 0.12);
+            -moz-box-shadow: 28px 6px 190px -49px rgba(0, 0, 0, 0.12);
+        }
+
+        nav#sidebar {
+            box-shadow: 28px 6px 190px -49px rgba(0, 0, 0, 0.12);
+            -webkit-box-shadow: 28px 6px 190px -49px rgba(0, 0, 0, 0.12);
+            -moz-box-shadow: 28px 6px 190px -49px rgba(0, 0, 0, 0.12);
+        }
+
+        /* dark mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .card {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .sidebar {
+            background-color: #1a1a2e;
+        }
+
+        .dark-mode .sidebar a {
+            color: #ccc;
+        }
+
+        .dark-mode .sidebar a:hover {
+            background-color: #0f3460;
+        }
+
+        .dark-mode .table {
+            color: #e0e0e0;
+        }
+
+        .dark-mode .table thead {
+            background-color: #2c2c2c;
+        }
+
+        .dark-mode .form-check-label {
+            color: #ccc;
+        }
+
+        .dark-mode .badge {
+            background-color: #444;
+        }
+
+        .bottom-0 {
+            bottom: 0 !important;
+        }
+
+        .right-0 {
+            right: 0 !important;
+        }
+
+        .dark-mode .btn-outline-dark {
+            color: #e0e0e0;
+            border-color: #444;
+        }
+
+        .dark-mode .btn-outline-dark:hover {
+            background-color: #444;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .btn-outline-dark:focus {
+            box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+        }
+
+        /* end dark mode */
+        div#listNoti {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.95rem;
+            background: #f8f9fa;
+            /* color: #666; */
+        }
+
+        .position-relative {
+            position: relative;
+        }
+
+        .top-0 {
+            top: 0 !important;
+        }
+
+        .right-0 {
+            right: 0 !important;
+        }
+
+        .sticky-top {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+
+        .d-absolute-right {
+            padding: 1rem;
+            z-index: 10;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .select-container {
+            width: 100%;
+            display: flex;
+        }
+
+        /* css collapse */
+        .collapse-icon.collapsed {
+           transform: rotate(180deg);
+           transition: transform 0.3s ease;
+        }
+        .collapse-icon {
+           color: #fff;
+        }
+
+        /* modal */
+        .modal-lg{
+            max-width: 80%;
+        }
+        @media (max-width: 768px) {
+            .modal-lg {
+                max-width: 95%;
+            }
+        }
+
+
+        /* end modal */
+
+    </style>
+    </head>
+    <!-- Google tag (gtag.js) dev-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WDZ7PVG2G1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-WDZ7PVG2G1');
+    </script>
+
+    <!-- Google Tag Manager marcom-->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-53RSV23');</script>
+    <!-- End Google Tag Manager -->
+
+<body data-base-url="https://daihoc.fpt.edu.vn/dang-ky-dai-hoc-fpt" style="overflow: hidden;">
+            <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHFQLKZ84Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HHFQLKZ84Q');
+        </script>
+
+        <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-53RSV23"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+
+
+        <!-- Meta Pixel Code -->
+        <script>
+            ! function(f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function() {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = '2.0';
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '353635698943202');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id=353635698943202&ev=PageView&noscript=1" /></noscript>
+        <!-- End Meta Pixel Code -->
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MXDWPFXGR"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-9MXDWPFXGR');
+        </script>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-714782963"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'AW-714782963');
+        </script>
+
+
+        
+        <!-- TikTok Pixel Code Start -->
+        <script>
+            ! function(w, d, t) {
+                w.TiktokAnalyticsObject = t;
+                var ttq = w[t] = w[t] || [];
+                ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias",
+                    "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"
+                ], ttq.setAndDefer = function(t, e) {
+                    t[e] = function() {
+                        t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                    }
+                };
+                for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+                ttq.instance = function(t) {
+                    for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) ttq.setAndDefer(e, ttq.methods[n]);
+                    return e
+                }, ttq.load = function(e, n) {
+                    var r = "https://analytics.tiktok.com/i18n/pixel/events.js",
+                        o = n && n.partner;
+                    ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date,
+                        ttq._o = ttq._o || {}, ttq._o[e] = n || {};
+                    n = document.createElement("script");
+                    n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t;
+                    e = document.getElementsByTagName("script")[0];
+                    e.parentNode.insertBefore(n, e)
+                };
+                ttq.load('D05KF6RC77U6FNPJENAG');
+                ttq.page();
+            }(window, document, 'ttq');
+        </script> <!-- TikTok Pixel Code End -->
+
+        <!-- Meta Pixel Code -->
+        <script>
+            ! function(f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function() {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = '2.0';
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '655548437114667');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id=655548437114667&ev=PageView&noscript=1" /></noscript>
+        <!-- End Meta Pixel Code -->
+        
+
+        
+    
+    <div class="container-scroller" id="app">
+                <div class="bg-fixed-bottom"></div>
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+
+                        
+<main class="login-2026 content-wrapper is-register-open" aria-label="Đăng nhập và đăng ký hồ sơ">
+            <div class="login-2026-alert is-danger" role="alert">
+            Cổng đăng ký nhập học đã đóng lại đối với Cơ sở học tại Hà Nội, TP. Hồ Chí Minh. Nếu bạn cần hỗ trợ hãy liên hệ
+            <a href="https://daihoc.fpt.edu.vn/lien-he/" target="_blank" rel="noopener">tại đây</a>.
+        </div>
+        <div class="login-2026-shell">
+        <section class="login-2026-hero" aria-label="Tổng quan đăng ký">
+            <div>
+                <div class="login-2026-brand">
+                    <span class="login-2026-mark">F</span>
+                    <span>FPT University Admission 2026</span>
+                </div>
+                <h1>Đăng ký hồ sơ trực tuyến</h1>
+                <p>Tạo tài khoản để đăng ký xét tuyển, nhập học và theo dõi trạng thái hồ sơ tại Trường Đại học FPT.</p>
+            </div>
+
+        </section>
+
+        <section class="login-2026-panel" aria-label="Tài khoản tuyển sinh">
+            <div class="login-2026-card" id="login-account">
+
+                        <!-- Login section -->
+                        <div class="form-signin">
+
+                                <div>
+                                    
+                                    <p class="login-2026-eyebrow">Tài khoản hồ sơ</p>
+                                    <h2 class="login-2026-title">Đăng nhập Hệ thống</h2>
+                                    <p class="login-2026-copy">Sử dụng tài khoản đã đăng ký để theo dõi và hoàn thiện hồ sơ tuyển sinh.</p>
+                                    
+                                    
+                                </div>
+                                
+                                                                
+                                <div class="login-2026-login-form">
+                                        <style>
+.divider{
+    -webkit-box-align: center;
+    -webkit-box-pack: justify;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hr-divider{
+    margin: 0px;
+    height: 1px;
+    border: none;
+    background-color: rgb(225, 225, 225);
+    flex: 1 1 0%;
+}
+.hr-text {
+    background-color: #f3f4fa;
+    color: rgb(97, 97, 97);
+    font-size: 12px;
+    line-height: 18px;
+    padding: 0 1rem;
+}
+.input-login{
+    height: unset;
+}
+.g-login{
+    border: 1px solid #dadce0 !important;
+    box-shadow: none !important;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 12px;
+}
+.g-login:hover{
+    text-decoration: none;
+    background-color: #fafafa !important;
+    box-shadow: 0 2px 2px rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);
+}
+</style>
+<div class="form-login-account">
+    <form action="https://daihoc.fpt.edu.vn/dang-ky-dai-hoc-fpt/login-manual-account" method="POST">
+        <input type="hidden" name="_token" value="Hvh7CroiIfXcUAV07S9HbgU3Xl2US707vDo0mMv5">
+        
+        <div class="form-group">
+            <label class="label">Số điện thoại hoặc Email <span class="text-danger">(*)</span></label>
+            <div class="input-group">
+                <input type="text" class="form-control input-login control" id="username" name="username"
+                        placeholder="Nhập số điện thoại hoặc email"
+                        oninvalid="this.setCustomValidity('Thông tin bắt buộc')"
+                        onchange="this.setCustomValidity('')"
+                        required
+                       >
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="label">Mật khẩu <span class="text-danger">(*)</span></label>
+            <div class="input-group">
+                <input type="password" class="form-control input-login control" id="password" name="password"
+                       placeholder="Nhập mật khẩu"
+                       oninvalid="this.setCustomValidity('Thông tin bắt buộc')"
+                       onchange="this.setCustomValidity('')"
+                       required
+                       >
+                <div class="input-group-append">
+                    <button class="btn input-group-text" type="button" id="show-password">
+                    <i class="mdi mdi-eye"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary submit-btn btn-lg btn-block btn-rounded">Đăng nhập</button>
+        </div>
+        <div class="text-center my-3">
+            
+
+                <a class="link" href="https://daihoc.fpt.edu.vn/dang-ky-dai-hoc-fpt/lay-lai-mat-khau"
+                    aria-label="Quên mật khẩu">
+                    Quên mật khẩu?
+                </a>
+        </div>
+                    <div class="divider my-5">
+                <hr aria-hidden="true" class="hr-divider" style="margin: 24px 0px;">
+                <div aria-hidden="false" class="hr-text">hoặc</div>
+                <hr aria-hidden="true" class="hr-divider" style="margin: 24px 0px;">
+            </div>
+            <div class="form-group mt-3">
+                <a href="https://daihoc.fpt.edu.vn/dang-ky-dai-hoc-fpt/login-admin/login-google" class="btn btn-block btn-lg g-login bg-white text-dark btn-rounded">
+                    <img class="mr-3" src="/dang-ky-dai-hoc-fpt/public/assets/images/file-icons/icon-google.svg" alt="">Đăng nhập bằng Google
+                </a>
+            </div>
+            </form>
+    <script>
+        $(function() {
+            $('#show-password').click(function() {
+                var passwordField = $('#password');
+                var fieldType = passwordField.attr('type') === 'password' ? 'text' : 'password';
+                passwordField.attr('type', fieldType);
+                $(this).html(fieldType === 'password' ? '<i class="mdi mdi-eye"></i>' : '<i class="mdi mdi-eye-off"></i>');
+            });
+        });
+    </script>
+</div>
+                                </div>
+                        </div>
+                        
+
+                                                <div class="login-2026-inline">
+                            
+                            
+                            
+                            <span>Bạn chưa có tài khoản?</span>
+                            <button type="button" class="login-2026-button-secondary btn-show-register" aria-expanded="false" onclick="toggleRegisterForm()">Đăng ký</button>
+                            
+                        </div>
+
+            </div>
+            <div class="login-2026-card login-2026-register" id="register-account">
+                        <p class="login-2026-eyebrow">Đăng ký mới</p>
+                        <h2 class="login-2026-title">Tạo tài khoản nộp hồ sơ</h2>
+                        <p class="login-2026-copy">Điền thông tin cơ bản để hệ thống tạo tài khoản và gửi thông tin đăng nhập.</p>
+
+                        <!-- Registration section -->
+                        <div>
+                                                        <span>
+                                
+                            </span>
+                        </div>
+                            <!-- alert Validation errors -->
+                            
+                
+                                            <div class="container-register d-none">
+
+                            <form action="https://daihoc.fpt.edu.vn/dang-ky-dai-hoc-fpt/dang-ky" method="POST">
+                                <input type="hidden" name="_token" value="Hvh7CroiIfXcUAV07S9HbgU3Xl2US707vDo0mMv5">
+                                <input type="hidden" name="utm_source"   value="">
+                                <input type="hidden" name="utm_campaign" value="">
+                                <input type="hidden" name="utm_medium"   value="">
+                                <input type="hidden" name="utm_bts"      value="">
+                                <input type="hidden" name="key"          value="">
+                                <div class="form-creater-user-container">
+    <h4 class="form-creater-user-title">Đăng ký tài khoản mới</h4>
+    <div class="form-group input-field">
+        <label class="required">Họ và tên thí sinh</label>
+        <input type="text" class="form-control" placeholder="Họ và tên" name="fullname"
+            value="" required
+            oninvalid="this.setCustomValidity('Thông tin bắt buộc')"
+            oninput="this.setCustomValidity('')"
+            onchange="this.setCustomValidity('')" />
+    </div>
+
+    <div class="form-group input-field">
+        <label class="required">Email</label>
+        <input type="email" class="form-control" placeholder="Email" id="email" name="email"
+            value=""
+            required
+            oninvalid="this.setCustomValidity('Thông tin bắt buộc và phải đúng định dạng email')"
+            oninput="this.setCustomValidity('')"
+            onchange="this.setCustomValidity('')" />
+        <div id="email_invalid" class="invalid-feedback">Email đã được sử dụng.</div>
+    </div>
+
+    
+                        <div class="form-group input-field">
+                <label class="required">Số điện thoại</label>
+                <input type="tel" class="form-control" placeholder="Số điện thoại"
+                    id="phone" name="phone" value=""
+                    inputmode="numeric" maxlength="10" pattern="[0-9]{10}"
+                    required
+                    oninvalid="this.setCustomValidity('Thông tin bắt buộc')"
+                    oninput="this.value = this.value.replace(/\D/g,'').slice(0, 10);this.setCustomValidity('');"
+                    onchange="this.setCustomValidity('')" />
+                <div id="phone_invalid" class="invalid-feedback">Số điện thoại đã được sử dụng.</div>
+            </div>
+            
+    <div class="form-group input-field">
+        
+    </div>
+    <div class="form-group input-field">
+        <div class="form-check">
+            <input
+                class="form-check-input" type="checkbox"
+                name="confirmsharedata" id="confirmsharedata"
+                oninvalid="this.setCustomValidity('Thông tin bắt buộc')"
+                onchange="this.setCustomValidity('')"
+                                value="1" required>
+            <label class="form-check-label" for="confirmsharedata" style="font-weight: 400;">
+                Tôi đồng ý để Trường Đại học FPT (đơn vị thành viên của Tổ chức Giáo dục FPT) thu thập, xử lý và lưu trữ dữ liệu cá nhân cung cấp trên trang này theo nội dung đã được công bố tại Quy định bảo vệ dữ liệu cá nhân của Tổ chức Giáo dục FPT (“<a href="https://fpt.edu.vn/thu-vien-anh/11140" target="_blank">Tại đây</a>”).
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group input-field">
+        <button class="btn btn-primary submit-btn btn-block button-field btn-lg">Đăng ký</button>
+    </div>
+
+    <p>
+        <i>
+            <sup><b class="text-danger">(*)</b></sup> Thông tin bắt buộc.
+        </i>
+    </p>
+
+    
+</div>
+                            </form>
+
+                        </div>
+                        
+
+                                </div>
+        </section>
+    </div>
+</main>
+<a class="login-2026-fixed-register" href="#register-account" aria-label="Đi tới form đăng ký tài khoản">
+    <span>Đăng ký tài khoản</span>
+    <span class="login-2026-fixed-register-arrow" aria-hidden="true">↓</span>
+</a>
+
+
+        </div>
+        <div class="purdah" id="purdah">
+            <div class="progressing bg-light rounded rounded-circle" id="progressing">
+                <div class="spinner-border row m-3" role="status">
+                    <span class="sr-only p-3">Loading...</span>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+
+    <!-- base js -->
+    <script src="/dang-ky-dai-hoc-fpt/public/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+    <script src="/dang-ky-dai-hoc-fpt/public/js/common.js"></script>
+    <script src="/dang-ky-dai-hoc-fpt/public/assets/js/misc.js"></script>
+    <!-- end base js -->
+
+        <!-- plugin js -->
+        <!-- end plugin js -->
+
+    <!-- common js -->
+    <script src="/dang-ky-dai-hoc-fpt/public/assets/js/off-canvas.js"></script>
+
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        let isVisible = true;
+
+        window.togglePassword = function() {
+            const showPassword = document.getElementById('showPassword');
+            const hidePassword = document.getElementById('hidePassword');
+            const eyeIcon = document.getElementById('eyeIcon');
+
+            if (isVisible) {
+                showPassword.style.display = 'none';
+                hidePassword.style.display = 'inline';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                showPassword.style.display = 'inline';
+                hidePassword.style.display = 'none';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+
+            isVisible = !isVisible;
+        };
+
+        window.copyContent = function(elementId, type) {
+            const text = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const notification = document.createElement('div');
+                notification.classList.add('notification');
+                notification.textContent = `Đã được copy`;
+                document.body.appendChild(notification);
+                setTimeout(() => notification.remove(), 2000);
+            });
+        };
+
+        window.setRegisterFormState = function(isOpen) {
+            const loginPage = document.querySelector('.login-2026');
+            const registerContainer = document.querySelector('.container-register');
+            const registerButtons = document.querySelectorAll('.btn-show-register');
+
+            if (!registerContainer) {
+                return;
+            }
+
+            if (loginPage) {
+                loginPage.classList.toggle('is-register-open', isOpen);
+            }
+
+            registerContainer.classList.toggle('d-none', !isOpen);
+            registerButtons.forEach(function(registerButton) {
+                registerButton.textContent = window.matchMedia('(max-width: 768px)').matches ? 'Đăng ký' : (isOpen ? 'Hủy' : 'Đăng ký');
+                registerButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+        };
+
+        window.toggleRegisterForm = function() {
+            const registerContainer = document.querySelector('.container-register');
+
+            if (!registerContainer) {
+                return;
+            }
+
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                window.setRegisterFormState(true);
+                const registerAccount = document.getElementById('register-account');
+                if (registerAccount) {
+                    registerAccount.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                return;
+            }
+
+            window.setRegisterFormState(registerContainer.classList.contains('d-none'));
+        };
+
+        const loginMobileQuery = window.matchMedia('(max-width: 768px)');
+        const shouldHideRegisterAfterSuccess = false;
+
+        if (loginMobileQuery.matches) {
+            window.setRegisterFormState(!shouldHideRegisterAfterSuccess);
+        }
+
+        const fixedRegisterButton = document.querySelector('.login-2026-fixed-register');
+        const registerSection = document.getElementById('register-account');
+
+        function setFixedRegisterTarget(isRegisterVisible) {
+            if (!fixedRegisterButton) {
+                return;
+            }
+
+            const label = fixedRegisterButton.querySelector('span:first-child');
+            const arrow = fixedRegisterButton.querySelector('.login-2026-fixed-register-arrow');
+
+            if (loginMobileQuery.matches) {
+                fixedRegisterButton.classList.toggle('is-login-target', isRegisterVisible);
+                fixedRegisterButton.setAttribute('href', isRegisterVisible ? '#login-account' : '#register-account');
+                fixedRegisterButton.setAttribute(
+                    'aria-label',
+                    isRegisterVisible ? 'Đi tới form đăng nhập' : 'Đi tới form đăng ký tài khoản'
+                );
+
+                if (label) {
+                    label.textContent = isRegisterVisible ? 'Đăng nhập' : 'Đăng ký tài khoản';
+                }
+
+                if (arrow) {
+                    arrow.textContent = isRegisterVisible ? '↑' : '↓';
+                }
+
+                return;
+            }
+
+            fixedRegisterButton.classList.toggle('is-login-target', isRegisterVisible);
+            fixedRegisterButton.setAttribute('href', isRegisterVisible ? '#login-account' : '#register-account');
+            fixedRegisterButton.setAttribute(
+                'aria-label',
+                isRegisterVisible ? 'Đi tới form đăng nhập' : 'Đi tới form đăng ký tài khoản'
+            );
+
+            if (label) {
+                label.textContent = isRegisterVisible ? 'Đăng nhập' : 'Đăng ký tài khoản';
+            }
+
+            if (arrow) {
+                arrow.textContent = isRegisterVisible ? '↑' : '↓';
+            }
+        }
+
+        if (fixedRegisterButton && registerSection) {
+            function isRegisterSectionActive() {
+                const loginPage = document.querySelector('.login-2026');
+
+                if (loginMobileQuery.matches && (!loginPage || !loginPage.classList.contains('is-register-open'))) {
+                    return false;
+                }
+
+                const rect = registerSection.getBoundingClientRect();
+                return rect.top < window.innerHeight - 120 && rect.bottom > 120;
+            }
+
+            function updateFixedRegisterTarget() {
+                setFixedRegisterTarget(isRegisterSectionActive());
+            }
+
+            fixedRegisterButton.addEventListener('click', function(event) {
+                if (!loginMobileQuery.matches) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                if (isRegisterSectionActive()) {
+                    const loginAccount = document.getElementById('login-account');
+                    if (loginAccount) {
+                        loginAccount.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                    setFixedRegisterTarget(false);
+                    return;
+                }
+
+                window.setRegisterFormState(true);
+                setFixedRegisterTarget(true);
+
+                window.requestAnimationFrame(function() {
+                    registerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            updateFixedRegisterTarget();
+            [
+                window,
+                document,
+                document.querySelector('.login-2026.content-wrapper'),
+                document.querySelector('.page-body-wrapper'),
+                document.querySelector('.full-page-wrapper'),
+                document.querySelector('.main-panel')
+            ].forEach(function(scrollTarget) {
+                if (scrollTarget && scrollTarget.addEventListener) {
+                    scrollTarget.addEventListener('scroll', updateFixedRegisterTarget, { passive: true });
+                    scrollTarget.addEventListener('touchmove', updateFixedRegisterTarget, { passive: true });
+                }
+            });
+            window.addEventListener('resize', updateFixedRegisterTarget);
+        }
+    });
+
+    // Style
+    const style = document.createElement('style');
+    style.textContent = `
+    .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(64, 129, 236, 0.9);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 9999;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes  slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+`;
+    document.head.appendChild(style);
+
+
+    async function checkEmailPhoneInput(showPhoneFormatError = false) {
+        // check email and phone
+        var email = $("#email").val();
+        var phone = ($("#phone").val() || '').replace(/\D/g, '').slice(0, 10);
+        var phoneInvalidText = 'Số điện thoại phải đủ 10 số.';
+        $("#phone").val(phone);
+
+        if (phone.length > 0 && phone.length < 10) {
+            if (showPhoneFormatError) {
+                $("#phone").addClass("is-invalid");
+                if ($("#phone_invalid").length) {
+                    $("#phone_invalid").text(phoneInvalidText).show();
+                }
+            } else {
+                $("#phone").removeClass("is-invalid");
+                $("#phone_invalid").hide();
+            }
+            return;
+        }
+
+        if( email=='' || phone.length !== 10) {
+           return;
+        }
+        await axios.post("https://daihoc.fpt.edu.vn/dang-ky-dai-hoc-fpt/check-email-phone-existed", {
+            "email": email,
+            "phone": phone,
+            "_token": 'Hvh7CroiIfXcUAV07S9HbgU3Xl2US707vDo0mMv5'
+        }).then(function(response) {
+          // console.log(response);
+           data = response.data;
+           if(data.existed ) {
+                if(data.email){
+                    $("#email").addClass("is-invalid");
+                    $("#email_invalid").show();
+                }else{
+                    $("#email").removeClass("is-invalid");
+                    $("#email_invalid").hide();
+                }
+
+                if(phone.length===10 && data.phone){
+                    $("#phone").addClass("is-invalid");
+                    $("#phone_invalid").text('Số điện thoại đã được sử dụng.').show();
+                }else{
+                    $("#phone").removeClass("is-invalid");
+                    $("#phone_invalid").hide();
+                }
+            } else {
+                $("#phone").removeClass("is-invalid");
+                $("#phone_invalid").hide();
+                $("#email").removeClass("is-invalid");
+                $("#email_invalid").hide();
+            }
+
+        }).catch(function(error) {
+            console.log(error);
+            $("#phone").removeClass("is-invalid");
+            $("#phone_invalid").hide();
+            $("#email").removeClass("is-invalid");
+            $("#email_invalid").hide();
+        });
+
+    }
+    $(function(){
+       $("#phone").on("input", function() {
+            this.value = (this.value || '').replace(/\D/g, '').slice(0, 10);
+            $("#phone").removeClass("is-invalid");
+            $("#phone_invalid").hide();
+        });
+        $("#phone").on("blur", function() {
+            checkEmailPhoneInput(true)
+        });
+        $("#email").on("blur", function() {
+            checkEmailPhoneInput(true)
+        });
+
+        $('form').on('submit', function(e) {
+            // Bật loading
+            swalShowLoading();
+
+            // Nếu form HTML5 tự động validate lỗi (required,...)
+            if (!this.checkValidity()) {
+                e.preventDefault(); // Chặn gửi form
+                swalHideLoading();
+                return false;
+            }
+
+            // Nếu hợp lệ, cho phép gửi bình thường
+        });
+    })
+</script>
+
+
+<script type="text/javascript">
+
+    function swalShowLoading() {
+        Swal.fire({
+            title: 'Đang xử lý...',
+            html: 'Vui lòng chờ trong giây lát.',
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading()
+            }
+        });
+    }
+    function swalHideLoading() {
+        Swal.close();
+    }
+
+    function notificationWithReload(success=true,title="Thông báo", message) {
+        Swal.fire({
+            title: title,
+            text: message,
+            icon: (success) ? 'success' : 'warning',
+            showConfirmButton: true,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.reload();
+            }
+        });
+    }
+    function notificationWarning(message) {
+        Swal.fire({
+            title: 'Cảnh báo',
+            //text: message,
+            html: message,
+            icon: 'warning',
+            confirmButtonText: 'OK',
+        });
+    }
+
+    function notificationWarningWithRedirect(message,confirmButtonText="", cancelButtonText, redirectUrl="", width="") {
+        Swal.fire({
+            title: 'Cảnh báo',
+            //text: message,
+            html: message,
+            icon: 'warning',
+            width: (width != "") ? width : undefined,
+            showCancelButton: (cancelButtonText != "") ? true : false,
+            confirmButtonText: (confirmButtonText != "") ? confirmButtonText : "Đồng ý",
+            cancelButtonText: (cancelButtonText != "") ? cancelButtonText : "Hủy",
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed && redirectUrl!="") {
+                window.location.href = redirectUrl;
+            }
+        });
+    }
+
+
+    function notificationSuccess(message) {
+        Swal.fire({
+            title: 'Thành công',
+            text: message,
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+
+    }
+
+    function showWaitLoadingData(elementLoading) {
+        $(elementLoading).removeClass('d-none');
+        toggleSelectLoadingState(elementLoading, true);
+    }
+    function hideWaitLoadingData(elementLoading) {
+        $(elementLoading).addClass('d-none');
+        toggleSelectLoadingState(elementLoading, false);
+    }
+
+    function toggleSelectLoadingState(elementLoading, isLoading) {
+        if (typeof window.jQuery === 'undefined') {
+            return;
+        }
+
+        const loadingId = String(elementLoading || '').replace(/^#/, '');
+        if (!loadingId.startsWith('loading-')) {
+            return;
+        }
+
+        const selectId = loadingId.replace(/^loading-/, '');
+        const $select = $('#' + selectId);
+        if (!$select.length || !$select.is('select')) {
+            return;
+        }
+
+        if (isLoading) {
+            if (!$select.data('ap26LoadingTextAdded')) {
+                $select.prepend('<option value="" data-ap26-loading-option="1">Đang tải dữ liệu...</option>');
+                $select.data('ap26LoadingTextAdded', true);
+            }
+            $select.val('').prop('disabled', true).trigger('change.select2');
+            const $container = $select.next('.select2-container');
+            $container.addClass('ap26-select-loading');
+            $container.find('.select2-selection__rendered').text('Đang tải dữ liệu...');
+            return;
+        }
+
+        $select.find('option[data-ap26-loading-option="1"]').remove();
+        $select.data('ap26LoadingTextAdded', false).prop('disabled', false).trigger('change.select2');
+        $select.next('.select2-container').removeClass('ap26-select-loading');
+    }
+
+    function showSelectLoadingBySelector(selector, text = 'Đang tải dữ liệu...') {
+        const $select = $(selector);
+        if (!$select.length || !$select.is('select')) {
+            return;
+        }
+
+        if (!$select.data('ap26LoadingTextAdded')) {
+            $select.prepend('<option value="" data-ap26-loading-option="1">' + text + '</option>');
+            $select.data('ap26LoadingTextAdded', true);
+        }
+
+        $select.val('').prop('disabled', true).trigger('change.select2');
+        const $container = $select.next('.select2-container');
+        $container.addClass('ap26-select-loading');
+        $container.find('.select2-selection__rendered').text(text);
+    }
+
+    function hideSelectLoadingBySelector(selector) {
+        const $select = $(selector);
+        if (!$select.length || !$select.is('select')) {
+            return;
+        }
+
+        $select.find('option[data-ap26-loading-option="1"]').remove();
+        $select.data('ap26LoadingTextAdded', false).prop('disabled', false).trigger('change.select2');
+        $select.next('.select2-container').removeClass('ap26-select-loading');
+    }
+
+
+</script>
+
+    <!-- TikTok Pixel Code Start -->
+    <script>
+        ! function(w, d, t) {
+            w.TiktokAnalyticsObject = t;
+            var ttq = w[t] = w[t] || [];
+            ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias",
+                "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"
+            ], ttq.setAndDefer = function(t, e) {
+                t[e] = function() {
+                    t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                }
+            };
+            for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+            ttq.instance = function(t) {
+                for (
+                    var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) ttq.setAndDefer(e, ttq.methods[n]);
+                return e
+            }, ttq.load = function(e, n) {
+                var r = "https://analytics.tiktok.com/i18n/pixel/events.js",
+                    o = n && n.partner;
+                ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date,
+                    ttq._o = ttq._o || {}, ttq._o[e] = n || {};
+                n = document.createElement("script");
+                n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t;
+                e = document.getElementsByTagName("script")[0];
+                e.parentNode.insertBefore(n, e)
+            };
+
+
+            ttq.load('CV56EEBC77UAMACBBGCG');
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"56c6dd7e4ecf4947aa540f48289e45af","spa":2}' crossorigin="anonymous"></script>
+</body>
+
+</html>

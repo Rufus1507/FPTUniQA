@@ -1,0 +1,18 @@
+﻿FPTUniQA - RAW DATA CRAWL INVENTORY
+Generated: 2026-09-21 16:04:13
+
+Successful HTTP 200 records: 219
+HTTP 404 records: 7
+Seed URLs OK: 13/13
+Seed URLs requiring check: 0
+HTML files: 170
+PDF files: 0
+
+HTTP 404 URLs:
+https://daihoc.fpt.edu.vn/category/hoat-dong-nha-truong/tin-tuc-nganh-cong-nghe-thong-tin/
+https://daihoc.fpt.edu.vn/category/hoat-dong-nha-truong/tin-tuc-nganh-cong-nghe-truyen-thong/
+https://daihoc.fpt.edu.vn/category/hoat-dong-nha-truong/tin-tuc-nganh-ngon-ngu/
+https://daihoc.fpt.edu.vn/category/hoat-dong-nha-truong/tin-tuc-nganh-luat/
+https://daihoc.fpt.edu.vn/category/hoat-dong-nha-truong/tin-tuc-nganh-quan-tri-kinh-doanh/
+https://daihoc.fpt.edu.vn/category/hoat-dong-nha-truong/tin-tuc-nganh-khoa-hoc-may-tinh/
+https://daihoc.fpt.edu.vn/chuyen-nganh/truyen-thong-marketing-tich-hop/

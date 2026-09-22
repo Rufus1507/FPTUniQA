@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="vi" class="loading-site no-js">
+<head>
+	<meta charset="UTF-8" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="https://daihoc.fpt.edu.vn/hcm/xmlrpc.php" />
+
+	<script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var ewww_webp_supported=!1;function check_webp_feature(A,e){var w;e=void 0!==e?e:function(){},ewww_webp_supported?e(ewww_webp_supported):((w=new Image).onload=function(){ewww_webp_supported=0<w.width&&0<w.height,e&&e(ewww_webp_supported)},w.onerror=function(){e&&e(!1)},w.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA=="}[A])}check_webp_feature("alpha");</script><script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var Arrive=function(c,w){"use strict";if(c.MutationObserver&&"undefined"!=typeof HTMLElement){var r,a=0,u=(r=HTMLElement.prototype.matches||HTMLElement.prototype.webkitMatchesSelector||HTMLElement.prototype.mozMatchesSelector||HTMLElement.prototype.msMatchesSelector,{matchesSelector:function(e,t){return e instanceof HTMLElement&&r.call(e,t)},addMethod:function(e,t,r){var a=e[t];e[t]=function(){return r.length==arguments.length?r.apply(this,arguments):"function"==typeof a?a.apply(this,arguments):void 0}},callCallbacks:function(e,t){t&&t.options.onceOnly&&1==t.firedElems.length&&(e=[e[0]]);for(var r,a=0;r=e[a];a++)r&&r.callback&&r.callback.call(r.elem,r.elem);t&&t.options.onceOnly&&1==t.firedElems.length&&t.me.unbindEventWithSelectorAndCallback.call(t.target,t.selector,t.callback)},checkChildNodesRecursively:function(e,t,r,a){for(var i,n=0;i=e[n];n++)r(i,t,a)&&a.push({callback:t.callback,elem:i}),0<i.childNodes.length&&u.checkChildNodesRecursively(i.childNodes,t,r,a)},mergeArrays:function(e,t){var r,a={};for(r in e)e.hasOwnProperty(r)&&(a[r]=e[r]);for(r in t)t.hasOwnProperty(r)&&(a[r]=t[r]);return a},toElementsArray:function(e){return e=void 0!==e&&("number"!=typeof e.length||e===c)?[e]:e}}),e=(l.prototype.addEvent=function(e,t,r,a){a={target:e,selector:t,options:r,callback:a,firedElems:[]};return this._beforeAdding&&this._beforeAdding(a),this._eventsBucket.push(a),a},l.prototype.removeEvent=function(e){for(var t,r=this._eventsBucket.length-1;t=this._eventsBucket[r];r--)e(t)&&(this._beforeRemoving&&this._beforeRemoving(t),(t=this._eventsBucket.splice(r,1))&&t.length&&(t[0].callback=null))},l.prototype.beforeAdding=function(e){this._beforeAdding=e},l.prototype.beforeRemoving=function(e){this._beforeRemoving=e},l),t=function(i,n){var o=new e,l=this,s={fireOnAttributesModification:!1};return o.beforeAdding(function(t){var e=t.target;e!==c.document&&e!==c||(e=document.getElementsByTagName("html")[0]);var r=new MutationObserver(function(e){n.call(this,e,t)}),a=i(t.options);r.observe(e,a),t.observer=r,t.me=l}),o.beforeRemoving(function(e){e.observer.disconnect()}),this.bindEvent=function(e,t,r){t=u.mergeArrays(s,t);for(var a=u.toElementsArray(this),i=0;i<a.length;i++)o.addEvent(a[i],e,t,r)},this.unbindEvent=function(){var r=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<r.length;t++)if(this===w||e.target===r[t])return!0;return!1})},this.unbindEventWithSelectorOrCallback=function(r){var a=u.toElementsArray(this),i=r,e="function"==typeof r?function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.callback===i)return!0;return!1}:function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.selector===r)return!0;return!1};o.removeEvent(e)},this.unbindEventWithSelectorAndCallback=function(r,a){var i=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<i.length;t++)if((this===w||e.target===i[t])&&e.selector===r&&e.callback===a)return!0;return!1})},this},i=new function(){var s={fireOnAttributesModification:!1,onceOnly:!1,existing:!1};function n(e,t,r){return!(!u.matchesSelector(e,t.selector)||(e._id===w&&(e._id=a++),-1!=t.firedElems.indexOf(e._id)))&&(t.firedElems.push(e._id),!0)}var c=(i=new t(function(e){var t={attributes:!1,childList:!0,subtree:!0};return e.fireOnAttributesModification&&(t.attributes=!0),t},function(e,i){e.forEach(function(e){var t=e.addedNodes,r=e.target,a=[];null!==t&&0<t.length?u.checkChildNodesRecursively(t,i,n,a):"attributes"===e.type&&n(r,i)&&a.push({callback:i.callback,elem:r}),u.callCallbacks(a,i)})})).bindEvent;return i.bindEvent=function(e,t,r){t=void 0===r?(r=t,s):u.mergeArrays(s,t);var a=u.toElementsArray(this);if(t.existing){for(var i=[],n=0;n<a.length;n++)for(var o=a[n].querySelectorAll(e),l=0;l<o.length;l++)i.push({callback:r,elem:o[l]});if(t.onceOnly&&i.length)return r.call(i[0].elem,i[0].elem);setTimeout(u.callCallbacks,1,i)}c.call(this,e,t,r)},i},o=new function(){var a={};function i(e,t){return u.matchesSelector(e,t.selector)}var n=(o=new t(function(){return{childList:!0,subtree:!0}},function(e,r){e.forEach(function(e){var t=e.removedNodes,e=[];null!==t&&0<t.length&&u.checkChildNodesRecursively(t,r,i,e),u.callCallbacks(e,r)})})).bindEvent;return o.bindEvent=function(e,t,r){t=void 0===r?(r=t,a):u.mergeArrays(a,t),n.call(this,e,t,r)},o};d(HTMLElement.prototype),d(NodeList.prototype),d(HTMLCollection.prototype),d(HTMLDocument.prototype),d(Window.prototype);var n={};return s(i,n,"unbindAllArrive"),s(o,n,"unbindAllLeave"),n}function l(){this._eventsBucket=[],this._beforeAdding=null,this._beforeRemoving=null}function s(e,t,r){u.addMethod(t,r,e.unbindEvent),u.addMethod(t,r,e.unbindEventWithSelectorOrCallback),u.addMethod(t,r,e.unbindEventWithSelectorAndCallback)}function d(e){e.arrive=i.bindEvent,s(i,e,"unbindArrive"),e.leave=o.bindEvent,s(o,e,"unbindLeave")}}(window,void 0),ewww_webp_supported=!1;function check_webp_feature(e,t){var r;ewww_webp_supported?t(ewww_webp_supported):((r=new Image).onload=function(){ewww_webp_supported=0<r.width&&0<r.height,t(ewww_webp_supported)},r.onerror=function(){t(!1)},r.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"}[e])}function ewwwLoadImages(e){if(e){for(var t=document.querySelectorAll(".batch-image img, .image-wrapper a, .ngg-pro-masonry-item a, .ngg-galleria-offscreen-seo-wrapper a"),r=0,a=t.length;r<a;r++)ewwwAttr(t[r],"data-src",t[r].getAttribute("data-webp")),ewwwAttr(t[r],"data-thumbnail",t[r].getAttribute("data-webp-thumbnail"));for(var i=document.querySelectorAll("div.woocommerce-product-gallery__image"),r=0,a=i.length;r<a;r++)ewwwAttr(i[r],"data-thumb",i[r].getAttribute("data-webp-thumb"))}for(var n=document.querySelectorAll("video"),r=0,a=n.length;r<a;r++)ewwwAttr(n[r],"poster",e?n[r].getAttribute("data-poster-webp"):n[r].getAttribute("data-poster-image"));for(var o,l=document.querySelectorAll("img.ewww_webp_lazy_load"),r=0,a=l.length;r<a;r++)e&&(ewwwAttr(l[r],"data-lazy-srcset",l[r].getAttribute("data-lazy-srcset-webp")),ewwwAttr(l[r],"data-srcset",l[r].getAttribute("data-srcset-webp")),ewwwAttr(l[r],"data-lazy-src",l[r].getAttribute("data-lazy-src-webp")),ewwwAttr(l[r],"data-src",l[r].getAttribute("data-src-webp")),ewwwAttr(l[r],"data-orig-file",l[r].getAttribute("data-webp-orig-file")),ewwwAttr(l[r],"data-medium-file",l[r].getAttribute("data-webp-medium-file")),ewwwAttr(l[r],"data-large-file",l[r].getAttribute("data-webp-large-file")),null!=(o=l[r].getAttribute("srcset"))&&!1!==o&&o.includes("R0lGOD")&&ewwwAttr(l[r],"src",l[r].getAttribute("data-lazy-src-webp"))),l[r].className=l[r].className.replace(/\bewww_webp_lazy_load\b/,"");for(var s=document.querySelectorAll(".ewww_webp"),r=0,a=s.length;r<a;r++)e?(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-webp")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-webp")),ewwwAttr(s[r],"data-orig-file",s[r].getAttribute("data-webp-orig-file")),ewwwAttr(s[r],"data-medium-file",s[r].getAttribute("data-webp-medium-file")),ewwwAttr(s[r],"data-large-file",s[r].getAttribute("data-webp-large-file")),ewwwAttr(s[r],"data-large_image",s[r].getAttribute("data-webp-large_image")),ewwwAttr(s[r],"data-src",s[r].getAttribute("data-webp-src"))):(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-img")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-img"))),s[r].className=s[r].className.replace(/\bewww_webp\b/,"ewww_webp_loaded");window.jQuery&&jQuery.fn.isotope&&jQuery.fn.imagesLoaded&&(jQuery(".fusion-posts-container-infinite").imagesLoaded(function(){jQuery(".fusion-posts-container-infinite").hasClass("isotope")&&jQuery(".fusion-posts-container-infinite").isotope()}),jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").imagesLoaded(function(){jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").isotope()}))}function ewwwWebPInit(e){ewwwLoadImages(e),ewwwNggLoadGalleries(e),document.arrive(".ewww_webp",function(){ewwwLoadImages(e)}),document.arrive(".ewww_webp_lazy_load",function(){ewwwLoadImages(e)}),document.arrive("videos",function(){ewwwLoadImages(e)}),"loading"==document.readyState?document.addEventListener("DOMContentLoaded",ewwwJSONParserInit):("undefined"!=typeof galleries&&ewwwNggParseGalleries(e),ewwwWooParseVariations(e))}function ewwwAttr(e,t,r){null!=r&&!1!==r&&e.setAttribute(t,r)}function ewwwJSONParserInit(){"undefined"!=typeof galleries&&check_webp_feature("alpha",ewwwNggParseGalleries),check_webp_feature("alpha",ewwwWooParseVariations)}function ewwwWooParseVariations(e){if(e)for(var t=document.querySelectorAll("form.variations_form"),r=0,a=t.length;r<a;r++){var i=t[r].getAttribute("data-product_variations"),n=!1;try{for(var o in i=JSON.parse(i))void 0!==i[o]&&void 0!==i[o].image&&(void 0!==i[o].image.src_webp&&(i[o].image.src=i[o].image.src_webp,n=!0),void 0!==i[o].image.srcset_webp&&(i[o].image.srcset=i[o].image.srcset_webp,n=!0),void 0!==i[o].image.full_src_webp&&(i[o].image.full_src=i[o].image.full_src_webp,n=!0),void 0!==i[o].image.gallery_thumbnail_src_webp&&(i[o].image.gallery_thumbnail_src=i[o].image.gallery_thumbnail_src_webp,n=!0),void 0!==i[o].image.thumb_src_webp&&(i[o].image.thumb_src=i[o].image.thumb_src_webp,n=!0));n&&ewwwAttr(t[r],"data-product_variations",JSON.stringify(i))}catch(e){}}}function ewwwNggParseGalleries(e){if(e)for(var t in galleries){var r=galleries[t];galleries[t].images_list=ewwwNggParseImageList(r.images_list)}}function ewwwNggLoadGalleries(e){e&&document.addEventListener("ngg.galleria.themeadded",function(e,t){window.ngg_galleria._create_backup=window.ngg_galleria.create,window.ngg_galleria.create=function(e,t){var r=$(e).data("id");return galleries["gallery_"+r].images_list=ewwwNggParseImageList(galleries["gallery_"+r].images_list),window.ngg_galleria._create_backup(e,t)}})}function ewwwNggParseImageList(e){for(var t in e){var r=e[t];if(void 0!==r["image-webp"]&&(e[t].image=r["image-webp"],delete e[t]["image-webp"]),void 0!==r["thumb-webp"]&&(e[t].thumb=r["thumb-webp"],delete e[t]["thumb-webp"]),void 0!==r.full_image_webp&&(e[t].full_image=r.full_image_webp,delete e[t].full_image_webp),void 0!==r.srcsets)for(var a in r.srcsets)nggSrcset=r.srcsets[a],void 0!==r.srcsets[a+"-webp"]&&(e[t].srcsets[a]=r.srcsets[a+"-webp"],delete e[t].srcsets[a+"-webp"]);if(void 0!==r.full_srcsets)for(var i in r.full_srcsets)nggFSrcset=r.full_srcsets[i],void 0!==r.full_srcsets[i+"-webp"]&&(e[t].full_srcsets[i]=r.full_srcsets[i+"-webp"],delete e[t].full_srcsets[i+"-webp"])}return e}check_webp_feature("alpha",ewwwWebPInit);</script><script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>FSB hòa chung không khí Convocation Day 2025, trao học bổng mba cho ba thủ khoa xuất sắc của đại học FPT &#8211; Trường Đại học FPT &#8211; Campus TP. Hồ Chí Minh</title>
+<meta name='robots' content='max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="canonical" href="https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/">
+<meta name="description" content="Vinh danh ba gương mặt tiêu biểu – những thủ khoa bước tiếp vào hành trình học tập sau đại học Sáng ngày 20/11/2025, không khí rộn ràng của Convocation Day 2025">
+<meta property="og:title" content="FSB hòa chung không khí Convocation Day 2025, trao học bổng mba cho ba thủ khoa xuất sắc của đại học FPT &#8211; Trường Đại học FPT &#8211; Campus TP. Hồ Chí Minh">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/08/585495556_1346447480858422_2870977862622419044_n.jpg">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1365">
+<meta property="og:image:alt" content="585495556 1346447480858422 2870977862622419044 n">
+<meta property="og:description" content="Vinh danh ba gương mặt tiêu biểu – những thủ khoa bước tiếp vào hành trình học tập sau đại học Sáng ngày 20/11/2025, không khí rộn ràng của Convocation Day 2025">
+<meta property="og:url" content="https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/">
+<meta property="og:locale" content="vi">
+<meta property="og:site_name" content="Trường Đại học FPT - Campus TP. Hồ Chí Minh">
+<meta property="article:published_time" content="2025-11-27T02:27:36+00:00">
+<meta property="article:modified_time" content="2026-08-14T02:48:04+00:00">
+<meta property="og:updated_time" content="2026-08-14T02:48:04+00:00">
+<meta property="article:section" content="Học bổng doanh nghiệp">
+<meta property="article:tag" content="Lễ trao học bổng">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/08/585495556_1346447480858422_2870977862622419044_n.jpg">
+<link rel='prefetch' href='https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/js/flatsome.js?ver=e2eddd6c228105dac048' />
+<link rel='prefetch' href='https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/js/chunk.slider.js?ver=3.20.5' />
+<link rel='prefetch' href='https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/js/chunk.popups.js?ver=3.20.5' />
+<link rel='prefetch' href='https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/js/chunk.tooltips.js?ver=3.20.5' />
+<link rel="alternate" type="application/rss+xml" title="Dòng thông tin Trường Đại học FPT - Campus TP. Hồ Chí Minh &raquo;" href="https://daihoc.fpt.edu.vn/hcm/feed/" />
+<link rel="alternate" title="oNhúng (JSON)" type="application/json+oembed" href="https://daihoc.fpt.edu.vn/hcm/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdaihoc.fpt.edu.vn%2Fhcm%2Ffsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt%2F" />
+<link rel="alternate" title="oNhúng (XML)" type="text/xml+oembed" href="https://daihoc.fpt.edu.vn/hcm/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdaihoc.fpt.edu.vn%2Fhcm%2Ffsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #f26f21;--wp--preset--color--secondary: #0066b2;--wp--preset--color--success: #627D47;--wp--preset--color--alert: #b20000;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){margin-left: auto !important;margin-right: auto !important;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: none;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-color{color: var(--wp--preset--color--primary) !important;}.has-secondary-color{color: var(--wp--preset--color--secondary) !important;}.has-success-color{color: var(--wp--preset--color--success) !important;}.has-alert-color{color: var(--wp--preset--color--alert) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-background-color{background-color: var(--wp--preset--color--primary) !important;}.has-secondary-background-color{background-color: var(--wp--preset--color--secondary) !important;}.has-success-background-color{background-color: var(--wp--preset--color--success) !important;}.has-alert-background-color{background-color: var(--wp--preset--color--alert) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-border-color{border-color: var(--wp--preset--color--primary) !important;}.has-secondary-border-color{border-color: var(--wp--preset--color--secondary) !important;}.has-success-border-color{border-color: var(--wp--preset--color--success) !important;}.has-alert-border-color{border-color: var(--wp--preset--color--alert) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='contact-form-7-css' href='https://daihoc.fpt.edu.vn/hcm/wp-content/plugins/contact-form-7/includes/css/styles.css' media='all' />
+<link rel='stylesheet' id='chat-css-css' href='https://daihoc.fpt.edu.vn/hcm/wp-content/plugins/foxtool/link/chat/foxchat.css' media='all' />
+<link rel='stylesheet' id='wpcf7-redirect-script-frontend-css' href='https://daihoc.fpt.edu.vn/hcm/wp-content/plugins/wpcf7-redirect/build/assets/frontend-script.css' media='all' />
+<link rel='stylesheet' id='flatsome-main-css' href='https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/css/flatsome.css' media='all' />
+<style id="flatsome-main-inline-css">
+@font-face {
+				font-family: "fl-icons";
+				font-display: block;
+				src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot?v=3.20.5);
+				src:
+					url(https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot#iefix?v=3.20.5) format("embedded-opentype"),
+					url(https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff2?v=3.20.5) format("woff2"),
+					url(https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/css/icons/fl-icons.ttf?v=3.20.5) format("truetype"),
+					url(https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff?v=3.20.5) format("woff"),
+					url(https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/css/icons/fl-icons.svg?v=3.20.5#fl-icons) format("svg");
+			}
+/*# sourceURL=flatsome-main-inline-css */
+</style>
+<link rel='stylesheet' id='flatsome-style-css' href='https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome-child/style.css' media='all' />
+<script id="jquery-core-js" src="https://daihoc.fpt.edu.vn/hcm/wp-includes/js/jquery/jquery.min.js"></script>
+<script id="index-ft-js" src="https://daihoc.fpt.edu.vn/hcm/wp-content/plugins/foxtool/link/index.js"></script>
+<link rel="https://api.w.org/" href="https://daihoc.fpt.edu.vn/hcm/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://daihoc.fpt.edu.vn/hcm/wp-json/wp/v2/posts/7355" /><link rel='shortlink' href='https://daihoc.fpt.edu.vn/hcm/?p=7355' />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HHFQLKZ84Q"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-HHFQLKZ84Q');
+</script>
+<link rel="icon" href="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/cropped-cropped-cropped-favicon-4-192x192-1-180x180-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/cropped-cropped-cropped-favicon-4-192x192-1-180x180-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/cropped-cropped-cropped-favicon-4-192x192-1-180x180-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/cropped-cropped-cropped-favicon-4-192x192-1-180x180-1-270x270.png" />
+<style id="custom-css" type="text/css">:root {--primary-color: #f26f21;--fs-color-primary: #f26f21;--fs-color-secondary: #0066b2;--fs-color-success: #627D47;--fs-color-alert: #b20000;--fs-color-base: #0a0a0a;--fs-experimental-link-color: #334862;--fs-experimental-link-color-hover: #111;}.tooltipster-base {--tooltip-color: #fff;--tooltip-bg-color: #000;}.off-canvas-right .mfp-content, .off-canvas-left .mfp-content {--drawer-width: 300px;}.header-main{height: 90px}#logo img{max-height: 90px}#logo{width:200px;}.header-bottom{min-height: 55px}.header-top{min-height: 30px}.transparent .header-main{height: 90px}.transparent #logo img{max-height: 90px}.has-transparent + .page-title:first-of-type,.has-transparent + #main > .page-title,.has-transparent + #main > div > .page-title,.has-transparent + #main .page-header-wrapper:first-of-type .page-title{padding-top: 90px;}.header.show-on-scroll,.stuck .header-main{height:70px!important}.stuck #logo img{max-height: 70px!important}.header-bottom {background-color: #f1f1f1}.header-main .nav > li > a{line-height: 16px }.stuck .header-main .nav > li > a{line-height: 50px }@media (max-width: 549px) {.header-main{height: 70px}#logo img{max-height: 70px}}h1,h2,h3,h4,h5,h6,.heading-font{color: #0a0a0a;}body{font-family: Roboto, sans-serif;}body {font-weight: 400;font-style: normal;}.nav > li > a {font-family: Roboto, sans-serif;}.mobile-sidebar-levels-2 .nav > li > ul > li > a {font-family: Roboto, sans-serif;}.nav > li > a,.mobile-sidebar-levels-2 .nav > li > ul > li > a {font-weight: 700;font-style: normal;}h1,h2,h3,h4,h5,h6,.heading-font, .off-canvas-center .nav-sidebar.nav-vertical > li > a{font-family: Roboto, sans-serif;}h1,h2,h3,h4,h5,h6,.heading-font,.banner h1,.banner h2 {font-weight: 700;font-style: normal;}.alt-font{font-family: "Dancing Script", sans-serif;}.alt-font {font-weight: 400!important;font-style: normal!important;}.header:not(.transparent) .header-nav-main.nav > li > a {color: #000000;}.header:not(.transparent) .header-nav-main.nav > li > a:hover,.header:not(.transparent) .header-nav-main.nav > li.active > a,.header:not(.transparent) .header-nav-main.nav > li.current > a,.header:not(.transparent) .header-nav-main.nav > li > a.active,.header:not(.transparent) .header-nav-main.nav > li > a.current{color: #f26f21;}.header-nav-main.nav-line-bottom > li > a:before,.header-nav-main.nav-line-grow > li > a:before,.header-nav-main.nav-line > li > a:before,.header-nav-main.nav-box > li > a:hover,.header-nav-main.nav-box > li.active > a,.header-nav-main.nav-pills > li > a:hover,.header-nav-main.nav-pills > li.active > a{color:#FFF!important;background-color: #f26f21;}.nav-vertical-fly-out > li + li {border-top-width: 1px; border-top-style: solid;}/* Custom CSS */.ldship-vice-card{width:80%;margin:auto;}#header{z-index:999999 !important;}.blog-single .entry-content, .blog-single .entry-header-text{padding:0px;}.header-inner.flex-row.container{padding:0px;}.blog-single .entry-content table tr td {border: 1px solid #d6d6d6;padding:5px;}.vfptu-page .leadership-grid-top .leadership-card-small:nth-child(1){display:none !important;}.vfptu-page .featured-badge img{display:none;}.vfptu-page .outstanding-card:last-child{border-right:none !important;}.blog-single figure {max-width: fit-content; }.blog-single .single-page .row{align-items: center;}/* Custom CSS Mobile */@media (max-width: 549px){/* Table chuyển sang block, xếp dọc */.category-ly-lich-khoa-hoc .entry-content table,.category-ly-lich-khoa-hoc .entry-content table tbody,.category-ly-lich-khoa-hoc .entry-content table tr, .category-ly-lich-khoa-hoc .entry-content table td {display: block !important;width: 100% !important;height: auto !important;box-sizing: border-box !important;}/* Xóa inline style width/height cứng */ .category-ly-lich-khoa-hoc .entry-content table[style], .category-ly-lich-khoa-hoc .entry-content table td[style] {width: 100% !important;height: auto !important;}/* Cột ảnh: căn giữa */ .category-ly-lich-khoa-hoc .entry-content table td:first-child {text-align: center;padding: 16px 12px 8px;}/* Giới hạn kích thước ảnh avatar */ .category-ly-lich-khoa-hoc .entry-content table td:first-child img {max-width: 180px;width: 60%;height: auto !important;margin: 0 auto;border-radius: 6px;}/* Cột nội dung (tên, chức vụ, học vấn...) */ .category-ly-lich-khoa-hoc .entry-content table td:last-child {padding: 8px 16px 16px;text-align: left;}/* Ngăn tràn ngang toàn trang */body {overflow-x: hidden;}.category-ly-lich-khoa-hoc .entry-content {overflow-x: hidden;max-width: 100%;}.table-responsive-custom {overflow: scroll;}}.label-new.menu-item > a:after{content:"Mới";}.label-hot.menu-item > a:after{content:"Nổi bật";}.label-sale.menu-item > a:after{content:"Giảm giá";}.label-popular.menu-item > a:after{content:"Phổ biến";}</style><style id="kirki-inline-styles">/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3GUBGEe.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3iUBGEe.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3CUBGEe.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3-UBGEe.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* math */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMawCUBGEe.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMaxKUBGEe.woff2) format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3OUBGEe.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3KUBGEe.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3GUBGEe.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3iUBGEe.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3CUBGEe.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3-UBGEe.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* math */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMawCUBGEe.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMaxKUBGEe.woff2) format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3OUBGEe.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3KUBGEe.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/roboto/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}/* vietnamese */
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/dancing-script/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSo3Rep8ltA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/dancing-script/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSo3ROp8ltA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://daihoc.fpt.edu.vn/hcm/wp-content/fonts/dancing-script/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSo3Sup8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}</style></head>
+
+<body class="wp-singular post-template-default single single-post postid-7355 single-format-standard wp-theme-flatsome wp-child-theme-flatsome-child lightbox nav-dropdown-has-arrow nav-dropdown-has-shadow nav-dropdown-has-border">
+
+
+<a class="skip-link screen-reader-text" href="#main">Bỏ qua nội dung</a>
+
+<div id="wrapper">
+
+	
+	<header id="header" class="header has-sticky sticky-jump">
+		<div class="header-wrapper">
+			<div id="masthead" class="header-main ">
+      <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
+
+          <!-- Logo -->
+          <div id="logo" class="flex-col logo">
+            
+<!-- Header logo -->
+<a href="https://daihoc.fpt.edu.vn/hcm/" title="Trường Đại học FPT &#8211; Campus TP. Hồ Chí Minh" rel="home">
+		<img width="330" height="93" src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/logo.png" class="header_logo header-logo" alt="Trường Đại học FPT &#8211; Campus TP. Hồ Chí Minh"/><img  width="330" height="93" src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/logo.png" class="header-logo-dark" alt="Trường Đại học FPT &#8211; Campus TP. Hồ Chí Minh"/></a>
+          </div>
+
+          <!-- Mobile Left Elements -->
+          <div class="flex-col show-for-medium flex-left">
+            <ul class="mobile-nav nav nav-left ">
+              <li class="nav-icon has-icon">
+			<a href="#" class="is-small" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" role="button" aria-label="Menu" aria-controls="main-menu" aria-expanded="false" aria-haspopup="dialog" data-flatsome-role-button>
+			<i class="icon-menu" aria-hidden="true"></i>					</a>
+	</li>
+            </ul>
+          </div>
+
+          <!-- Left Elements -->
+          <div class="flex-col hide-for-medium flex-left
+            flex-grow">
+            <ul class="header-nav header-nav-main nav nav-left  nav-size-medium nav-spacing-small" >
+              <li id="menu-item-187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-187 menu-item-design-default"><a href="https://daihoc.fpt.edu.vn/hcm/" class="nav-top-link">Trang chủ</a></li>
+<li id="menu-item-1241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1241 menu-item-design-default has-dropdown"><a href="https://daihoc.fpt.edu.vn/hcm/ve-fptu/" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Về FPTU<i class="icon-angle-down" aria-hidden="true"></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-1229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1229"><a href="/hcm/ve-fptu/#brand-story">Câu chuyện về FPTU</a></li>
+	<li id="menu-item-1231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1231"><a href="/hcm/ve-fptu/#management">Ban giám hiệu</a></li>
+	<li id="menu-item-1456" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1456"><a href="https://daihoc.fpt.edu.vn/hcm/ban-lanh-dao-campus-hcm/">Ban lãnh đạo Campus HCM</a></li>
+	<li id="menu-item-1232" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1232"><a href="/hcm/ve-fptu/#achievements">Thành tựu</a></li>
+	<li id="menu-item-1233" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1233"><a href="/hcm/#outstanding-position">Vị thế</a></li>
+	<li id="menu-item-1234" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1234"><a href="/hcm/ve-fptu/#overview-major">Ngành đào tạo</a></li>
+	<li id="menu-item-1235" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1235"><a href="/hcm/ve-fptu/#campus-base">Cơ sở vật chất</a></li>
+	<li id="menu-item-191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a target="_blank" href="https://viewdaihoc.fpt.edu.vn/fpt-ho-chi-minh/">Virtual Tour 360</a></li>
+</ul>
+</li>
+<li id="menu-item-192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-192 menu-item-design-default has-dropdown"><a href="#" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Tuyển sinh<i class="icon-angle-down" aria-hidden="true"></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193"><a target="_blank" href="https://daihoc.fpt.edu.vn/phuong-thuc-tuyen-sinh/">Phương thức xét tuyển</a></li>
+	<li id="menu-item-194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-194"><a target="_blank" href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/#overview-major">Ngành học đào tạo</a></li>
+	<li id="menu-item-195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-195"><a target="_blank" href="https://daihoc.fpt.edu.vn/hoc-bong/">Học phí &#038; Học bổng</a></li>
+	<li id="menu-item-1243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1243"><a href="https://daihoc.fpt.edu.vn/hcm/dang-ky-tu-van/">Đăng ký tư vấn</a></li>
+</ul>
+</li>
+<li id="menu-item-196" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-196 menu-item-design-default has-dropdown"><a href="#" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">NCKH &#038; RBL<i class="icon-angle-down" aria-hidden="true"></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-199" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-199"><a href="https://daihoc.fpt.edu.vn/hcm/hoat-dong-nckh/">Hoạt động NCKH</a></li>
+	<li id="menu-item-1699" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1699"><a target="_blank" href="https://daihoc.fpt.edu.vn/hcm/fisat">Hội nghị khoa học Quốc tế</a></li>
+	<li id="menu-item-1700" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1700"><a target="_blank" href="https://innovationlab.fpt.edu.vn/hcm">Innovation Labs</a></li>
+	<li id="menu-item-198" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-198"><a href="https://daihoc.fpt.edu.vn/hcm/du-an-rbl-tieu-bieu/">Dự án RBL tiêu biểu</a></li>
+	<li id="menu-item-197" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-197"><a href="https://daihoc.fpt.edu.vn/hcm/chan-dung-giang-vien-nghien-cuu-vien/">Chân dung Giảng viên &#8211; Nghiên cứu viên</a></li>
+	<li id="menu-item-1447" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1447"><a href="#">NCKH Sinh viên</a></li>
+</ul>
+</li>
+<li id="menu-item-200" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-200 menu-item-design-default has-dropdown"><a href="https://daihoc.fpt.edu.vn/hcm/khoi-nghiep/" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Trải nghiệm Khởi nghiệp<i class="icon-angle-down" aria-hidden="true"></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-202" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-202"><a href="https://daihoc.fpt.edu.vn/hcm/he-sinh-thai-khoi-nghiep-exe-1-3/">Hệ sinh thái khởi nghiệp (EXE 1-3)</a></li>
+	<li id="menu-item-201" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-201"><a href="https://daihoc.fpt.edu.vn/hcm/mentor-doanh-nghiep/">Mentor doanh nghiệp</a></li>
+	<li id="menu-item-270" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-270"><a href="https://daihoc.fpt.edu.vn/hcm/startup-tieu-bieu/">Startup tiêu biểu</a></li>
+</ul>
+</li>
+<li id="menu-item-6693" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6693 menu-item-design-default has-dropdown"><a href="https://daihoc.fpt.edu.vn/hcm/doanh-nghiep-va-alumni/" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Doanh nghiệp &#038; Alumni<i class="icon-angle-down" aria-hidden="true"></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-6440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6440"><a href="https://daihoc.fpt.edu.vn/hcm/quan-he-doi-tac/">Quan hệ đối tác</a></li>
+	<li id="menu-item-6439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6439"><a href="https://daihoc.fpt.edu.vn/hcm/hoc-ky-tai-doanh-nghiep-ojt/">Học kỳ tại doanh nghiệp (OJT)</a></li>
+	<li id="menu-item-6438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6438"><a href="https://daihoc.fpt.edu.vn/hcm/hoc-bong-sv-doanh-nghiep/">Học bổng doanh nghiệp</a></li>
+	<li id="menu-item-2381" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2381"><a href="https://daihoc.fpt.edu.vn/hcm/co-hoi-nghe-nghiep/">Thông tin việc làm</a></li>
+	<li id="menu-item-6441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6441"><a href="https://daihoc.fpt.edu.vn/hcm/cuu-sinh-vien-fptu/">Cựu sinh viên (Alumni)</a></li>
+</ul>
+</li>
+<li id="menu-item-208" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-208 menu-item-design-default has-dropdown"><a href="https://daihoc.fpt.edu.vn/hcm/quoc-te-hoa/" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Quốc tế hóa<i class="icon-angle-down" aria-hidden="true"></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-209" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-209"><a href="https://daihoc.fpt.edu.vn/hcm/chuong-trinh-trao-doi-exchange/">Chương trình trao đổi (Exchange)</a></li>
+	<li id="menu-item-210" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-210"><a href="https://daihoc.fpt.edu.vn/hcm/doi-tac-quoc-te/">Đối tác quốc tế</a></li>
+	<li id="menu-item-211" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-211"><a href="https://daihoc.fpt.edu.vn/hcm/hoc-bong-quoc-te/">Học bổng quốc tế</a></li>
+</ul>
+</li>
+<li id="menu-item-212" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-212 menu-item-design-default has-dropdown"><a href="https://daihoc.fpt.edu.vn/hcm/doi-song-sinh-vien/" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Đời sống sinh viên<i class="icon-angle-down" aria-hidden="true"></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-5465" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5465"><a href="https://daihoc.fpt.edu.vn/hcm/chan-dung-sinh-vien/">Chân dung sinh viên</a></li>
+	<li id="menu-item-213" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-213"><a href="https://daihoc.fpt.edu.vn/hcm/cau-lac-bo-clb/">Câu lạc bộ (CLB)</a></li>
+	<li id="menu-item-215" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-215"><a href="https://daihoc.fpt.edu.vn/hcm/trai-nghiem-sinh-vien/">Trải nghiệm sinh viên</a></li>
+	<li id="menu-item-1394" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1394"><a href="https://daihoc.fpt.edu.vn/hcm/insider/">Insider</a></li>
+	<li id="menu-item-8615" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8615"><a href="https://daihoc.fpt.edu.vn/hcm/cam-nang-tuan-le-dinh-huong/">Cẩm nang tuần lễ định hướng 2026</a></li>
+	<li id="menu-item-8616" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8616"><a href="https://daihoc.fpt.edu.vn/hcm/so-tay-tan-sinh-vien-2026/">Sổ tay Tân Sinh Viên 2026</a></li>
+	<li id="menu-item-214" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-214"><a href="https://daihoc.fpt.edu.vn/hcm/goc-tam-ly/">Góc tâm lý</a></li>
+</ul>
+</li>
+<li id="menu-item-216" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-216 menu-item-design-default has-dropdown"><a href="https://daihoc.fpt.edu.vn/hcm/tin-tuc-su-kien/" class="nav-top-link" aria-expanded="false" aria-haspopup="menu">Tin tức &amp; Sự kiện<i class="icon-angle-down" aria-hidden="true"></i></a>
+<ul class="sub-menu nav-dropdown nav-dropdown-default">
+	<li id="menu-item-269" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-269"><a href="https://daihoc.fpt.edu.vn/hcm/tin-tuc-noi-bat/">Tin tức nổi bật</a></li>
+	<li id="menu-item-6235" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6235"><a href="https://daihoc.fpt.edu.vn/hcm/phat-trien-ben-vung/">Phát triển bền vững</a></li>
+	<li id="menu-item-265" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-265"><a href="https://daihoc.fpt.edu.vn/hcm/hoat-dong-cong-dong/">Hoạt động cộng đồng</a></li>
+	<li id="menu-item-267" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-267"><a href="https://daihoc.fpt.edu.vn/hcm/thong-bao-tuyen-sinh/">Thông báo tuyển sinh</a></li>
+	<li id="menu-item-268" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-268"><a href="https://daihoc.fpt.edu.vn/hcm/workshop-hoi-thao/">Workshop &amp; Hội thảo</a></li>
+	<li id="menu-item-1448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1448"><a href="https://daihoc.fpt.edu.vn/hcm/tat-ca-su-kien/">Lịch sự kiện</a></li>
+</ul>
+</li>
+<li id="menu-item-219" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219 menu-item-design-default"><a href="https://daihoc.fpt.edu.vn/hcm/lien-he/" class="nav-top-link">Liên hệ</a></li>
+            </ul>
+          </div>
+
+          <!-- Right Elements -->
+          <div class="flex-col hide-for-medium flex-right">
+            <ul class="header-nav header-nav-main nav nav-right  nav-size-medium nav-spacing-small">
+              <li class="header-search header-search-lightbox has-icon">
+	<div class="header-button">		<a href="#search-lightbox" class="icon primary button circle is-small" aria-label="Search" data-open="#search-lightbox" data-focus="input.search-field" role="button" aria-expanded="false" aria-haspopup="dialog" aria-controls="search-lightbox" data-flatsome-role-button><i class="icon-search" aria-hidden="true" style="font-size:16px;"></i></a>		</div>
+	
+	<div id="search-lightbox" class="mfp-hide dark text-center">
+		<div class="searchform-wrapper ux-search-box relative is-large"><form method="get" class="searchform" action="https://daihoc.fpt.edu.vn/hcm/" role="search">
+		<div class="flex-row relative">
+			<div class="flex-col flex-grow">
+	   	   <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Bạn cần tìm thông tin gì ?" />
+			</div>
+			<div class="flex-col">
+				<button type="submit" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Gửi">
+					<i class="icon-search" aria-hidden="true"></i>				</button>
+			</div>
+		</div>
+    <div class="live-search-results text-left z-top"></div>
+</form>
+</div>	</div>
+</li>
+            </ul>
+          </div>
+
+          <!-- Mobile Right Elements -->
+          <div class="flex-col show-for-medium flex-right">
+            <ul class="mobile-nav nav nav-right ">
+              <li class="header-search header-search-lightbox has-icon">
+	<div class="header-button">		<a href="#search-lightbox" class="icon primary button circle is-small" aria-label="Search" data-open="#search-lightbox" data-focus="input.search-field" role="button" aria-expanded="false" aria-haspopup="dialog" aria-controls="search-lightbox" data-flatsome-role-button><i class="icon-search" aria-hidden="true" style="font-size:16px;"></i></a>		</div>
+	
+	<div id="search-lightbox" class="mfp-hide dark text-center">
+		<div class="searchform-wrapper ux-search-box relative is-large"><form method="get" class="searchform" action="https://daihoc.fpt.edu.vn/hcm/" role="search">
+		<div class="flex-row relative">
+			<div class="flex-col flex-grow">
+	   	   <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Bạn cần tìm thông tin gì ?" />
+			</div>
+			<div class="flex-col">
+				<button type="submit" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Gửi">
+					<i class="icon-search" aria-hidden="true"></i>				</button>
+			</div>
+		</div>
+    <div class="live-search-results text-left z-top"></div>
+</form>
+</div>	</div>
+</li>
+            </ul>
+          </div>
+
+      </div>
+
+            <div class="container"><div class="top-divider full-width"></div></div>
+      </div>
+
+<div class="header-bg-container fill"><div class="header-bg-image fill"></div><div class="header-bg-color fill"></div></div>		</div>
+	</header>
+
+	
+	<main id="main" class="">
+
+<div id="content" class="blog-wrapper blog-single page-wrapper">
+	
+<div class="row align-center">
+	<div class="large-10 col">
+	
+	
+
+
+<article id="post-7355" class="post-7355 post type-post status-publish format-standard has-post-thumbnail hentry category-hoc-bong-doanh-nghiep tag-le-trao-hoc-bong">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-left">
+		<h1 class="entry-title">FSB hòa chung không khí Convocation Day 2025, trao học bổng mba cho ba thủ khoa xuất sắc của đại học FPT</h1><div class="entry-divider is-divider small"></div>
+	</div>
+				</header>
+		<div class="entry-content single-page">
+
+	<figure id="attachment_21281-3" aria-describedby="caption-attachment-21281-3" style="width: 2048px" class="wp-caption aligncenter"><img fetchpriority="high" decoding="async" class="wp-image-21281 size-full" src="https://qhdn-hcmuni.fpt.edu.vn/wp-content/uploads/2025/11/585495556_1346447480858422_2870977862622419044_n.jpg" alt="" width="2048" height="1365" /><figcaption id="caption-attachment-21281-3" class="wp-caption-text">Vinh danh ba gương mặt tiêu biểu – những thủ khoa bước tiếp vào hành trình học tập sau đại học</figcaption></figure>
+<p>Sáng ngày 20/11/2025, không khí rộn ràng của Convocation Day 2025 đã phủ kín khuôn viên Phân hiệu Trường Đại học FPT tại Thành phố Hồ Chí Minh. Màu áo tốt nghiệp, tiếng chúc mừng, những nụ cười rạng rỡ và khoảnh khắc tri ân đầy xúc động đã tạo nên một ngày lễ trọn vẹn cho hơn hàng nghìn tân cử nhân.</p>
+<p>Hòa chung niềm vui ấy, Viện Quản trị &amp; Công nghệ FSB vinh dự trao tặng ba suất học bổng MBA giá trị dành cho những sinh viên có thành tích học tập xuất sắc trong năm 2025.</p>
+<p data-start="855" data-end="1029">Trong tiếng vỗ tay của bạn bè và thầy cô, ba sinh viên ưu tú của các đợt tốt nghiệp đã được FSB trao tặng học bổng cao học nhằm tiếp sức cho chặng đường phát triển tiếp theo:</p>
+<ul data-start="1031" data-end="1442">
+<li data-start="1031" data-end="1164">
+<p data-start="1033" data-end="1164">Nguyễn Hữu Trường – tốt nghiệp đợt 3/2025, nhận Học bổng MBA FSB trị giá 77,4 triệu đồng (30% học phí toàn khóa).</p>
+</li>
+<li data-start="1165" data-end="1302">
+<p data-start="1167" data-end="1302">Phan Nguyễn Khánh Duy – tốt nghiệp đợt 1/2025, nhận Học bổng MBA FSB trị giá 77,4 triệu đồng (30% học phí toàn khóa).</p>
+</li>
+<li data-start="1303" data-end="1442">
+<p data-start="1305" data-end="1442">Trảo Nhật Hằng – tốt nghiệp đợt 2/2025, nhận Học bổng Leeds Beckett MBA trị giá 110,4 triệu đồng (30% học phí toàn khóa).</p>
+</li>
+</ul>
+<p data-start="1444" data-end="1658">Những gương mặt thủ khoa không chỉ nổi bật về thành tích học tập mà còn là đại diện cho tinh thần nỗ lực bền bỉ – điều mà FSB luôn trân trọng và mong muốn tiếp tục nuôi dưỡng thông qua các chương trình sau đại học.</p>
+<p data-start="1444" data-end="1658">Phát biểu tại buổi lễ, đại diện FSB nhấn mạnh rằng việc trao học bổng trong ngày tốt nghiệp không chỉ mang ý nghĩa tuyên dương mà còn thể hiện mong muốn đồng hành cùng sinh viên trên hành trình trưởng thành chuyên môn. MBA được xem như chiếc “bệ phóng mới” để các bạn trẻ mở rộng tư duy quản trị, tiếp cận môi trường học thuật quốc tế và sẵn sàng đảm nhận vai trò lãnh đạo trong tương lai.</p>
+<p data-start="1444" data-end="1658">Trong không khí trang trọng nhưng đầy cảm xúc của Convocation Day 2025, những suất học bổng MBA được trao đi như lời chúc mừng, đồng thời cũng là sự gửi gắm niềm tin của FSB vào thế hệ trẻ. Từ đây, các tân cử nhân sẽ tiếp tục viết tiếp câu chuyện học tập của mình, mang theo tinh thần tiên phong của Đại học FPT bước vào hành trình mới.</p>
+<p style="text-align: right" data-start="1444" data-end="1658"><strong>Phòng Quan hệ Doanh nghiệp</strong></p>
+
+	
+	<div class="blog-share text-center"><div class="is-divider medium"></div><div class="social-icons share-icons share-row relative icon-style-outline" ><a href="https://www.facebook.com/sharer.php?u=https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/" data-label="Facebook" onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px'); return false;" target="_blank" class="icon button circle is-outline tooltip facebook" title="Chia sẻ trên Facebook" aria-label="Chia sẻ trên Facebook" rel="noopener nofollow"><i class="icon-facebook" aria-hidden="true"></i></a><a href="/cdn-cgi/l/email-protection#27185452454d4244531a6174650215174f02641402651546021517444f5249400215174c4f02641402651349400215174c4f02641402666302151764484951484446534e484902151763465e02151715171512021564021517535546480215174f026216026565021f634402151745026216026565021e1249400215174a4546021517444f480215174546021517534f0262160265650266100215174c4f48460215175f520262160265660266125302151754026216026566026661440215174402621602656502661046021517026413021e160262160265660266164e0215174f026216026565021f6344021517617773014548435e1a7f424a021517490264140266175e0214660215174f5353575402146602156102156143464e4f484409415753094243520951490215614f444a0215614154450a4f48460a444f5249400a4c4f4849400a4c4f4e0a44484951484446534e48490a43465e0a151715120a535546480a4f48440a454849400a4a45460a444f480a45460a534f520a4c4f48460a5f5246530a5446440a4452460a43464e0a4f48440a415753021561" class="icon button circle is-outline tooltip email" title="Gửi email cho bạn bè" aria-label="Gửi email cho bạn bè" rel="nofollow"><i class="icon-envelop" aria-hidden="true"></i></a></div></div></div>
+
+
+
+	</div>
+</article>
+
+
+	</div>
+
+</div>
+
+	<div class="related-posts row cungchuyenmuc"><h3 class="related-title">Bài cùng chuyên mục</h3><div class="related-grid">            <div class="related-item">
+                <a href="https://daihoc.fpt.edu.vn/hcm/future-vpbanker-scholarship-2026-tiep-suc-tuoi-tre-vung-buoc-tuong-lai-chinh-thuc-mo-don/" class="related-thumb">
+                    <img width="400" height="400" src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/09/799972267_1119909420716577_8568452775367381757_n-400x400.jpg" class="attachment-medium size-medium wp-post-image" alt="799972267 1119909420716577 8568452775367381757 n" decoding="async" loading="lazy" srcset="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/09/799972267_1119909420716577_8568452775367381757_n-400x400.jpg 400w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/09/799972267_1119909420716577_8568452775367381757_n-800x800.jpg 800w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/09/799972267_1119909420716577_8568452775367381757_n-280x280.jpg 280w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/09/799972267_1119909420716577_8568452775367381757_n-768x768.jpg 768w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/09/799972267_1119909420716577_8568452775367381757_n-1536x1536.jpg 1536w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/09/799972267_1119909420716577_8568452775367381757_n.jpg 2048w" sizes="auto, (max-width: 400px) 100vw, 400px" />                </a>
+                <a href="https://daihoc.fpt.edu.vn/hcm/future-vpbanker-scholarship-2026-tiep-suc-tuoi-tre-vung-buoc-tuong-lai-chinh-thuc-mo-don/" class="related-name">
+                    Future VPBanker Scholarship 2026 – tiếp sức tuổi trẻ, vững bước tương lai chính thức mở đơn!                </a>
+            </div>
+                        <div class="related-item">
+                <a href="https://daihoc.fpt.edu.vn/hcm/go-japan-scholarship-2026-batch-3-chinh-thuc-khoi-dong/" class="related-thumb">
+                    <img width="711" height="400" src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/07/Go-Japan-2026-1-711x400.jpg" class="attachment-medium size-medium wp-post-image" alt="Go Japan 2026" decoding="async" loading="lazy" srcset="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/07/Go-Japan-2026-1-711x400.jpg 711w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/07/Go-Japan-2026-1-768x432.jpg 768w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/07/Go-Japan-2026-1.jpg 1200w" sizes="auto, (max-width: 711px) 100vw, 711px" />                </a>
+                <a href="https://daihoc.fpt.edu.vn/hcm/go-japan-scholarship-2026-batch-3-chinh-thuc-khoi-dong/" class="related-name">
+                    Go Japan Scholarship 2026 &#8211; Batch 3 Chính thức khởi động                </a>
+            </div>
+                        <div class="related-item">
+                <a href="https://daihoc.fpt.edu.vn/hcm/le-tong-ket-trao-hoc-bong-chuong-trinh-ky-su-cntt-nhat-ban-khoa-1/" class="related-thumb">
+                    <img width="600" height="400" src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/07/IMG_0682-1024x683-1-600x400.webp" class="attachment-medium size-medium wp-post-image" alt="IMG 0682 1024x683" decoding="async" loading="lazy" srcset="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/07/IMG_0682-1024x683-1-600x400.webp 600w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/07/IMG_0682-1024x683-1-768x512.webp 768w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/07/IMG_0682-1024x683-1.webp 1024w" sizes="auto, (max-width: 600px) 100vw, 600px" />                </a>
+                <a href="https://daihoc.fpt.edu.vn/hcm/le-tong-ket-trao-hoc-bong-chuong-trinh-ky-su-cntt-nhat-ban-khoa-1/" class="related-name">
+                    Sinh viên FPTU được tài trợ 136 triệu đồng học bổng, gia nhập FPT Software sau chương trình Kỹ sư CNTT Nhật Bản                </a>
+            </div>
+                        <div class="related-item">
+                <a href="https://daihoc.fpt.edu.vn/hcm/810-suat-hoc-bong-vung-tuong-lai-nam-hoc-2025-2026-dong-hanh-cung-hoc-sinh-sinh-vien-viet-nam/" class="related-thumb">
+                    <img width="711" height="400" src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/08/748954623_1389795193291835_107908408914602960_n-1-711x400.jpg" class="attachment-medium size-medium wp-post-image" alt="748954623 1389795193291835 107908408914602960 n" decoding="async" loading="lazy" srcset="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/08/748954623_1389795193291835_107908408914602960_n-1-711x400.jpg 711w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/08/748954623_1389795193291835_107908408914602960_n-1-768x432.jpg 768w, https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/08/748954623_1389795193291835_107908408914602960_n-1.jpg 1254w" sizes="auto, (max-width: 711px) 100vw, 711px" />                </a>
+                <a href="https://daihoc.fpt.edu.vn/hcm/810-suat-hoc-bong-vung-tuong-lai-nam-hoc-2025-2026-dong-hanh-cung-hoc-sinh-sinh-vien-viet-nam/" class="related-name">
+                    810 Suất học bổng “Vững Tương Lai” Năm học 2025 – 2026 đồng hành cùng học sinh, sinh viên Việt Nam                </a>
+            </div>
+            </div></div></div>
+
+
+</main>
+
+<footer id="footer" class="footer-wrapper">
+
+	
+	<section class="section" id="section_1811802669">
+		<div class="section-bg fill" >
+			<img src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/svgviewer-output-4.svg" class="bg attachment- size-" alt="Svgviewer output (4)" decoding="async" loading="lazy" />						
+			
+
+		</div>
+
+		
+
+		<div class="section-content relative">
+			
+
+<div class="row"  id="row-55192344">
+
+
+	<div id="col-798677490" class="col small-12 large-12"  >
+				<div class="col-inner"  >
+			
+			
+
+	<div id="text-3289381712" class="text headline">
+		
+
+<h1><strong><span style="color: #ff6600;">Liên hệ</span> &amp; Bản đồ</strong></h1>
+		
+<style>
+#text-3289381712 {
+  font-size: 1.5rem;
+}
+</style>
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+</div>
+<div class="row"  id="row-1298746005">
+
+
+	<div id="col-111011108" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+
+
+		<div class="icon-box featured-box icon-box-left text-left"  >
+					<div class="icon-box-img" style="width: 39px">
+				<div class="icon">
+					<div class="icon-inner" >
+						<img width="1" height="1" src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/icon-local-primary.svg" class="attachment-medium size-medium" alt="Icon local primary" decoding="async" loading="lazy" />					</div>
+				</div>
+			</div>
+				<div class="icon-box-text last-reset">
+									
+
+	<div id="gap-196931022" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-196931022 {
+  padding-top: 10px;
+}
+</style>
+	</div>
+	
+
+<p><strong>Cơ sở chính: ĐT743, Phường Tân Đông Hiệp, TP. Hồ Chí Minh</strong></p>
+
+		</div>
+	</div>
+	
+	
+	<div id="gap-1305572981" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-1305572981 {
+  padding-top: 10px;
+}
+</style>
+	</div>
+	
+
+
+		<div class="icon-box featured-box icon-box-left text-left"  >
+					<div class="icon-box-img" style="width: 39px">
+				<div class="icon">
+					<div class="icon-inner" >
+						<img width="1" height="1" src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/icon-local-primary.svg" class="attachment-medium size-medium" alt="Icon local primary" decoding="async" loading="lazy" />					</div>
+				</div>
+			</div>
+				<div class="icon-box-text last-reset">
+									
+
+<p><strong>Cơ sở 1 : Lô E2a-7, Đường D1, Khu Công nghệ cao, Phường Tăng Nhơn Phú, TP. Hồ Chí Minh</strong></p>
+
+		</div>
+	</div>
+	
+	
+	<div id="gap-1068020368" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-1068020368 {
+  padding-top: 10px;
+}
+</style>
+	</div>
+	
+
+
+		<div class="icon-box featured-box icon-box-left text-left"  >
+					<div class="icon-box-img" style="width: 39px">
+				<div class="icon">
+					<div class="icon-inner" >
+						<img width="1" height="1" src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/icon-phone-primary.svg" class="attachment-medium size-medium" alt="Icon phone primary" decoding="async" loading="lazy" />					</div>
+				</div>
+			</div>
+				<div class="icon-box-text last-reset">
+									
+
+	<div id="text-341093665" class="text mt-2">
+		
+
+<p><strong>Hotline: 028 7300 5588</strong></p>
+			</div>
+	
+
+		</div>
+	</div>
+	
+	
+	<div id="gap-1044621477" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-1044621477 {
+  padding-top: 10px;
+}
+</style>
+	</div>
+	
+
+
+		<div class="icon-box featured-box icon-box-left text-left"  >
+					<div class="icon-box-img" style="width: 39px">
+				<div class="icon">
+					<div class="icon-inner" >
+						<img width="1" height="1" src="https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/04/icon-mail-primary.svg" class="attachment-medium size-medium" alt="Icon mail primary" decoding="async" loading="lazy" />					</div>
+				</div>
+			</div>
+				<div class="icon-box-text last-reset">
+									
+
+	<div id="text-149220285" class="text mt-3">
+		
+
+<p><strong>Email: <a href="/cdn-cgi/l/email-protection#7e0a0b071b100d17101650161d133e180e0a501b1a0b500810"><span class="__cf_email__" data-cfemail="ee9a9b978b809d878086c0868d83ae889e9ac08b8a9bc09880">[email&#160;protected]</span></a></strong></p>
+		
+<style>
+#text-149220285 {
+  color: rgb(0,0,0);
+}
+#text-149220285 > * {
+  color: rgb(0,0,0);
+}
+</style>
+	</div>
+	
+
+		</div>
+	</div>
+	
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-417478491" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+
+
+  <div class="banner has-hover" id="banner-1266324172">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill" >
+                                                
+                    </div>
+		
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+
+   <div id="text-box-2050378005" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.8792916251305!2d106.7742203!3d10.9724828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174dbabcd5a05b7%3A0x3e808731c15fbe80!2sFPT%20University%20HCM%20-%20Main%20Campus!5e0!3m2!1svi!2s!4v1789615037593!5m2!1svi!2s" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-2050378005 {
+  width: 100%;
+}
+#text-box-2050378005 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-1266324172 {
+  padding-top: 350px;
+  background-color: rgb(255,255,255);
+}
+</style>
+  </div>
+
+
+
+		</div>
+					</div>
+
+	
+
+</div>
+
+		</div>
+
+		
+<style>
+#section_1811802669 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#section_1811802669 .section-bg img {
+  object-position: 69% 92%;
+}
+</style>
+	</section>
+	
+<div class="absolute-footer dark medium-text-center small-text-center">
+  <div class="container clearfix">
+
+    
+    <div class="footer-primary pull-left">
+            <div class="copyright-footer">
+              </div>
+          </div>
+  </div>
+</div>
+<button type="button" id="top-link" class="back-to-top button icon invert plain fixed bottom z-1 is-outline circle hide-for-medium" aria-label="Lên đầu trang"><i class="icon-angle-up" aria-hidden="true"></i></button>
+</footer>
+
+</div>
+
+<div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
+
+	
+	<div class="sidebar-menu no-scrollbar ">
+
+		
+					<ul class="nav nav-sidebar nav-vertical nav-uppercase" data-tab="1">
+				<li class="header-search-form search-form html relative has-icon">
+	<div class="header-search-form-wrapper">
+		<div class="searchform-wrapper ux-search-box relative is-normal"><form method="get" class="searchform" action="https://daihoc.fpt.edu.vn/hcm/" role="search">
+		<div class="flex-row relative">
+			<div class="flex-col flex-grow">
+	   	   <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Bạn cần tìm thông tin gì ?" />
+			</div>
+			<div class="flex-col">
+				<button type="submit" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Gửi">
+					<i class="icon-search" aria-hidden="true"></i>				</button>
+			</div>
+		</div>
+    <div class="live-search-results text-left z-top"></div>
+</form>
+</div>	</div>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-187"><a href="https://daihoc.fpt.edu.vn/hcm/">Trang chủ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1241"><a href="https://daihoc.fpt.edu.vn/hcm/ve-fptu/">Về FPTU</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1229"><a href="/hcm/ve-fptu/#brand-story">Câu chuyện về FPTU</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1231"><a href="/hcm/ve-fptu/#management">Ban giám hiệu</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1456"><a href="https://daihoc.fpt.edu.vn/hcm/ban-lanh-dao-campus-hcm/">Ban lãnh đạo Campus HCM</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1232"><a href="/hcm/ve-fptu/#achievements">Thành tựu</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1233"><a href="/hcm/#outstanding-position">Vị thế</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1234"><a href="/hcm/ve-fptu/#overview-major">Ngành đào tạo</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1235"><a href="/hcm/ve-fptu/#campus-base">Cơ sở vật chất</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"><a target="_blank" href="https://viewdaihoc.fpt.edu.vn/fpt-ho-chi-minh/">Virtual Tour 360</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-192"><a href="#">Tuyển sinh</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193"><a target="_blank" href="https://daihoc.fpt.edu.vn/phuong-thuc-tuyen-sinh/">Phương thức xét tuyển</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-194"><a target="_blank" href="https://daihoc.fpt.edu.vn/chuong-trinh-dao-tao/#overview-major">Ngành học đào tạo</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-195"><a target="_blank" href="https://daihoc.fpt.edu.vn/hoc-bong/">Học phí &#038; Học bổng</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1243"><a href="https://daihoc.fpt.edu.vn/hcm/dang-ky-tu-van/">Đăng ký tư vấn</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-196"><a href="#">NCKH &#038; RBL</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-199"><a href="https://daihoc.fpt.edu.vn/hcm/hoat-dong-nckh/">Hoạt động NCKH</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1699"><a target="_blank" href="https://daihoc.fpt.edu.vn/hcm/fisat">Hội nghị khoa học Quốc tế</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1700"><a target="_blank" href="https://innovationlab.fpt.edu.vn/hcm">Innovation Labs</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-198"><a href="https://daihoc.fpt.edu.vn/hcm/du-an-rbl-tieu-bieu/">Dự án RBL tiêu biểu</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-197"><a href="https://daihoc.fpt.edu.vn/hcm/chan-dung-giang-vien-nghien-cuu-vien/">Chân dung Giảng viên &#8211; Nghiên cứu viên</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1447"><a href="#">NCKH Sinh viên</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-200"><a href="https://daihoc.fpt.edu.vn/hcm/khoi-nghiep/">Trải nghiệm Khởi nghiệp</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-202"><a href="https://daihoc.fpt.edu.vn/hcm/he-sinh-thai-khoi-nghiep-exe-1-3/">Hệ sinh thái khởi nghiệp (EXE 1-3)</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-201"><a href="https://daihoc.fpt.edu.vn/hcm/mentor-doanh-nghiep/">Mentor doanh nghiệp</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-270"><a href="https://daihoc.fpt.edu.vn/hcm/startup-tieu-bieu/">Startup tiêu biểu</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6693"><a href="https://daihoc.fpt.edu.vn/hcm/doanh-nghiep-va-alumni/">Doanh nghiệp &#038; Alumni</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6440"><a href="https://daihoc.fpt.edu.vn/hcm/quan-he-doi-tac/">Quan hệ đối tác</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6439"><a href="https://daihoc.fpt.edu.vn/hcm/hoc-ky-tai-doanh-nghiep-ojt/">Học kỳ tại doanh nghiệp (OJT)</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6438"><a href="https://daihoc.fpt.edu.vn/hcm/hoc-bong-sv-doanh-nghiep/">Học bổng doanh nghiệp</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2381"><a href="https://daihoc.fpt.edu.vn/hcm/co-hoi-nghe-nghiep/">Thông tin việc làm</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6441"><a href="https://daihoc.fpt.edu.vn/hcm/cuu-sinh-vien-fptu/">Cựu sinh viên (Alumni)</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-208"><a href="https://daihoc.fpt.edu.vn/hcm/quoc-te-hoa/">Quốc tế hóa</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-209"><a href="https://daihoc.fpt.edu.vn/hcm/chuong-trinh-trao-doi-exchange/">Chương trình trao đổi (Exchange)</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-210"><a href="https://daihoc.fpt.edu.vn/hcm/doi-tac-quoc-te/">Đối tác quốc tế</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-211"><a href="https://daihoc.fpt.edu.vn/hcm/hoc-bong-quoc-te/">Học bổng quốc tế</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-212"><a href="https://daihoc.fpt.edu.vn/hcm/doi-song-sinh-vien/">Đời sống sinh viên</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5465"><a href="https://daihoc.fpt.edu.vn/hcm/chan-dung-sinh-vien/">Chân dung sinh viên</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-213"><a href="https://daihoc.fpt.edu.vn/hcm/cau-lac-bo-clb/">Câu lạc bộ (CLB)</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-215"><a href="https://daihoc.fpt.edu.vn/hcm/trai-nghiem-sinh-vien/">Trải nghiệm sinh viên</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1394"><a href="https://daihoc.fpt.edu.vn/hcm/insider/">Insider</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8615"><a href="https://daihoc.fpt.edu.vn/hcm/cam-nang-tuan-le-dinh-huong/">Cẩm nang tuần lễ định hướng 2026</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8616"><a href="https://daihoc.fpt.edu.vn/hcm/so-tay-tan-sinh-vien-2026/">Sổ tay Tân Sinh Viên 2026</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-214"><a href="https://daihoc.fpt.edu.vn/hcm/goc-tam-ly/">Góc tâm lý</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-216"><a href="https://daihoc.fpt.edu.vn/hcm/tin-tuc-su-kien/">Tin tức &amp; Sự kiện</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-269"><a href="https://daihoc.fpt.edu.vn/hcm/tin-tuc-noi-bat/">Tin tức nổi bật</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6235"><a href="https://daihoc.fpt.edu.vn/hcm/phat-trien-ben-vung/">Phát triển bền vững</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-265"><a href="https://daihoc.fpt.edu.vn/hcm/hoat-dong-cong-dong/">Hoạt động cộng đồng</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-267"><a href="https://daihoc.fpt.edu.vn/hcm/thong-bao-tuyen-sinh/">Thông báo tuyển sinh</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-268"><a href="https://daihoc.fpt.edu.vn/hcm/workshop-hoi-thao/">Workshop &amp; Hội thảo</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1448"><a href="https://daihoc.fpt.edu.vn/hcm/tat-ca-su-kien/">Lịch sự kiện</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="https://daihoc.fpt.edu.vn/hcm/lien-he/">Liên hệ</a></li>
+			</ul>
+		
+		
+	</div>
+
+	
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/hcm/*"},{"not":{"href_matches":["/hcm/wp-*.php","/hcm/wp-admin/*","/hcm/wp-content/uploads/*","/hcm/wp-content/*","/hcm/wp-content/plugins/*","/hcm/wp-content/themes/flatsome-child/*","/hcm/wp-content/themes/flatsome/*","/hcm/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<div class="ft-chatbox-skin1 " >
+				<a class="ft-cco ft-cpho" rel="nofollow" title="Phone" href="tel:02873005588"><i><svg class="khacus" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><g transform="matrix(0.117188,0,0,0.117188,4.99027,4.99027)"><path d="M278.669,172.38L278.674,172.38C312.199,172.38 339.785,199.966 339.785,233.491L339.785,233.5C339.833,237.752 343.345,241.225 347.597,241.225C351.85,241.225 355.362,237.752 355.41,233.5C355.391,191.41 320.759,156.781 278.669,156.767C278.64,156.767 278.61,156.766 278.581,156.766C274.298,156.766 270.775,160.29 270.775,164.573C270.775,168.855 274.298,172.379 278.581,172.379C278.61,172.379 278.64,172.378 278.669,172.378L278.669,172.38ZM266.876,222.358C266.847,222.358 266.817,222.359 266.788,222.359C262.505,222.359 258.982,218.835 258.982,214.553C258.982,210.27 262.505,206.747 266.788,206.747L266.898,206.747C288.884,206.747 306.976,224.839 306.976,246.825L306.976,246.837C306.928,251.089 303.416,254.562 299.164,254.562C294.911,254.562 291.399,251.089 291.351,246.837L291.351,246.828C291.351,233.404 280.305,222.358 266.881,222.358L266.876,222.358ZM317.7,415.5C293.023,411.142 268.671,399.821 247.415,386.838C222.827,371.802 199.86,353.06 179.488,332.682C159.116,312.304 140.366,289.352 125.33,264.741C112.358,243.488 101.007,219.129 96.673,194.465C95.632,188.948 95.946,183.259 97.588,177.89C99.333,172.575 102.325,167.755 106.314,163.833L138.862,131.294C142.014,128.163 147.179,128.163 150.331,131.294L208.8,189.751C211.925,192.909 211.925,198.07 208.8,201.228L177.726,232.311C173.173,236.832 172.57,244.062 176.311,249.275C188.332,265.886 201.703,281.477 216.289,295.889C230.692,310.481 246.283,323.851 262.9,335.861C268.104,339.611 275.337,339.011 279.852,334.454L310.952,303.374C312.465,301.853 314.527,301.001 316.672,301.01C318.825,301.006 320.893,301.857 322.421,303.374L380.883,361.834C384.008,364.991 384.008,370.151 380.883,373.308L348.334,405.85C340.428,414.045 328.876,417.684 317.7,415.5ZM278.669,111.691C274.388,111.691 270.865,108.168 270.865,103.887C270.865,99.607 274.388,96.084 278.669,96.084L278.676,96.084C354.056,96.084 416.084,158.112 416.084,233.492L416.084,233.5C416.084,237.786 412.557,241.313 408.271,241.313C403.985,241.313 400.458,237.786 400.458,233.5C400.463,166.683 345.486,111.697 278.669,111.691Z" style="fill:#fff"/></g></svg></i><span>Hotline</span></a><a class="ft-cco ft-czal" target="_blank" rel="nofollow" title="Zalo" href="https://zalo.me/daihocfpttphcm"><i><svg class="khacus" width="100%" height="100%" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M25.004,10.45l-0.015,-0c-7.978,-0 -14.544,6.565 -14.544,14.543c0,2.609 0.702,5.17 2.032,7.415l-1.951,5.367c-0.053,0.145 -0.08,0.298 -0.08,0.453c0,0.725 0.597,1.322 1.322,1.322c0.154,0 0.307,-0.027 0.452,-0.079l5.368,-1.952c2.245,1.33 4.807,2.031 7.416,2.031c7.982,0 14.551,-6.568 14.551,-14.55c-0,-7.982 -6.569,-14.55 -14.551,-14.55Zm0.939,18.021l-0,0.021c-0,0.293 0.254,0.548 0.56,0.548l0.752,-0l0,-6.143l-1.312,-0l-0,0.435c-0.528,-0.386 -1.181,-0.613 -1.888,-0.613c-1.759,-0 -3.186,1.427 -3.186,3.186c-0,1.759 1.427,3.186 3.186,3.186c0.706,0 1.359,-0.23 1.888,-0.62Zm7.976,-5.803c-1.772,-0 -3.212,1.44 -3.212,3.211c0,1.772 1.44,3.212 3.212,3.212c1.771,-0 3.211,-1.44 3.211,-3.212c0,-1.771 -1.44,-3.211 -3.211,-3.211Zm-5.073,6.372l0.931,-0l-0,-8.131l-1.402,-0l-0,7.659c-0,0.255 0.204,0.472 0.471,0.472Zm-8.321,-8.131l-6.538,-0l-0,1.402l4.537,-0l-4.474,5.544c-0.14,0.204 -0.242,0.395 -0.242,0.828l0,0.357l6.169,-0c0.306,-0 0.56,-0.255 0.56,-0.561l0,-0.752l-4.766,0l4.206,-5.276c0.063,-0.077 0.178,-0.217 0.229,-0.28l0.026,-0.039c0.242,-0.357 0.293,-0.662 0.293,-1.032l-0,-0.191Zm3.53,6.869c-1.033,0 -1.874,-0.841 -1.874,-1.873c0,-1.032 0.841,-1.873 1.874,-1.873c1.032,-0 1.873,0.841 1.873,1.873c0,1.032 -0.828,1.873 -1.873,1.873Zm9.864,0c-1.045,0 -1.886,-0.841 -1.886,-1.886c-0,-1.045 0.841,-1.886 1.886,-1.886c1.045,-0 1.886,0.841 1.886,1.886c0,1.045 -0.841,1.886 -1.886,1.886Z" style="fill:#fff;"/></svg></i><span>Zalo</span></a><a class="ft-cco ft-cmes" target="_blank" rel="nofollow" title="Messenger" href="https://www.facebook.com/FPTU.HCM"><i><svg class="khacus" width="100%" height="100%" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><g transform="matrix(0.129883,0,0,0.129912,1.75004,1.74647)"><g id="Layer_2"><g id="Color"><g id="_38.Messenger"><path id="Icon" d="M256,121.263C181.592,121.263 121.263,177.179 121.263,246.164C121.557,284.737 140.214,320.949 171.453,343.579L171.992,387.604C172.025,389.299 173.428,390.676 175.124,390.676C175.667,390.676 176.201,390.534 176.674,390.265L218.745,366.383C230.901,369.598 243.426,371.206 256,371.166C330.408,371.166 390.737,315.251 390.737,246.265C390.737,177.28 330.408,121.263 256,121.263ZM266.105,286.316L237.305,256.337C235.613,254.59 232.947,254.176 230.804,255.326L180.278,282.543C180.017,282.667 179.731,282.731 179.442,282.731C178.37,282.731 177.488,281.849 177.488,280.777C177.488,280.314 177.653,279.865 177.954,279.512L237.811,216.421C238.625,215.549 239.767,215.054 240.96,215.054C242.153,215.054 243.295,215.549 244.109,216.421L272.842,246.973C274.526,248.758 277.221,249.188 279.377,248.017L329.061,221.069C329.364,220.883 329.712,220.784 330.068,220.784C331.121,220.784 331.988,221.651 331.988,222.704C331.988,223.233 331.77,223.738 331.385,224.101L272.505,286.484C271.688,287.399 270.517,287.923 269.29,287.923C268.079,287.923 266.922,287.413 266.105,286.518L266.105,286.316Z" style="fill:#fff;fill-rule:nonzero"/></g></g></g></g></svg></i><span>Fanpage</span></a>			</div>
+			<style>.ft-chatbox-skin1{right:16px;left:auto;}.ft-chatbox-skin1 a:hover span{left:auto;right:55px;}.chathi{transform:translateX(350%);}.ft-chatbox-skin1{bottom:59px;}.ft-chatbox-skin1 svg{opacity:1;}.ft-chatbox-skin1 i, .ft-chatbox-skin1 svg, .ft-chatbox-skin1 a:hover span{border-radius:50px;}</style><script type="application/ld+json" id="slim-seo-schema">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://daihoc.fpt.edu.vn/hcm/#website","url":"https://daihoc.fpt.edu.vn/hcm/","name":"Trường Đại học FPT - Campus TP. Hồ Chí Minh","inLanguage":"vi","potentialAction":{"@id":"https://daihoc.fpt.edu.vn/hcm/#searchaction"},"publisher":{"@id":"https://daihoc.fpt.edu.vn/hcm/#organization"}},{"@type":"SearchAction","@id":"https://daihoc.fpt.edu.vn/hcm/#searchaction","target":"https://daihoc.fpt.edu.vn/hcm/?s={search_term_string}","query-input":"required name=search_term_string"},{"@type":"BreadcrumbList","name":"Điều hướng trang","@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#breadcrumblist","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://daihoc.fpt.edu.vn/hcm/"},{"@type":"ListItem","position":2,"name":"Doanh nghiệp & Alumni","item":"https://daihoc.fpt.edu.vn/hcm/doanh-nghiep-alumni/"},{"@type":"ListItem","position":3,"name":"Học bổng doanh nghiệp","item":"https://daihoc.fpt.edu.vn/hcm/hoc-bong-doanh-nghiep/"},{"@type":"ListItem","position":4,"name":"FSB hòa chung không khí Convocation Day 2025, trao học bổng mba cho ba thủ khoa xuất sắc của đại học FPT"}]},{"@type":"WebPage","@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#webpage","url":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/","inLanguage":"vi","name":"FSB hòa chung không khí Convocation Day 2025, trao học bổng mba cho ba thủ khoa xuất sắc của đại học FPT – Trường Đại học FPT – Campus TP. Hồ Chí Minh","description":"Vinh danh ba gương mặt tiêu biểu – những thủ khoa bước tiếp vào hành trình học tập sau đại học Sáng ngày 20/11/2025, không khí rộn ràng của Convocation Day 2025","datePublished":"2025-11-27T02:27:36+00:00","dateModified":"2026-08-14T02:48:04+00:00","isPartOf":{"@id":"https://daihoc.fpt.edu.vn/hcm/#website"},"breadcrumb":{"@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#breadcrumblist"},"potentialAction":{"@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#readaction"},"primaryImageOfPage":{"@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#thumbnail"},"image":{"@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#thumbnail"}},{"@type":"ReadAction","@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#readaction","target":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/"},{"@type":"Organization","@id":"https://daihoc.fpt.edu.vn/hcm/#organization","url":"https://daihoc.fpt.edu.vn/hcm/","name":"Trường Đại học FPT - Campus TP. Hồ Chí Minh"},{"@type":"ImageObject","@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#thumbnail","url":"https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/08/585495556_1346447480858422_2870977862622419044_n.jpg","contentUrl":"https://cdn-lab.fpt.edu.vn/innovationlab/media/2026/08/585495556_1346447480858422_2870977862622419044_n.jpg","width":2048,"height":1365},{"@type":"Article","@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#article","url":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/","headline":"FSB hòa chung không khí Convocation Day 2025, trao học bổng mba cho ba thủ khoa xuất sắc của đại học FPT","datePublished":"2025-11-27T02:27:36+00:00","dateModified":"2026-08-14T02:48:04+00:00","wordCount":664,"keywords":["Lễ trao học bổng"],"articleSection":["Học bổng doanh nghiệp"],"isPartOf":{"@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#webpage"},"mainEntityOfPage":{"@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#webpage"},"image":{"@id":"https://daihoc.fpt.edu.vn/hcm/fsb-hoa-chung-khong-khi-convocation-day-2025-trao-hoc-bong-mba-cho-ba-thu-khoa-xuat-sac-cua-dai-hoc-fpt/#thumbnail"},"publisher":{"@id":"https://daihoc.fpt.edu.vn/hcm/#organization"},"author":{"@id":"https://daihoc.fpt.edu.vn/hcm/#/schema/person/494f9077aaa49a00bbd9b83928abef74"}},{"@type":"Person","@id":"https://daihoc.fpt.edu.vn/hcm/#/schema/person/494f9077aaa49a00bbd9b83928abef74","name":"Vũ Linh","givenName":"Vũ Linh","image":"https://secure.gravatar.com/avatar/f0c9f95819a54e5d58867673794171e3bf19520df2fd32e62c1f5d2ca989f7c6?s=96&d=mm&r=g"}]}</script><script id="wp-hooks-js" src="https://daihoc.fpt.edu.vn/hcm/wp-includes/js/dist/hooks.min.js"></script>
+<script id="wp-i18n-js" src="https://daihoc.fpt.edu.vn/hcm/wp-includes/js/dist/i18n.min.js"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="swv-js" src="https://daihoc.fpt.edu.vn/hcm/wp-content/plugins/contact-form-7/includes/swv/js/index.js"></script>
+<script id="contact-form-7-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "contact-form-7", {"translation-revision-date":"2024-08-11 13:44:17+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=1; plural=0;","lang":"vi_VN"},"This contact form is placed in the wrong place.":["Bi\u1ec3u m\u1eabu li\u00ean h\u1ec7 n\u00e0y \u0111\u01b0\u1ee3c \u0111\u1eb7t sai v\u1ecb tr\u00ed."],"Error:":["L\u1ed7i:"]}},"comment":{"reference":"includes\/js\/index.js"}} );
+//# sourceURL=contact-form-7-js-translations
+</script>
+<script id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/daihoc.fpt.edu.vn\/hcm\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+//# sourceURL=contact-form-7-js-before
+</script>
+<script id="contact-form-7-js" src="https://daihoc.fpt.edu.vn/hcm/wp-content/plugins/contact-form-7/includes/js/index.js"></script>
+<script id="chat-js-js" src="https://daihoc.fpt.edu.vn/hcm/wp-content/plugins/foxtool/link/chat/foxchat.js"></script>
+<script id="wpcf7-redirect-script-js-extra">
+var wpcf7r = {"ajax_url":"https://daihoc.fpt.edu.vn/hcm/wp-admin/admin-ajax.php"};
+//# sourceURL=wpcf7-redirect-script-js-extra
+</script>
+<script id="wpcf7-redirect-script-js" src="https://daihoc.fpt.edu.vn/hcm/wp-content/plugins/wpcf7-redirect/build/assets/frontend-script.js"></script>
+<script id="custom-js-js" src="https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome-child/js/custom.js"></script>
+<script id="flatsome-live-search-js" src="https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/js/extensions/flatsome-live-search.js"></script>
+<script id="hoverIntent-js" src="https://daihoc.fpt.edu.vn/hcm/wp-includes/js/hoverIntent.min.js"></script>
+<script id="flatsome-js-js-extra">
+var flatsomeVars = {"theme":{"version":"3.20.5"},"ajaxurl":"https://daihoc.fpt.edu.vn/hcm/wp-admin/admin-ajax.php","rtl":"","sticky_height":"70","stickyHeaderHeight":"0","scrollPaddingTop":"0","assets_url":"https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/","lightbox":{"close_markup":"\u003Cbutton title=\"%title%\" type=\"button\" class=\"mfp-close\"\u003E\u003Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"\u003E\u003Cline x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"\u003E\u003C/line\u003E\u003Cline x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"\u003E\u003C/line\u003E\u003C/svg\u003E\u003C/button\u003E","close_btn_inside":false},"user":{"can_edit_pages":false},"i18n":{"mainMenu":"Menu ch\u00ednh","toggleButton":"Chuy\u1ec3n \u0111\u1ed5i"},"options":{"cookie_notice_version":"1","swatches_layout":false,"swatches_disable_deselect":false,"swatches_box_select_event":false,"swatches_box_behavior_selected":false,"swatches_box_update_urls":"1","swatches_box_reset":false,"swatches_box_reset_limited":false,"swatches_box_reset_extent":false,"swatches_box_reset_time":300,"search_result_latency":"0","header_nav_vertical_fly_out_frontpage":1}};
+//# sourceURL=flatsome-js-js-extra
+</script>
+<script id="flatsome-js-js" src="https://daihoc.fpt.edu.vn/hcm/wp-content/themes/flatsome/assets/js/flatsome.js"></script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"56c6dd7e4ecf4947aa540f48289e45af","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
