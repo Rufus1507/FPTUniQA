@@ -83,6 +83,7 @@ class RAGPipeline:
             clean_query = normalize_query(rewritten_query)
             logger.info(f"Query sau khi Rewriting: '{rewritten_query}' (gốc: '{query}')")
 
+
             # Bước 2: Semantic Parsing (Contract 3) trên câu hỏi đã viết lại
             parsed_query = parse_query(rewritten_query)
             logger.debug(f"Bước 2 - ParsedQuery: intent={parsed_query.intent}, slots={parsed_query.slots}")
