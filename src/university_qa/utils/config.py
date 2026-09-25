@@ -47,3 +47,16 @@ class AppConfig:
 
 # Khởi tạo singleton Config dùng chung
 config = AppConfig()
+
+
+def load_config(config_path: str = "configs/base.yaml") -> dict:
+    """Nạp cấu hình từ tệp YAML."""
+    import yaml
+
+    p = Path(config_path)
+    if not p.is_absolute():
+        p = _project_root / config_path
+    if p.exists():
+        with open(p, "r", encoding="utf-8") as f:
+            return yaml.safe_load(f) or {}
+    return {}

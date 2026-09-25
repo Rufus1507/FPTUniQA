@@ -142,7 +142,7 @@ class RAGPipeline:
                         system_prompt=SYSTEM_PROMPT,
                         history=history,
                     )
-                    answer_text = self.llm.generate(prompt)
+                    answer_text = self.llm.generate(system_prompt=SYSTEM_PROMPT, user_prompt=prompt)
                     citations = extract_citations(answer_text, retrieved_chunks)
 
                     # Guardrail: Kiểm tra ảo giác trích xuất số liệu

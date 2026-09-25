@@ -12,6 +12,7 @@ logger = get_logger("scripts.build_bm25")
 def main():
     config = load_config()
     corpus_path = config.get("data", {}).get("corpus_path", "data/processed/corpus.jsonl")
+
     output_dir = Path("data/processed/bm25_index")
 
     logger.info(f"Đọc corpus từ: {corpus_path}")

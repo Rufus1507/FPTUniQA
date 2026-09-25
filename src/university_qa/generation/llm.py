@@ -56,8 +56,12 @@ class LLMClient:
         else:
             logger.info("Chưa cấu hình API Key. Kích hoạt chế độ Fallback Mock LLM.")
 
-    def generate(self, system_prompt: str, user_prompt: str) -> str:
+    def generate(self, system_prompt: str, user_prompt: Optional[str] = None) -> str:
         """Gửi prompt tới LLM và nhận câu trả lời văn bản an toàn."""
+        if user_prompt is None:
+            user_prompt = system_prompt
+            system_prompt = "Bạn là Trợ lý Tư vấn Học vụ Đại học FPT thông minh, chuẩn mực và tận tâm."
+
         # Ưu tiên 1: Gọi qua OpenAI-compatible Client (http://localhost:20128/v1)
         if self._openai_client is not None:
             try:

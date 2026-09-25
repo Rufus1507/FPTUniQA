@@ -1,5 +1,6 @@
 """Lớp bọc hợp nhất Hybrid Retriever (BM25 + FAISS + RRF). Phụ trách: TV2."""
 
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 from university_qa.retrieval.bm25 import BM25Retriever
 from university_qa.retrieval.dense import DenseRetriever
@@ -14,10 +15,32 @@ class HybridRetriever:
         bm25_retriever: Optional[BM25Retriever] = None,
         dense_retriever: Optional[DenseRetriever] = None,
         rrf_k: int = 60,
+        auto_load: bool = True,
     ):
-        self.bm25_retriever = bm25_retriever or BM25Retriever()
-        self.dense_retriever = dense_retriever or DenseRetriever()
         self.rrf_k = rrf_k
+
+        if bm25_retriever is not None:
+            self.bm25_retriever = bm25_retriever
+        else:
+            self.bm25_retriever = BM25Retriever()
+            bm25_dir = Path("data/processed/bm25_index")
+            if auto_load and (bm25_dir / "bm25_index.pkl").exists():
+                try:
+                    self.bm25_retriever.load(bm25_dir)
+                except Exception:
+                    pass
+
+        if dense_retriever is not None:
+            self.dense_retriever = dense_retriever
+        else:
+            self.dense_retriever = DenseRetriever()
+            faiss_dir = Path("data/processed/faiss_index")
+            if auto_load and (faiss_dir / "dense.index").exists():
+                try:
+                    self.dense_retriever.load(faiss_dir)
+                except Exception:
+                    pass
+
 
     def build_index(self, documents: List[Dict[str, Any]]) -> None:
         """Lập chỉ mục đồng thời cho cả BM25 và FAISS."""

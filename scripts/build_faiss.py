@@ -13,6 +13,7 @@ logger = get_logger("scripts.build_faiss")
 def main():
     config = load_config()
     corpus_path = config.get("data", {}).get("corpus_path", "data/processed/corpus.jsonl")
+
     dense_cfg = config.get("retrieval", {}).get("dense", {})
     output_dir = Path("data/processed/faiss_index")
 
