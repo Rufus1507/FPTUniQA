@@ -12,12 +12,10 @@ class EmbeddingModel:
         model_name: str = "intfloat/multilingual-e5-base",
         device: str = "cpu",
         normalize: bool = True,
-        batch_size: int = 32,
     ):
         self.model_name = model_name
         self.device = device
         self.normalize = normalize
-        self.batch_size = batch_size
         self._model = None
 
     def _load_model(self):
@@ -38,18 +36,15 @@ class EmbeddingModel:
             return np.random.randn(len(texts), 768).astype(np.float32)
 
         # Với E5, quy ước thêm prefix 'passage: ' cho văn bản
-        if "e5" in self.model_name.lower():
-            formatted_texts = [f"passage: {t}" for t in texts]
-        elif "bge" in self.model_name.lower():
-            formatted_texts = [f"Represent this sentence: {t}" for t in texts]
-        else:
-            formatted_texts = texts
-
+        formatted_texts = (
+            [f"passage: {t}" for t in texts]
+            if "e5" in self.model_name.lower()
+            else texts
+        )
         embeddings = self._model.encode(
             formatted_texts,
             normalize_embeddings=self.normalize,
-            batch_size=self.batch_size,
-            show_progress_bar=True,
+            show_progress_bar=False,
         )
         return np.array(embeddings, dtype=np.float32)
 
@@ -61,10 +56,9 @@ class EmbeddingModel:
             return np.random.randn(768).astype(np.float32)
 
         # Với E5, quy ước thêm prefix 'query: ' cho câu hỏi
-        if "e5" in self.model_name.lower():
-            formatted_query = f"query: {query}"
-        else:
-            formatted_query = query
+        formatted_query = (
+            f"query: {query}" if "e5" in self.model_name.lower() else query
+        )
         embedding = self._model.encode(
             formatted_query,
             normalize_embeddings=self.normalize,

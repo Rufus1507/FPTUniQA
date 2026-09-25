@@ -110,11 +110,9 @@ def extract_cohorts(text: str) -> List[str]:
 def extract_effective_date(text: str, url: str = "") -> str:
     """Trích xuất ngày hiệu lực từ văn bản. Trả về chuỗi ISO date hoặc năm."""
     combined = text + " " + url
-    # Ưu tiên ISO format
     m = re.search(r"\b(20\d{2})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])\b", combined)
     if m:
         return m.group(0)
-    # Fallback: tìm năm gần URL/tiêu đề
     m = re.search(r"\b(202[4-9]|203\d)\b", combined)
     if m:
         return f"{m.group(1)}-01-01"
@@ -158,15 +156,7 @@ class MetadataEnricher:
         doc: Dict[str, Any],
     ) -> Dict[str, Any]:
         """
-        Tạo chunk corpus đầy đủ theo cả Contract 1 (baocao.md) lẫn
-        schema legacy {"id", "title", "text", "metadata"} để tương thích
-        với pipeline BM25/FAISS của TV2.
-
-        Args:
-            chunk_id: ID duy nhất của chunk (ví dụ: "fpt_000001").
-            title: Tiêu đề của chunk.
-            text: Nội dung văn bản của chunk.
-            doc: Document gốc có các trường từ DocumentLoader.
+        Tạo chunk corpus đầy đủ theo cả Contract 1 lẫn schema legacy.
         """
         url = doc.get("url", "")
         content_for_classification = text + " " + title + " " + url
@@ -176,10 +166,8 @@ class MetadataEnricher:
         cohorts = extract_cohorts(content_for_classification)
         effective_date = extract_effective_date(content_for_classification, url)
 
-        # Source: ưu tiên URL, fallback về tên file
         source = url or doc.get("source", "")
 
-        # --- Metadata (legacy schema — dùng bởi TV2 BM25/FAISS) ---
         metadata = {
             "doc_id": chunk_id,
             "source_file": doc.get("source", ""),
@@ -193,14 +181,11 @@ class MetadataEnricher:
             "depth": doc.get("depth"),
         }
 
-        # --- Trường top-level theo Contract 1 ---
         return {
-            # Legacy compatibility fields
             "id": chunk_id,
             "title": title,
             "text": text,
             "metadata": metadata,
-            # Contract 1 fields (bổ sung, không xung đột)
             "doc_id": chunk_id,
             "source": source,
             "effective_date": effective_date,

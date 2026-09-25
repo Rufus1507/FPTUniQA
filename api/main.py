@@ -1,55 +1,58 @@
-"""Khởi chạy ứng dụng FastAPI và Middleware. Phụ trách: TV3."""
+"""Khởi chạy ứng dụng FastAPI và cấu hình CORS Middleware. Phụ trách: TV3."""
 
-from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.routes.health import router as health_router
 from api.routes.qa import router as qa_router
-from university_qa.pipeline.rag_pipeline import RAGPipeline
-from university_qa.utils.config import load_config
+from university_qa.utils.config import config
 from university_qa.utils.logger import get_logger
 
-logger = get_logger("university_qa.api")
-
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    """Quản lý vòng đời khởi động và đóng ứng dụng."""
-    logger.info("Đang khởi động University QA Backend Service...")
-    config = load_config()
-    pipeline = RAGPipeline(config=config)
-    try:
-        pipeline.load_corpus()
-        logger.info("Đã nạp và lập chỉ mục corpus thành công!")
-    except Exception as e:
-        logger.warning(f"Chưa thể nạp corpus lúc khởi động: {e}")
-
-    app.state.pipeline = pipeline
-    yield
-    logger.info("Đang dừng dịch vụ University QA API...")
-
+logger = get_logger("university_qa.api.main")
 
 app = FastAPI(
-    title="University QA System API",
-    description="Hệ thống hỏi đáp đào tạo, tuyển sinh và quy chế đại học ứng dụng RAG tiên tiến.",
+    title="FPT University Academic QA API",
+    description="Hệ thống RAG giải đáp quy chế, học vụ và đào tạo Đại học FPT - Tuần 1",
     version="0.1.0",
-    lifespan=lifespan,
 )
 
-# Cấu hình CORS
+# Cấu hình CORS cho phép frontend Streamlit (localhost) gọi vào
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:8501",
+        "http://127.0.0.1:8501",
+        "*",  # Cho phép trong giai đoạn dev cục bộ
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Đăng ký router
+# Đăng ký các router endpoints
 app.include_router(health_router)
 app.include_router(qa_router)
+
+# Endpoint alias /query trỏ trực tiếp đến handler /api/v1/query
+from api.routes.qa import answer_query
+from api.contracts import QueryResponse
+app.add_api_route("/query", answer_query, methods=["POST"], response_model=QueryResponse, tags=["Question Answering"])
+
+
+@app.on_event("startup")
+async def on_startup():
+    logger.info(f"FastAPI Server khởi động thành công trên môi trường: {config.environment}")
+
+
+@app.on_event("shutdown")
+async def on_shutdown():
+    logger.info("FastAPI Server đang tắt...")
 
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("api.main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run(
+        "api.main:app",
+        host=config.api_host,
+        port=config.api_port,
+        reload=True,
+    )

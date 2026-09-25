@@ -82,7 +82,6 @@ class DocumentLoader:
                         raw_file = record.get("raw_file", "")
                         if raw_file:
                             fname = Path(raw_file).name
-                            # Nếu trùng, ưu tiên bản ghi có status_code == 200
                             if fname not in manifest_by_filename or record.get("status_code") == 200:
                                 manifest_by_filename[fname] = record
 
@@ -97,7 +96,6 @@ class DocumentLoader:
             if doc is None:
                 continue
 
-            # Gắn thông tin manifest nếu có
             manifest_rec = manifest_by_filename.get(file.name, {})
             doc["url"] = manifest_rec.get("final_url") or manifest_rec.get("url", "")
             doc["status_code"] = manifest_rec.get("status_code")

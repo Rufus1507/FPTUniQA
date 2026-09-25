@@ -1,49 +1,26 @@
-"""Chuẩn hóa từ viết tắt, thuật ngữ quy chế và chính tả tiếng Việt. Phụ trách: TV3."""
+"""Chuẩn hóa câu truy vấn của sinh viên trước khi đưa vào pipeline. Phụ trách: TV3."""
 
 import re
 import unicodedata
-from typing import Dict
 
 
-class QueryNormalizer:
-    """Chuẩn hóa câu truy vấn của sinh viên trước khi đưa vào bộ tìm kiếm."""
+def normalize_query(text: str) -> str:
+    """Chuẩn hóa chuỗi truy vấn:
 
-    ACRONYMS: Dict[str, str] = {
-        r"\bctđt\b": "chương trình đào tạo",
-        r"\bđkhp\b": "đăng ký học phần",
-        r"\bgpa\b": "điểm trung bình tích lũy",
-        r"\bcntt\b": "công nghệ thông tin",
-        r"\bktpm\b": "kỹ thuật phần mềm",
-        r"\bkhmt\b": "khoa học máy tính",
-        r"\bqtkd\b": "quản trị kinh doanh",
-        r"\bsv\b": "sinh viên",
-        r"\bcs\b": "cơ sở",
-        r"\bhb\b": "học bổng",
-        r"\bhp\b": "học phí",
-        r"\btin chi\b": "tín chỉ",
-        r"\btchi\b": "tín chỉ",
-        r"\btl\b": "tích lũy",
-    }
+    1. Chuẩn hóa bảng mã Unicode tiếng Việt sang chuẩn dựng sẵn (NFC).
+    2. Loại bỏ khoảng trắng thừa ở đầu/cuối và khoảng trắng liên tiếp ở giữa.
+    3. Chuyển thành chữ thường các từ khóa thông thường (lowercase).
+    """
+    if not text:
+        return ""
 
-    def __init__(self, custom_acronyms: Dict[str, str] = None):
-        self.acronyms = self.ACRONYMS.copy()
-        if custom_acronyms:
-            self.acronyms.update(custom_acronyms)
+    # Chuẩn hóa Unicode sang dạng dựng sẵn NFC
+    normalized = unicodedata.normalize("NFC", text)
 
-    def normalize(self, query: str) -> str:
-        """Thực hiện làm sạch và mở rộng từ viết tắt."""
-        if not query:
-            return ""
+    # Thay thế các ký tự khoảng trắng liên tiếp (tab, newlines, nhiều dấu cách) thành 1 dấu cách
+    normalized = re.sub(r"\s+", " ", normalized)
 
-        # Chuẩn hóa Unicode NFC
-        query = unicodedata.normalize("NFC", query)
-        query = query.strip()
+    # Chuyển về chữ thường
+    normalized = normalized.strip().lower()
 
-        # Thay thế từ viết tắt
-        lower_query = query.lower()
-        for pattern, full_text in self.acronyms.items():
-            lower_query = re.sub(pattern, full_text, lower_query, flags=re.IGNORECASE)
-
-        # Xóa các ký tự thừa liên tiếp
-        lower_query = re.sub(r"[ \t]+", " ", lower_query)
-        return lower_query.strip()
+    return normalized

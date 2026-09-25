@@ -32,18 +32,14 @@ def normalize_vnd_amounts(text: str) -> str:
     Chú ý: Trong tiếng Việt, dấu chấm thường dùng làm phân cách hàng nghìn.
     Hàm này chuẩn hóa về định dạng không mơ hồ và gắn đơn vị VND rõ ràng.
     """
-    # Pattern: chuỗi số có dấu chấm phân cách, ví dụ 22.120.000 hoặc 1.250.000
     def _reformat_vnd(m: re.Match) -> str:
         raw = m.group(0)
-        # Xóa tất cả dấu chấm -> số nguyên, rồi thêm " VND"
         numeric = raw.replace(".", "")
-        if len(numeric) >= 4:  # ít nhất 4 chữ số thì mới là số tiền
-            # Format lại với dấu phẩy (chuẩn quốc tế)
+        if len(numeric) >= 4:
             formatted = f"{int(numeric):,}"
             return f"{formatted} VND"
         return raw
 
-    # Chỉ áp dụng cho số tiền có ít nhất 2 cụm ngàn (>= 6 chữ số)
     text = re.sub(r"\b\d{1,3}(?:\.\d{3}){1,}\b", _reformat_vnd, text)
     return text
 

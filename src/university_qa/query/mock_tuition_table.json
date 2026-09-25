@@ -1,0 +1,47 @@
+[
+  {
+    "program": "AI",
+    "program_name": "Trí tuệ Nhân tạo",
+    "cohort": "2026",
+    "tuition_per_term_vnd": 32500000,
+    "currency": "VNĐ",
+    "total_terms": 9,
+    "note": "Áp dụng cơ sở Hà Nội và TP.HCM - Tuyển sinh Khóa 2026"
+  },
+  {
+    "program": "AI",
+    "program_name": "Trí tuệ Nhân tạo",
+    "cohort": "2023",
+    "tuition_per_term_vnd": 27300000,
+    "currency": "VNĐ",
+    "total_terms": 9,
+    "note": "Áp dụng cơ sở Hà Nội và TP.HCM - Tuyển sinh Khóa 2023"
+  },
+  {
+    "program": "CNTT",
+    "program_name": "Công nghệ Thông tin",
+    "cohort": "2026",
+    "tuition_per_term_vnd": 30500000,
+    "currency": "VNĐ",
+    "total_terms": 9,
+    "note": "Khóa 2026 - Các chuyên ngành Kỹ thuật Phần mềm / An toàn Thông tin"
+  },
+  {
+    "program": "CNTT",
+    "program_name": "Công nghệ Thông tin",
+    "cohort": "2024",
+    "tuition_per_term_vnd": 28700000,
+    "currency": "VNĐ",
+    "total_terms": 9,
+    "note": "Khóa 2024 - Khung học phí tiêu chuẩn"
+  },
+  {
+    "program": "KTPM",
+    "program_name": "Kỹ thuật Phần mềm",
+    "cohort": "2026",
+    "tuition_per_term_vnd": 30500000,
+    "currency": "VNĐ",
+    "total_terms": 9,
+    "note": "Khóa 2026 - Cơ sở Hòa Lạc"
+  }
+]
