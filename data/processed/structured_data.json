@@ -1,37 +1,3834 @@
 {
-  "academic_year": "2023-2024",
-  "tuition_rates": [
+  "data_source": "daihoc.fpt.edu.vn",
+  "academic_year": "2026",
+  "cohort": "K22",
+  "note": "Học phí áp dụng cho tân sinh viên khóa K22 nhập học năm 2026",
+  "campuses_extracted": [
+    "Cần Thơ",
+    "Hà Nội",
+    "Quy Nhơn",
+    "TP. Hồ Chí Minh",
+    "Đà Nẵng"
+  ],
+  "regional_discount_policy": {
+    "Hà Nội": 0.0,
+    "TP. Hồ Chí Minh": 0.0,
+    "Đà Nẵng": 0.3,
+    "Cần Thơ": 0.3,
+    "Quy Nhơn": 0.5
+  },
+  "tuition_by_campus": {
+    "Đà Nẵng": [
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Công nghệ thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Kỹ thuật phần mềm",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Trí tuệ nhân tạo",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Khoa học dữ liệu và ứng dụng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "An toàn thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Vi mạch bán dẫn",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Công nghệ ô tô số (Automotive)",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Hệ thống thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Thiết kế đồ họa và mỹ thuật số",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Truyền thông đa phương tiện",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Quan hệ công chúng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Truyền thông Marketing tích hợp",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Truyền thông thương hiệu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Ngôn ngữ Anh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Tiếng Anh thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Ngôn ngữ Hàn Quốc",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Tiếng Hàn thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Ngôn ngữ Trung Quốc",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Tiếng Trung thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Luật",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Luật kinh tế",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Marketing",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Kinh doanh quốc tế",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Thương mại điện tử",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Quản trị kinh doanh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Quản trị giải trí và sự kiện",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Quản trị trải nghiệm khách hàng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Quản trị thu mua",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Quản trị khách sạn",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Quản trị dịch vụ Du lịch và Lữ hành",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Phân tích kinh doanh (Business Analytics)",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Logistics và quản lý chuỗi cung ứng toàn cầu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Công nghệ tài chính",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Tài chính doanh nghiệp",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Tài chính thông minh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Tài chính Ngân hàng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "Trí tuệ nhân tạo và Khoa học dữ liệu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Đà Nẵng",
+        "major_name": "An ninh mạng và An toàn số",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      }
+    ],
+    "TP. Hồ Chí Minh": [
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Công nghệ thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Kỹ thuật phần mềm",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Trí tuệ nhân tạo",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Khoa học dữ liệu và ứng dụng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "An toàn thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Vi mạch bán dẫn",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Công nghệ ô tô số (Automotive)",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Hệ thống thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Thiết kế đồ họa và mỹ thuật số",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Truyền thông đa phương tiện",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Quan hệ công chúng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Truyền thông Marketing tích hợp",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Truyền thông thương hiệu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Ngôn ngữ Anh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Tiếng Anh thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Ngôn ngữ Hàn Quốc",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Tiếng Hàn thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Ngôn ngữ Trung Quốc",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Tiếng Trung thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Luật",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Luật kinh tế",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Marketing",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Kinh doanh quốc tế",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Thương mại điện tử",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Quản trị kinh doanh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Quản trị giải trí và sự kiện",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Quản trị trải nghiệm khách hàng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Quản trị thu mua",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Quản trị khách sạn",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Quản trị dịch vụ Du lịch và Lữ hành",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Phân tích kinh doanh (Business Analytics)",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Logistics và quản lý chuỗi cung ứng toàn cầu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Công nghệ tài chính",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Tài chính doanh nghiệp",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Tài chính thông minh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Tài chính Ngân hàng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "Trí tuệ nhân tạo và Khoa học dữ liệu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "TP. Hồ Chí Minh",
+        "major_name": "An ninh mạng và An toàn số",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      }
+    ],
+    "Cần Thơ": [
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Công nghệ thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Kỹ thuật phần mềm",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Trí tuệ nhân tạo",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Khoa học dữ liệu và ứng dụng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "An toàn thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Vi mạch bán dẫn",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Công nghệ ô tô số (Automotive)",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Hệ thống thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Thiết kế đồ họa và mỹ thuật số",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Truyền thông đa phương tiện",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Quan hệ công chúng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Truyền thông Marketing tích hợp",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Truyền thông thương hiệu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Ngôn ngữ Anh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Tiếng Anh thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Ngôn ngữ Hàn Quốc",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Tiếng Hàn thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Ngôn ngữ Trung Quốc",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Tiếng Trung thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Luật",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Luật kinh tế",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Marketing",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Kinh doanh quốc tế",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Thương mại điện tử",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Quản trị kinh doanh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Quản trị giải trí và sự kiện",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Quản trị trải nghiệm khách hàng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Quản trị thu mua",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Quản trị khách sạn",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Quản trị dịch vụ Du lịch và Lữ hành",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 10840000,
+        "các_kv_khác": 15480000,
+        "tuition_kv1_vnd": 10840000,
+        "tuition_other_kv_vnd": 15480000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Phân tích kinh doanh (Business Analytics)",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Logistics và quản lý chuỗi cung ứng toàn cầu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Công nghệ tài chính",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Tài chính doanh nghiệp",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Tài chính thông minh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Tài chính Ngân hàng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "Trí tuệ nhân tạo và Khoa học dữ liệu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Cần Thơ",
+        "major_name": "An ninh mạng và An toàn số",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      }
+    ],
+    "Quy Nhơn": [
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Công nghệ thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Kỹ thuật phần mềm",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Trí tuệ nhân tạo",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Khoa học dữ liệu và ứng dụng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "An toàn thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Vi mạch bán dẫn",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Công nghệ ô tô số (Automotive)",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Hệ thống thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Thiết kế đồ họa và mỹ thuật số",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Truyền thông đa phương tiện",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Quan hệ công chúng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Truyền thông Marketing tích hợp",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Truyền thông thương hiệu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Ngôn ngữ Anh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 7740000,
+        "các_kv_khác": 11060000,
+        "tuition_kv1_vnd": 7740000,
+        "tuition_other_kv_vnd": 11060000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Tiếng Anh thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 7740000,
+        "các_kv_khác": 11060000,
+        "tuition_kv1_vnd": 7740000,
+        "tuition_other_kv_vnd": 11060000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Ngôn ngữ Hàn Quốc",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 7740000,
+        "các_kv_khác": 11060000,
+        "tuition_kv1_vnd": 7740000,
+        "tuition_other_kv_vnd": 11060000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Tiếng Hàn thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 7740000,
+        "các_kv_khác": 11060000,
+        "tuition_kv1_vnd": 7740000,
+        "tuition_other_kv_vnd": 11060000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Ngôn ngữ Trung Quốc",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 7740000,
+        "các_kv_khác": 11060000,
+        "tuition_kv1_vnd": 7740000,
+        "tuition_other_kv_vnd": 11060000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Tiếng Trung thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 7740000,
+        "các_kv_khác": 11060000,
+        "tuition_kv1_vnd": 7740000,
+        "tuition_other_kv_vnd": 11060000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Luật",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 7740000,
+        "các_kv_khác": 11060000,
+        "tuition_kv1_vnd": 7740000,
+        "tuition_other_kv_vnd": 11060000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Luật kinh tế",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 7740000,
+        "các_kv_khác": 11060000,
+        "tuition_kv1_vnd": 7740000,
+        "tuition_other_kv_vnd": 11060000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Marketing",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Kinh doanh quốc tế",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Thương mại điện tử",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Quản trị kinh doanh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Quản trị giải trí và sự kiện",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Quản trị trải nghiệm khách hàng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Quản trị thu mua",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Quản trị khách sạn",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 7740000,
+        "các_kv_khác": 11060000,
+        "tuition_kv1_vnd": 7740000,
+        "tuition_other_kv_vnd": 11060000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Quản trị dịch vụ Du lịch và Lữ hành",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 7740000,
+        "các_kv_khác": 11060000,
+        "tuition_kv1_vnd": 7740000,
+        "tuition_other_kv_vnd": 11060000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Phân tích kinh doanh (Business Analytics)",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Logistics và quản lý chuỗi cung ứng toàn cầu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Công nghệ tài chính",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Tài chính doanh nghiệp",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Tài chính thông minh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Tài chính Ngân hàng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "Trí tuệ nhân tạo và Khoa học dữ liệu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      },
+      {
+        "campus": "Quy Nhơn",
+        "major_name": "An ninh mạng và An toàn số",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 11060000,
+        "các_kv_khác": 15800000,
+        "tuition_kv1_vnd": 11060000,
+        "tuition_other_kv_vnd": 15800000
+      }
+    ],
+    "Hà Nội": [
+      {
+        "campus": "Hà Nội",
+        "major_name": "Công nghệ thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Kỹ thuật phần mềm",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Trí tuệ nhân tạo",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Khoa học dữ liệu và ứng dụng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "An toàn thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Vi mạch bán dẫn",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Công nghệ ô tô số (Automotive)",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Hệ thống thông tin",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Thiết kế đồ họa và mỹ thuật số",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Truyền thông đa phương tiện",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Quan hệ công chúng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Truyền thông Marketing tích hợp",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Truyền thông thương hiệu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Ngôn ngữ Anh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Tiếng Anh thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Ngôn ngữ Hàn Quốc",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Tiếng Hàn thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Ngôn ngữ Trung Quốc",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Tiếng Trung thương mại",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Luật",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Luật kinh tế",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Marketing",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Kinh doanh quốc tế",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Thương mại điện tử",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Quản trị kinh doanh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Quản trị giải trí và sự kiện",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Quản trị trải nghiệm khách hàng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Quản trị thu mua",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Quản trị khách sạn",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Quản trị dịch vụ Du lịch và Lữ hành",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 15480000,
+        "các_kv_khác": 22120000,
+        "tuition_kv1_vnd": 15480000,
+        "tuition_other_kv_vnd": 22120000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Phân tích kinh doanh (Business Analytics)",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Logistics và quản lý chuỗi cung ứng toàn cầu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Công nghệ tài chính",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Tài chính doanh nghiệp",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Tài chính thông minh",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Tài chính Ngân hàng",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "Trí tuệ nhân tạo và Khoa học dữ liệu",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      },
+      {
+        "campus": "Hà Nội",
+        "major_name": "An ninh mạng và An toàn số",
+        "cohort": "K22",
+        "academic_year": "2026",
+        "kv1": 22120000,
+        "các_kv_khác": 31600000,
+        "tuition_kv1_vnd": 22120000,
+        "tuition_other_kv_vnd": 31600000
+      }
+    ]
+  },
+  "tuition_flat_list": [
     {
-      "faculty": "Công nghệ Thông tin",
-      "major_code": "7480201",
-      "major_name": "Khoa học Máy tính",
-      "credit_price_vnd": 650000,
-      "standard_credits_per_term": 16,
-      "estimated_term_tuition_vnd": 10400000
+      "campus": "Đà Nẵng",
+      "major_name": "Công nghệ thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
     },
     {
-      "faculty": "Công nghệ Thông tin",
-      "major_code": "7480103",
-      "major_name": "Kỹ thuật Phần mềm",
-      "credit_price_vnd": 650000,
-      "standard_credits_per_term": 16,
-      "estimated_term_tuition_vnd": 10400000
+      "campus": "Đà Nẵng",
+      "major_name": "Kỹ thuật phần mềm",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
     },
     {
-      "faculty": "Kinh tế & Quản trị Kinh doanh",
-      "major_code": "7340101",
-      "major_name": "Quản trị Kinh doanh",
-      "credit_price_vnd": 550000,
-      "standard_credits_per_term": 15,
-      "estimated_term_tuition_vnd": 8250000
+      "campus": "Đà Nẵng",
+      "major_name": "Trí tuệ nhân tạo",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
     },
     {
-      "faculty": "Ngoại ngữ",
-      "major_code": "7220201",
+      "campus": "Đà Nẵng",
+      "major_name": "Khoa học dữ liệu và ứng dụng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "An toàn thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Vi mạch bán dẫn",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Công nghệ ô tô số (Automotive)",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Hệ thống thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Thiết kế đồ họa và mỹ thuật số",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Truyền thông đa phương tiện",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Quan hệ công chúng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Truyền thông Marketing tích hợp",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Truyền thông thương hiệu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
       "major_name": "Ngôn ngữ Anh",
-      "credit_price_vnd": 500000,
-      "standard_credits_per_term": 15,
-      "estimated_term_tuition_vnd": 7500000
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Tiếng Anh thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Ngôn ngữ Hàn Quốc",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Tiếng Hàn thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Ngôn ngữ Trung Quốc",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Tiếng Trung thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Luật",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Luật kinh tế",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Marketing",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Kinh doanh quốc tế",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Thương mại điện tử",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Quản trị kinh doanh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Quản trị giải trí và sự kiện",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Quản trị trải nghiệm khách hàng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Quản trị thu mua",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Quản trị khách sạn",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Quản trị dịch vụ Du lịch và Lữ hành",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Phân tích kinh doanh (Business Analytics)",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Logistics và quản lý chuỗi cung ứng toàn cầu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Công nghệ tài chính",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Tài chính doanh nghiệp",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Tài chính thông minh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Tài chính Ngân hàng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "Trí tuệ nhân tạo và Khoa học dữ liệu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Đà Nẵng",
+      "major_name": "An ninh mạng và An toàn số",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Công nghệ thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Kỹ thuật phần mềm",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Trí tuệ nhân tạo",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Khoa học dữ liệu và ứng dụng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "An toàn thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Vi mạch bán dẫn",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Công nghệ ô tô số (Automotive)",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Hệ thống thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Thiết kế đồ họa và mỹ thuật số",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Truyền thông đa phương tiện",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Quan hệ công chúng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Truyền thông Marketing tích hợp",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Truyền thông thương hiệu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Ngôn ngữ Anh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Tiếng Anh thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Ngôn ngữ Hàn Quốc",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Tiếng Hàn thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Ngôn ngữ Trung Quốc",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Tiếng Trung thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Luật",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Luật kinh tế",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Marketing",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Kinh doanh quốc tế",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Thương mại điện tử",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Quản trị kinh doanh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Quản trị giải trí và sự kiện",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Quản trị trải nghiệm khách hàng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Quản trị thu mua",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Quản trị khách sạn",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Quản trị dịch vụ Du lịch và Lữ hành",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Phân tích kinh doanh (Business Analytics)",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Logistics và quản lý chuỗi cung ứng toàn cầu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Công nghệ tài chính",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Tài chính doanh nghiệp",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Tài chính thông minh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Tài chính Ngân hàng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "Trí tuệ nhân tạo và Khoa học dữ liệu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "TP. Hồ Chí Minh",
+      "major_name": "An ninh mạng và An toàn số",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Công nghệ thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Kỹ thuật phần mềm",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Trí tuệ nhân tạo",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Khoa học dữ liệu và ứng dụng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "An toàn thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Vi mạch bán dẫn",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Công nghệ ô tô số (Automotive)",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Hệ thống thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Thiết kế đồ họa và mỹ thuật số",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Truyền thông đa phương tiện",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Quan hệ công chúng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Truyền thông Marketing tích hợp",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Truyền thông thương hiệu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Ngôn ngữ Anh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Tiếng Anh thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Ngôn ngữ Hàn Quốc",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Tiếng Hàn thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Ngôn ngữ Trung Quốc",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Tiếng Trung thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Luật",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Luật kinh tế",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Marketing",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Kinh doanh quốc tế",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Thương mại điện tử",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Quản trị kinh doanh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Quản trị giải trí và sự kiện",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Quản trị trải nghiệm khách hàng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Quản trị thu mua",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Quản trị khách sạn",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Quản trị dịch vụ Du lịch và Lữ hành",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 10840000,
+      "các_kv_khác": 15480000,
+      "tuition_kv1_vnd": 10840000,
+      "tuition_other_kv_vnd": 15480000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Phân tích kinh doanh (Business Analytics)",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Logistics và quản lý chuỗi cung ứng toàn cầu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Công nghệ tài chính",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Tài chính doanh nghiệp",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Tài chính thông minh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Tài chính Ngân hàng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "Trí tuệ nhân tạo và Khoa học dữ liệu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Cần Thơ",
+      "major_name": "An ninh mạng và An toàn số",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Công nghệ thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Kỹ thuật phần mềm",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Trí tuệ nhân tạo",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Khoa học dữ liệu và ứng dụng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "An toàn thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Vi mạch bán dẫn",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Công nghệ ô tô số (Automotive)",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Hệ thống thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Thiết kế đồ họa và mỹ thuật số",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Truyền thông đa phương tiện",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Quan hệ công chúng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Truyền thông Marketing tích hợp",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Truyền thông thương hiệu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Ngôn ngữ Anh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 7740000,
+      "các_kv_khác": 11060000,
+      "tuition_kv1_vnd": 7740000,
+      "tuition_other_kv_vnd": 11060000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Tiếng Anh thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 7740000,
+      "các_kv_khác": 11060000,
+      "tuition_kv1_vnd": 7740000,
+      "tuition_other_kv_vnd": 11060000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Ngôn ngữ Hàn Quốc",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 7740000,
+      "các_kv_khác": 11060000,
+      "tuition_kv1_vnd": 7740000,
+      "tuition_other_kv_vnd": 11060000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Tiếng Hàn thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 7740000,
+      "các_kv_khác": 11060000,
+      "tuition_kv1_vnd": 7740000,
+      "tuition_other_kv_vnd": 11060000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Ngôn ngữ Trung Quốc",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 7740000,
+      "các_kv_khác": 11060000,
+      "tuition_kv1_vnd": 7740000,
+      "tuition_other_kv_vnd": 11060000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Tiếng Trung thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 7740000,
+      "các_kv_khác": 11060000,
+      "tuition_kv1_vnd": 7740000,
+      "tuition_other_kv_vnd": 11060000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Luật",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 7740000,
+      "các_kv_khác": 11060000,
+      "tuition_kv1_vnd": 7740000,
+      "tuition_other_kv_vnd": 11060000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Luật kinh tế",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 7740000,
+      "các_kv_khác": 11060000,
+      "tuition_kv1_vnd": 7740000,
+      "tuition_other_kv_vnd": 11060000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Marketing",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Kinh doanh quốc tế",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Thương mại điện tử",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Quản trị kinh doanh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Quản trị giải trí và sự kiện",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Quản trị trải nghiệm khách hàng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Quản trị thu mua",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Quản trị khách sạn",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 7740000,
+      "các_kv_khác": 11060000,
+      "tuition_kv1_vnd": 7740000,
+      "tuition_other_kv_vnd": 11060000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Quản trị dịch vụ Du lịch và Lữ hành",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 7740000,
+      "các_kv_khác": 11060000,
+      "tuition_kv1_vnd": 7740000,
+      "tuition_other_kv_vnd": 11060000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Phân tích kinh doanh (Business Analytics)",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Logistics và quản lý chuỗi cung ứng toàn cầu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Công nghệ tài chính",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Tài chính doanh nghiệp",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Tài chính thông minh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Tài chính Ngân hàng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "Trí tuệ nhân tạo và Khoa học dữ liệu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Quy Nhơn",
+      "major_name": "An ninh mạng và An toàn số",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 11060000,
+      "các_kv_khác": 15800000,
+      "tuition_kv1_vnd": 11060000,
+      "tuition_other_kv_vnd": 15800000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Công nghệ thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Kỹ thuật phần mềm",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Trí tuệ nhân tạo",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Khoa học dữ liệu và ứng dụng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "An toàn thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Vi mạch bán dẫn",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Công nghệ ô tô số (Automotive)",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Hệ thống thông tin",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Thiết kế đồ họa và mỹ thuật số",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Truyền thông đa phương tiện",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Quan hệ công chúng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Truyền thông Marketing tích hợp",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Truyền thông thương hiệu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Ngôn ngữ Anh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Tiếng Anh thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Ngôn ngữ Hàn Quốc",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Tiếng Hàn thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Ngôn ngữ Trung Quốc",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Tiếng Trung thương mại",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Luật",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Luật kinh tế",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Marketing",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Kinh doanh quốc tế",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Thương mại điện tử",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Quản trị kinh doanh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Quản trị giải trí và sự kiện",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Quản trị trải nghiệm khách hàng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Quản trị thu mua",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Quản trị khách sạn",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Quản trị dịch vụ Du lịch và Lữ hành",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 15480000,
+      "các_kv_khác": 22120000,
+      "tuition_kv1_vnd": 15480000,
+      "tuition_other_kv_vnd": 22120000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Phân tích kinh doanh (Business Analytics)",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Logistics và quản lý chuỗi cung ứng toàn cầu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Công nghệ tài chính",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Tài chính doanh nghiệp",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Tài chính thông minh",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Tài chính Ngân hàng",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "Trí tuệ nhân tạo và Khoa học dữ liệu",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
+    },
+    {
+      "campus": "Hà Nội",
+      "major_name": "An ninh mạng và An toàn số",
+      "cohort": "K22",
+      "academic_year": "2026",
+      "kv1": 22120000,
+      "các_kv_khác": 31600000,
+      "tuition_kv1_vnd": 22120000,
+      "tuition_other_kv_vnd": 31600000
     }
   ],
   "graduation_requirements": [
