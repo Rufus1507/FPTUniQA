@@ -50,7 +50,7 @@ class RAGPipeline:
         )
         docs = read_jsonl(path)
         logger.info(f"Đang lập chỉ mục {len(docs)} tài liệu từ {path}")
-        self.retriever.index(docs)
+        self.retriever.build_index(docs)
 
     def run(self, query: str, top_k: int = 5) -> Dict[str, Any]:
         """Thực thi toàn bộ luồng RAG cho một câu truy vấn."""
