@@ -1,0 +1,30 @@
+{"q_id": "OOD001", "query": "Thủ đô của Pháp là thành phố nào?", "domain": "dia_ly", "difficulty": "easy"}
+{"q_id": "OOD002", "query": "Ai là người phát minh ra điện thoại?", "domain": "lich_su", "difficulty": "easy"}
+{"q_id": "OOD003", "query": "Việt Nam có bao nhiêu tỉnh thành?", "domain": "dia_ly", "difficulty": "medium"}
+{"q_id": "OOD004", "query": "Hồ Gươm nằm ở thành phố nào của Việt Nam?", "domain": "dia_ly", "difficulty": "easy"}
+{"q_id": "OOD005", "query": "Núi Everest cao bao nhiêu mét?", "domain": "dia_ly", "difficulty": "easy"}
+{"q_id": "OOD006", "query": "Ai là tác giả của Truyện Kiều?", "domain": "lich_su", "difficulty": "easy"}
+{"q_id": "OOD007", "query": "Cách nấu phở bò ngon?", "domain": "am_thuc", "difficulty": "medium"}
+{"q_id": "OOD008", "query": "Nguyên liệu làm bánh mì gồm những gì?", "domain": "am_thuc", "difficulty": "easy"}
+{"q_id": "OOD009", "query": "Cà phê Việt Nam nổi tiếng từ vùng nào?", "domain": "am_thuc", "difficulty": "medium"}
+{"q_id": "OOD010", "query": "Món ăn đặc trưng của miền Trung Việt Nam là gì?", "domain": "am_thuc", "difficulty": "medium"}
+{"q_id": "OOD011", "query": "Cách làm nước mắm từ cá?", "domain": "am_thuc", "difficulty": "hard"}
+{"q_id": "OOD012", "query": "Đội tuyển bóng đá Việt Nam vô địch AFF Cup năm nào?", "domain": "the_thao", "difficulty": "medium"}
+{"q_id": "OOD013", "query": "Ai là cầu thủ ghi nhiều bàn thắng nhất lịch sử World Cup?", "domain": "the_thao", "difficulty": "medium"}
+{"q_id": "OOD014", "query": "Olympic được tổ chức mấy năm một lần?", "domain": "the_thao", "difficulty": "easy"}
+{"q_id": "OOD015", "query": "Đội Manchester United được thành lập năm nào?", "domain": "the_thao", "difficulty": "hard"}
+{"q_id": "OOD016", "query": "Tay vợt tennis số 1 thế giới hiện tại là ai?", "domain": "the_thao", "difficulty": "medium"}
+{"q_id": "OOD017", "query": "Giá vàng hôm nay là bao nhiêu?", "domain": "tin_tuc", "difficulty": "easy"}
+{"q_id": "OOD018", "query": "Tỷ giá USD/VND hôm nay?", "domain": "tin_tuc", "difficulty": "easy"}
+{"q_id": "OOD019", "query": "Thời tiết Hà Nội ngày mai như thế nào?", "domain": "tin_tuc", "difficulty": "easy"}
+{"q_id": "OOD020", "query": "Khi nào Việt Nam đăng cai SEA Games?", "domain": "tin_tuc", "difficulty": "medium"}
+{"q_id": "OOD021", "query": "Sự kiện Apple ra mắt sản phẩm mới tiếp theo là gì?", "domain": "tin_tuc", "difficulty": "medium"}
+{"q_id": "OOD022", "query": "Cách cài đặt hệ điều hành Windows 11?", "domain": "cong_nghe", "difficulty": "medium"}
+{"q_id": "OOD023", "query": "Làm thế nào để bảo vệ máy tính khỏi virus?", "domain": "cong_nghe", "difficulty": "easy"}
+{"q_id": "OOD024", "query": "Sự khác nhau giữa RAM và ROM là gì?", "domain": "cong_nghe", "difficulty": "medium"}
+{"q_id": "OOD025", "query": "ChatGPT được phát triển bởi công ty nào?", "domain": "cong_nghe", "difficulty": "easy"}
+{"q_id": "OOD026", "query": "Cách đăng ký tài khoản Gmail?", "domain": "cong_nghe", "difficulty": "easy"}
+{"q_id": "OOD027", "query": "Kể tên 5 nước ở khu vực Đông Nam Á?", "domain": "dia_ly", "difficulty": "easy"}
+{"q_id": "OOD028", "query": "Ai là vị tướng nổi tiếng trong lịch sử Việt Nam?", "domain": "lich_su", "difficulty": "medium"}
+{"q_id": "OOD029", "query": "Bảo tàng nào lưu giữ các cổ vật của Việt Nam?", "domain": "lich_su", "difficulty": "medium"}
+{"q_id": "OOD030", "query": "Cách pha một ly trà sữa ngon tại nhà?", "domain": "am_thuc", "difficulty": "medium"}
