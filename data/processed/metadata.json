@@ -1,70 +1,35 @@
 {
   "corpus_version": "1.0.0",
-  "generated_at": "2024-10-02T00:00:00Z",
-  "total_documents": 3931,
+  "generated_at": "2024-06-01T10:00:00Z",
+  "total_documents": 5,
   "supported_cohorts": [
-    "K22"
+    "K2020",
+    "K2021",
+    "K2022",
+    "K2023",
+    "K2024"
   ],
-  "cohort_note": "Current data supports K22 (intake 2026)",
-  "doc_types": [
-    "curriculum",
-    "admission",
-    "scholarship",
-    "general",
-    "tuition",
-    "enrollment"
+  "categories": [
+    "dao_tao",
+    "hoc_phi",
+    "tot_nghiep",
+    "hoc_bong",
+    "ky_luat"
   ],
-  "campuses": [
-    "all",
-    "ho_chi_minh",
-    "ha_noi",
-    "can_tho",
-    "da_nang",
-    "quy_nhon"
-  ],
-  "corpus_stats": {
-    "total_chunks": 3931,
-    "avg_chunk_size_chars": 285.4,
-    "avg_chunk_size_tokens_est": 114,
-    "by_doc_type": {
-      "curriculum": 1676,
-      "admission": 658,
-      "scholarship": 581,
-      "general": 546,
-      "tuition": 445,
-      "enrollment": 25
+  "documents_manifest": [
+    {
+      "doc_id": "QC-2023-01",
+      "title": "Quy chế đào tạo trình độ đại học theo hệ thống tín chỉ",
+      "issue_date": "2023-08-01",
+      "effective_date": "2023-09-01",
+      "signatory": "Hiệu trưởng"
     },
-    "by_campus": {
-      "all": 2535,
-      "ho_chi_minh": 691,
-      "ha_noi": 225,
-      "can_tho": 218,
-      "da_nang": 131,
-      "quy_nhon": 131
+    {
+      "doc_id": "HB-2023-02",
+      "title": "Quy định về việc xét cấp học bổng khuyến khích học tập",
+      "issue_date": "2023-08-10",
+      "effective_date": "2023-08-15",
+      "signatory": "Phòng Công tác Sinh viên"
     }
-  },
-  "evaluation_data": {
-    "questions_v2": 151,
-    "golden_answers_v2": 151,
-    "structured_queries": 151,
-    "multi_turn_scenarios": 30,
-    "ood_questions": 30
-  },
-  "structured_data": {
-    "tuition_data": {
-      "file": "structured_data.json",
-      "records": 190,
-      "campuses": 5,
-      "programs": 38,
-      "cohort": "K22"
-    },
-    "credits_data": {
-      "file": "structured_data_credits.json",
-      "programs": 23,
-      "note": "1 from corpus, 22 synthetic"
-    }
-  },
-  "data_source": "daihoc.fpt.edu.vn",
-  "crawl_date": "2024-09-21",
-  "last_updated": "2024-10-02"
+  ]
 }
