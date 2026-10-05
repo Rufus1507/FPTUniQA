@@ -66,7 +66,25 @@ class RAGPipeline:
         self.top_k = top_k or config.default_top_k
         self.score_threshold = score_threshold
         self.session_manager = SessionManager()
+
+        # Khởi tạo HybridRetriever kết nối với dữ liệu thực tế (TV1 / TV2)
+        self.retriever = None
+        try:
+            from university_qa.retrieval.retriever import HybridRetriever
+            self.retriever = HybridRetriever()
+            logger.info("Khởi tạo HybridRetriever kết nối dữ liệu thực tế thành công.")
+        except Exception as e:
+            logger.warning(f"Không thể khởi tạo HybridRetriever: {e}. Sẽ dùng fallback mock_retriever.")
+
         logger.info(f"Khởi tạo RAGPipeline với top_k={self.top_k}, score_threshold={self.score_threshold}")
+
+    def load_corpus(self, corpus_path: Optional[str] = None) -> None:
+        """Tương thích với các bài test / script kiểm thử dữ liệu corpus."""
+        logger.info(f"load_corpus được gọi với đường dẫn: {corpus_path}")
+
+    def run(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
+        """Alias cho method answer() để tương thích đa giao diện."""
+        return self.answer(query, session_id=session_id)
 
     def answer(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
         """Thực thi luồng RAG kết hợp Query Rewriting đa lượt, Semantic Parsing, Routing và Guardrails Tuần 6."""
@@ -100,34 +118,39 @@ class RAGPipeline:
             ungrounded_numbers: List[str] = []
 
             # Xử lý theo từng loại Route
-            if "ClarificationRoute" in route_chosen and clarification_msg:
+            if ("ClarificationRoute" in route_chosen or "clarification" in route_chosen) and clarification_msg:
                 answer_text = clarification_msg
                 citations = []
-            elif "OODRoute" in route_chosen:
+            elif "OODRoute" in route_chosen or "ood" in route_chosen:
                 answer_text = "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT."
                 citations = []
-            elif "StructuredRoute" in route_chosen:
+            elif "uncertain" in route_chosen:
+                answer_text = clarification_msg or "Hệ thống chưa chắc chắn về câu hỏi này. Vui lòng cung cấp thêm chi tiết."
+                citations = []
+            elif "StructuredRoute" in route_chosen or "structured_lookup" in route_chosen:
                 # Tra cứu số học trực tiếp từ bảng có cấu trúc
                 lookup_res = execute_structured_lookup(parsed_query)
-                answer_text = lookup_res.get("text", "Không tìm thấy thông tin phù hợp trong bảng biểu.")
+                answer_text = lookup_res.get("answer") or lookup_res.get("text", "Không tìm thấy thông tin phù hợp trong bảng biểu.")
                 citations = [
                     {
-                        "doc_id": "structured_tuition_table",
-                        "title": "Bảng biểu học phí có cấu trúc (K22 - 2026)",
-                        "source": "Biểu phí chính thức ĐH FPT",
+                        "doc_id": "structured_data_fpt",
+                        "title": lookup_res.get("source", "Bảng biểu học phí có cấu trúc (K22 - 2026)"),
+                        "source": lookup_res.get("source", "Biểu phí chính thức ĐH FPT"),
                         "chunk_id": "table_001",
                         "match_score": 1.0,
                     }
                 ]
             else:
-                # Hybrid RAG Route: Truy xuất tài liệu văn bản
-                # Ưu tiên dùng TV2 Retriever nếu có, fallback mock_retriever nội bộ TV3
-                try:
-                    from university_qa.retrieval.retriever import HybridRetriever
-                    hybrid = HybridRetriever()
-                    # Truy xuất với hybrid nếu có
-                    retrieved_chunks = retrieve(clean_query, top_k=self.top_k)
-                except Exception:
+                # Hybrid RAG Route: Truy xuất tài liệu văn bản thực tế từ TV2 HybridRetriever
+                retrieved_chunks = []
+                if self.retriever is not None:
+                    try:
+                        retrieved_chunks = self.retriever.retrieve_contract2(clean_query, top_k=self.top_k)
+                    except Exception as err:
+                        logger.warning(f"Lỗi khi truy xuất qua HybridRetriever: {err}. Chuyển sang fallback.")
+
+                # Fallback sang mock_retriever nếu retriever thực tế chưa trả kết quả
+                if not retrieved_chunks:
                     retrieved_chunks = retrieve(clean_query, top_k=self.top_k)
 
                 if not retrieved_chunks:

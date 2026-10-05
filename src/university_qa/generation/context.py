@@ -14,8 +14,8 @@ def format_context(chunks: List[Dict]) -> str:
     formatted_sections = []
     for idx, chunk in enumerate(chunks, start=1):
         title = chunk.get("title", "Tài liệu học vụ")
-        category = chunk.get("category", "quy_che")
-        content = chunk.get("content", "").strip()
+        category = chunk.get("category") or chunk.get("doc_type", "quy_che")
+        content = (chunk.get("content") or chunk.get("text") or "").strip()
         source = chunk.get("source", "")
 
         header = f"[Nguồn {idx}] - Tiêu đề: {title} | Danh mục: {category}"

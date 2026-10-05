@@ -27,6 +27,7 @@ Nhiệm vụ của bạn là đọc câu hỏi của sinh viên và trích xuấ
   "slots": {
     "program": "string hoặc null (ví dụ: AI, CNTT, KTPM)",
     "cohort": "string hoặc null (ví dụ: 2026, 2023, K18)",
+    "campus": "string hoặc null (ví dụ: Cần Thơ, Hà Nội, TP. Hồ Chí Minh, Đà Nẵng, Quy Nhơn)",
     "topic": "string hoặc null (ví dụ: canh_bao_hoc_vu, tot_nghiep, hoc_phi, hoc_bong)",
     "target": "string hoặc null (ví dụ: dieu_kien, muc_phi, ty_le_vang)"
   },
@@ -34,7 +35,7 @@ Nhiệm vụ của bạn là đọc câu hỏi của sinh viên và trích xuấ
 }
 
 Quy tắc phân loại:
-1. "tuition_lookup": Các câu hỏi về học phí, tiền học, chi phí theo ngành hoặc theo khóa.
+1. "tuition_lookup": Các câu hỏi về học phí, tiền học, chi phí theo ngành hoặc theo khóa hoặc theo phân hiệu/campus.
 2. "graduation_lookup": Các câu hỏi về điều kiện tốt nghiệp, chuẩn ngoại ngữ ra trường, đồ án Capstone.
 3. "policy_lookup": Các câu hỏi về quy chế học vụ, cảnh cáo, điểm thi, môn tiên quyết, học bổng.
 4. "OOD": Các câu hỏi ngoài phạm vi đào tạo ĐH FPT (thời tiết, trường đại học khác, đời sống, nấu ăn...).
@@ -117,10 +118,24 @@ def _parse_with_llm(question: str) -> Optional[Dict[str, Any]]:
         # Kiểm tra tính hợp lệ của JSON
         if "intent" in parsed_json and parsed_json["intent"] in SUPPORTED_INTENTS:
             intent = parsed_json["intent"]
-            slots = parsed_json.get("slots", {})
+            slots = parsed_json.get("slots", {}) or {}
             # Sửa bug OOD slot-leak: nếu intent là OOD thì slots bắt buộc phải rỗng ({})
             if intent == QueryIntent.OOD.value:
                 slots = {}
+            else:
+                # Bổ sung trích xuất phân hiệu (campus) nếu LLM bỏ sót
+                if not slots.get("campus"):
+                    q_l = question.lower()
+                    if any(c in q_l for c in ["cần thơ", "can tho", "cantho", "ct"]) or re.search(r"c[aần\?]?n\s*th[oơ\?]", q_l):
+                        slots["campus"] = "Cần Thơ"
+                    elif any(c in q_l for c in ["quy nhơn", "quy nhon", "quynhon", "qn"]) or re.search(r"quy\s*nh[oơ\?]", q_l):
+                        slots["campus"] = "Quy Nhơn"
+                    elif any(c in q_l for c in ["đà nẵng", "da nang", "danang", "đn", "dn"]) or re.search(r"d[aà\?]\s*n[aẵ\?]ng", q_l):
+                        slots["campus"] = "Đà Nẵng"
+                    elif any(c in q_l for c in ["tp. hcm", "tp hcm", "hồ chí minh", "ho chi minh", "hcm", "tphcm", "sài gòn"]) or re.search(r"h[oồ\?]\s*ch[ií\?]\s*m[ií\?]nh", q_l):
+                        slots["campus"] = "TP. Hồ Chí Minh"
+                    elif any(c in q_l for c in ["hà nội", "ha noi", "hanoi", "hòa lạc", "hoa lac", "hn"]) or re.search(r"h[aà\?]\s*n[oộ\?]i", q_l):
+                        slots["campus"] = "Hà Nội"
 
             return {
                 "intent": intent,
@@ -160,11 +175,59 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
             slots["program"] = "CNTT"
         elif "ktpm" in q_lower or "kỹ thuật phần mềm" in q_lower:
             slots["program"] = "KTPM"
+        elif "an toàn thông tin" in q_lower or "attt" in q_lower:
+            slots["program"] = "An toàn thông tin"
+        elif "khoa học dữ liệu" in q_lower:
+            slots["program"] = "Khoa học dữ liệu và ứng dụng"
+        elif "vi mạch" in q_lower or "bán dẫn" in q_lower:
+            slots["program"] = "Vi mạch bán dẫn"
+        elif "ô tô" in q_lower:
+            slots["program"] = "Công nghệ ô tô số"
+        elif "hệ thống thông tin" in q_lower:
+            slots["program"] = "Hệ thống thông tin"
+        elif "đồ họa" in q_lower or "mỹ thuật" in q_lower:
+            slots["program"] = "Thiết kế đồ họa và mỹ thuật số"
+        elif "truyền thông" in q_lower:
+            slots["program"] = "Truyền thông đa phương tiện"
+        elif "quản trị kinh doanh" in q_lower or "qtkd" in q_lower:
+            slots["program"] = "Quản trị kinh doanh"
+        elif "kinh doanh quốc tế" in q_lower or "kdqt" in q_lower:
+            slots["program"] = "Kinh doanh quốc tế"
+        elif "marketing" in q_lower:
+            slots["program"] = "Marketing"
+        elif "ngôn ngữ anh" in q_lower or "tiếng anh" in q_lower:
+            slots["program"] = "Ngôn ngữ Anh"
+        elif "ngôn ngữ hàn" in q_lower or "tiếng hàn" in q_lower:
+            slots["program"] = "Ngôn ngữ Hàn Quốc"
+        elif "ngôn ngữ trung" in q_lower or "tiếng trung" in q_lower:
+            slots["program"] = "Ngôn ngữ Trung Quốc"
+        elif "ngôn ngữ nhật" in q_lower or "tiếng nhật" in q_lower:
+            slots["program"] = "Ngôn ngữ Nhật"
+        elif "luật" in q_lower:
+            slots["program"] = "Luật"
+
+        # Trích xuất phân hiệu (campus) chịu lỗi encoding
+        if any(c in q_lower for c in ["hà nội", "ha noi", "hòa lạc", "hoa lac", "hn"]) or re.search(r"h[aà\?]\s*n[oộ\?]i", q_lower):
+            slots["campus"] = "Hà Nội"
+        elif any(c in q_lower for c in ["tp. hcm", "tp hcm", "hồ chí minh", "ho chi minh", "hcm", "tphcm", "sài gòn"]) or re.search(r"h[oồ\?]\s*ch[ií\?]\s*m[ií\?]nh", q_lower):
+            slots["campus"] = "TP. Hồ Chí Minh"
+        elif any(c in q_lower for c in ["đà nẵng", "da nang", "đn", "dn"]) or re.search(r"d[aà\?]\s*n[aẵ\?]ng", q_lower):
+            slots["campus"] = "Đà Nẵng"
+        elif any(c in q_lower for c in ["cần thơ", "can tho", "cantho", "ct"]) or re.search(r"c[aần\?]?n\s*th[oơ\?]", q_lower):
+            slots["campus"] = "Cần Thơ"
+        elif any(c in q_lower for c in ["quy nhơn", "quy nhon", "quynhon", "qn"]) or re.search(r"quy\s*nh[oơ\?]", q_lower):
+            slots["campus"] = "Quy Nhơn"
 
         # Trích xuất khóa tuyển sinh
         cohort_match = re.search(r"\b(202[0-9]|203[0-9]|k1[0-9]|k2[0-9])\b", q_lower)
         if cohort_match:
             slots["cohort"] = cohort_match.group(1).upper()
+        elif "2026" not in q_lower and "k22" not in q_lower:
+            # Nếu người dùng hỏi chung học phí hiện tại (năm tuyển sinh hiện hành)
+            slots.setdefault("cohort", "2026")
+
+        if "tín chỉ" in q_lower:
+            slots["topic"] = "tin_chi"
 
         return {
             "intent": QueryIntent.TUITION_LOOKUP.value,

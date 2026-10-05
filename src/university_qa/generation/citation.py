@@ -40,10 +40,10 @@ def extract_citations(answer: str, context_chunks: List[Dict]) -> List[Dict]:
         if 1 <= idx <= len(context_chunks):
             chunk = context_chunks[idx - 1]
             citation_item = {
-                "doc_id": chunk.get("doc_id", f"DOC-{idx}"),
+                "doc_id": chunk.get("doc_id") or chunk.get("id") or f"DOC-{idx}",
                 "title": chunk.get("title", "Tài liệu học vụ"),
                 "source": chunk.get("source", "Tài liệu quy chế"),
-                "category": chunk.get("category", "quy_che"),
+                "category": chunk.get("category") or chunk.get("doc_type", "quy_che"),
                 "source_index": idx,
             }
             citations.append(citation_item)
@@ -52,10 +52,10 @@ def extract_citations(answer: str, context_chunks: List[Dict]) -> List[Dict]:
     if not citations and context_chunks:
         top_chunk = context_chunks[0]
         citations.append({
-            "doc_id": top_chunk.get("doc_id", "DOC-1"),
+            "doc_id": top_chunk.get("doc_id") or top_chunk.get("id") or "DOC-1",
             "title": top_chunk.get("title", "Tài liệu học vụ"),
             "source": top_chunk.get("source", "Tài liệu quy chế"),
-            "category": top_chunk.get("category", "quy_che"),
+            "category": top_chunk.get("category") or top_chunk.get("doc_type", "quy_che"),
             "source_index": 1,
         })
 

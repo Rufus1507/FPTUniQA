@@ -24,6 +24,8 @@ class HybridRetriever:
         else:
             self.bm25_retriever = BM25Retriever()
             bm25_dir = Path("data/processed/bm25_index")
+            if not (bm25_dir / "bm25_index.pkl").exists():
+                bm25_dir = Path(__file__).resolve().parent.parent.parent.parent / "data/processed/bm25_index"
             if auto_load and (bm25_dir / "bm25_index.pkl").exists():
                 try:
                     self.bm25_retriever.load(bm25_dir)
@@ -35,6 +37,8 @@ class HybridRetriever:
         else:
             self.dense_retriever = DenseRetriever()
             faiss_dir = Path("data/processed/faiss_index")
+            if not (faiss_dir / "dense.index").exists():
+                faiss_dir = Path(__file__).resolve().parent.parent.parent.parent / "data/processed/faiss_index"
             if auto_load and (faiss_dir / "dense.index").exists():
                 try:
                     self.dense_retriever.load(faiss_dir)
@@ -89,12 +93,16 @@ class HybridRetriever:
         results = self.retrieve(query, top_k, candidate_k, metadata_filter)
         output = []
         for doc, score in results:
+            meta = doc.get("metadata", {})
             output.append({
-                "doc_id": doc.get("id", doc.get("doc_id")),
+                "doc_id": doc.get("id") or doc.get("doc_id") or meta.get("doc_id", ""),
+                "title": doc.get("title") or meta.get("title", "Tài liệu học vụ"),
                 "text": doc.get("text", ""),
+                "content": doc.get("text", ""),
                 "score": score,
-                "source": doc.get("title", ""),
-                "retrieval_strategy": "hybrid_rrf",
-                "metadata": doc.get("metadata", {})
+                "source": doc.get("source") or meta.get("url") or doc.get("title", ""),
+                "category": doc.get("doc_type") or meta.get("doc_type", "quy_che"),
+                "retrieval_strategy": "hybrid_rrf" if self.dense_retriever._faiss_index is not None else "bm25",
+                "metadata": meta,
             })
         return output

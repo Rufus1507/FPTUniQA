@@ -2,9 +2,9 @@
 environment: "evaluation"
 
 data:
-  questions_path: "data/evaluation/questions.jsonl"
-  golden_answers_path: "data/evaluation/golden_answers.jsonl"
-  ood_questions_path: "data/evaluation/ood_questions.jsonl"
+  questions_path: "data/evaluation/questions_v2.jsonl"
+  golden_answers_path: "data/evaluation/golden_answers_v2.jsonl"
+  ood_questions_path: "data/evaluation/ood_questions_v2.jsonl"
   output_report_dir: "experiments"
 
 retrieval_benchmark:
