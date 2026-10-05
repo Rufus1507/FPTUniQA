@@ -1,0 +1,170 @@
+{
+  "data_source": "daihoc.fpt.edu.vn (corpus + synthetic)",
+  "cohort": "K22",
+  "note": "Tong so tin chi theo chuong trinh dao tao. Du lieu tu corpus cho KTTPM, cac ngành khác la synthetic data dua tren cau truc chuong trinh FPT.",
+  "programs": {
+    "Kỹ thuật phần mềm": {
+      "total_credits": 145,
+      "theory_credits": 93,
+      "practice_credits": 52,
+      "source": "corpus - Kỹ thuật phần mềm — Số tín chỉ145"
+    },
+    "Công nghệ thông tin": {
+      "total_credits": 132,
+      "theory_credits": 88,
+      "practice_credits": 44,
+      "source": "synthetic"
+    },
+    "Trí tuệ nhân tạo": {
+      "total_credits": 135,
+      "theory_credits": 90,
+      "practice_credits": 45,
+      "source": "synthetic"
+    },
+    "An toàn thông tin": {
+      "total_credits": 132,
+      "theory_credits": 88,
+      "practice_credits": 44,
+      "source": "synthetic"
+    },
+    "Kỹ thuật máy tính": {
+      "total_credits": 132,
+      "theory_credits": 88,
+      "practice_credits": 44,
+      "source": "synthetic"
+    },
+    "Khoa học dữ liệu ứng dụng": {
+      "total_credits": 132,
+      "theory_credits": 88,
+      "practice_credits": 44,
+      "source": "synthetic"
+    },
+    "Hệ thống thông tin": {
+      "total_credits": 132,
+      "theory_credits": 88,
+      "practice_credits": 44,
+      "source": "synthetic"
+    },
+    "IoT (Internet of Things)": {
+      "total_credits": 132,
+      "theory_credits": 88,
+      "practice_credits": 44,
+      "source": "synthetic"
+    },
+    "Thiết kế vi mạch bán dẫn": {
+      "total_credits": 135,
+      "theory_credits": 90,
+      "practice_credits": 45,
+      "source": "synthetic"
+    },
+    "Công nghệ ô tô số": {
+      "total_credits": 130,
+      "theory_credits": 85,
+      "practice_credits": 45,
+      "source": "synthetic"
+    },
+    "Quản trị kinh doanh": {
+      "total_credits": 120,
+      "theory_credits": 80,
+      "practice_credits": 40,
+      "source": "synthetic"
+    },
+    "Marketing": {
+      "total_credits": 120,
+      "theory_credits": 80,
+      "practice_credits": 40,
+      "source": "synthetic"
+    },
+    "Tài chính doanh nghiệp": {
+      "total_credits": 120,
+      "theory_credits": 80,
+      "practice_credits": 40,
+      "source": "synthetic"
+    },
+    "Tài chính ngân hàng": {
+      "total_credits": 120,
+      "theory_credits": 80,
+      "practice_credits": 40,
+      "source": "synthetic"
+    },
+    "Kinh tế quốc tế": {
+      "total_credits": 120,
+      "theory_credits": 80,
+      "practice_credits": 40,
+      "source": "synthetic"
+    },
+    "Kinh tế": {
+      "total_credits": 120,
+      "theory_credits": 80,
+      "practice_credits": 40,
+      "source": "synthetic"
+    },
+    "Logistics": {
+      "total_credits": 120,
+      "theory_credits": 80,
+      "practice_credits": 40,
+      "source": "synthetic"
+    },
+    "Thiết kế đồ họa": {
+      "total_credits": 120,
+      "theory_credits": 60,
+      "practice_credits": 60,
+      "source": "synthetic"
+    },
+    "Ngôn ngữ Anh": {
+      "total_credits": 120,
+      "theory_credits": 90,
+      "practice_credits": 30,
+      "source": "synthetic"
+    },
+    "Ngôn ngữ Hàn Quốc": {
+      "total_credits": 120,
+      "theory_credits": 90,
+      "practice_credits": 30,
+      "source": "synthetic"
+    },
+    "Ngôn ngữ Nhật": {
+      "total_credits": 120,
+      "theory_credits": 90,
+      "practice_credits": 30,
+      "source": "synthetic"
+    },
+    "Luật": {
+      "total_credits": 120,
+      "theory_credits": 90,
+      "practice_credits": 30,
+      "source": "synthetic"
+    },
+    "Vi mạch bán dẫn": {
+      "total_credits": 135,
+      "theory_credits": 90,
+      "practice_credits": 45,
+      "source": "synthetic"
+    }
+  },
+  "credit_breakdown": {
+    "common_courses": {
+      "description": "Cac mon chung cho tat ca nganh",
+      "credits_range": "30-35"
+    },
+    "core_courses": {
+      "description": "Mon co so nganh",
+      "credits_range": "45-60"
+    },
+    "specialization": {
+      "description": "Mon chuyen nganh",
+      "credits_range": "30-40"
+    },
+    "elective": {
+      "description": "Mon tu chon",
+      "credits_range": "10-15"
+    },
+    "internship_graduation_project": {
+      "description": "Thuc tap tot nghiep + Do an",
+      "credits_range": "12-18"
+    }
+  },
+  "total_programs": 23,
+  "corpus_verified": 1,
+  "synthetic": 22
+}

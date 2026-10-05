@@ -1,0 +1,151 @@
+{"q_id": "Q007", "query": "Sinh viên được đăng ký tối đa bao nhiêu tín chỉ trong một học kỳ chính?", "category": "dao_tao", "difficulty": "easy", "type": "factoid"}
+{"q_id": "Q008", "query": "Sinh viên có học lực yếu bị giới hạn đăng ký bao nhiêu tín chỉ?", "category": "dao_tao", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q009", "query": "Điểm F tương ứng với bao nhiêu điểm số?", "category": "dao_tao", "difficulty": "easy", "type": "factoid"}
+{"q_id": "Q010", "query": "Sinh viên bị điểm F có bắt buộc phải học lại không?", "category": "dao_tao", "difficulty": "easy", "type": "yes_no"}
+{"q_id": "Q011", "query": "Thang điểm xếp loại của Đại học FPT gồm những bậc nào?", "category": "dao_tao", "difficulty": "medium", "type": "list"}
+{"q_id": "Q012", "query": "Điểm A tương ứng với thang điểm bao nhiêu?", "category": "dao_tao", "difficulty": "easy", "type": "factoid"}
+{"q_id": "Q013", "query": "Sinh viên có thể xin nghỉ học tạm thời được không và thủ tục như thế nào?", "category": "dao_tao", "difficulty": "medium", "type": "procedure"}
+{"q_id": "Q014", "query": "Thời gian tối đa được phép bảo lưu kết quả học tập là bao lâu?", "category": "dao_tao", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q015", "query": "Sinh viên có được phép chuyển ngành học trong quá trình đào tạo không?", "category": "dao_tao", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q016", "query": "Điều kiện để được chuyển đổi tín chỉ từ trường khác là gì?", "category": "dao_tao", "difficulty": "hard", "type": "factoid"}
+{"q_id": "Q017", "query": "Sinh viên cần đạt bao nhiêu điểm trung bình tích lũy để được xếp loại Giỏi?", "category": "dao_tao", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q018", "query": "Học phần có điểm D có được tính là đạt không?", "category": "dao_tao", "difficulty": "easy", "type": "yes_no"}
+{"q_id": "Q019", "query": "Sinh viên bị điểm F mấy lần liên tiếp sẽ bị cảnh báo học tập?", "category": "dao_tao", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q020", "query": "Quy định về việc học cải thiện điểm như thế nào?", "category": "dao_tao", "difficulty": "hard", "type": "explanation"}
+{"q_id": "Q021", "query": "Sinh viên có được phép đăng ký học trước tín chỉ khi chưa đủ điều kiện tiên quyết không?", "category": "dao_tao", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q022", "query": "Học phí một tín chỉ ngành Công nghệ thông tin tại campus Hà Nội khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "easy", "type": "number"}
+{"q_id": "Q023", "query": "Học phí một tín chỉ ngành Công nghệ thông tin tại campus TP. Hồ Chí Minh khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "easy", "type": "number"}
+{"q_id": "Q024", "query": "Sinh viên KV1 có được giảm học phí không so với các khu vực khác?", "category": "hoc_phi", "difficulty": "easy", "type": "yes_no"}
+{"q_id": "Q025", "query": "Học phí ngành Trí tuệ nhân tạo tại campus Đà Nẵng khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "medium", "type": "number"}
+{"q_id": "Q026", "query": "Sinh viên thuộc khu vực ưu tiên nào được giảm 50% học phí?", "category": "hoc_phi", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q027", "query": "Học phí ngành Ngôn ngữ Anh có cao hơn ngành Công nghệ thông tin không?", "category": "hoc_phi", "difficulty": "medium", "type": "comparison"}
+{"q_id": "Q028", "query": "Học phí một tín chỉ ngành Kỹ thuật phần mềm tại campus Quy Nhơn khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "medium", "type": "number"}
+{"q_id": "Q029", "query": "Sinh viên cần đóng học phí theo tín chỉ hay theo học kỳ?", "category": "hoc_phi", "difficulty": "easy", "type": "factoid"}
+{"q_id": "Q030", "query": "Học phí ngành Marketing tại campus TP. Hồ Chí Minh khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "medium", "type": "number"}
+{"q_id": "Q031", "query": "Chính sách ưu đãi học phí của campus Cần Thơ là bao nhiêu phần trăm?", "category": "hoc_phi", "difficulty": "medium", "type": "number"}
+{"q_id": "Q032", "query": "Học phí một tín chỉ ngành Luật tại campus Hà Nội khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "medium", "type": "number"}
+{"q_id": "Q033", "query": "Sinh viên có phải đóng thêm phí bảo hiểm y tế không?", "category": "hoc_phi", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q034", "query": "Học phí ngành Quản trị kinh doanh tại campus Đà Nẵng có khác gì so với campus HCM không?", "category": "hoc_phi", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q035", "query": "Học phí ngành Khoa học dữ liệu tại campus Cần Thơ khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "medium", "type": "number"}
+{"q_id": "Q036", "query": "Sinh viên thuộc diện kv2, kv3 có mức học phí khác gì so với kv1 không?", "category": "hoc_phi", "difficulty": "medium", "type": "comparison"}
+{"q_id": "Q037", "query": "Học bổng khuyến khích học tập gồm những loại nào?", "category": "hoc_bong", "difficulty": "easy", "type": "list"}
+{"q_id": "Q038", "query": "Điều kiện để nhận học bổng loại Xuất sắc là gì?", "category": "hoc_bong", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q039", "query": "Học bổng Xuất sắc yêu cầu GPA tối thiểu bao nhiêu?", "category": "hoc_bong", "difficulty": "easy", "type": "number"}
+{"q_id": "Q040", "query": "Sinh viên cần điểm rèn luyện bao nhiêu để được xét học bổng Xuất sắc?", "category": "hoc_bong", "difficulty": "medium", "type": "number"}
+{"q_id": "Q041", "query": "Sinh viên bị điểm F có được xét học bổng không?", "category": "hoc_bong", "difficulty": "easy", "type": "yes_no"}
+{"q_id": "Q042", "query": "Quy trình đăng ký xét học bổng như thế nào?", "category": "hoc_bong", "difficulty": "medium", "type": "procedure"}
+{"q_id": "Q043", "query": "Học bổng loại Giỏi có mức yêu cầu GPA thấp hơn loại Xuất sắc bao nhiêu?", "category": "hoc_bong", "difficulty": "medium", "type": "comparison"}
+{"q_id": "Q044", "query": "Sinh viên được xét học bổng vào thời điểm nào trong năm học?", "category": "hoc_bong", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q045", "query": "Học bổng tìm kiếm nhân tài có yêu cầu gì đặc biệt không?", "category": "hoc_bong", "difficulty": "hard", "type": "factoid"}
+{"q_id": "Q046", "query": "Sinh viên có được nhận nhiều loại học bổng cùng lúc không?", "category": "hoc_bong", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q047", "query": "Học bổng có được cấp tự động hay cần đăng ký?", "category": "hoc_bong", "difficulty": "easy", "type": "factoid"}
+{"q_id": "Q048", "query": "Điều kiện duy trì học bổng qua các học kỳ là gì?", "category": "hoc_bong", "difficulty": "hard", "type": "factoid"}
+{"q_id": "Q049", "query": "Sinh viên năm nhất có được xét học bổng không?", "category": "hoc_bong", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q050", "query": "Học bổng dành cho sinh viên có thành tích nghiên cứu khoa học có được cấp không?", "category": "hoc_bong", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q051", "query": "Học bổng khuyến khích có phân biệt theo campus không?", "category": "hoc_bong", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q052", "query": "Điều kiện chung để được xét tốt nghiệp tại Đại học FPT là gì?", "category": "tot_nghiep", "difficulty": "easy", "type": "factoid"}
+{"q_id": "Q053", "query": "Sinh viên cần đạt chuẩn đầu ra ngoại ngữ ở mức nào để được xét tốt nghiệp?", "category": "tot_nghiep", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q054", "query": "Yêu cầu về chứng chỉ tiếng Anh để tốt nghiệp là gì?", "category": "tot_nghiep", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q055", "query": "Chứng chỉ TOEIC bao nhiêu điểm được công nhận cho tốt nghiệp?", "category": "tot_nghiep", "difficulty": "medium", "type": "number"}
+{"q_id": "Q056", "query": "Chứng chỉ IELTS bao nhiêu được công nhận cho tốt nghiệp?", "category": "tot_nghiep", "difficulty": "medium", "type": "number"}
+{"q_id": "Q057", "query": "Sinh viên cần tích lũy tối thiểu bao nhiêu tín chỉ để tốt nghiệp?", "category": "tot_nghiep", "difficulty": "easy", "type": "number"}
+{"q_id": "Q058", "query": "GPA tốt nghiệp được tính như thế nào?", "category": "tot_nghiep", "difficulty": "medium", "type": "explanation"}
+{"q_id": "Q059", "query": "Sinh viên có được phép tốt nghiệp khi còn nợ học phí không?", "category": "tot_nghiep", "difficulty": "easy", "type": "yes_no"}
+{"q_id": "Q060", "query": "Thời gian tối đa để hoàn thành chương trình đào tạo là bao lâu?", "category": "tot_nghiep", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q061", "query": "Sinh viên có được phép tốt nghiệp sớm hơn so với thời gian quy định không?", "category": "tot_nghiep", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q062", "query": "Yêu cầu về chuẩn đầu ra tin học để tốt nghiệp là gì?", "category": "tot_nghiep", "difficulty": "hard", "type": "factoid"}
+{"q_id": "Q063", "query": "Sinh viên cần hoàn thành bao nhiêu tín chỉ thực tập để tốt nghiệp?", "category": "tot_nghiep", "difficulty": "medium", "type": "number"}
+{"q_id": "Q064", "query": "Bằng tốt nghiệp được cấp khi nào sau khi hoàn thành tất cả yêu cầu?", "category": "tot_nghiep", "difficulty": "easy", "type": "factoid"}
+{"q_id": "Q065", "query": "Sinh viên có được phép bảo lưu điểm để tốt nghiệp muộn không?", "category": "tot_nghiep", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q066", "query": "Yêu cầu về đồ án tốt nghiệp hoặc khóa luận là gì?", "category": "tot_nghiep", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q067", "query": "Sinh viên bị cảnh báo học tập khi nào?", "category": "ky_luat", "difficulty": "easy", "type": "factoid"}
+{"q_id": "Q068", "query": "Sinh viên bị cảnh báo bao nhiêu lần liên tiếp thì bị buộc thôi học?", "category": "ky_luat", "difficulty": "medium", "type": "number"}
+{"q_id": "Q069", "query": "Quy định về việc học tập khi bị cảnh báo học tập là gì?", "category": "ky_luat", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q070", "query": "Sinh viên bị kỷ luật ở mức cảnh báo có bị ảnh hưởng đến học bổng không?", "category": "ky_luat", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q071", "query": "Những hành vi nào bị xử lý kỷ luật tại Đại học FPT?", "category": "ky_luat", "difficulty": "medium", "type": "list"}
+{"q_id": "Q072", "query": "Sinh viên có thể khiếu nại quyết định kỷ luật không?", "category": "ky_luat", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q073", "query": "Thời hạn để sinh viên khiếu nại quyết định kỷ luật là bao lâu?", "category": "ky_luat", "difficulty": "hard", "type": "factoid"}
+{"q_id": "Q074", "query": "Sinh viên bị đình chỉ học tập có được hoàn học phí không?", "category": "ky_luat", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q075", "query": "Các hình thức kỷ luật tại Đại học FPT gồm những gì?", "category": "ky_luat", "difficulty": "medium", "type": "list"}
+{"q_id": "Q076", "query": "Sinh viên bị buộc thôi học có được phép đăng ký học lại không?", "category": "ky_luat", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q077", "query": "Đại học FPT tuyển sinh theo những phương thức nào?", "category": "admission", "difficulty": "easy", "type": "list"}
+{"q_id": "Q078", "query": "Phương thức xét tuyển TopSchool là gì và yêu cầu ra sao?", "category": "admission", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q079", "query": "Điểm xét tuyển theo phương thức TopSchool dựa trên tiêu chí nào?", "category": "admission", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q080", "query": "Thí sinh cần đạt bao nhiêu điểm để đỗ theo phương thức TopSchool?", "category": "admission", "difficulty": "hard", "type": "number"}
+{"q_id": "Q081", "query": "Thời gian đăng ký xét tuyển TopSchool vào khoảng nào?", "category": "admission", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q082", "query": "Thí sinh cần chuẩn bị những giấy tờ gì khi nhập học?", "category": "admission", "difficulty": "medium", "type": "list"}
+{"q_id": "Q083", "query": "Quy trình nhập học tại Đại học FPT gồm những bước nào?", "category": "admission", "difficulty": "medium", "type": "procedure"}
+{"q_id": "Q084", "query": "Thí sinh được phép đăng ký xét tuyển vào nhiều nguyện vọng không?", "category": "admission", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q085", "query": "Học phí khi nhập học lần đầu được thanh toán như thế nào?", "category": "admission", "difficulty": "hard", "type": "procedure"}
+{"q_id": "Q086", "query": "Thí sinh có được phép chuyển nguyện vọng sau khi đã xác nhận nhập học không?", "category": "admission", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q087", "query": "Học phí ngành Công nghệ thông tin tại campus Hà Nội năm 2026 so với năm 2025 có thay đổi không?", "category": "temporal", "difficulty": "medium", "type": "comparison"}
+{"q_id": "Q088", "query": "Chính sách ưu đãi học phí của campus Đà Nẵng có thay đổi qua các năm không?", "category": "temporal", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q089", "query": "Yêu cầu chuẩn đầu ra ngoại ngữ để tốt nghiệp có thay đổi giữa các khóa không?", "category": "temporal", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q090", "query": "Quy định về đăng ký tín chỉ có khác gì so với năm trước không?", "category": "temporal", "difficulty": "medium", "type": "comparison"}
+{"q_id": "Q091", "query": "Học phí ngành Kỹ thuật phần mềm tại campus TP.HCM năm 2026 là bao nhiêu và so với năm 2024 ra sao?", "category": "temporal", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q092", "query": "Điều kiện nhận học bổng có thay đổi qua các năm học không?", "category": "temporal", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q093", "query": "Thời gian tối đa để hoàn thành chương trình đào tạo có giữ nguyên qua các khóa không?", "category": "temporal", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q094", "query": "Quy định về cảnh báo học tập cho khóa K22 có khác gì so với khóa K21 không?", "category": "temporal", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q095", "query": "Học phí ngành Trí tuệ nhân tạo tại campus Quy Nhơn cho khóa K22 là bao nhiêu?", "category": "temporal", "difficulty": "medium", "type": "number"}
+{"q_id": "Q096", "query": "Số tín chỉ yêu cầu tốt nghiệp có thay đổi giữa các khóa không?", "category": "temporal", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q097", "query": "Học phí ngành Ngôn ngữ Anh tại campus Cần Thơ có giảm không khi chuyển từ năm 2025 sang 2026?", "category": "temporal", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q098", "query": "Các phương thức tuyển sinh của Đại học FPT có thay đổi qua các năm không?", "category": "temporal", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q099", "query": "Yêu cầu đầu vào theo phương thức TopSchool có tăng lên so với năm trước không?", "category": "temporal", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q100", "query": "Học phí hệ ngắn hạn và dài hạn có khác nhau không và thay đổi ra sao qua thời gian?", "category": "temporal", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q101", "query": "Quy định về bảo lưu kết quả học tập có thay đổi cho khóa K22 không?", "category": "temporal", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q102", "query": "Mức học bổng cho sinh viên khóa K22 có cao hơn khóa K21 không?", "category": "temporal", "difficulty": "medium", "type": "comparison"}
+{"q_id": "Q103", "query": "Chuẩn đầu ra tin học để tốt nghiệp có yêu cầu gì và có thay đổi không?", "category": "temporal", "difficulty": "hard", "type": "factoid"}
+{"q_id": "Q104", "query": "Học phí tại các campus có xu hướng tăng hay giảm qua các năm gần đây?", "category": "temporal", "difficulty": "hard", "type": "trend"}
+{"q_id": "Q105", "query": "Sinh viên bị cảnh báo học tập có bị ảnh hưởng đến việc xin học bổng không?", "category": "multi_hop", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q106", "query": "Nếu tôi thuộc KV1 và muốn học ngành AI tại campus Hà Nội, tôi cần đóng bao nhiêu học phí mỗi tín chỉ?", "category": "multi_hop", "difficulty": "medium", "type": "number"}
+{"q_id": "Q107", "query": "Sinh viên bị điểm F và bị cảnh báo học tập có được xét học bổng không?", "category": "multi_hop", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q108", "query": "Để tốt nghiệp sớm, sinh viên cần đáp ứng những điều kiện gì về điểm và tín chỉ?", "category": "multi_hop", "difficulty": "hard", "type": "list"}
+{"q_id": "Q109", "query": "Sinh viên khóa K22 thuộc KV1 muốn nhận học bổng Xuất sắc cần đạt điều kiện gì?", "category": "multi_hop", "difficulty": "hard", "type": "factoid"}
+{"q_id": "Q110", "query": "Nếu bị cảnh báo học tập 2 lần và sau đó đăng ký học lại nhưng vẫn bị F, tôi có bị buộc thôi học không?", "category": "multi_hop", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q111", "query": "Sinh viên năm 3 bị điểm F có ảnh hưởng đến GPA tốt nghiệp và việc xin học bổng không?", "category": "multi_hop", "difficulty": "hard", "type": "explanation"}
+{"q_id": "Q112", "query": "Để được xét tốt nghiệp, sinh viên cần đạt đồng thời những điều kiện nào về GPA, tín chỉ và chứng chỉ?", "category": "multi_hop", "difficulty": "medium", "type": "list"}
+{"q_id": "Q113", "query": "Sinh viên thuộc khu vực ưu tiên có được giảm học phí và ưu tiên xét học bổng không?", "category": "multi_hop", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q114", "query": "Nếu tôi đã có chứng chỉ TOIEC 600 và muốn tốt nghiệp, tôi còn cần đáp ứng điều kiện gì khác không?", "category": "multi_hop", "difficulty": "hard", "type": "list"}
+{"q_id": "Q115", "query": "Học phí ngành Marketing tại campus TP.HCM có bao gồm phí thực tập không và có ảnh hưởng đến tổng chi phí tốt nghiệp không?", "category": "multi_hop", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q116", "query": "Sinh viên bị điểm D có xếp loại gì và có ảnh hưởng đến việc xin học bổng không?", "category": "multi_hop", "difficulty": "medium", "type": "explanation"}
+{"q_id": "Q117", "query": "Sinh viên chuyển từ trường khác và muốn xin học bổng cần đáp ứng những điều kiện gì?", "category": "multi_hop", "difficulty": "hard", "type": "list"}
+{"q_id": "Q118", "query": "Quy định về đăng ký tín chỉ tối đa có khác gì khi sinh viên có học bổng so với không có học bổng không?", "category": "multi_hop", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q119", "query": "Nếu tôi muốn so sánh học phí ngành AI giữa campus HCM và Đà Nẵng, tôi cần biết những gì?", "category": "multi_hop", "difficulty": "medium", "type": "comparison"}
+{"q_id": "Q120", "query": "Sinh viên bị cảnh báo học tập nhưng vẫn đạt GPA 3.6 có được xét học bổng Xuất sắc không?", "category": "multi_hop", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q121", "query": "Để vừa tốt nghiệp sớm vừa nhận học bổng, sinh viên cần cân bằng những yếu tố gì?", "category": "multi_hop", "difficulty": "hard", "type": "explanation"}
+{"q_id": "Q122", "query": "Sinh viên cần đạt điểm trung bình bao nhiêu để được xếp loại Giỏi và có đủ điều kiện nhận học bổng cùng lúc không?", "category": "multi_hop", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q123", "query": "Học phí hệ chính quy và hệ không chính quy tại Đại học FPT có khác nhau không và khác nhau ra sao?", "category": "multi_hop", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q124", "query": "Sinh viên bị đình chỉ học tập có được hoàn phần học phí đã đóng không và có ảnh hưởng gì đến hồ sơ xin nhập học lại không?", "category": "multi_hop", "difficulty": "hard", "type": "explanation"}
+{"q_id": "Q125", "query": "Điều kiện để được xét tốt nghiệp và điều kiện để nhận bằng tốt nghiệp có khác nhau không?", "category": "multi_hop", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q126", "query": "Sinh viên muốn chuyển ngành từ Kinh tế sang CNTT cần đáp ứng những điều kiện gì và có ảnh hưởng đến học phí không?", "category": "multi_hop", "difficulty": "hard", "type": "explanation"}
+{"q_id": "Q127", "query": "Sinh viên có được đăng ký học cùng lúc chương trình chính quy và chương trình khác không?", "category": "dao_tao", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q128", "query": "Quy định về chuyển đổi học phần có tương đương từ trường khác như thế nào?", "category": "dao_tao", "difficulty": "hard", "type": "factoid"}
+{"q_id": "Q129", "query": "Sinh viên cần đạt GPA tối thiểu bao nhiêu để không bị cảnh báo học tập?", "category": "dao_tao", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q130", "query": "Học phí ngành An toàn thông tin tại campus Hà Nội khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "medium", "type": "number"}
+{"q_id": "Q131", "query": "Học phí ngành Logistics tại campus Cần Thơ khóa K22 có giảm hơn so với campus HCM không?", "category": "hoc_phi", "difficulty": "hard", "type": "comparison"}
+{"q_id": "Q132", "query": "Sinh viên được phép miễn học những học phần nào?", "category": "dao_tao", "difficulty": "hard", "type": "list"}
+{"q_id": "Q133", "query": "Thang điểm 4 được quy đổi từ thang điểm 10 như thế nào?", "category": "dao_tao", "difficulty": "medium", "type": "explanation"}
+{"q_id": "Q134", "query": "Sinh viên có được học vượt tín chỉ không và điều kiện là gì?", "category": "dao_tao", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q135", "query": "Quy định về kiểm tra giữa kỳ và cuối kỳ như thế nào?", "category": "dao_tao", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q136", "query": "Sinh viên có được phép học lại học phần đã đạt điểm cao để cải thiện GPA không?", "category": "dao_tao", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q137", "query": "Học bổng tài năng dành cho đối tượng nào và yêu cầu gì?", "category": "hoc_bong", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q138", "query": "Sinh viên có thể nhận học bổng từ nhiều nguồn khác nhau không?", "category": "hoc_bong", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q139", "query": "Học phí ngành Tài chính doanh nghiệp tại campus TP.HCM khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "medium", "type": "number"}
+{"q_id": "Q140", "query": "Sinh viên cần đóng thêm những khoản phí nào ngoài học phí tín chỉ không?", "category": "hoc_phi", "difficulty": "medium", "type": "list"}
+{"q_id": "Q141", "query": "Yêu cầu về đồ án/capstone project để tốt nghiệp là gì?", "category": "tot_nghiep", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q142", "query": "Sinh viên có được phép đổi đồ án tốt nghiệp sau khi đã đăng ký không?", "category": "tot_nghiep", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q143", "query": "Những loại vi phạm nào dẫn đến đình chỉ học tập?", "category": "ky_luat", "difficulty": "medium", "type": "list"}
+{"q_id": "Q144", "query": "Sinh viên bị khiển trách và cảnh báo khác nhau như thế nào?", "category": "ky_luat", "difficulty": "medium", "type": "comparison"}
+{"q_id": "Q145", "query": "Yêu cầu về điểm rèn luyện để được xét tốt nghiệp là gì?", "category": "tot_nghiep", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q146", "query": "Thí sinh có thể đăng ký xét tuyển online không và qua kênh nào?", "category": "admission", "difficulty": "easy", "type": "factoid"}
+{"q_id": "Q147", "query": "Điểm ưu tiên theo khu vực và đối tượng được tính như thế nào trong xét tuyển?", "category": "admission", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q148", "query": "Sinh viên bị buộc thôi học có được bảo lưu tín chỉ đã tích lũy không?", "category": "ky_luat", "difficulty": "hard", "type": "yes_no"}
+{"q_id": "Q149", "query": "Quy định về đạo đức học thuật và xử lý đạo văn như thế nào?", "category": "ky_luat", "difficulty": "medium", "type": "factoid"}
+{"q_id": "Q150", "query": "Sinh viên có được phép tham gia nghiên cứu khoa học và có ảnh hưởng đến điểm GPA không?", "category": "dao_tao", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q151", "query": "Học phí ngành Thiết kế đồ họa tại campus Đà Nẵng khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "medium", "type": "number"}
+{"q_id": "Q152", "query": "Sinh viên cần bao nhiêu tín chỉ thực tập và đồ án để tốt nghiệp ngành CNTT?", "category": "tot_nghiep", "difficulty": "medium", "type": "number"}
+{"q_id": "Q153", "query": "Quy định về việc nghỉ học có phép và nghỉ học không phép khác nhau như thế nào?", "category": "dao_tao", "difficulty": "medium", "type": "comparison"}
+{"q_id": "Q154", "query": "Thời hạn nộp hồ sơ xét tuyển TopSchool thường vào thời điểm nào trong năm?", "category": "admission", "difficulty": "easy", "type": "factoid"}
+{"q_id": "Q155", "query": "Sinh viên có được phép chuyển campus trong quá trình học không?", "category": "dao_tao", "difficulty": "medium", "type": "yes_no"}
+{"q_id": "Q156", "query": "Học phí ngành Vi mạch bán dẫn tại campus TP.HCM khóa K22 là bao nhiêu?", "category": "hoc_phi", "difficulty": "medium", "type": "number"}
+{"q_id": "Q157", "query": "Sinh viên bị điểm I (Incomplete) có được xử lý như thế nào?", "category": "dao_tao", "difficulty": "hard", "type": "explanation"}
