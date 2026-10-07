@@ -12,8 +12,8 @@ import re
 from typing import Any, Dict, List, Optional
 import requests
 
-from university_qa.utils.config import config
-from university_qa.utils.logger import get_logger
+from FPTUniQA.utils.config import config
+from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("university_qa.query.rewriting")
 

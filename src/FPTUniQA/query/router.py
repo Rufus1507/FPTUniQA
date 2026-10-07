@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any, Dict, Literal, Optional, Tuple
 
 from contracts import ParsedQuery
-from university_qa.utils.logger import get_logger
+from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("university_qa.query.router")
 

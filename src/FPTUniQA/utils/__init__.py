@@ -1,8 +1,8 @@
 """Tiện ích dùng chung cho toàn hệ thống: Logger, Config, I/O."""
 
-from university_qa.utils.config import AppConfig, config
-from university_qa.utils.io import read_json, read_jsonl, write_json, write_jsonl
-from university_qa.utils.logger import get_logger, log_pipeline_event
+from FPTUniQA.utils.config import AppConfig, config
+from FPTUniQA.utils.io import read_json, read_jsonl, write_json, write_jsonl
+from FPTUniQA.utils.logger import get_logger, log_pipeline_event
 
 __all__ = [
     "AppConfig",

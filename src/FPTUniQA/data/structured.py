@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
-from university_qa.utils.io import read_json
+from FPTUniQA.utils.io import read_json
 
 
 # Map campus URL keyword → campus display name

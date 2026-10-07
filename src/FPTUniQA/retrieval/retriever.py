@@ -2,9 +2,9 @@
 
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
-from university_qa.retrieval.bm25 import BM25Retriever
-from university_qa.retrieval.dense import DenseRetriever
-from university_qa.retrieval.rrf import reciprocal_rank_fusion
+from FPTUniQA.retrieval.bm25 import BM25Retriever
+from FPTUniQA.retrieval.dense import DenseRetriever
+from FPTUniQA.retrieval.rrf import reciprocal_rank_fusion
 
 
 class HybridRetriever:

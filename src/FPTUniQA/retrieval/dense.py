@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
 import faiss
 import numpy as np
-from university_qa.retrieval.embedding import EmbeddingModel
+from FPTUniQA.retrieval.embedding import EmbeddingModel
 
 
 class DenseRetriever:

@@ -1,7 +1,7 @@
 """Quản lý các mẫu System Prompt và User Prompt tuân thủ nghiêm ngặt nguyên tắc Strict Grounding."""
 
 from typing import Dict, List, Optional
-from university_qa.generation.context import format_context
+from FPTUniQA.generation.context import format_context
 
 SYSTEM_PROMPT = """Bạn là Trợ lý Tư vấn Học vụ Đại học FPT thông minh, chuẩn mực và tận tâm.
 Nhiệm vụ của bạn là giải đáp các câu hỏi của sinh viên về quy chế đào tạo, chuẩn đầu ra, học phí, học bổng và chương trình học.

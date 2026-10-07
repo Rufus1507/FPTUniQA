@@ -2,8 +2,8 @@
 
 import requests
 from typing import Optional
-from university_qa.utils.config import config
-from university_qa.utils.logger import get_logger
+from FPTUniQA.utils.config import config
+from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("university_qa.llm")
 

@@ -2,18 +2,18 @@
 
 import time
 from typing import Any, Dict, List, Optional
-from university_qa.generation.citation import extract_citations
-from university_qa.generation.context import format_context
-from university_qa.generation.guardrails import check_hallucination
-from university_qa.generation.llm import LLMClient
-from university_qa.generation.prompt import SYSTEM_PROMPT, build_prompt
-from university_qa.query.normalizer import normalize_query
-from university_qa.query.rewriting import rewrite_query
-from university_qa.query.semantic_parser import parse_query
-from university_qa.query.router import route_query, execute_structured_lookup
-from university_qa.pipeline.mock_retriever import retrieve
-from university_qa.utils.config import config
-from university_qa.utils.logger import get_logger, log_pipeline_event, log_query_event
+from FPTUniQA.generation.citation import extract_citations
+from FPTUniQA.generation.context import format_context
+from FPTUniQA.generation.guardrails import check_hallucination
+from FPTUniQA.generation.llm import LLMClient
+from FPTUniQA.generation.prompt import SYSTEM_PROMPT, build_prompt
+from FPTUniQA.query.normalizer import normalize_query
+from FPTUniQA.query.rewriting import rewrite_query
+from FPTUniQA.query.semantic_parser import parse_query
+from FPTUniQA.query.router import route_query, execute_structured_lookup
+from FPTUniQA.pipeline.mock_retriever import retrieve
+from FPTUniQA.utils.config import config
+from FPTUniQA.utils.logger import get_logger, log_pipeline_event, log_query_event
 
 logger = get_logger("university_qa.rag_pipeline")
 
@@ -70,7 +70,7 @@ class RAGPipeline:
         # Khởi tạo HybridRetriever kết nối với dữ liệu thực tế (TV1 / TV2)
         self.retriever = None
         try:
-            from university_qa.retrieval.retriever import HybridRetriever
+            from FPTUniQA.retrieval.retriever import HybridRetriever
             self.retriever = HybridRetriever()
             logger.info("Khởi tạo HybridRetriever kết nối dữ liệu thực tế thành công.")
         except Exception as e:

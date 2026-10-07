@@ -7,7 +7,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Optional
-from university_qa.utils.config import config
+from FPTUniQA.utils.config import config
 
 
 class JSONLFormatter(logging.Formatter):
@@ -37,7 +37,7 @@ class JSONLFormatter(logging.Formatter):
         return json.dumps(payload, ensure_ascii=False)
 
 
-def get_logger(name: str = "university_qa") -> logging.Logger:
+def get_logger(name: str = "FPTUniQA") -> logging.Logger:
     """Tạo hoặc lấy logger chuẩn đã được cấu hình StreamHandler và JSONL FileHandler."""
     logger = logging.getLogger(name)
     if logger.hasHandlers():
@@ -81,7 +81,7 @@ def log_pipeline_event(
     extra: Optional[Dict[str, Any]] = None,
 ) -> None:
     """Ghi trực tiếp một sự kiện xử lý truy vấn RAG vào file log JSONL."""
-    logger = get_logger("university_qa.pipeline_events")
+    logger = get_logger("FPTUniQA.pipeline_events")
     record = logging.LogRecord(
         name=logger.name,
         level=logging.INFO,

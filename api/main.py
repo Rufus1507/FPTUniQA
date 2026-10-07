@@ -4,10 +4,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.routes.health import router as health_router
 from api.routes.qa import router as qa_router
-from university_qa.utils.config import config
-from university_qa.utils.logger import get_logger
+from FPTUniQA.utils.config import config
+from FPTUniQA.utils.logger import get_logger
 
-logger = get_logger("university_qa.api.main")
+logger = get_logger("FPTUniQA.api.main")
 
 app = FastAPI(
     title="FPT University Academic QA API",

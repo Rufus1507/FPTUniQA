@@ -2,10 +2,10 @@
 
 from fastapi import APIRouter, HTTPException, status
 from api.schemas import Citation, QueryRequest, QueryResponse
-from university_qa.pipeline.rag_pipeline import RAGPipeline
-from university_qa.utils.logger import get_logger
+from FPTUniQA.pipeline.rag_pipeline import RAGPipeline
+from FPTUniQA.utils.logger import get_logger
 
-logger = get_logger("university_qa.api.qa")
+logger = get_logger("FPTUniQA.api.qa")
 
 router = APIRouter(prefix="/api/v1", tags=["Question Answering"])
 

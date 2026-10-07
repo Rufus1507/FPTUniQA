@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Dict, List, Optional, Union
 
-from university_qa.data.html_extractor import load_html_file
+from FPTUniQA.data.html_extractor import load_html_file
 
 
 class DocumentLoader:

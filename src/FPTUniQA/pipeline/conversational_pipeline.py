@@ -1,8 +1,8 @@
 """Luồng hội thoại đa lượt có nhớ ngữ cảnh (Conversational RAG). Phụ trách: TV2 + TV3."""
 
 from typing import Any, Dict, List, Optional
-from university_qa.pipeline.rag_pipeline import RAGPipeline
-from university_qa.query.rewriting import QueryRewriter
+from FPTUniQA.pipeline.rag_pipeline import RAGPipeline
+from FPTUniQA.query.rewriting import QueryRewriter
 
 
 class ConversationalRAGPipeline:

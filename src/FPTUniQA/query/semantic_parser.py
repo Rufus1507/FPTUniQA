@@ -11,10 +11,10 @@ from typing import Any, Dict, Optional
 import requests
 
 from contracts import ParsedQuery
-from university_qa.query.intent import QueryIntent, SUPPORTED_INTENTS
-from university_qa.query.normalizer import normalize_query
-from university_qa.utils.config import config
-from university_qa.utils.logger import get_logger
+from FPTUniQA.query.intent import QueryIntent, SUPPORTED_INTENTS
+from FPTUniQA.query.normalizer import normalize_query
+from FPTUniQA.utils.config import config
+from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("university_qa.query.semantic_parser")
 
@@ -284,8 +284,8 @@ def parse_query(question: str) -> ParsedQuery:
     Ưu tiên 2: Regex Fallback nếu LLM thất bại.
     """
     import time
-    from university_qa.query.router import route_query
-    from university_qa.utils.logger import log_parsing_event
+    from FPTUniQA.query.router import route_query
+    from FPTUniQA.utils.logger import log_parsing_event
 
     start_time = time.time()
     clean_query = normalize_query(question)
