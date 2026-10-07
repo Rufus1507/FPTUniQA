@@ -46,8 +46,8 @@ Mở một cửa sổ Terminal và chạy:
 # Khởi chạy server FastAPI:
 uv run uvicorn api.main:app --reload
 
-# Hoặc bằng uvicorn trực tiếp:
-uvicorn api.main:app --reload
+# Hoặc chạy trực tiếp qua module (khuyên dùng trên Windows nếu gặp lỗi uv trampoline):
+python -m uvicorn api.main:app --reload
 ```
 
 - Server sẽ hoạt động tại: `http://localhost:8000`
@@ -64,8 +64,8 @@ Mở một cửa sổ Terminal thứ hai và chạy:
 # Khởi chạy ứng dụng Streamlit:
 uv run streamlit run frontend/app.py
 
-# Hoặc bằng streamlit trực tiếp:
-streamlit run frontend/app.py
+# Hoặc chạy trực tiếp qua module:
+python -m streamlit run frontend/app.py
 ```
 
 - Ứng dụng sẽ tự động mở tại trình duyệt: `http://localhost:8501`
