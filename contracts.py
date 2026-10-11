@@ -20,12 +20,12 @@ class QueryRequest(BaseModel):
     query: Optional[str] = Field(
         default=None,
         description="Nội dung câu hỏi của sinh viên về quy chế học vụ",
-        example="Điều kiện để không bị cảnh cáo học vụ là gì?",
+        json_schema_extra={"example": "Điều kiện để không bị cảnh cáo học vụ là gì?"},
     )
     question: Optional[str] = Field(
         default=None,
         description="Alias câu hỏi nhận từ các client/curl khác nhau",
-        example="Điều kiện để không bị cảnh cáo học vụ là gì?",
+        json_schema_extra={"example": "Điều kiện để không bị cảnh cáo học vụ là gì?"},
     )
     session_id: Optional[str] = Field(
         default=None,
@@ -53,9 +53,9 @@ class QueryRequest(BaseModel):
 class Citation(BaseModel):
     """Hợp đồng cấu trúc nguồn tài liệu trích dẫn căn cứ."""
 
-    doc_id: str = Field(..., example="FPTU-QC-001", description="Mã định danh tài liệu quy chế")
-    title: str = Field(..., example="Quy chế cảnh báo học vụ và đình chỉ học tập", description="Tiêu đề văn bản")
-    source: str = Field(..., example="Sổ tay sinh viên ĐH FPT 2024 - Mục 4.2, Trang 22", description="Vị trí trích dẫn cụ thể")
+    doc_id: str = Field(..., json_schema_extra={"example": "FPTU-QC-001"}, description="Mã định danh tài liệu quy chế")
+    title: str = Field(..., json_schema_extra={"example": "Quy chế cảnh báo học vụ và đình chỉ học tập"}, description="Tiêu đề văn bản")
+    source: str = Field(..., json_schema_extra={"example": "Sổ tay sinh viên ĐH FPT 2024 - Mục 4.2, Trang 22"}, description="Vị trí trích dẫn cụ thể")
     category: Optional[str] = Field(default="quy_che", description="Phân loại: 'syllabus' | 'quy_che' | 'hoc_phi_hoc_bong'")
     source_index: Optional[int] = Field(default=1, description="Số thứ tự đánh dấu [Nguồn N] trong câu trả lời")
 
@@ -111,7 +111,7 @@ class DocumentChunk(BaseModel):
     retrieval_strategy: str = Field(
         default="mock",
         description="Chiến lược tìm kiếm: 'bm25' | 'dense' | 'hybrid' | 'mock'",
-        example="hybrid",
+        json_schema_extra={"example": "hybrid"},
     )
     metadata: Dict[str, Any] = Field(
         default_factory=lambda: {
@@ -120,10 +120,12 @@ class DocumentChunk(BaseModel):
             "doc_type": "quy_che",
         },
         description="Metadata lồng: effective_date, applies_to_cohort, doc_type, ...",
-        example={
-            "effective_date": "2024-01-01",
-            "applies_to_cohort": "K2020-K2024",
-            "doc_type": "quy_che",
+        json_schema_extra={
+            "example": {
+                "effective_date": "2024-01-01",
+                "applies_to_cohort": "K2020-K2024",
+                "doc_type": "quy_che",
+            }
         },
     )
 
@@ -171,51 +173,51 @@ class ParsedQuery(BaseModel):
     intent: str = Field(
         ...,
         description="Ý định người dùng (VD: 'hoi_quy_che', 'tra_cuu_hoc_phi', 'xet_tot_nghiep', 'ood')",
-        example="hoi_quy_che",
+        json_schema_extra={"example": "hoi_quy_che"},
     )
     slots: Dict[str, Any] = Field(
         default_factory=dict,
         description="Các slot trích xuất dạng dict có cấu trúc (VD: {'program': 'AI', 'cohort': '2027'})",
-        example={"topic": "canh_bao_hoc_vu", "target": "dieu_kien"},
+        json_schema_extra={"example": {"topic": "canh_bao_hoc_vu", "target": "dieu_kien"}},
     )
     confidence: float = Field(
         ...,
         ge=0.0,
         le=1.0,
         description="Độ tin cậy của bộ phân tích semantic parsing [0.0, 1.0]",
-        example=0.95,
+        json_schema_extra={"example": 0.95},
     )
     parser_method: str = Field(
         ...,
         description="Phương pháp phân tích: 'rule_based' | 'few_shot_llm' | 'fine_tuned_slm'",
-        example="rule_based",
+        json_schema_extra={"example": "rule_based"},
     )
     fallback_used: bool = Field(
         ...,
         description="Cờ báo hiệu có kích hoạt cơ chế fallback khi parser chính thất bại hay không",
-        example=False,
+        json_schema_extra={"example": False},
     )
 
     # --- CÁC TRƯỜNG PHỤ TRỢ (TÙY CHỌN) ---
     original_query: Optional[str] = Field(
         default=None,
         description="Câu hỏi thô ban đầu do sinh viên nhập vào",
-        example="Dieu kien de k bi canh cao hoc vu la gi?",
+        json_schema_extra={"example": "Dieu kien de k bi canh cao hoc vu la gi?"},
     )
     normalized_query: Optional[str] = Field(
         default=None,
         description="Câu hỏi sau chuẩn hóa Unicode NFC, xóa khoảng trắng thừa, lowercase",
-        example="điều kiện để không bị cảnh cáo học vụ là gì?",
+        json_schema_extra={"example": "điều kiện để không bị cảnh cáo học vụ là gì?"},
     )
     keywords: List[str] = Field(
         default_factory=list,
         description="Danh sách từ khóa học vụ trích xuất phục vụ tìm kiếm BM25",
-        example=["cảnh cáo", "học vụ", "điều kiện"],
+        json_schema_extra={"example": ["cảnh cáo", "học vụ", "điều kiện"]},
     )
     entities: Dict[str, Any] = Field(
         default_factory=dict,
         description="Các thực thể nhận diện được",
-        example={"terms": ["cảnh cáo học vụ"], "target": "điều kiện"},
+        json_schema_extra={"example": {"terms": ["cảnh cáo học vụ"], "target": "điều kiện"}},
     )
     is_valid: bool = Field(
         default=True,

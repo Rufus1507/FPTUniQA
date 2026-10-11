@@ -129,6 +129,66 @@ def run_audit():
     print(f"[*] Câu trả lời mẫu:\n{rag_res.get('answer')[:200]}...")
 
     print("\n" + "=" * 60)
+    print("BƯỚC 6: KIỂM THỬ CROSS-ENCODER RERANKER & TWO-STAGE RETRIEVAL")
+    print("=" * 60)
+    from FPTUniQA.reranking.cross_encoder import CrossEncoderReranker
+
+    reranker = CrossEncoderReranker()
+    test_docs = [
+        {"id": "doc_noise", "title": "Bóng đá", "text": "CLB thể thao sinh viên giao lưu bóng đá."},
+        {"id": "doc_target", "title": "Học bổng", "text": "Quy định học bổng tài năng và khuyến khích học tập."},
+    ]
+    rerank_out = reranker.rerank("học bổng cho sinh viên", test_docs, top_n=2)
+    print(f"[*] Kết quả rerank: {[(d['id'], s) for d, s in rerank_out]}")
+    assert len(rerank_out) == 2
+    assert rerank_out[0][0]["id"] == "doc_target"
+    for _, s in rerank_out:
+        assert 0.0 <= s <= 1.0, f"Score reranker ngoài [0.0, 1.0]: {s}"
+
+    # Kiểm tra tính đơn điệu của hàm chuẩn hóa điểm
+    norm_mono = CrossEncoderReranker._normalize_scores([-2.5, -0.01, 0.01, 2.5])
+    print(f"[*] Kiểm tra đơn điệu [-2.5, -0.01, 0.01, 2.5] -> {norm_mono}")
+    assert norm_mono[0] < norm_mono[1] < norm_mono[2] < norm_mono[3]
+
+    # Kiểm tra hỗ trợ 'content' fallback và lọc None
+    resilient_out = reranker.rerank(
+        "quy chế",
+        [None, {}, {"id": "doc_content", "title": "Quy chế", "content": "Quy chế đào tạo"}],
+        top_n=2,
+    )
+    assert len(resilient_out) == 1
+    assert resilient_out[0][0]["id"] == "doc_content"
+
+    # Kiểm tra score thresholding
+    threshold_out = reranker.rerank("học bổng", test_docs, top_n=2, score_threshold=0.5)
+    print(f"[*] Kết quả sau khi thresholding >= 0.5: {[(d['id'], s) for d, s in threshold_out]}")
+    for _, s in threshold_out:
+        assert s >= 0.5, f"Score nhỏ hơn threshold 0.5: {s}"
+
+    # Kiểm tra retrieve_contract2 với rerank=True từ retriever thật
+    reranked_chunks = retriever.retrieve_contract2("học bổng FPT", top_k=3, rerank=True)
+    print(f"[*] retrieve_contract2 (rerank=True) trả về {len(reranked_chunks)} chunks:")
+    assert len(reranked_chunks) > 0
+    for chunk_dict in reranked_chunks:
+        from contracts import DocumentChunk
+        dc = DocumentChunk(**chunk_dict)
+        print(f"   - doc_id: {dc.doc_id} | score: {dc.score:.4f} | strategy: {dc.retrieval_strategy} | title: {dc.title}")
+        assert 0.0 <= dc.score <= 1.0
+        assert dc.retrieval_strategy in ("bm25", "dense", "hybrid", "mock")
+
+    # Kiểm tra RAGPipeline xử lý gracefully khi không tìm thấy tài liệu (KHÔNG inject mock doc)
+    class EmptyRetriever:
+        def retrieve_contract2(self, *args, **kwargs):
+            return []
+
+    pipeline_empty = RAGPipeline(retriever=EmptyRetriever(), use_mock_fallback=False)
+    empty_res = pipeline_empty.answer("Quy định về cảnh báo học vụ XYZ12345 như thế nào?")
+    print(f"[*] Phản hồi khi retriever rỗng (use_mock_fallback=False):\n   \"{empty_res.get('answer')}\"")
+    assert "không tìm thấy tài liệu phù hợp" in empty_res.get("answer", "")
+    assert len(empty_res.get("retrieved_chunks", [])) == 0
+    print("[✓] RAGPipeline xử lý gracefully khi không có tài liệu và KHÔNG inject mock docs!")
+
+    print("\n" + "=" * 60)
     print("TỔNG KẾT: TẤT CẢ CÁC BƯỚC AUDIT ĐỀU THÀNH CÔNG 100%!")
     print("=" * 60)
 

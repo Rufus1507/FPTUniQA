@@ -40,6 +40,8 @@ reranking:
   model_name: "BAAI/bge-reranker-large"
   top_n: 5
   batch_size: 16
+  device: "cpu"
+  score_threshold: 0.0
 
 generation:
   provider: "gemini" # or "openai"

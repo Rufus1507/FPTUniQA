@@ -1,6 +1,7 @@
 """Dòng chảy RAG chuẩn (RAG Pipeline) kết nối các module từ Query -> Retrieval -> Generation. Phụ trách: TV3."""
 
 import time
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 from FPTUniQA.generation.citation import extract_citations
 from FPTUniQA.generation.context import format_context
@@ -59,28 +60,56 @@ class RAGPipeline:
     def __init__(
         self,
         llm_client: Optional[LLMClient] = None,
+        retriever: Optional[Any] = None,
         top_k: Optional[int] = None,
-        score_threshold: float = 0.3,
+        score_threshold: Optional[float] = None,
+        use_mock_fallback: bool = False,
+        rerank: bool = True,
     ):
         self.llm = llm_client or LLMClient()
         self.top_k = top_k or config.default_top_k
-        self.score_threshold = score_threshold
+        if score_threshold is not None:
+            self.score_threshold = float(score_threshold)
+        else:
+            try:
+                from FPTUniQA.utils.config import load_config
+                cfg = load_config().get("reranking", {})
+                self.score_threshold = float(cfg.get("score_threshold", 0.0))
+            except Exception:
+                self.score_threshold = 0.0
+        self.use_mock_fallback = use_mock_fallback
+        self.rerank = rerank
         self.session_manager = SessionManager()
 
         # Khởi tạo HybridRetriever kết nối với dữ liệu thực tế (TV1 / TV2)
-        self.retriever = None
-        try:
-            from FPTUniQA.retrieval.retriever import HybridRetriever
-            self.retriever = HybridRetriever()
-            logger.info("Khởi tạo HybridRetriever kết nối dữ liệu thực tế thành công.")
-        except Exception as e:
-            logger.warning(f"Không thể khởi tạo HybridRetriever: {e}. Sẽ dùng fallback mock_retriever.")
+        if retriever is not None:
+            self.retriever = retriever
+        else:
+            try:
+                from FPTUniQA.retrieval.retriever import HybridRetriever
+                self.retriever = HybridRetriever(auto_load=True)
+                logger.info("Khởi tạo HybridRetriever kết nối dữ liệu thực tế thành công.")
+            except Exception as e:
+                logger.warning(f"Không thể khởi tạo HybridRetriever: {e}.")
+                self.retriever = None
 
-        logger.info(f"Khởi tạo RAGPipeline với top_k={self.top_k}, score_threshold={self.score_threshold}")
+        logger.info(
+            f"Khởi tạo RAGPipeline với top_k={self.top_k}, score_threshold={self.score_threshold}, "
+            f"use_mock_fallback={self.use_mock_fallback}, rerank={self.rerank}"
+        )
 
     def load_corpus(self, corpus_path: Optional[str] = None) -> None:
         """Tương thích với các bài test / script kiểm thử dữ liệu corpus."""
         logger.info(f"load_corpus được gọi với đường dẫn: {corpus_path}")
+        if corpus_path and Path(corpus_path).exists():
+            try:
+                from FPTUniQA.utils.io import read_jsonl
+                docs = read_jsonl(corpus_path)
+                if docs and self.retriever is not None:
+                    self.retriever.build_index(docs)
+                    logger.info(f"Đã lập chỉ mục {len(docs)} documents từ {corpus_path}")
+            except Exception as e:
+                logger.warning(f"Không thể index tài liệu từ {corpus_path}: {e}")
 
     def run(self, query: str, session_id: Optional[str] = None, **kwargs) -> Dict[str, Any]:
         """Alias cho method answer() để tương thích đa giao diện."""
@@ -146,12 +175,18 @@ class RAGPipeline:
                 retrieved_chunks = []
                 if self.retriever is not None:
                     try:
-                        retrieved_chunks = self.retriever.retrieve_contract2(clean_query, top_k=effective_top_k)
+                        retrieved_chunks = self.retriever.retrieve_contract2(
+                            clean_query,
+                            top_k=effective_top_k,
+                            rerank=self.rerank,
+                            score_threshold=kwargs.get("score_threshold", self.score_threshold),
+                        )
                     except Exception as err:
-                        logger.warning(f"Lỗi khi truy xuất qua HybridRetriever: {err}. Chuyển sang fallback.")
+                        logger.warning(f"Lỗi khi truy xuất qua HybridRetriever: {err}")
 
-                # Fallback sang mock_retriever nếu retriever thực tế chưa trả kết quả
-                if not retrieved_chunks:
+                # Fallback sang mock_retriever CHỈ KHI cờ use_mock_fallback=True được cấu hình tường minh
+                if not retrieved_chunks and self.use_mock_fallback:
+                    logger.info("Retriever không có kết quả, kích hoạt fallback mock_retriever theo cấu hình.")
                     retrieved_chunks = retrieve(clean_query, top_k=effective_top_k)
 
                 if not retrieved_chunks:
