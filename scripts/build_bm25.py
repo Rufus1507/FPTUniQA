@@ -1,10 +1,18 @@
 """Script tạo và lưu trữ chỉ mục BM25 từ file corpus.jsonl."""
 
+import sys
 from pathlib import Path
-from university_qa.retrieval.bm25 import BM25Retriever
-from university_qa.utils.config import load_config
-from university_qa.utils.io import read_jsonl
-from university_qa.utils.logger import get_logger
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(ROOT_DIR / "src") not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR / "src"))
+
+from FPTUniQA.retrieval.bm25 import BM25Retriever
+from FPTUniQA.utils.config import load_config
+from FPTUniQA.utils.io import read_jsonl
+from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("scripts.build_bm25")
 

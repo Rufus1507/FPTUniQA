@@ -1,6 +1,6 @@
 """Kiểm thử tích hợp cho toàn bộ luồng RAGPipeline."""
 
-from university_qa.pipeline.rag_pipeline import RAGPipeline
+from FPTUniQA.pipeline.rag_pipeline import RAGPipeline
 
 
 def test_rag_pipeline_flow():

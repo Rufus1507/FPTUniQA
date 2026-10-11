@@ -1,11 +1,11 @@
 """Script thực thi đo lường toàn bộ bộ test khoa học và xuất báo cáo."""
 
 from pathlib import Path
-from university_qa.evaluation.evaluator import RAGEvaluator
-from university_qa.pipeline.rag_pipeline import RAGPipeline
-from university_qa.utils.config import load_config
-from university_qa.utils.io import read_jsonl, write_json
-from university_qa.utils.logger import get_logger
+from FPTUniQA.evaluation.evaluator import RAGEvaluator
+from FPTUniQA.pipeline.rag_pipeline import RAGPipeline
+from FPTUniQA.utils.config import load_config
+from FPTUniQA.utils.io import read_jsonl, write_json
+from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("scripts.evaluate")
 

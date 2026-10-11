@@ -1,8 +1,8 @@
 """Script chạy thử nghiệm pipeline RAG trực tiếp từ Terminal."""
 
 import argparse
-from university_qa.pipeline.rag_pipeline import RAGPipeline
-from university_qa.utils.logger import get_logger
+from FPTUniQA.pipeline.rag_pipeline import RAGPipeline
+from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("scripts.run_pipeline")
 

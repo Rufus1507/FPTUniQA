@@ -16,7 +16,7 @@ ROOT_DIR = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT_DIR / "src"))
 sys.path.insert(0, str(ROOT_DIR))
 
-from university_qa.pipeline.rag_pipeline import RAGPipeline
+from FPTUniQA.pipeline.rag_pipeline import RAGPipeline
 
 SCENARIOS = [
     {

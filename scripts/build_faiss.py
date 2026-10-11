@@ -1,11 +1,19 @@
 """Script tính toán vector embeddings và lưu chỉ mục FAISS."""
 
+import sys
 from pathlib import Path
-from university_qa.retrieval.dense import DenseRetriever
-from university_qa.retrieval.embedding import EmbeddingModel
-from university_qa.utils.config import load_config
-from university_qa.utils.io import read_jsonl
-from university_qa.utils.logger import get_logger
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(ROOT_DIR / "src") not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR / "src"))
+
+from FPTUniQA.retrieval.dense import DenseRetriever
+from FPTUniQA.retrieval.embedding import EmbeddingModel
+from FPTUniQA.utils.config import load_config
+from FPTUniQA.utils.io import read_jsonl
+from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("scripts.build_faiss")
 
@@ -23,7 +31,8 @@ def main():
 
     embedding_model = EmbeddingModel(
         model_name=dense_cfg.get("embedding_model", "intfloat/multilingual-e5-base"),
-        device=dense_cfg.get("device", "cpu"),
+        device=dense_cfg.get("device", "auto"),
+        batch_size=dense_cfg.get("batch_size", 32),
     )
 
     retriever = DenseRetriever(

@@ -1,14 +1,22 @@
 """Chấm điểm Benchmark Retrieval (BM25 vs Dense vs Hybrid)."""
 import json
+import sys
 from pathlib import Path
 from typing import Any, Dict, List
-from university_qa.retrieval.bm25 import BM25Retriever
-from university_qa.retrieval.dense import DenseRetriever
-from university_qa.retrieval.retriever import HybridRetriever
-from university_qa.retrieval.embedding import EmbeddingModel
-from university_qa.utils.config import load_config
-from university_qa.utils.io import read_jsonl
-from university_qa.utils.logger import get_logger
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(ROOT_DIR / "src") not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR / "src"))
+
+from FPTUniQA.retrieval.bm25 import BM25Retriever
+from FPTUniQA.retrieval.dense import DenseRetriever
+from FPTUniQA.retrieval.retriever import HybridRetriever
+from FPTUniQA.retrieval.embedding import EmbeddingModel
+from FPTUniQA.utils.config import load_config
+from FPTUniQA.utils.io import read_jsonl
+from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("scripts.benchmark_retrieval")
 
@@ -39,7 +47,7 @@ def compute_metrics(qrels: Dict[str, List[str]], results: Dict[str, List[str]], 
 
 def main():
     config = load_config()
-    # Dummy data for test benchmark script if no data available
+    # Dữ liệu mặc định
     docs = [
         {"id": "doc1", "title": "Tuition", "text": "Tuition for IT is 30m"},
         {"id": "doc2", "title": "Rules", "text": "Students must wear ID"}
@@ -49,23 +57,45 @@ def main():
         {"id": "q2", "text": "Do I need an ID?", "rel_docs": ["doc2"]},
     ]
     
-    # Normally read from disk:
+    # Nạp corpus từ ổ đĩa nếu tồn tại
     try:
         corpus_path = config.get("data", {}).get("corpus_path", "data/processed/corpus.jsonl")
         docs_from_disk = read_jsonl(corpus_path)
-        if docs_from_disk: docs = docs_from_disk
-    except:
-        pass
+        if docs_from_disk:
+            docs = docs_from_disk
+            # Sử dụng các câu truy vấn thực tế tương ứng với các chunk có trong 3,931 corpus
+            corpus_ids = {str(d.get("id", d.get("doc_id"))) for d in docs}
+            real_queries = [
+                {"id": "q_admission", "text": "Đăng ký hồ sơ tuyển sinh", "rel_docs": ["fpt_002097"]},
+                {"id": "q_tuition_hn", "text": "Học phí trường Đại học FPT tại Hà Nội", "rel_docs": ["fpt_002465"]},
+                {"id": "q_scholarship", "text": "Học bổng Vững Tương Lai", "rel_docs": ["fpt_000364"]},
+            ]
+            if all(all(r in corpus_ids for r in q["rel_docs"]) for q in real_queries):
+                queries = real_queries
+    except Exception as e:
+        logger.warning(f"Không thể nạp corpus từ disk: {e}")
     
-    logger.info(f"Loaded {len(docs)} documents.")
+    logger.info(f"Loaded {len(docs)} documents and {len(queries)} benchmark queries.")
 
     emb_model = EmbeddingModel(device="cpu") # Will fallback to dummy for speed if dummy logic handles it
     bm25 = BM25Retriever()
     dense = DenseRetriever(embedding_model=emb_model)
     hybrid = HybridRetriever(bm25_retriever=bm25, dense_retriever=dense, rrf_k=60)
     
-    bm25.index(docs)
-    dense.build_index(docs)
+    faiss_dir = Path("data/processed/faiss_index")
+    bm25_file = Path("data/processed/bm25_index/bm25_index.pkl")
+    
+    if bm25_file.exists():
+        logger.info(f"Loading existing BM25 index from {bm25_file}")
+        bm25.load(str(bm25_file))
+    else:
+        bm25.index(docs)
+        
+    if faiss_dir.exists() and (faiss_dir / "dense.index").exists():
+        logger.info(f"Loading existing FAISS index from {faiss_dir}")
+        dense.load_index(str(faiss_dir))
+    else:
+        dense.build_index(docs)
     
     qrels = {q["id"]: q["rel_docs"] for q in queries}
     

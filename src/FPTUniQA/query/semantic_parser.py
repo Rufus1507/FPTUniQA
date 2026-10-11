@@ -10,13 +10,21 @@ import re
 from typing import Any, Dict, Optional
 import requests
 
-from contracts import ParsedQuery
+try:
+    from contracts import ParsedQuery
+except ImportError:
+    import sys
+    from pathlib import Path
+    _root = Path(__file__).resolve().parent.parent.parent.parent
+    if str(_root) not in sys.path:
+        sys.path.insert(0, str(_root))
+    from contracts import ParsedQuery
 from FPTUniQA.query.intent import QueryIntent, SUPPORTED_INTENTS
 from FPTUniQA.query.normalizer import normalize_query
 from FPTUniQA.utils.config import config
 from FPTUniQA.utils.logger import get_logger
 
-logger = get_logger("university_qa.query.semantic_parser")
+logger = get_logger("FPTUniQA.query.semantic_parser")
 
 # System Prompt chỉ thị LLM trích xuất intent và slots chuẩn xác
 PARSER_SYSTEM_PROMPT = """Bạn là bộ phân tích ngữ nghĩa (Semantic Parser) cho hệ thống hỏi đáp quy chế học vụ Đại học FPT.
@@ -166,8 +174,11 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
             "confidence": 0.90,
         }
 
-    # 2. Kiểm tra tuition_lookup (Học phí / tín chỉ)
-    if any(kw in q_lower for kw in ["học phí", "tiền học", "chi phí", "tín chỉ"]):
+    # 2. Kiểm tra tuition_lookup (Học phí)
+    is_tuition = any(kw in q_lower for kw in ["học phí", "tiền học", "chi phí"]) or (
+        "tín chỉ" in q_lower and any(kw in q_lower for kw in ["bao nhiêu tiền", "giá", "mức phí", "đóng tiền"])
+    )
+    if is_tuition:
         # Trích xuất ngành học
         if "ai" in q_lower or "trí tuệ nhân tạo" in q_lower:
             slots["program"] = "AI"
@@ -250,7 +261,7 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
         }
 
     # 4. Kiểm tra policy_lookup (Quy chế học vụ)
-    if any(kw in q_lower for kw in ["cảnh cáo", "cảnh báo", "học vụ", "tiên quyết", "thi lại", "học lại", "chuyên cần", "vắng", "điểm liệt", "học bổng"]):
+    if any(kw in q_lower for kw in ["cảnh cáo", "cảnh báo", "học vụ", "tiên quyết", "thi lại", "học lại", "chuyên cần", "vắng", "điểm liệt", "học bổng", "tín chỉ", "đăng ký", "học phần", "quy chế"]):
         if "cảnh cáo" in q_lower or "cảnh báo" in q_lower:
             slots["topic"] = "canh_bao_hoc_vu"
             slots["target"] = "dieu_kien"
@@ -259,6 +270,9 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
             slots["target"] = "ty_le_vang"
         elif "học bổng" in q_lower:
             slots["topic"] = "hoc_bong"
+            slots["target"] = "dieu_kien"
+        elif "tín chỉ" in q_lower or "học phần" in q_lower or "đăng ký" in q_lower:
+            slots["topic"] = "tin_chi"
             slots["target"] = "dieu_kien"
         else:
             slots["topic"] = "quy_che_chung"

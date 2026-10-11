@@ -1,6 +1,6 @@
 """Kiểm thử đơn vị cho bộ tìm kiếm BM25."""
 
-from university_qa.retrieval.bm25 import BM25Retriever
+from FPTUniQA.retrieval.bm25 import BM25Retriever
 
 
 def test_bm25_retriever():
@@ -19,7 +19,7 @@ def test_bm25_retriever():
 
 def test_bm25_vietnamese_tokenization():
     """Kiểm tra tách từ tiếng Việt hoạt động (pyvi hoặc fallback)."""
-    from university_qa.retrieval.bm25 import tokenize_vietnamese
+    from FPTUniQA.retrieval.bm25 import tokenize_vietnamese
     tokens = tokenize_vietnamese("Sinh viên đăng ký học phần")
     assert len(tokens) > 0
     # Should not have stopwords if filtering is on
@@ -73,3 +73,62 @@ def test_bm25_no_match_returns_empty():
     r.index(docs)
     results = r.retrieve("xyzabc12345notexist", top_k=5)
     assert results == []
+
+def test_bm25_contract2_strict_pydantic_validation():
+    """Kiểm tra Contract 2 xuất ra score chuẩn hóa trong [0.0, 1.0] và hợp lệ với Pydantic DocumentChunk."""
+    from contracts import DocumentChunk
+    docs = [
+        {"id": "doc_test", "title": "Tiêu đề mẫu", "text": "Quy chế cảnh báo học vụ",
+         "metadata": {"doc_id": "doc_test", "effective_date": "2024-01-01", "cohort": "K2024", "category": "quy_che"}},
+    ]
+    r = BM25Retriever()
+    r.index(docs)
+    res = r.retrieve_contract2("quy chế cảnh báo học vụ", top_k=1)
+    assert len(res) == 1
+    chunk = DocumentChunk(**res[0])
+    assert 0.0 <= chunk.score <= 1.0
+    assert chunk.retrieval_strategy == "bm25"
+    assert chunk.doc_id == "doc_test"
+
+def test_bm25_empty_and_whitespace_query():
+    """Kiểm tra query rỗng hoặc whitespace trả về [] ngay lập tức."""
+    docs = [{"id": "1", "title": "A", "text": "Nội dung quy chế"}]
+    r = BM25Retriever()
+    r.index(docs)
+    assert r.retrieve("") == []
+    assert r.retrieve("   ") == []
+    assert r.retrieve(None) == []
+    assert r.retrieve_contract2("") == []
+
+def test_bm25_punctuation_cleaning():
+    """Kiểm tra tokenize loại bỏ dấu câu không đưa vào vocabulary terms."""
+    from FPTUniQA.retrieval.bm25 import tokenize_vietnamese
+    tokens = tokenize_vietnamese("Điều kiện cảnh báo học vụ (2024)? *học phí*!")
+    assert "?" not in tokens
+    assert "!" not in tokens
+    assert "(" not in tokens
+    assert ")" not in tokens
+    assert "*" not in tokens
+
+def test_bm25_metadata_filter_wildcard():
+    """Kiểm tra metadata filter với wildcard 'all'/'All' và alias trường."""
+    docs = [
+        {"id": "d1", "title": "A", "text": "Học phí", "campus": "all", "metadata": {"campus": "all"}},
+        {"id": "d2", "title": "B", "text": "Học phí", "campus": "ha_noi", "metadata": {"campus": "ha_noi"}},
+        {"id": "d3", "title": "C", "text": "Học phí", "campus": "da_nang", "metadata": {"campus": "da_nang"}},
+    ]
+    r = BM25Retriever()
+    r.index(docs)
+    res = r.retrieve("học phí", top_k=5, metadata_filter={"campus": "ha_noi"})
+    matched_ids = [d["id"] for d, _ in res]
+    assert "d1" in matched_ids  # 'all' matches 'ha_noi'
+    assert "d2" in matched_ids  # exact match
+    assert "d3" not in matched_ids  # da_nang should be excluded
+
+def test_bm25_corpus_property():
+    """Kiểm tra getter và setter cho property corpus."""
+    r = BM25Retriever()
+    r.corpus = [{"id": "1", "text": "hello"}]
+    assert len(r.documents) == 1
+    assert r.corpus[0]["id"] == "1"
+

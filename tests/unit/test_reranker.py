@@ -1,6 +1,6 @@
 """Kiểm thử đơn vị cho module Reranker."""
 
-from university_qa.reranking.cross_encoder import CrossEncoderReranker
+from FPTUniQA.reranking.cross_encoder import CrossEncoderReranker
 
 
 def test_cross_encoder_reranker():

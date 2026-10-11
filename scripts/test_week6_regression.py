@@ -17,10 +17,10 @@ ROOT_DIR = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT_DIR / "src"))
 sys.path.insert(0, str(ROOT_DIR))
 
-from university_qa.pipeline.rag_pipeline import RAGPipeline
-from university_qa.generation.guardrails import check_hallucination
+from FPTUniQA.pipeline.rag_pipeline import RAGPipeline
+from FPTUniQA.generation.guardrails import check_hallucination
 from contracts import ParsedQuery
-from university_qa.query.router import route_query
+from FPTUniQA.query.router import route_query
 
 # ==============================================================================
 # DỮ LIỆU KIỂM THỬ
