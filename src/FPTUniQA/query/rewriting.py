@@ -15,7 +15,7 @@ import requests
 from FPTUniQA.utils.config import config
 from FPTUniQA.utils.logger import get_logger
 
-logger = get_logger("university_qa.query.rewriting")
+logger = get_logger("FPTUniQA.query.rewriting")
 
 REWRITER_SYSTEM_PROMPT = """Bạn là trợ lý chuyên viết lại câu hỏi (Query Rewriter) trong hệ thống hỏi đáp học vụ Đại học FPT.
 Nhiệm vụ của bạn: Dựa vào lịch sử hội thoại, viết lại câu hỏi hiện tại của sinh viên thành một câu hỏi duy nhất, độc lập, rõ ràng và đầy đủ ngữ cảnh (tự chứa đầy đủ thông tin: ngành học, khóa tuyển sinh, chủ đề học vụ).

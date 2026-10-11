@@ -1,6 +1,7 @@
 """Dòng chảy RAG chuẩn (RAG Pipeline) kết nối các module từ Query -> Retrieval -> Generation. Phụ trách: TV3."""
 
 import time
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 from FPTUniQA.generation.citation import extract_citations
 from FPTUniQA.generation.context import format_context
@@ -15,7 +16,7 @@ from FPTUniQA.pipeline.mock_retriever import retrieve
 from FPTUniQA.utils.config import config
 from FPTUniQA.utils.logger import get_logger, log_pipeline_event, log_query_event
 
-logger = get_logger("university_qa.rag_pipeline")
+logger = get_logger("FPTUniQA.rag_pipeline")
 
 
 class SessionManager:
@@ -59,37 +60,66 @@ class RAGPipeline:
     def __init__(
         self,
         llm_client: Optional[LLMClient] = None,
+        retriever: Optional[Any] = None,
         top_k: Optional[int] = None,
-        score_threshold: float = 0.3,
+        score_threshold: Optional[float] = None,
+        use_mock_fallback: bool = False,
+        rerank: bool = True,
     ):
         self.llm = llm_client or LLMClient()
         self.top_k = top_k or config.default_top_k
-        self.score_threshold = score_threshold
+        if score_threshold is not None:
+            self.score_threshold = float(score_threshold)
+        else:
+            try:
+                from FPTUniQA.utils.config import load_config
+                cfg = load_config().get("reranking", {})
+                self.score_threshold = float(cfg.get("score_threshold", 0.0))
+            except Exception:
+                self.score_threshold = 0.0
+        self.use_mock_fallback = use_mock_fallback
+        self.rerank = rerank
         self.session_manager = SessionManager()
 
         # Khởi tạo HybridRetriever kết nối với dữ liệu thực tế (TV1 / TV2)
-        self.retriever = None
-        try:
-            from FPTUniQA.retrieval.retriever import HybridRetriever
-            self.retriever = HybridRetriever()
-            logger.info("Khởi tạo HybridRetriever kết nối dữ liệu thực tế thành công.")
-        except Exception as e:
-            logger.warning(f"Không thể khởi tạo HybridRetriever: {e}. Sẽ dùng fallback mock_retriever.")
+        if retriever is not None:
+            self.retriever = retriever
+        else:
+            try:
+                from FPTUniQA.retrieval.retriever import HybridRetriever
+                self.retriever = HybridRetriever(auto_load=True)
+                logger.info("Khởi tạo HybridRetriever kết nối dữ liệu thực tế thành công.")
+            except Exception as e:
+                logger.warning(f"Không thể khởi tạo HybridRetriever: {e}.")
+                self.retriever = None
 
-        logger.info(f"Khởi tạo RAGPipeline với top_k={self.top_k}, score_threshold={self.score_threshold}")
+        logger.info(
+            f"Khởi tạo RAGPipeline với top_k={self.top_k}, score_threshold={self.score_threshold}, "
+            f"use_mock_fallback={self.use_mock_fallback}, rerank={self.rerank}"
+        )
 
     def load_corpus(self, corpus_path: Optional[str] = None) -> None:
         """Tương thích với các bài test / script kiểm thử dữ liệu corpus."""
         logger.info(f"load_corpus được gọi với đường dẫn: {corpus_path}")
+        if corpus_path and Path(corpus_path).exists():
+            try:
+                from FPTUniQA.utils.io import read_jsonl
+                docs = read_jsonl(corpus_path)
+                if docs and self.retriever is not None:
+                    self.retriever.build_index(docs)
+                    logger.info(f"Đã lập chỉ mục {len(docs)} documents từ {corpus_path}")
+            except Exception as e:
+                logger.warning(f"Không thể index tài liệu từ {corpus_path}: {e}")
 
-    def run(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
+    def run(self, query: str, session_id: Optional[str] = None, **kwargs) -> Dict[str, Any]:
         """Alias cho method answer() để tương thích đa giao diện."""
-        return self.answer(query, session_id=session_id)
+        return self.answer(query, session_id=session_id, **kwargs)
 
-    def answer(self, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
+    def answer(self, query: str, session_id: Optional[str] = None, **kwargs) -> Dict[str, Any]:
         """Thực thi luồng RAG kết hợp Query Rewriting đa lượt, Semantic Parsing, Routing và Guardrails Tuần 6."""
         start_time = time.time()
-        logger.info(f"Bắt đầu xử lý truy vấn: '{query}' (session_id={session_id})")
+        effective_top_k = kwargs.get("top_k", self.top_k)
+        logger.info(f"Bắt đầu xử lý truy vấn: '{query}' (session_id={session_id}, top_k={effective_top_k})")
 
         try:
             # Lấy lịch sử hội thoại của session (nếu có)
@@ -145,13 +175,19 @@ class RAGPipeline:
                 retrieved_chunks = []
                 if self.retriever is not None:
                     try:
-                        retrieved_chunks = self.retriever.retrieve_contract2(clean_query, top_k=self.top_k)
+                        retrieved_chunks = self.retriever.retrieve_contract2(
+                            clean_query,
+                            top_k=effective_top_k,
+                            rerank=self.rerank,
+                            score_threshold=kwargs.get("score_threshold", self.score_threshold),
+                        )
                     except Exception as err:
-                        logger.warning(f"Lỗi khi truy xuất qua HybridRetriever: {err}. Chuyển sang fallback.")
+                        logger.warning(f"Lỗi khi truy xuất qua HybridRetriever: {err}")
 
-                # Fallback sang mock_retriever nếu retriever thực tế chưa trả kết quả
-                if not retrieved_chunks:
-                    retrieved_chunks = retrieve(clean_query, top_k=self.top_k)
+                # Fallback sang mock_retriever CHỈ KHI cờ use_mock_fallback=True được cấu hình tường minh
+                if not retrieved_chunks and self.use_mock_fallback:
+                    logger.info("Retriever không có kết quả, kích hoạt fallback mock_retriever theo cấu hình.")
+                    retrieved_chunks = retrieve(clean_query, top_k=effective_top_k)
 
                 if not retrieved_chunks:
                     answer_text = "Xin lỗi, tôi không tìm thấy tài liệu phù hợp để trả lời câu hỏi của bạn."
@@ -192,6 +228,7 @@ class RAGPipeline:
                 message=f"Hoàn thành turn {turn_index}, route={route_chosen}",
             )
 
+            intent_label = "ood" if ("ood" in route_chosen.lower()) else "factoid"
             return {
                 "answer": answer_text,
                 "citations": citations,
@@ -199,12 +236,14 @@ class RAGPipeline:
                 "original_query": query,
                 "rewritten_query": rewritten_query,
                 "route": route_chosen,
+                "intent": intent_label,
                 "parsed_query": parsed_query.model_dump(),
                 "session_id": session_id,
                 "turn_index": turn_index,
                 "possible_hallucination": possible_hallucination,
                 "ungrounded_numbers": ungrounded_numbers,
                 "retrieved_chunks": retrieved_chunks,
+                "retrieved_documents": retrieved_chunks,
             }
 
         except Exception as e:

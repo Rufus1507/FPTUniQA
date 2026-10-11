@@ -1,6 +1,6 @@
 """Kiểm thử đơn vị cho module Embedding."""
 
-from university_qa.retrieval.embedding import EmbeddingModel
+from FPTUniQA.retrieval.embedding import EmbeddingModel
 
 
 def test_embedding_model():

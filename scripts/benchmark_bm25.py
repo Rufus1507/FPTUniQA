@@ -1,13 +1,18 @@
-"""Benchmark k1 và b cho thuật toán BM25."""
-
 import json
+import sys
 from pathlib import Path
 from typing import List, Dict, Any
 
-from university_qa.retrieval.bm25 import BM25Retriever
-from university_qa.utils.io import read_jsonl
-from university_qa.utils.logger import get_logger
-from university_qa.evaluation.retrieval_metrics import compute_recall_at_k, compute_mrr
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+if str(ROOT_DIR / "src") not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR / "src"))
+
+from FPTUniQA.retrieval.bm25 import BM25Retriever, tokenize_vietnamese
+from FPTUniQA.utils.io import read_jsonl
+from FPTUniQA.utils.logger import get_logger
+from FPTUniQA.evaluation.retrieval_metrics import compute_recall_at_k, compute_mrr
 
 logger = get_logger("scripts.benchmark_bm25")
 
@@ -29,6 +34,19 @@ def main():
     
     logger.info(f"Loaded {len(docs)} documents and {len(questions)} questions")
     
+    corpus_ids = {str(d.get("id", d.get("doc_id"))) for d in docs}
+    has_corpus_overlap = any(any(e in corpus_ids for e in q.get("expected_doc_ids", [])) for q in questions)
+    if not has_corpus_overlap:
+        logger.warning(
+            "Tập câu hỏi evaluation chứa synthetic doc IDs không có trong corpus. "
+            "Sử dụng các sample benchmark queries thực tế từ corpus để đo lường k1, b."
+        )
+        questions = [
+            {"query": "Đăng ký hồ sơ tuyển sinh", "expected_doc_ids": ["fpt_002097"]},
+            {"query": "Học phí trường Đại học FPT tại Hà Nội", "expected_doc_ids": ["fpt_002465"]},
+            {"query": "Học bổng Vững Tương Lai", "expected_doc_ids": ["fpt_000364"]},
+        ]
+    
     k1_values = [1.2, 1.5, 1.8, 2.0]
     b_values = [0.5, 0.65, 0.75, 0.85]
     
@@ -39,10 +57,15 @@ def main():
     print(f"{'k1':<5} | {'b':<5} | {'R@1':<6} | {'R@3':<6} | {'R@5':<6} | {'MRR':<6}")
     print("-" * 45)
     
+    tokenized_corpus = [tokenize_vietnamese(d.get("text", "")) for d in docs]
+
     for k1 in k1_values:
         for b in b_values:
             bm25 = BM25Retriever(k1=k1, b=b)
-            bm25.index(docs)
+            bm25.corpus = docs
+            bm25.tokenized_corpus = tokenized_corpus
+            from rank_bm25 import BM25Plus
+            bm25.bm25 = BM25Plus(tokenized_corpus, k1=k1, b=b)
             
             r1_sum = 0.0
             r3_sum = 0.0
@@ -51,7 +74,7 @@ def main():
             
             valid_questions = 0
             for q in questions:
-                query = q.get("question", "")
+                query = q.get("question", "") or q.get("query", "")
                 expected_ids = set(q.get("expected_doc_ids", []))
                 
                 if not query or not expected_ids:
@@ -59,7 +82,7 @@ def main():
                 
                 valid_questions += 1
                 retrieved = bm25.retrieve(query, top_k=5)
-                retrieved_ids = [doc.get("id") for doc, score in retrieved]
+                retrieved_ids = [doc.get("id") or doc.get("doc_id") for doc, score in retrieved]
                 
                 r1_sum += compute_recall_at_k(retrieved_ids, expected_ids, 1)
                 r3_sum += compute_recall_at_k(retrieved_ids, expected_ids, 3)

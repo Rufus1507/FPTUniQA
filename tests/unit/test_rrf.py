@@ -1,6 +1,6 @@
 """Kiểm thử thuật toán Reciprocal Rank Fusion (RRF)."""
 
-from university_qa.retrieval.rrf import reciprocal_rank_fusion
+from FPTUniQA.retrieval.rrf import reciprocal_rank_fusion
 
 
 def test_reciprocal_rank_fusion():

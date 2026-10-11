@@ -1,6 +1,6 @@
 """Kiểm thử đơn vị cho module chunker."""
 
-from university_qa.data.chunker import TextChunker
+from FPTUniQA.data.chunker import TextChunker
 
 
 def test_chunk_by_characters():

@@ -5,7 +5,7 @@ from typing import Optional
 from FPTUniQA.utils.config import config
 from FPTUniQA.utils.logger import get_logger
 
-logger = get_logger("university_qa.llm")
+logger = get_logger("FPTUniQA.llm")
 
 
 class LLMClient:

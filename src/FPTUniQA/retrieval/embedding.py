@@ -2,6 +2,9 @@
 
 from typing import List, Optional
 import numpy as np
+from FPTUniQA.utils.logger import get_logger
+
+logger = get_logger("FPTUniQA.retrieval.embedding")
 
 
 class EmbeddingModel:
@@ -15,7 +18,14 @@ class EmbeddingModel:
         batch_size: int = 32,
     ):
         self.model_name = model_name
-        self.device = device
+        if device == "auto":
+            try:
+                import torch
+                self.device = "cuda" if torch.cuda.is_available() else "cpu"
+            except Exception:
+                self.device = "cpu"
+        else:
+            self.device = device
         self.normalize = normalize
         self.batch_size = batch_size
         self._model = None
@@ -24,9 +34,10 @@ class EmbeddingModel:
         if self._model is None:
             try:
                 from sentence_transformers import SentenceTransformer
+                logger.info(f"Đang nạp mô hình embedding '{self.model_name}' trên thiết bị: {self.device}")
                 self._model = SentenceTransformer(self.model_name, device=self.device)
             except Exception as e:
-                # Fallback dự phòng cho môi trường offline hoặc testing
+                logger.warning(f"Không thể nạp mô hình {self.model_name} ({e}). Dùng fallback dummy mode.")
                 self._model = "dummy"
 
     def embed_documents(self, texts: List[str]) -> np.ndarray:

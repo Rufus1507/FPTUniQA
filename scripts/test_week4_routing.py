@@ -14,9 +14,9 @@ ROOT_DIR = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT_DIR / "src"))
 sys.path.insert(0, str(ROOT_DIR))
 
-from university_qa.pipeline.rag_pipeline import RAGPipeline
-from university_qa.query.semantic_parser import parse_query
-from university_qa.query.router import route_query
+from FPTUniQA.pipeline.rag_pipeline import RAGPipeline
+from FPTUniQA.query.semantic_parser import parse_query
+from FPTUniQA.query.router import route_query
 
 TEST_QUERIES = [
     # --- 8 CÂU HỎI CHUẨN ---

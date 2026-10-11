@@ -16,7 +16,7 @@ from typing import Any, Dict, Literal, Optional, Tuple
 from contracts import ParsedQuery
 from FPTUniQA.utils.logger import get_logger
 
-logger = get_logger("university_qa.query.router")
+logger = get_logger("FPTUniQA.query.router")
 
 RouteType = Literal["structured_lookup", "rag_pipeline", "clarification", "ood", "uncertain"]
 

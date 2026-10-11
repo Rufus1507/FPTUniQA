@@ -13,14 +13,14 @@ Luồng xử lý:
 import json
 from pathlib import Path
 
-from university_qa.data.chunker import TextChunker
-from university_qa.data.cleaner import clean_document_text
-from university_qa.data.loader import DocumentLoader
-from university_qa.data.metadata import MetadataEnricher
-from university_qa.data.structured import extract_structured_tuition_from_html_files
-from university_qa.utils.config import load_config
-from university_qa.utils.io import write_jsonl
-from university_qa.utils.logger import get_logger
+from FPTUniQA.data.chunker import TextChunker
+from FPTUniQA.data.cleaner import clean_document_text
+from FPTUniQA.data.loader import DocumentLoader
+from FPTUniQA.data.metadata import MetadataEnricher
+from FPTUniQA.data.structured import extract_structured_tuition_from_html_files
+from FPTUniQA.utils.config import load_config
+from FPTUniQA.utils.io import write_jsonl
+from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("scripts.ingest_data")
 
