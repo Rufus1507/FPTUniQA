@@ -37,7 +37,10 @@ retrieval:
 
 reranking:
   enabled: true
-  model_name: "BAAI/bge-reranker-large"
+  # base@20 thay vì large@50: đo trên CPU 9.4s -> 1.7s/câu, R@5 giữ nguyên (5 câu grounded).
+  # Đổi lại "BAAI/bge-reranker-large" + candidate_k 50 khi chạy GPU.
+  model_name: "BAAI/bge-reranker-base"
+  candidate_k: 20   # số ứng viên RRF đưa vào Cross-Encoder (benchmark C4 dùng 50 tường minh)
   top_n: 5
   batch_size: 16
   device: "cpu"

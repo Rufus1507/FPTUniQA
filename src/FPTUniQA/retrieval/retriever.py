@@ -69,15 +69,17 @@ class HybridRetriever:
                     logger.warning(f"Không thể nạp chỉ mục FAISS từ {faiss_dir}: {e}")
 
         # Khởi tạo Reranker (Two-stage retrieval)
+        rerank_cfg = cfg.get("reranking", {})
+        # Số ứng viên đưa vào Cross-Encoder. Giữ nhỏ trên CPU vì chi phí rerank tăng tuyến tính theo số ứng viên.
+        self.default_candidate_k = int(rerank_cfg.get("candidate_k", 20))
         if reranker is not None:
             self.reranker = reranker
         else:
-            rerank_cfg = cfg.get("reranking", {})
             if rerank_cfg.get("enabled", True):
                 try:
                     from FPTUniQA.reranking.cross_encoder import CrossEncoderReranker
                     self.reranker = CrossEncoderReranker(
-                        model_name=rerank_cfg.get("model_name", "BAAI/bge-reranker-large"),
+                        model_name=rerank_cfg.get("model_name", "BAAI/bge-reranker-base"),
                         device=rerank_cfg.get("device", "cpu"),
                         batch_size=rerank_cfg.get("batch_size", 16),
                         score_threshold=rerank_cfg.get("score_threshold", 0.0),
@@ -99,7 +101,7 @@ class HybridRetriever:
         self,
         query: str,
         top_k: int = 10,
-        candidate_k: int = 50,
+        candidate_k: Optional[int] = None,
         metadata_filter: Optional[Dict[str, Any]] = None,
         rerank: bool = True,
         score_threshold: Optional[float] = None,
@@ -107,6 +109,9 @@ class HybridRetriever:
         """Quy trình truy xuất 2 giai đoạn: Candidate Retrieval (BM25+Dense+RRF) -> Reranking (Cross-Encoder)."""
         if not query or not str(query).strip():
             return []
+
+        if candidate_k is None:
+            candidate_k = self.default_candidate_k
 
         # Tăng candidate_k nếu có metadata_filter để đảm bảo sau filter vẫn đủ ứng viên
         cand_k = max(candidate_k, top_k * 3) if metadata_filter else candidate_k
@@ -162,7 +167,7 @@ class HybridRetriever:
         self,
         query: str,
         top_k: int = 10,
-        candidate_k: int = 50,
+        candidate_k: Optional[int] = None,
         metadata_filter: Optional[Dict[str, Any]] = None,
         rerank: bool = True,
         score_threshold: Optional[float] = None,
