@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>BÁO CÁO PHẦN 3: GIẢI PHÁP KỸ THUẬT VÀ ĐÁNH GIÁ KIẾN TRÚC HỆ THỐNG</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page {
+    size: A4;
+    margin: 2.5cm 2.0cm 2.5cm 2.5cm;
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13pt;
+    line-height: 1.45;
+    color: #111111;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 17pt;
+    text-align: center;
+    color: #0b2f64;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 15pt;
+    margin-bottom: 6pt;
+}
+.subtitle {
+    font-size: 13pt;
+    text-align: center;
+    font-style: italic;
+    color: #333333;
+    margin-bottom: 4pt;
+}
+.authors {
+    font-size: 12pt;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 18pt;
+}
+h2 {
+    font-size: 14pt;
+    color: #0b2f64;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1.5pt solid #0b2f64;
+    padding-bottom: 3pt;
+    margin-top: 18pt;
+    margin-bottom: 8pt;
+}
+h3 {
+    font-size: 13pt;
+    color: #1a4480;
+    font-weight: bold;
+    margin-top: 13pt;
+    margin-bottom: 5pt;
+}
+h4 {
+    font-size: 12.5pt;
+    color: #23527c;
+    font-weight: bold;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
+}
+p {
+    margin-top: 4pt;
+    margin-bottom: 6pt;
+    text-align: justify;
+    text-indent: 1.25cm;
+}
+p.no-indent {
+    text-indent: 0;
+}
+ul, ol {
+    margin-top: 4pt;
+    margin-bottom: 6pt;
+    padding-left: 1.5cm;
+}
+li {
+    margin-bottom: 3pt;
+    text-align: justify;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10pt;
+    margin-bottom: 12pt;
+    font-size: 11pt;
+}
+th, td {
+    border: 1pt solid #444444;
+    padding: 6pt 8pt;
+    text-align: left;
+    vertical-align: top;
+}
+th {
+    background-color: #d9e1f2;
+    color: #0b2f64;
+    font-weight: bold;
+    text-align: center;
+}
+blockquote {
+    border-left: 3pt solid #0b2f64;
+    background-color: #f2f5f9;
+    margin: 8pt 0;
+    padding: 8pt 12pt;
+    font-style: italic;
+}
+pre {
+    background-color: #f7f9fa;
+    border: 1pt solid #cccccc;
+    padding: 8pt;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 9.5pt;
+    line-height: 1.2;
+    overflow-x: auto;
+}
+.toc {
+    background-color: #f9fbfd;
+    border: 1pt solid #d0d7de;
+    padding: 10pt 15pt;
+    margin-bottom: 18pt;
+}
+.toc-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0b2f64;
+    margin-bottom: 6pt;
+}
+</style>
+</head>
+<body>
+
+<h1>PHẦN 3: GIẢI PHÁP KỸ THUẬT VÀ ĐÁNH GIÁ KIẾN TRÚC HỆ THỐNG</h1>
+<div class="subtitle">Hệ thống Hybrid RAG + Semantic Parsing Chống Ảo Giác cho Hỏi Đáp Học Vụ Tiếng Việt Nhận Biết Ngữ Cảnh (FPTUniQA)</div>
+<div class="authors">Tác giả: Nguyễn Xuân Đỉnh, Lê Ngọc Phú, Nguyễn Anh Tín</div>
+
+<div class="toc">
+<div class="toc-title">Mục lục nội dung</div>
+<b>3.1. Giải pháp kỹ thuật giải quyết từng thành phần kiến trúc</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.1.1. Tầng Thu thập & Chuẩn hóa Dữ liệu Đa Định dạng (Ingestion Layer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.1.2. Tầng Phân giải Ngữ cảnh Hội thoại Đa lượt (Context Layer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.1.3. Tầng Phân tích Ngữ nghĩa & Định tuyến Ý định (Parsing & Routing Layer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.1.4. Tầng Truy xuất Thông tin Lai Đa cấp (Retrieval Layer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.1.5. Tầng Tra cứu CSDL Có Cấu trúc Xác định (Structured Lookup Layer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.1.6. Tầng Sinh Ngôn ngữ, Kiểm soát Tính trung thực & Phòng vệ (Generation & Guardrail Layer)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.1.7. Tầng Giao tiếp & Quan sát Hệ thống (Presentation & Observability Layer)<br>
+<b>3.2. Nhận xét và đánh giá mức độ tham gia của từng thành phần vào kiến trúc</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.2.1. Khung tiêu chí đánh giá mức độ đóng góp kiến trúc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.2.2. Bảng phân cấp và đánh giá mức độ tham gia của các thành phần<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.2.3. Đánh giá chuyên sâu theo 4 nhóm phân cấp kiến trúc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.2.4. Phân tích khả năng chịu lỗi và tính bền vững hệ thống (Fault-Tolerance & Resilience)<br>
+<b>3.3. Thành phần quyết định chất lượng kiến trúc hệ thống</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.3.1. Nhận định cốt lõi: Cặp thành phần quyết định chất lượng kiến trúc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.3.2. Vì sao LLM Generator và Vector Embedding không phải yếu tố quyết định chất lượng?<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.3.3. Luận giải chuyên sâu: Bộ đôi Semantic Parser & Centralized Router — Trục điều phối chất lượng<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.3.4. Luận giải chuyên sâu: Metadata Hard Pre-filter — Chốt chặn bảo toàn tính đúng đắn theo khóa học<br>
+&nbsp;&nbsp;&nbsp;&nbsp;• 3.3.5. Sự cộng hưởng kiến trúc (Architectural Synergy) và kết luận
+</div>
+
+<h2>3. GIẢI PHÁP KỸ THUẬT</h2>
+
+<h3>3.1. Giải pháp kỹ thuật giải quyết từng thành phần kiến trúc</h3>
+<p>Hệ thống FPTUniQA được xây dựng nhằm giải quyết triệt để 3 thách thức học vụ đặc thù đã được nhận diện trong Báo cáo 1: (1) Ràng buộc khóa học và thời điểm hiệu lực của văn bản quy chế, (2) Ảo giác số liệu dạng bảng biểu học phí, tín chỉ, và (3) Hiện tượng tỉnh lược, dùng đại từ chiếu vật trong hội thoại đa lượt. Dưới đây là giải pháp kỹ thuật cụ thể cho từng thành phần trong mô hình kiến trúc phân tầng 7 lớp (được đề xuất ở Báo cáo 2), tập trung vào nguyên lý thiết kế và cơ chế tương tác kiến trúc thay vì chi tiết cài đặt mã nguồn.</p>
+
+<h4>3.1.1. Tầng Thu thập & Chuẩn hóa Dữ liệu Đa Định dạng (Ingestion Layer)</h4>
+<p class="no-indent"><b>• Vấn đề kỹ thuật cần giải quyết:</b> Dữ liệu học vụ đại học tồn tại ở các định dạng phân tán cao: văn bản quy chế dạng PDF scan/DOCX hành chính, biểu phí và chỉ tiêu dạng bảng tính XLSX phức tạp với nhiều ô gộp (merged cells), và các thông báo tuyển sinh dạng trang web HTML. Việc "làm phẳng" (flatten) toàn bộ tài liệu thành văn bản thô theo cách tiếp cận RAG truyền thống sẽ phá hủy hoàn toàn quan hệ cấu trúc hàng - cột của dữ liệu số liệu, làm mất tiêu đề phân cấp (H1-H6), dẫn đến việc mô hình trích xuất sai lệch hoàn toàn.</p>
+<p class="no-indent"><b>• Giải pháp kiến trúc:</b> Hệ thống thiết lập một Cổng chuyển đổi tài liệu thống nhất (Unified Document Ingestion Gateway) dựa trên Microsoft MarkItDown kết hợp kiến trúc Phân luồng dữ liệu kép (Dual-Path Data Pipeline):</p>
+<ul>
+    <li><b>Chuẩn hóa đa định dạng về Markdown có cấu trúc:</b> MarkItDown đóng vai trò bộ phân giải đầu vào đa năng, nhận diện và chuẩn hóa mọi tệp PDF, DOCX, XLSX, hình ảnh OCR sang Markdown sạch. Định dạng Markdown bảo toàn trọn vẹn cấu trúc bảng (dưới dạng Markdown table) và cây phân cấp tiêu đề của văn bản quy phạm pháp luật (Chương → Điều → Khoản → Điểm).</li>
+    <li><b>Tách luồng dữ liệu kép (Dual-Path Ingestion):</b>
+        <ul>
+            <li><i>Nhánh dữ liệu quan hệ (Tabular/Relational Data):</i> Table Extractor bóc tách riêng các bảng ma trận biểu phí, điểm chuẩn, định mức tín chỉ sang CSDL bảng biểu có cấu trúc (SQLite/JSON Database). Dữ liệu này được chuẩn hóa các trường số học (VND, số tín chỉ, mã ngành) làm nguồn chân lý tuyệt đối (ground-truth).</li>
+            <li><i>Nhánh dữ liệu văn bản quy chế (Unstructured Narrative Data):</i> Chunker thực hiện phân đoạn thông minh dựa trên ranh giới Điều/Khoản kết hợp cửa sổ trượt (400–500 tokens, overlap 50 tokens), gắn kèm Metadata Tagger gán nhãn siêu dữ liệu bắt buộc (doc_id, applies_to_cohort, effective_date, campus, doc_type) theo đúng chuẩn Contract 1.</li>
+        </ul>
+    </li>
+    <li><b>Cách ly rủi ro qua Interface Contract 1:</b> Việc đóng gói toàn bộ đầu ra của Ingestion Layer vào một schema chuẩn (Contract 1: doc_id, text, title, source, effective_date, applies_to_cohort, structured_payload) giúp tầng Ingestion hoạt động hoàn toàn offline và độc lập với các tầng xử lý truy vấn online, cho phép tái lập chỉ mục (re-indexing) mà không ảnh hưởng đến API phục vụ.</li>
+</ul>
+
+<h4>3.1.2. Tầng Phân giải Ngữ cảnh Hội thoại Đa lượt (Context Layer)</h4>
+<p class="no-indent"><b>• Vấn đề kỹ thuật cần giải quyết:</b> Trong thực tế tư vấn học vụ, người dùng hầu như không bao giờ đặt câu hỏi đầy đủ ở mọi lượt tương tác. Họ thường xuyên hỏi tiếp nối bằng các câu rút gọn, tỉnh lược chủ ngữ hoặc dùng từ chiếu vật phụ thuộc ngữ cảnh trước đó (Ví dụ: Lượt 1: "Học phí ngành Kỹ thuật phần mềm khóa 2026 cơ sở Cần Thơ bao nhiêu?" → Lượt 2: "Còn cơ sở TP.HCM thì sao?" → Lượt 3: "Phương thức xét tuyển của nó?"). Nếu đưa trực tiếp câu hỏi ở Lượt 2 và Lượt 3 vào bộ tìm kiếm hoặc bộ phân loại ý định, hệ thống sẽ bị "trôi thực thể" (entity drift), dẫn đến việc truy xuất sai hoàn toàn.</p>
+<p class="no-indent"><b>• Giải pháp kiến trúc:</b></p>
+<ul>
+    <li><b>Module Context-Aware Query Rewriter độc lập tiền truy xuất (Pre-retrieval Query Rewriter):</b> Tầng Context được đặt ngay trước Semantic Parser và Retrieval Pipeline. Module này duy trì một Bộ đệm trượt lịch sử phiên (Sliding Session Buffer) lưu trữ 3–5 lượt tương tác gần nhất.</li>
+    <li><b>Cơ chế phân giải tỉnh lược và đồng tham chiếu (Ellipsis & Coreference Resolution):</b> Rewriter tiếp nhận <code>original_query</code> cùng <code>session_history</code>, phân tích mối quan hệ ngữ nghĩa để phục hồi đầy đủ các thực thể bị ẩn (ngành học, khóa tuyển sinh, địa điểm cơ sở, chủ đề chính sách) và sinh ra <code>rewritten_query</code> có ngữ nghĩa độc lập hoàn chỉnh (Self-contained Query).</li>
+    <li><b>Độc lập trách nhiệm kiến trúc:</b> Query Rewriter chỉ làm đúng một nhiệm vụ là "làm rõ câu hỏi", không tham gia vào việc tìm kiếm hay sinh câu trả lời. Điều này tránh việc dồn toàn bộ gánh nặng ghi nhớ ngữ cảnh dài vào prompt của LLM sinh câu trả lời ở tầng cuối, giúp giảm đáng kể chi phí token và độ trễ phản hồi.</li>
+</ul>
+
+<h4>3.1.3. Tầng Phân tích Ngữ nghĩa & Định tuyến Ý định (Parsing & Routing Layer)</h4>
+<p class="no-indent"><b>• Vấn đề kỹ thuật cần giải quyết:</b> Các hệ thống chatbot truyền thống thường chỉ có hai thái cực: hoặc dùng rule-based đóng (cứng nhắc, dễ gãy khi người dùng diễn đạt tự nhiên) hoặc dùng LLM RAG cho mọi câu hỏi (dễ ảo giác khi gặp câu hỏi số liệu, tốn kém chi phí và chậm chạp). Cần một cơ chế kiến trúc trung gian có khả năng hiểu sâu câu hỏi tự nhiên nhưng điều hướng chuẩn xác sang đúng cơ chế xử lý chuyên biệt.</p>
+<p class="no-indent"><b>• Giải pháp kiến trúc:</b> Kiến trúc xây dựng mô hình Phân tích cú pháp ngữ nghĩa kết hợp Định tuyến tập trung (Semantic Parsing & Centralized Routing) thông qua 3 trụ cột:</p>
+<ul>
+    <li><b>Semantic Parser (Intent & Slot Extraction):</b> Chuyển hóa câu hỏi ngôn ngữ tự nhiên đã viết lại (<code>rewritten_query</code>) thành một truy vấn có cấu trúc hoàn chỉnh theo chuẩn Contract 3 (<code>ParsedQuery</code>), bao gồm:
+        <ul>
+            <li><code>intent</code>: Ý định cốt lõi (ví dụ: <code>tuition_lookup</code>, <code>policy_lookup</code>, <code>scholarship_lookup</code>, <code>ood</code>).</li>
+            <li><code>slots</code>: Tập thực thể có cấu trúc được bóc tách dạng khóa-giá trị (ví dụ: <code>program</code>: "Kỹ thuật phần mềm", <code>cohort</code>: "2026", <code>campus</code>: "can_tho", <code>topic</code>: "hoc_phi").</li>
+            <li><code>confidence</code>: Điểm số độ tin cậy của việc nhận dạng ý định.</li>
+        </ul>
+    </li>
+    <li><b>Phòng vệ suy thoái mềm (Graceful Degradation via Regex Fallback):</b> Nếu Semantic Parser gặp sự cố ngoại lệ (LLM timeout, lỗi mạng, hoặc confidence &lt; ngưỡng an toàn), hệ thống lập tức kích hoạt bộ trích xuất luật Rule-based Regex Fallback. Vì cả Semantic Parser và Regex Fallback đều trả về cùng một cấu trúc dữ liệu Contract 3, hệ thống chuyển đổi trạng thái mượt mà mà các tầng sau không hề bị gián đoạn.</li>
+    <li><b>Nguyên tắc Định tuyến một điểm duy nhất (Single-Point-of-Routing Principle):</b> Toàn bộ kết quả từ Semantic Parser và Regex Fallback đều phải đi qua <b>Router</b> duy nhất. Router dựa trên trường <code>intent</code> và các <code>slots</code> đã trích xuất để rẽ nhánh chuẩn xác sang 1 trong 4 tuyến xử lý:
+        <ul>
+            <li><i>Nhánh 1 (StructuredRoute):</i> Điều hướng các câu hỏi tra cứu định lượng sang Tầng Tra cứu CSDL Có cấu trúc.</li>
+            <li><i>Nhánh 2 (HybridRAGRoute):</i> Điều hướng các câu hỏi giải thích chính sách, quy chế mở sang Tầng Truy xuất Thông tin Lai.</li>
+            <li><i>Nhánh 3 (ClarificationRoute):</i> Điều hướng câu hỏi mơ hồ, thiếu thực thể trọng yếu yêu cầu người dùng xác nhận lại.</li>
+            <li><i>Nhánh 4 (OODRoute):</i> Điều hướng câu hỏi ngoài phạm vi học vụ sang Tầng Từ chối an toàn.</li>
+        </ul>
+    </li>
+</ul>
+
+<h4>3.1.4. Tầng Truy xuất Thông tin Lai Đa Cấp (Retrieval Layer)</h4>
+<p class="no-indent"><b>• Vấn đề kỹ thuật cần giải quyết:</b> Trong miền quy chế học vụ: Tìm kiếm từ khóa thuần túy (BM25) bắt rất tốt các từ viết tắt ("ĐKMH", "KLTN", mã môn "SWE201c"), nhưng thất bại khi người dùng dùng từ đồng nghĩa hoặc diễn đạt gián tiếp ("bị đuổi học" thay vì "buộc thôi học"). Ngược lại, tìm kiếm ngữ nghĩa véc-tơ thuần túy (Dense Vector Search) nắm bắt tốt ý niệm ngữ nghĩa, nhưng rất dễ bị "trôi mã số", nhầm lẫn giữa các mã ngành tương tự, và đặc biệt là không phân biệt được văn bản cũ và văn bản mới nếu câu chữ quy định giống nhau.</p>
+<p class="no-indent"><b>• Giải pháp kiến trúc:</b> Hệ thống thiết lập Kiến trúc truy xuất lai hai giai đoạn (Two-Stage Hybrid Retrieval Architecture) kết hợp Lọc siêu dữ liệu cứng:</p>
+<ul>
+    <li><b>Lọc cứng siêu dữ liệu tiền truy xuất (Metadata Hard Pre-filtering):</b> Dựa trên các slots trích xuất từ Contract 3 (<code>cohort</code>, <code>effective_date</code>, <code>campus</code>), hệ thống tiến hành loại bỏ ngay lập tức các tài liệu không khớp TRƯỚC KHI thực hiện tính toán độ tương đồng. Đây là chìa khóa triệt tiêu nguy cơ trôi niên khóa.</li>
+    <li><b>Truy xuất song song đa phương thức (Parallel Multi-Modal Retrieval):</b>
+        <ul>
+            <li><i>Kênh Sparse (BM25Plus):</i> Tinh chỉnh thuật toán BM25Plus kết hợp bộ tách từ tiếng Việt chuyên sâu (<code>pyvi</code>) và lọc stopwords học vụ tiếng Việt, tối ưu bắt chính xác các thuật ngữ pháp lý, mã ngành, mã môn.</li>
+            <li><i>Kênh Dense (FAISS IndexFlatIP):</i> Sử dụng mô hình nhúng văn bản đa ngôn ngữ chất lượng cao (<code>multilingual-e5-base</code>), chuẩn hóa véc-tơ L2 và tính khoảng cách tích vô hướng (Inner Product) để biểu diễn không gian ngữ nghĩa sâu.</li>
+        </ul>
+    </li>
+    <li><b>Hợp nhất thứ hạng RRF (Reciprocal Rank Fusion):</b> Áp dụng thuật toán RRF với tham số điều hòa <i>k = 60</i> để hợp nhất danh sách ứng viên từ hai kênh. RRF xử lý dựa trên vị trí thứ hạng tương đối thay vì điểm số thô, khắc phục hiện tượng mất cân bằng thang điểm giữa mô hình từ khóa và mô hình nhúng.</li>
+    <li><b>Tái xếp hạng sâu bằng Cross-Encoder (Reranking Stage):</b> Lấy Top-20 (hoặc Top-50) ứng viên từ bước RRF đưa qua mô hình Cross-Encoder chuyên biệt (<code>bge-reranker-base</code>). Cross-Encoder chấm điểm tương tác toàn phần giữa từng cặp (câu hỏi, đoạn văn), đánh giá độ liên quan ngữ nghĩa chi tiết ở cấp độ từ ngữ và ngữ cảnh, chắt lọc ra Top-5 đoạn trích tinh hoa nhất đáp ứng chuẩn Contract 2.</li>
+</ul>
+
+<h4>3.1.5. Tầng Tra cứu CSDL Có Cấu trúc Xác định (Structured Lookup Layer)</h4>
+<p class="no-indent"><b>• Vấn đề kỹ thuật cần giải quyết:</b> Mọi mô hình ngôn ngữ lớn (LLM), dù tân tiến đến đâu, đều mang bản chất là mô hình xác suất sinh từ tiếp theo (probabilistic next-token predictor). Do đó, khi phải trả lời các thông tin định lượng đòi hỏi độ chính xác tuyệt đối như số tiền học phí từng kỳ, số tín chỉ tốt nghiệp, hoặc điểm sàn xét tuyển, việc để LLM tự đọc một đoạn văn và phát biểu số liệu luôn tiềm ẩn nguy cơ ảo giác số học (numerical hallucination) — ví dụ tự nhầm 12.500.000 VNĐ thành 15.200.000 VNĐ hoặc nhầm biểu phí cơ sở này sang cơ sở khác.</p>
+<p class="no-indent"><b>• Giải pháp kiến trúc:</b></p>
+<ul>
+    <li><b>Đường dẫn thực thi xác định (Deterministic Execution Path):</b> Khi Router nhận diện intent là <code>tuition_lookup</code> hoặc <code>credit_lookup</code>, luồng xử lý được tách hoàn toàn khỏi đường ống suy luận xác suất của RAG và đưa sang Structured Lookup Layer.</li>
+    <li><b>Công cụ truy vấn CSDL trực tiếp (Structured Query Engine):</b> Dựa trên các slots chuẩn hóa từ Contract 3 (<code>program</code>, <code>cohort</code>, <code>campus</code>), hệ thống ánh xạ thành câu truy vấn trực tiếp vào CSDL quan hệ (SQLite/JSON) đã được chuẩn bị sẵn ở khâu Ingestion.</li>
+    <li><b>Đảm bảo độ chính xác 100% và siêu độ trễ thấp:</b> Dữ liệu trả về từ tầng này là số liệu thực tế được ghi nhận chính thức, loại bỏ 100% nguy cơ ảo giác số liệu. Thời gian phản hồi của tầng này cực nhanh (dưới 5ms), tiết kiệm tối đa tài nguyên tính toán của toàn hệ thống.</li>
+</ul>
+
+<h4>3.1.6. Tầng Sinh Ngôn ngữ, Kiểm soát Tính trung thực & Phòng vệ (Generation & Guardrail Layer)</h4>
+<p class="no-indent"><b>• Vấn đề kỹ thuật cần giải quyết:</b> Khi nhận được ngữ cảnh truy xuất từ Tầng 4 hoặc số liệu từ Tầng 5, LLM có thể vẫn có xu hướng tự chắp vá kiến thức ngoài luồng, trả lời thừa thãi các thông tin không có căn cứ văn bản, hoặc bị tấn công prompt injection khi người dùng cố tình hỏi các câu hỏi độc hại, chính trị, đời tư nằm ngoài phạm vi học vụ (OOD).</p>
+<p class="no-indent"><b>• Giải pháp kiến trúc:</b> Kiến trúc thiết lập cơ chế Sinh câu trả lời có kiểm soát nghiêm ngặt (Strict Grounded Generation) và Hệ thống phòng vệ kép (Dual Guardrails):</p>
+<ul>
+    <li><b>Ràng buộc ngữ cảnh nghiêm ngặt (Strict Grounding Prompting):</b> Khung prompt của LLM được thiết kế với chỉ thị hệ thống chặt chẽ: Chỉ được phép phát biểu dựa trên thông tin có trong phần <code>Context</code> được cung cấp; nếu ngữ cảnh không đủ thông tin để trả lời, phải thông báo thẳng thắn thay vì tự suy diễn.</li>
+    <li><b>Trích dẫn nguồn chuẩn hóa (Citation Enforcement):</b> Hệ thống tự động bóc tách và đối soát các đoạn căn cứ trong câu trả lời với tài liệu gốc, đánh số ký hiệu trích dẫn <code>[Nguồn 1]</code>, <code>[Nguồn 2]</code> trực tiếp trong câu văn, đồng thời trả về danh sách đối tượng <code>Citation</code> (gồm doc_id, tên văn bản quy chế, điều khoản cụ thể) theo đúng chuẩn Contract 1.</li>
+    <li><b>Phòng vệ chống ảo giác số liệu (Hallucination Guardrail Check):</b> Tầng kiểm duyệt hậu sinh thực hiện quét đối chiếu các thực thể số (tiền tệ, ngày tháng, mã số) xuất hiện trong câu trả lời sinh ra so với Context gốc. Nếu phát hiện có số lạ không bắt nguồn từ Context, cờ cảnh báo <code>possible_hallucination = True</code> sẽ được kích hoạt để cảnh báo người dùng.</li>
+    <li><b>Phòng vệ ngoài miền (OOD Guardrail):</b> Ngắt mạch ngay lập tức các câu hỏi không liên quan đến giáo dục/học vụ, từ chối lịch sự và an toàn mà không tốn chi phí gọi truy xuất tài liệu hay suy luận LLM phức tạp.</li>
+</ul>
+
+<h4>3.1.7. Tầng Giao tiếp & Quan sát Hệ thống (Presentation & Observability Layer)</h4>
+<p class="no-indent"><b>• Vấn đề kỹ thuật cần giải quyết:</b> Hệ thống cần cung cấp giao diện thân thiện cho sinh viên, đồng thời phải cung cấp giao diện lập trình ứng dụng (API) chuẩn hóa để tích hợp với cổng thông tin sinh viên của nhà trường. Quan trọng hơn, đối với một hệ thống học thuật phức tạp, nếu không có cơ chế ghi vết toàn diện, việc xác định nguyên nhân gốc rễ của lỗi (Error Attribution) khi thử nghiệm và đánh giá chất lượng hệ thống là bất khả thi.</p>
+<p class="no-indent"><b>• Giải pháp kiến trúc:</b></p>
+<ul>
+    <li><b>Đóng gói dịch vụ Backend chuẩn RESTful:</b> FastAPI Gateway chịu trách nhiệm định tuyến API, kiểm thực dữ liệu đầu vào/đầu ra theo chuẩn OpenAPI Swagger, tách bạch endpoint nghiệp vụ hỏi đáp (<code>/api/v1/query</code>) và endpoint giám sát trạng thái sức khỏe máy chủ (<code>/api/v1/health</code>).</li>
+    <li><b>Giao diện Chatbot tương tác (Streamlit UI):</b> Cung cấp trải nghiệm hội thoại đa lượt mượt mà, hỗ trợ hiển thị luồng suy luận, huy hiệu phân loại intent của Router, nguồn trích dẫn pháp lý có thể bấm mở rộng, và cảnh báo độ tin cậy.</li>
+    <li><b>Ghi vết cấu trúc phục vụ quan sát & đánh giá (Structured JSONL Logging):</b> Mỗi lượt tương tác hỏi đáp được hệ thống tự động ghi nhận toàn bộ 7 trường dữ liệu trạng thái cốt lõi: <code>original_query</code> → <code>rewritten_query</code> → <code>parsed_query</code> (Contract 3) → <code>retrieved_docs</code> → <code>reranked_docs</code> (Contract 2) → <code>final_context</code> → <code>citations</code> &amp; <code>answer</code> (Contract 1). Nhờ đó, khi một câu trả lời bị sai lệch, nhóm kỹ thuật có thể truy vết chính xác lỗi xảy ra tại tầng nào.</li>
+</ul>
+
+<hr>
+
+<h3>3.2. Nhận xét và đánh giá mức độ tham gia của từng thành phần vào kiến trúc</h3>
+
+<h4>3.2.1. Khung tiêu chí đánh giá mức độ đóng góp kiến trúc</h4>
+<p>Để đánh giá một cách khoa học và khách quan mức độ tham gia của từng thành phần vào sự thành bại của kiến trúc FPTUniQA, báo cáo xác lập khung đánh giá 4 chiều dựa trên các nguyên lý kỹ thuật phần mềm và kiến trúc hệ thống AI:</p>
+<ol>
+    <li><b>Tính cốt lõi kiến trúc (Architectural Criticality):</b> Mức độ thiết yếu của thành phần. Nếu tách bỏ thành phần này, kiến trúc hệ thống có bị gãy đổ hoặc đánh mất bản sắc thiết kế ban đầu hay không?</li>
+    <li><b>Đóng góp chống ảo giác & Bảo toàn tính đúng đắn (Faithfulness & Anti-Hallucination Impact):</b> Tỷ lệ đóng góp trực tiếp vào việc loại bỏ ảo giác số liệu, trôi niên khóa và sai lệch nội dung quy chế.</li>
+    <li><b>Đóng góp vào tính thích ứng & Chịu lỗi (Resilience & Fault Tolerance):</b> Khả năng giữ vững nguyên tắc "Always Runnable", giúp hệ thống tự phục hồi hoặc hạ cấp dịch vụ an toàn khi môi trường gặp sự cố.</li>
+    <li><b>Đóng góp vào hiệu năng vận hành & Trải nghiệm (Latency, Cost & UX):</b> Tác động đến thời gian phản hồi (latency), chi phí tính toán (token/compute cost) và tính minh bạch của câu trả lời đối với người dùng cuối.</li>
+</ol>
+
+<h4>3.2.2. Bảng phân cấp và đánh giá mức độ tham gia của các thành phần</h4>
+<p>Dựa trên 4 chiều tiêu chí trên, 12 thành phần kỹ thuật của hệ thống được phân thành 4 nhóm cấp độ tham gia vào kiến trúc:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Cấp độ phân cấp</th>
+            <th>Thành phần kỹ thuật</th>
+            <th>Mức độ tham gia</th>
+            <th>Tác động chính đến kiến trúc hệ thống</th>
+            <th>Khả năng thay thế / Dự phòng</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2"><b>CẤP 1: CỐT LÕI KIẾN TRÚC</b><br><i>(Architectural Core)</i></td>
+            <td><b>Semantic Parser & Centralized Router</b></td>
+            <td style="text-align:center; font-weight:bold; color:#0b2f64;">Rất cao (9.8/10)</td>
+            <td>Bộ não phân loại ý định, bóc tách thực thể và điều phối 4 luồng xử lý chuyên biệt; quyết định trực tiếp bản sắc kiến trúc lai.</td>
+            <td>Có Regex Fallback dự phòng; bắt buộc phải có Router.</td>
+        </tr>
+        <tr>
+            <td><b>Ingestion Gateway (MarkItDown & Dual-Path)</b></td>
+            <td style="text-align:center; font-weight:bold; color:#0b2f64;">Rất cao (9.6/10)</td>
+            <td>Chuẩn hóa tài liệu đa định dạng, bảo toàn bảng biểu và phân tách nguồn dữ liệu thành 2 nhánh văn bản & CSDL quan hệ.</td>
+            <td>Là nền móng của toàn bộ hệ thống; không thể thiếu.</td>
+        </tr>
+        <tr>
+            <td rowspan="3"><b>CẤP 2: NỀN TẢNG CHẤT LƯỢNG</b><br><i>(Quality Enablers)</i></td>
+            <td><b>Metadata Hard Pre-filter</b></td>
+            <td style="text-align:center; font-weight:bold; color:#1a4480;">Cao (9.4/10)</td>
+            <td>Chốt chặn loại trừ tài liệu sai khóa học/hết hiệu lực trước khi tìm kiếm; triệt tiêu hoàn toàn rủi ro trôi niên khóa.</td>
+            <td>Không thể thay thế trong bài toán phụ thuộc thời gian học vụ.</td>
+        </tr>
+        <tr>
+            <td><b>Structured Lookup Engine</b></td>
+            <td style="text-align:center; font-weight:bold; color:#1a4480;">Cao (9.3/10)</td>
+            <td>Đảm bảo tính toán và tra cứu số liệu học phí/tín chỉ đạt độ chính xác 100% (Zero Hallucination); độ trễ dưới 5ms.</td>
+            <td>Dự phòng bằng RAG văn bản (nhưng chấp nhận rủi ro ảo giác).</td>
+        </tr>
+        <tr>
+            <td><b>Hybrid Retrieval (BM25Plus + FAISS + RRF)</b></td>
+            <td style="text-align:center; font-weight:bold; color:#1a4480;">Cao (9.2/10)</td>
+            <td>Kết hợp tối ưu giữa tìm kiếm từ khóa chính xác và tương đồng ngữ nghĩa véc-tơ sâu; tối đa hóa độ phủ (Recall@K).</td>
+            <td>Có cơ chế fallback BM25-only khi chưa nạp FAISS.</td>
+        </tr>
+        <tr>
+            <td rowspan="3"><b>CẤP 3: TINH CHỈNH & BẢO VỆ</b><br><i>(Refiners & Guardrails)</i></td>
+            <td><b>Context-Aware Query Rewriter</b></td>
+            <td style="text-align:center; font-weight:bold; color:#23527c;">Trung bình - Cao (8.8/10)</td>
+            <td>Khôi phục thực thể bị ẩn trong hội thoại đa lượt; cô lập bài toán ngữ cảnh khỏi prompt của LLM sinh câu trả lời.</td>
+            <td>Dùng câu hỏi gốc (nếu chỉ hỗ trợ câu hỏi đơn lẻ).</td>
+        </tr>
+        <tr>
+            <td><b>Cross-Encoder Reranker</b></td>
+            <td style="text-align:center; font-weight:bold; color:#23527c;">Trung bình - Cao (8.7/10)</td>
+            <td>Chấm điểm tương tác chéo sâu, cô đọng Top-50 xuống Top-5 tài liệu tinh túy nhất; cải thiện mạnh mẽ MRR và Precision.</td>
+            <td>Bỏ qua để dùng trực tiếp kết quả RRF (khi cần giảm độ trễ).</td>
+        </tr>
+        <tr>
+            <td><b>Citation Enforcer & Guardrails</b></td>
+            <td style="text-align:center; font-weight:bold; color:#23527c;">Trung bình - Cao (8.6/10)</td>
+            <td>Ràng buộc trích dẫn pháp lý minh bạch; phát hiện số lạ và từ chối an toàn câu hỏi ngoài miền (OOD).</td>
+            <td>Prompt ràng buộc của LLM.</td>
+        </tr>
+        <tr>
+            <td rowspan="2"><b>CẤP 4: GIAO TIẾP & GIÁM SÁT</b><br><i>(Interface & Observability)</i></td>
+            <td><b>Structured Logging (JSONL)</b></td>
+            <td style="text-align:center; font-weight:bold; color:#555555;">Trung bình (8.2/10)</td>
+            <td>Ghi nhận đầy đủ 7 trường trạng thái của từng lượt hỏi đáp; phục vụ đắc lực cho phân tích lỗi và nghiên cứu Ablation.</td>
+            <td>File log thông thường.</td>
+        </tr>
+        <tr>
+            <td><b>FastAPI & Streamlit UI</b></td>
+            <td style="text-align:center; font-weight:bold; color:#555555;">Trung bình (8.0/10)</td>
+            <td>Cung cấp giao diện tương tác người dùng và chuẩn hóa cổng kết nối dịch vụ RESTful theo chuẩn OpenAPI.</td>
+            <td>CLI / Web UI khác.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>3.2.3. Đánh giá chuyên sâu theo 4 nhóm phân cấp kiến trúc</h4>
+<p><b>1. Nhóm Cốt lõi kiến trúc (Semantic Parser, Router, Ingestion Dual-Path):</b> Đây là nhóm thành phần định hình nên diện mạo của hệ thống FPTUniQA, tạo ra sự khác biệt bản chất so với các kiến trúc Naive RAG phổ biến trên thị trường. Nếu thiếu Ingestion Gateway và Dual-Path, hệ thống sẽ phải đối mặt với dữ liệu "rác", bảng biểu học phí bị xé vụn thành chuỗi văn bản vô nghĩa, khiến mọi nỗ lực cải tiến thuật toán tìm kiếm phía sau trở nên vô dụng (nguyên lý <i>"Garbage In, Garbage Out"</i>). Nếu thiếu Semantic Parser & Router, hệ thống sẽ thoái hóa thành một RAG đường ống đơn nhất (Single-Pipeline RAG) — mọi câu hỏi bất kể tính chất đều bị ném chung vào một bộ vector search và prompt sinh câu trả lời, dẫn đến việc không thể kiểm soát được ảo giác số học và chi phí gọi mô hình.</p>
+<p><b>2. Nhóm Nền tảng chất lượng (Metadata Pre-filter, Structured Lookup, Hybrid RRF):</b> Nhóm thành phần này trực tiếp quyết định độ chính xác thực nghiệm của từng câu trả lời. Metadata Pre-filter đóng vai trò như một bộ lọc không gian: thay vì tìm kiếm trên toàn bộ 3,931 chunks của trường, bộ lọc co hẹp không gian tìm kiếm chỉ còn vài trăm chunks thuộc đúng khóa học của sinh viên. Structured Lookup Engine mang lại sự an tâm tuyệt đối cho các thông tin nhạy cảm về tài chính (học phí, học bổng). Hybrid RRF tạo nên một tấm lưới kép: BM25 bắt chặt các định danh cứng, trong khi FAISS bắt các diễn đạt mềm dẻo, dung hòa hai kênh một cách thanh lịch mà không đòi hỏi phải chuẩn hóa thang điểm phức tạp.</p>
+<p><b>3. Nhóm Tinh chỉnh & Bảo vệ (Context Rewriter, Reranker, Citation & Guardrails):</b> Nhóm thành phần này nâng tầm trải nghiệm người dùng từ mức "hệ thống tìm kiếm thông tin" lên mức "trợ lý học vụ thông minh, chuẩn mực". Context Rewriter giải phóng người dùng khỏi việc phải gõ lại toàn bộ câu hỏi dài dòng ở mỗi lượt chat. Cross-Encoder Reranker đóng vai trò là "chiếc kính lúp" tinh vi: bù đắp cho sự tính toán thô sơ của Bi-Encoder ở bước trước, đẩy các đoạn văn bản chứa câu trả lời trực tiếp lên vị trí Top 1–3, giúp LLM không bị nhiễu ngữ cảnh. Citation Enforcer và Guardrails tạo nên tính trung thực và minh bạch học thuật.</p>
+<p><b>4. Nhóm Giao tiếp & Giám sát (FastAPI, Streamlit, JSONL Logger):</b> Tuy nằm ở lớp ngoài cùng của hệ thống, nhóm này đảm bảo tính khả dụng công nghiệp và khả năng thẩm định khoa học. Cấu trúc JSONL Logger 7 trường dữ liệu là công cụ không thể thiếu để nhóm phát triển thực hiện thành công ma trận Ablation Study 6 cấu hình (từ A1 đến A6) và truy vết chính xác nguồn gốc sai sót.</p>
+
+<h4>3.2.4. Phân tích khả năng chịu lỗi và tính bền vững hệ thống (Fault-Tolerance & Resilience)</h4>
+<p>Một kiến trúc tốt không chỉ hoạt động tốt trong điều kiện lý tưởng, mà phải thể hiện được độ bền vững cao khi các thành phần bên trong gặp sự cố. FPTUniQA thể hiện xuất sắc nguyên tắc kiến trúc "Fallback Protection" và "Always Runnable" thông qua các cơ chế chịu lỗi phân tầng:</p>
+<ul>
+    <li><b>Cơ chế Fallback tại tầng Parser:</b> Khi Semantic Parser (dùng LLM) bị nghẽn mạng hoặc quá tải, Regex Fallback lập tức tiếp quản nhiệm vụ bóc tách intent và slots. Router tiếp nhận kết quả từ Regex Fallback mà không nhận thấy bất kỳ sự khác biệt nào về giao diện dữ liệu nhờ chuẩn Contract 3.</li>
+    <li><b>Cơ chế Fallback tại tầng Retrieval:</b> Khi máy chủ bị hạn chế tài nguyên (chưa nạp được chỉ mục FAISS hoặc không có GPU), hệ thống tự động suy thoái mềm sang chế độ BM25-only Retrieval. Mặc dù độ phủ ngữ nghĩa có thể giảm nhẹ, hệ thống vẫn duy trì khả năng trả lời câu hỏi dựa trên từ khóa thay vì bị sập hoàn toàn (fail-stop).</li>
+    <li><b>Cơ chế Fallback tại tầng Reranker:</b> Nếu mô hình Cross-Encoder gặp lỗi bộ nhớ (OOM) hoặc vượt ngưỡng thời gian quy định (timeout), hệ thống tự động sử dụng trực tiếp Top-5 ứng viên từ thuật toán RRF để cấp cho LLM, bảo đảm độ trễ phản hồi không bị kéo dài bất thường.</li>
+</ul>
+
+<hr>
+
+<h3>3.3. Thành phần quyết định chất lượng kiến trúc hệ thống</h3>
+
+<h4>3.3.1. Nhận định cốt lõi: Cặp thành phần quyết định chất lượng kiến trúc</h4>
+<p>Trong các cuộc tranh luận về thiết kế hệ thống RAG, người ta thường dễ rơi vào định kiến rằng: "Mô hình ngôn ngữ lớn (LLM) nào được chọn?" hoặc "Mô hình Embedding nào tân tiến nhất?" sẽ quyết định sự thành bại của toàn bộ hệ thống.</p>
+<p>Tuy nhiên, đối với bài toán hỏi đáp quy chế học vụ đại học của FPTUniQA, phân tích kiến trúc hệ thống chỉ ra rằng:</p>
+<blockquote>
+<b>Thành phần mang tính QUYẾT ĐỊNH CHẤT LƯỢNG của toàn bộ kiến trúc này KHÔNG NẰM Ở TẦNG SINH (LLM GENERATOR) HAY TẦNG VÉC-TƠ (EMBEDDING), mà được định đoạt bởi sự phối hợp chặt chẽ của CẶP ĐÔI KIẾN TRÚC: TẦNG PHÂN TÍCH NGỮ NGHĨA & ĐỊNH TUYẾN Ý ĐỊNH (SEMANTIC PARSER & CENTRALIZED ROUTER) và BỘ LỌC CỨNG SIÊU DỮ LIỆU (METADATA HARD PRE-FILTER).</b>
+</blockquote>
+<p>Trong mối quan hệ cộng hưởng này:</p>
+<ul>
+    <li><b>Semantic Parser & Centralized Router</b> đóng vai trò là <b>"BỘ NÃO ĐIỀU PHỐI QUYẾT ĐỊNH"</b> (The Architectural Decider) — quyết định câu hỏi được giải quyết bằng bản thể luận nào (Xác định hay Xác suất).</li>
+    <li><b>Metadata Hard Pre-filter</b> đóng vai trò là <b>"LÁ CHẮN NIÊN KHÓA QUYẾT ĐỊNH TÍNH ĐÚNG ĐẮN PHÁP LÝ"</b> (The Temporal/Cohort Correctness Gate) — quyết định ngữ cảnh có hợp lệ về mặt thời gian và đối tượng áp dụng hay không.</li>
+</ul>
+
+<h4>3.3.2. Vì sao LLM Generator và Vector Embedding không phải yếu tố quyết định chất lượng?</h4>
+<p>Để làm rõ nhận định trên, cần phân tích giới hạn cố hữu của LLM Generator và Vector Embedding khi đứng đơn lẻ trong miền học vụ:</p>
+<p><b>1. LLM Generator chỉ là một "thành phần hàng hóa phổ thông" (Commodity Component):</b> Bản chất của LLM trong kiến trúc RAG là một bộ máy đọc hiểu ngữ cảnh và diễn đạt ngôn ngữ tự nhiên (Context Reader & Synthesizer). Nếu Tầng Retrieval cung cấp ngữ cảnh sai (ví dụ kéo nhầm quy chế của năm 2021 cho sinh viên khóa 2026), hoặc ngữ cảnh chứa bảng biểu bị vỡ cấu trúc, thì dù có sử dụng mô hình LLM mạnh nhất hiện nay (như GPT-4o hay Claude 3.5 Sonnet), mô hình vẫn bắt buộc phải tạo ra một câu trả lời sai lệch nhưng được diễn đạt rất trôi chảy, thuyết phục (ảo giác ngữ cảnh), hoặc từ chối trả lời vì thông tin mâu thuẫn. Ngược lại, nếu ngữ cảnh được cung cấp chính xác 100% đến từng điều khoản và số liệu, ngay cả một mô hình ngôn ngữ nhỏ cục bộ (như LLaMA-7B hay mô hình gọn nhẹ Gemini-1.5-Flash) cũng có thể sinh ra câu trả lời xuất sắc và trích dẫn chuẩn xác. Do đó, <i>LLM không thể cứu vãn một ngữ cảnh sai, nhưng một ngữ cảnh đúng có thể biến mọi LLM thành chuyên viên tư vấn chuẩn mực.</i></p>
+<p><b>2. Vector Embedding thất bại trước tính kế thừa của văn bản pháp quy:</b> Các mô hình nhúng véc-tơ ngữ nghĩa (như Multilingual-E5, BGE-M3) được huấn luyện để đưa các đoạn văn có ý nghĩa tương đồng lại gần nhau trong không gian véc-tơ nhiều chiều. Nhưng trong văn bản quy chế đại học, một quy định năm 2021 và một quy định năm 2026 về cùng chủ đề "Điều kiện chuyển ngành" thường có tới 80–90% từ ngữ và cấu trúc câu giống hệt nhau. Khoảng cách véc-tơ giữa câu hỏi của sinh viên với văn bản cũ và văn bản mới là tương đương nhau. Thậm chí văn bản cũ có thể có điểm cosine similarity cao hơn văn bản mới chỉ vì độ dài hoặc tần suất từ ngữ trùng khớp ngẫu nhiên. Nếu chỉ dựa vào Vector Embedding, hệ thống hoàn toàn bất lực trong việc chọn ra đúng văn bản đang có hiệu lực.</p>
+
+<h4>3.3.3. Luận giải chuyên sâu: Bộ đôi Semantic Parser & Centralized Router — Trục điều phối chất lượng</h4>
+<p>Semantic Parser và Centralized Router là thành phần quyết định chất lượng kiến trúc vì những lý do then chốt sau:</p>
+<p><b>1. Phá vỡ giới hạn của kiến trúc đường ống đơn nhất (Breaking the Single-Pipeline Paradigm):</b> Mọi hệ thống RAG thất bại trong bài toán học vụ đều do áp dụng một đường ống duy nhất cho mọi dạng thông tin. Kiến trúc FPTUniQA nhận thức sâu sắc rằng dữ liệu học vụ bao gồm hai thế giới bản thể học hoàn toàn khác nhau: Thế giới dữ liệu định lượng (Biểu phí, định mức tín chỉ, điểm sàn) đòi hỏi độ chính xác tuyệt đối 100%, và Thế giới dữ liệu chính sách mở (Quy trình khiếu nại, tiêu chuẩn học bổng, điều kiện tốt nghiệp) đòi hỏi năng lực tìm kiếm ngữ nghĩa linh hoạt. Semantic Parser & Router chính là thành phần duy nhất trong hệ thống có năng lực phân loại bản thể học này: bóc tách chính xác intent và các slots để điều hướng câu hỏi số liệu sang đường ống tra cứu CSDL xác định (<code>StructuredRoute</code>), và điều hướng câu hỏi chính sách sang đường ống tìm kiếm lai (<code>HybridRAGRoute</code>). Quyết định phân luồng này triệt tiêu tận gốc 100% nguy cơ ảo giác số học — điều mà không một kỹ thuật prompt engineering nào có thể đảm bảo được.</p>
+<p><b>2. Chuẩn hóa giao diện dữ liệu qua Contract 3:</b> Semantic Parser chuẩn hóa toàn bộ sự biến thiên phức tạp của ngôn ngữ tự nhiên thành một cấu trúc <code>ParsedQuery</code> tường minh. Nhờ có cấu trúc này, các tầng phía sau không phải phỏng đoán ý định người dùng. Đặc biệt, việc bóc tách thành công các slot trọng yếu (<code>cohort</code>, <code>campus</code>, <code>academic_year</code>) tạo tiền đề tiên quyết cho Bộ lọc siêu dữ liệu hoạt động.</p>
+<p><b>3. Đảm bảo tính sẵn sàng cao thông qua Fallback Protection:</b> Nếu Semantic Parser bị sập mà không có cơ chế kiến trúc tương ứng, toàn bộ hệ thống sẽ ngừng hoạt động. Nhưng nhờ kiến trúc hội tụ về Router duy nhất với sự hỗ trợ của Regex Fallback, chất lượng dịch vụ của FPTUniQA luôn được duy trì ổn định, minh chứng cho một thiết kế kiến trúc trưởng thành và đáng tin cậy.</p>
+
+<h4>3.3.4. Luận giải chuyên sâu: Metadata Hard Pre-filter — Chốt chặn bảo toàn tính đúng đắn theo khóa học</h4>
+<p>Nếu Semantic Parser & Router đóng vai trò phân luồng giải pháp, thì <b>Metadata Hard Pre-filter</b> chính là thành phần quyết định tính đúng đắn pháp lý của nội dung được truy xuất:</p>
+<p><b>1. Giải quyết triệt để bài toán phụ thuộc khóa học (Cohort Dependency):</b> Tại Trường Đại học FPT cũng như các trường đại học đào tạo theo tín chỉ, quy định học phí và lộ trình đào tạo được ban hành theo từng khóa tuyển sinh (ví dụ: K20, K21, K22). Sinh viên nhập học năm nào sẽ áp dụng biểu phí và khung quy chế của khóa đó trong suốt toàn bộ khóa học. Khi người dùng hỏi: <i>"Học phí kỳ chuyên ngành ngành AI là bao nhiêu?"</i>, nếu hệ thống không biết sinh viên thuộc khóa nào hoặc không áp dụng bộ lọc khóa học, hệ thống sẽ kéo về biểu phí của bất kỳ khóa nào mà nó tìm thấy đầu tiên. Metadata Hard Pre-filter sử dụng slot <code>cohort</code> (được trích xuất từ Semantic Parser hoặc từ ngữ cảnh hội thoại) để thiết lập một bức tường lửa cách ly: toàn bộ văn bản của các khóa khác bị loại bỏ ngay lập tức trước khi BM25 và FAISS tính điểm.</p>
+<p><b>2. Tối ưu hóa không gian tìm kiếm và chi phí tính toán:</b> Việc lọc cứng trước khi tìm kiếm (Pre-filtering) giảm kích thước không gian tìm kiếm từ 3,931 chunks xuống chỉ còn một tập nhỏ liên quan trực tiếp. Điều này mang lại lợi ích kép về mặt kiến trúc: Tăng mạnh độ chính xác (Precision) bằng cách triệt tiêu hoàn toàn các tài liệu gây nhiễu tiềm tàng, đồng thời giảm đáng kể độ trễ truy xuất do chỉ mục BM25 và FAISS chỉ phải duyệt qua tập dữ liệu tinh gọn.</p>
+
+<h4>3.3.5. Sự cộng hưởng kiến trúc (Architectural Synergy) và kết luận</h4>
+<p>Chất lượng vượt trội của hệ thống FPTUniQA không đến từ một thuật toán đơn lẻ, mà đến từ <b>sự cộng hưởng kiến trúc (Architectural Synergy)</b> hoàn hảo giữa các thành phần then chốt:</p>
+
+<pre>
+[ Câu hỏi người dùng ]
+         │
+         ▼
+[ Context Rewriter ] ──────────▶ Khôi phục thực thể ẩn trong hội thoại đa lượt
+         │
+         ▼
+[ Semantic Parser & Router ] ──▶ (QUYẾT ĐỊNH 1) Phân tách thế giới: Định lượng vs. Chính sách mở
+         │                                       Bóc tách slot: cohort, campus, program
+         ├──────────────────────────────────────┐
+         │ (Nhánh Số liệu)                      │ (Nhánh Chính sách)
+         ▼                                      ▼
+[ Structured Lookup ]                 [ Metadata Pre-filter ] ──▶ (QUYẾT ĐỊNH 2) Khóa chặt niên khóa hợp lệ
+(Chính xác 100% số liệu)                        │
+                                                ▼
+                                      [ Hybrid Retrieval (BM25 + FAISS + RRF) ]
+                                                │
+                                                ▼
+                                      [ Cross-Encoder Reranker ]
+                                                │
+         ┌──────────────────────────────────────┘
+         ▼
+[ Ngữ cảnh tinh hoa & chuẩn xác tuyệt đối ]
+         │
+         ▼
+[ LLM Generator & Citation Enforcer ] ─▶ Diễn giải ngôn ngữ tự nhiên & Trích dẫn minh bạch
+</pre>
+
+<p>Tóm lại, trong kiến trúc FPTUniQA:</p>
+<ul>
+    <li><b>Semantic Parser & Centralized Router</b> quyết định <b>ĐI ĐÚNG ĐƯỜNG</b> (chọn đúng phương pháp giải quyết cho từng loại tri thức).</li>
+    <li><b>Metadata Hard Pre-filter</b> quyết định <b>LẤY ĐÚNG ĐÍCH</b> (chọn đúng văn bản hợp lệ theo niên khóa và thời gian).</li>
+</ul>
+<p>Chính hai thành phần này đã định hình nên chất lượng, độ tin cậy và sự thành công của toàn bộ kiến trúc hệ thống, biến FPTUniQA trở thành một giải pháp chuẩn mực cho bài toán hỏi đáp quy chế học vụ đại học tiếng Việt nhận biết ngữ cảnh.</p>
+
+</body>
+</html>
