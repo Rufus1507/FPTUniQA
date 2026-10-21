@@ -10,8 +10,13 @@ data:
   corpus_path: "data/processed/corpus.jsonl"
   structured_path: "data/processed/structured_data.json"
   metadata_path: "data/processed/metadata.json"
-  chunk_size: 512
-  chunk_overlap: 64
+  # Chuẩn hóa cấu hình Chunking theo tỷ lệ tiếng Việt (1 token ≈ 3 ký tự)
+  chunk_size_tokens: 500
+  chunk_overlap_tokens: 50
+  min_chunk_tokens: 50
+  chunk_size: 1500        # Quy đổi ký tự (~500 tokens)
+  chunk_overlap: 200      # Quy đổi ký tự (~65 tokens)
+  min_chunk_size: 150     # Quy đổi ký tự (~50 tokens)
 
 retrieval:
   bm25:

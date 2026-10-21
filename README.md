@@ -104,8 +104,13 @@ university-qa/
 ├── scripts/                  # Scripts build index, ETL, chạy pipeline, eval
 ├── tests/                    # Unit tests và integration tests với Pytest
 ├── notebooks/                # Jupyter notebooks nghiên cứu thực nghiệm
-├── experiments/              # Kết quả đo lường đối sánh (baseline, hybrid, rerank)
+├── experiments/              # Kết quả đo lường đối sánh (baseline, hybrid, rerank, ablation)
 └── docs/                     # Tài liệu kỹ thuật contracts & specifications
+    ├── baocao1.md            # Báo cáo 1: Tổng quan và Định vị bài toán
+    ├── baocao2.md            # Báo cáo 2: Đề xuất kiến trúc hệ thống
+    ├── baocao3.md            # Báo cáo 3: Giải pháp kỹ thuật và Đánh giá kiến trúc
+    ├── yeu_cau_bo_data.md    # 🌟 Quy chuẩn yêu cầu bộ Data Cần & Đủ
+    └── data_schema.md        # Hợp đồng dữ liệu Contract 1 Hybrid
 ```
 
 ---

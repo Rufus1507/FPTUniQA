@@ -29,10 +29,16 @@ class HybridRetriever:
         query: str,
         top_k: int = 10,
         candidate_k: int = 20,
+        filter_cohort: Optional[str] = None,
+        filter_campus: Optional[str] = None,
     ) -> List[Tuple[Dict[str, Any], float]]:
-        """Truy xuất song song từ BM25 và Dense, sau đó hợp nhất bằng RRF."""
-        bm25_results = self.bm25_retriever.retrieve(query, top_k=candidate_k)
-        dense_results = self.dense_retriever.retrieve(query, top_k=candidate_k)
+        """Truy xuất song song từ BM25 và Dense (hỗ trợ Metadata Pre-filtering), sau đó hợp nhất bằng RRF."""
+        bm25_results = self.bm25_retriever.retrieve(
+            query, top_k=candidate_k, filter_cohort=filter_cohort, filter_campus=filter_campus
+        )
+        dense_results = self.dense_retriever.retrieve(
+            query, top_k=candidate_k, filter_cohort=filter_cohort, filter_campus=filter_campus
+        )
 
         hybrid_results = reciprocal_rank_fusion(
             ranked_runs=[bm25_results, dense_results],

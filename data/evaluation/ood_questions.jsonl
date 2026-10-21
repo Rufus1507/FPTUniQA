@@ -1,5 +1,20 @@
 {"q_id": "OOD_001", "query": "Thủ đô của nước Pháp là thành phố nào?", "domain": "geography", "expected_action": "reject"}
-{"q_id": "OOD_002", "query": "Cách nấu món phở bò truyền thống ngon nhất?", "domain": "cooking", "expected_action": "reject"}
-{"q_id": "OOD_003", "query": "Giá vàng hôm nay tại thị trường Hà Nội tăng hay giảm?", "domain": "finance", "expected_action": "reject"}
-{"q_id": "OOD_004", "query": "Hướng dẫn cài đặt hệ điều hành Windows 11 trên máy tính ảo?", "domain": "tech_general", "expected_action": "reject"}
-{"q_id": "OOD_005", "query": "Đội tuyển bóng đá nào vô địch World Cup 2022?", "domain": "sports", "expected_action": "reject"}
+{"q_id": "OOD_002", "query": "Cách nấu món phở bò truyền thống thơm ngon chuẩn vị Hà Nội?", "domain": "cooking", "expected_action": "reject"}
+{"q_id": "OOD_003", "query": "Giá vàng SJC hôm nay tại thị trường trong nước tăng hay giảm?", "domain": "finance", "expected_action": "reject"}
+{"q_id": "OOD_004", "query": "Hướng dẫn cài đặt hệ điều hành Windows 11 trên máy ảo VMware?", "domain": "tech_general", "expected_action": "reject"}
+{"q_id": "OOD_005", "query": "Đội tuyển bóng đá nào vô địch World Cup 2022 tại Qatar?", "domain": "sports", "expected_action": "reject"}
+{"q_id": "OOD_006", "query": "Mẹo làm bánh mì baguette tại nhà có vỏ giòn xốp và ruột mềm?", "domain": "cooking", "expected_action": "reject"}
+{"q_id": "OOD_007", "query": "Bộ phim nào đã giành giải Oscar cho Phim xuất sắc nhất năm 2024?", "domain": "entertainment", "expected_action": "reject"}
+{"q_id": "OOD_008", "query": "Cách viết hàm async/await trong JavaScript ES6 để xử lý Promise?", "domain": "tech_general", "expected_action": "reject"}
+{"q_id": "OOD_009", "query": "Sự khác biệt cơ bản giữa Docker container và máy ảo ảo hóa (Virtual Machine) là gì?", "domain": "tech_general", "expected_action": "reject"}
+{"q_id": "OOD_010", "query": "Giá đồng tiền mã hóa Bitcoin (BTC) hiện tại đang dao động ở mức bao nhiêu USD?", "domain": "crypto", "expected_action": "reject"}
+{"q_id": "OOD_011", "query": "Thời tiết tại Đà Lạt vào dịp cuối tuần này có mưa không?", "domain": "weather", "expected_action": "reject"}
+{"q_id": "OOD_012", "query": "Những địa điểm tham quan du lịch nổi tiếng nhất không nên bỏ qua tại Nha Trang?", "domain": "travel", "expected_action": "reject"}
+{"q_id": "OOD_013", "query": "Các dấu hiệu và triệu chứng ban đầu phổ biến của bệnh cảm cúm mùa là gì?", "domain": "medical", "expected_action": "reject"}
+{"q_id": "OOD_014", "query": "Cách phòng ngừa bệnh tiểu đường type 2 bằng chế độ ăn uống và tập luyện?", "domain": "medical", "expected_action": "reject"}
+{"q_id": "OOD_015", "query": "Chiến dịch Điện Biên Phủ lịch sử kết thúc thắng lợi vào ngày tháng năm nào?", "domain": "history", "expected_action": "reject"}
+{"q_id": "OOD_016", "query": "Dân số toàn cầu ước tính đã vượt qua mốc bao nhiêu tỷ người?", "domain": "geography", "expected_action": "reject"}
+{"q_id": "OOD_017", "query": "Nguyên nhân xe máy bị hụt ga khi tăng tốc đột ngột và cách khắc phục?", "domain": "automotive", "expected_action": "reject"}
+{"q_id": "OOD_018", "query": "Ca sĩ nào thể hiện bài hát 'See Tình' gây sốt trên các nền tảng mạng xã hội?", "domain": "entertainment", "expected_action": "reject"}
+{"q_id": "OOD_019", "query": "Cách chăm sóc cây sen đá trong nhà để không bị úng rễ và vàng lá?", "domain": "gardening", "expected_action": "reject"}
+{"q_id": "OOD_020", "query": "Cầu thủ nào đạt danh hiệu Quả bóng vàng (Ballon d'Or) nhiều lần nhất lịch sử?", "domain": "sports", "expected_action": "reject"}

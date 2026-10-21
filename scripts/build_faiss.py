@@ -1,6 +1,9 @@
-"""Script tính toán vector embeddings và lưu chỉ mục FAISS."""
-
+import sys
 from pathlib import Path
+
+# Thêm src vào sys.path để import các module nội bộ
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+
 from university_qa.retrieval.dense import DenseRetriever
 from university_qa.retrieval.embedding import EmbeddingModel
 from university_qa.utils.config import load_config

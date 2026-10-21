@@ -33,19 +33,76 @@ class BM25Retriever:
         ]
         self.bm25 = BM25Okapi(tokenized_corpus, k1=self.k1, b=self.b)
 
-    def retrieve(self, query: str, top_k: int = 10) -> List[Tuple[Dict[str, Any], float]]:
-        """Truy xuất top-k tài liệu liên quan nhất kèm điểm BM25."""
+    @staticmethod
+    def _matches_filter(
+        doc: Dict[str, Any],
+        filter_cohort: Optional[str] = None,
+        filter_campus: Optional[str] = None,
+    ) -> bool:
+        """Kiểm tra tài liệu có khớp với bộ lọc khóa và cơ sở hay không."""
+        if filter_cohort:
+            target_cohort = filter_cohort.upper().strip()
+            doc_cohorts = doc.get("applies_to_cohort")
+            if not doc_cohorts:
+                c = doc.get("metadata", {}).get("cohort")
+                doc_cohorts = [c] if c else ["ALL"]
+            cohorts_upper = [str(c).upper().strip() for c in doc_cohorts]
+            if "ALL" not in cohorts_upper and target_cohort not in cohorts_upper:
+                return False
+
+        if filter_campus:
+            target_campus = filter_campus.upper().strip()
+            doc_campus = str(doc.get("campus") or doc.get("metadata", {}).get("campus", "ALL")).upper().strip()
+            campus_match = (
+                doc_campus == "ALL"
+                or doc_campus == target_campus
+                or (doc_campus in ["HN", "FUHL"] and target_campus in ["HN", "FUHL"])
+            )
+            if not campus_match:
+                return False
+
+        return True
+
+    def retrieve(
+        self,
+        query: str,
+        top_k: int = 10,
+        filter_cohort: Optional[str] = None,
+        filter_campus: Optional[str] = None,
+    ) -> List[Tuple[Dict[str, Any], float]]:
+        """Truy xuất top-k tài liệu liên quan nhất kèm điểm BM25 và lọc siêu dữ liệu cứng."""
         if self.bm25 is None or not self.documents:
             return []
 
         tokenized_query = tokenize_vietnamese(query)
         scores = self.bm25.get_scores(tokenized_query)
-        top_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
+        # Khử hiện tượng điểm âm (negative IDF) khi corpus quá nhỏ
+        safe_scores = [max(float(s), 0.0) for s in scores]
+
+        # Lọc trước danh sách chỉ mục hợp lệ theo Metadata Pre-filtering
+        valid_indices = [
+            i
+            for i in range(len(self.documents))
+            if self._matches_filter(self.documents[i], filter_cohort, filter_campus)
+        ]
+
+        if not valid_indices:
+            return []
+
+        def get_sort_key(i: int):
+            doc_tokens = set(tokenize_vietnamese(f"{self.documents[i].get('title', '')} {self.documents[i].get('text', '')}"))
+            overlap_count = sum(1 for t in tokenized_query if t in doc_tokens)
+            return (safe_scores[i], overlap_count)
+
+        top_indices = sorted(valid_indices, key=get_sort_key, reverse=True)[:top_k]
 
         results = []
         for idx in top_indices:
-            if scores[idx] > 0:
-                results.append((self.documents[idx], float(scores[idx])))
+            doc_tokens = set(tokenize_vietnamese(f"{self.documents[idx].get('title', '')} {self.documents[idx].get('text', '')}"))
+            overlap_count = sum(1 for t in tokenized_query if t in doc_tokens)
+            if safe_scores[idx] > 0 or overlap_count > 0:
+                effective_score = float(max(safe_scores[idx], 0.1 * overlap_count))
+                results.append((self.documents[idx], effective_score))
         return results
 
     def save(self, dir_path: Union[str, Path]) -> None:

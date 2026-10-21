@@ -4,10 +4,44 @@ import re
 import unicodedata
 
 
+def clean_handbook_noise(text: str) -> str:
+    """Loại bỏ watermark Studocu, running header/footer Sổ tay sinh viên FPT."""
+    if not text:
+        return ""
+
+    patterns = [
+        # Watermark Studocu
+        r"Studocu is not sponsored or endorsed by any college or university",
+        r"Downloaded by [^\n]+",
+        r"Scan to open on Studeersnel",
+        r"lms\.fpt\.edu\.vn",
+        # Running header / footer của Sổ tay sinh viên FPT
+        r"SỔ TAY (TÂN )?SINH VIÊN\s*[\|\-–]\s*\d+",
+        r"SỔ TAY SINH VIÊN K\d+\s*\(Trích phần [^\)]+\)",
+        r"^\s*Trường Đại học FPT\s*$",
+        r"^\s*\d{1,3}\s*$",  # Số trang đơn lẻ trên dòng
+    ]
+
+    cleaned = text
+    for pat in patterns:
+        cleaned = re.sub(pat, "", cleaned, flags=re.IGNORECASE | re.MULTILINE)
+
+    # Chuẩn hóa các ký tự bullet đặc thù từ PDF sang gạch đầu dòng chuẩn
+    cleaned = re.sub(r"[•·]\s*", "- ", cleaned)
+
+    # Nối các từ bị ngắt dòng do dấu gạch nối cuối dòng trong PDF (ví dụ: "chương-\ntrình" -> "chương trình")
+    cleaned = re.sub(r"(\b[a-zA-ZÀ-ỹ]+)-\n([a-zA-ZÀ-ỹ]+\b)", r"\1\2", cleaned)
+
+    return cleaned
+
+
 def clean_vietnamese_text(text: str) -> str:
     """Chuẩn hóa Unicode tiếng Việt (NFC), loại bỏ khoảng trắng thừa và ký tự điều khiển rác."""
     if not text:
         return ""
+
+    # Loại bỏ tạp âm Sổ tay sinh viên & Studocu trước
+    text = clean_handbook_noise(text)
 
     # Chuẩn hóa bảng mã Unicode sang chuẩn NFC
     text = unicodedata.normalize("NFC", text)

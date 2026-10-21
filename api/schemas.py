@@ -31,6 +31,8 @@ class QueryResponse(BaseModel):
     """Schema phản hồi câu trả lời hoàn chỉnh."""
     query: str
     normalized_query: str
+    cohort: Optional[str] = None
+    campus: Optional[str] = None
     intent: str
     answer: str
     citations: List[CitationModel] = Field(default_factory=list)

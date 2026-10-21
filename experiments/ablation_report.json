@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-10-19T00:25:54Z",
+  "results": [
+    {
+      "config": "A1: BM25-only",
+      "hit_rate@5": 0.7333,
+      "mrr@5": 0.6467,
+      "cohort_drift_rate": 1.0,
+      "cohort_accuracy": 0.0,
+      "avg_latency_ms": 5.18
+    },
+    {
+      "config": "A2: Dense-only",
+      "hit_rate@5": 0.6667,
+      "mrr@5": 0.6067,
+      "cohort_drift_rate": 1.0,
+      "cohort_accuracy": 0.0,
+      "avg_latency_ms": 2783.55
+    },
+    {
+      "config": "A3: Hybrid (No RRF)",
+      "hit_rate@5": 0.7,
+      "mrr@5": 0.6444,
+      "cohort_drift_rate": 1.0,
+      "cohort_accuracy": 0.0,
+      "avg_latency_ms": 73.01
+    },
+    {
+      "config": "A4: Hybrid + RRF + Reranker",
+      "hit_rate@5": 0.6667,
+      "mrr@5": 0.5928,
+      "cohort_drift_rate": 1.0,
+      "cohort_accuracy": 0.0,
+      "avg_latency_ms": 42546.62
+    },
+    {
+      "config": "A5: Hybrid + RRF + Reranker + PreFilter",
+      "hit_rate@5": 0.6667,
+      "mrr@5": 0.6194,
+      "cohort_drift_rate": 0.0,
+      "cohort_accuracy": 1.0,
+      "avg_latency_ms": 12362.39
+    },
+    {
+      "config": "A6: Full Pipeline",
+      "hit_rate@5": 0.9333,
+      "mrr@5": 0.8694,
+      "cohort_drift_rate": 0.0,
+      "cohort_accuracy": 1.0,
+      "avg_latency_ms": 11078.59
+    }
+  ]
+}

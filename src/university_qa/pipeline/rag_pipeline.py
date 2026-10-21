@@ -54,9 +54,11 @@ class RAGPipeline:
 
     def run(self, query: str, top_k: int = 5) -> Dict[str, Any]:
         """Thực thi toàn bộ luồng RAG cho một câu truy vấn."""
-        # 1. Chuẩn hóa câu hỏi
+        # 1. Chuẩn hóa câu hỏi và trích xuất Slot (Khóa & Cơ sở)
         normalized_query = self.normalizer.normalize(query)
+        cohort, campus = self.normalizer.extract_cohort_and_campus(normalized_query)
         logger.debug(f"Query gốc: {query} -> Chuẩn hóa: {normalized_query}")
+        logger.debug(f"Slots nhận diện: Khóa={cohort}, Cơ sở={campus}")
 
         # 2. Phân loại ý định
         intent, confidence = self.intent_classifier.classify(normalized_query)
@@ -67,6 +69,8 @@ class RAGPipeline:
             return {
                 "query": query,
                 "normalized_query": normalized_query,
+                "cohort": cohort,
+                "campus": campus,
                 "intent": intent.value,
                 "answer": PromptManager.OOD_REJECTION_PROMPT,
                 "retrieved_documents": [],
@@ -76,11 +80,17 @@ class RAGPipeline:
         # 4. Tra cứu dữ liệu cấu trúc (Học phí / bảng tính) nếu có
         structured_matches = []
         if intent == QueryIntent.STRUCTURED:
-            structured_matches = self.structured_parser.get_tuition_by_major(normalized_query)
+            if cohort:
+                structured_matches = self.structured_parser.get_cohort_fee(cohort)
+            if not structured_matches:
+                structured_matches = self.structured_parser.get_tuition_by_major(normalized_query)
 
-        # 5. Tìm kiếm văn bản lai (Hybrid Retrieval: BM25 + FAISS)
+        # 5. Tìm kiếm văn bản lai có Metadata Pre-filtering (BM25 + FAISS)
         candidate_docs_with_scores = self.retriever.retrieve(
-            query=normalized_query, top_k=top_k * 2
+            query=normalized_query,
+            top_k=top_k * 2,
+            filter_cohort=cohort,
+            filter_campus=campus,
         )
         candidates = [doc for doc, _ in candidate_docs_with_scores]
 
@@ -110,6 +120,8 @@ class RAGPipeline:
         return {
             "query": query,
             "normalized_query": normalized_query,
+            "cohort": cohort,
+            "campus": campus,
             "intent": intent.value,
             "answer": llm_answer,
             "retrieved_documents": final_docs,
