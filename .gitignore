@@ -37,6 +37,8 @@ data/raw/*
 !data/raw/.gitkeep
 data/interim/*
 !data/interim/.gitkeep
+data/backup_original/
+pdf fpt/
 
 # Model weights & large vector indexes
 *.bin
@@ -47,6 +49,8 @@ data/interim/*
 *.faiss
 *.index
 *.pkl
+data/processed/faiss_index/
+data/processed/bm25_index/
 
 # Logs
 logs/*
