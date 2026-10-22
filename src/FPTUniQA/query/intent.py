@@ -25,6 +25,7 @@ class QueryIntent(str, Enum):
     POLICY_LOOKUP = "policy_lookup"
     TUITION_LOOKUP = "tuition_lookup"
     GRADUATION_LOOKUP = "graduation_lookup"
+    COURSE_LOOKUP = "course_lookup"
     OOD = "OOD"
 
 

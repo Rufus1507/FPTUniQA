@@ -32,13 +32,15 @@ ENV/
 *.pem
 *.key
 
-# Data rules: Do not commit raw, interim or large processed data files
+# Data rules: Raw and interim data are ignored
 data/raw/*
 !data/raw/.gitkeep
 data/interim/*
 !data/interim/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
+
+# Processed indexes (large binary files, rebuilt from corpus)
+data/processed/bm25_index/
+data/processed/faiss_index/
 
 # Model weights & large vector indexes
 *.bin
@@ -55,6 +57,8 @@ logs/*
 !logs/.gitkeep
 *.log
 *.jsonl
+!data/processed/*.jsonl
+!data/evaluation/*.jsonl
 !tests/fixtures/*.jsonl
 response*.json
 scratch/

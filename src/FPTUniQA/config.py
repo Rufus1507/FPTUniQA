@@ -43,7 +43,7 @@ class Settings(BaseSettings):
     llm_api_key: str = Field(default="", description="API Key cho LLM")
     anthropic_api_key: str = Field(default="", description="API Key cho Anthropic Claude")
     model_name: str = Field(default="gemini/gemini-3.5-flash-lite", description="Tên mô hình LLM")
-    llm_timeout: int = Field(default=60, description="Timeout gọi LLM (giây)")
+    llm_timeout: float = Field(default=2.0, description="Timeout gọi LLM (giây)")
 
     # Retrieval & Reranking
     default_top_k: int = Field(default=5, description="Số lượng tài liệu truy xuất mặc định")

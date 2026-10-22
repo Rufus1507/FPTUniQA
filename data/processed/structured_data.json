@@ -3833,24 +3833,243 @@
   ],
   "graduation_requirements": [
     {
-      "program": "Kỹ sư Công nghệ Thông tin",
+      "program": "Kỹ sư Công nghệ Thông tin (KTPM, AI, ATTT, HTTT)",
       "total_credits": 150,
       "mandatory_credits": 120,
       "elective_credits": 30,
-      "internship_credits": 10,
-      "thesis_credits": 10,
+      "ojt_semester": "Học kỳ 6 (Full-time tại doanh nghiệp)",
+      "graduation_thesis": "Đồ án tốt nghiệp / Khóa luận tốt nghiệp (KLTN)",
       "min_gpa": 2.0,
-      "foreign_language": "TOEIC 550 hoặc IELTS 5.5"
+      "foreign_language": "IELTS 6.0 hoặc TOEFL iBT 60 hoặc VSTEP B2",
+      "other_certificates": "Giáo dục Quốc phòng - An ninh (GDQP) và Giáo dục Thể chất (Vovinam)"
     },
     {
-      "program": "Cử nhân Quản trị Kinh doanh",
+      "program": "Cử nhân Quản trị Kinh doanh (Digital Marketing, KDQT)",
       "total_credits": 135,
       "mandatory_credits": 105,
       "elective_credits": 30,
-      "internship_credits": 6,
-      "thesis_credits": 9,
+      "ojt_semester": "Học kỳ 6 (Full-time tại doanh nghiệp)",
+      "graduation_thesis": "Khóa luận tốt nghiệp hoặc Thi tốt nghiệp",
       "min_gpa": 2.0,
-      "foreign_language": "TOEIC 500 hoặc IELTS 5.0"
+      "foreign_language": "IELTS 5.5 hoặc TOEIC 600",
+      "other_certificates": "Giáo dục Quốc phòng - An ninh (GDQP) và Giáo dục Thể chất (Vovinam)"
+    },
+    {
+      "program": "Cử nhân Ngôn ngữ Anh",
+      "total_credits": 135,
+      "mandatory_credits": 105,
+      "elective_credits": 30,
+      "ojt_semester": "Học kỳ 6 (Thực tập dịch thuật / doanh nghiệp)",
+      "graduation_thesis": "Khóa luận tốt nghiệp",
+      "min_gpa": 2.0,
+      "foreign_language": "Chuẩn đầu ra C1 quốc tế (IELTS 7.0 hoặc tương đương)",
+      "other_certificates": "Giáo dục Quốc phòng - An ninh (GDQP) và Giáo dục Thể chất (Vovinam)"
+    },
+    {
+      "program": "Cử nhân Ngôn ngữ Nhật",
+      "total_credits": 135,
+      "mandatory_credits": 105,
+      "elective_credits": 30,
+      "ojt_semester": "Học kỳ 6 (Thực tập tại doanh nghiệp Nhật Bản)",
+      "graduation_thesis": "Khóa luận tốt nghiệp",
+      "min_gpa": 2.0,
+      "foreign_language": "Chứng chỉ JLPT N2",
+      "other_certificates": "Giáo dục Quốc phòng - An ninh (GDQP) và Giáo dục Thể chất (Vovinam)"
     }
-  ]
+  ],
+  "academic_years": [
+    "2021-2022",
+    "2022-2023",
+    "2023-2024",
+    "2024-2025",
+    "2025-2026"
+  ],
+  "tuition_rates": [
+    {
+      "faculty": "Công nghệ Thông tin",
+      "major_code": "7480103",
+      "major_name": "Kỹ thuật Phần mềm",
+      "credit_price_vnd": 650000,
+      "standard_credits_per_term": 16,
+      "estimated_term_tuition_vnd": 28700000
+    },
+    {
+      "faculty": "Công nghệ Thông tin",
+      "major_code": "7480107",
+      "major_name": "Trí tuệ Nhân tạo",
+      "credit_price_vnd": 650000,
+      "standard_credits_per_term": 16,
+      "estimated_term_tuition_vnd": 28700000
+    },
+    {
+      "faculty": "Công nghệ Thông tin",
+      "major_code": "7480202",
+      "major_name": "An toàn Thông tin",
+      "credit_price_vnd": 650000,
+      "standard_credits_per_term": 16,
+      "estimated_term_tuition_vnd": 28700000
+    },
+    {
+      "faculty": "Công nghệ Thông tin",
+      "major_code": "7480201",
+      "major_name": "Khoa học Máy tính",
+      "credit_price_vnd": 650000,
+      "standard_credits_per_term": 16,
+      "estimated_term_tuition_vnd": 28700000
+    },
+    {
+      "faculty": "Công nghệ Thông tin",
+      "major_code": "7480104",
+      "major_name": "Hệ thống Thông tin",
+      "credit_price_vnd": 650000,
+      "standard_credits_per_term": 16,
+      "estimated_term_tuition_vnd": 28700000
+    },
+    {
+      "faculty": "Thiết kế & Nghệ thuật số",
+      "major_code": "7210403",
+      "major_name": "Thiết kế Mỹ thuật số",
+      "credit_price_vnd": 650000,
+      "standard_credits_per_term": 16,
+      "estimated_term_tuition_vnd": 28700000
+    },
+    {
+      "faculty": "Kinh tế & Quản trị Kinh doanh",
+      "major_code": "7340101",
+      "major_name": "Quản trị Kinh doanh",
+      "credit_price_vnd": 600000,
+      "standard_credits_per_term": 15,
+      "estimated_term_tuition_vnd": 28700000
+    },
+    {
+      "faculty": "Kinh tế & Quản trị Kinh doanh",
+      "major_code": "7340114",
+      "major_name": "Digital Marketing",
+      "credit_price_vnd": 600000,
+      "standard_credits_per_term": 15,
+      "estimated_term_tuition_vnd": 28700000
+    },
+    {
+      "faculty": "Kinh tế & Quản trị Kinh doanh",
+      "major_code": "7340120",
+      "major_name": "Kinh doanh Quốc tế",
+      "credit_price_vnd": 600000,
+      "standard_credits_per_term": 15,
+      "estimated_term_tuition_vnd": 28700000
+    },
+    {
+      "faculty": "Truyền thông",
+      "major_code": "7320104",
+      "major_name": "Truyền thông Đa phương tiện",
+      "credit_price_vnd": 600000,
+      "standard_credits_per_term": 15,
+      "estimated_term_tuition_vnd": 28700000
+    },
+    {
+      "faculty": "Ngoại ngữ",
+      "major_code": "7220201",
+      "major_name": "Ngôn ngữ Anh",
+      "credit_price_vnd": 550000,
+      "standard_credits_per_term": 15,
+      "estimated_term_tuition_vnd": 25300000
+    },
+    {
+      "faculty": "Ngoại ngữ",
+      "major_code": "7220209",
+      "major_name": "Ngôn ngữ Nhật",
+      "credit_price_vnd": 550000,
+      "standard_credits_per_term": 15,
+      "estimated_term_tuition_vnd": 25300000
+    },
+    {
+      "faculty": "Ngoại ngữ",
+      "major_code": "7220210",
+      "major_name": "Ngôn ngữ Hàn",
+      "credit_price_vnd": 550000,
+      "standard_credits_per_term": 15,
+      "estimated_term_tuition_vnd": 25300000
+    }
+  ],
+  "fpt_cohort_fees": [
+    {
+      "cohort": "K17",
+      "campus": "HN",
+      "prep_english_per_level_vnd": 10350000,
+      "prep_english_levels": 6,
+      "specialized_term_tuition_vnd": 25300000,
+      "total_specialized_terms": 9,
+      "ojt_term_tuition_vnd": 0,
+      "retake_exam_fee_vnd": 300000,
+      "relearn_per_credit_vnd": 600000,
+      "dormitory_fee_per_term_vnd": 3600000
+    },
+    {
+      "cohort": "K18",
+      "campus": "HN",
+      "prep_english_per_level_vnd": 11300000,
+      "prep_english_levels": 6,
+      "specialized_term_tuition_vnd": 27300000,
+      "total_specialized_terms": 9,
+      "ojt_term_tuition_vnd": 0,
+      "retake_exam_fee_vnd": 300000,
+      "relearn_per_credit_vnd": 650000,
+      "dormitory_fee_per_term_vnd": 3800000
+    },
+    {
+      "cohort": "K19",
+      "campus": "ALL",
+      "prep_english_per_level_vnd": 11300000,
+      "prep_english_levels": 6,
+      "specialized_term_tuition_vnd": 28700000,
+      "total_specialized_terms": 9,
+      "ojt_term_tuition_vnd": 0,
+      "retake_exam_fee_vnd": 300000,
+      "relearn_per_credit_vnd": 650000,
+      "dormitory_fee_per_term_vnd": 4000000
+    },
+    {
+      "cohort": "K20",
+      "campus": "ALL",
+      "prep_english_per_level_vnd": 11300000,
+      "prep_english_levels": 6,
+      "specialized_term_tuition_vnd": 28700000,
+      "total_specialized_terms": 9,
+      "ojt_term_tuition_vnd": 0,
+      "retake_exam_fee_vnd": 300000,
+      "relearn_per_credit_vnd": 650000,
+      "dormitory_fee_per_term_vnd": 4000000
+    },
+    {
+      "cohort": "K21",
+      "campus": "FUHL",
+      "prep_english_per_level_vnd": 11900000,
+      "prep_english_levels": 6,
+      "specialized_term_tuition_vnd": 31200000,
+      "total_specialized_terms": 9,
+      "ojt_term_tuition_vnd": 0,
+      "retake_exam_fee_vnd": 350000,
+      "relearn_per_credit_vnd": 700000,
+      "dormitory_fee_per_term_vnd": 4200000
+    },
+    {
+      "cohort": "K22",
+      "campus": "HCM",
+      "prep_english_per_level_vnd": 11900000,
+      "prep_english_levels": 6,
+      "specialized_term_tuition_vnd": 32500000,
+      "total_specialized_terms": 9,
+      "ojt_term_tuition_vnd": 0,
+      "retake_exam_fee_vnd": 350000,
+      "relearn_per_credit_vnd": 750000,
+      "dormitory_fee_per_term_vnd": 4500000
+    }
+  ],
+  "common_fees": {
+    "retake_exam_fee_vnd": 300000,
+    "relearn_per_credit_vnd": 650000,
+    "orientation_term_fee_vnd": 0,
+    "graduation_fee_vnd": 1500000,
+    "transcript_confirmation_fee_vnd": 50000,
+    "dormitory_fuhl_per_term_vnd": 4000000
+  }
 }

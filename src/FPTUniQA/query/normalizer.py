@@ -20,7 +20,7 @@ def normalize_query(text: str) -> str:
     # Thay thế các ký tự khoảng trắng liên tiếp (tab, newlines, nhiều dấu cách) thành 1 dấu cách
     normalized = re.sub(r"\s+", " ", normalized)
 
-    # Chuyển về chữ thường
-    normalized = normalized.strip().lower()
+    # Loại bỏ khoảng trắng thừa đầu cuối
+    normalized = normalized.strip()
 
     return normalized

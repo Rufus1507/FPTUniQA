@@ -113,10 +113,61 @@ def generate_markdown_report(report_data: Dict[str, Any], output_path: Path) -> 
 - **Số lần Cache Miss:** `{cache.get('misses', 0)}`
 - **Tỷ lệ trúng Cache (Hit Rate):** `{cache.get('hit_rate', 0.0) * 100:.2f}%`
 - **Số bản ghi đang lưu trữ:** `{cache.get('cached_entries', 0)}`
+"""
+
+    # Bổ sung Bảng phân bố 10 Cấp Độ Truy Vấn (Levels 1 - 10)
+    level_stats = report_data.get("level_breakdown", {})
+    mem_stats = report_data.get("memory_metrics", {})
+
+    content += """
+---
+
+## 4. Đánh Giá Chi Tiết Theo 10 Cấp Độ Truy Vấn (Levels 1 - 10)
+
+| Cấp Độ (Level) | Mô Tả & Bản Chất Truy Vấn | Số Câu | Tỷ Lệ Định Tuyến Đúng | Độ Trễ TB (ms) |
+| :---: | :--- | :---: | :---: | :---: |
+"""
+    level_names = {
+        1: "Level 1: Tra cứu Biểu phí Cấu trúc Trực tiếp (Zero Ambiguity)",
+        2: "Level 2: Quy chế Đào tạo Sự kiện Đơn lẻ (Single-Fact Policy)",
+        3: "Level 3: Biến thể Tham số Cơ sở & Ưu đãi Vùng miền (Campus/Cohort)",
+        4: "Level 4: Phân nhánh Làm rõ khi Thiếu Slot (Clarification)",
+        5: "Level 5: Quy chế Xử lý Học vụ Đa điều kiện (Warning/Dismissal)",
+        6: "Level 6: Điều kiện Tốt nghiệp & Chuẩn đầu ra OJT Tổng hợp",
+        7: "Level 7: Hội thoại Đa lượt Kế thừa Tham số / Tỉnh lược (Ellipsis)",
+        8: "Level 8: Hội thoại Đa lượt Tiếp nối Sâu Hồ sơ Học vụ (Deep Continuity)",
+        9: "Level 9: Hội thoại Đa lượt Chuyển đổi Chủ đề (Topic Switch / Distraction)",
+        10: "Level 10: Từ chối Câu hỏi Ngoài Miền (OOD Rejection & Guardrails)",
+    }
+
+    for lvl in range(1, 11):
+        stat = level_stats.get(lvl, level_stats.get(str(lvl), {"count": 0, "correct_route": 0, "accuracy": 0.0, "mean_latency_ms": 0.0}))
+        acc = stat.get("accuracy", 0.0) * 100
+        desc = level_names.get(lvl, f"Level {lvl}")
+        content += f"| **L{lvl}** | {desc} | {stat.get('count', 0)} | **{acc:.1f}%** ({stat.get('correct_route', 0)}/{stat.get('count', 0)}) | {stat.get('mean_latency_ms', 0.0):.1f} ms |\n"
+
+    ts_acc = float(mem_stats.get('topic_switch_detection_accuracy', 0.0)) * 100
+    cb_rate = float(mem_stats.get('context_bleeding_prevention_rate', 0.0)) * 100
+    ts_acc_str = f"{ts_acc:.1f}%"
+    cb_rate_str = f"{cb_rate:.1f}%"
+    mt_total = mem_stats.get('multiturn_total', 0)
+    ts_tested = mem_stats.get('topic_switch_tested', 0)
+    ts_detected = mem_stats.get('topic_switch_detected', 0)
+
+    content += f"""
+---
+
+## 5. Đánh Giá Khả Năng Lưu Trữ Bộ Nhớ (Session Memory) & Chống Nhiễm Độc Ngữ Cảnh (Topic Switch)
+
+- **Tổng số câu hỏi đa lượt trong phiên (Turns 2 & 3):** `{mt_total} câu`
+- **Số câu hỏi kiểm thử Chuyển đổi Chủ đề đột ngột (Turn 3 Topic Switch):** `{ts_tested} câu`
+- **Số câu phát hiện Chuyển đổi Chủ đề thành công:** `{ts_detected} câu`
+- **Độ chính xác nhận diện Topic Switch:** **{ts_acc_str}**
+- **Tỷ lệ Ngăn ngừa Nhiễm độc Ngữ cảnh Cũ (Context Bleeding Prevention Rate):** **{cb_rate_str}**
 
 ---
 
-## 4. Phân Bố Kết Quả Theo Danh Mục Câu Hỏi
+## 6. Phân Bố Kết Quả Theo Danh Mục Kỹ Thuật
 
 | Danh Mục | Số Câu | Tỷ Lệ Tuyến Chính Xác | Tuyến Phổ Biến |
 | :--- | :---: | :---: | :---: |
@@ -178,8 +229,9 @@ def main():
     start_all = time.time()
     for idx, q in enumerate(questions, 1):
         query_text = q["query"]
+        session_id = q.get("session_id")
         t0 = time.perf_counter()
-        res = pipeline.answer(query_text)
+        res = pipeline.answer(query_text, session_id=session_id)
         duration_ms = (time.perf_counter() - t0) * 1000.0
 
         run_results.append(res)
@@ -188,16 +240,23 @@ def main():
         expected_r = q.get("expected_route", "N/A")
         actual_r = res.get("route", "N/A")
         status_sym = "[OK]" if expected_r == actual_r else "[DIFF]"
+        level_val = q.get("difficulty_level", res.get("level", 1))
 
         if idx % 10 == 0 or idx == len(questions):
-            print(f"[{idx:3d}/{len(questions):3d}] {status_sym} Route: {actual_r:17s} ({duration_ms:6.1f}ms) | Q: {query_text[:40]}...")
+            print(f"[{idx:3d}/{len(questions):3d}] {status_sym} Lvl {level_val:2d} | Route: {actual_r:17s} ({duration_ms:6.1f}ms) | Q: {query_text[:35]}...")
 
         predictions.append({
             "q_id": q.get("q_id"),
+            "difficulty_level": level_val,
+            "session_id": session_id,
+            "turn_index": q.get("turn_index", 1),
             "query": query_text,
+            "rewritten_query": res.get("rewritten_query", query_text),
             "category": q.get("category"),
             "expected_route": expected_r,
             "actual_route": actual_r,
+            "actual_level": res.get("level", level_val),
+            "topic_switch_detected": res.get("topic_switch_detected", False),
             "answer": res.get("answer", ""),
             "golden_answer": q.get("golden_answer", ""),
             "citations_count": len(res.get("citations", [])),
@@ -213,16 +272,53 @@ def main():
     cache_metrics = evaluator.evaluate_cache_performance()
     quality_metrics = evaluator.evaluate_answer_quality(questions, run_results)
 
-    # Đánh giá OOD cho tập câu hỏi có nhãn ood
-    ood_subset = [q for q, r in zip(questions, run_results) if q.get("category") == "ood"]
-    ood_results = [r for q, r in zip(questions, run_results) if q.get("category") == "ood"]
-    ood_accuracy = (
-        sum(1 for r in ood_results if r.get("intent") == "ood" or "ngoài phạm vi" in r.get("answer", "").lower())
-        / len(ood_results)
-        if ood_results
+    # Đánh giá theo 10 Cấp Độ (Levels 1 - 10)
+    level_breakdown = {}
+    for p in predictions:
+        lvl = p.get("difficulty_level", 1)
+        if lvl not in level_breakdown:
+            level_breakdown[lvl] = {
+                "count": 0,
+                "correct_route": 0,
+                "latencies": [],
+            }
+        level_breakdown[lvl]["count"] += 1
+        if p["expected_route"] == p["actual_route"]:
+            level_breakdown[lvl]["correct_route"] += 1
+        level_breakdown[lvl]["latencies"].append(p["latency_ms"])
+
+    for lvl, d in level_breakdown.items():
+        d["accuracy"] = round(d["correct_route"] / d["count"], 4) if d["count"] > 0 else 0.0
+        d["mean_latency_ms"] = round(sum(d["latencies"]) / len(d["latencies"]), 1) if d["latencies"] else 0.0
+
+    # Đánh giá Khả Năng Lưu Trữ Bộ Nhớ (Multi-Turn Memory) & Topic Switch Prevention
+    multiturn_preds = [p for p in predictions if p.get("turn_index", 1) > 1]
+    # Chỉ tính các lượt Turn 3 thực sự diễn ra sự chuyển đổi chủ đề (Topic Switch) làm mẫu số
+    topic_switch_preds = [p for p in predictions if (p.get("difficulty_level") == 9 and p.get("turn_index") == 3) or (p.get("category") == "topic_switch_prevention" and p.get("turn_index") == 3)]
+
+    topic_switch_detected_count = sum(1 for p in topic_switch_preds if p.get("topic_switch_detected") is True)
+    topic_switch_accuracy = (
+        round(topic_switch_detected_count / len(topic_switch_preds), 4)
+        if topic_switch_preds
         else 1.0
     )
-    ood_metrics = {"ood_rejection_accuracy": round(ood_accuracy, 4), "ood_count": len(ood_subset)}
+
+    memory_metrics = {
+        "multiturn_total": len(multiturn_preds),
+        "topic_switch_tested": len(topic_switch_preds),
+        "topic_switch_detected": topic_switch_detected_count,
+        "topic_switch_detection_accuracy": topic_switch_accuracy,
+        "context_bleeding_prevention_rate": topic_switch_accuracy,
+    }
+
+    # Đánh giá OOD cho tập câu hỏi có nhãn ood / Level 10
+    ood_preds = [p for p in predictions if p.get("difficulty_level") == 10 or p.get("category") == "ood_rejection"]
+    ood_correct = sum(
+        1 for p in ood_preds
+        if p.get("actual_route") == "ood" or "ngoài phạm vi" in p.get("answer", "").lower()
+    )
+    ood_accuracy = round(ood_correct / len(ood_preds), 4) if ood_preds else 1.0
+    ood_metrics = {"ood_rejection_accuracy": ood_accuracy, "ood_count": len(ood_preds)}
 
     # Thống kê chi tiết theo từng danh mục
     category_breakdown = {}
@@ -251,6 +347,8 @@ def main():
         "cache_metrics": cache_metrics,
         "answer_quality_metrics": quality_metrics,
         "ood_metrics": ood_metrics,
+        "memory_metrics": memory_metrics,
+        "level_breakdown": level_breakdown,
         "category_breakdown": category_breakdown,
         "predictions": predictions,
     }

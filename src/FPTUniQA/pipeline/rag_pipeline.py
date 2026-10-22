@@ -9,7 +9,7 @@ from FPTUniQA.generation.guardrails import check_hallucination
 from FPTUniQA.generation.llm import LLMClient
 from FPTUniQA.generation.prompt import SYSTEM_PROMPT, build_prompt
 from FPTUniQA.query.normalizer import normalize_query
-from FPTUniQA.query.rewriting import rewrite_query
+from FPTUniQA.query.rewriting import detect_topic_switch, rewrite_query
 from FPTUniQA.query.semantic_parser import parse_query
 from FPTUniQA.query.router import route_query, execute_structured_lookup
 from FPTUniQA.pipeline.mock_retriever import retrieve
@@ -24,10 +24,18 @@ logger = get_logger("FPTUniQA.rag_pipeline")
 class SessionManager:
     """Quản lý trạng thái ngữ cảnh hội thoại in-memory theo session_id (Tuần 5)."""
 
-    def __init__(self):
+    def __init__(self, max_turns: int = 10, ttl_seconds: int = 3600):
         self._sessions: Dict[str, List[Dict[str, Any]]] = {}
+        self._timestamps: Dict[str, float] = {}
+        self.max_turns = max_turns
+        self.ttl_seconds = ttl_seconds
 
     def get_history(self, session_id: str) -> List[Dict[str, Any]]:
+        now = time.time()
+        if session_id in self._timestamps:
+            if now - self._timestamps[session_id] > self.ttl_seconds:
+                self.clear(session_id)
+                return []
         return self._sessions.get(session_id, [])
 
     def add_turn(
@@ -38,22 +46,41 @@ class SessionManager:
         answer: str,
         parsed_query: Optional[Dict[str, Any]] = None,
         route_chosen: Optional[str] = None,
+        turn_index: Optional[int] = None,
+        context_extracted: Optional[Dict[str, Any]] = None,
+        topic_switch_detected: bool = False,
     ) -> None:
         if session_id not in self._sessions:
             self._sessions[session_id] = []
+        
+        self._timestamps[session_id] = time.time()
+        computed_turn_index = turn_index if turn_index is not None else (len(self._sessions[session_id]) + 1)
+        slots = context_extracted if context_extracted is not None else (
+            parsed_query.get("slots", {}) if isinstance(parsed_query, dict) else {}
+        )
+
         self._sessions[session_id].append({
+            "turn_index": computed_turn_index,
             "query": query,
             "rewritten_query": rewritten_query,
             "answer": answer,
             "parsed_query": parsed_query,
             "route_chosen": route_chosen,
+            "context_extracted": slots,
+            "topic_switch_detected": topic_switch_detected,
         })
+
+        # Giới hạn số lượt tối đa (max_turns decay) để tránh phình bộ nhớ
+        if len(self._sessions[session_id]) > self.max_turns:
+            self._sessions[session_id] = self._sessions[session_id][-self.max_turns:]
 
     def clear(self, session_id: Optional[str] = None) -> None:
         if session_id:
             self._sessions.pop(session_id, None)
+            self._timestamps.pop(session_id, None)
         else:
             self._sessions.clear()
+            self._timestamps.clear()
 
 
 class RAGPipeline:
@@ -138,7 +165,7 @@ class RAGPipeline:
             logger.debug(f"Bước 2 - ParsedQuery: intent={parsed_query.intent}, slots={parsed_query.slots}")
 
             # Bước 3: Điều phối qua Router (TV3)
-            route_res = route_query(parsed_query)
+            route_res = route_query(parsed_query, history=history)
             route_chosen = str(route_res)
             clarification_msg = getattr(route_res, "clarification", None)
 
@@ -210,6 +237,15 @@ class RAGPipeline:
                     possible_hallucination = guardrail_res.get("is_hallucinated", False)
                     ungrounded_numbers = guardrail_res.get("ungrounded_entities", [])
 
+            # Phát hiện topic switch
+            topic_switch_info = detect_topic_switch(query, history=history) if history else {
+                "is_topic_switch": False,
+                "current_topic": "general_policy",
+                "previous_topic": None,
+                "confidence": 1.0,
+            }
+            topic_switch_detected = topic_switch_info.get("is_topic_switch", False)
+
             # Cập nhật lịch sử lượt thoại vào session_manager
             if session_id:
                 self.session_manager.add_turn(
@@ -219,6 +255,9 @@ class RAGPipeline:
                     answer=answer_text,
                     parsed_query=parsed_query.model_dump(),
                     route_chosen=route_chosen,
+                    turn_index=turn_index,
+                    context_extracted=parsed_query.slots,
+                    topic_switch_detected=topic_switch_detected,
                 )
 
             latency_ms = (time.time() - start_time) * 1000.0
@@ -239,6 +278,9 @@ class RAGPipeline:
                 "rewritten_query": rewritten_query,
                 "route": route_chosen,
                 "intent": intent_label,
+                "level": getattr(route_res, "level", 1),
+                "topic_switch_detected": topic_switch_detected,
+                "topic_switch_info": topic_switch_info,
                 "parsed_query": parsed_query.model_dump(),
                 "session_id": session_id,
                 "turn_index": turn_index,

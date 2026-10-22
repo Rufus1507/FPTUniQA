@@ -1,0 +1,3229 @@
+{
+  "data_source": "FPT University Official Academic Curriculum & Regulations",
+  "version": "1.0.0",
+  "updated_at": "2026-10-22T15:45:00Z",
+  "note": "Curriculum Knowledge Base cho từng ngành đào tạo: CNTT (KTPM, AI, ATTT, CS, IS), QTKD, Marketing, Thiết kế Mỹ thuật số, Ngôn ngữ Anh/Nhật/Hàn và các môn chung.",
+  "programs": [
+    {
+      "program_name": "Kỹ thuật phần mềm",
+      "aliases": [
+        "KTPM",
+        "SE",
+        "Software Engineering"
+      ],
+      "total_credits": 145
+    },
+    {
+      "program_name": "Trí tuệ nhân tạo",
+      "aliases": [
+        "AI",
+        "Artificial Intelligence"
+      ],
+      "total_credits": 135
+    },
+    {
+      "program_name": "An toàn thông tin",
+      "aliases": [
+        "ATTT",
+        "IA",
+        "Information Assurance"
+      ],
+      "total_credits": 132
+    },
+    {
+      "program_name": "Khoa học máy tính",
+      "aliases": [
+        "CS",
+        "Computer Science"
+      ],
+      "total_credits": 132
+    },
+    {
+      "program_name": "Hệ thống thông tin",
+      "aliases": [
+        "IS",
+        "Information Systems"
+      ],
+      "total_credits": 132
+    },
+    {
+      "program_name": "Quản trị kinh doanh",
+      "aliases": [
+        "QTKD",
+        "BA",
+        "Business Administration"
+      ],
+      "total_credits": 130
+    },
+    {
+      "program_name": "Digital Marketing",
+      "aliases": [
+        "MKT",
+        "Marketing"
+      ],
+      "total_credits": 130
+    },
+    {
+      "program_name": "Thiết kế Mỹ thuật số",
+      "aliases": [
+        "TKĐH",
+        "GD",
+        "Graphic Design"
+      ],
+      "total_credits": 130
+    },
+    {
+      "program_name": "Ngôn ngữ Anh",
+      "aliases": [
+        "NNA",
+        "English Language"
+      ],
+      "total_credits": 130
+    },
+    {
+      "program_name": "Ngôn ngữ Nhật",
+      "aliases": [
+        "NNN",
+        "Japanese Language"
+      ],
+      "total_credits": 130
+    },
+    {
+      "program_name": "Ngôn ngữ Hàn",
+      "aliases": [
+        "NNH",
+        "Korean Language"
+      ],
+      "total_credits": 130
+    }
+  ],
+  "provenance_summary": {
+    "corpus_verified": 5,
+    "user_specified": 55,
+    "synthetic": 0
+  },
+  "courses": [
+    {
+      "course_code": "PRF192",
+      "course_name": "C Programming Fundamentals",
+      "vietnamese_name": "Cơ sở lập trình C",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Cơ bản về biến, kiểu dữ liệu, toán tử trong C",
+        "Cấu trúc rẽ nhánh (if-else, switch-case) và vòng lặp (for, while, do-while)",
+        "Hàm (Functions), truyền tham số theo giá trị và tham chiếu, phạm vi biến",
+        "Mảng một chiều, mảng hai chiều và xử lý chuỗi ký tự (String)",
+        "Con trỏ (Pointers), cấp phát bộ nhớ động (malloc, calloc, free)",
+        "Kiểu dữ liệu có cấu trúc (struct, union, enum)",
+        "Thao tác vào ra tệp tin (File I/O: fopen, fread, fwrite, fclose)"
+      ],
+      "syllabus": [
+        "Cơ bản về biến, kiểu dữ liệu, toán tử trong C",
+        "Cấu trúc rẽ nhánh (if-else, switch-case) và vòng lặp (for, while, do-while)",
+        "Hàm (Functions), truyền tham số theo giá trị và tham chiếu, phạm vi biến",
+        "Mảng một chiều, mảng hai chiều và xử lý chuỗi ký tự (String)",
+        "Con trỏ (Pointers), cấp phát bộ nhớ động (malloc, calloc, free)",
+        "Kiểu dữ liệu có cấu trúc (struct, union, enum)",
+        "Thao tác vào ra tệp tin (File I/O: fopen, fread, fwrite, fclose)"
+      ],
+      "textbook": {
+        "main": "The C Programming Language (2nd Edition)",
+        "author": "Brian W. Kernighan, Dennis M. Ritchie",
+        "publisher": "Prentice Hall",
+        "references": [
+          "C How to Program (Paul Deitel, Harvey Deitel)",
+          "C Programming: A Modern Approach (K. N. King)"
+        ]
+      }
+    },
+    {
+      "course_code": "MAE101",
+      "course_name": "Mathematics for Engineering",
+      "vietnamese_name": "Toán cho kỹ thuật",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Giới hạn hàm số, tính liên tục và đạo hàm",
+        "Tích phân bất định và tích phân xác định, ứng dụng hình học và vật lý",
+        "Chuỗi số và chuỗi hàm (chuỗi Taylor, Maclaurin)",
+        "Hàm nhiều biến, đạo hàm riêng và cực trị hàm nhiều biến",
+        "Tích phân kép và tích phân ba",
+        "Phương trình vi phân cấp 1 và cấp 2"
+      ],
+      "syllabus": [
+        "Giới hạn hàm số, tính liên tục và đạo hàm",
+        "Tích phân bất định và tích phân xác định, ứng dụng hình học và vật lý",
+        "Chuỗi số và chuỗi hàm (chuỗi Taylor, Maclaurin)",
+        "Hàm nhiều biến, đạo hàm riêng và cực trị hàm nhiều biến",
+        "Tích phân kép và tích phân ba",
+        "Phương trình vi phân cấp 1 và cấp 2"
+      ],
+      "textbook": {
+        "main": "Calculus: Early Transcendentals (8th Edition)",
+        "author": "James Stewart",
+        "publisher": "Cengage Learning",
+        "references": [
+          "Thomas' Calculus (George B. Thomas, Maurice D. Weir)"
+        ]
+      }
+    },
+    {
+      "course_code": "CSI104",
+      "course_name": "Introduction to Computer Science",
+      "vietnamese_name": "Nhập môn Khoa học Máy tính",
+      "program": "Khoa học máy tính",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Lịch sử phát triển và cấu trúc hệ thống máy tính",
+        "Hệ thống số nhị phân, biểu diễn dữ liệu và đại số Boole",
+        "Kiến trúc phần cứng cơ bản: CPU, bộ nhớ, bus, thiết bị ngoại vi",
+        "Khái niệm hệ điều hành và mạng máy tính",
+        "Giải thuật cơ bản và ngôn ngữ lập trình",
+        "Đạo đức nghề nghiệp và an toàn thông tin"
+      ],
+      "syllabus": [
+        "Lịch sử phát triển và cấu trúc hệ thống máy tính",
+        "Hệ thống số nhị phân, biểu diễn dữ liệu và đại số Boole",
+        "Kiến trúc phần cứng cơ bản: CPU, bộ nhớ, bus, thiết bị ngoại vi",
+        "Khái niệm hệ điều hành và mạng máy tính",
+        "Giải thuật cơ bản và ngôn ngữ lập trình",
+        "Đạo đức nghề nghiệp và an toàn thông tin"
+      ],
+      "textbook": {
+        "main": "Computer Science: An Overview (13th Edition)",
+        "author": "J. Glenn Brookshear, Dennis Brylow",
+        "publisher": "Pearson",
+        "references": [
+          "Foundations of Computer Science (Behrouz Forouzan)"
+        ]
+      }
+    },
+    {
+      "course_code": "PRO192",
+      "course_name": "Object-Oriented Programming with Java",
+      "vietnamese_name": "Lập trình hướng đối tượng với Java",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 2,
+      "prerequisites": [
+        "PRF192"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Khái niệm lập trình hướng đối tượng (OOP) và nền tảng ngôn ngữ Java",
+        "Lớp (Class), đối tượng (Object), thuộc tính, phương thức và hàm khởi tạo (Constructor)",
+        "4 tính chất OOP: Đóng gói (Encapsulation), Kế thừa (Inheritance), Đa hình (Polymorphism), Trừu tượng (Abstraction)",
+        "Interface và Abstract Class trong Java",
+        "Xử lý ngoại lệ (Exception Handling: try-catch-finally, custom exceptions)",
+        "Java Collections Framework (List, ArrayList, Set, Map, HashMap)",
+        "Đọc/ghi tệp tin và luồng I/O (File, Scanner, BufferedReader, ObjectOutputStream)"
+      ],
+      "syllabus": [
+        "Khái niệm lập trình hướng đối tượng (OOP) và nền tảng ngôn ngữ Java",
+        "Lớp (Class), đối tượng (Object), thuộc tính, phương thức và hàm khởi tạo (Constructor)",
+        "4 tính chất OOP: Đóng gói (Encapsulation), Kế thừa (Inheritance), Đa hình (Polymorphism), Trừu tượng (Abstraction)",
+        "Interface và Abstract Class trong Java",
+        "Xử lý ngoại lệ (Exception Handling: try-catch-finally, custom exceptions)",
+        "Java Collections Framework (List, ArrayList, Set, Map, HashMap)",
+        "Đọc/ghi tệp tin và luồng I/O (File, Scanner, BufferedReader, ObjectOutputStream)"
+      ],
+      "textbook": {
+        "main": "Core Java Volume I - Fundamentals (11th/12th Edition)",
+        "author": "Cay S. Horstmann",
+        "publisher": "Prentice Hall / Pearson",
+        "references": [
+          "Java How to Program (Paul Deitel, Harvey Deitel)",
+          "Effective Java (Joshua Bloch)"
+        ]
+      }
+    },
+    {
+      "course_code": "MAD101",
+      "course_name": "Discrete Mathematics",
+      "vietnamese_name": "Toán rời rạc",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 2,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Logic mệnh đề và logic vị từ",
+        "Tập hợp, ánh xạ, hàm và quan hệ tương đương/thứ tự",
+        "Thuật toán và độ phức tạp tính toán (Big-O)",
+        "Quy nạp toán học và phương pháp đệ quy",
+        "Lý thuyết đồ thị: đồ thị có hướng, vô hướng, đường đi Euler, Hamilton",
+        "Cây và ứng dụng (Tree traversal, Spanning Tree)"
+      ],
+      "syllabus": [
+        "Logic mệnh đề và logic vị từ",
+        "Tập hợp, ánh xạ, hàm và quan hệ tương đương/thứ tự",
+        "Thuật toán và độ phức tạp tính toán (Big-O)",
+        "Quy nạp toán học và phương pháp đệ quy",
+        "Lý thuyết đồ thị: đồ thị có hướng, vô hướng, đường đi Euler, Hamilton",
+        "Cây và ứng dụng (Tree traversal, Spanning Tree)"
+      ],
+      "textbook": {
+        "main": "Discrete Mathematics and Its Applications (8th Edition)",
+        "author": "Kenneth H. Rosen",
+        "publisher": "McGraw-Hill",
+        "references": [
+          "Discrete Mathematical Structures (Kolman, Busby, Ross)"
+        ]
+      }
+    },
+    {
+      "course_code": "CEA201",
+      "course_name": "Computer Organization and Architecture",
+      "vietnamese_name": "Kiến trúc và tổ chức máy tính",
+      "program": "Khoa học máy tính",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 2,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Biểu diễn số học và logic trong máy tính",
+        "Tập lệnh kiến trúc MIPS (MIPS Instruction Set Architecture)",
+        "Tổ chức CPU, Datapath và Control Unit đơn chu kỳ",
+        "Kỹ thuật đường ống (Pipelining) và xử lý xung đột Hazard",
+        "Hệ thống phân cấp bộ nhớ: Cache, RAM, Virtual Memory",
+        "Hệ thống vào/ra và Bus"
+      ],
+      "syllabus": [
+        "Biểu diễn số học và logic trong máy tính",
+        "Tập lệnh kiến trúc MIPS (MIPS Instruction Set Architecture)",
+        "Tổ chức CPU, Datapath và Control Unit đơn chu kỳ",
+        "Kỹ thuật đường ống (Pipelining) và xử lý xung đột Hazard",
+        "Hệ thống phân cấp bộ nhớ: Cache, RAM, Virtual Memory",
+        "Hệ thống vào/ra và Bus"
+      ],
+      "textbook": {
+        "main": "Computer Organization and Design: The Hardware/Software Interface",
+        "author": "David A. Patterson, John L. Hennessy",
+        "publisher": "Morgan Kaufmann",
+        "references": [
+          "Computer Systems: A Programmer's Perspective (Bryant & O'Hallaron)"
+        ]
+      }
+    },
+    {
+      "course_code": "CSD201",
+      "course_name": "Data Structures and Algorithms",
+      "vietnamese_name": "Cấu trúc dữ liệu và giải thuật",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 3,
+      "prerequisites": [
+        "PRO192"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Phân tích độ phức tạp thời gian và không gian của thuật toán",
+        "Danh sách liên kết (Singly, Doubly, Circular Linked List)",
+        "Ngăn xếp (Stack) và Hàng đợi (Queue): cài đặt và ứng dụng",
+        "Đệ quy và quay lui (Recursion, Backtracking)",
+        "Cây nhị phân tìm kiếm (BST), Cây cân bằng AVL",
+        "Các thuật toán sắp xếp (Bubble, Insertion, MergeSort, QuickSort, HeapSort)",
+        "Lý thuyết đồ thị: duyệt BFS, DFS, thuật toán Dijkstra tìm đường đi ngắn nhất, MST Prim/Kruskal"
+      ],
+      "syllabus": [
+        "Phân tích độ phức tạp thời gian và không gian của thuật toán",
+        "Danh sách liên kết (Singly, Doubly, Circular Linked List)",
+        "Ngăn xếp (Stack) và Hàng đợi (Queue): cài đặt và ứng dụng",
+        "Đệ quy và quay lui (Recursion, Backtracking)",
+        "Cây nhị phân tìm kiếm (BST), Cây cân bằng AVL",
+        "Các thuật toán sắp xếp (Bubble, Insertion, MergeSort, QuickSort, HeapSort)",
+        "Lý thuyết đồ thị: duyệt BFS, DFS, thuật toán Dijkstra tìm đường đi ngắn nhất, MST Prim/Kruskal"
+      ],
+      "textbook": {
+        "main": "Data Structures and Algorithm Analysis in Java (3rd Edition)",
+        "author": "Mark Allen Weiss",
+        "publisher": "Pearson",
+        "references": [
+          "Algorithms (Robert Sedgewick, Kevin Wayne)",
+          "Introduction to Algorithms (CLRS)"
+        ]
+      }
+    },
+    {
+      "course_code": "DBI202",
+      "course_name": "Introduction to Databases",
+      "vietnamese_name": "Cơ sở dữ liệu",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 3,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Mô hình dữ liệu quan hệ và lược đồ cơ sở dữ liệu",
+        "Mô hình thực thể kết hợp (ERD) và chuyển đổi sang lược đồ quan hệ",
+        "Đại số quan hệ (Relational Algebra)",
+        "Ngôn ngữ truy vấn SQL: DDL (CREATE, ALTER, DROP) và DML (SELECT, INSERT, UPDATE, DELETE)",
+        "Truy vấn nâng cao: Subquery, JOIN, Group By, Having, Aggregate functions",
+        "Lý thuyết chuẩn hóa dữ liệu: Phụ thuộc hàm, dạng chuẩn 1NF, 2NF, 3NF, BCNF",
+        "Giao dịch (Transactions), tính chất ACID và khóa (Locking)"
+      ],
+      "syllabus": [
+        "Mô hình dữ liệu quan hệ và lược đồ cơ sở dữ liệu",
+        "Mô hình thực thể kết hợp (ERD) và chuyển đổi sang lược đồ quan hệ",
+        "Đại số quan hệ (Relational Algebra)",
+        "Ngôn ngữ truy vấn SQL: DDL (CREATE, ALTER, DROP) và DML (SELECT, INSERT, UPDATE, DELETE)",
+        "Truy vấn nâng cao: Subquery, JOIN, Group By, Having, Aggregate functions",
+        "Lý thuyết chuẩn hóa dữ liệu: Phụ thuộc hàm, dạng chuẩn 1NF, 2NF, 3NF, BCNF",
+        "Giao dịch (Transactions), tính chất ACID và khóa (Locking)"
+      ],
+      "textbook": {
+        "main": "Database System Concepts (7th Edition)",
+        "author": "Abraham Silberschatz, Henry F. Korth, S. Sudarshan",
+        "publisher": "McGraw-Hill",
+        "references": [
+          "Fundamentals of Database Systems (Ramez Elmasri, Shamkant B. Navathe)"
+        ]
+      }
+    },
+    {
+      "course_code": "MAS291",
+      "course_name": "Statistics and Probability",
+      "vietnamese_name": "Xác suất thống kê",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 3,
+      "prerequisites": [
+        "MAE101"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Xác suất cơ bản, định lý Bayes và biến ngẫu nhiên",
+        "Các phân phối xác suất rời rạc và liên tục (Nhị thức, Poisson, Chuẩn)",
+        "Mẫu ngẫu nhiên và định lý giới hạn trung tâm",
+        "Ước lượng tham số: khoảng tin cậy",
+        "Kiểm định giả thuyết thống kê (t-test, z-test, chi-square)",
+        "Phân tích hồi quy tuyến tính đơn và tương quan"
+      ],
+      "syllabus": [
+        "Xác suất cơ bản, định lý Bayes và biến ngẫu nhiên",
+        "Các phân phối xác suất rời rạc và liên tục (Nhị thức, Poisson, Chuẩn)",
+        "Mẫu ngẫu nhiên và định lý giới hạn trung tâm",
+        "Ước lượng tham số: khoảng tin cậy",
+        "Kiểm định giả thuyết thống kê (t-test, z-test, chi-square)",
+        "Phân tích hồi quy tuyến tính đơn và tương quan"
+      ],
+      "textbook": {
+        "main": "Applied Statistics and Probability for Engineers (7th Edition)",
+        "author": "Douglas C. Montgomery, George C. Runger",
+        "publisher": "Wiley",
+        "references": [
+          "Probability and Statistics for Engineers and Scientists (Walpole)"
+        ]
+      }
+    },
+    {
+      "course_code": "OSG202",
+      "course_name": "Operating Systems",
+      "vietnamese_name": "Hệ điều hành",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 3,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Tổng quan kiến trúc và chức năng của hệ điều hành",
+        "Quản lý tiến trình (Process) và luồng (Thread)",
+        "Điều độ CPU (CPU Scheduling: FCFS, SJF, Round Robin, Priority)",
+        "Đồng bộ hóa tiến trình (Process Synchronization, Semaphore, Mutex, Deadlock)",
+        "Quản lý bộ nhớ: Phân đoạn (Segmentation), Phân trang (Paging), Bộ nhớ ảo (Virtual Memory)",
+        "Hệ thống tệp (File System) và quản lý I/O"
+      ],
+      "syllabus": [
+        "Tổng quan kiến trúc và chức năng của hệ điều hành",
+        "Quản lý tiến trình (Process) và luồng (Thread)",
+        "Điều độ CPU (CPU Scheduling: FCFS, SJF, Round Robin, Priority)",
+        "Đồng bộ hóa tiến trình (Process Synchronization, Semaphore, Mutex, Deadlock)",
+        "Quản lý bộ nhớ: Phân đoạn (Segmentation), Phân trang (Paging), Bộ nhớ ảo (Virtual Memory)",
+        "Hệ thống tệp (File System) và quản lý I/O"
+      ],
+      "textbook": {
+        "main": "Operating System Concepts (10th Edition)",
+        "author": "Abraham Silberschatz, Peter B. Galvin, Greg Gagne",
+        "publisher": "Wiley",
+        "references": [
+          "Modern Operating Systems (Andrew S. Tanenbaum, Herbert Bos)"
+        ]
+      }
+    },
+    {
+      "course_code": "NWC203c",
+      "course_name": "Computer Networking",
+      "vietnamese_name": "Mạng máy tính",
+      "program": "An toàn thông tin",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 3,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Kiến trúc mạng Internet, mô hình OSI 7 tầng và mô hình TCP/IP 4 tầng",
+        "Tầng ứng dụng: HTTP, DNS, FTP, SMTP",
+        "Tầng giao vận: TCP (bắt tay 3 bước, kiểm soát luồng, kiểm soát tắc nghẽn), UDP",
+        "Tầng mạng: Địa chỉ IP (IPv4, IPv6), định tuyến (Routing algorithms, OSPF, BGP), NAT",
+        "Tầng liên kết dữ liệu và mạng cục bộ: Ethernet, MAC, switch, ARP",
+        "Khái niệm bảo mật mạng cơ bản"
+      ],
+      "syllabus": [
+        "Kiến trúc mạng Internet, mô hình OSI 7 tầng và mô hình TCP/IP 4 tầng",
+        "Tầng ứng dụng: HTTP, DNS, FTP, SMTP",
+        "Tầng giao vận: TCP (bắt tay 3 bước, kiểm soát luồng, kiểm soát tắc nghẽn), UDP",
+        "Tầng mạng: Địa chỉ IP (IPv4, IPv6), định tuyến (Routing algorithms, OSPF, BGP), NAT",
+        "Tầng liên kết dữ liệu và mạng cục bộ: Ethernet, MAC, switch, ARP",
+        "Khái niệm bảo mật mạng cơ bản"
+      ],
+      "textbook": {
+        "main": "Computer Networking: A Top-Down Approach (8th Edition)",
+        "author": "James F. Kurose, Keith W. Ross",
+        "publisher": "Pearson",
+        "references": [
+          "Data and Computer Communications (William Stallings)"
+        ]
+      }
+    },
+    {
+      "course_code": "JPD113",
+      "course_name": "Elementary Japanese 1-A1",
+      "vietnamese_name": "Tiếng Nhật sơ cấp 1 cho ngành CNTT",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính"
+      ],
+      "category": "language",
+      "credits": 3,
+      "semester": 3,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Bảng chữ cái Hiragana, Katakana và quy tắc phát âm",
+        "Mẫu câu chào hỏi, giới thiệu bản thân và thông tin cá nhân",
+        "Chữ Hán cơ bản (Kanji N5: số đếm, ngày tháng, đồ vật)",
+        "Ngữ pháp khẳng định, phủ định, câu hỏi nghi vấn với trợ từ",
+        "Từ vựng chuyên ngành công nghệ thông tin sơ cấp"
+      ],
+      "syllabus": [
+        "Bảng chữ cái Hiragana, Katakana và quy tắc phát âm",
+        "Mẫu câu chào hỏi, giới thiệu bản thân và thông tin cá nhân",
+        "Chữ Hán cơ bản (Kanji N5: số đếm, ngày tháng, đồ vật)",
+        "Ngữ pháp khẳng định, phủ định, câu hỏi nghi vấn với trợ từ",
+        "Từ vựng chuyên ngành công nghệ thông tin sơ cấp"
+      ],
+      "textbook": {
+        "main": "Minna no Nihongo Shokyu 1 (Sách giáo trình tiếng Nhật)",
+        "author": "3A Corporation",
+        "publisher": "3A Corporation Japan",
+        "references": [
+          "Basic Kanji Book Vol. 1",
+          "Tài liệu tiếng Nhật CNTT ĐH FPT"
+        ]
+      }
+    },
+    {
+      "course_code": "SWE201c",
+      "course_name": "Introduction to Software Engineering",
+      "vietnamese_name": "Nhập môn Kỹ nghệ phần mềm",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 4,
+      "prerequisites": [
+        "PRO192"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Quy trình phát triển phần mềm (SDLC: Waterfall, V-model, Agile, Scrum)",
+        "Kỹ nghệ yêu cầu phần mềm: thu thập, phân tích, đặc tả SRS",
+        "Mô hình hóa phần mềm với UML (Use Case, Class, Sequence Diagram)",
+        "Thiết kế kiến trúc và mô đun phần mềm",
+        "Kiểm thử phần mềm và đảm bảo chất lượng (QA/QC)",
+        "Quản lý dự án phần mềm và kiểm soát phiên bản (Git)"
+      ],
+      "syllabus": [
+        "Quy trình phát triển phần mềm (SDLC: Waterfall, V-model, Agile, Scrum)",
+        "Kỹ nghệ yêu cầu phần mềm: thu thập, phân tích, đặc tả SRS",
+        "Mô hình hóa phần mềm với UML (Use Case, Class, Sequence Diagram)",
+        "Thiết kế kiến trúc và mô đun phần mềm",
+        "Kiểm thử phần mềm và đảm bảo chất lượng (QA/QC)",
+        "Quản lý dự án phần mềm và kiểm soát phiên bản (Git)"
+      ],
+      "textbook": {
+        "main": "Software Engineering (10th Edition)",
+        "author": "Ian Sommerville",
+        "publisher": "Pearson",
+        "references": [
+          "Software Engineering: A Practitioner's Approach (Roger S. Pressman)"
+        ]
+      }
+    },
+    {
+      "course_code": "PRJ301",
+      "course_name": "Java Web Application Development",
+      "vietnamese_name": "Lập trình Web với Java",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Hệ thống thông tin"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 4,
+      "prerequisites": [
+        "PRO192",
+        "DBI202"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Kiến trúc Web và giao thức HTTP (Request, Response, Headers, Methods)",
+        "Java Servlet: vòng đời, xử lý GET/POST, Session, Cookie, Filter",
+        "JavaServer Pages (JSP), Expression Language (EL), JSTL taglib",
+        "Mô hình MVC (Model-View-Controller) trong ứng dụng web Java",
+        "Kết nối cơ sở dữ liệu qua JDBC và kiến trúc DAO (Data Access Object)",
+        "Xác thực và phân quyền người dùng (Authentication & Authorization)"
+      ],
+      "syllabus": [
+        "Kiến trúc Web và giao thức HTTP (Request, Response, Headers, Methods)",
+        "Java Servlet: vòng đời, xử lý GET/POST, Session, Cookie, Filter",
+        "JavaServer Pages (JSP), Expression Language (EL), JSTL taglib",
+        "Mô hình MVC (Model-View-Controller) trong ứng dụng web Java",
+        "Kết nối cơ sở dữ liệu qua JDBC và kiến trúc DAO (Data Access Object)",
+        "Xác thực và phân quyền người dùng (Authentication & Authorization)"
+      ],
+      "textbook": {
+        "main": "Murach's Java Servlets and JSP (3rd Edition)",
+        "author": "Joel Murach, Michael Urban",
+        "publisher": "Mike Murach & Associates",
+        "references": [
+          "Head First Servlets and JSP (Bryan Basham, Kathy Sierra, Bert Bates)"
+        ]
+      }
+    },
+    {
+      "course_code": "PRN211",
+      "course_name": "Basic Cross-Platform Application Programming With .NET",
+      "vietnamese_name": "Lập trình ứng dụng đa nền tảng với .NET",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "PRO192"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Nền tảng .NET Core và ngôn ngữ lập trình C#",
+        "Lập trình hướng đối tượng nâng cao trong C#: Properties, Indexers, Delegates, Events",
+        "Ngôn ngữ truy vấn tích hợp LINQ (LINQ to Objects, LINQ to Entities)",
+        "Truy xuất cơ sở dữ liệu với Entity Framework Core (Code First, DB First)",
+        "Xây dựng ứng dụng giao diện WPF / Windows Forms hoặc ứng dụng đa nền tảng .NET MAUI",
+        "Lập trình bất đồng bộ (async/await) và đa luồng"
+      ],
+      "syllabus": [
+        "Nền tảng .NET Core và ngôn ngữ lập trình C#",
+        "Lập trình hướng đối tượng nâng cao trong C#: Properties, Indexers, Delegates, Events",
+        "Ngôn ngữ truy vấn tích hợp LINQ (LINQ to Objects, LINQ to Entities)",
+        "Truy xuất cơ sở dữ liệu với Entity Framework Core (Code First, DB First)",
+        "Xây dựng ứng dụng giao diện WPF / Windows Forms hoặc ứng dụng đa nền tảng .NET MAUI",
+        "Lập trình bất đồng bộ (async/await) và đa luồng"
+      ],
+      "textbook": {
+        "main": "Pro C# 10 with .NET 6: Foundational Principles and Practices in Programming",
+        "author": "Andrew Troelsen, Philip Japikse",
+        "publisher": "Apress",
+        "references": [
+          "C# in Depth (Jon Skeet)"
+        ]
+      }
+    },
+    {
+      "course_code": "SWP391",
+      "course_name": "Application Development Project",
+      "vietnamese_name": "Dự án phát triển ứng dụng phần mềm",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm"
+      ],
+      "category": "project",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "SWE201c",
+        "PRJ301"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Thực hiện dự án phần mềm theo nhóm (4-6 thành viên) áp dụng quy trình Scrum/Agile",
+        "Lập kế hoạch Sprint, Product Backlog, Sprint Backlog và họp Daily Standup",
+        "Thu thập yêu cầu thực tế, thiết kế kiến trúc hệ thống và cơ sở dữ liệu",
+        "Lập trình frontend và backend theo chuẩn công nghiệp",
+        "Kiểm thử đơn vị (Unit Test), kiểm thử tích hợp và kiểm thử hệ thống",
+        "Triển khai phần mềm và báo cáo tiến độ với hội đồng mentor"
+      ],
+      "syllabus": [
+        "Thực hiện dự án phần mềm theo nhóm (4-6 thành viên) áp dụng quy trình Scrum/Agile",
+        "Lập kế hoạch Sprint, Product Backlog, Sprint Backlog và họp Daily Standup",
+        "Thu thập yêu cầu thực tế, thiết kế kiến trúc hệ thống và cơ sở dữ liệu",
+        "Lập trình frontend và backend theo chuẩn công nghiệp",
+        "Kiểm thử đơn vị (Unit Test), kiểm thử tích hợp và kiểm thử hệ thống",
+        "Triển khai phần mềm và báo cáo tiến độ với hội đồng mentor"
+      ],
+      "textbook": {
+        "main": "Essential Scrum: A Practical Guide to the Most Popular Agile Process",
+        "author": "Kenneth S. Rubin",
+        "publisher": "Addison-Wesley",
+        "references": [
+          "Scrum Guide (Ken Schwaber & Jeff Sutherland)",
+          "Tài liệu hướng dẫn đồ án SWP ĐH FPT"
+        ]
+      }
+    },
+    {
+      "course_code": "SWT301",
+      "course_name": "Software Testing",
+      "vietnamese_name": "Kiểm thử phần mềm",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "CSD201"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Khái niệm cơ bản về kiểm thử phần mềm, chi phí lỗi và nguyên lý kiểm thử",
+        "Quy trình kiểm thử (STLC: Test Planning, Test Design, Execution, Defect Reporting)",
+        "Kiểm thử hộp đen (Black-box testing: Phân vùng tương đương, Phân tích giá trị biên, Bảng quyết định)",
+        "Kiểm thử hộp trắng (White-box testing: Statement coverage, Branch coverage, Path coverage)",
+        "Kiểm thử tự động (Automation Testing) cơ bản với Selenium / JUnit",
+        "Quản lý lỗi và sử dụng công cụ Jira, Bugzilla"
+      ],
+      "syllabus": [
+        "Khái niệm cơ bản về kiểm thử phần mềm, chi phí lỗi và nguyên lý kiểm thử",
+        "Quy trình kiểm thử (STLC: Test Planning, Test Design, Execution, Defect Reporting)",
+        "Kiểm thử hộp đen (Black-box testing: Phân vùng tương đương, Phân tích giá trị biên, Bảng quyết định)",
+        "Kiểm thử hộp trắng (White-box testing: Statement coverage, Branch coverage, Path coverage)",
+        "Kiểm thử tự động (Automation Testing) cơ bản với Selenium / JUnit",
+        "Quản lý lỗi và sử dụng công cụ Jira, Bugzilla"
+      ],
+      "textbook": {
+        "main": "Foundations of Software Testing: ISTQB Certification",
+        "author": "Rex Black, Erik van Veenendaal, Dorothy Graham",
+        "publisher": "Cengage Learning",
+        "references": [
+          "Software Testing Techniques (Boris Beizer)"
+        ]
+      }
+    },
+    {
+      "course_code": "SWR302",
+      "course_name": "Software Requirement Engineering",
+      "vietnamese_name": "Kỹ nghệ yêu cầu phần mềm",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "SWE201c"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Quy trình kỹ nghệ yêu cầu phần mềm (Requirements Engineering Process)",
+        "Kỹ thuật thu thập yêu cầu từ khách hàng (phỏng vấn, khảo sát, workshop)",
+        "Phân tích và mô hình hóa yêu cầu: Use Cases, User Stories, BPMN",
+        "Viết tài liệu đặc tả yêu cầu phần mềm chuẩn IEEE 830 (SRS)",
+        "Thẩm định, kiểm tra và quản lý sự thay đổi yêu cầu"
+      ],
+      "syllabus": [
+        "Quy trình kỹ nghệ yêu cầu phần mềm (Requirements Engineering Process)",
+        "Kỹ thuật thu thập yêu cầu từ khách hàng (phỏng vấn, khảo sát, workshop)",
+        "Phân tích và mô hình hóa yêu cầu: Use Cases, User Stories, BPMN",
+        "Viết tài liệu đặc tả yêu cầu phần mềm chuẩn IEEE 830 (SRS)",
+        "Thẩm định, kiểm tra và quản lý sự thay đổi yêu cầu"
+      ],
+      "textbook": {
+        "main": "Software Requirements (3rd Edition)",
+        "author": "Karl Wiegers, Joy Beatty",
+        "publisher": "Microsoft Press",
+        "references": [
+          "Requirements Engineering: Fundamentals, Principles, and Techniques (Klaus Pohl)"
+        ]
+      }
+    },
+    {
+      "course_code": "SWD392",
+      "course_name": "Software Architecture and Design",
+      "vietnamese_name": "Kiến trúc và thiết kế phần mềm",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 6,
+      "prerequisites": [
+        "SWP391"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Nguyên lý thiết kế hướng đối tượng nâng cao (SOLID principles)",
+        "Mẫu thiết kế phần mềm (GoF Design Patterns: Creational, Structural, Behavioral)",
+        "Kiến trúc phần mềm cấp cao (Layered Architecture, MVC, Microservices, Event-driven)",
+        "Mô hình hóa kiến trúc bằng sơ đồ UML và mô hình 4+1 View",
+        "Đánh giá kiến trúc phần mềm dựa trên các thuộc tính chất lượng (Security, Scalability, Modifiability)"
+      ],
+      "syllabus": [
+        "Nguyên lý thiết kế hướng đối tượng nâng cao (SOLID principles)",
+        "Mẫu thiết kế phần mềm (GoF Design Patterns: Creational, Structural, Behavioral)",
+        "Kiến trúc phần mềm cấp cao (Layered Architecture, MVC, Microservices, Event-driven)",
+        "Mô hình hóa kiến trúc bằng sơ đồ UML và mô hình 4+1 View",
+        "Đánh giá kiến trúc phần mềm dựa trên các thuộc tính chất lượng (Security, Scalability, Modifiability)"
+      ],
+      "textbook": {
+        "main": "Software Architecture in Practice (4th Edition)",
+        "author": "Len Bass, Paul Clements, Rick Kazman",
+        "publisher": "Addison-Wesley",
+        "references": [
+          "Design Patterns: Elements of Reusable Object-Oriented Software (GoF)"
+        ]
+      }
+    },
+    {
+      "course_code": "SEP490",
+      "course_name": "Software Engineering Capstone Project",
+      "vietnamese_name": "Khóa luận tốt nghiệp Kỹ thuật phần mềm",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm"
+      ],
+      "category": "project",
+      "credits": 10,
+      "semester": 9,
+      "prerequisites": [
+        "SWP391",
+        "SWD392"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": false
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Đồ án tốt nghiệp chuyên ngành Kỹ thuật phần mềm (nhóm sinh viên 4-5 người)",
+        "Nghiên cứu thị trường, xác định đề tài và viết đề cương đồ án tốt nghiệp",
+        "Phân tích yêu cầu, thiết kế kiến trúc toàn diện và phát triển sản phẩm hoàn chỉnh",
+        "Kiểm thử toàn diện, đóng gói và triển khai ứng dụng lên môi trường thực tế (Cloud/Server)",
+        "Bảo vệ đồ án tốt nghiệp trước Hội đồng giám khảo chấm tốt nghiệp ĐH FPT"
+      ],
+      "syllabus": [
+        "Đồ án tốt nghiệp chuyên ngành Kỹ thuật phần mềm (nhóm sinh viên 4-5 người)",
+        "Nghiên cứu thị trường, xác định đề tài và viết đề cương đồ án tốt nghiệp",
+        "Phân tích yêu cầu, thiết kế kiến trúc toàn diện và phát triển sản phẩm hoàn chỉnh",
+        "Kiểm thử toàn diện, đóng gói và triển khai ứng dụng lên môi trường thực tế (Cloud/Server)",
+        "Bảo vệ đồ án tốt nghiệp trước Hội đồng giám khảo chấm tốt nghiệp ĐH FPT"
+      ],
+      "textbook": {
+        "main": "Software Engineering: A Practitioner's Approach",
+        "author": "Roger S. Pressman, Bruce R. Maxim",
+        "publisher": "McGraw-Hill",
+        "references": [
+          "Sổ tay Hướng dẫn Đồ án Tốt nghiệp CNTT ĐH FPT"
+        ]
+      }
+    },
+    {
+      "course_code": "AIL302m",
+      "course_name": "Machine Learning",
+      "vietnamese_name": "Học máy",
+      "program": "Trí tuệ nhân tạo",
+      "programs": [
+        "Trí tuệ nhân tạo",
+        "Khoa học máy tính"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 4,
+      "prerequisites": [
+        "MAS291",
+        "PRO192"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Tổng quan về học máy: Học có giám sát (Supervised), Học không giám sát (Unsupervised)",
+        "Hồi quy tuyến tính (Linear Regression) và Hồi quy Logistic (Logistic Regression)",
+        "Cây quyết định (Decision Trees) và Rừng ngẫu nhiên (Random Forests)",
+        "Thuật toán K láng giềng gần nhất (KNN) và Naive Bayes",
+        "Máy véc tơ hỗ trợ (Support Vector Machines - SVM)",
+        "Phân cụm K-Means và Giảm số chiều dữ liệu (PCA)",
+        "Đánh giá mô hình học máy: Confusion Matrix, Precision, Recall, F1-Score, ROC-AUC"
+      ],
+      "syllabus": [
+        "Tổng quan về học máy: Học có giám sát (Supervised), Học không giám sát (Unsupervised)",
+        "Hồi quy tuyến tính (Linear Regression) và Hồi quy Logistic (Logistic Regression)",
+        "Cây quyết định (Decision Trees) và Rừng ngẫu nhiên (Random Forests)",
+        "Thuật toán K láng giềng gần nhất (KNN) và Naive Bayes",
+        "Máy véc tơ hỗ trợ (Support Vector Machines - SVM)",
+        "Phân cụm K-Means và Giảm số chiều dữ liệu (PCA)",
+        "Đánh giá mô hình học máy: Confusion Matrix, Precision, Recall, F1-Score, ROC-AUC"
+      ],
+      "textbook": {
+        "main": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (3rd Edition)",
+        "author": "Aurélien Géron",
+        "publisher": "O'Reilly Media",
+        "references": [
+          "Pattern Recognition and Machine Learning (Christopher Bishop)",
+          "Machine Learning (Tom Mitchell)"
+        ]
+      }
+    },
+    {
+      "course_code": "NLP301c",
+      "course_name": "Natural Language Processing",
+      "vietnamese_name": "Xử lý ngôn ngữ tự nhiên",
+      "program": "Trí tuệ nhân tạo",
+      "programs": [
+        "Trí tuệ nhân tạo"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "AIL302m"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Tiền xử lý văn bản: Tách từ (Tokenization), Chuẩn hóa, Lemmatization, Loại bỏ Stopwords",
+        "Biểu diễn văn bản: Bag of Words, TF-IDF, N-gram",
+        "Mô hình ngôn ngữ xác suất và Mô hình nhúng từ (Word2Vec, GloVe, FastText)",
+        "Gán nhãn từ loại (POS Tagging) và Nhận dạng thực thể tên riêng (NER)",
+        "Mô hình hồi quy tuần hoàn (RNN, LSTM, GRU) cho xử lý chuỗi",
+        "Cơ chế chú ý (Attention Mechanism) và Kiến trúc Transformer (BERT, GPT)"
+      ],
+      "syllabus": [
+        "Tiền xử lý văn bản: Tách từ (Tokenization), Chuẩn hóa, Lemmatization, Loại bỏ Stopwords",
+        "Biểu diễn văn bản: Bag of Words, TF-IDF, N-gram",
+        "Mô hình ngôn ngữ xác suất và Mô hình nhúng từ (Word2Vec, GloVe, FastText)",
+        "Gán nhãn từ loại (POS Tagging) và Nhận dạng thực thể tên riêng (NER)",
+        "Mô hình hồi quy tuần hoàn (RNN, LSTM, GRU) cho xử lý chuỗi",
+        "Cơ chế chú ý (Attention Mechanism) và Kiến trúc Transformer (BERT, GPT)"
+      ],
+      "textbook": {
+        "main": "Speech and Language Processing (3rd Edition)",
+        "author": "Dan Jurafsky, James H. Martin",
+        "publisher": "Pearson / Stanford",
+        "references": [
+          "Natural Language Processing with Python (Steven Bird, Ewan Klein, Edward Loper)"
+        ]
+      }
+    },
+    {
+      "course_code": "CVL301c",
+      "course_name": "Computer Vision",
+      "vietnamese_name": "Thị giác máy tính",
+      "program": "Trí tuệ nhân tạo",
+      "programs": [
+        "Trí tuệ nhân tạo"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "AIL302m"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Biểu diễn ảnh số, không gian màu (RGB, Grayscale, HSV) và biến đổi hình học",
+        "Lọc ảnh và làm mịn: Gaussian filter, Median filter, Sobel, Canny edge detection",
+        "Trích xuất đặc trưng ảnh cục bộ: Harris Corner, SIFT, SURF, ORB",
+        "Mạng nơ-ron tích chập (Convolutional Neural Networks - CNN)",
+        "Kiến trúc CNN kinh điển: LeNet, AlexNet, VGG, ResNet",
+        "Nhận dạng và phát hiện vật thể (Object Detection: YOLO, Faster R-CNN)",
+        "Phân đoạn ảnh (Image Segmentation: U-Net)"
+      ],
+      "syllabus": [
+        "Biểu diễn ảnh số, không gian màu (RGB, Grayscale, HSV) và biến đổi hình học",
+        "Lọc ảnh và làm mịn: Gaussian filter, Median filter, Sobel, Canny edge detection",
+        "Trích xuất đặc trưng ảnh cục bộ: Harris Corner, SIFT, SURF, ORB",
+        "Mạng nơ-ron tích chập (Convolutional Neural Networks - CNN)",
+        "Kiến trúc CNN kinh điển: LeNet, AlexNet, VGG, ResNet",
+        "Nhận dạng và phát hiện vật thể (Object Detection: YOLO, Faster R-CNN)",
+        "Phân đoạn ảnh (Image Segmentation: U-Net)"
+      ],
+      "textbook": {
+        "main": "Computer Vision: Algorithms and Applications (2nd Edition)",
+        "author": "Richard Szeliski",
+        "publisher": "Springer",
+        "references": [
+          "Deep Learning for Computer Vision (Jason Brownlee)",
+          "Learning OpenCV 4 (Adrian Kaehler, Gary Bradski)"
+        ]
+      }
+    },
+    {
+      "course_code": "DLG301",
+      "course_name": "Deep Learning",
+      "vietnamese_name": "Học sâu",
+      "program": "Trí tuệ nhân tạo",
+      "programs": [
+        "Trí tuệ nhân tạo"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 6,
+      "prerequisites": [
+        "AIL302m"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Mạng nơ-ron truyền thẳng (Multi-Layer Perceptron - MLP) và giải thuật lan truyền ngược (Backpropagation)",
+        "Các hàm kích hoạt (ReLU, Sigmoid, Tanh, Softmax) và hàm mất mát",
+        "Các thuật toán tối ưu hóa (Gradient Descent, SGD, Adam, RMSprop)",
+        "Kỹ thuật tránh Overfitting: Dropout, Batch Normalization, L1/L2 Regularization",
+        "Mạng tích chập nâng cao và Mạng hồi tiếp (RNN, LSTM)",
+        "Mô hình sinh (GANs, VAE) và Giới thiệu Transformer"
+      ],
+      "syllabus": [
+        "Mạng nơ-ron truyền thẳng (Multi-Layer Perceptron - MLP) và giải thuật lan truyền ngược (Backpropagation)",
+        "Các hàm kích hoạt (ReLU, Sigmoid, Tanh, Softmax) và hàm mất mát",
+        "Các thuật toán tối ưu hóa (Gradient Descent, SGD, Adam, RMSprop)",
+        "Kỹ thuật tránh Overfitting: Dropout, Batch Normalization, L1/L2 Regularization",
+        "Mạng tích chập nâng cao và Mạng hồi tiếp (RNN, LSTM)",
+        "Mô hình sinh (GANs, VAE) và Giới thiệu Transformer"
+      ],
+      "textbook": {
+        "main": "Deep Learning",
+        "author": "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+        "publisher": "MIT Press",
+        "references": [
+          "Dive into Deep Learning (Aston Zhang et al.)",
+          "PyTorch for Deep Learning (Ian Pointer)"
+        ]
+      }
+    },
+    {
+      "course_code": "AIP391",
+      "course_name": "AI Application Development Project",
+      "vietnamese_name": "Dự án phát triển ứng dụng AI",
+      "program": "Trí tuệ nhân tạo",
+      "programs": [
+        "Trí tuệ nhân tạo"
+      ],
+      "category": "project",
+      "credits": 3,
+      "semester": 6,
+      "prerequisites": [
+        "AIL302m"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Xây dựng dự án trí tuệ nhân tạo giải quyết bài toán thực tế theo nhóm",
+        "Thu thập, tiền xử lý và gán nhãn tập dữ liệu (Data Annotation)",
+        "Xây dựng đường ống huấn luyện mô hình (ML/DL Pipeline)",
+        "Đánh giá và tối ưu siêu tham số mô hình (Hyperparameter Tuning)",
+        "Đóng gói và triển khai mô hình thành Web API phục vụ suy luận",
+        "Báo cáo kết quả và thuyết trình demo sản phẩm trước mentor"
+      ],
+      "syllabus": [
+        "Xây dựng dự án trí tuệ nhân tạo giải quyết bài toán thực tế theo nhóm",
+        "Thu thập, tiền xử lý và gán nhãn tập dữ liệu (Data Annotation)",
+        "Xây dựng đường ống huấn luyện mô hình (ML/DL Pipeline)",
+        "Đánh giá và tối ưu siêu tham số mô hình (Hyperparameter Tuning)",
+        "Đóng gói và triển khai mô hình thành Web API phục vụ suy luận",
+        "Báo cáo kết quả và thuyết trình demo sản phẩm trước mentor"
+      ],
+      "textbook": {
+        "main": "Building Machine Learning Powered Applications: Going from Idea to Product",
+        "author": "Emmanuel Ameisen",
+        "publisher": "O'Reilly Media",
+        "references": [
+          "Designing Machine Learning Systems (Chip Huyen)"
+        ]
+      }
+    },
+    {
+      "course_code": "AIP490",
+      "course_name": "Artificial Intelligence Capstone Project",
+      "vietnamese_name": "Khóa luận tốt nghiệp Trí tuệ nhân tạo",
+      "program": "Trí tuệ nhân tạo",
+      "programs": [
+        "Trí tuệ nhân tạo"
+      ],
+      "category": "project",
+      "credits": 10,
+      "semester": 9,
+      "prerequisites": [
+        "AIP391",
+        "DLG301"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": false
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Đồ án tốt nghiệp ngành Trí tuệ nhân tạo (nhóm 3-4 sinh viên)",
+        "Nghiên cứu các mô hình AI tiên tiến (SOTA) cho bài toán chuyên biệt",
+        "Thiết kế kiến trúc hệ thống AI tích hợp sản phẩm ứng dụng",
+        "Thực nghiệm, so sánh hiệu năng và viết báo cáo khoa học tốt nghiệp",
+        "Bảo vệ đồ án tốt nghiệp trước Hội đồng đánh giá ĐH FPT"
+      ],
+      "syllabus": [
+        "Đồ án tốt nghiệp ngành Trí tuệ nhân tạo (nhóm 3-4 sinh viên)",
+        "Nghiên cứu các mô hình AI tiên tiến (SOTA) cho bài toán chuyên biệt",
+        "Thiết kế kiến trúc hệ thống AI tích hợp sản phẩm ứng dụng",
+        "Thực nghiệm, so sánh hiệu năng và viết báo cáo khoa học tốt nghiệp",
+        "Bảo vệ đồ án tốt nghiệp trước Hội đồng đánh giá ĐH FPT"
+      ],
+      "textbook": {
+        "main": "Artificial Intelligence: A Modern Approach (4th Edition)",
+        "author": "Stuart Russell, Peter Norvig",
+        "publisher": "Pearson",
+        "references": [
+          "Sổ tay Hướng dẫn Khóa luận Tốt nghiệp AI ĐH FPT"
+        ]
+      }
+    },
+    {
+      "course_code": "CRY301",
+      "course_name": "Cryptography",
+      "vietnamese_name": "Mật mã học",
+      "program": "An toàn thông tin",
+      "programs": [
+        "An toàn thông tin"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 4,
+      "prerequisites": [
+        "MAD101"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Lịch sử và nguyên lý mật mã học cổ điển",
+        "Mật mã đối xứng: Mã khối DES, AES và các chế độ mã hóa (ECB, CBC, CTR)",
+        "Mật mã bất đối xứng: RSA, Diffie-Hellman, Đường cong Elliptic (ECC)",
+        "Hàm băm mật mã học (MD5, SHA-256, SHA-3) và Mã xác thực thông điệp (MAC)",
+        "Chữ ký số (Digital Signatures) và Hạ tầng khóa công khai (PKI)",
+        "Các giao thức bảo mật thông dụng (SSL/TLS, SSH, IPsec)"
+      ],
+      "syllabus": [
+        "Lịch sử và nguyên lý mật mã học cổ điển",
+        "Mật mã đối xứng: Mã khối DES, AES và các chế độ mã hóa (ECB, CBC, CTR)",
+        "Mật mã bất đối xứng: RSA, Diffie-Hellman, Đường cong Elliptic (ECC)",
+        "Hàm băm mật mã học (MD5, SHA-256, SHA-3) và Mã xác thực thông điệp (MAC)",
+        "Chữ ký số (Digital Signatures) và Hạ tầng khóa công khai (PKI)",
+        "Các giao thức bảo mật thông dụng (SSL/TLS, SSH, IPsec)"
+      ],
+      "textbook": {
+        "main": "Cryptography and Network Security: Principles and Practice (7th/8th Edition)",
+        "author": "William Stallings",
+        "publisher": "Pearson",
+        "references": [
+          "Understanding Cryptography (Christof Paar, Jan Pelzl)"
+        ]
+      }
+    },
+    {
+      "course_code": "IAL201",
+      "course_name": "System and Network Security",
+      "vietnamese_name": "An toàn hệ thống và mạng",
+      "program": "An toàn thông tin",
+      "programs": [
+        "An toàn thông tin"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "NWC203c",
+        "OSG202"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Mô hình an toàn thông tin CIA (Confidentiality, Integrity, Availability)",
+        "Các loại hiểm họa, mối đe dọa và lỗ hổng bảo mật phổ biến (OWASP Top 10)",
+        "Chính sách bảo mật thông tin và quản lý quyền truy cập (Access Control)",
+        "Bảo mật hệ điều hành và bảo mật mạng cơ bản",
+        "Sao lưu dự phòng và kế hoạch phục hồi sau thảm họa (Disaster Recovery)",
+        "Pháp luật và đạo đức trong không gian mạng"
+      ],
+      "syllabus": [
+        "Mô hình an toàn thông tin CIA (Confidentiality, Integrity, Availability)",
+        "Các loại hiểm họa, mối đe dọa và lỗ hổng bảo mật phổ biến (OWASP Top 10)",
+        "Chính sách bảo mật thông tin và quản lý quyền truy cập (Access Control)",
+        "Bảo mật hệ điều hành và bảo mật mạng cơ bản",
+        "Sao lưu dự phòng và kế hoạch phục hồi sau thảm họa (Disaster Recovery)",
+        "Pháp luật và đạo đức trong không gian mạng"
+      ],
+      "textbook": {
+        "main": "Principles of Information Security (6th/7th Edition)",
+        "author": "Michael E. Whitman, Herbert J. Mattord",
+        "publisher": "Cengage Learning",
+        "references": [
+          "Computer Security: Principles and Practice (William Stallings, Lawrie Brown)"
+        ]
+      }
+    },
+    {
+      "course_code": "IAR301",
+      "course_name": "Information Assurance & Security Assessment",
+      "vietnamese_name": "Đánh giá an toàn thông tin",
+      "program": "An toàn thông tin",
+      "programs": [
+        "An toàn thông tin"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "IAL201"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Khung quản trị rủi ro an toàn thông tin (NIST RMF, ISO/IEC 27005)",
+        "Định lượng và định tính rủi ro an toàn thông tin",
+        "Đánh giá tác động kinh doanh (Business Impact Analysis - BIA)",
+        "Thiết kế và triển khai các biện pháp kiểm soát rủi ro",
+        "Giám sát và kiểm toán an toàn hệ thống thông tin"
+      ],
+      "syllabus": [
+        "Khung quản trị rủi ro an toàn thông tin (NIST RMF, ISO/IEC 27005)",
+        "Định lượng và định tính rủi ro an toàn thông tin",
+        "Đánh giá tác động kinh doanh (Business Impact Analysis - BIA)",
+        "Thiết kế và triển khai các biện pháp kiểm soát rủi ro",
+        "Giám sát và kiểm toán an toàn hệ thống thông tin"
+      ],
+      "textbook": {
+        "main": "Information Security Risk Assessment, Managing Physical and Operational Risk",
+        "author": "Mark Brooks",
+        "publisher": "Wiley",
+        "references": [
+          "NIST SP 800-30 Guide for Conducting Risk Assessments"
+        ]
+      }
+    },
+    {
+      "course_code": "FOR301",
+      "course_name": "Digital Forensics",
+      "vietnamese_name": "Điều tra kỹ thuật số",
+      "program": "An toàn thông tin",
+      "programs": [
+        "An toàn thông tin"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 6,
+      "prerequisites": [
+        "IAL201"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Quy trình điều tra kỹ thuật số (Digital Forensics Investigation Process)",
+        "Thu thập chứng cứ kỹ thuật số và bảo toàn chuỗi hành trình (Chain of Custody)",
+        "Điều tra hệ thống tệp và khôi phục dữ liệu bị xóa (FAT, NTFS, ext4)",
+        "Phân tích bộ nhớ RAM (RAM Forensics với Volatility)",
+        "Phân tích nhật ký hệ thống (Log Analysis) và điều tra mạng",
+        "Viết báo cáo giám định pháp y kỹ thuật số"
+      ],
+      "syllabus": [
+        "Quy trình điều tra kỹ thuật số (Digital Forensics Investigation Process)",
+        "Thu thập chứng cứ kỹ thuật số và bảo toàn chuỗi hành trình (Chain of Custody)",
+        "Điều tra hệ thống tệp và khôi phục dữ liệu bị xóa (FAT, NTFS, ext4)",
+        "Phân tích bộ nhớ RAM (RAM Forensics với Volatility)",
+        "Phân tích nhật ký hệ thống (Log Analysis) và điều tra mạng",
+        "Viết báo cáo giám định pháp y kỹ thuật số"
+      ],
+      "textbook": {
+        "main": "Guide to Computer Forensics and Investigations (6th Edition)",
+        "author": "Bill Nelson, Amelia Phillips, Christopher Steuart",
+        "publisher": "Cengage Learning",
+        "references": [
+          "The Basics of Digital Forensics (John Sammons)"
+        ]
+      }
+    },
+    {
+      "course_code": "IAP490",
+      "course_name": "Information Assurance Capstone Project",
+      "vietnamese_name": "Khóa luận tốt nghiệp An toàn thông tin",
+      "program": "An toàn thông tin",
+      "programs": [
+        "An toàn thông tin"
+      ],
+      "category": "project",
+      "credits": 10,
+      "semester": 9,
+      "prerequisites": [
+        "IAR301",
+        "IAL201"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": false
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Đồ án tốt nghiệp ngành An toàn thông tin (nhóm 3-4 sinh viên)",
+        "Xác định bài toán nghiên cứu bảo mật hoặc phát triển hệ thống phòng thủ/tấn công kiểm thử",
+        "Triển khai giải pháp kỹ thuật, đánh giá hiệu năng và phân tích lỗ hổng",
+        "Báo cáo kết quả và bảo vệ đồ án trước Hội đồng giám khảo ĐH FPT"
+      ],
+      "syllabus": [
+        "Đồ án tốt nghiệp ngành An toàn thông tin (nhóm 3-4 sinh viên)",
+        "Xác định bài toán nghiên cứu bảo mật hoặc phát triển hệ thống phòng thủ/tấn công kiểm thử",
+        "Triển khai giải pháp kỹ thuật, đánh giá hiệu năng và phân tích lỗ hổng",
+        "Báo cáo kết quả và bảo vệ đồ án trước Hội đồng giám khảo ĐH FPT"
+      ],
+      "textbook": {
+        "main": "Security Engineering: A Guide to Building Dependable Distributed Systems",
+        "author": "Ross Anderson",
+        "publisher": "Wiley",
+        "references": [
+          "Sổ tay Đồ án Tốt nghiệp An toàn thông tin ĐH FPT"
+        ]
+      }
+    },
+    {
+      "course_code": "MKT101",
+      "course_name": "Principles of Marketing",
+      "vietnamese_name": "Nguyên lý Marketing",
+      "program": "Digital Marketing",
+      "programs": [
+        "Digital Marketing",
+        "Quản trị kinh doanh"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Khái niệm bản chất và vai trò của Marketing trong doanh nghiệp hiện đại",
+        "Môi trường Marketing vĩ mô (PESTLE) và vi mô",
+        "Hành vi người tiêu dùng và các yếu tố ảnh hưởng đến quyết định mua hàng",
+        "Chiến lược Marketing STP: Phân đoạn thị trường (Segmentation), Lựa chọn thị trường mục tiêu (Targeting), Định vị sản phẩm (Positioning)",
+        "Chiến lược Marketing Mix 4P: Sản phẩm (Product), Giá (Price), Phân phối (Place), Xúc tiến (Promotion)",
+        "Xây dựng kế hoạch Marketing căn bản"
+      ],
+      "syllabus": [
+        "Khái niệm bản chất và vai trò của Marketing trong doanh nghiệp hiện đại",
+        "Môi trường Marketing vĩ mô (PESTLE) và vi mô",
+        "Hành vi người tiêu dùng và các yếu tố ảnh hưởng đến quyết định mua hàng",
+        "Chiến lược Marketing STP: Phân đoạn thị trường (Segmentation), Lựa chọn thị trường mục tiêu (Targeting), Định vị sản phẩm (Positioning)",
+        "Chiến lược Marketing Mix 4P: Sản phẩm (Product), Giá (Price), Phân phối (Place), Xúc tiến (Promotion)",
+        "Xây dựng kế hoạch Marketing căn bản"
+      ],
+      "textbook": {
+        "main": "Principles of Marketing (18th/19th Edition)",
+        "author": "Philip Kotler, Gary Armstrong",
+        "publisher": "Pearson",
+        "references": [
+          "Marketing Management (Philip Kotler, Kevin Lane Keller)"
+        ]
+      }
+    },
+    {
+      "course_code": "MGT103",
+      "course_name": "Principles of Management",
+      "vietnamese_name": "Nguyên lý Quản trị",
+      "program": "Quản trị kinh doanh",
+      "programs": [
+        "Digital Marketing",
+        "Quản trị kinh doanh"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Bản chất của quản trị học và vai trò của nhà quản trị",
+        "Môi trường tổ chức và văn hóa doanh nghiệp",
+        "4 chức năng quản trị: Hoạch định (Planning), Tổ chức (Organizing), Lãnh đạo (Leading), Kiểm tra (Controlling)",
+        "Ra quyết định quản trị và giải quyết vấn đề",
+        "Quản trị sự thay đổi và đổi mới sáng tạo trong tổ chức"
+      ],
+      "syllabus": [
+        "Bản chất của quản trị học và vai trò của nhà quản trị",
+        "Môi trường tổ chức và văn hóa doanh nghiệp",
+        "4 chức năng quản trị: Hoạch định (Planning), Tổ chức (Organizing), Lãnh đạo (Leading), Kiểm tra (Controlling)",
+        "Ra quyết định quản trị và giải quyết vấn đề",
+        "Quản trị sự thay đổi và đổi mới sáng tạo trong tổ chức"
+      ],
+      "textbook": {
+        "main": "Management (14th/15th Edition)",
+        "author": "Stephen P. Robbins, Mary Coulter",
+        "publisher": "Pearson",
+        "references": [
+          "Principles of Management (OpenStax)"
+        ]
+      }
+    },
+    {
+      "course_code": "ECO111",
+      "course_name": "Microeconomics",
+      "vietnamese_name": "Kinh tế vi mô",
+      "program": "Quản trị kinh doanh",
+      "programs": [
+        "Digital Marketing",
+        "Quản trị kinh doanh"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 2,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Nguyên lý kinh tế học vi mô: Quy luật cung - cầu và trạng thái cân bằng thị trường",
+        "Độ co giãn của cung và cầu theo giá và thu nhập",
+        "Lý thuyết hành vi người tiêu dùng và hàm hữu dụng",
+        "Chi phí sản xuất và hành vi của doanh nghiệp",
+        "Các cấu trúc thị trường: Cạnh tranh hoàn hảo, Độc quyền, Cạnh tranh độc quyền, Độc quyền nhóm"
+      ],
+      "syllabus": [
+        "Nguyên lý kinh tế học vi mô: Quy luật cung - cầu và trạng thái cân bằng thị trường",
+        "Độ co giãn của cung và cầu theo giá và thu nhập",
+        "Lý thuyết hành vi người tiêu dùng và hàm hữu dụng",
+        "Chi phí sản xuất và hành vi của doanh nghiệp",
+        "Các cấu trúc thị trường: Cạnh tranh hoàn hảo, Độc quyền, Cạnh tranh độc quyền, Độc quyền nhóm"
+      ],
+      "textbook": {
+        "main": "Principles of Microeconomics (8th/9th Edition)",
+        "author": "N. Gregory Mankiw",
+        "publisher": "Cengage Learning",
+        "references": [
+          "Microeconomics (Robert Pindyck, Daniel Rubinfeld)"
+        ]
+      }
+    },
+    {
+      "course_code": "ECO121",
+      "course_name": "Macroeconomics",
+      "vietnamese_name": "Kinh tế vĩ mô",
+      "program": "Quản trị kinh doanh",
+      "programs": [
+        "Digital Marketing",
+        "Quản trị kinh doanh"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 2,
+      "prerequisites": [
+        "ECO111"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Đo lường thu nhập quốc dân: Tổng sản phẩm quốc nội (GDP) và Tổng sản phẩm quốc gia (GNP)",
+        "Lạm phát, chỉ số giá tiêu dùng (CPI) và Thất nghiệp",
+        "Tăng trưởng kinh tế dài hạn và các nhân tố quyết định",
+        "Hệ thống tiền tệ, ngân hàng thương mại và vai trò của Ngân hàng Trung ương",
+        "Chính sách tài khóa và chính sách tiền tệ trong ổn định kinh tế vĩ mô"
+      ],
+      "syllabus": [
+        "Đo lường thu nhập quốc dân: Tổng sản phẩm quốc nội (GDP) và Tổng sản phẩm quốc gia (GNP)",
+        "Lạm phát, chỉ số giá tiêu dùng (CPI) và Thất nghiệp",
+        "Tăng trưởng kinh tế dài hạn và các nhân tố quyết định",
+        "Hệ thống tiền tệ, ngân hàng thương mại và vai trò của Ngân hàng Trung ương",
+        "Chính sách tài khóa và chính sách tiền tệ trong ổn định kinh tế vĩ mô"
+      ],
+      "textbook": {
+        "main": "Principles of Macroeconomics (8th/9th Edition)",
+        "author": "N. Gregory Mankiw",
+        "publisher": "Cengage Learning",
+        "references": [
+          "Macroeconomics (Olivier Blanchard)"
+        ]
+      }
+    },
+    {
+      "course_code": "ACC101",
+      "course_name": "Principles of Accounting",
+      "vietnamese_name": "Nguyên lý Kế toán",
+      "program": "Quản trị kinh doanh",
+      "programs": [
+        "Digital Marketing",
+        "Quản trị kinh doanh"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 3,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Bản chất và mục đích của kế toán tài chính trong doanh nghiệp",
+        "Phương trình kế toán cơ bản: Tài sản = Nợ phải trả + Vốn chủ sở hữu",
+        "Quy trình ghi sổ kép (Debit/Credit) và định khoản các nghiệp vụ kinh tế",
+        "Các bút toán điều chỉnh cuối kỳ và lập bảng cân đối thử",
+        "Lập 4 báo cáo tài chính cơ bản: Bảng cân đối kế toán, Báo cáo kết quả hoạt động kinh doanh, Báo cáo lưu chuyển tiền tệ, Thuyết minh báo cáo tài chính"
+      ],
+      "syllabus": [
+        "Bản chất và mục đích của kế toán tài chính trong doanh nghiệp",
+        "Phương trình kế toán cơ bản: Tài sản = Nợ phải trả + Vốn chủ sở hữu",
+        "Quy trình ghi sổ kép (Debit/Credit) và định khoản các nghiệp vụ kinh tế",
+        "Các bút toán điều chỉnh cuối kỳ và lập bảng cân đối thử",
+        "Lập 4 báo cáo tài chính cơ bản: Bảng cân đối kế toán, Báo cáo kết quả hoạt động kinh doanh, Báo cáo lưu chuyển tiền tệ, Thuyết minh báo cáo tài chính"
+      ],
+      "textbook": {
+        "main": "Financial Accounting (10th/11th Edition)",
+        "author": "Jerry J. Weygandt, Paul D. Kimmel, Donald E. Kieso",
+        "publisher": "Wiley",
+        "references": [
+          "Accounting Principles (Weygandt et al.)"
+        ]
+      }
+    },
+    {
+      "course_code": "FIN202",
+      "course_name": "Corporate Finance",
+      "vietnamese_name": "Tài chính doanh nghiệp",
+      "program": "Quản trị kinh doanh",
+      "programs": [
+        "Digital Marketing",
+        "Quản trị kinh doanh"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 4,
+      "prerequisites": [
+        "ACC101"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Giá trị thời gian của tiền (Time Value of Money - TVM: PV, FV, Niên kim)",
+        "Định giá trái phiếu và cổ phiếu",
+        "Đánh giá dự án đầu tư vốn (NPV, IRR, Payback Period)",
+        "Phân tích rủi ro và tỷ suất sinh lời (Mô hình CAPM)",
+        "Chi phí sử dụng vốn (WACC) và chính sách cổ tức"
+      ],
+      "syllabus": [
+        "Giá trị thời gian của tiền (Time Value of Money - TVM: PV, FV, Niên kim)",
+        "Định giá trái phiếu và cổ phiếu",
+        "Đánh giá dự án đầu tư vốn (NPV, IRR, Payback Period)",
+        "Phân tích rủi ro và tỷ suất sinh lời (Mô hình CAPM)",
+        "Chi phí sử dụng vốn (WACC) và chính sách cổ tức"
+      ],
+      "textbook": {
+        "main": "Fundamentals of Corporate Finance (12th Edition)",
+        "author": "Stephen A. Ross, Randolph W. Westerfield, Bradford D. Jordan",
+        "publisher": "McGraw-Hill",
+        "references": [
+          "Principles of Corporate Finance (Brealey, Myers, Allen)"
+        ]
+      }
+    },
+    {
+      "course_code": "OBE102",
+      "course_name": "Organizational Behavior",
+      "vietnamese_name": "Hành vi tổ chức",
+      "program": "Quản trị kinh doanh",
+      "programs": [
+        "Digital Marketing",
+        "Quản trị kinh doanh"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 4,
+      "prerequisites": [
+        "MGT103"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Bản chất hành vi tổ chức ở cấp độ cá nhân: Tính cách, giá trị, thái độ",
+        "Động lực làm việc và các lý thuyết tạo động lực (Maslow, Herzberg, Vroom)",
+        "Hành vi nhóm: Động lực nhóm, giao tiếp và giải quyết xung đột",
+        "Phong cách lãnh đạo và quyền lực trong tổ chức",
+        "Văn hóa tổ chức và quản lý căng thẳng nơi làm việc"
+      ],
+      "syllabus": [
+        "Bản chất hành vi tổ chức ở cấp độ cá nhân: Tính cách, giá trị, thái độ",
+        "Động lực làm việc và các lý thuyết tạo động lực (Maslow, Herzberg, Vroom)",
+        "Hành vi nhóm: Động lực nhóm, giao tiếp và giải quyết xung đột",
+        "Phong cách lãnh đạo và quyền lực trong tổ chức",
+        "Văn hóa tổ chức và quản lý căng thẳng nơi làm việc"
+      ],
+      "textbook": {
+        "main": "Organizational Behavior (18th Edition)",
+        "author": "Stephen P. Robbins, Timothy A. Judge",
+        "publisher": "Pearson",
+        "references": [
+          "Organizational Behavior: Improving Performance and Commitment (Colquitt)"
+        ]
+      }
+    },
+    {
+      "course_code": "MKP391",
+      "course_name": "Marketing Project",
+      "vietnamese_name": "Dự án thực tế Marketing",
+      "program": "Digital Marketing",
+      "programs": [
+        "Digital Marketing"
+      ],
+      "category": "project",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "MKT101"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Thực hiện dự án Marketing tích hợp cho một thương hiệu hoặc sản phẩm cụ thể",
+        "Nghiên cứu thị trường và phân tích đối thủ cạnh tranh thực tế",
+        "Xây dựng chiến dịch truyền thông tích hợp (IMC Plan)",
+        "Sáng tạo nội dung, thiết kế thông điệp và lập kế hoạch ngân sách",
+        "Đo lường hiệu quả chiến dịch và báo cáo trước hội đồng chuyên môn"
+      ],
+      "syllabus": [
+        "Thực hiện dự án Marketing tích hợp cho một thương hiệu hoặc sản phẩm cụ thể",
+        "Nghiên cứu thị trường và phân tích đối thủ cạnh tranh thực tế",
+        "Xây dựng chiến dịch truyền thông tích hợp (IMC Plan)",
+        "Sáng tạo nội dung, thiết kế thông điệp và lập kế hoạch ngân sách",
+        "Đo lường hiệu quả chiến dịch và báo cáo trước hội đồng chuyên môn"
+      ],
+      "textbook": {
+        "main": "Integrated Marketing Communications: Strategic Planning and Execution",
+        "author": "David Pickton, Amanda Broderick",
+        "publisher": "Pearson",
+        "references": [
+          "Strategic Brand Management (Kevin Lane Keller)"
+        ]
+      }
+    },
+    {
+      "course_code": "BAP490",
+      "course_name": "Business Administration Capstone Project",
+      "vietnamese_name": "Khóa luận tốt nghiệp Quản trị kinh doanh",
+      "program": "Quản trị kinh doanh",
+      "programs": [
+        "Quản trị kinh doanh",
+        "Digital Marketing"
+      ],
+      "category": "project",
+      "credits": 10,
+      "semester": 9,
+      "prerequisites": [
+        "FIN202",
+        "OBE102"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": false
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Khóa luận tốt nghiệp chuyên ngành Quản trị kinh doanh (nhóm 3-4 sinh viên)",
+        "Xác định đề tài nghiên cứu kinh doanh hoặc xây dựng đề án kinh doanh (Business Plan)",
+        "Thu thập dữ liệu thực tế tại doanh nghiệp, phân tích và đề xuất giải pháp chiến lược",
+        "Bảo vệ khóa luận tốt nghiệp trước Hội đồng đánh giá ĐH FPT"
+      ],
+      "syllabus": [
+        "Khóa luận tốt nghiệp chuyên ngành Quản trị kinh doanh (nhóm 3-4 sinh viên)",
+        "Xác định đề tài nghiên cứu kinh doanh hoặc xây dựng đề án kinh doanh (Business Plan)",
+        "Thu thập dữ liệu thực tế tại doanh nghiệp, phân tích và đề xuất giải pháp chiến lược",
+        "Bảo vệ khóa luận tốt nghiệp trước Hội đồng đánh giá ĐH FPT"
+      ],
+      "textbook": {
+        "main": "Strategic Management: Concepts and Cases",
+        "author": "Fred R. David, Forest R. David",
+        "publisher": "Pearson",
+        "references": [
+          "Sổ tay Khóa luận Tốt nghiệp QTKD ĐH FPT"
+        ]
+      }
+    },
+    {
+      "course_code": "DGT101",
+      "course_name": "Introduction to Graphic Design",
+      "vietnamese_name": "Nhập môn Thiết kế đồ họa",
+      "program": "Thiết kế Mỹ thuật số",
+      "programs": [
+        "Thiết kế Mỹ thuật số"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Lý thuyết màu sắc và xử lý ảnh kỹ thuật số",
+        "Làm chủ phần mềm Adobe Photoshop: Giao diện, Layer, Mask, Blend Mode",
+        "Kỹ thuật cắt ghép ảnh, Retouching và phục chế ảnh chân dung/phong cảnh",
+        "Tạo hiệu ứng hình ảnh và thiết kế banner quảng cáo số",
+        "Xuất bản ảnh tối ưu cho in ấn và nền tảng web"
+      ],
+      "syllabus": [
+        "Lý thuyết màu sắc và xử lý ảnh kỹ thuật số",
+        "Làm chủ phần mềm Adobe Photoshop: Giao diện, Layer, Mask, Blend Mode",
+        "Kỹ thuật cắt ghép ảnh, Retouching và phục chế ảnh chân dung/phong cảnh",
+        "Tạo hiệu ứng hình ảnh và thiết kế banner quảng cáo số",
+        "Xuất bản ảnh tối ưu cho in ấn và nền tảng web"
+      ],
+      "textbook": {
+        "main": "Adobe Photoshop Classroom in a Book",
+        "author": "Andrew Faulkner, Conrad Chavez",
+        "publisher": "Adobe Press",
+        "references": [
+          "Photoshop CC: The Missing Manual (Lesa Snider)"
+        ]
+      }
+    },
+    {
+      "course_code": "VWS101",
+      "course_name": "Visual Arts & Workshop",
+      "vietnamese_name": "Nghệ thuật thị giác",
+      "program": "Thiết kế Mỹ thuật số",
+      "programs": [
+        "Thiết kế Mỹ thuật số"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 2,
+      "prerequisites": [
+        "DGT101"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Khái niệm đồ họa véc-tơ (Vector Graphics) và phân biệt với Raster",
+        "Sử dụng Adobe Illustrator: Công cụ Pen, Shape, Pathfinder, Brush",
+        "Thiết kế Logo, Icon, Infographic và bộ nhận diện thương hiệu",
+        "Phối màu và tạo hoa văn họa tiết (Patterns, Gradients)",
+        "Chuẩn bị file vector cho in ấn công nghiệp và cắt khắc kỹ thuật số"
+      ],
+      "syllabus": [
+        "Khái niệm đồ họa véc-tơ (Vector Graphics) và phân biệt với Raster",
+        "Sử dụng Adobe Illustrator: Công cụ Pen, Shape, Pathfinder, Brush",
+        "Thiết kế Logo, Icon, Infographic và bộ nhận diện thương hiệu",
+        "Phối màu và tạo hoa văn họa tiết (Patterns, Gradients)",
+        "Chuẩn bị file vector cho in ấn công nghiệp và cắt khắc kỹ thuật số"
+      ],
+      "textbook": {
+        "main": "Adobe Illustrator Classroom in a Book",
+        "author": "Brian Wood",
+        "publisher": "Adobe Press",
+        "references": [
+          "Vector Basic Training (Von Glitschka)"
+        ]
+      }
+    },
+    {
+      "course_code": "GRA201",
+      "course_name": "2D Graphic Design",
+      "vietnamese_name": "Thiết kế đồ họa 2D",
+      "program": "Thiết kế Mỹ thuật số",
+      "programs": [
+        "Thiết kế Mỹ thuật số"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 3,
+      "prerequisites": [
+        "VWS101"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Các nguyên lý cơ bản của thiết kế thị giác (Cân bằng, Tương phản, Nhấn mạnh, Nhịp điệu)",
+        "Bố cục thị giác và lưới thiết kế (Grid Systems)",
+        "Tâm lý học thị giác (Gestalt Principles) trong thiết kế đồ họa",
+        "Quy trình tư duy sáng tạo (Design Thinking) từ ý tưởng phác thảo đến bản hoàn thiện",
+        "Thực hiện bài tập thiết kế poster, bìa sách và ấn phẩm truyền thông"
+      ],
+      "syllabus": [
+        "Các nguyên lý cơ bản của thiết kế thị giác (Cân bằng, Tương phản, Nhấn mạnh, Nhịp điệu)",
+        "Bố cục thị giác và lưới thiết kế (Grid Systems)",
+        "Tâm lý học thị giác (Gestalt Principles) trong thiết kế đồ họa",
+        "Quy trình tư duy sáng tạo (Design Thinking) từ ý tưởng phác thảo đến bản hoàn thiện",
+        "Thực hiện bài tập thiết kế poster, bìa sách và ấn phẩm truyền thông"
+      ],
+      "textbook": {
+        "main": "Universal Principles of Design",
+        "author": "William Lidwell, Kritina Holden, Jill Butler",
+        "publisher": "Rockport Publishers",
+        "references": [
+          "Graphic Design: The New Basics (Ellen Lupton, Jennifer Cole Phillips)"
+        ]
+      }
+    },
+    {
+      "course_code": "TYP201",
+      "course_name": "Typography",
+      "vietnamese_name": "Nghệ thuật chữ",
+      "program": "Thiết kế Mỹ thuật số",
+      "programs": [
+        "Thiết kế Mỹ thuật số"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 4,
+      "prerequisites": [
+        "GRA201"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Lịch sử phát triển của chữ viết và các trường phái Typography",
+        "Cấu phẫu học của chữ (Anatomy of Type: Serif, Sans-serif, Script, Display)",
+        "Các yếu tố căn chỉnh chữ: Kerning, Tracking, Leading, Hierarchy",
+        "Nghệ thuật sắp đặt chữ trong bố cục trang bìa và tạp chí",
+        "Sáng tạo Typography nghệ thuật và tùy biến con chữ (Custom Lettering)"
+      ],
+      "syllabus": [
+        "Lịch sử phát triển của chữ viết và các trường phái Typography",
+        "Cấu phẫu học của chữ (Anatomy of Type: Serif, Sans-serif, Script, Display)",
+        "Các yếu tố căn chỉnh chữ: Kerning, Tracking, Leading, Hierarchy",
+        "Nghệ thuật sắp đặt chữ trong bố cục trang bìa và tạp chí",
+        "Sáng tạo Typography nghệ thuật và tùy biến con chữ (Custom Lettering)"
+      ],
+      "textbook": {
+        "main": "Thinking with Type (2nd Edition)",
+        "author": "Ellen Lupton",
+        "publisher": "Princeton Architectural Press",
+        "references": [
+          "The Elements of Typographic Style (Robert Bringhurst)"
+        ]
+      }
+    },
+    {
+      "course_code": "ANM301",
+      "course_name": "2D/3D Animation Fundamentals",
+      "vietnamese_name": "Nguyên lý Hoạt hình 2D/3D",
+      "program": "Thiết kế Mỹ thuật số",
+      "programs": [
+        "Thiết kế Mỹ thuật số"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "GRA201"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "12 nguyên tắc vàng trong diễn hoạt hoạt hình (12 Principles of Animation)",
+        "Diễn hoạt 2D cơ bản với phần mềm After Effects: Keyframe, Easing, Motion Graphics",
+        "Nhập môn mô hình hóa 3D với Blender / Maya: Modeling, Texturing, Lighting",
+        "Diễn hoạt nhân vật 3D cơ bản và chuyển động camera",
+        "Kết xuất video (Rendering) và hậu kỳ hoạt hình"
+      ],
+      "syllabus": [
+        "12 nguyên tắc vàng trong diễn hoạt hoạt hình (12 Principles of Animation)",
+        "Diễn hoạt 2D cơ bản với phần mềm After Effects: Keyframe, Easing, Motion Graphics",
+        "Nhập môn mô hình hóa 3D với Blender / Maya: Modeling, Texturing, Lighting",
+        "Diễn hoạt nhân vật 3D cơ bản và chuyển động camera",
+        "Kết xuất video (Rendering) và hậu kỳ hoạt hình"
+      ],
+      "textbook": {
+        "main": "The Animator's Survival Kit",
+        "author": "Richard Williams",
+        "publisher": "Faber & Faber",
+        "references": [
+          "Timing for Animation (Harold Whitaker, John Halas)"
+        ]
+      }
+    },
+    {
+      "course_code": "GDP490",
+      "course_name": "Graphic Design Capstone Project",
+      "vietnamese_name": "Đồ án tốt nghiệp Thiết kế Mỹ thuật số",
+      "program": "Thiết kế Mỹ thuật số",
+      "programs": [
+        "Thiết kế Mỹ thuật số"
+      ],
+      "category": "project",
+      "credits": 10,
+      "semester": 9,
+      "prerequisites": [
+        "TYP201",
+        "ANM301"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": false
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Đồ án tốt nghiệp ngành Thiết kế Mỹ thuật số (cá nhân hoặc nhóm 2 sinh viên)",
+        "Xây dựng bộ nhận diện thương hiệu hoàn chỉnh hoặc dự án phim hoạt hình/truyền thông tương tác",
+        "Thực hiện triển lãm đồ án tốt nghiệp và thuyết trình trước Hội đồng thẩm định nghệ thuật ĐH FPT"
+      ],
+      "syllabus": [
+        "Đồ án tốt nghiệp ngành Thiết kế Mỹ thuật số (cá nhân hoặc nhóm 2 sinh viên)",
+        "Xây dựng bộ nhận diện thương hiệu hoàn chỉnh hoặc dự án phim hoạt hình/truyền thông tương tác",
+        "Thực hiện triển lãm đồ án tốt nghiệp và thuyết trình trước Hội đồng thẩm định nghệ thuật ĐH FPT"
+      ],
+      "textbook": {
+        "main": "Designing Brand Identity: An Essential Guide for the Whole Branding Team",
+        "author": "Alina Wheeler",
+        "publisher": "Wiley",
+        "references": [
+          "Sổ tay Đồ án Tốt nghiệp Mỹ thuật số ĐH FPT"
+        ]
+      }
+    },
+    {
+      "course_code": "ENG101",
+      "course_name": "English for Academic Purposes 1",
+      "vietnamese_name": "Tiếng Anh học thuật 1",
+      "program": "Ngôn ngữ Anh",
+      "programs": [
+        "Ngôn ngữ Anh"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Rèn luyện 4 kỹ năng tiếng Anh học thuật trình độ tiền trung cấp (B1)",
+        "Nghe hiểu các bài hội thoại và bài giảng ngắn về chủ đề đời sống, học đường",
+        "Kỹ năng phát âm chuẩn IPA, trọng âm từ và ngữ điệu câu",
+        "Đọc hiểu văn bản học thuật và mở rộng vốn từ vựng",
+        "Viết đoạn văn mô tả, so sánh và biểu đạt quan điểm cá nhân"
+      ],
+      "syllabus": [
+        "Rèn luyện 4 kỹ năng tiếng Anh học thuật trình độ tiền trung cấp (B1)",
+        "Nghe hiểu các bài hội thoại và bài giảng ngắn về chủ đề đời sống, học đường",
+        "Kỹ năng phát âm chuẩn IPA, trọng âm từ và ngữ điệu câu",
+        "Đọc hiểu văn bản học thuật và mở rộng vốn từ vựng",
+        "Viết đoạn văn mô tả, so sánh và biểu đạt quan điểm cá nhân"
+      ],
+      "textbook": {
+        "main": "Pathways 2: Listening, Speaking, and Critical Thinking",
+        "author": "Becky Tarver Chase, Kristin L. Johannsen",
+        "publisher": "National Geographic Learning / Cengage",
+        "references": [
+          "English Grammar in Use (Raymond Murphy)"
+        ]
+      }
+    },
+    {
+      "course_code": "ENG102",
+      "course_name": "English for Academic Purposes 2",
+      "vietnamese_name": "Tiếng Anh học thuật 2",
+      "program": "Ngôn ngữ Anh",
+      "programs": [
+        "Ngôn ngữ Anh"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 2,
+      "prerequisites": [
+        "ENG101"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Phát triển kỹ năng tiếng Anh học thuật nâng cao trình độ trung cấp (B2)",
+        "Thuyết trình tiếng Anh theo chủ đề chuyên môn và tranh biện học thuật",
+        "Kỹ năng đọc nhanh (Skimming, Scanning) và tóm tắt bài báo khoa học",
+        "Kỹ thuật viết bài luận học thuật 5 đoạn (Essay Writing: Cause-Effect, Argumentative)",
+        "Luyện kỹ năng nghe hiểu các bài giảng chuyên sâu (Academic Lectures)"
+      ],
+      "syllabus": [
+        "Phát triển kỹ năng tiếng Anh học thuật nâng cao trình độ trung cấp (B2)",
+        "Thuyết trình tiếng Anh theo chủ đề chuyên môn và tranh biện học thuật",
+        "Kỹ năng đọc nhanh (Skimming, Scanning) và tóm tắt bài báo khoa học",
+        "Kỹ thuật viết bài luận học thuật 5 đoạn (Essay Writing: Cause-Effect, Argumentative)",
+        "Luyện kỹ năng nghe hiểu các bài giảng chuyên sâu (Academic Lectures)"
+      ],
+      "textbook": {
+        "main": "Pathways 3: Reading, Writing, and Critical Thinking",
+        "author": "Laurie Blass, Mari Vargo",
+        "publisher": "National Geographic Learning / Cengage",
+        "references": [
+          "Academic Writing for Graduate Students (John M. Swales)"
+        ]
+      }
+    },
+    {
+      "course_code": "ENB301",
+      "course_name": "Business English Communication",
+      "vietnamese_name": "Giao tiếp Tiếng Anh thương mại",
+      "program": "Ngôn ngữ Anh",
+      "programs": [
+        "Ngôn ngữ Anh"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 4,
+      "prerequisites": [
+        "ENG102"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Tiếng Anh thương mại chuyên nghiệp trong môi trường doanh nghiệp toàn cầu",
+        "Giao tiếp qua thư điện tử kinh doanh (Business Emails), báo cáo và biên bản cuộc họp",
+        "Đàm phán thương mại và kỹ năng thuyết phục đối tác",
+        "Từ vựng chuyên sâu về tài chính, tiếp thị, nhân sự và quản trị",
+        "Thuyết trình dự án kinh doanh bằng tiếng Anh"
+      ],
+      "syllabus": [
+        "Tiếng Anh thương mại chuyên nghiệp trong môi trường doanh nghiệp toàn cầu",
+        "Giao tiếp qua thư điện tử kinh doanh (Business Emails), báo cáo và biên bản cuộc họp",
+        "Đàm phán thương mại và kỹ năng thuyết phục đối tác",
+        "Từ vựng chuyên sâu về tài chính, tiếp thị, nhân sự và quản trị",
+        "Thuyết trình dự án kinh doanh bằng tiếng Anh"
+      ],
+      "textbook": {
+        "main": "Market Leader Intermediate (3rd Edition Extra)",
+        "author": "David Cotton, David Falvey, Simon Kent",
+        "publisher": "Pearson Longman",
+        "references": [
+          "Business English Handbook (Paul Emmerson)"
+        ]
+      }
+    },
+    {
+      "course_code": "ENT301",
+      "course_name": "Translation and Interpretation",
+      "vietnamese_name": "Biên dịch và Phiên dịch Tiếng Anh",
+      "program": "Ngôn ngữ Anh",
+      "programs": [
+        "Ngôn ngữ Anh"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "ENB301"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Lý thuyết dịch thuật căn bản: Đối chiếu ngôn ngữ Anh - Việt",
+        "Phương pháp và kỹ thuật dịch xuôi (Anh - Việt) và dịch ngược (Việt - Anh)",
+        "Dịch thuật văn bản kinh tế, công nghệ thông tin và pháp lý",
+        "Thực hành biên dịch và sử dụng các công cụ dịch thuật hỗ trợ bằng máy tính (CAT Tools)"
+      ],
+      "syllabus": [
+        "Lý thuyết dịch thuật căn bản: Đối chiếu ngôn ngữ Anh - Việt",
+        "Phương pháp và kỹ thuật dịch xuôi (Anh - Việt) và dịch ngược (Việt - Anh)",
+        "Dịch thuật văn bản kinh tế, công nghệ thông tin và pháp lý",
+        "Thực hành biên dịch và sử dụng các công cụ dịch thuật hỗ trợ bằng máy tính (CAT Tools)"
+      ],
+      "textbook": {
+        "main": "Introducing Translation Studies: Theories and Applications",
+        "author": "Jeremy Munday",
+        "publisher": "Routledge",
+        "references": [
+          "Giáo trình Biên dịch Anh - Việt ĐH FPT"
+        ]
+      }
+    },
+    {
+      "course_code": "ENP490",
+      "course_name": "English Language Capstone Project",
+      "vietnamese_name": "Khóa luận tốt nghiệp Ngôn ngữ Anh",
+      "program": "Ngôn ngữ Anh",
+      "programs": [
+        "Ngôn ngữ Anh"
+      ],
+      "category": "project",
+      "credits": 10,
+      "semester": 9,
+      "prerequisites": [
+        "ENT301"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": false
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Khóa luận tốt nghiệp ngành Ngôn ngữ Anh (cá nhân sinh viên)",
+        "Nghiên cứu ứng dụng ngôn ngữ học, phương pháp giảng dạy hoặc biên phiên dịch chuyên sâu",
+        "Viết khóa luận hoàn toàn bằng tiếng Anh và bảo vệ trước Hội đồng chấm thi ĐH FPT"
+      ],
+      "syllabus": [
+        "Khóa luận tốt nghiệp ngành Ngôn ngữ Anh (cá nhân sinh viên)",
+        "Nghiên cứu ứng dụng ngôn ngữ học, phương pháp giảng dạy hoặc biên phiên dịch chuyên sâu",
+        "Viết khóa luận hoàn toàn bằng tiếng Anh và bảo vệ trước Hội đồng chấm thi ĐH FPT"
+      ],
+      "textbook": {
+        "main": "Research Methods in Applied Linguistics",
+        "author": "Zoltán Dörnyei",
+        "publisher": "Oxford University Press",
+        "references": [
+          "Sổ tay Khóa luận Tốt nghiệp Ngôn ngữ Anh ĐH FPT"
+        ]
+      }
+    },
+    {
+      "course_code": "JAP101",
+      "course_name": "Elementary Japanese 1",
+      "vietnamese_name": "Tiếng Nhật sơ cấp 1",
+      "program": "Ngôn ngữ Nhật",
+      "programs": [
+        "Ngôn ngữ Nhật"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Bảng chữ cái Hiragana, Katakana, biến âm, âm ghép và trường âm",
+        "Mẫu câu chào hỏi, giới thiệu bản thân, số đếm và ngày giờ",
+        "Học 50 chữ Hán Kanji cơ bản đầu tiên",
+        "Các mẫu câu căn bản khẳng định, phủ định, nghi vấn với động từ thì hiện tại"
+      ],
+      "syllabus": [
+        "Bảng chữ cái Hiragana, Katakana, biến âm, âm ghép và trường âm",
+        "Mẫu câu chào hỏi, giới thiệu bản thân, số đếm và ngày giờ",
+        "Học 50 chữ Hán Kanji cơ bản đầu tiên",
+        "Các mẫu câu căn bản khẳng định, phủ định, nghi vấn với động từ thì hiện tại"
+      ],
+      "textbook": {
+        "main": "Minna no Nihongo Shokyu 1 (Bài 1 đến Bài 12)",
+        "author": "3A Corporation",
+        "publisher": "3A Corporation Japan",
+        "references": [
+          "Basic Kanji Book Vol. 1"
+        ]
+      }
+    },
+    {
+      "course_code": "JAP102",
+      "course_name": "Elementary Japanese 2",
+      "vietnamese_name": "Tiếng Nhật sơ cấp 2",
+      "program": "Ngôn ngữ Nhật",
+      "programs": [
+        "Ngôn ngữ Nhật"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 2,
+      "prerequisites": [
+        "JAP101"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Ngữ pháp tiếng Nhật sơ cấp: Thể Te, thể Nai, thể Ta của động từ",
+        "Mẫu câu xin phép, cấm đoán, nối câu và diễn đạt kinh nghiệm",
+        "Mở rộng 80 chữ Hán Kanji N5/N4",
+        "Luyện hội thoại theo tình huống đời sống sinh hoạt và du lịch Nhật Bản"
+      ],
+      "syllabus": [
+        "Ngữ pháp tiếng Nhật sơ cấp: Thể Te, thể Nai, thể Ta của động từ",
+        "Mẫu câu xin phép, cấm đoán, nối câu và diễn đạt kinh nghiệm",
+        "Mở rộng 80 chữ Hán Kanji N5/N4",
+        "Luyện hội thoại theo tình huống đời sống sinh hoạt và du lịch Nhật Bản"
+      ],
+      "textbook": {
+        "main": "Minna no Nihongo Shokyu 1 (Bài 13 đến Bài 25)",
+        "author": "3A Corporation",
+        "publisher": "3A Corporation Japan",
+        "references": [
+          "Sách bài tập Minna no Nihongo 1"
+        ]
+      }
+    },
+    {
+      "course_code": "JIT301",
+      "course_name": "Japanese for IT Professionals",
+      "vietnamese_name": "Tiếng Nhật chuyên ngành CNTT",
+      "program": "Ngôn ngữ Nhật",
+      "programs": [
+        "Ngôn ngữ Nhật"
+      ],
+      "category": "specialization",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "JAP102"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Tiếng Nhật chuyên ngành Công nghệ thông tin trình độ N3/N2",
+        "Thuật ngữ chuyên ngành CNTT: phần cứng, phần mềm, cơ sở dữ liệu, mạng, kiểm thử",
+        "Đọc hiểu tài liệu đặc tả kỹ thuật và thiết kế phần mềm bằng tiếng Nhật",
+        "Giao tiếp trong môi trường công ty phần mềm Nhật Bản (BSE, Comtor)"
+      ],
+      "syllabus": [
+        "Tiếng Nhật chuyên ngành Công nghệ thông tin trình độ N3/N2",
+        "Thuật ngữ chuyên ngành CNTT: phần cứng, phần mềm, cơ sở dữ liệu, mạng, kiểm thử",
+        "Đọc hiểu tài liệu đặc tả kỹ thuật và thiết kế phần mềm bằng tiếng Nhật",
+        "Giao tiếp trong môi trường công ty phần mềm Nhật Bản (BSE, Comtor)"
+      ],
+      "textbook": {
+        "main": "Giáo trình Tiếng Nhật CNTT IT Nihongo",
+        "author": "Bộ môn Ngôn ngữ Nhật ĐH FPT",
+        "publisher": "Đại học FPT",
+        "references": [
+          "Nihongo for IT Professionals"
+        ]
+      }
+    },
+    {
+      "course_code": "JAP490",
+      "course_name": "Japanese Language Capstone Project",
+      "vietnamese_name": "Khóa luận tốt nghiệp Ngôn ngữ Nhật",
+      "program": "Ngôn ngữ Nhật",
+      "programs": [
+        "Ngôn ngữ Nhật"
+      ],
+      "category": "project",
+      "credits": 10,
+      "semester": 9,
+      "prerequisites": [
+        "JIT301"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": false
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Khóa luận tốt nghiệp ngành Ngôn ngữ Nhật (cá nhân sinh viên)",
+        "Nghiên cứu về văn hóa doanh nghiệp Nhật Bản, dịch thuật IT hoặc ngôn ngữ học đối chiếu",
+        "Bảo vệ khóa luận bằng tiếng Nhật trước Hội đồng giám khảo ĐH FPT"
+      ],
+      "syllabus": [
+        "Khóa luận tốt nghiệp ngành Ngôn ngữ Nhật (cá nhân sinh viên)",
+        "Nghiên cứu về văn hóa doanh nghiệp Nhật Bản, dịch thuật IT hoặc ngôn ngữ học đối chiếu",
+        "Bảo vệ khóa luận bằng tiếng Nhật trước Hội đồng giám khảo ĐH FPT"
+      ],
+      "textbook": {
+        "main": "Tài liệu Hướng dẫn Khóa luận Tốt nghiệp Ngôn ngữ Nhật",
+        "author": "Khoa Ngoại ngữ ĐH FPT",
+        "publisher": "Đại học FPT",
+        "references": [
+          "Sổ tay nghiên cứu ngôn ngữ học tiếng Nhật"
+        ]
+      }
+    },
+    {
+      "course_code": "KOR101",
+      "course_name": "Elementary Korean 1",
+      "vietnamese_name": "Tiếng Hàn sơ cấp 1",
+      "program": "Ngôn ngữ Hàn",
+      "programs": [
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Bảng chữ cái tiếng Hàn Hangeul (Nguyên âm, phụ âm, patchim)",
+        "Quy tắc phát âm, nối âm và ngữ điệu câu cơ bản",
+        "Từ vựng và ngữ pháp chào hỏi, giới thiệu bản thân, quốc tịch, nghề nghiệp",
+        "Mẫu câu trần thuật và nghi vấn trang trọng (-(s)umnida/-(s)umnikka)"
+      ],
+      "syllabus": [
+        "Bảng chữ cái tiếng Hàn Hangeul (Nguyên âm, phụ âm, patchim)",
+        "Quy tắc phát âm, nối âm và ngữ điệu câu cơ bản",
+        "Từ vựng và ngữ pháp chào hỏi, giới thiệu bản thân, quốc tịch, nghề nghiệp",
+        "Mẫu câu trần thuật và nghi vấn trang trọng (-(s)umnida/-(s)umnikka)"
+      ],
+      "textbook": {
+        "main": "Giáo trình Tiếng Hàn Tổng Hợp dành cho người Việt Nam - Tập 1",
+        "author": "Cho Hang Rok, Lee Mi Hye",
+        "publisher": "NXB Thông tin và Truyền thông",
+        "references": [
+          "Ngữ pháp tiếng Hàn thông dụng sơ cấp"
+        ]
+      }
+    },
+    {
+      "course_code": "KOR102",
+      "course_name": "Elementary Korean 2",
+      "vietnamese_name": "Tiếng Hàn sơ cấp 2",
+      "program": "Ngôn ngữ Hàn",
+      "programs": [
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 2,
+      "prerequisites": [
+        "KOR101"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Tiếng Hàn sơ cấp 2: Mẫu câu giao tiếp hàng ngày thân mật (-a/oyo)",
+        "Ngữ pháp chỉ lý do, mục đích, thì quá khứ, tương lai",
+        "Luyện kỹ năng nghe hiểu và giao tiếp theo chủ đề mua sắm, thời tiết, giao thông",
+        "Tìm hiểu văn hóa và phong tục tập quán Hàn Quốc"
+      ],
+      "syllabus": [
+        "Tiếng Hàn sơ cấp 2: Mẫu câu giao tiếp hàng ngày thân mật (-a/oyo)",
+        "Ngữ pháp chỉ lý do, mục đích, thì quá khứ, tương lai",
+        "Luyện kỹ năng nghe hiểu và giao tiếp theo chủ đề mua sắm, thời tiết, giao thông",
+        "Tìm hiểu văn hóa và phong tục tập quán Hàn Quốc"
+      ],
+      "textbook": {
+        "main": "Giáo trình Tiếng Hàn Tổng Hợp dành cho người Việt Nam - Tập 2",
+        "author": "Cho Hang Rok, Lee Mi Hye",
+        "publisher": "NXB Thông tin và Truyền thông",
+        "references": [
+          "Sách bài tập Tiếng Hàn Tổng Hợp 2"
+        ]
+      }
+    },
+    {
+      "course_code": "KOR490",
+      "course_name": "Korean Language Capstone Project",
+      "vietnamese_name": "Khóa luận tốt nghiệp Ngôn ngữ Hàn",
+      "program": "Ngôn ngữ Hàn",
+      "programs": [
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "project",
+      "credits": 10,
+      "semester": 9,
+      "prerequisites": [
+        "KOR102"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": false
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Khóa luận tốt nghiệp ngành Ngôn ngữ Hàn (cá nhân sinh viên)",
+        "Nghiên cứu văn hóa, kinh tế, giao tiếp thương mại Hàn Quốc hoặc biên phiên dịch Hàn - Việt",
+        "Bảo vệ khóa luận tốt nghiệp trước Hội đồng đánh giá ĐH FPT"
+      ],
+      "syllabus": [
+        "Khóa luận tốt nghiệp ngành Ngôn ngữ Hàn (cá nhân sinh viên)",
+        "Nghiên cứu văn hóa, kinh tế, giao tiếp thương mại Hàn Quốc hoặc biên phiên dịch Hàn - Việt",
+        "Bảo vệ khóa luận tốt nghiệp trước Hội đồng đánh giá ĐH FPT"
+      ],
+      "textbook": {
+        "main": "Tài liệu Hướng dẫn Khóa luận Tốt nghiệp Ngôn ngữ Hàn",
+        "author": "Khoa Ngoại ngữ ĐH FPT",
+        "publisher": "Đại học FPT",
+        "references": [
+          "Sổ tay nghiên cứu học thuật tiếng Hàn"
+        ]
+      }
+    },
+    {
+      "course_code": "VOV114",
+      "course_name": "Vovinam 1",
+      "vietnamese_name": "Võ Vovinam 1 (Giáo dục thể chất)",
+      "program": "Chung",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin",
+        "Quản trị kinh doanh",
+        "Digital Marketing",
+        "Thiết kế Mỹ thuật số",
+        "Ngôn ngữ Anh",
+        "Ngôn ngữ Nhật",
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "physical_education",
+      "credits": 0,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": true,
+        "eos": false,
+        "project": false,
+        "assignment": true
+      },
+      "source": "corpus_verified",
+      "confidence": "specified",
+      "topics_covered": [
+        "Lịch sử hình thành, tôn chỉ mục đích và võ đạo Vovinam - Việt Võ Đạo",
+        "Các thế đứng căn bản, kỹ thuật di chuyển và đòn té ngã an toàn",
+        "Bộ đòn tay cơ bản: Đòn đấm thẳng, đấm móc, đấm phạt, đòn chém 1 đến 4",
+        "Bộ đòn gạt cơ bản (gạt 1 đến 4) và các đòn đá thẳng, đá tạt",
+        "Thế chiến lược số 1 đến số 5",
+        "Bài quyền Khởi quyền cơ bản",
+        "Rèn luyện thể lực và tinh thần kỷ luật tự giác"
+      ],
+      "syllabus": [
+        "Lịch sử hình thành, tôn chỉ mục đích và võ đạo Vovinam - Việt Võ Đạo",
+        "Các thế đứng căn bản, kỹ thuật di chuyển và đòn té ngã an toàn",
+        "Bộ đòn tay cơ bản: Đòn đấm thẳng, đấm móc, đấm phạt, đòn chém 1 đến 4",
+        "Bộ đòn gạt cơ bản (gạt 1 đến 4) và các đòn đá thẳng, đá tạt",
+        "Thế chiến lược số 1 đến số 5",
+        "Bài quyền Khởi quyền cơ bản",
+        "Rèn luyện thể lực và tinh thần kỷ luật tự giác"
+      ],
+      "textbook": {
+        "main": "Giáo trình Vovinam - Việt Võ Đạo (Tập 1 - Nhập môn)",
+        "author": "Bộ môn Giáo dục Thể chất ĐH FPT",
+        "publisher": "Đại học FPT",
+        "references": [
+          "Sổ tay kỹ thuật Vovinam Việt Võ Đạo Việt Nam"
+        ]
+      }
+    },
+    {
+      "course_code": "VOV124",
+      "course_name": "Vovinam 2",
+      "vietnamese_name": "Võ Vovinam 2 (Giáo dục thể chất)",
+      "program": "Chung",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin",
+        "Quản trị kinh doanh",
+        "Digital Marketing",
+        "Thiết kế Mỹ thuật số",
+        "Ngôn ngữ Anh",
+        "Ngôn ngữ Nhật",
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "physical_education",
+      "credits": 0,
+      "semester": 2,
+      "prerequisites": [
+        "VOV114"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": false,
+        "project": false,
+        "assignment": true
+      },
+      "source": "corpus_verified",
+      "confidence": "specified",
+      "topics_covered": [
+        "Kỹ thuật Vovinam cấp độ Lam đai I",
+        "Thế chiến lược số 6 đến số 10",
+        "Bộ đòn chân tấn công căn bản (Đòn chân 1 đến 4)",
+        "Kỹ thuật tự vệ nữ giới và chống ôm giữ, bóp cổ",
+        "Bài quyền Thập thế quyền và bài quyền tay không nâng cao",
+        "Thực hành thi đấu đối kháng có bảo hộ"
+      ],
+      "syllabus": [
+        "Kỹ thuật Vovinam cấp độ Lam đai I",
+        "Thế chiến lược số 6 đến số 10",
+        "Bộ đòn chân tấn công căn bản (Đòn chân 1 đến 4)",
+        "Kỹ thuật tự vệ nữ giới và chống ôm giữ, bóp cổ",
+        "Bài quyền Thập thế quyền và bài quyền tay không nâng cao",
+        "Thực hành thi đấu đối kháng có bảo hộ"
+      ],
+      "textbook": {
+        "main": "Giáo trình Vovinam - Việt Võ Đạo (Tập 2 - Lam đai I)",
+        "author": "Bộ môn Giáo dục Thể chất ĐH FPT",
+        "publisher": "Đại học FPT",
+        "references": [
+          "Quy chế thi đấu đối kháng Vovinam"
+        ]
+      }
+    },
+    {
+      "course_code": "VOV134",
+      "course_name": "Vovinam 3",
+      "vietnamese_name": "Võ Vovinam 3 (Giáo dục thể chất)",
+      "program": "Chung",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin",
+        "Quản trị kinh doanh",
+        "Digital Marketing",
+        "Thiết kế Mỹ thuật số",
+        "Ngôn ngữ Anh",
+        "Ngôn ngữ Nhật",
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "physical_education",
+      "credits": 0,
+      "semester": 3,
+      "prerequisites": [
+        "VOV124"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": false,
+        "project": false,
+        "assignment": true
+      },
+      "source": "corpus_verified",
+      "confidence": "specified",
+      "topics_covered": [
+        "Kỹ thuật Vovinam cấp độ Lam đai II",
+        "Thế chiến lược số 11 đến số 15",
+        "Bộ đòn chân tấn công nâng cao (Đòn chân 5 đến 8)",
+        "Kỹ thuật sử dụng vũ khí căn bản: Bài quyền Nhập môn kiếm pháp / Dao găm",
+        "Bài quyền Long hổ quyền",
+        "Thực hành ứng dụng võ thuật và kiểm tra kỹ thuật tổng hợp"
+      ],
+      "syllabus": [
+        "Kỹ thuật Vovinam cấp độ Lam đai II",
+        "Thế chiến lược số 11 đến số 15",
+        "Bộ đòn chân tấn công nâng cao (Đòn chân 5 đến 8)",
+        "Kỹ thuật sử dụng vũ khí căn bản: Bài quyền Nhập môn kiếm pháp / Dao găm",
+        "Bài quyền Long hổ quyền",
+        "Thực hành ứng dụng võ thuật và kiểm tra kỹ thuật tổng hợp"
+      ],
+      "textbook": {
+        "main": "Giáo trình Vovinam - Việt Võ Đạo (Tập 3 - Lam đai II)",
+        "author": "Bộ môn Giáo dục Thể chất ĐH FPT",
+        "publisher": "Đại học FPT",
+        "references": [
+          "Kỹ thuật vũ khí truyền thống Vovinam"
+        ]
+      }
+    },
+    {
+      "course_code": "MIL111",
+      "course_name": "National Defense Education 1",
+      "vietnamese_name": "Giáo dục Quốc phòng và An ninh 1",
+      "program": "Chung",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin",
+        "Quản trị kinh doanh",
+        "Digital Marketing",
+        "Thiết kế Mỹ thuật số",
+        "Ngôn ngữ Anh",
+        "Ngôn ngữ Nhật",
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "general",
+      "credits": 0,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "corpus_verified",
+      "confidence": "specified",
+      "topics_covered": [
+        "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+        "Quan điểm cơ bản của chủ nghĩa Mác - Lênin, tư tưởng Hồ Chí Minh về chiến tranh, quân đội và bảo vệ Tổ quốc",
+        "Xây dựng nền quốc phòng toàn dân, an ninh nhân dân vững mạnh",
+        "Chiến lược 'Diễn biến hòa bình', bạo loạn lật đổ của các thế lực thù địch",
+        "Luật Nghĩa vụ quân sự, Luật Quốc phòng, Luật An ninh mạng"
+      ],
+      "syllabus": [
+        "Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam",
+        "Quan điểm cơ bản của chủ nghĩa Mác - Lênin, tư tưởng Hồ Chí Minh về chiến tranh, quân đội và bảo vệ Tổ quốc",
+        "Xây dựng nền quốc phòng toàn dân, an ninh nhân dân vững mạnh",
+        "Chiến lược 'Diễn biến hòa bình', bạo loạn lật đổ của các thế lực thù địch",
+        "Luật Nghĩa vụ quân sự, Luật Quốc phòng, Luật An ninh mạng"
+      ],
+      "textbook": {
+        "main": "Giáo trình Giáo dục Quốc phòng và An ninh (Tập 1)",
+        "author": "Bộ Giáo dục và Đào tạo",
+        "publisher": "NXB Giáo dục Việt Nam",
+        "references": [
+          "Văn bản quy phạm pháp luật về Quốc phòng - An ninh"
+        ]
+      }
+    },
+    {
+      "course_code": "MIL121",
+      "course_name": "National Defense Education 2",
+      "vietnamese_name": "Giáo dục Quốc phòng và An ninh 2",
+      "program": "Chung",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin",
+        "Quản trị kinh doanh",
+        "Digital Marketing",
+        "Thiết kế Mỹ thuật số",
+        "Ngôn ngữ Anh",
+        "Ngôn ngữ Nhật",
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "general",
+      "credits": 0,
+      "semester": 1,
+      "prerequisites": [
+        "MIL111"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": false,
+        "assignment": true
+      },
+      "source": "corpus_verified",
+      "confidence": "specified",
+      "topics_covered": [
+        "Công tác quốc phòng và an ninh trong tình hình mới",
+        "Kỹ thuật bắn súng tiểu liên AK: cấu tạo, tính năng, tháo lắp thông thường và các tư thế bắn (nằm, quỳ, đứng)",
+        "Tính năng, tác dụng và cách sử dụng lựu đạn bài 1",
+        "Băng bó vết thương, sơ cứu chuyển thương hỏa tuyến",
+        "Đội ngũ từng người không có súng và có súng",
+        "Chiến thuật từng người trong chiến đấu tiến công và phòng ngự"
+      ],
+      "syllabus": [
+        "Công tác quốc phòng và an ninh trong tình hình mới",
+        "Kỹ thuật bắn súng tiểu liên AK: cấu tạo, tính năng, tháo lắp thông thường và các tư thế bắn (nằm, quỳ, đứng)",
+        "Tính năng, tác dụng và cách sử dụng lựu đạn bài 1",
+        "Băng bó vết thương, sơ cứu chuyển thương hỏa tuyến",
+        "Đội ngũ từng người không có súng và có súng",
+        "Chiến thuật từng người trong chiến đấu tiến công và phòng ngự"
+      ],
+      "textbook": {
+        "main": "Giáo trình Giáo dục Quốc phòng và An ninh (Tập 2)",
+        "author": "Bộ Giáo dục và Đào tạo",
+        "publisher": "NXB Giáo dục Việt Nam",
+        "references": [
+          "Điều lệnh đội ngũ Quân đội nhân dân Việt Nam"
+        ]
+      }
+    },
+    {
+      "course_code": "SSL101c",
+      "course_name": "Academic Skills for University Success",
+      "vietnamese_name": "Kỹ năng học tập đại học",
+      "program": "Chung",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin",
+        "Quản trị kinh doanh",
+        "Digital Marketing",
+        "Thiết kế Mỹ thuật số",
+        "Ngôn ngữ Anh",
+        "Ngôn ngữ Nhật",
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "general",
+      "credits": 3,
+      "semester": 1,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Phương pháp học tập đại học chủ động và hiệu quả (Self-directed Learning)",
+        "Kỹ năng quản lý thời gian và lập kế hoạch mục tiêu cá nhân (SMART goals)",
+        "Tư duy phản biện (Critical Thinking) và kỹ năng giải quyết vấn đề",
+        "Kỹ năng làm việc nhóm, giao tiếp và thuyết trình trước đám đông",
+        "Kỹ năng tra cứu tài liệu học thuật và tránh đạo văn (Academic Integrity)"
+      ],
+      "syllabus": [
+        "Phương pháp học tập đại học chủ động và hiệu quả (Self-directed Learning)",
+        "Kỹ năng quản lý thời gian và lập kế hoạch mục tiêu cá nhân (SMART goals)",
+        "Tư duy phản biện (Critical Thinking) và kỹ năng giải quyết vấn đề",
+        "Kỹ năng làm việc nhóm, giao tiếp và thuyết trình trước đám đông",
+        "Kỹ năng tra cứu tài liệu học thuật và tránh đạo văn (Academic Integrity)"
+      ],
+      "textbook": {
+        "main": "Academic Skills for University Success",
+        "author": "University of Sydney / Coursera Consortium",
+        "publisher": "Coursera Course Materials & ĐH FPT",
+        "references": [
+          "Becoming a Master Student (Dave Ellis)"
+        ]
+      }
+    },
+    {
+      "course_code": "EXE101",
+      "course_name": "Experiential Entrepreneurship 1",
+      "vietnamese_name": "Trải nghiệm khởi nghiệp 1",
+      "program": "Chung",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin",
+        "Quản trị kinh doanh",
+        "Digital Marketing",
+        "Thiết kế Mỹ thuật số",
+        "Ngôn ngữ Anh",
+        "Ngôn ngữ Nhật",
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "general",
+      "credits": 3,
+      "semester": 4,
+      "prerequisites": [],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Tư duy khởi nghiệp và tinh thần đổi mới sáng tạo (Entrepreneurial Mindset)",
+        "Nhận diện cơ hội kinh doanh và tìm kiếm ý tưởng sáng tạo",
+        "Mô hình kinh doanh tinh gọn (Lean Business Model Canvas)",
+        "Nghiên cứu thị trường và kiểm chứng khách hàng mục tiêu (Customer Discovery)",
+        "Xây dựng sản phẩm khả dụng tối thiểu (MVP)",
+        "Kỹ năng Pitching giới thiệu dự án khởi nghiệp trước nhà đầu tư"
+      ],
+      "syllabus": [
+        "Tư duy khởi nghiệp và tinh thần đổi mới sáng tạo (Entrepreneurial Mindset)",
+        "Nhận diện cơ hội kinh doanh và tìm kiếm ý tưởng sáng tạo",
+        "Mô hình kinh doanh tinh gọn (Lean Business Model Canvas)",
+        "Nghiên cứu thị trường và kiểm chứng khách hàng mục tiêu (Customer Discovery)",
+        "Xây dựng sản phẩm khả dụng tối thiểu (MVP)",
+        "Kỹ năng Pitching giới thiệu dự án khởi nghiệp trước nhà đầu tư"
+      ],
+      "textbook": {
+        "main": "The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation",
+        "author": "Eric Ries",
+        "publisher": "Crown Business",
+        "references": [
+          "Business Model Generation (Alexander Osterwalder, Yves Pigneur)"
+        ]
+      }
+    },
+    {
+      "course_code": "EXE201",
+      "course_name": "Experiential Entrepreneurship 2",
+      "vietnamese_name": "Trải nghiệm khởi nghiệp 2",
+      "program": "Chung",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin",
+        "Quản trị kinh doanh",
+        "Digital Marketing",
+        "Thiết kế Mỹ thuật số",
+        "Ngôn ngữ Anh",
+        "Ngôn ngữ Nhật",
+        "Ngôn ngữ Hàn"
+      ],
+      "category": "general",
+      "credits": 3,
+      "semester": 5,
+      "prerequisites": [
+        "EXE101"
+      ],
+      "assessment": {
+        "practical_exam": false,
+        "eos": false,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Thực chiến triển khai dự án khởi nghiệp từ ý tưởng thành sản phẩm thực tế",
+        "Chiến lược tiếp thị số và thu hút khách hàng giai đoạn đầu (Traction)",
+        "Quản trị tài chính khởi nghiệp, dòng tiền và dự báo chi phí",
+        "Kỹ năng đàm phán, gọi vốn đầu tư thiên thần (Angel Investors/Seed Funding)",
+        "Tham gia ngày hội khởi nghiệp FPT Edu Biz Contest / Demo Day"
+      ],
+      "syllabus": [
+        "Thực chiến triển khai dự án khởi nghiệp từ ý tưởng thành sản phẩm thực tế",
+        "Chiến lược tiếp thị số và thu hút khách hàng giai đoạn đầu (Traction)",
+        "Quản trị tài chính khởi nghiệp, dòng tiền và dự báo chi phí",
+        "Kỹ năng đàm phán, gọi vốn đầu tư thiên thần (Angel Investors/Seed Funding)",
+        "Tham gia ngày hội khởi nghiệp FPT Edu Biz Contest / Demo Day"
+      ],
+      "textbook": {
+        "main": "Disciplined Entrepreneurship: 24 Steps to a Successful Startup",
+        "author": "Bill Aulet",
+        "publisher": "Wiley",
+        "references": [
+          "Running Lean: Iterate from Plan A to a Plan That Works (Ash Maurya)"
+        ]
+      }
+    }
+  ]
+}

@@ -1,35 +1,99 @@
 {
-  "corpus_version": "1.0.0",
-  "generated_at": "2024-06-01T10:00:00Z",
-  "total_documents": 5,
+  "corpus_version": "2.0.0",
+  "updated_at": "2026-10-18T23:05:00Z",
+  "total_documents": 824,
   "supported_cohorts": [
-    "K2020",
-    "K2021",
-    "K2022",
-    "K2023",
-    "K2024"
+    "K17",
+    "K18",
+    "K19",
+    "K20",
+    "K21",
+    "K22"
+  ],
+  "campuses": [
+    "HN",
+    "FUHL",
+    "HCM",
+    "CT",
+    "DN",
+    "QN",
+    "ALL"
   ],
   "categories": [
     "dao_tao",
     "hoc_phi",
     "tot_nghiep",
     "hoc_bong",
-    "ky_luat"
+    "ky_luat",
+    "ojt",
+    "khac"
   ],
-  "documents_manifest": [
+  "dual_path_components": {
+    "unstructured_corpus": "data/processed/corpus.jsonl",
+    "structured_database": "data/processed/structured_data.json",
+    "bm25_index": "data/processed/bm25_index/bm25_index.pkl",
+    "faiss_index": "data/processed/faiss_index/dense.index"
+  },
+  "source_files": [
     {
-      "doc_id": "QC-2023-01",
-      "title": "Quy chế đào tạo trình độ đại học theo hệ thống tín chỉ",
-      "issue_date": "2023-08-01",
-      "effective_date": "2023-09-01",
-      "signatory": "Hiệu trưởng"
+      "file": "[studocu.com] - Sổ Tay Sinh Viên K17 - Đại Học FPT - Hướng Dẫn Chi Tiết Và Thông Tin.pdf",
+      "cohort": "K17",
+      "campus": "ALL",
+      "type": "handbook",
+      "size_mb": 96.83,
+      "pages": 90,
+      "description": "Sổ tay hướng dẫn học tập và quy chế sinh viên đại học FPT áp dụng cho khóa K17.",
+      "key_topics": ["quy chế đào tạo", "chuẩn đầu ra", "đồ án tốt nghiệp", "rèn luyện"]
     },
     {
-      "doc_id": "HB-2023-02",
-      "title": "Quy định về việc xét cấp học bổng khuyến khích học tập",
-      "issue_date": "2023-08-10",
-      "effective_date": "2023-08-15",
-      "signatory": "Phòng Công tác Sinh viên"
+      "file": "sotaysinhvienK18HN.pdf",
+      "cohort": "K18",
+      "campus": "HN",
+      "type": "handbook",
+      "size_mb": 9.95,
+      "pages": 67,
+      "description": "Sổ tay sinh viên cơ sở Hà Nội khóa K18, quy định đào tạo và chính sách học phí.",
+      "key_topics": ["quy chế học vụ", "học phí K18", "kỷ luật sinh viên", "thực tập OJT"]
+    },
+    {
+      "file": "[studocu.com] - Hướng dẫn Tài chính Sinh viên K19 - Quy định và Phí năm học 2023-2024.pdf",
+      "cohort": "K19",
+      "campus": "ALL",
+      "type": "finance_regulation",
+      "size_mb": 0.18,
+      "pages": 10,
+      "description": "Hướng dẫn chi tiết về các loại học phí, lệ phí và quy định tài chính năm học 2023-2024 cho sinh viên K19.",
+      "key_topics": ["biểu phí học phần", "học phí tiếng Anh chuẩn bị", "phí KTX", "chính sách hoàn hủy"]
+    },
+    {
+      "file": "1054154482-K20-Sổ-Tay-Sinh-Vien-2.pdf",
+      "cohort": "K20",
+      "campus": "ALL",
+      "type": "handbook",
+      "size_mb": 11.83,
+      "pages": 76,
+      "description": "Sổ tay sinh viên toàn diện khóa K20 bao gồm lộ trình học và chính sách học vụ.",
+      "key_topics": ["sổ tay sinh viên K20", "chương trình đào tạo", "đăng ký môn", "xét học bổng"]
+    },
+    {
+      "file": "970569429-So-Tay-Sinh-Vien-K21-FUHL-1.pdf",
+      "cohort": "K21",
+      "campus": "FUHL",
+      "type": "handbook",
+      "size_mb": 1.90,
+      "pages": 70,
+      "description": "Sổ tay sinh viên cơ sở Hòa Lạc (FUHL) khóa K21, nội quy ký túc xá và sinh hoạt khuôn viên.",
+      "key_topics": ["quy chế cơ sở Hòa Lạc", "nội quy ký túc xá", "dịch vụ sinh viên", "hoạt động phong trào"]
+    },
+    {
+      "file": "2026_So-tay-k22_compressed.pdf",
+      "cohort": "K22",
+      "campus": "ALL",
+      "type": "handbook",
+      "size_mb": 4.24,
+      "pages": 112,
+      "description": "Sổ tay tân sinh viên khóa K22 niên khóa 2026 với các cập nhật mới nhất về quy chế học vụ và ngoại ngữ.",
+      "key_topics": ["sổ tay tân sinh viên K22", "lộ trình học tập", "chuẩn ngoại ngữ mới", "quy tắc ứng xử"]
     }
   ]
 }
