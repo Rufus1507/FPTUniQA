@@ -7,6 +7,8 @@ router = APIRouter(tags=["Health"])
 
 
 @router.get("/healthz", response_model=HealthResponse)
+@router.get("/health", response_model=HealthResponse)
+@router.get("/api/v1/health", response_model=HealthResponse)
 async def health_check() -> HealthResponse:
     """Kiểm tra dịch vụ có đang chạy bình thường hay không."""
     return HealthResponse(status="ok")

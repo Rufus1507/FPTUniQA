@@ -1,0 +1,1188 @@
+{
+  "benchmark_timestamp": "2026-10-20 08:10:27",
+  "total_evaluated": 100,
+  "total_time_seconds": 362.86,
+  "routing_metrics": {
+    "routing_accuracy": 1.0,
+    "total_evaluated": 100,
+    "correct_routes": 100
+  },
+  "latency_metrics": {
+    "mean_ms": 3628.6,
+    "p50_ms": 2567.06,
+    "p95_ms": 16031.69,
+    "p99_ms": 52806.65,
+    "min_ms": 1.49,
+    "max_ms": 52806.65
+  },
+  "cache_metrics": {
+    "hits": 0,
+    "misses": 70,
+    "total_lookups": 70,
+    "hit_rate": 0.0,
+    "cached_entries": 70
+  },
+  "answer_quality_metrics": {
+    "mean_faithfulness": 0.9404,
+    "mean_relevance": 0.1438,
+    "hallucination_rate": 0.0,
+    "evaluated_pairs": 100
+  },
+  "ood_metrics": {
+    "ood_rejection_accuracy": 1.0,
+    "ood_count": 10
+  },
+  "category_breakdown": {
+    "hoc_phi": {
+      "count": 20,
+      "correct": 20,
+      "routes": {
+        "structured_lookup": 10,
+        "clarification": 10
+      },
+      "most_frequent_route": "structured_lookup"
+    },
+    "dao_tao": {
+      "count": 26,
+      "correct": 26,
+      "routes": {
+        "rag_pipeline": 26
+      },
+      "most_frequent_route": "rag_pipeline"
+    },
+    "tot_nghiep": {
+      "count": 19,
+      "correct": 19,
+      "routes": {
+        "rag_pipeline": 19
+      },
+      "most_frequent_route": "rag_pipeline"
+    },
+    "hoc_bong": {
+      "count": 15,
+      "correct": 15,
+      "routes": {
+        "rag_pipeline": 15
+      },
+      "most_frequent_route": "rag_pipeline"
+    },
+    "ky_luat": {
+      "count": 10,
+      "correct": 10,
+      "routes": {
+        "rag_pipeline": 10
+      },
+      "most_frequent_route": "rag_pipeline"
+    },
+    "ood": {
+      "count": 10,
+      "correct": 10,
+      "routes": {
+        "ood": 10
+      },
+      "most_frequent_route": "ood"
+    }
+  },
+  "predictions": [
+    {
+      "q_id": "Q022",
+      "query": "Học phí một tín chỉ ngành Công nghệ thông tin tại campus Hà Nội khóa K22 là bao nhiêu?",
+      "category": "hoc_phi",
+      "expected_route": "structured_lookup",
+      "actual_route": "structured_lookup",
+      "answer": "Theo biểu phí chính thức tuyển sinh Đại học FPT phân hiệu Hà Nội (Khóa K22 - Năm học 2026):\n- Ngành đào tạo: Công nghệ thông tin\n- Mức học phí sinh viên Khu vực 1 (KV1): 22,120,000 VNĐ/học kỳ\n- Mức học phí sinh viên các khu vực khác: 31,600,000 VNĐ/học kỳ\n- Tổng số tín chỉ chương trình đào tạo: 132 tín chỉ (Lý thuyết: 88, Thực hành: 44).",
+      "golden_answer": "Học phí một tín chỉ ngành Công nghệ thông tin tại campus Hà Nội khóa K22 là 15.480.000 VNĐ cho sinh viên KV1.",
+      "citations_count": 1,
+      "latency_ms": 4111.53
+    },
+    {
+      "q_id": "Q023",
+      "query": "Học phí một tín chỉ ngành Công nghệ thông tin tại campus TP. Hồ Chí Minh khóa K22 là bao nhiêu?",
+      "category": "hoc_phi",
+      "expected_route": "structured_lookup",
+      "actual_route": "structured_lookup",
+      "answer": "Theo biểu phí chính thức tuyển sinh Đại học FPT phân hiệu TP. Hồ Chí Minh (Khóa K22 - Năm học 2026):\n- Ngành đào tạo: Công nghệ thông tin\n- Mức học phí sinh viên Khu vực 1 (KV1): 22,120,000 VNĐ/học kỳ\n- Mức học phí sinh viên các khu vực khác: 31,600,000 VNĐ/học kỳ\n- Tổng số tín chỉ chương trình đào tạo: 132 tín chỉ (Lý thuyết: 88, Thực hành: 44).",
+      "golden_answer": "Học phí một tín chỉ ngành Công nghệ thông tin tại campus TP. Hồ Chí Minh khóa K22 là 22.120.000 VNĐ cho sinh viên KV1.",
+      "citations_count": 1,
+      "latency_ms": 4059.96
+    },
+    {
+      "q_id": "Q024",
+      "query": "Sinh viên KV1 có được giảm học phí không so với các khu vực khác?",
+      "category": "hoc_phi",
+      "expected_route": "clarification",
+      "actual_route": "clarification",
+      "answer": "Vui lòng cung cấp thêm ngành học và khóa tuyển sinh (ví dụ: ngành AI khóa 2026) để tôi tra cứu học phí chính xác cho bạn.",
+      "golden_answer": "Có, sinh viên KV1 được giảm học phí so với các khu vực khác. KV1 có mức học phí thấp nhất.",
+      "citations_count": 0,
+      "latency_ms": 3.49
+    },
+    {
+      "q_id": "Q025",
+      "query": "Học phí ngành Trí tuệ nhân tạo tại campus Đà Nẵng khóa K22 là bao nhiêu?",
+      "category": "hoc_phi",
+      "expected_route": "structured_lookup",
+      "actual_route": "structured_lookup",
+      "answer": "Theo biểu phí chính thức tuyển sinh Đại học FPT phân hiệu Đà Nẵng (Khóa K22 - Năm học 2026):\n- Ngành đào tạo: Trí tuệ nhân tạo\n- Mức học phí sinh viên Khu vực 1 (KV1): 15,480,000 VNĐ/học kỳ\n- Mức học phí sinh viên các khu vực khác: 22,120,000 VNĐ/học kỳ\n- Tổng số tín chỉ chương trình đào tạo: 135 tín chỉ (Lý thuyết: 90, Thực hành: 45).",
+      "golden_answer": "Học phí một tín chỉ ngành Trí tuệ nhân tạo tại campus Đà Nẵng khóa K22 là 15.480.000 VNĐ cho sinh viên KV1.",
+      "citations_count": 1,
+      "latency_ms": 2.29
+    },
+    {
+      "q_id": "Q026",
+      "query": "Sinh viên thuộc khu vực ưu tiên nào được giảm 50% học phí?",
+      "category": "hoc_phi",
+      "expected_route": "clarification",
+      "actual_route": "clarification",
+      "answer": "Vui lòng cung cấp thêm ngành học và khóa tuyển sinh (ví dụ: ngành AI khóa 2026) để tôi tra cứu học phí chính xác cho bạn.",
+      "golden_answer": "Sinh viên thuộc khu vực Quy Nhơn được giảm 50% học phí.",
+      "citations_count": 0,
+      "latency_ms": 2.36
+    },
+    {
+      "q_id": "Q027",
+      "query": "Học phí ngành Ngôn ngữ Anh có cao hơn ngành Công nghệ thông tin không?",
+      "category": "hoc_phi",
+      "expected_route": "structured_lookup",
+      "actual_route": "structured_lookup",
+      "answer": "Theo biểu phí chính thức tuyển sinh Đại học FPT (Khóa 2026 / K22) cho ngành Công nghệ thông tin:\n• Phân hiệu Hà Nội: 31,600,000 VNĐ/kỳ (KV1: 22,120,000 VNĐ/kỳ)\n• Phân hiệu TP. Hồ Chí Minh: 31,600,000 VNĐ/kỳ (KV1: 22,120,000 VNĐ/kỳ)\n• Phân hiệu Đà Nẵng (Ưu đãi 30%): 22,120,000 VNĐ/kỳ (KV1: 15,480,000 VNĐ/kỳ)\n• Phân hiệu Cần Thơ (Ưu đãi 30%): 22,120,000 VNĐ/kỳ (KV1: 15,480,000 VNĐ/kỳ)\n• Phân hiệu Quy Nhơn (Ưu đãi 50%): 15,800,000 VNĐ/kỳ (KV1: 11,060,000 VNĐ/kỳ)\n\n- Tổng số tín chỉ chương trình đào tạo: 132 tín chỉ (Lý thuyết: 88, Thực hành: 44).\n\n(Lưu ý: Mức học phí áp dụng cho sinh viên nhập học năm 2026 theo từng học kỳ chuyên ngành).",
+      "golden_answer": "Có, học phí ngành Ngôn ngữ Anh thấp hơn ngành Công nghệ thông tin. Ngôn ngữ Anh: 10.840.000 VNĐ/KV1, CNTT: 15.480.000-22.120.000 VNĐ tùy campus.",
+      "citations_count": 1,
+      "latency_ms": 1.96
+    },
+    {
+      "q_id": "Q028",
+      "query": "Học phí một tín chỉ ngành Kỹ thuật phần mềm tại campus Quy Nhơn khóa K22 là bao nhiêu?",
+      "category": "hoc_phi",
+      "expected_route": "structured_lookup",
+      "actual_route": "structured_lookup",
+      "answer": "Theo biểu phí chính thức tuyển sinh Đại học FPT phân hiệu Quy Nhơn (Khóa K22 - Năm học 2026):\n- Ngành đào tạo: Kỹ thuật phần mềm\n- Mức học phí sinh viên Khu vực 1 (KV1): 11,060,000 VNĐ/học kỳ\n- Mức học phí sinh viên các khu vực khác: 15,800,000 VNĐ/học kỳ\n- Tổng số tín chỉ chương trình đào tạo: 145 tín chỉ (Lý thuyết: 93, Thực hành: 52).",
+      "golden_answer": "Học phí một tín chỉ ngành Kỹ thuật phần mềm tại campus Quy Nhơn khóa K22 là 11.060.000 VNĐ cho sinh viên KV1.",
+      "citations_count": 1,
+      "latency_ms": 2.26
+    },
+    {
+      "q_id": "Q029",
+      "query": "Sinh viên cần đóng học phí theo tín chỉ hay theo học kỳ?",
+      "category": "hoc_phi",
+      "expected_route": "clarification",
+      "actual_route": "clarification",
+      "answer": "Vui lòng cung cấp thêm ngành học và khóa tuyển sinh (ví dụ: ngành AI khóa 2026) để tôi tra cứu học phí chính xác cho bạn.",
+      "golden_answer": "Sinh viên cần đóng học phí theo tín chỉ, dựa trên số tín chỉ đăng ký trong học kỳ.",
+      "citations_count": 0,
+      "latency_ms": 1.97
+    },
+    {
+      "q_id": "Q030",
+      "query": "Học phí ngành Marketing tại campus TP. Hồ Chí Minh khóa K22 là bao nhiêu?",
+      "category": "hoc_phi",
+      "expected_route": "structured_lookup",
+      "actual_route": "structured_lookup",
+      "answer": "Theo biểu phí chính thức tuyển sinh Đại học FPT phân hiệu TP. Hồ Chí Minh (Khóa K22 - Năm học 2026):\n- Ngành đào tạo: Truyền thông Marketing tích hợp\n- Mức học phí sinh viên Khu vực 1 (KV1): 22,120,000 VNĐ/học kỳ\n- Mức học phí sinh viên các khu vực khác: 31,600,000 VNĐ/học kỳ\n- Tổng số tín chỉ chương trình đào tạo: 120 tín chỉ (Lý thuyết: 80, Thực hành: 40).",
+      "golden_answer": "Học phí một tín chỉ ngành Marketing tại campus TP. Hồ Chí Minh khóa K22 là 22.120.000 VNĐ cho sinh viên KV1.",
+      "citations_count": 1,
+      "latency_ms": 2.12
+    },
+    {
+      "q_id": "Q031",
+      "query": "Chính sách ưu đãi học phí của campus Cần Thơ là bao nhiêu phần trăm?",
+      "category": "hoc_phi",
+      "expected_route": "clarification",
+      "actual_route": "clarification",
+      "answer": "Vui lòng cung cấp thêm ngành học và khóa tuyển sinh (ví dụ: ngành AI khóa 2026) để tôi tra cứu học phí chính xác cho bạn.",
+      "golden_answer": "Chính sách ưu đãi học phí của campus Cần Thơ là giảm 30% học phí.",
+      "citations_count": 0,
+      "latency_ms": 1.73
+    },
+    {
+      "q_id": "Q032",
+      "query": "Học phí một tín chỉ ngành Luật tại campus Hà Nội khóa K22 là bao nhiêu?",
+      "category": "hoc_phi",
+      "expected_route": "clarification",
+      "actual_route": "clarification",
+      "answer": "Bạn đang hỏi về học phí khóa K22. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?",
+      "golden_answer": "Học phí một tín chỉ ngành Luật tại campus Hà Nội khóa K22 là 10.840.000 VNĐ cho sinh viên KV1.",
+      "citations_count": 0,
+      "latency_ms": 1.59
+    },
+    {
+      "q_id": "Q033",
+      "query": "Sinh viên có phải đóng thêm phí bảo hiểm y tế không?",
+      "category": "hoc_phi",
+      "expected_route": "clarification",
+      "actual_route": "clarification",
+      "answer": "Vui lòng cung cấp thêm ngành học và khóa tuyển sinh (ví dụ: ngành AI khóa 2026) để tôi tra cứu học phí chính xác cho bạn.",
+      "golden_answer": "Sinh viên có thể phải đóng thêm phí bảo hiểm y tế theo quy định của trường và pháp luật Việt Nam.",
+      "citations_count": 0,
+      "latency_ms": 1.7
+    },
+    {
+      "q_id": "Q034",
+      "query": "Học phí ngành Quản trị kinh doanh tại campus Đà Nẵng có khác gì so với campus HCM không?",
+      "category": "hoc_phi",
+      "expected_route": "structured_lookup",
+      "actual_route": "structured_lookup",
+      "answer": "Theo biểu phí chính thức tuyển sinh Đại học FPT phân hiệu Đà Nẵng (Khóa K22 - Năm học 2026):\n- Ngành đào tạo: Quản trị kinh doanh\n- Mức học phí sinh viên Khu vực 1 (KV1): 15,480,000 VNĐ/học kỳ\n- Mức học phí sinh viên các khu vực khác: 22,120,000 VNĐ/học kỳ\n- Tổng số tín chỉ chương trình đào tạo: 120 tín chỉ (Lý thuyết: 80, Thực hành: 40).",
+      "golden_answer": "Có khác. Học phí ngành Quản trị kinh doanh tại campus Đà Nẵng là 15.480.000 VNĐ/KV1, tại campus HCM là 22.120.000 VNĐ/KV1.",
+      "citations_count": 1,
+      "latency_ms": 1.89
+    },
+    {
+      "q_id": "Q035",
+      "query": "Học phí ngành Khoa học dữ liệu tại campus Cần Thơ khóa K22 là bao nhiêu?",
+      "category": "hoc_phi",
+      "expected_route": "structured_lookup",
+      "actual_route": "structured_lookup",
+      "answer": "Theo biểu phí chính thức tuyển sinh Đại học FPT phân hiệu Cần Thơ (Khóa K22 - Năm học 2026):\n- Ngành đào tạo: Khoa học dữ liệu và ứng dụng\n- Mức học phí sinh viên Khu vực 1 (KV1): 15,480,000 VNĐ/học kỳ\n- Mức học phí sinh viên các khu vực khác: 22,120,000 VNĐ/học kỳ",
+      "golden_answer": "Học phí một tín chỉ ngành Khoa học dữ liệu tại campus Cần Thơ khóa K22 là 15.480.000 VNĐ cho sinh viên KV1.",
+      "citations_count": 1,
+      "latency_ms": 1.58
+    },
+    {
+      "q_id": "Q036",
+      "query": "Sinh viên thuộc diện kv2, kv3 có mức học phí khác gì so với kv1 không?",
+      "category": "hoc_phi",
+      "expected_route": "clarification",
+      "actual_route": "clarification",
+      "answer": "Vui lòng cung cấp thêm ngành học và khóa tuyển sinh (ví dụ: ngành AI khóa 2026) để tôi tra cứu học phí chính xác cho bạn.",
+      "golden_answer": "Có khác. KV1 có mức học phí thấp nhất. KV2 và KV3 có mức học phí cao hơn, tùy theo ngành và campus.",
+      "citations_count": 0,
+      "latency_ms": 1.66
+    },
+    {
+      "q_id": "Q130",
+      "query": "Học phí ngành An toàn thông tin tại campus Hà Nội khóa K22 là bao nhiêu?",
+      "category": "hoc_phi",
+      "expected_route": "structured_lookup",
+      "actual_route": "structured_lookup",
+      "answer": "Theo biểu phí chính thức tuyển sinh Đại học FPT phân hiệu Hà Nội (Khóa K22 - Năm học 2026):\n- Ngành đào tạo: An toàn thông tin\n- Mức học phí sinh viên Khu vực 1 (KV1): 22,120,000 VNĐ/học kỳ\n- Mức học phí sinh viên các khu vực khác: 31,600,000 VNĐ/học kỳ\n- Tổng số tín chỉ chương trình đào tạo: 132 tín chỉ (Lý thuyết: 88, Thực hành: 44).",
+      "golden_answer": "Học phí ngành An toàn thông tin tại campus Hà Nội khóa K22 là 15.480.000 VNĐ/tín chỉ cho sinh viên KV1.",
+      "citations_count": 1,
+      "latency_ms": 1.85
+    },
+    {
+      "q_id": "Q131",
+      "query": "Học phí ngành Logistics tại campus Cần Thơ khóa K22 có giảm hơn so với campus HCM không?",
+      "category": "hoc_phi",
+      "expected_route": "clarification",
+      "actual_route": "clarification",
+      "answer": "Bạn đang hỏi về học phí khóa K22. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?",
+      "golden_answer": "Có, học phí ngành Logistics tại campus Cần Thơ thấp hơn so với campus HCM. Cần Thơ KV1: 15.480.000 VNĐ, HCM KV1: 22.120.000 VNĐ.",
+      "citations_count": 0,
+      "latency_ms": 1.93
+    },
+    {
+      "q_id": "Q139",
+      "query": "Học phí ngành Tài chính doanh nghiệp tại campus TP.HCM khóa K22 là bao nhiêu?",
+      "category": "hoc_phi",
+      "expected_route": "clarification",
+      "actual_route": "clarification",
+      "answer": "Bạn đang hỏi về học phí khóa K22. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?",
+      "golden_answer": "Học phí ngành Tài chính doanh nghiệp tại campus TP.HCM khóa K22 là 22.120.000 VNĐ/tín chỉ cho sinh viên KV1.",
+      "citations_count": 0,
+      "latency_ms": 2.01
+    },
+    {
+      "q_id": "Q140",
+      "query": "Sinh viên cần đóng thêm những khoản phí nào ngoài học phí tín chỉ không?",
+      "category": "hoc_phi",
+      "expected_route": "clarification",
+      "actual_route": "clarification",
+      "answer": "Vui lòng cung cấp thêm ngành học và khóa tuyển sinh (ví dụ: ngành AI khóa 2026) để tôi tra cứu học phí chính xác cho bạn.",
+      "golden_answer": "Sinh viên có thể phải đóng thêm các khoản phí: phí bảo hiểm y tế, phí thực tập, phí hoạt động sinh viên, và các khoản phí khác theo quy định.",
+      "citations_count": 0,
+      "latency_ms": 1.97
+    },
+    {
+      "q_id": "Q151",
+      "query": "Học phí ngành Thiết kế đồ họa tại campus Đà Nẵng khóa K22 là bao nhiêu?",
+      "category": "hoc_phi",
+      "expected_route": "structured_lookup",
+      "actual_route": "structured_lookup",
+      "answer": "Theo biểu phí chính thức tuyển sinh Đại học FPT phân hiệu Đà Nẵng (Khóa K22 - Năm học 2026):\n- Ngành đào tạo: Thiết kế đồ họa và mỹ thuật số\n- Mức học phí sinh viên Khu vực 1 (KV1): 15,480,000 VNĐ/học kỳ\n- Mức học phí sinh viên các khu vực khác: 22,120,000 VNĐ/học kỳ\n- Tổng số tín chỉ chương trình đào tạo: 120 tín chỉ (Lý thuyết: 60, Thực hành: 60).",
+      "golden_answer": "Học phí ngành Thiết kế đồ họa tại campus Đà Nẵng khóa K22 là 15.480.000 VNĐ/tín chỉ cho sinh viên KV1.",
+      "citations_count": 1,
+      "latency_ms": 2.13
+    },
+    {
+      "q_id": "Q007",
+      "query": "Sinh viên được đăng ký tối đa bao nhiêu tín chỉ trong một học kỳ chính?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "o điểm khuyến khích. - Các thí sinh đăng ký học ngành Luật phải đảm bảo điều kiện ngưỡng đầu vào theo quy định tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển sinh của Bộ GDĐT. [Nguồn 1]. Học kỳ 1 - Học kỳ 5 [Nguồn 2].",
+      "golden_answer": "Sinh viên có học lực bình thường được đăng ký tối đa 24 tín chỉ trong mỗi học kỳ chính, tối thiểu là 14 tín chỉ.",
+      "citations_count": 2,
+      "latency_ms": 52806.65
+    },
+    {
+      "q_id": "Q008",
+      "query": "Sinh viên có học lực yếu bị giới hạn đăng ký bao nhiêu tín chỉ?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. Ai có thể tham gia chương trình? Ưu tiên học sinh lớp 12 trên toàn quốc, có thành tích học tập tốt, năng lực nổi bật trong học thuật, công nghệ, lãnh đạo, khởi nghiệp hoặc có nghị lực vượt khó và khát vọng phát triển trong kỷ nguyên số. [Nguồn 2].",
+      "golden_answer": "Sinh viên có học lực yếu bị giới hạn đăng ký tối đa 14 tín chỉ trong mỗi học kỳ chính.",
+      "citations_count": 2,
+      "latency_ms": 20243.62
+    },
+    {
+      "q_id": "Q009",
+      "query": "Điểm F tương ứng với bao nhiêu điểm số?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Thành tựu\n56K+ [Nguồn 1]. Xếp hạng\n14 [Nguồn 2].",
+      "golden_answer": "Điểm F tương ứng với 0.0 điểm trên thang điểm 10.",
+      "citations_count": 2,
+      "latency_ms": 4145.22
+    },
+    {
+      "q_id": "Q010",
+      "query": "Sinh viên bị điểm F có bắt buộc phải học lại không?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "m hộ (sau đây gọi chung là phụ huynh);\n– 01 bản sao công chứng Căn cước/CCCD của phụ huynh;\n– 01 bản sao công chứng Giấy khai sinh của anh/chị/em ruột thí sinh theo học FE;\n– 01 bản gốc Giấy xác nhận anh/chị/em ruột đang theo học tại các chương trình đào tạo của FE trên toàn quốc. - Ưu đãi học phí cho thí sinh là CBGV hoặc có người thân là bố/mẹ/anh/chị/em/con ruột hoặc con nuôi hợp pháp của CBGV đang làm tại FE:\n– 01 Giấy tờ xác nhận quan hệ của thí sinh với phụ huynh;\n– 01 bản sao công chứng Căn cước/CCCD [Nguồn 1]. uy đổi thành điểm môn ngoại ngữ hoặc để tính điểm khuyến khích);\n2.13. 01 bản sao công chứng Chứng chỉ tiếng Anh còn thời hạn (nếu có) để xét miễn chương trình tiếng Anh dự bị theo quy định của Trường Đại học FPT. [Nguồn 2].",
+      "golden_answer": "Có, sinh viên bị điểm F bắt buộc phải đăng ký học lại học phần đó.",
+      "citations_count": 2,
+      "latency_ms": 7185.31
+    },
+    {
+      "q_id": "Q011",
+      "query": "Thang điểm xếp loại của Đại học FPT gồm những bậc nào?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Xếp hạng 101-200\nThế giới theo tiêu chí Việc làm tốt & Tăng trưởng kinh tế - THE Impact Rankings 2025 [Nguồn 1]. Xếp hạng 80\nThế giới về phát triển bền vững toàn diện - THE Impact Rankings 2025 [Nguồn 2].",
+      "golden_answer": "Thang điểm xếp loại của Đại học FPT gồm: Xuất sắc (A+, A), Giỏi (B+, B), Khá (C+, C), Trung bình (D+, D), Không đạt (F).",
+      "citations_count": 2,
+      "latency_ms": 3273.46
+    },
+    {
+      "q_id": "Q012",
+      "query": "Điểm A tương ứng với thang điểm bao nhiêu?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ngành Luật phải đảm bảo điều kiện ngưỡng đầu vào theo quy định tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển sinh của Bộ GDĐT. - Với thí sinh thi tốt nghiệp năm 2026 phải có điểm tổng điểm 03 môn thi kỳ thi tốt nghiệp THPT theo tổ hợp Axx hoặc Cxx đạt tối thiểu 15,00 điểm. [Nguồn 1]. Tổ hợp Cxx: Điểm Văn + Điểm môn 2 + Điểm môn 3\nÁp dụng đối với thí sinh đăng ký vào các ngành ngoài các ngành Công nghệ thông tin và Khoa học máy tính\n- Trường hợp thí sinh sử dụng chứng chỉ ngoại ngữ để xét tuyển thì điểm xét môn ngoại ngữ sẽ theo bảng quy đổi. - Điểm trung bình lớp 12 là điểm trung bình cộng của tất cả môn học được đánh giá bằng điểm số của năm học lớp 12. [Nguồn 2].",
+      "golden_answer": "Điểm A tương ứng với điểm số từ 8.5 đến 10 trên thang điểm 10.",
+      "citations_count": 2,
+      "latency_ms": 8121.15
+    },
+    {
+      "q_id": "Q013",
+      "query": "Sinh viên có thể xin nghỉ học tạm thời được không và thủ tục như thế nào?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Lưu ý:\n- Sinh viên thôi học trước ngày bắt đầu (là ngày học hoặc tập trung đầu tiên) của khóa học hoặc học kỳ sẽ được trả lại 80% học phí thực nộp. - Sinh viên thôi học trong vòng 2 tuần kể từ ngày bắt đầu của khóa học hoặc học kỳ sẽ được hoàn trả 50% học phí thực nộp. [Nguồn 1]. Sinh viên ra trường có thể đảm nhận các vị trí như:\nTổng quan\n Chương trình đào tạo [Nguồn 2].",
+      "golden_answer": "Sinh viên có thể xin nghỉ học tạm thời. Thủ tục gồm: nộp đơn xin nghỉ học có lý do, được phòng Công tác sinh viên và Khoa phê duyệt.",
+      "citations_count": 2,
+      "latency_ms": 2714.41
+    },
+    {
+      "q_id": "Q014",
+      "query": "Thời gian tối đa được phép bảo lưu kết quả học tập là bao lâu?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 2].",
+      "golden_answer": "Thời gian tối đa được phép bảo lưu kết quả học tập là 2 năm học (4 học kỳ).",
+      "citations_count": 2,
+      "latency_ms": 2385.07
+    },
+    {
+      "q_id": "Q015",
+      "query": "Sinh viên có được phép chuyển ngành học trong quá trình đào tạo không?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Ai có thể tham gia chương trình? Ưu tiên học sinh lớp 12 trên toàn quốc, có thành tích học tập tốt, năng lực nổi bật trong học thuật, công nghệ, lãnh đạo, khởi nghiệp hoặc có nghị lực vượt khó và khát vọng phát triển trong kỷ nguyên số. [Nguồn 1]. Sinh viên ra trường có thể đảm nhận các vị trí như:\nTổng quan\n Chương trình đào tạo [Nguồn 2].",
+      "golden_answer": "Sinh viên được phép chuyển ngành học trong quá trình đào tạo, tùy theo điều kiện và quy định của từng ngành.",
+      "citations_count": 2,
+      "latency_ms": 3102.2
+    },
+    {
+      "q_id": "Q016",
+      "query": "Điều kiện để được chuyển đổi tín chỉ từ trường khác là gì?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. HÍCH VÀ ĐIỂM QUY ĐỔI CÁC CHỨNG CHỈ NGOẠI NGỮ. - ĐƯT (điểm ưu tiên) theo quy định tại Điều 7 Quy chế tuyển sinh của Bộ GDĐT. [Nguồn 2].",
+      "golden_answer": "Điều kiện chuyển đổi tín chỉ từ trường khác: học phần phải có nội dung tương đương, đã đạt điểm từ C trở lên, và được Khoa xét duyệt.",
+      "citations_count": 2,
+      "latency_ms": 7084.56
+    },
+    {
+      "q_id": "Q017",
+      "query": "Sinh viên cần đạt bao nhiêu điểm trung bình tích lũy để được xếp loại Giỏi?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "y định tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển sinh của Bộ GDĐT. - Với thí sinh thi tốt nghiệp năm 2026 phải có điểm tổng điểm 03 môn thi kỳ thi tốt nghiệp THPT (kỳ thi trung học nghề đối với đối tượng trung học nghề) theo tổ hợp Axx hoặc Cxx đạt tối thiểu 15,00 điểm. [Nguồn 1]. Tổ hợp Cxx: Điểm Văn + Điểm môn 2 + Điểm môn 3\nÁp dụng đối với thí sinh đăng ký vào các ngành ngoài các ngành Công nghệ thông tin và Khoa học máy tính\n- Trường hợp thí sinh sử dụng chứng chỉ ngoại ngữ để xét tuyển thì điểm xét môn ngoại ngữ sẽ theo bảng quy đổi. - Điểm trung bình lớp 12 là điểm trung bình cộng của tất cả môn học được đánh giá bằng điểm số của năm học lớp 12. [Nguồn 2].",
+      "golden_answer": "Sinh viên cần đạt điểm trung bình tích lũy từ 3.2 trở lên để được xếp loại Giỏi.",
+      "citations_count": 2,
+      "latency_ms": 3279.74
+    },
+    {
+      "q_id": "Q018",
+      "query": "Học phần có điểm D có được tính là đạt không?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "KẾT QUẢ ĐẠT ĐƯỢC\n- Hội nhập và thích nghi để thành công trong giáo dục đại học. Chuẩn bị vững vàng về ngôn ngữ, thể chất, nghệ thuật, văn hóa và tác phong học tập. [Nguồn 1]. KẾT QUẢ ĐẠT ĐƯỢC\n- Hội nhập và thích nghi để thành công trong giáo dục đại học. Chuẩn bị vững vàng về ngôn ngữ, thể chất, nghệ thuật, văn hóa và tác phong học tập. [Nguồn 2].",
+      "golden_answer": "Có, học phần có điểm D được tính là đạt (pass).",
+      "citations_count": 2,
+      "latency_ms": 3162.25
+    },
+    {
+      "q_id": "Q019",
+      "query": "Sinh viên bị điểm F mấy lần liên tiếp sẽ bị cảnh báo học tập?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "- Thí sinh là sinh viên thế hệ 1* được cộng 1,5 điểm vào Điểm xét tuyển. * Sinh viên thế hệ 1 (First-Generation Student): là người đầu tiên trong gia đình (gồm phụ huynh hoặc người bảo trợ và tất cả anh chị em ruột) học đại học. [Nguồn 1]. Học kỳ 1 - Học kỳ 5 [Nguồn 2].",
+      "golden_answer": "Sinh viên bị điểm F liên tiếp trong 2 học kỳ sẽ bị cảnh báo học tập.",
+      "citations_count": 2,
+      "latency_ms": 6959.93
+    },
+    {
+      "q_id": "Q020",
+      "query": "Quy định về việc học cải thiện điểm như thế nào?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. KẾT QUẢ ĐẠT ĐƯỢC\nSinh viên hoàn thiện hồ sơ nghề nghiệp, sẵn sàng cho cơ hội việc làm hoặc học lên bậc cao hơn. [Nguồn 2].",
+      "golden_answer": "Sinh viên có thể đăng ký học lại học phần để cải thiện điểm, nhưng điểm mới sẽ thay thế điểm cũ trong tính GPA.",
+      "citations_count": 2,
+      "latency_ms": 7305.46
+    },
+    {
+      "q_id": "Q021",
+      "query": "Sinh viên có được phép đăng ký học trước tín chỉ khi chưa đủ điều kiện tiên quyết không?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Polytechnic. Người dự tuyển được xác định tại thời điểm xét tuyển trước khi công bố kết quả xét tuyển chính thức bao gồm\nNgười đã được công nhận tốt nghiệp THPT của Việt Nam hoặc của nước ngoài được công nhận trình độ tương đương với THPT của Việt Nam do các đơn vị chức năng xác định. [Nguồn 1]. Ai có thể tham gia chương trình? Ưu tiên học sinh lớp 12 trên toàn quốc, có thành tích học tập tốt, năng lực nổi bật trong học thuật, công nghệ, lãnh đạo, khởi nghiệp hoặc có nghị lực vượt khó và khát vọng phát triển trong kỷ nguyên số. [Nguồn 2].",
+      "golden_answer": "Không, sinh viên không được phép đăng ký học trước tín chỉ khi chưa đủ điều kiện tiên quyết của học phần đó.",
+      "citations_count": 2,
+      "latency_ms": 16031.69
+    },
+    {
+      "q_id": "Q127",
+      "query": "Sinh viên có được đăng ký học cùng lúc chương trình chính quy và chương trình khác không?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Ai có thể tham gia chương trình? Ưu tiên học sinh lớp 12 trên toàn quốc, có thành tích học tập tốt, năng lực nổi bật trong học thuật, công nghệ, lãnh đạo, khởi nghiệp hoặc có nghị lực vượt khó và khát vọng phát triển trong kỷ nguyên số. [Nguồn 1]. Đào tạo liên ngành\nSinh viên được học liên ngành về kinh tế, quản trị, kỹ thuật đầu tư và phân tích dữ liệu,… để thích ứng với mọi lĩnh vực liên quan. [Nguồn 2].",
+      "golden_answer": "Không, sinh viên không được đăng ký học cùng lúc chương trình chính quy và chương trình khác tại FPT.",
+      "citations_count": 2,
+      "latency_ms": 2851.88
+    },
+    {
+      "q_id": "Q128",
+      "query": "Quy định về chuyển đổi học phần có tương đương từ trường khác như thế nào?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Đào tạo khác biệt [Nguồn 1]. Đào tạo khác biệt [Nguồn 2].",
+      "golden_answer": "Quy định chuyển đổi học phần từ trường khác: học phần phải có nội dung tương đương tối thiểu 80%, đã đạt điểm C trở lên, và được Khoa phê duyệt.",
+      "citations_count": 2,
+      "latency_ms": 7287.85
+    },
+    {
+      "q_id": "Q129",
+      "query": "Sinh viên cần đạt GPA tối thiểu bao nhiêu để không bị cảnh báo học tập?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. ùy hạng mục). Điều kiện duy trì học bổng trong các năm học tiếp theo là gì? [Nguồn 2].",
+      "golden_answer": "Sinh viên cần đạt GPA tối thiểu từ 1.5 trở lên để không bị cảnh báo học tập.",
+      "citations_count": 2,
+      "latency_ms": 2923.22
+    },
+    {
+      "q_id": "Q132",
+      "query": "Sinh viên được phép miễn học những học phần nào?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "LƯU Ý\nSinh viên có chứng chỉ tiếng Anh tương đương IELTS 6.0 được miễn đào tạo giai đoạn tiếng Anh chuẩn bị. [Nguồn 1]. KẾT QUẢ ĐẠT ĐƯỢC\n- Trang bị phương pháp học đại học hiệu quả: tự học, thuyết trình – phản biện, làm việc nhóm\n- Đạt trình độ tiếng Anh tối thiểu tương đương IELTS 6.0\n- Sẵn sàng lĩnh hội kiến thức chuyên ngành bằng giáo trình quốc tế trong các học kỳ tiếp theo\nSinh viên có chứng chỉ tiếng Anh tương đương IELTS 6.0 được miễn đào tạo giai đoạn tiếng Anh chuẩn bị. [Nguồn 2].",
+      "golden_answer": "Sinh viên được phép miễn học các học phần: (1) đã học ở trường khác với nội dung tương đương, (2) có chứng chỉ chuẩn quốc tế được công nhận, (3) các trường hợp đặc biệt được Khoa xem xét.",
+      "citations_count": 2,
+      "latency_ms": 6418.78
+    },
+    {
+      "q_id": "Q133",
+      "query": "Thang điểm 4 được quy đổi từ thang điểm 10 như thế nào?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "trong tổ hợp xét tuyển hoặc sử dụng cho điểm khuyến khích. [Nguồn 1].",
+      "golden_answer": "Thang điểm 4 được quy đổi từ thang điểm 10: A (8.5-10) → 4.0, B (7.0-8.4) → 3.0, C (5.5-6.9) → 2.0, D (4.0-5.4) → 1.0, F (<4.0) → 0.0.",
+      "citations_count": 1,
+      "latency_ms": 3110.4
+    },
+    {
+      "q_id": "Q134",
+      "query": "Sinh viên có được học vượt tín chỉ không và điều kiện là gì?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "KẾT QUẢ ĐẠT ĐƯỢC\nSinh viên hoàn thiện hồ sơ nghề nghiệp, sẵn sàng cho cơ hội việc làm hoặc học lên bậc cao hơn. [Nguồn 1]. ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 2].",
+      "golden_answer": "Có, sinh viên được phép học vượt tín chỉ với điều kiện: GPA đạt từ 3.0 trở lên và được sự đồng ý của cố vấn học tập.",
+      "citations_count": 2,
+      "latency_ms": 3408.74
+    },
+    {
+      "q_id": "Q135",
+      "query": "Quy định về kiểm tra giữa kỳ và cuối kỳ như thế nào?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Giai đoạn hoàn thành và tốt nghiệp [Nguồn 1]. Giai đoạn hoàn thành và tốt nghiệp [Nguồn 2].",
+      "golden_answer": "Quy định kiểm tra: kiểm tra giữa kỳ thường chiếm 20-30% điểm, kiểm tra cuối kỳ chiếm 50-70% điểm, điểm thực hành/bài tập chiếm 10-20%.",
+      "citations_count": 2,
+      "latency_ms": 977.53
+    },
+    {
+      "q_id": "Q136",
+      "query": "Sinh viên có được phép học lại học phần đã đạt điểm cao để cải thiện GPA không?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "KẾT QUẢ ĐẠT ĐƯỢC\nSinh viên hoàn thiện hồ sơ nghề nghiệp, sẵn sàng cho cơ hội việc làm hoặc học lên bậc cao hơn. [Nguồn 1]. ùy hạng mục). Điều kiện duy trì học bổng trong các năm học tiếp theo là gì? [Nguồn 2].",
+      "golden_answer": "Có, sinh viên được phép học lại học phần đã đạt điểm cao để cải thiện GPA. Điểm mới sẽ thay thế điểm cũ.",
+      "citations_count": 2,
+      "latency_ms": 3858.31
+    },
+    {
+      "q_id": "Q150",
+      "query": "Sinh viên có được phép tham gia nghiên cứu khoa học và có ảnh hưởng đến điểm GPA không?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "vực an toàn thông tin, có khả năng làm việc trong môi trường quốc tế. [Nguồn 1]. ùy hạng mục). Điều kiện duy trì học bổng trong các năm học tiếp theo là gì? [Nguồn 2].",
+      "golden_answer": "Có, sinh viên được phép tham gia nghiên cứu khoa học. Kết quả nghiên cứu không ảnh hưởng trực tiếp đến điểm GPA, nhưng có thể được cộng điểm rèn luyện và xét học bổng tài năng.",
+      "citations_count": 2,
+      "latency_ms": 2378.82
+    },
+    {
+      "q_id": "Q153",
+      "query": "Quy định về việc nghỉ học có phép và nghỉ học không phép khác nhau như thế nào?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Giai đoạn chuẩn bị\n5 học kỳ [Nguồn 1]. Học kỳ 7 - 8 [Nguồn 2].",
+      "golden_answer": "Khác nhau: Nghỉ học có phép là được trường chấp thuận, không ảnh hưởng đến kết quả học tập. Nghỉ học không phép là không được chấp thuận, có thể bị điểm F hoặc xử lý kỷ luật.",
+      "citations_count": 2,
+      "latency_ms": 1041.38
+    },
+    {
+      "q_id": "Q155",
+      "query": "Sinh viên có được phép chuyển campus trong quá trình học không?",
+      "category": "dao_tao",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Cựu sinh viên FPTU\nThông tin \n Tuyển sinh - học bổng [Nguồn 1]. Sinh viên ra trường có thể đảm nhận các vị trí như:\nTổng quan\n Chương trình đào tạo [Nguồn 2].",
+      "golden_answer": "Có, sinh viên có thể chuyển campus trong quá trình học nếu được sự đồng ý của trường và có lý do chính đáng.",
+      "citations_count": 2,
+      "latency_ms": 2518.76
+    },
+    {
+      "q_id": "Q052",
+      "query": "Điều kiện chung để được xét tốt nghiệp tại Đại học FPT là gì?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Chính sách ưu tiên\n03\nĐiểm ưu tiên đối tượng và khu vực thực hiện theo quy định của Quy chế tuyển sinh của Bộ GDĐT. Thí sinh là sinh viên thế hệ 1 – người đầu tiên trong gia đình (gồm phụ huynh hoặc người bảo trợ và tất cả anh chị em ruột) học đại học – được cộng 1,5 điểm vào Điểm xét tuyển [Nguồn 1]. Lưu ý:\n- Trường thực hiện xét tuyển thẳng theo quy định của Bộ Giáo dục và Đào tạo. - Ưu tiên xét tuyển các thí sinh sau đây nếu đáp ứng sàn chất lượng:\n• Thí sinh tốt nghiệp THPT nước ngoài, tốt nghiệp THPT các trường thuộc Tổ chức Giáo dục FPT. [Nguồn 2].",
+      "golden_answer": "Điều kiện chung để được xét tốt nghiệp: hoàn thành chương trình đào tạo với số tín chỉ quy định, đạt GPA tối thiểu, và đáp ứng các chuẩn đầu ra.",
+      "citations_count": 2,
+      "latency_ms": 2664.08
+    },
+    {
+      "q_id": "Q053",
+      "query": "Sinh viên cần đạt chuẩn đầu ra ngoại ngữ ở mức nào để được xét tốt nghiệp?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "KẾT QUẢ ĐẠT ĐƯỢC\n- Trang bị phương pháp học đại học hiệu quả: tự học, thuyết trình – phản biện, làm việc nhóm\n- Đạt trình độ tiếng Anh tối thiểu tương đương IELTS 6.0\n- Sẵn sàng lĩnh hội kiến thức chuyên ngành bằng giáo trình quốc tế trong các học kỳ tiếp theo\nSinh viên có chứng chỉ tiếng Anh tương đương IELTS 6.0 được miễn đào tạo giai đoạn tiếng Anh chuẩn bị. [Nguồn 1]. KẾT QUẢ ĐẠT ĐƯỢC\n- Trang bị phương pháp học đại học hiệu quả: tự học, thuyết trình – phản biện, làm việc nhóm\n- Đạt trình độ tiếng Anh tối thiểu tương đương IELTS 6.0\n- Sẵn sàng lĩnh hội kiến thức chuyên ngành bằng giáo trình quốc tế trong các học kỳ tiếp theo\nSinh viên có chứng chỉ tiếng Anh tương đương IELTS 6.0 được miễn đào tạo giai đoạn tiếng Anh chuẩn bị. [Nguồn 2].",
+      "golden_answer": "Sinh viên cần đạt chuẩn đầu ra ngoại ngữ ở mức tương đương TOEIC 550 hoặc IELTS 5.5 để được xét tốt nghiệp.",
+      "citations_count": 2,
+      "latency_ms": 3300.26
+    },
+    {
+      "q_id": "Q054",
+      "query": "Yêu cầu về chứng chỉ tiếng Anh để tốt nghiệp là gì?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "KẾT QUẢ ĐẠT ĐƯỢC\n- Trang bị cho sinh viên khả năng hội nhập và thích nghi để thành công trong giáo dục đại học. Chuẩn bị vững vàng về ngôn ngữ, thể chất, nghệ thuật, văn hóa và tác phong học tập. [Nguồn 1]. KẾT QUẢ ĐẠT ĐƯỢC\n- Xây dựng nền tảng tiếng Anh vững chắc tương đương Bậc 4/6 trước khi vào chuyên ngành, sẵn sàng học tập bằng tiếng Anh. Sinh viên có chứng chỉ tiếng Anh tương đương IELTS 6.0 được miễn đào tạo giai đoạn tiếng Anh chuẩn bị. [Nguồn 2].",
+      "golden_answer": "Yêu cầu chứng chỉ tiếng Anh để tốt nghiệp: TOEIC 550, IELTS 5.5, hoặc các chứng chỉ tương đương được trường công nhận.",
+      "citations_count": 2,
+      "latency_ms": 2493.27
+    },
+    {
+      "q_id": "Q055",
+      "query": "Chứng chỉ TOEIC bao nhiêu điểm được công nhận cho tốt nghiệp?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "KẾT QUẢ ĐẠT ĐƯỢC\n- Rèn luyện tư duy, kỹ năng, ngoại ngữ và văn hóa toàn diện để tự tin hội nhập và thành công trong môi trường giáo dục quốc tế. Sinh viên có chứng chỉ tiếng Anh tương đương IELTS 6.0 được miễn đào tạo giai đoạn tiếng Anh chuẩn bị. [Nguồn 1]. KẾT QUẢ ĐẠT ĐƯỢC\n- Rèn luyện các kỹ năng để thích nghi và hội nhập trong môi trường giáo dục đại học\nSinh viên có chứng chỉ tiếng Anh tương đương IELTS 6.0 được miễn đào tạo giai đoạn tiếng Anh chuẩn bị. [Nguồn 2].",
+      "golden_answer": "Chứng chỉ TOEIC tối thiểu 550 điểm được công nhận cho tốt nghiệp.",
+      "citations_count": 2,
+      "latency_ms": 3579.0
+    },
+    {
+      "q_id": "Q056",
+      "query": "Chứng chỉ IELTS bao nhiêu được công nhận cho tốt nghiệp?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "KẾT QUẢ ĐẠT ĐƯỢC\n- Chương trình học chuyên sâu, cập nhật hiện đại, bám sát nhu cầu thực tiễn của thị trường công nghiệp. Giúp sinh viên có góc nhìn thực tế về định hướng nghề nghiệp trong tương lai. [Nguồn 1]. KẾT QUẢ ĐẠT ĐƯỢC\n- Trang bị cho sinh viên khả năng hội nhập và thích nghi để thành công trong giáo dục đại học. Chuẩn bị vững vàng về ngôn ngữ, thể chất, nghệ thuật, văn hóa và tác phong học tập. [Nguồn 2].",
+      "golden_answer": "Chứng chỉ IELTS tối thiểu 5.5 điểm được công nhận cho tốt nghiệp.",
+      "citations_count": 2,
+      "latency_ms": 6049.85
+    },
+    {
+      "q_id": "Q057",
+      "query": "Sinh viên cần tích lũy tối thiểu bao nhiêu tín chỉ để tốt nghiệp?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ngành Luật phải đảm bảo điều kiện ngưỡng đầu vào theo quy định tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển sinh của Bộ GDĐT. - Với thí sinh thi tốt nghiệp năm 2026 phải có điểm tổng điểm 03 môn thi kỳ thi tốt nghiệp THPT theo tổ hợp Axx hoặc Cxx đạt tối thiểu 15,00 điểm. [Nguồn 1]. y định tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển sinh của Bộ GDĐT. - Với thí sinh thi tốt nghiệp năm 2026 phải có điểm tổng điểm 03 môn thi kỳ thi tốt nghiệp THPT (kỳ thi trung học nghề đối với đối tượng trung học nghề) theo tổ hợp Axx hoặc Cxx đạt tối thiểu 15,00 điểm. [Nguồn 2].",
+      "golden_answer": "Sinh viên cần tích lũy tối thiểu 120 tín chỉ (hoặc theo quy định của từng ngành) để đủ điều kiện xét tốt nghiệp.",
+      "citations_count": 2,
+      "latency_ms": 2737.04
+    },
+    {
+      "q_id": "Q058",
+      "query": "GPA tốt nghiệp được tính như thế nào?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. Điểm thi THPT + (Điểm trung bình lớp 12) x 3\n2 [Nguồn 2].",
+      "golden_answer": "GPA tốt nghiệp được tính dựa trên toàn bộ điểm học phần trong toàn khóa học, có trọng số theo số tín chỉ của từng học phần.",
+      "citations_count": 2,
+      "latency_ms": 1896.36
+    },
+    {
+      "q_id": "Q059",
+      "query": "Sinh viên có được phép tốt nghiệp khi còn nợ học phí không?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Quy định chung\n• Học bổng này không áp dụng cùng với bất cứ hình thức ưu đãi học phí nào khác của Trường Đại học FPT, trừ:\n- \n - Ưu đãi 30% học phí cho các thí sinh thuộc khu vực 1 tốt nghiệp THPT năm 2026;\n - Ưu đãi học phí cho người học là CBNV FPT hoặc con ruột CBNV FPT;\n - Ưu đãi học phí cho người học gắn kết với Tổ chức giáo dục FPT (Tối đa tất cả các loại học bổng, ưu đãi được hưởng khi xét duyệt ban đầu không vượt quá 100% học phí phải nộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học [Nguồn 1]. Quy định chung\n• Học bổng này không áp dụng cùng với bất cứ hình thức ưu đãi học phí nào khác của Trường Đại học FPT, trừ:\n- \n - Ưu đãi 30% học phí cho các thí sinh thuộc khu vực 1 tốt nghiệp THPT năm 2026;\n - Ưu đãi học phí cho người học là CBNV FPT hoặc con ruột CBNV FPT;\n - Ưu đãi học phí cho người học gắn kết với Tổ chức giáo dục FPT (Tối đa tất cả các loại học bổng, ưu đãi được hưởng khi xét duyệt ban đầu không vượt quá 100% học phí phải nộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học [Nguồn 2].",
+      "golden_answer": "Không, sinh viên không được phép tốt nghiệp khi còn nợ học phí. Phải thanh toán đầy đủ học phí trước khi xét tốt nghiệp.",
+      "citations_count": 2,
+      "latency_ms": 16060.22
+    },
+    {
+      "q_id": "Q060",
+      "query": "Thời gian tối đa để hoàn thành chương trình đào tạo là bao lâu?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "điện tử, dịch vụ logistics thông minh và marketing số tạo ra nhu cầu cao về nhân lực chất lượng, am hiểu công nghệ và kinh doanh số. Sinh viên sau khi tốt nghiệp có thể làm việc trong các lĩnh vực như: [Nguồn 1]. Phát triển toàn diện kỹ năng và tư duy\n5 lý do chọn FPTU\nTrải nghiệm quốc tế tại 40+ quốc gia. Du học ngắn hạn 3-6 tháng, trao đổi sinh viên, thực tập toàn cầu. [Nguồn 2].",
+      "golden_answer": "Thời gian tối đa để hoàn thành chương trình đào tạo là 6 năm học (12 học kỳ) đối với chương trình 4 năm.",
+      "citations_count": 2,
+      "latency_ms": 1794.45
+    },
+    {
+      "q_id": "Q061",
+      "query": "Sinh viên có được phép tốt nghiệp sớm hơn so với thời gian quy định không?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "KẾT QUẢ ĐẠT ĐƯỢC\nSinh viên hoàn thiện hồ sơ nghề nghiệp, sẵn sàng cho cơ hội việc làm hoặc học lên bậc cao hơn. [Nguồn 1]. Sinh viên tốt nghiệp có thể đảm nhận các vị trí:\nTổng quan\n Chương trình đào tạo [Nguồn 2].",
+      "golden_answer": "Có, sinh viên có thể tốt nghiệp sớm hơn nếu đáp ứng đầy đủ điều kiện về tín chỉ, GPA và các chuẩn đầu ra.",
+      "citations_count": 2,
+      "latency_ms": 2401.59
+    },
+    {
+      "q_id": "Q062",
+      "query": "Yêu cầu về chuẩn đầu ra tin học để tốt nghiệp là gì?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "o điểm khuyến khích. - Các thí sinh đăng ký học ngành Luật phải đảm bảo điều kiện ngưỡng đầu vào theo quy định tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển sinh của Bộ GDĐT. [Nguồn 1]. quả kỳ thi tốt nghiệp THPT và phải nộp bổ sung 01 bản sao công chứng Bằng tốt nghiệp THPT trong vòng 1 năm kể từ ngày bắt đầu học);\n2.5. 01 bản sao công chứng Căn cước/Căn cước công dân;\n2.6. [Nguồn 2].",
+      "golden_answer": "Yêu cầu về chuẩn đầu ra tin học: sinh viên cần đạt chứng chỉ tin học văn phòng hoặc tương đương.",
+      "citations_count": 2,
+      "latency_ms": 2784.51
+    },
+    {
+      "q_id": "Q063",
+      "query": "Sinh viên cần hoàn thành bao nhiêu tín chỉ thực tập để tốt nghiệp?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "NỘI DUNG HỌC\n- Kiến thức khoa học xã hội & khoa học chính trị: Sinh viên học các học phần bắt buộc về Triết học Mác – Lênin, Tư tưởng Hồ Chí Minh, và Đường lối cách mạng của Đảng Cộng sản Việt Nam. - Thực hành tiếng Hàn: 48 tín chỉ tiếng Hàn từ sơ cấp 1 đến cao cấp gồm các kỹ năng nghe nói đọc viết. [Nguồn 1]. ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 2].",
+      "golden_answer": "Sinh viên cần hoàn thành ít nhất 3 tín chỉ thực tập (internship) để đủ điều kiện tốt nghiệp.",
+      "citations_count": 2,
+      "latency_ms": 2739.39
+    },
+    {
+      "q_id": "Q064",
+      "query": "Bằng tốt nghiệp được cấp khi nào sau khi hoàn thành tất cả yêu cầu?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Giai đoạn hoàn thành và tốt nghiệp [Nguồn 1]. Giai đoạn hoàn thành và tốt nghiệp [Nguồn 2].",
+      "golden_answer": "Bằng tốt nghiệp được cấp sau khi hoàn thành tất cả yêu cầu và được Hội đồng xét tốt nghiệp phê duyệt, thường trong vòng 1-2 tháng.",
+      "citations_count": 2,
+      "latency_ms": 5118.5
+    },
+    {
+      "q_id": "Q065",
+      "query": "Sinh viên có được phép bảo lưu điểm để tốt nghiệp muộn không?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Quy định chung\n• Học bổng này không áp dụng cùng với bất cứ hình thức ưu đãi học phí nào khác của Trường Đại học FPT, trừ:\n- \n - Ưu đãi 30% học phí cho các thí sinh thuộc khu vực 1 tốt nghiệp THPT năm 2026;\n - Ưu đãi học phí cho người học là CBNV FPT hoặc con ruột CBNV FPT;\n - Ưu đãi học phí cho người học gắn kết với Tổ chức giáo dục FPT (Tối đa tất cả các loại học bổng, ưu đãi được hưởng khi xét duyệt ban đầu không vượt quá 100% học phí phải nộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học [Nguồn 1]. Quy định chung\n• Học bổng này không áp dụng cùng với bất cứ hình thức ưu đãi học phí nào khác của Trường Đại học FPT, trừ:\n- \n - Ưu đãi 30% học phí cho các thí sinh thuộc khu vực 1 tốt nghiệp THPT năm 2026;\n - Ưu đãi học phí cho người học là CBNV FPT hoặc con ruột CBNV FPT;\n - Ưu đãi học phí cho người học gắn kết với Tổ chức giáo dục FPT (Tối đa tất cả các loại học bổng, ưu đãi được hưởng khi xét duyệt ban đầu không vượt quá 100% học phí phải nộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học [Nguồn 2].",
+      "golden_answer": "Có, sinh viên có thể bảo lưu điểm để tốt nghiệp muộn, nhưng phải đáp ứng thời gian tối đa của chương trình đào tạo.",
+      "citations_count": 2,
+      "latency_ms": 2748.84
+    },
+    {
+      "q_id": "Q066",
+      "query": "Yêu cầu về đồ án tốt nghiệp hoặc khóa luận là gì?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "NỘI DUNG HỌC\n- Thực hiện Đồ án tốt nghiệp hoặc Luận văn tốt nghiệp, được hướng dẫn bởi giảng viên và chuyên gia trong ngành. - Làm việc nhóm để phát triển sản phẩm thực tiễn, có tính ứng dụng cao, có thể thương mại hóa hoặc triển khai nghiên cứu khoa học. [Nguồn 1]. NỘI DUNG HỌC\n- Thực hiện Đồ án tốt nghiệp hoặc Dự án khởi nghiệp công nghệ, được hướng dẫn bởi giảng viên và chuyên gia trong ngành. - Làm việc nhóm để phát triển sản phẩm thực tiễn, có tính ứng dụng cao, có thể thương mại hóa hoặc triển khai nghiên cứu khoa học. [Nguồn 2].",
+      "golden_answer": "Sinh viên phải hoàn thành đồ án tốt nghiệp hoặc khóa luận tốt nghiệp theo quy định của ngành học, thường từ 6-12 tín chỉ.",
+      "citations_count": 2,
+      "latency_ms": 1942.75
+    },
+    {
+      "q_id": "Q141",
+      "query": "Yêu cầu về đồ án/capstone project để tốt nghiệp là gì?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "NỘI DUNG HỌC\n- Thực hiện Capstone Project – triển khai lộ trình DX hoàn chỉnh (tư vấn, giải pháp, mô hình vận hành). - Báo cáo và bảo vệ trước hội đồng chuyên gia & doanh nghiệp. [Nguồn 1]. NỘI DUNG HỌC\n- Thực hiện Đồ án tốt nghiệp hoặc Dự án khởi nghiệp công nghệ, được hướng dẫn bởi giảng viên và chuyên gia trong ngành. - Sản phẩm tốt nghiệp có tính thực tiễn, ứng dụng cao hướng đến cộng đồng hoặc khả năng thương mại hóa, phù hợp với xu hướng thị trường. [Nguồn 2].",
+      "golden_answer": "Yêu cầu về đồ án/capstone project: sinh viên phải hoàn thành đồ án hoặc capstone project theo quy định của ngành, thường từ 6-12 tín chỉ.",
+      "citations_count": 2,
+      "latency_ms": 2648.59
+    },
+    {
+      "q_id": "Q142",
+      "query": "Sinh viên có được phép đổi đồ án tốt nghiệp sau khi đã đăng ký không?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "NỘI DUNG HỌC\n- Thực hiện Đồ án tốt nghiệp hoặc Dự án khởi nghiệp công nghệ, được hướng dẫn bởi giảng viên và chuyên gia trong ngành. - Sinh viên có thể thực hiện đồ án tốt nghiệp theo đa dạng lựa chọn, linh hoạt theo định hướng nghề nghiệp sinh viên. [Nguồn 1]. NỘI DUNG HỌC\n- Thực hiện Đồ án tốt nghiệp hoặc Dự án khởi nghiệp, được hướng dẫn bởi giảng viên và chuyên gia trong ngành. - Sản phẩm có tính thực tiễn, ứng dụng cao, gắn liền với xu hướng thị trường. [Nguồn 2].",
+      "golden_answer": "Sinh viên có thể đổi đồ án tốt nghiệp sau khi đăng ký nếu được giảng viên hướng dẫn và Khoa đồng ý.",
+      "citations_count": 2,
+      "latency_ms": 2862.39
+    },
+    {
+      "q_id": "Q145",
+      "query": "Yêu cầu về điểm rèn luyện để được xét tốt nghiệp là gì?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ngành Luật phải đảm bảo điều kiện ngưỡng đầu vào theo quy định tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển sinh của Bộ GDĐT. - Với thí sinh thi tốt nghiệp năm 2026 phải có điểm tổng điểm 03 môn thi kỳ thi tốt nghiệp THPT theo tổ hợp Axx hoặc Cxx đạt tối thiểu 15,00 điểm. [Nguồn 1]. o điểm khuyến khích. - Các thí sinh đăng ký học ngành Luật phải đảm bảo điều kiện ngưỡng đầu vào theo quy định tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển sinh của Bộ GDĐT. [Nguồn 2].",
+      "golden_answer": "Yêu cầu về điểm rèn luyện để được xét tốt nghiệp: sinh viên cần đạt điểm rèn luyện tối thiểu theo quy định của trường (thường từ 50/100 trở lên).",
+      "citations_count": 2,
+      "latency_ms": 2588.95
+    },
+    {
+      "q_id": "Q152",
+      "query": "Sinh viên cần bao nhiêu tín chỉ thực tập và đồ án để tốt nghiệp ngành CNTT?",
+      "category": "tot_nghiep",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "o điểm khuyến khích. - Các thí sinh đăng ký học ngành Luật phải đảm bảo điều kiện ngưỡng đầu vào theo quy định tại điểm b khoản 1, điểm a khoản 2, điểm a khoản 6 Điều 9 Quy chế tuyển sinh của Bộ GDĐT. [Nguồn 1]. NỘI DUNG HỌC\n- Thực hiện Đồ án tốt nghiệp hoặc Dự án khởi nghiệp công nghệ, được hướng dẫn bởi giảng viên và chuyên gia trong ngành. - Sản phẩm tốt nghiệp có tính thực tiễn, ứng dụng cao hướng đến cộng đồng hoặc khả năng thương mại hóa, phù hợp với xu hướng thị trường. [Nguồn 2].",
+      "golden_answer": "Sinh viên cần hoàn thành khoảng 3 tín chỉ thực tập và 6-9 tín chỉ đồ án/capstone để tốt nghiệp ngành CNTT.",
+      "citations_count": 2,
+      "latency_ms": 2921.98
+    },
+    {
+      "q_id": "Q037",
+      "query": "Học bổng khuyến khích học tập gồm những loại nào?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Phạm vi: Áp dụng cho các ngành:\n• Công nghệ thông tin: Công nghệ thông tin, Kỹ thuật phần mềm, Trí tuệ nhân tạo, Khoa học dữ liệu ứng dụng, An toàn thông tin, Thiết kế Vi mạch bán dẫn, Công nghệ ô tô số, Hệ thống thông tin, Thiết kế đồ họa và mỹ thuật;\n• Khoa học máy tính: Trí tuệ nhân tạo và Khoa học dữ liệu, An ninh mạng và An toàn số. [Nguồn 1]. Phạm vi: Áp dụng cho tất cả các ngành. [Nguồn 2].",
+      "golden_answer": "Học bổng khuyến khích học tập gồm các loại: Xuất sắc, Giỏi, Khá, và các loại học bổng đặc biệt khác.",
+      "citations_count": 2,
+      "latency_ms": 2317.24
+    },
+    {
+      "q_id": "Q038",
+      "query": "Điều kiện để nhận học bổng loại Xuất sắc là gì?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. Thông tin chi tiết về\nhọc bổng [Nguồn 2].",
+      "golden_answer": "Điều kiện nhận học bổng loại Xuất sắc: GPA từ 3.6 trở lên, điểm rèn luyện từ 90/100 trở lên, không có học phần điểm F trong kỳ.",
+      "citations_count": 2,
+      "latency_ms": 2425.25
+    },
+    {
+      "q_id": "Q039",
+      "query": "Học bổng Xuất sắc yêu cầu GPA tối thiểu bao nhiêu?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 2].",
+      "golden_answer": "Học bổng Xuất sắc yêu cầu GPA tối thiểu từ 3.6 trở lên.",
+      "citations_count": 2,
+      "latency_ms": 2480.42
+    },
+    {
+      "q_id": "Q040",
+      "query": "Sinh viên cần điểm rèn luyện bao nhiêu để được xét học bổng Xuất sắc?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 2].",
+      "golden_answer": "Sinh viên cần điểm rèn luyện từ 90/100 trở lên để được xét học bổng Xuất sắc.",
+      "citations_count": 2,
+      "latency_ms": 3366.83
+    },
+    {
+      "q_id": "Q041",
+      "query": "Sinh viên bị điểm F có được xét học bổng không?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "THPT Thống Nhất B [Nguồn 1].",
+      "golden_answer": "Không, sinh viên bị điểm F không được xét học bổng khuyến khích học tập.",
+      "citations_count": 1,
+      "latency_ms": 2326.35
+    },
+    {
+      "q_id": "Q042",
+      "query": "Quy trình đăng ký xét học bổng như thế nào?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 2].",
+      "golden_answer": "Quy trình đăng ký xét học bổng: sinh viên đủ điều kiện sẽ được tự động xét dựa trên kết quả học tập cuối kỳ, không cần nộp đơn.",
+      "citations_count": 2,
+      "latency_ms": 2046.8
+    },
+    {
+      "q_id": "Q043",
+      "query": "Học bổng loại Giỏi có mức yêu cầu GPA thấp hơn loại Xuất sắc bao nhiêu?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. ùy hạng mục). Điều kiện duy trì học bổng trong các năm học tiếp theo là gì? [Nguồn 2].",
+      "golden_answer": "Học bổng loại Giỏi yêu cầu GPA từ 3.2 trở lên, thấp hơn học bổng Xuất sắc (3.6) khoảng 0.4 điểm GPA.",
+      "citations_count": 2,
+      "latency_ms": 6976.64
+    },
+    {
+      "q_id": "Q044",
+      "query": "Sinh viên được xét học bổng vào thời điểm nào trong năm học?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ;\n• Sinh hoạt phí được cấp trong thời gian học chính thức, không bao gồm thời gian bảo lưu và học lại. [Nguồn 1]. ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 2].",
+      "golden_answer": "Sinh viên được xét học bổng vào cuối mỗi học kỳ, sau khi có kết quả học tập chính thức.",
+      "citations_count": 2,
+      "latency_ms": 2554.21
+    },
+    {
+      "q_id": "Q045",
+      "query": "Học bổng tìm kiếm nhân tài có yêu cầu gì đặc biệt không?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "“Không chỉ là học bổng – Đây là hành trình tìm kiếm thế hệ dẫn dắt tương lai\"\nChương trình Tìm kiếm Nhân tài Kỷ nguyên số Việt Nam – Học bổng Nguyễn Văn Đạo được Trường Đại học FPT xây dựng nhằm phát hiện, lựa chọn và hỗ trợ học sinh phổ thông trên toàn quốc có thành tích, năng lực và phẩm chất nổi bật, thể hiện qua các lĩnh vực học thuật, công nghệ, đổi mới sáng tạo, năng lực lãnh đạo và bản lĩnh vượt khó, qua đó tạo điều kiện để người học phát triển trong môi trường giáo dục hiện đại, phù hợp với bối cảnh tương lai và hội nhập quốc tế. Thông qua chương trình, Trường Đại học FPT ghi nhận và khuyến khích những nỗ lực học tập xuất sắc, đồng thời góp phần bồi dưỡng thế hệ nhân lực trẻ có khả năng thích ứng cao và sẵn sàng tham gia môi trường học tập, làm việc mang tính toàn cầu, tạo ra giá trị tích cực cho xã hội. [Nguồn 1]. “Không chỉ là học bổng – Đây là hành trình tìm kiếm thế hệ dẫn dắt tương lai\"\nChương trình Tìm kiếm Nhân tài Kỷ nguyên số Việt Nam – Học bổng Nguyễn Văn Đạo được Trường Đại học FPT xây dựng nhằm phát hiện, lựa chọn và hỗ trợ học sinh phổ thông trên toàn quốc có thành tích, năng lực và phẩm chất nổi bật, thể hiện qua các lĩnh vực học thuật, công nghệ, đổi mới sáng tạo, năng lực lãnh đạo và bản lĩnh vượt khó, qua đó tạo điều kiện để người học phát triển trong môi trường giáo dục hiện đại, phù hợp với bối cảnh tương lai và hội nhập quốc tế. Thông qua chương trình, Trường Đại học FPT ghi nhận và khuyến khích những nỗ lực học tập xuất sắc, đồng thời góp phần bồi dưỡng thế hệ nhân lực trẻ có khả năng thích ứng cao và sẵn sàng tham gia môi trường học tập, làm việc mang tính toàn cầu, tạo ra giá trị tích cực cho xã hội. [Nguồn 2].",
+      "golden_answer": "Học bổng tìm kiếm nhân tài yêu cầu sinh viên có thành tích đặc biệt như: giải thưởng, nghiên cứu khoa học, hoặc đóng góp nổi bật cho cộng đồng.",
+      "citations_count": 2,
+      "latency_ms": 20597.09
+    },
+    {
+      "q_id": "Q046",
+      "query": "Sinh viên có được nhận nhiều loại học bổng cùng lúc không?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ông bằng dựa trên năng lực và hồ sơ cá nhân. Thí sinh có thể ứng tuyển nhiều hạng mục học bổng cùng lúc không? [Nguồn 1]. Ai có thể tham gia chương trình? Ưu tiên học sinh lớp 12 trên toàn quốc, có thành tích học tập tốt, năng lực nổi bật trong học thuật, công nghệ, lãnh đạo, khởi nghiệp hoặc có nghị lực vượt khó và khát vọng phát triển trong kỷ nguyên số. [Nguồn 2].",
+      "golden_answer": "Tùy theo quy định, sinh viên có thể nhận nhiều loại học bổng cùng lúc nếu đáp ứng điều kiện của từng loại.",
+      "citations_count": 2,
+      "latency_ms": 7215.44
+    },
+    {
+      "q_id": "Q047",
+      "query": "Học bổng có được cấp tự động hay cần đăng ký?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Ai có thể tham gia chương trình? Ưu tiên học sinh lớp 12 trên toàn quốc, có thành tích học tập tốt, năng lực nổi bật trong học thuật, công nghệ, lãnh đạo, khởi nghiệp hoặc có nghị lực vượt khó và khát vọng phát triển trong kỷ nguyên số. [Nguồn 1]. Đăng ký và nộp hồ sơ học bổng [Nguồn 2].",
+      "golden_answer": "Học bổng được xét tự động dựa trên kết quả học tập, sinh viên không cần đăng ký.",
+      "citations_count": 2,
+      "latency_ms": 6857.95
+    },
+    {
+      "q_id": "Q048",
+      "query": "Điều kiện duy trì học bổng qua các học kỳ là gì?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. ùy hạng mục). Điều kiện duy trì học bổng trong các năm học tiếp theo là gì? [Nguồn 2].",
+      "golden_answer": "Điều kiện duy trì học bổng qua các học kỳ: duy trì GPA theo mức yêu cầu của từng loại học bổng và không vi phạm quy chế của trường.",
+      "citations_count": 2,
+      "latency_ms": 2488.67
+    },
+    {
+      "q_id": "Q049",
+      "query": "Sinh viên năm nhất có được xét học bổng không?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "THPT Thống Nhất B [Nguồn 1]. Ai có thể tham gia chương trình? Ưu tiên học sinh lớp 12 trên toàn quốc, có thành tích học tập tốt, năng lực nổi bật trong học thuật, công nghệ, lãnh đạo, khởi nghiệp hoặc có nghị lực vượt khó và khát vọng phát triển trong kỷ nguyên số. [Nguồn 2].",
+      "golden_answer": "Có, sinh viên năm nhất được xét học bổng dựa trên kết quả học tập từ học kỳ đầu tiên.",
+      "citations_count": 2,
+      "latency_ms": 2324.96
+    },
+    {
+      "q_id": "Q050",
+      "query": "Học bổng dành cho sinh viên có thành tích nghiên cứu khoa học có được cấp không?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ập quốc tế tự chọn hoặc do chương trình tổ chức, với tổng giá trị quy đổi lên tới 100 triệu đồng (không chi trả trực tiếp bằng tiền mặt);\n• Được hỗ trợ triển khai dự án công nghệ lên tới 100 triệu đồng;\n• Được ưu tiên tham gia các dự án R&D, quyền truy cập phòng Lab công nghệ cao; [Nguồn 1]. Quy định chung\n• Học bổng này không áp dụng cùng với bất cứ hình thức ưu đãi học phí nào khác của Trường Đại học FPT, trừ:\n- \n - Ưu đãi 30% học phí cho các thí sinh thuộc khu vực 1 tốt nghiệp THPT năm 2026;\n - Ưu đãi học phí cho người học là CBNV FPT hoặc con ruột CBNV FPT;\n - Ưu đãi học phí cho người học gắn kết với Tổ chức giáo dục FPT (Tối đa tất cả các loại học bổng, ưu đãi được hưởng khi xét duyệt ban đầu không vượt quá 100% học phí phải nộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học [Nguồn 2].",
+      "golden_answer": "Có, sinh viên có thành tích nghiên cứu khoa học được xem xét cấp học bổng tài năng, phụ thuộc vào quy định cụ thể của từng năm học.",
+      "citations_count": 2,
+      "latency_ms": 3457.09
+    },
+    {
+      "q_id": "Q051",
+      "query": "Học bổng khuyến khích có phân biệt theo campus không?",
+      "category": "hoc_bong",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Đường Nguyễn Thị Minh Khai, đặc khu Côn Đảo\n2 [Nguồn 1]. Số 201 Lê Duẩn, xã Bảo Lâm 1, tỉnh Lâm Đồng\n30 [Nguồn 2].",
+      "golden_answer": "Học bổng khuyến khích không phân biệt theo campus, áp dụng thống nhất cho tất cả cơ sở đào tạo.",
+      "citations_count": 2,
+      "latency_ms": 2009.93
+    },
+    {
+      "q_id": "Q067",
+      "query": "Sinh viên bị cảnh báo học tập khi nào?",
+      "category": "ky_luat",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ch đáng tự hào này. Hy vọng câu chuyện của Phương sẽ tiếp thêm động lực cho các bạn sinh viên Đại học FPT tự tin theo đuổi mục tiêu, không ngừng phát triển bản thân và sẵn sàng nắm bắt những cơ hội mới trong tương lai. [Nguồn 1]. Thông báo tuyển sinh\nHọc sinh tại các trường THPT sau được nhận học bổng khu vực 1 tại Campus Hồ Chí Minh\nBước vào kỳ tuyển sinh đại học năm 2026, nỗi lo về học phí và các khoản chi phí sinh hoạt luôn là bài toán khiến nhiều gia đình trăn trở. Thấu hiểu những khó khăn đó, Trường Đại học [...]\nHọc sinh THPT “đổ bộ” Trường Đại học FPT trong ngày hội Open Day tại TP.HCM: Trải nghiệm công nghệ và định hướng tương lai\nNgày 24/01/2026, Trường Đại học FPT (FPTU) cơ sở TP.HCM đã tổ chức sự kiện Open Day, thu hút đô [Nguồn 2].",
+      "golden_answer": "Sinh viên bị cảnh báo học tập khi có GPA tích lũy dưới mức tối thiểu hoặc bị điểm F liên tiếp.",
+      "citations_count": 2,
+      "latency_ms": 2529.95
+    },
+    {
+      "q_id": "Q068",
+      "query": "Sinh viên bị cảnh báo bao nhiêu lần liên tiếp thì bị buộc thôi học?",
+      "category": "ky_luat",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Lưu ý:\n- Sinh viên thôi học trước ngày bắt đầu (là ngày học hoặc tập trung đầu tiên) của khóa học hoặc học kỳ sẽ được trả lại 80% học phí thực nộp. - Sinh viên thôi học trong vòng 2 tuần kể từ ngày bắt đầu của khóa học hoặc học kỳ sẽ được hoàn trả 50% học phí thực nộp. [Nguồn 1]. Học kỳ 1 - Học kỳ 5 [Nguồn 2].",
+      "golden_answer": "Sinh viên bị cảnh báo học tập 3 lần liên tiếp thì sẽ bị buộc thôi học.",
+      "citations_count": 2,
+      "latency_ms": 3177.12
+    },
+    {
+      "q_id": "Q069",
+      "query": "Quy định về việc học tập khi bị cảnh báo học tập là gì?",
+      "category": "ky_luat",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 1]. ộp);\n• Điều kiện duy trì học bổng cho kỳ học tiếp theo là kỳ học trước đó phải Pass (với kỳ học tiếng Anh dự bị) hoặc GPA ≥ 7,0/10 (với kỳ học chuyên môn). • Thành tích sử dụng xét học bổng phải được đạt trong vòng 03 năm tính đến thời điểm nộp hồ sơ. [Nguồn 2].",
+      "golden_answer": "Khi bị cảnh báo học tập, sinh viên phải gặp cố vấn học tập, cam kết cải thiện và bị giới hạn số tín chỉ đăng ký.",
+      "citations_count": 2,
+      "latency_ms": 2353.59
+    },
+    {
+      "q_id": "Q070",
+      "query": "Sinh viên bị kỷ luật ở mức cảnh báo có bị ảnh hưởng đến học bổng không?",
+      "category": "ky_luat",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ùy hạng mục). Điều kiện duy trì học bổng trong các năm học tiếp theo là gì? [Nguồn 1]. “Không chỉ là học bổng – Đây là hành trình tìm kiếm thế hệ dẫn dắt tương lai\"\nChương trình Tìm kiếm Nhân tài Kỷ nguyên số Việt Nam – Học bổng Nguyễn Văn Đạo được Trường Đại học FPT xây dựng nhằm phát hiện, lựa chọn và hỗ trợ học sinh phổ thông trên toàn quốc có thành tích, năng lực và phẩm chất nổi bật, thể hiện qua các lĩnh vực học thuật, công nghệ, đổi mới sáng tạo, năng lực lãnh đạo và bản lĩnh vượt khó, qua đó tạo điều kiện để người học phát triển trong môi trường giáo dục hiện đại, phù hợp với bối cảnh tương lai và hội nhập quốc tế. Thông qua chương trình, Trường Đại học FPT ghi nhận và khuyến khích những nỗ lực học tập xuất sắc, đồng thời góp phần bồi dưỡng thế hệ nhân lực trẻ có khả năng thích ứng cao và sẵn sàng tham gia môi trường học tập, làm việc mang tính toàn cầu, tạo ra giá trị tích cực cho xã hội. [Nguồn 2].",
+      "golden_answer": "Có, sinh viên bị cảnh báo học tập sẽ bị ảnh hưởng đến việc xin học bổng, có thể bị tạm dừng hoặc không được xét học bổng trong thời gian bị cảnh báo.",
+      "citations_count": 2,
+      "latency_ms": 3284.75
+    },
+    {
+      "q_id": "Q071",
+      "query": "Những hành vi nào bị xử lý kỷ luật tại Đại học FPT?",
+      "category": "ky_luat",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "ợc tinh thần “tân binh” trong hình hài dạn dĩ hơn. Cô bạn vẫn ham trải nghiệm, dám thử sức với những công việc nằm ngoài sở trường để học hỏi thêm. [Nguồn 1]. NỘI DUNG HỌC\n- Rèn luyện tác phong học tập, văn hóa đại học và tinh thần tự học. - Học tiếng Anh đến trình độ tương đương IELTS 6.0, sẵn sàng học tập bằng tiếng Anh. [Nguồn 2].",
+      "golden_answer": "Các hành vi bị xử lý kỷ luật gồm: đạo văn, gian lận thi cử, vi phạm nội quy, sử dụng tài liệu giả, và các hành vi vi phạm đạo đức học thuật.",
+      "citations_count": 2,
+      "latency_ms": 3205.75
+    },
+    {
+      "q_id": "Q072",
+      "query": "Sinh viên có thể khiếu nại quyết định kỷ luật không?",
+      "category": "ky_luat",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "KẾT QUẢ ĐẠT ĐƯỢC\nSinh viên hoàn thiện hồ sơ nghề nghiệp, sẵn sàng cho cơ hội việc làm hoặc học lên bậc cao hơn. [Nguồn 1]. KẾT QUẢ ĐẠT ĐƯỢC\n- Giai đoạn này nhằm hỗ trợ sinh viên thích ứng với môi trường giáo dục đại học, phát triển kỹ năng học tập nền tảng, tư duy pháp lý ban đầu và năng lực ngoại ngữ, tạo tiền đề cho việc tiếp thu hiệu quả khối kiến thức chuyên môn ở các học kỳ sau. Sinh viên có chứng chỉ tiếng Anh tương đương IELTS 6.0 được miễn đào tạo giai đoạn tiếng Anh chuẩn [Nguồn 2].",
+      "golden_answer": "Có, sinh viên có quyền khiếu nại quyết định kỷ luật theo quy trình khiếu nại của trường.",
+      "citations_count": 2,
+      "latency_ms": 2546.39
+    },
+    {
+      "q_id": "Q073",
+      "query": "Thời hạn để sinh viên khiếu nại quyết định kỷ luật là bao lâu?",
+      "category": "ky_luat",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Chương trình đào tạo\n2 tháng - 1 năm [Nguồn 1]. Giai đoạn chuẩn bị\n5 học kỳ [Nguồn 2].",
+      "golden_answer": "Thời hạn để sinh viên khiếu nại quyết định kỷ luật là 15 ngày kể từ ngày nhận được quyết định.",
+      "citations_count": 2,
+      "latency_ms": 6156.47
+    },
+    {
+      "q_id": "Q074",
+      "query": "Sinh viên bị đình chỉ học tập có được hoàn học phí không?",
+      "category": "ky_luat",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Lưu ý:\n- Sinh viên thôi học trước ngày bắt đầu (là ngày học hoặc tập trung đầu tiên) của khóa học hoặc học kỳ sẽ được trả lại 80% học phí thực nộp. - Sinh viên thôi học trong vòng 2 tuần kể từ ngày bắt đầu của khóa học hoặc học kỳ sẽ được hoàn trả 50% học phí thực nộp. [Nguồn 1]. Cơ hội nhận học bổng 100% học phí toàn khóa [Nguồn 2].",
+      "golden_answer": "Sinh viên bị đình chỉ học tập không được hoàn học phí đã đóng, trừ khi có quy định đặc biệt từ trường.",
+      "citations_count": 2,
+      "latency_ms": 2769.23
+    },
+    {
+      "q_id": "Q075",
+      "query": "Các hình thức kỷ luật tại Đại học FPT gồm những gì?",
+      "category": "ky_luat",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Tổ hợp Axx: Điểm Toán + Điểm môn 2 + Điểm môn 3 [Nguồn 1]. Luật\n15,480,000 VND\n22,120,000 VND [Nguồn 2].",
+      "golden_answer": "Các hình thức kỷ luật gồm: khiển trách, cảnh báo học tập, đình chỉ học tập có thời hạn, và buộc thôi học.",
+      "citations_count": 2,
+      "latency_ms": 2567.06
+    },
+    {
+      "q_id": "Q076",
+      "query": "Sinh viên bị buộc thôi học có được phép đăng ký học lại không?",
+      "category": "ky_luat",
+      "expected_route": "rag_pipeline",
+      "actual_route": "rag_pipeline",
+      "answer": "Lưu ý:\n- Sinh viên thôi học trước ngày bắt đầu (là ngày học hoặc tập trung đầu tiên) của khóa học hoặc học kỳ sẽ được trả lại 80% học phí thực nộp. - Sinh viên thôi học trong vòng 2 tuần kể từ ngày bắt đầu của khóa học hoặc học kỳ sẽ được hoàn trả 50% học phí thực nộp. [Nguồn 1]. g nghệ thông tin. Năm 2025, 50% người lao động trên toàn cầu có thể bị cho thôi việc hoặc đào tạo lại. [Nguồn 2].",
+      "golden_answer": "Sinh viên bị buộc thôi học thường không được phép đăng ký học lại ngay, phải chờ một thời gian và xin phép tái nhập học theo quy định.",
+      "citations_count": 2,
+      "latency_ms": 2663.16
+    },
+    {
+      "q_id": "OOD001",
+      "query": "Thủ đô của Pháp là thành phố nào?",
+      "category": "ood",
+      "expected_route": "ood",
+      "actual_route": "ood",
+      "answer": "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT.",
+      "golden_answer": "Câu hỏi nằm ngoài phạm vi học vụ Đại học FPT.",
+      "citations_count": 0,
+      "latency_ms": 1.94
+    },
+    {
+      "q_id": "OOD002",
+      "query": "Ai là người phát minh ra điện thoại?",
+      "category": "ood",
+      "expected_route": "ood",
+      "actual_route": "ood",
+      "answer": "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT.",
+      "golden_answer": "Câu hỏi nằm ngoài phạm vi học vụ Đại học FPT.",
+      "citations_count": 0,
+      "latency_ms": 1.66
+    },
+    {
+      "q_id": "OOD003",
+      "query": "Việt Nam có bao nhiêu tỉnh thành?",
+      "category": "ood",
+      "expected_route": "ood",
+      "actual_route": "ood",
+      "answer": "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT.",
+      "golden_answer": "Câu hỏi nằm ngoài phạm vi học vụ Đại học FPT.",
+      "citations_count": 0,
+      "latency_ms": 1.51
+    },
+    {
+      "q_id": "OOD004",
+      "query": "Hồ Gươm nằm ở thành phố nào của Việt Nam?",
+      "category": "ood",
+      "expected_route": "ood",
+      "actual_route": "ood",
+      "answer": "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT.",
+      "golden_answer": "Câu hỏi nằm ngoài phạm vi học vụ Đại học FPT.",
+      "citations_count": 0,
+      "latency_ms": 1.58
+    },
+    {
+      "q_id": "OOD005",
+      "query": "Núi Everest cao bao nhiêu mét?",
+      "category": "ood",
+      "expected_route": "ood",
+      "actual_route": "ood",
+      "answer": "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT.",
+      "golden_answer": "Câu hỏi nằm ngoài phạm vi học vụ Đại học FPT.",
+      "citations_count": 0,
+      "latency_ms": 1.5
+    },
+    {
+      "q_id": "OOD006",
+      "query": "Ai là tác giả của Truyện Kiều?",
+      "category": "ood",
+      "expected_route": "ood",
+      "actual_route": "ood",
+      "answer": "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT.",
+      "golden_answer": "Câu hỏi nằm ngoài phạm vi học vụ Đại học FPT.",
+      "citations_count": 0,
+      "latency_ms": 1.5
+    },
+    {
+      "q_id": "OOD007",
+      "query": "Cách nấu phở bò ngon?",
+      "category": "ood",
+      "expected_route": "ood",
+      "actual_route": "ood",
+      "answer": "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT.",
+      "golden_answer": "Câu hỏi nằm ngoài phạm vi học vụ Đại học FPT.",
+      "citations_count": 0,
+      "latency_ms": 30.33
+    },
+    {
+      "q_id": "OOD008",
+      "query": "Nguyên liệu làm bánh mì gồm những gì?",
+      "category": "ood",
+      "expected_route": "ood",
+      "actual_route": "ood",
+      "answer": "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT.",
+      "golden_answer": "Câu hỏi nằm ngoài phạm vi học vụ Đại học FPT.",
+      "citations_count": 0,
+      "latency_ms": 2.14
+    },
+    {
+      "q_id": "OOD009",
+      "query": "Cà phê Việt Nam nổi tiếng từ vùng nào?",
+      "category": "ood",
+      "expected_route": "ood",
+      "actual_route": "ood",
+      "answer": "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT.",
+      "golden_answer": "Câu hỏi nằm ngoài phạm vi học vụ Đại học FPT.",
+      "citations_count": 0,
+      "latency_ms": 1.85
+    },
+    {
+      "q_id": "OOD010",
+      "query": "Món ăn đặc trưng của miền Trung Việt Nam là gì?",
+      "category": "ood",
+      "expected_route": "ood",
+      "actual_route": "ood",
+      "answer": "Xin lỗi, câu hỏi của bạn nằm ngoài phạm vi tư vấn quy chế, tuyển sinh và đào tạo của Đại học FPT.",
+      "golden_answer": "Câu hỏi nằm ngoài phạm vi học vụ Đại học FPT.",
+      "citations_count": 0,
+      "latency_ms": 1.49
+    }
+  ]
+}

@@ -3,9 +3,16 @@
 import requests
 from typing import Optional
 from FPTUniQA.utils.config import config
+from FPTUniQA.utils.exceptions import CircuitBreaker, CircuitBreakerOpenError
 from FPTUniQA.utils.logger import get_logger
 
+try:
+    from openai import OpenAI
+except ImportError:
+    OpenAI = None
+
 logger = get_logger("FPTUniQA.llm")
+_llm_breaker = CircuitBreaker(failure_threshold=2, recovery_timeout=60.0, name="llm_generation")
 
 
 class LLMClient:
@@ -26,9 +33,8 @@ class LLMClient:
         self._anthropic_client = None
 
         # 1. Khởi tạo client OpenAI-compatible nếu có base_url (ví dụ http://localhost:20128/v1)
-        if self.base_url and self.api_key:
+        if self.base_url and self.api_key and OpenAI is not None:
             try:
-                from openai import OpenAI
                 self._openai_client = OpenAI(
                     base_url=self.base_url,
                     api_key=self.api_key,
@@ -62,6 +68,12 @@ class LLMClient:
             user_prompt = system_prompt
             system_prompt = "Bạn là Trợ lý Tư vấn Học vụ Đại học FPT thông minh, chuẩn mực và tận tâm."
 
+        # Kiểm tra Circuit Breaker để tránh nghẽn khi LLM proxy offline
+        try:
+            _llm_breaker._check_state()
+        except CircuitBreakerOpenError:
+            return self._generate_fallback(user_prompt)
+
         # Ưu tiên 1: Gọi qua OpenAI-compatible Client (http://localhost:20128/v1)
         if self._openai_client is not None:
             try:
@@ -79,12 +91,13 @@ class LLMClient:
                 choice = response.choices[0]
                 content = choice.message.content
                 if content:
+                    _llm_breaker._on_success()
                     return content.strip()
                 return "Không nhận được phản hồi văn bản từ mô hình."
             except Exception as exc:
-                logger.warning(f"Lỗi OpenAI client: {exc}. Thử gọi trực tiếp qua HTTP requests...")
-                # Thử gọi trực tiếp qua requests nếu SDK gặp sự cố định dạng stream
-                return self._call_http_direct(system_prompt, user_prompt)
+                _llm_breaker._on_failure(exc)
+                logger.warning(f"Lỗi OpenAI client: {exc}. Chuyển sang fallback an toàn.")
+                return self._generate_fallback(user_prompt)
 
         # Ưu tiên 2: Gọi qua Anthropic SDK
         if self._anthropic_client is not None:
@@ -142,7 +155,25 @@ class LLMClient:
             return self._generate_fallback(user_prompt)
 
     def _generate_fallback(self, user_prompt: str) -> str:
-        """Sinh câu trả lời mẫu có trích dẫn [Nguồn N] cho kiểm thử."""
+        """Sinh câu trả lời mẫu bám sát ngữ cảnh (Context Grounding) kèm trích dẫn [Nguồn N] cho kiểm thử."""
+        # 1. Nếu có ngữ cảnh trích xuất thực tế, tổng hợp câu trả lời bám sát ngữ cảnh (Zero/Low Hallucination)
+        if "[NGỮ CẢNH HỌC VỤ]" in user_prompt:
+            import re
+            ctx_match = re.search(r"\[NGỮ CẢNH HỌC VỤ\]\s*(.*?)\s*\[CÂU HỎI CỦA SINH VIÊN\]", user_prompt, re.DOTALL)
+            if ctx_match:
+                ctx_body = ctx_match.group(1).strip()
+                sources = re.findall(r"\[Nguồn (\d+)\].*?\nNội dung:\s*([^\n]+(?:\n[^\n]+)*)", ctx_body)
+                if sources:
+                    extracted_parts = []
+                    for src_id, content in sources[:2]:
+                        clean = content.strip()
+                        sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", clean) if len(s.strip()) > 10]
+                        if sentences:
+                            selected = " ".join(sentences[:2])
+                            extracted_parts.append(f"{selected} [Nguồn {src_id}].")
+                    if extracted_parts:
+                        return " ".join(extracted_parts)
+
         lower_prompt = user_prompt.lower()
         if "cảnh báo" in lower_prompt or "cảnh cáo" in lower_prompt:
             return (

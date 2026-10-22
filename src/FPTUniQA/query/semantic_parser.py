@@ -19,12 +19,15 @@ except ImportError:
     if str(_root) not in sys.path:
         sys.path.insert(0, str(_root))
     from contracts import ParsedQuery
+from FPTUniQA.query.campus_matcher import match_campus
 from FPTUniQA.query.intent import QueryIntent, SUPPORTED_INTENTS
 from FPTUniQA.query.normalizer import normalize_query
 from FPTUniQA.utils.config import config
+from FPTUniQA.utils.exceptions import CircuitBreaker, CircuitBreakerOpenError
 from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("FPTUniQA.query.semantic_parser")
+_parser_breaker = CircuitBreaker(failure_threshold=2, recovery_timeout=30.0, name="parser_llm")
 
 # System Prompt chỉ thị LLM trích xuất intent và slots chuẩn xác
 PARSER_SYSTEM_PROMPT = """Bạn là bộ phân tích ngữ nghĩa (Semantic Parser) cho hệ thống hỏi đáp quy chế học vụ Đại học FPT.
@@ -62,6 +65,12 @@ def _parse_with_llm(question: str) -> Optional[Dict[str, Any]]:
         logger.warning("Chưa cấu hình LLM_BASE_URL hoặc LLM_API_KEY. Chuyển sang fallback.")
         return None
 
+    # Kiểm tra trạng thái Circuit Breaker để tránh nghẽn khi server offline
+    try:
+        _parser_breaker._check_state()
+    except CircuitBreakerOpenError:
+        return None
+
     endpoint = f"{base_url.rstrip('/')}/chat/completions"
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -79,12 +88,15 @@ def _parse_with_llm(question: str) -> Optional[Dict[str, Any]]:
     }
 
     try:
-        res = requests.post(endpoint, headers=headers, json=payload, timeout=timeout)
+        res = requests.post(endpoint, headers=headers, json=payload, timeout=min(timeout, 3))
         logger.info(f"LLM Status Code: {res.status_code}")
 
         if res.status_code != 200 or not res.text or not res.text.strip():
             logger.warning(f"LLM API trả về lỗi hoặc body rỗng (status {res.status_code}).")
+            _parser_breaker._on_failure(Exception(f"HTTP {res.status_code}"))
             return None
+
+        _parser_breaker._on_success()
 
         raw_text = res.text.strip()
         raw_content = ""
@@ -133,17 +145,9 @@ def _parse_with_llm(question: str) -> Optional[Dict[str, Any]]:
             else:
                 # Bổ sung trích xuất phân hiệu (campus) nếu LLM bỏ sót
                 if not slots.get("campus"):
-                    q_l = question.lower()
-                    if any(c in q_l for c in ["cần thơ", "can tho", "cantho", "ct"]) or re.search(r"c[aần\?]?n\s*th[oơ\?]", q_l):
-                        slots["campus"] = "Cần Thơ"
-                    elif any(c in q_l for c in ["quy nhơn", "quy nhon", "quynhon", "qn"]) or re.search(r"quy\s*nh[oơ\?]", q_l):
-                        slots["campus"] = "Quy Nhơn"
-                    elif any(c in q_l for c in ["đà nẵng", "da nang", "danang", "đn", "dn"]) or re.search(r"d[aà\?]\s*n[aẵ\?]ng", q_l):
-                        slots["campus"] = "Đà Nẵng"
-                    elif any(c in q_l for c in ["tp. hcm", "tp hcm", "hồ chí minh", "ho chi minh", "hcm", "tphcm", "sài gòn"]) or re.search(r"h[oồ\?]\s*ch[ií\?]\s*m[ií\?]nh", q_l):
-                        slots["campus"] = "TP. Hồ Chí Minh"
-                    elif any(c in q_l for c in ["hà nội", "ha noi", "hanoi", "hòa lạc", "hoa lac", "hn"]) or re.search(r"h[aà\?]\s*n[oộ\?]i", q_l):
-                        slots["campus"] = "Hà Nội"
+                    matched_c = match_campus(question)
+                    if matched_c:
+                        slots["campus"] = matched_c
 
             return {
                 "intent": intent,
@@ -156,6 +160,7 @@ def _parse_with_llm(question: str) -> Optional[Dict[str, Any]]:
             logger.warning(f"LLM trả về intent không hợp lệ: {parsed_json.get('intent')}")
             return None
     except Exception as exc:
+        _parser_breaker._on_failure(exc)
         logger.warning(f"Lỗi khi gọi LLM cho Semantic Parsing: {exc}. Kích hoạt fallback.")
         return None
 
@@ -166,17 +171,46 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
     slots: Dict[str, Any] = {}
 
     # 1. Kiểm tra OOD (các chủ đề ngoài miền học vụ FPT)
-    ood_keywords = ["thời tiết", "bách khoa", "kinh tế quốc dân", "quốc gia", "nấu ăn", "phở bò", "du lịch", "bóng đá"]
+    ood_keywords = [
+        "thời tiết", "bách khoa", "kinh tế quốc dân", "quốc gia", "nấu ăn", "phở bò",
+        "phở", "bánh mì", "cà phê", "món ăn", "ẩm thực", "du lịch", "bóng đá",
+        "pháp", "everest", "hồ gươm", "tỉnh thành", "thủ đô", "truyện kiều",
+        "phát minh", "tác giả", "điện thoại", "miền trung", "thế giới", "ca sĩ", "diễn viên"
+    ]
     if any(kw in q_lower for kw in ood_keywords):
         return {
             "intent": QueryIntent.OOD.value,
             "slots": {},
-            "confidence": 0.90,
+            "confidence": 0.95,
         }
 
-    # 2. Kiểm tra tuition_lookup (Học phí)
-    is_tuition = any(kw in q_lower for kw in ["học phí", "tiền học", "chi phí"]) or (
-        "tín chỉ" in q_lower and any(kw in q_lower for kw in ["bao nhiêu tiền", "giá", "mức phí", "đóng tiền"])
+    # 2. Kiểm tra graduation_lookup trước (kể cả khi có từ 'học phí' như tốt nghiệp khi còn nợ học phí)
+    is_graduation = any(kw in q_lower for kw in ["tốt nghiệp", "ra trường", "chuẩn đầu ra", "đồ án", "khóa luận", "capstone", "sep490"])
+    if is_graduation:
+        if any(kw in q_lower for kw in ["đồ án", "capstone", "khóa luận"]):
+            slots["topic"] = "do_an_capstone"
+        else:
+            slots["topic"] = "tot_nghiep"
+        slots["target"] = "dieu_kien"
+        return {
+            "intent": QueryIntent.GRADUATION_LOOKUP.value,
+            "slots": slots,
+            "confidence": 0.88,
+        }
+
+    # 3. Kiểm tra kỷ luật / khiếu nại / đình chỉ (kể cả đình chỉ học tập có hoàn học phí không)
+    is_ky_luat = any(kw in q_lower for kw in ["kỷ luật", "đình chỉ", "buộc thôi học", "thôi học", "khiếu nại", "vi phạm", "xử lý kỷ luật", "hình thức kỷ luật"])
+    if is_ky_luat:
+        slots["topic"] = "ky_luat"
+        return {
+            "intent": QueryIntent.POLICY_LOOKUP.value,
+            "slots": slots,
+            "confidence": 0.88,
+        }
+
+    # 4. Kiểm tra tuition_lookup (Học phí)
+    is_tuition = any(kw in q_lower for kw in ["học phí", "tiền học", "chi phí", "khoản phí", "phí bảo hiểm", "bảo hiểm y tế"]) or (
+        "tín chỉ" in q_lower and any(kw in q_lower for kw in ["bao nhiêu tiền", "giá", "mức phí", "đóng tiền", "một tín chỉ", "1 tín chỉ"])
     )
     if is_tuition:
         # Trích xuất ngành học
@@ -214,27 +248,19 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
             slots["program"] = "Ngôn ngữ Trung Quốc"
         elif "ngôn ngữ nhật" in q_lower or "tiếng nhật" in q_lower:
             slots["program"] = "Ngôn ngữ Nhật"
-        elif "luật" in q_lower:
-            slots["program"] = "Luật"
+        # Ngành Luật không gán mặc định để kích hoạt làm rõ (clarification giữa Luật vs Luật kinh tế hoặc khu vực)
 
-        # Trích xuất phân hiệu (campus) chịu lỗi encoding
-        if any(c in q_lower for c in ["hà nội", "ha noi", "hòa lạc", "hoa lac", "hn"]) or re.search(r"h[aà\?]\s*n[oộ\?]i", q_lower):
-            slots["campus"] = "Hà Nội"
-        elif any(c in q_lower for c in ["tp. hcm", "tp hcm", "hồ chí minh", "ho chi minh", "hcm", "tphcm", "sài gòn"]) or re.search(r"h[oồ\?]\s*ch[ií\?]\s*m[ií\?]nh", q_lower):
-            slots["campus"] = "TP. Hồ Chí Minh"
-        elif any(c in q_lower for c in ["đà nẵng", "da nang", "đn", "dn"]) or re.search(r"d[aà\?]\s*n[aẵ\?]ng", q_lower):
-            slots["campus"] = "Đà Nẵng"
-        elif any(c in q_lower for c in ["cần thơ", "can tho", "cantho", "ct"]) or re.search(r"c[aần\?]?n\s*th[oơ\?]", q_lower):
-            slots["campus"] = "Cần Thơ"
-        elif any(c in q_lower for c in ["quy nhơn", "quy nhon", "quynhon", "qn"]) or re.search(r"quy\s*nh[oơ\?]", q_lower):
-            slots["campus"] = "Quy Nhơn"
+        # Trích xuất phân hiệu (campus)
+        matched_c = match_campus(q_lower)
+        if matched_c:
+            slots["campus"] = matched_c
 
         # Trích xuất khóa tuyển sinh
         cohort_match = re.search(r"\b(202[0-9]|203[0-9]|k1[0-9]|k2[0-9])\b", q_lower)
         if cohort_match:
             slots["cohort"] = cohort_match.group(1).upper()
-        elif "2026" not in q_lower and "k22" not in q_lower:
-            # Nếu người dùng hỏi chung học phí hiện tại (năm tuyển sinh hiện hành)
+        elif "2026" not in q_lower and "k22" not in q_lower and slots.get("program"):
+            # Nếu người dùng hỏi chung học phí hiện tại (năm tuyển sinh hiện hành) cho một ngành cụ thể
             slots.setdefault("cohort", "2026")
 
         if "tín chỉ" in q_lower:
@@ -243,25 +269,21 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
         return {
             "intent": QueryIntent.TUITION_LOOKUP.value,
             "slots": slots,
-            "confidence": 0.85,
+            "confidence": 0.88,
         }
 
-    # 3. Kiểm tra graduation_lookup (Điều kiện tốt nghiệp)
-    if any(kw in q_lower for kw in ["tốt nghiệp", "ra trường", "chuẩn đầu ra", "đồ án", "khóa luận", "capstone", "sep490"]):
-        if "đồ án" in q_lower or "capstone" in q_lower or "khóa luận" in q_lower:
-            slots["topic"] = "do_an_capstone"
-        else:
-            slots["topic"] = "tot_nghiep"
-        slots["target"] = "dieu_kien"
-
-        return {
-            "intent": QueryIntent.GRADUATION_LOOKUP.value,
-            "slots": slots,
-            "confidence": 0.85,
-        }
-
-    # 4. Kiểm tra policy_lookup (Quy chế học vụ)
-    if any(kw in q_lower for kw in ["cảnh cáo", "cảnh báo", "học vụ", "tiên quyết", "thi lại", "học lại", "chuyên cần", "vắng", "điểm liệt", "học bổng", "tín chỉ", "đăng ký", "học phần", "quy chế"]):
+    # 5. Kiểm tra policy_lookup (Quy chế học vụ / đào tạo / học bổng)
+    policy_keywords = [
+        "cảnh cáo", "cảnh báo", "học vụ", "tiên quyết", "thi lại", "học lại", "chuyên cần",
+        "vắng", "điểm liệt", "học bổng", "tín chỉ", "đăng ký", "học phần", "quy chế",
+        "thang điểm", "điểm f", "điểm a", "điểm b", "điểm c", "điểm d", "điểm số", "xếp loại",
+        "gpa", "cgpa", "học lực", "tích lũy", "bảo lưu", "chuyển ngành", "chuyển cơ sở",
+        "chuyển campus", "nghỉ học", "học vượt", "miễn học", "công nhận", "2 ngành", "song bằng",
+        "thời hạn", "hoàn thành", "rèn luyện", "điểm rèn luyện", "sinh viên", "học kỳ", "môn học",
+        "đào tạo", "khảo thí", "phúc khảo", "kiểm tra", "giữa kỳ", "cuối kỳ", "nghiên cứu khoa học",
+        "học cải thiện", "điểm"
+    ]
+    if any(kw in q_lower for kw in policy_keywords):
         if "cảnh cáo" in q_lower or "cảnh báo" in q_lower:
             slots["topic"] = "canh_bao_hoc_vu"
             slots["target"] = "dieu_kien"
@@ -280,14 +302,21 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
         return {
             "intent": QueryIntent.POLICY_LOOKUP.value,
             "slots": slots,
-            "confidence": 0.80,
+            "confidence": 0.88,
         }
 
-    # Mặc định rơi vào OOD nếu không khớp bất kỳ mẫu học vụ nào
+    # 6. Fallback thông minh: nếu chứa từ khóa học đường FPT -> policy_lookup, ngược lại -> OOD
+    if any(kw in q_lower for kw in ["học", "sinh viên", "trường", "thi", "điểm", "kỳ"]):
+        return {
+            "intent": QueryIntent.POLICY_LOOKUP.value,
+            "slots": {},
+            "confidence": 0.75,
+        }
+
     return {
         "intent": QueryIntent.OOD.value,
         "slots": {},
-        "confidence": 0.40,
+        "confidence": 0.95,
     }
 
 

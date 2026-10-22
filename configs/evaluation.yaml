@@ -34,3 +34,11 @@ experiments:
       type: "hybrid"
     - name: "hybrid_with_reranker"
       type: "hybrid_rerank"
+
+benchmark_100:
+  dataset_path: "data/evaluation/benchmark_100.jsonl"
+  output_dir: "experiments/benchmark_100"
+  results_json: "experiments/benchmark_100/results.json"
+  report_md: "experiments/benchmark_100/report.md"
+  k_list: [1, 3, 5]
+

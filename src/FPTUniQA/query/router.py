@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any, Dict, Literal, Optional, Tuple
 
 from contracts import ParsedQuery
+from FPTUniQA.query.campus_matcher import match_campus
 from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("FPTUniQA.query.router")
@@ -101,17 +102,17 @@ def route_query(parsed: ParsedQuery) -> RouteResult:
         - "clarification": Hỏi làm rõ khi thiếu slot cần thiết
         - "ood": Ngoài phạm vi đào tạo
     """
+    # 1. Nhánh ngoài phạm vi (OOD)
+    if parsed.intent == "OOD":
+        return RouteResult("ood", None)
+
     # 0. Kiểm tra ngưỡng tin cậy an toàn (Tuần 6 Guardrail)
-    # Nếu confidence < 0.5 (dù intent không phải OOD) -> tự động coi như không đủ tin cậy
+    # Nếu confidence < 0.5 -> tự động coi như không đủ tin cậy cho các tác vụ học vụ
     if parsed.confidence is not None and parsed.confidence < 0.5:
         return RouteResult(
             "uncertain",
             "Hệ thống chưa chắc chắn về câu hỏi này (độ tin cậy phân tích thấp). Vui lòng diễn đạt rõ hơn hoặc cung cấp thêm thông tin học vụ cụ thể.",
         )
-
-    # 1. Nhánh ngoài phạm vi (OOD)
-    if parsed.intent == "OOD":
-        return RouteResult("ood", None)
 
     # 2. Nhánh tra cứu học phí / số liệu (tuition_lookup)
     if parsed.intent == "tuition_lookup":
@@ -152,28 +153,8 @@ def route_query(parsed: ParsedQuery) -> RouteResult:
 
 
 def _match_campus(raw_campus: str) -> Optional[str]:
-    """Chuẩn hóa tên phân hiệu cơ sở đào tạo, hỗ trợ có dấu, không dấu và chịu lỗi encoding ký tự từ terminal."""
-    if not raw_campus:
-        return None
-    c_lower = raw_campus.strip().lower()
-
-    # 1. Cần Thơ
-    if any(k in c_lower for k in ["cần thơ", "can tho", "cantho", "cầntho"]) or re.search(r"c[aần\?]?n\s*th[oơ\?]", c_lower):
-        return "Cần Thơ"
-    # 2. Quy Nhơn
-    if any(k in c_lower for k in ["quy nhơn", "quy nhon", "quynhon", "bình định", "binh dinh"]) or re.search(r"quy\s*nh[oơ\?]", c_lower):
-        return "Quy Nhơn"
-    # 3. Đà Nẵng
-    if any(k in c_lower for k in ["đà nẵng", "da nang", "danang", "đn", "dn"]) or re.search(r"d[aà\?]\s*n[aẵ\?]ng", c_lower):
-        return "Đà Nẵng"
-    # 4. TP. Hồ Chí Minh
-    if any(k in c_lower for k in ["hồ chí minh", "ho chi minh", "hcm", "tphcm", "tp.hcm", "sài gòn", "sai gon"]) or re.search(r"h[oồ\?]\s*ch[ií\?]\s*m[ií\?]nh", c_lower):
-        return "TP. Hồ Chí Minh"
-    # 5. Hà Nội
-    if any(k in c_lower for k in ["hà nội", "ha noi", "hanoi", "hòa lạc", "hoa lac", "hn"]) or re.search(r"h[aà\?]\s*n[oộ\?]i", c_lower):
-        return "Hà Nội"
-
-    return None
+    """Chuẩn hóa tên phân hiệu cơ sở đào tạo thông qua campus_matcher dùng chung."""
+    return match_campus(raw_campus)
 
 
 def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:

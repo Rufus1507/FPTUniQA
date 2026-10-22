@@ -13,8 +13,10 @@ from FPTUniQA.query.rewriting import rewrite_query
 from FPTUniQA.query.semantic_parser import parse_query
 from FPTUniQA.query.router import route_query, execute_structured_lookup
 from FPTUniQA.pipeline.mock_retriever import retrieve
+from FPTUniQA.retrieval.retriever import HybridRetriever
 from FPTUniQA.utils.config import config
 from FPTUniQA.utils.logger import get_logger, log_pipeline_event, log_query_event
+from FPTUniQA.utils.metrics import metrics
 
 logger = get_logger("FPTUniQA.rag_pipeline")
 
@@ -86,9 +88,8 @@ class RAGPipeline:
             self.retriever = retriever
         else:
             try:
-                from FPTUniQA.retrieval.retriever import HybridRetriever
-                self.retriever = HybridRetriever(auto_load=True)
-                logger.info("Khởi tạo HybridRetriever kết nối dữ liệu thực tế thành công.")
+                self.retriever = HybridRetriever(auto_load=False)
+                logger.info("Khởi tạo HybridRetriever với Lazy Loading thành công.")
             except Exception as e:
                 logger.warning(f"Không thể khởi tạo HybridRetriever: {e}.")
                 self.retriever = None
@@ -221,6 +222,7 @@ class RAGPipeline:
                 )
 
             latency_ms = (time.time() - start_time) * 1000.0
+            metrics.record_request(route=route_chosen, latency_ms=latency_ms, success=True)
             log_pipeline_event(
                 query=query,
                 latency_ms=latency_ms,
@@ -244,10 +246,12 @@ class RAGPipeline:
                 "ungrounded_numbers": ungrounded_numbers,
                 "retrieved_chunks": retrieved_chunks,
                 "retrieved_documents": retrieved_chunks,
+                "latency_ms": latency_ms,
             }
 
         except Exception as e:
             latency_ms = (time.time() - start_time) * 1000.0
+            metrics.record_request(route="error", latency_ms=latency_ms, success=False)
             logger.error(f"Lỗi trong quá trình thực thi RAGPipeline: {e}", exc_info=True)
             log_pipeline_event(
                 query=query,
