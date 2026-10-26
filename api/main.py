@@ -4,10 +4,11 @@ from typing import Dict, List, Tuple
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, PlainTextResponse
+from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse
 
 from api.routes.health import router as health_router
 from api.routes.qa import router as qa_router
+from api.web_ui import CHAT_HTML_PAGE
 from FPTUniQA.utils.config import config
 from FPTUniQA.utils.logger import get_logger
 from FPTUniQA.utils.metrics import metrics
@@ -119,6 +120,12 @@ app.include_router(qa_router)
 from api.routes.qa import answer_query
 from api.contracts import QueryResponse
 app.add_api_route("/query", answer_query, methods=["POST"], response_model=QueryResponse, tags=["Question Answering"])
+
+
+@app.get("/", response_class=HTMLResponse, tags=["Web Interface"])
+async def web_interface():
+    """Giao diện Web Chat tương tác trực quan."""
+    return CHAT_HTML_PAGE
 
 
 @app.get("/metrics", response_class=PlainTextResponse, tags=["Monitoring"])
