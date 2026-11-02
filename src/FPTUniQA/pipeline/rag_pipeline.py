@@ -154,7 +154,9 @@ class RAGPipeline:
                 from FPTUniQA.utils.io import read_jsonl
                 docs = read_jsonl(corpus_path)
                 if docs and self.retriever is not None:
-                    self.retriever.build_index(docs)
+                    target = getattr(self.retriever, "_hybrid", self.retriever)
+                    if hasattr(target, "build_index"):
+                        target.build_index(docs)
                     logger.info(f"Đã lập chỉ mục {len(docs)} documents từ {corpus_path}")
             except Exception as e:
                 logger.warning(f"Không thể index tài liệu từ {corpus_path}: {e}")
@@ -230,13 +232,33 @@ class RAGPipeline:
                 # Hybrid RAG Route: Truy xuất tài liệu văn bản thực tế từ TV2 HybridRetriever
                 retrieved_chunks = []
                 if self.retriever is not None:
+                    # Kích hoạt Metadata Hard Pre-filter khi có thông tin khóa / phân hiệu chuẩn hóa
+                    meta_filter = {}
+                    if parsed_query.slots.get("cohort"):
+                        meta_filter["cohort"] = parsed_query.slots["cohort"]
+                    if parsed_query.slots.get("campus"):
+                        meta_filter["campus"] = parsed_query.slots["campus"]
+                    if not meta_filter:
+                        meta_filter = None
+
                     try:
                         retrieved_chunks = self.retriever.retrieve_contract2(
                             clean_query,
                             top_k=effective_top_k,
+                            metadata_filter=meta_filter,
                             rerank=(self.rerank and self.use_reranker),
                             score_threshold=kwargs.get("score_threshold", self.score_threshold),
                         )
+                        # Graceful Fallback: nếu lọc metadata không có chunk, thử lại không dùng filter
+                        if not retrieved_chunks and meta_filter is not None:
+                            logger.info("Không tìm thấy tài liệu với metadata_filter, kích hoạt fallback không dùng bộ lọc.")
+                            retrieved_chunks = self.retriever.retrieve_contract2(
+                                clean_query,
+                                top_k=effective_top_k,
+                                metadata_filter=None,
+                                rerank=(self.rerank and self.use_reranker),
+                                score_threshold=kwargs.get("score_threshold", self.score_threshold),
+                            )
                     except Exception as err:
                         logger.warning(f"Lỗi khi truy xuất qua HybridRetriever: {err}")
 

@@ -1,0 +1,184 @@
+[
+  {
+    "entity_id": "COHORT_K17",
+    "entity_type": "cohort",
+    "code": "K17",
+    "canonical_name": "Cohort 17 (2021)",
+    "canonical_name_vi": "Khóa 17 (Nhập học năm 2021)",
+    "aliases": [
+      "sinh viên nhập học năm 2021",
+      "sinh viên khóa 2021",
+      "nhập học năm 2021",
+      "khoá 2021",
+      "khóa 2021",
+      "khoá k17",
+      "khóa k17",
+      "khóa 17",
+      "khoa 17",
+      "khoá 17",
+      "k17"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "[studocu.com] - Sổ Tay Sinh Viên K17 - Đại Học FPT - Hướng Dẫn Chi Tiết Và Thông Tin.pdf",
+      "section": "Quyết định ban hành niên khóa & biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Niên khóa tuyển sinh đại học chính quy năm 2021"
+  },
+  {
+    "entity_id": "COHORT_K18",
+    "entity_type": "cohort",
+    "code": "K18",
+    "canonical_name": "Cohort 18 (2022)",
+    "canonical_name_vi": "Khóa 18 (Nhập học năm 2022)",
+    "aliases": [
+      "sinh viên nhập học năm 2022",
+      "sinh viên khóa 2022",
+      "nhập học năm 2022",
+      "khóa 2022",
+      "khoá 2022",
+      "khóa k18",
+      "khoá k18",
+      "khoá 18",
+      "khóa 18",
+      "khoa 18",
+      "k18"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "sotaysinhvienK18HN.pdf",
+      "section": "Quyết định ban hành niên khóa & biểu phí"
+    },
+    "valid_from": "2022-09-01",
+    "valid_to": null,
+    "notes": "Niên khóa tuyển sinh đại học chính quy năm 2022"
+  },
+  {
+    "entity_id": "COHORT_K19",
+    "entity_type": "cohort",
+    "code": "K19",
+    "canonical_name": "Cohort 19 (2023)",
+    "canonical_name_vi": "Khóa 19 (Nhập học năm 2023)",
+    "aliases": [
+      "sinh viên nhập học năm 2023",
+      "sinh viên khóa 2023",
+      "nhập học năm 2023",
+      "khoá 2023",
+      "khóa 2023",
+      "khóa k19",
+      "khoá k19",
+      "khoa 19",
+      "khóa 19",
+      "khoá 19",
+      "k19"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "[studocu.com] - Hướng dẫn Tài chính Sinh viên K19 - Quy định và Phí năm học 2023-2024.pdf",
+      "section": "Quyết định ban hành niên khóa & biểu phí"
+    },
+    "valid_from": "2023-09-01",
+    "valid_to": null,
+    "notes": "Niên khóa tuyển sinh đại học chính quy năm 2023"
+  },
+  {
+    "entity_id": "COHORT_K20",
+    "entity_type": "cohort",
+    "code": "K20",
+    "canonical_name": "Cohort 20 (2024)",
+    "canonical_name_vi": "Khóa 20 (Nhập học năm 2024)",
+    "aliases": [
+      "sinh viên nhập học năm 2024",
+      "sinh viên khóa 2024",
+      "nhập học năm 2024",
+      "khoá 2024",
+      "khóa 2024",
+      "khóa k20",
+      "khoá k20",
+      "khóa 20",
+      "khoa 20",
+      "khoá 20",
+      "k20"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "1054154482-K20-Sổ-Tay-Sinh-Vien-2.pdf",
+      "section": "Quyết định ban hành niên khóa & biểu phí"
+    },
+    "valid_from": "2024-09-01",
+    "valid_to": null,
+    "notes": "Niên khóa tuyển sinh đại học chính quy năm 2024"
+  },
+  {
+    "entity_id": "COHORT_K21",
+    "entity_type": "cohort",
+    "code": "K21",
+    "canonical_name": "Cohort 21 (2025)",
+    "canonical_name_vi": "Khóa 21 (Nhập học năm 2025)",
+    "aliases": [
+      "sinh viên nhập học năm 2025",
+      "sinh viên khóa 2025",
+      "nhập học năm 2025",
+      "khoá 2025",
+      "khóa 2025",
+      "khóa k21",
+      "khoá k21",
+      "khóa 21",
+      "khoá 21",
+      "khoa 21",
+      "k21"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "970569429-So-Tay-Sinh-Vien-K21-FUHL-1.pdf",
+      "section": "Quyết định ban hành niên khóa & biểu phí"
+    },
+    "valid_from": "2025-09-01",
+    "valid_to": null,
+    "notes": "Niên khóa tuyển sinh đại học chính quy năm 2025"
+  },
+  {
+    "entity_id": "COHORT_K22",
+    "entity_type": "cohort",
+    "code": "K22",
+    "canonical_name": "Cohort 22 (2026)",
+    "canonical_name_vi": "Khóa 22 (Nhập học năm 2026)",
+    "aliases": [
+      "sinh viên nhập học năm 2026",
+      "sinh viên khóa 2026",
+      "tân sinh viên k22",
+      "nhập học năm 2026",
+      "khoá 2026",
+      "khóa 2026",
+      "khóa k22",
+      "khoá k22",
+      "k22 fptu",
+      "khoa 22",
+      "khóa 22",
+      "khoá 22",
+      "k22"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "2026_So-tay-k22_compressed.pdf & thong-bao-tuyen-sinh-nam-2026.html",
+      "section": "Quyết định ban hành niên khóa & biểu phí"
+    },
+    "valid_from": "2026-09-01",
+    "valid_to": null,
+    "notes": "Minh chứng trực tiếp: Thông báo tuyển sinh 2026 khẳng định tất cả thí sinh nhập học năm 2026 thuộc khóa K22"
+  }
+]

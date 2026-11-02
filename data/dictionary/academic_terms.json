@@ -1,0 +1,257 @@
+[
+  {
+    "entity_id": "TERM_TIN_CHI",
+    "entity_type": "academic_term",
+    "code": "CREDIT",
+    "canonical_name": "Academic Credit",
+    "canonical_name_vi": "Tín chỉ",
+    "aliases": [
+      "định mức tín chỉ",
+      "số tín chỉ",
+      "tin chi",
+      "tín chỉ",
+      "credits",
+      "số tín",
+      "credit"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+      "section": "Quy chế & Biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Đơn vị đo khối lượng học tập"
+  },
+  {
+    "entity_id": "TERM_HOC_PHI",
+    "entity_type": "academic_term",
+    "code": "TUITION",
+    "canonical_name": "Tuition Fee",
+    "canonical_name_vi": "Học phí",
+    "aliases": [
+      "chi phí học tập",
+      "tuition fee",
+      "tiền học",
+      "tien hoc",
+      "biểu phí",
+      "học phí",
+      "hoc phi",
+      "tuition"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+      "section": "Quy chế & Biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mức phí đào tạo theo kỳ của sinh viên"
+  },
+  {
+    "entity_id": "TERM_CANH_BAO_HOC_VU",
+    "entity_type": "academic_term",
+    "code": "WARNING",
+    "canonical_name": "Academic Warning",
+    "canonical_name_vi": "Cảnh báo học vụ",
+    "aliases": [
+      "academic warning",
+      "cảnh báo học vụ",
+      "canh bao hoc vu",
+      "cảnh cáo học vụ",
+      "canh cao hoc vu",
+      "cảnh báo",
+      "cảnh cáo"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+      "section": "Quy chế & Biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Xử lý khi GPA hoặc CGPA dưới ngưỡng quy định. Bị cảnh cáo 3 lần liên tiếp sẽ bị buộc thôi học."
+  },
+  {
+    "entity_id": "TERM_TOT_NGHIEP",
+    "entity_type": "academic_term",
+    "code": "GRADUATION",
+    "canonical_name": "Graduation Requirements",
+    "canonical_name_vi": "Điều kiện tốt nghiệp",
+    "aliases": [
+      "điều kiện tốt nghiệp",
+      "xét tốt nghiệp",
+      "chuẩn đầu ra",
+      "tot nghiep",
+      "graduation",
+      "tốt nghiệp",
+      "ra trường"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+      "section": "Quy chế & Biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Yêu cầu: hoàn thành tín chỉ, CGPA >= 2.0, ngoại ngữ IELTS 5.5, OJT, GDTC, GDQP."
+  },
+  {
+    "entity_id": "TERM_TIEN_QUYET",
+    "entity_type": "academic_term",
+    "code": "PREREQUISITE",
+    "canonical_name": "Prerequisite Course",
+    "canonical_name_vi": "Môn học tiên quyết",
+    "aliases": [
+      "yêu cầu tiên quyết",
+      "mon tien quyet",
+      "môn tiên quyết",
+      "prerequisite",
+      "tien quyet",
+      "tiên quyết"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+      "section": "Quy chế & Biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Môn học bắt buộc phải vượt qua trước khi đăng ký môn học tiếp theo"
+  },
+  {
+    "entity_id": "TERM_OJT",
+    "entity_type": "academic_term",
+    "code": "OJT",
+    "canonical_name": "On the Job Training",
+    "canonical_name_vi": "Thực tập doanh nghiệp (OJT)",
+    "aliases": [
+      "thực tập tại doanh nghiệp",
+      "thuc tap doanh nghiep",
+      "thực tập doanh nghiệp",
+      "on the job training",
+      "kỳ thực tập"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+      "section": "Quy chế & Biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Giai đoạn thực tập tại doanh nghiệp ở kỳ 6, học phí chuyên ngành = 0 VNĐ"
+  },
+  {
+    "entity_id": "TERM_CAPSTONE",
+    "entity_type": "academic_term",
+    "code": "CAPSTONE",
+    "canonical_name": "Capstone Project",
+    "canonical_name_vi": "Khóa luận tốt nghiệp (Capstone)",
+    "aliases": [
+      "khóa luận tốt nghiệp",
+      "khoa luan tot nghiep",
+      "đồ án tốt nghiệp",
+      "capstone project",
+      "do an tot nghiep",
+      "khóa luận",
+      "capstone",
+      "đồ án"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+      "section": "Quy chế & Biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Khối lượng 10 tín chỉ, thực hiện ở học kỳ thứ 9"
+  },
+  {
+    "entity_id": "TERM_LE_PHI_THI_LAI",
+    "entity_type": "academic_term",
+    "code": "RETAKE_FEE",
+    "canonical_name": "Retake Exam Fee",
+    "canonical_name_vi": "Lệ phí thi lại",
+    "aliases": [
+      "thi lại bao nhiêu",
+      "le phi thi lai",
+      "lệ phí thi lại",
+      "phí thi lại",
+      "phi thi lai",
+      "thi lại"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+      "section": "Quy chế & Biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Định mức 300.000 VNĐ / lần thi theo quy định tài chính"
+  },
+  {
+    "entity_id": "TERM_LE_PHI_HOC_LAI",
+    "entity_type": "academic_term",
+    "code": "RELEARN_FEE",
+    "canonical_name": "Relearn Course Fee",
+    "canonical_name_vi": "Lệ phí học lại",
+    "aliases": [
+      "học lại bao nhiêu",
+      "le phi hoc lai",
+      "lệ phí học lại",
+      "phi hoc lai",
+      "phí học lại",
+      "học lại"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+      "section": "Quy chế & Biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Định mức 650.000 VNĐ / tín chỉ"
+  },
+  {
+    "entity_id": "TERM_KY_TUC_XA",
+    "entity_type": "academic_term",
+    "code": "DORM_FEE",
+    "canonical_name": "Dormitory Fee",
+    "canonical_name_vi": "Phí ký túc xá",
+    "aliases": [
+      "phí ký túc xá",
+      "ký túc xá",
+      "ky tuc xa",
+      "phí ktx",
+      "ký túc"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+      "section": "Quy chế & Biểu phí"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Định mức 4.000.000 VNĐ / học kỳ tại phân hiệu Hòa Lạc"
+  }
+]

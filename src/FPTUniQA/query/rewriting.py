@@ -15,6 +15,8 @@ import requests
 from FPTUniQA.query.constants import (
     CAMPUS_CODES_REGEX,
     CAMPUS_NAMES_REGEX,
+    COMMON_FEE_KEYWORDS,
+    COURSE_CODE_REGEX,
     MAJOR_NAMES,
     OOD_KEYWORDS,
 )
@@ -156,18 +158,20 @@ TOPIC_PATTERNS = {
 }
 
 CONTINUATION_PATTERNS = [
-    r"^(thế\s+)?còn\b",
-    r"^vậy\s+(nếu|thì|còn)\b",
-    r"^nếu\s+(vậy|thế|bị|học)\b",
-    r"^(ở|tại)\s+(đó|đấy|cơ sở|campus)\b",
-    r"^(ngành|khóa|năm|môn|học phần)\s+(đó|đấy|này)\b",
-    r"\b(môn|học phần|ngành|khóa|năm|phân hiệu|cơ sở)\s+(này|đó|đấy|kia)\b",
-    r"\bmôn\s+(này|đó)\b",
-    r"\b(thì\s+sao|thế\s+nào|bao\s+nhiêu)\??$",
-    r"^(bao\s+nhiêu|khi\s+nào|ở\s+đâu)\??$",
-    rf"\bở\s+{CAMPUS_NAMES_REGEX}\s+thì\s+sao\b",
-    rf"\bcòn\s+({CAMPUS_NAMES_REGEX}|{CAMPUS_CODES_REGEX})\b",
-    r"\bcòn\s+(k\d{2}|khóa\s+\d{2})\b",
+    r"^(thế\s+|the\s+)?(còn|con)\b",
+    r"^(vậy|vay)\s+(nếu|neu|thì|thi|còn|con)\b",
+    r"^(nếu|neu)\s+(vậy|vay|thế|the|bị|bi|học|hoc)\b",
+    r"^(ở|tại|o|tai)\s+(đó|đấy|cơ sở|co so|phân hiệu|phan hieu|campus|do|day)\b",
+    r"^(ở|tại|o|tai)\s+([A-Za-z0-9_\s]+)\b",
+    r"^(ngành|khóa|năm|môn|học phần|nganh|khoa|nam|mon)\s+(đó|đấy|này|do|day|nay)\b",
+    r"\b(môn|học phần|ngành|khóa|năm|phân hiệu|cơ sở|mon|nganh|khoa|nam)\s+(này|đó|đấy|kia|nay|do|day)\b",
+    r"\b(môn|mon)\s+(này|đó|nay|do)\b",
+    r"\b(thì\s+sao|thi\s+sao|thế\s+nào|the\s+nao|bao\s+nhiêu|bao\s+nhieu)\??$",
+    r"^(bao\s+nhiêu|bao\s+nhieu|khi\s+nào|khi\s+nao|ở\s+đâu|o\s+dau)\??$",
+    rf"\b(ở|o)\s+({CAMPUS_NAMES_REGEX}|{CAMPUS_CODES_REGEX}|quy nhon|can tho|da nang|ha noi|hcm)\s+(thì|thi)\s+sao\b",
+    rf"\b(còn|con)\s+({CAMPUS_NAMES_REGEX}|{CAMPUS_CODES_REGEX}|quy nhon|can tho|da nang|ha noi|hcm)\b",
+    r"\b(còn|con)\s+(k\d{2}|khóa\s+\d{2}|khoa\s+\d{2})\b",
+    r"\b(còn|con)\s+[A-Za-z0-9_]+\s+(thì|thi)\s+sao\b",
 ]
 
 
@@ -180,18 +184,73 @@ def detect_topic_from_text(text: str) -> str:
     return "general_policy"
 
 
+def is_self_contained_query(query: str) -> bool:
+    """Self-Containedness Gate: Kiểm tra xem câu hỏi có tự chứa đầy đủ ngữ cảnh độc lập hay không.
+    Nếu câu hỏi tự chứa đầy đủ thông tin hoặc nêu chủ thể/thực thể mới rõ ràng,
+    hệ thống TUYỆT ĐỐI KHÔNG ghép ngữ cảnh cũ từ các lượt trước (Context Decontamination).
+    """
+    q_clean = query.strip().lower()
+
+    # 1. Câu hỏi chứa mã môn học rõ ràng (ví dụ: CSD201, PRF192, PRO192, MAS291...)
+    if re.search(COURSE_CODE_REGEX, query, re.IGNORECASE):
+        if not re.search(r"\b(môn này|môn đó|môn ấy|học phần này|học phần đó|mon nay|mon do)\b", q_clean):
+            return True
+
+    # 2. Câu hỏi tra cứu lệ phí chung độc lập (lệ phí thi lại, học lại, ký túc xá, bảng điểm...)
+    has_continuation_prefix = any(q_clean.startswith(p) for p in [
+        "còn", "con", "thế còn", "the con", "vậy còn", "vay con", "thế thì", "the thi", "vậy nếu", "vay neu"
+    ])
+    if any(kw in q_clean for kw in COMMON_FEE_KEYWORDS) and not has_continuation_prefix:
+        return True
+
+    # 3. Câu hỏi quy chế học vụ độc lập (điểm danh, cấm thi, tốt nghiệp, bảo lưu, kỷ luật, nợ học phí...)
+    policy_standalone_keywords = [
+        "vắng bao nhiêu", "nghỉ học quá", "cấm thi", "toang môn", "tạch môn", "điểm danh",
+        "xét tốt nghiệp", "chuẩn đầu ra", "đồ án tốt nghiệp", "capstone", "khóa luận",
+        "bảo lưu", "tạm ngừng học", "nghỉ học tạm thời",
+        "nợ học phí", "đăng ký môn học", "rút môn",
+        "phúc khảo", "khiếu nại", "kỷ luật", "đình chỉ"
+    ]
+    if any(kw in q_clean for kw in policy_standalone_keywords) and not has_continuation_prefix:
+        return True
+
+    # 4. Câu hỏi ngoài miền (OOD) hoặc lời chào
+    if any(kw in q_clean for kw in OOD_KEYWORDS):
+        return True
+
+    # 5. Câu hỏi học phí đã đủ cả khóa + ngành + cơ sở
+    has_cohort = bool(re.search(r"\b(K1[7-9]|K2[0-2]|202[0-6])\b", query, re.IGNORECASE))
+    has_campus = bool(re.search(CAMPUS_NAMES_REGEX, q_clean) or re.search(CAMPUS_CODES_REGEX, q_clean))
+    has_major = any(m.lower() in q_clean for m in MAJOR_NAMES) or bool(re.search(r"\b(ai|cntt|ktpm|attt|qtkd|mkt|ib|ds)\b", q_clean))
+    if has_cohort and has_major and has_campus:
+        return True
+
+    return False
+
+
 def is_continuation_query(query: str) -> bool:
     """Kiểm tra xem câu hỏi có dấu hiệu tỉnh lược/hỏi tiếp lượt trước hay không."""
     q_clean = query.strip().lower()
-    if re.search(r"\b(môn này|môn đó|học phần này|học phần đó|khóa này|khóa đó|ngành này|ngành đó|phân hiệu này|cơ sở này)\b", q_clean, flags=re.IGNORECASE):
+
+    # Nếu câu hỏi đã tự chứa độc lập -> KHÔNG phải continuation
+    if is_self_contained_query(query):
+        return False
+
+    if re.search(r"\b(môn này|môn đó|học phần này|học phần đó|khóa này|khóa đó|ngành này|ngành đó|phân hiệu này|cơ sở này|campus này|cơ sở đó|phân hiệu đó)\b", q_clean, flags=re.IGNORECASE):
         return True
+
     for pattern in CONTINUATION_PATTERNS:
         if re.search(pattern, q_clean, flags=re.IGNORECASE):
             return True
-    # Câu ngắn dưới 5 từ và không chứa chủ ngữ độc lập
-    words = q_clean.split()
-    if len(words) <= 4 and any(w in q_clean for w in ["còn", "sao", "thế", "vậy", "nào"]):
+
+    continuation_start_words = [
+        "còn", "con", "thế còn", "the con", "vậy còn", "vay con", "thế thì", "the thi", 
+        "vậy nếu", "vay neu", "thế ở", "the o", "vậy ở", "vay o", "thế ngành", "the nganh",
+        "còn ngành", "con nganh", "còn khóa", "con khoa", "thế khóa", "the khoa"
+    ]
+    if any(q_clean.startswith(sw) for sw in continuation_start_words):
         return True
+
     return False
 
 
@@ -215,12 +274,42 @@ def detect_topic_switch(
             "confidence": 1.0,
         }
 
+    # Nếu là câu hỏi tự chứa đầy đủ độc lập -> Luôn coi là Topic Switch, không kế thừa context
+    if is_self_contained_query(current_question):
+        return {
+            "is_topic_switch": True,
+            "current_topic": detect_topic_from_text(current_question),
+            "previous_topic": detect_topic_from_text(history[-1].get("query", "")),
+            "confidence": 0.98,
+        }
+
     # Nếu câu hỏi có dấu hiệu tỉnh lược/kế thừa rõ rệt -> KHÔNG phải topic switch
     if is_continuation_query(current_question):
         return {
             "is_topic_switch": False,
             "current_topic": detect_topic_from_text(current_question),
             "previous_topic": detect_topic_from_text(history[-1].get("query", "")),
+            "confidence": 0.95,
+        }
+
+    # Nếu câu hỏi hiện tại là lời chào hoặc OOD rõ rệt thì luôn là Topic Switch
+    if any(re.search(rf"\b{w}\b", current_question.lower()) for w in ["hello", "hi", "hey", "chao", "xin chao", "tạm biệt", "bye"]) or current_question.strip().lower() in ["hello]", "hello", "hi", "hi!"]:
+        return {
+            "is_topic_switch": True,
+            "current_topic": "ood",
+            "previous_topic": detect_topic_from_text(history[-1].get("query", "")) if history else None,
+            "confidence": 0.99,
+        }
+
+    # Nếu lượt trước là yêu cầu làm rõ (clarification), lượt này người dùng cung cấp thông tin bổ sung -> KHÔNG PHẢI TOPIC SWITCH
+    last_turn = history[-1] if history else {}
+    prev_route = str(last_turn.get("route_chosen", "")).lower()
+    prev_ans = str(last_turn.get("answer", ""))
+    if "clarification" in prev_route or "vui lòng cung cấp thêm" in prev_ans.lower() or "bạn đang hỏi về" in prev_ans.lower():
+        return {
+            "is_topic_switch": False,
+            "current_topic": detect_topic_from_text(current_question),
+            "previous_topic": detect_topic_from_text(last_turn.get("query", "")),
             "confidence": 0.95,
         }
 
@@ -279,7 +368,7 @@ def detect_topic_switch(
 
 
 def _rule_based_rewrite(clean_q: str, history: List[Dict[str, Any]]) -> Optional[str]:
-    """Fallback viết lại câu hỏi theo luật khi LLM không khả dụng (cho test và môi trường offline)."""
+    """Fallback viết lại câu hỏi theo luật kết hợp EntityNormalizer khi LLM không khả dụng."""
     if not history:
         return clean_q
 
@@ -287,72 +376,135 @@ def _rule_based_rewrite(clean_q: str, history: List[Dict[str, Any]]) -> Optional
     prev_q = last_turn.get("rewritten_query") or last_turn.get("query") or ""
     q_lower = clean_q.lower()
 
-    # Trích xuất thực thể từ lượt trước
-    cohort_match = re.search(r"\b(K1[7-9]|K2[0-2]|202[0-6])\b", prev_q, re.IGNORECASE)
-    prev_cohort = cohort_match.group(0) if cohort_match else ""
+    # Sử dụng EntityNormalizer để nhận diện thực thể trong câu hỏi hiện tại
+    norm_res = None
+    try:
+        from FPTUniQA.normalization.engine import get_entity_normalizer
+        norm_res = get_entity_normalizer().normalize(clean_q)
+    except Exception:
+        pass
 
-    campus_match = re.search(rf"\b({CAMPUS_NAMES_REGEX}|{CAMPUS_CODES_REGEX})\b", prev_q, re.IGNORECASE)
-    prev_campus = campus_match.group(0) if campus_match else ""
+    curr_slots = norm_res.slots_hint if norm_res else {}
+    curr_program = curr_slots.get("program")
+    curr_cohort = curr_slots.get("cohort")
+    curr_campus = curr_slots.get("campus")
+    curr_course = curr_slots.get("course_code")
 
-    # Nhận diện ngành từ lượt trước qua SSOT constants
-    majors = MAJOR_NAMES
-    prev_major = ""
-    for m in majors:
-        if m.lower() in prev_q.lower():
-            prev_major = m
+    # Bổ sung regex tìm khóa hoặc ngành nếu normalizer chưa bắt
+    if not curr_cohort:
+        cm = re.search(r"\b(K1[7-9]|K2[0-2]|202[0-6])\b", clean_q, re.IGNORECASE)
+        if cm:
+            curr_cohort = cm.group(1).upper()
+    if not curr_program:
+        for m in MAJOR_NAMES:
+            if m.lower() in q_lower:
+                curr_program = m
+                break
+        if not curr_program:
+            alias_match = re.search(r"\b(ai|cntt|ktpm|attt|qtkd|mkt|ib|ds)\b", clean_q, re.IGNORECASE)
+            if alias_match:
+                curr_program = alias_match.group(0).upper()
+
+    # Thu thập thực thể tích lũy từ toàn bộ lịch sử (ưu tiên từ lượt gần nhất)
+    hist_program = ""
+    hist_cohort = ""
+    hist_campus = ""
+    hist_course = ""
+    hist_base_topic = "Học phí"
+
+    for turn in reversed(history):
+        p_query = turn.get("parsed_query", {})
+        slots = p_query.get("slots", {}) if isinstance(p_query, dict) else getattr(p_query, "slots", {})
+        if not hist_program and slots.get("program"):
+            hist_program = slots["program"]
+        if not hist_cohort and slots.get("cohort"):
+            hist_cohort = slots["cohort"]
+        if not hist_campus and slots.get("campus"):
+            hist_campus = slots["campus"]
+        if not hist_course and slots.get("course_code"):
+            hist_course = slots["course_code"]
+
+        turn_text = (turn.get("rewritten_query") or turn.get("query") or "").lower()
+        if not hist_cohort:
+            cm = re.search(r"\b(K1[7-9]|K2[0-2]|202[0-6])\b", turn_text, re.IGNORECASE)
+            if cm:
+                hist_cohort = cm.group(1).upper()
+
+    for turn in reversed(history):
+        turn_text = (turn.get("rewritten_query") or turn.get("query") or "").lower()
+        if any(w in turn_text for w in ["học phí", "hoc phi", "tiền học", "chi phí", "mức thu", "lệ phí"]):
+            hist_base_topic = "Học phí"
+            break
+        elif any(w in turn_text for w in ["điểm danh", "cấm thi", "tốt nghiệp", "cảnh cáo", "kỷ luật", "bảo lưu"]):
+            hist_base_topic = "Quy chế"
             break
 
-    # Trường hợp 1: Đổi campus ("Còn ở Cần Thơ thì sao?", "Còn Đà Nẵng?", "Nếu học ở Quy Nhơn thì có rẻ hơn không?")
-    new_campus_match = re.search(rf"\b(ở\s+)?{CAMPUS_NAMES_REGEX}\b", clean_q, re.IGNORECASE)
-    if new_campus_match and ("còn" in q_lower or "thế" in q_lower or "thì sao" in q_lower or "nếu" in q_lower or "rẻ hơn" in q_lower or "đắt hơn" in q_lower):
-        new_campus = new_campus_match.group(2)
-        base_topic = "Học phí" if "học phí" in prev_q.lower() else "Quy chế"
-        parts = [base_topic]
-        if prev_cohort:
-            parts.append(prev_cohort)
-        if prev_major:
-            parts.append(f"ngành {prev_major}")
-        parts.append(f"tại {new_campus}")
-        return " ".join(parts) + " là bao nhiêu?"
+    last_turn = history[-1]
+    prev_route = str(last_turn.get("route_chosen", "")).lower()
+    prev_ans = str(last_turn.get("answer", ""))
+    is_prev_clarification = "clarification" in prev_route or "vui lòng cung cấp thêm" in prev_ans.lower() or "bạn đang hỏi về" in prev_ans.lower()
 
-    # Trường hợp 2: Đổi khóa ("Còn K21 thì sao?", "Còn khóa 2024?")
-    new_cohort_match = re.search(r"\b(K1[7-9]|K2[0-2]|202[0-6])\b", clean_q, re.IGNORECASE)
-    if new_cohort_match and ("còn" in q_lower or "thế" in q_lower or "thì sao" in q_lower):
-        new_cohort = new_cohort_match.group(1)
-        base_topic = "Học phí" if "học phí" in prev_q.lower() else "Quy chế"
-        parts = [base_topic, new_cohort]
-        if prev_major:
-            parts.append(f"ngành {prev_major}")
-        if prev_campus:
-            parts.append(f"tại {prev_campus}")
-        return " ".join(parts) + " là bao nhiêu?"
+    # TRƯỜNG HỢP 1: Người dùng trả lời yêu cầu làm rõ (Clarification Response)
+    if is_prev_clarification:
+        eff_program = curr_program or hist_program
+        eff_cohort = curr_cohort or hist_cohort
+        eff_campus = curr_campus or hist_campus
 
-    # Trường hợp 3: Đổi ngành ("Thế còn ngành Trí tuệ nhân tạo?")
-    for m in majors:
-        if m.lower() in clean_q.lower() and ("còn" in q_lower or "thế" in q_lower):
-            base_topic = "Học phí" if "học phí" in prev_q.lower() else "Quy chế"
-            parts = [base_topic]
-            if prev_cohort:
-                parts.append(prev_cohort)
-            parts.append(f"ngành {m}")
-            if prev_campus:
-                parts.append(f"tại {prev_campus}")
+        if eff_program or eff_cohort or eff_campus:
+            parts = [hist_base_topic]
+            if eff_cohort:
+                parts.append(eff_cohort)
+            if eff_program:
+                parts.append(f"ngành {eff_program}")
+            if eff_campus:
+                parts.append(f"tại {eff_campus}")
             return " ".join(parts) + " là bao nhiêu?"
 
-    # Trường hợp 4: Tham chiếu đại từ "ngành này"
-    if "ngành này" in q_lower and prev_major:
-        return clean_q.replace("ngành này", f"ngành {prev_major}")
+    # TRƯỜNG HỢP 2: Câu hỏi tiếp nối / so sánh (Continuation Query)
+    is_continuation = is_continuation_query(clean_q)
+    if is_continuation:
+        eff_program = curr_program if curr_program else hist_program
+        eff_cohort = curr_cohort if curr_cohort else hist_cohort
+        eff_campus = curr_campus if curr_campus else hist_campus
 
-    # Trường hợp 5: Tham chiếu môn học ("môn này", "môn đó", "học phần này")
-    course_match = re.search(r"\b([A-Z]{3}\d{3}[a-z]?)\b", prev_q)
-    if course_match:
-        prev_course = course_match.group(1).upper()
-        for p in ["môn này", "môn đó", "học phần này", "học phần đó", "môn ấy"]:
+        if eff_program or eff_cohort or eff_campus:
+            parts = [hist_base_topic]
+            if eff_cohort:
+                parts.append(eff_cohort)
+            if eff_program:
+                parts.append(f"ngành {eff_program}")
+            if eff_campus:
+                parts.append(f"tại {eff_campus}")
+            return " ".join(parts) + " là bao nhiêu?"
+
+    # TRƯỜNG HỢP 3: Kế thừa môn học (môn này, hoặc câu hỏi hỏi trực tiếp về tiên quyết/giáo trình của môn)
+    if hist_course and not curr_course:
+        # Tuyệt đối không ghép môn học vào câu hỏi lệ phí chung hoặc quy chế chung
+        is_fee_or_policy = any(kw in q_lower for kw in ["học phí", "lệ phí", "ký túc", "học lại", "thi lại", "bảng điểm", "tốt nghiệp", "cấm thi", "vắng", "điểm danh"])
+        if not is_fee_or_policy:
+            for p in ["môn này", "môn đó", "học phần này", "học phần đó", "môn ấy", "mon nay", "mon do"]:
+                if p in q_lower:
+                    return clean_q.replace(p, f"Môn {hist_course}")
+            prev_has_course = bool(re.search(COURSE_CODE_REGEX, prev_q, re.IGNORECASE)) or "môn" in prev_q.lower()
+            if prev_has_course:
+                is_course_aspect = any(w in q_lower for w in [
+                    "tiên quyết", "tien quyet", "giáo trình", "giao trinh",
+                    "đánh giá", "danh gia", "thi cử", "thi cu", "học gì", "hoc gi"
+                ])
+                if is_course_aspect:
+                    return f"Môn {hist_course} {clean_q}"
+
+    # TRƯỜNG HỢP 4: Tham chiếu ngành ("ngành này", "nganh nay")
+    if hist_program:
+        for p in ["ngành này", "ngành đó", "nganh nay", "nganh do"]:
             if p in q_lower:
-                return clean_q.replace(p, f"Môn {prev_course}")
+                return clean_q.replace(p, f"ngành {hist_program}")
+
+    # TRƯỜNG HỢP 5: Kế thừa quy chế học vụ / cảnh cáo (ví dụ: 'nếu bị 2 lần liên tiếp thì sao?')
+    if any(w in prev_q.lower() for w in ["cảnh cáo", "cảnh báo", "canh bao", "kỷ luật"]) and any(w in q_lower for w in ["nếu bị", "neu bi", "lần", "lan"]):
+        return f"Cảnh cáo học vụ {clean_q}"
 
     return None
-
 
 def rewrite_query(current_question: str, history: Optional[List[Dict[str, Any]]] = None) -> str:
     """
@@ -365,6 +517,12 @@ def rewrite_query(current_question: str, history: Optional[List[Dict[str, Any]]]
 
     if not history:
         logger.debug(f"Không có lịch sử hội thoại. Giữ nguyên câu hỏi: '{clean_q}'")
+        return clean_q
+
+    # BƯỚC 0: Self-Containedness Gate
+    # Nếu câu hỏi đã tự chứa đầy đủ thực thể hoặc độc lập ngữ cảnh, giữ nguyên câu hỏi
+    if is_self_contained_query(clean_q):
+        logger.info(f"Self-Containedness Gate: Câu hỏi '{clean_q}' tự chứa đầy đủ ngữ cảnh độc lập. Giữ nguyên câu hỏi.")
         return clean_q
 
     # Bước phát hiện chuyển đổi chủ đề (Topic Switch Detection)

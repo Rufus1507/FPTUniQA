@@ -197,7 +197,9 @@ def route_query(
 
     # 2. Nhánh tra cứu học phí / số liệu (tuition_lookup)
     # 1.8. Nhận diện các câu hỏi lệ phí chung (bảng điểm, tốt nghiệp, định hướng, học lại, thi lại)
-    if any(kw in q_lower for kw in COMMON_FEE_KEYWORDS) and "chuyên ngành" not in q_lower:
+    # Loại trừ trường hợp hỏi về quy chế điểm F (học lại hay thi lại)
+    is_f_grade_policy = any(w in q_lower for w in ["điểm f", "diem f", "điểm liệt", "diem liet"]) and not any(w in q_lower for w in ["bao nhiêu tiền", "lệ phí", "chi phí", "giá", "tiền", "bao nhieu tien"])
+    if any(kw in q_lower for kw in COMMON_FEE_KEYWORDS) and "chuyên ngành" not in q_lower and not is_f_grade_policy:
         lvl = determine_query_level(parsed, "structured_lookup", history)
         return RouteResult("structured_lookup", None, level=lvl)
 
@@ -392,8 +394,9 @@ def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:
 
     is_cohort_subfee = any(w in query_str for w in ["thi lại", "học lại", "ký túc", "ktx", "tiếng anh", "dự bị", "chuẩn bị", "học kỳ", "kỳ học", "biểu phí", "toàn khóa", "khung học phí"])
     is_specific_major_campus = bool(target_program and target_program not in ["chuyên ngành", "chung"]) and bool(target_campus)
+    is_legacy_cohort = target_cohort_clean in ["K17", "K18", "K19", "K20", "K21"]
 
-    if real_data and "fpt_cohort_fees" in real_data and target_cohort_clean and (is_cohort_subfee or not is_specific_major_campus):
+    if real_data and "fpt_cohort_fees" in real_data and target_cohort_clean and (is_cohort_subfee or not is_specific_major_campus or is_legacy_cohort):
         c_fees_list = real_data["fpt_cohort_fees"]
         default_tot_terms = defaults.get("total_specialized_terms", 9)
         for item in c_fees_list:
@@ -405,9 +408,21 @@ def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:
                 dorm_fee = item.get("dormitory_fee_per_term_vnd", 0)
                 tot_terms = item.get("total_specialized_terms", default_tot_terms)
                 cam = item.get("campus", "ALL")
+
+                discount_info = ""
+                eff_campus_label = target_campus or cam
+                if target_campus:
+                    discounts = real_data.get("regional_discount_policy", {})
+                    if target_campus in discounts:
+                        rate = discounts[target_campus]
+                        disc_fee = int(spec_fee * (1.0 - rate))
+                        discount_info = f"\n- Ưu đãi phân hiệu {target_campus} ({int(rate*100)}%): Mức học phí thực đóng khoảng {disc_fee:,} VNĐ / học kỳ."
+
+                prog_info = f" ngành {target_program}" if (target_program and target_program not in ["chuyên ngành", "chung"]) else ""
                 ans = (
-                    f"Biểu phí tuyển sinh & đào tạo Đại học FPT khóa {target_cohort_clean} (Cơ sở: {cam}):\n"
-                    f"- Học phí chuyên ngành: {spec_fee:,} VNĐ / học kỳ (tổng {tot_terms} học kỳ chuyên ngành).\n"
+                    f"Biểu phí tuyển sinh & đào tạo Đại học FPT khóa {target_cohort_clean}{prog_info} (Cơ sở: {eff_campus_label}):\n"
+                    f"- Học phí chuyên ngành chuẩn: {spec_fee:,} VNĐ / học kỳ (tổng {tot_terms} học kỳ chuyên ngành)."
+                    f"{discount_info}\n"
                     f"- Học phí tiếng Anh chuẩn bị: {prep_fee:,} VNĐ / mức (level) (tối đa 6 mức).\n"
                     f"- Lệ phí thi lại: {retake_fee:,} VNĐ / lần thi.\n"
                     f"- Lệ phí học lại: {relearn_fee:,} VNĐ / tín chỉ.\n"

@@ -38,12 +38,20 @@ PROGRAM_ALIAS_MAP: Dict[str, str] = {
     "cntt": "Công nghệ thông tin",
     "công nghệ thông tin": "Công nghệ thông tin",
     "cong nghe thong tin": "Công nghệ thông tin",
+    "công nghệ tt": "Công nghệ thông tin",
+    "cong nghe tt": "Công nghệ thông tin",
     "ktpm": "Kỹ thuật phần mềm",
     "kỹ thuật phần mềm": "Kỹ thuật phần mềm",
     "ky thuat phan mem": "Kỹ thuật phần mềm",
+    "kỹ thuật pm": "Kỹ thuật phần mềm",
+    "ky thuat pm": "Kỹ thuật phần mềm",
+    "kt phần mềm": "Kỹ thuật phần mềm",
+    "kt phan mem": "Kỹ thuật phần mềm",
     "attt": "An toàn thông tin",
     "an toàn thông tin": "An toàn thông tin",
     "an toan thong tin": "An toàn thông tin",
+    "an toàn tt": "An toàn thông tin",
+    "an toan tt": "An toàn thông tin",
     "khdl": "Khoa học dữ liệu và ứng dụng",
     "khoa học dữ liệu": "Khoa học dữ liệu và ứng dụng",
     "khoa học dữ liệu và ứng dụng": "Khoa học dữ liệu và ứng dụng",
@@ -59,6 +67,9 @@ PROGRAM_ALIAS_MAP: Dict[str, str] = {
     "thiết kế đồ họa": "Thiết kế đồ họa và mỹ thuật số",
     "truyền thông": "Truyền thông đa phương tiện",
     "truyền thông đa phương tiện": "Truyền thông đa phương tiện",
+    "ttdpt": "Truyền thông đa phương tiện",
+    "tkdh": "Thiết kế đồ họa và mỹ thuật số",
+    "tkđh": "Thiết kế đồ họa và mỹ thuật số",
     "qtkd": "Quản trị kinh doanh",
     "quản trị kinh doanh": "Quản trị kinh doanh",
     "kdqt": "Kinh doanh quốc tế",
@@ -108,9 +119,11 @@ MAJOR_TO_SHORT_CODE: Dict[str, str] = {
 # -----------------------------------------------------------------------------
 COMMON_FEE_KEYWORDS: List[str] = [
     "lệ phí tốt nghiệp", "phí tốt nghiệp", "lễ cấp bằng", "phí cấp bằng", "lệ phí cấp bằng",
-    "bảng điểm", "bản sao", "giấy xác nhận", "xác nhận sinh viên",
+    "le phi tot nghiep", "phi tot nghiep", "le cap bang", "phi cap bang", "le phi cap bang",
+    "bảng điểm", "bản sao", "giấy xác nhận", "xác nhận sinh viên", "bang diem", "ban sao",
     "kỳ định hướng", "orientation", "định hướng đầu khóa", "thi lại", "học lại",
-    "ký túc xá", "ktx"
+    "thi lai", "hoc lai", "ký túc xá", "ký túc", "ky tuc xa", "ky tuc", "ktx",
+    "tiếng anh chuẩn bị", "tieng anh chuan bi", "tiếng anh dự bị", "tieng anh du bi"
 ]
 
 REGIONAL_DISCOUNT_KEYWORDS: List[str] = [
@@ -120,7 +133,10 @@ REGIONAL_DISCOUNT_KEYWORDS: List[str] = [
 COHORT_WIDE_KEYWORDS: List[str] = [
     "chuyên ngành", "toàn khóa", "biểu phí chung", "tất cả các ngành",
     "khung học phí", "học kỳ", "kỳ học", "tiếng anh", "dự bị", "chuẩn bị",
-    "thi lại", "học lại", "ký túc", "ktx"
+    "thi lại", "học lại", "ký túc", "ktx",
+    "chuyen nganh", "toan khoa", "bieu phi chung", "tat ca cac nganh",
+    "khung hoc phi", "hoc ky", "ky hoc", "tieng anh", "du bi", "chuan bi",
+    "thi lai", "hoc lai", "ky tuc", "bao nhiêu một kỳ", "bao nhieu mot ky"
 ]
 
 # -----------------------------------------------------------------------------
@@ -128,3 +144,4 @@ COHORT_WIDE_KEYWORDS: List[str] = [
 # -----------------------------------------------------------------------------
 CAMPUS_NAMES_REGEX: str = r"(hà nội|cần thơ|đà nẵng|hồ chí minh|quy nhơn)"
 CAMPUS_CODES_REGEX: str = r"(fuhl|hcm|hn|ct|dn|qn)"
+COURSE_CODE_REGEX: str = r"\b[A-Za-z]{3}\d{3}[A-Za-z]?\b"

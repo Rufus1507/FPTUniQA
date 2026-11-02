@@ -1,0 +1,166 @@
+[
+  {
+    "entity_id": "CAMPUS_HANOI",
+    "entity_type": "campus",
+    "code": "HANOI",
+    "canonical_name": "Hanoi Campus (Hoa Lac)",
+    "canonical_name_vi": "Hà Nội",
+    "aliases": [
+      "phân hiệu hà nội",
+      "campus hòa lạc",
+      "cơ sở hà nội",
+      "hoa lac",
+      "hòa lạc",
+      "hà nội",
+      "ha noi",
+      "hanoi",
+      "fuhl",
+      "hn",
+      "hl"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "src/FPTUniQA/query/campus_matcher.py",
+      "section": "CAMPUS_PATTERNS"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Phân hiệu Trường Đại học FPT tại Hà Nội (Khu CNC Hòa Lạc)"
+  },
+  {
+    "entity_id": "CAMPUS_HCM",
+    "entity_type": "campus",
+    "code": "HCM",
+    "canonical_name": "Ho Chi Minh City Campus",
+    "canonical_name_vi": "TP. Hồ Chí Minh",
+    "aliases": [
+      "phân hiệu tp. hồ chí minh",
+      "cơ sở hồ chí minh",
+      "ho chi minh",
+      "hồ chí minh",
+      "sai gon",
+      "tp. hcm",
+      "sài gòn",
+      "tp hcm",
+      "quận 9",
+      "tp.hcm",
+      "tphcm",
+      "hcm"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "src/FPTUniQA/query/campus_matcher.py",
+      "section": "CAMPUS_PATTERNS"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Phân hiệu Trường Đại học FPT tại TP. Hồ Chí Minh"
+  },
+  {
+    "entity_id": "CAMPUS_DANANG",
+    "entity_type": "campus",
+    "code": "DANANG",
+    "canonical_name": "Da Nang Campus",
+    "canonical_name_vi": "Đà Nẵng",
+    "aliases": [
+      "phân hiệu đà nẵng",
+      "cơ sở đà nẵng",
+      "đà nẵng",
+      "da nang",
+      "danang",
+      "đn",
+      "dn"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "src/FPTUniQA/query/campus_matcher.py",
+      "section": "CAMPUS_PATTERNS"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Phân hiệu Trường Đại học FPT tại Đà Nẵng (Ưu đãi 30% học phí toàn khóa)"
+  },
+  {
+    "entity_id": "CAMPUS_CANTHO",
+    "entity_type": "campus",
+    "code": "CANTHO",
+    "canonical_name": "Can Tho Campus",
+    "canonical_name_vi": "Cần Thơ",
+    "aliases": [
+      "phân hiệu cần thơ",
+      "cơ sở cần thơ",
+      "can tho",
+      "cần thơ",
+      "cantho",
+      "cầntho",
+      "ct"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "src/FPTUniQA/query/campus_matcher.py",
+      "section": "CAMPUS_PATTERNS"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Phân hiệu Trường Đại học FPT tại Cần Thơ (Ưu đãi 30% học phí toàn khóa)"
+  },
+  {
+    "entity_id": "CAMPUS_QUYNHON",
+    "entity_type": "campus",
+    "code": "QUYNHON",
+    "canonical_name": "Quy Nhon Campus",
+    "canonical_name_vi": "Quy Nhơn",
+    "aliases": [
+      "phân hiệu quy nhơn",
+      "cơ sở quy nhơn",
+      "binh dinh",
+      "bình định",
+      "quy nhơn",
+      "quy nhon",
+      "quynhon",
+      "qn"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "src/FPTUniQA/query/campus_matcher.py",
+      "section": "CAMPUS_PATTERNS"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Phân hiệu Trường Đại học FPT tại Quy Nhơn (Ưu đãi 50% học phí toàn khóa)"
+  },
+  {
+    "entity_id": "CAMPUS_ALL",
+    "entity_type": "campus",
+    "code": "ALL",
+    "canonical_name": "All Campuses",
+    "canonical_name_vi": "Tất cả các cơ sở",
+    "aliases": [
+      "tất cả các cơ sở",
+      "tất cả phân hiệu",
+      "toan quoc",
+      "toàn quốc",
+      "chung"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "src/FPTUniQA/query/campus_matcher.py",
+      "section": "CAMPUS_PATTERNS"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Áp dụng cho quy chế đào tạo và biểu phí chung toàn quốc"
+  }
+]

@@ -1,0 +1,258 @@
+[
+  {
+    "entity_id": "ABBR_SV",
+    "entity_type": "abbreviation",
+    "code": "SV",
+    "canonical_name": "Student",
+    "canonical_name_vi": "Sinh viên",
+    "aliases": [
+      "tân sv",
+      "sv"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_SINH_VIEN",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_TC",
+    "entity_type": "abbreviation",
+    "code": "TC",
+    "canonical_name": "Academic Credit",
+    "canonical_name_vi": "Tín chỉ",
+    "aliases": [
+      "tc"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_TIN_CHI",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_KTX",
+    "entity_type": "abbreviation",
+    "code": "KTX",
+    "canonical_name": "Dormitory",
+    "canonical_name_vi": "Ký túc xá",
+    "aliases": [
+      "ktx"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_KY_TUC_XA",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_OJT",
+    "entity_type": "abbreviation",
+    "code": "OJT",
+    "canonical_name": "On the Job Training",
+    "canonical_name_vi": "Thực tập doanh nghiệp",
+    "aliases": [
+      "ojt"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_OJT",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_KLTN",
+    "entity_type": "abbreviation",
+    "code": "KLTN",
+    "canonical_name": "Graduation Thesis",
+    "canonical_name_vi": "Khóa luận tốt nghiệp",
+    "aliases": [
+      "kltn",
+      "đatn"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_CAPSTONE",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_CTDT",
+    "entity_type": "abbreviation",
+    "code": "CTDT",
+    "canonical_name": "Curriculum",
+    "canonical_name_vi": "Chương trình đào tạo",
+    "aliases": [
+      "ctđt",
+      "ctdt"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_CTDT",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_GDTC",
+    "entity_type": "abbreviation",
+    "code": "GDTC",
+    "canonical_name": "Physical Education",
+    "canonical_name_vi": "Giáo dục thể chất",
+    "aliases": [
+      "gdtc"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_GDTC",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_GDQP",
+    "entity_type": "abbreviation",
+    "code": "GDQP",
+    "canonical_name": "National Defense Education",
+    "canonical_name_vi": "Giáo dục quốc phòng",
+    "aliases": [
+      "quân sự",
+      "gdqp"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_GDQP",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_PE",
+    "entity_type": "abbreviation",
+    "code": "PE",
+    "canonical_name": "Practical Exam",
+    "canonical_name_vi": "Thi thực hành",
+    "aliases": [
+      "pe"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_PE",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_EOS",
+    "entity_type": "abbreviation",
+    "code": "EOS",
+    "canonical_name": "End of Semester Exam",
+    "canonical_name_vi": "Thi cuối kỳ",
+    "aliases": [
+      "eos"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_EOS",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_GPA",
+    "entity_type": "abbreviation",
+    "code": "GPA",
+    "canonical_name": "Grade Point Average",
+    "canonical_name_vi": "Điểm trung bình học kỳ",
+    "aliases": [
+      "gpa"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_GPA",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  },
+  {
+    "entity_id": "ABBR_CGPA",
+    "entity_type": "abbreviation",
+    "code": "CGPA",
+    "canonical_name": "Cumulative Grade Point Average",
+    "canonical_name_vi": "Điểm trung bình tích lũy",
+    "aliases": [
+      "cgpa"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Danh mục từ viết tắt"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "resolves_to": "TERM_CGPA",
+    "notes": "Từ viết tắt học vụ thông dụng của sinh viên FPTU"
+  }
+]

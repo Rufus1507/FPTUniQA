@@ -1,0 +1,1901 @@
+[
+  {
+    "entity_id": "COURSE_PRF192",
+    "entity_type": "course",
+    "code": "PRF192",
+    "canonical_name": "C Programming Fundamentals",
+    "canonical_name_vi": "Cơ sở lập trình C",
+    "aliases": [
+      "môn c programming fundamentals",
+      "mon c programming fundamentals",
+      "c programming fundamentals",
+      "môn cơ sở lập trình c",
+      "mon cơ sở lập trình c",
+      "mon co so lap trinh c",
+      "cơ sở lập trình c",
+      "co so lap trinh c",
+      "lập trình c",
+      "lap trinh c",
+      "nhập môn c",
+      "cơ sở c",
+      "prf192"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 1, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_MAE101",
+    "entity_type": "course",
+    "code": "MAE101",
+    "canonical_name": "Mathematics for Engineering",
+    "canonical_name_vi": "Toán cho kỹ thuật",
+    "aliases": [
+      "môn mathematics for engineering",
+      "mon mathematics for engineering",
+      "mathematics for engineering",
+      "môn toán cho kỹ thuật",
+      "mon toán cho kỹ thuật",
+      "mon toan cho ky thuat",
+      "toán cho kỹ thuật",
+      "toan cho ky thuat",
+      "mae101"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 1, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_CSI104",
+    "entity_type": "course",
+    "code": "CSI104",
+    "canonical_name": "Introduction to Computer Science",
+    "canonical_name_vi": "Nhập môn Khoa học Máy tính",
+    "aliases": [
+      "môn introduction to computer science",
+      "mon introduction to computer science",
+      "introduction to computer science",
+      "môn nhập môn khoa học máy tính",
+      "mon nhập môn khoa học máy tính",
+      "mon nhap mon khoa hoc may tinh",
+      "nhập môn khoa học máy tính",
+      "nhap mon khoa hoc may tinh",
+      "csi104"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 1, Ngành: Khoa học máy tính"
+  },
+  {
+    "entity_id": "COURSE_PRO192",
+    "entity_type": "course",
+    "code": "PRO192",
+    "canonical_name": "Object-Oriented Programming with Java",
+    "canonical_name_vi": "Lập trình hướng đối tượng với Java",
+    "aliases": [
+      "môn object-oriented programming with java",
+      "mon object-oriented programming with java",
+      "môn lập trình hướng đối tượng với java",
+      "mon lập trình hướng đối tượng với java",
+      "mon lap trinh huong doi tuong voi java",
+      "object-oriented programming with java",
+      "lập trình hướng đối tượng với java",
+      "lap trinh huong doi tuong voi java",
+      "lập trình hướng đối tượng",
+      "lap trinh huong doi tuong",
+      "pro192",
+      "oop"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 2, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_MAD101",
+    "entity_type": "course",
+    "code": "MAD101",
+    "canonical_name": "Discrete Mathematics",
+    "canonical_name_vi": "Toán rời rạc",
+    "aliases": [
+      "môn discrete mathematics",
+      "mon discrete mathematics",
+      "discrete mathematics",
+      "môn toán rời rạc",
+      "mon toán rời rạc",
+      "mon toan roi rac",
+      "toán rời rạc",
+      "toan roi rac",
+      "mad101"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 2, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_CEA201",
+    "entity_type": "course",
+    "code": "CEA201",
+    "canonical_name": "Computer Organization and Architecture",
+    "canonical_name_vi": "Kiến trúc và tổ chức máy tính",
+    "aliases": [
+      "môn computer organization and architecture",
+      "mon computer organization and architecture",
+      "computer organization and architecture",
+      "môn kiến trúc và tổ chức máy tính",
+      "mon kiến trúc và tổ chức máy tính",
+      "mon kien truc va to chuc may tinh",
+      "kiến trúc và tổ chức máy tính",
+      "kien truc va to chuc may tinh",
+      "cea201"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 2, Ngành: Khoa học máy tính"
+  },
+  {
+    "entity_id": "COURSE_CSD201",
+    "entity_type": "course",
+    "code": "CSD201",
+    "canonical_name": "Data Structures and Algorithms",
+    "canonical_name_vi": "Cấu trúc dữ liệu và giải thuật",
+    "aliases": [
+      "môn data structures and algorithms",
+      "mon data structures and algorithms",
+      "môn cấu trúc dữ liệu và giải thuật",
+      "mon cấu trúc dữ liệu và giải thuật",
+      "mon cau truc du lieu va giai thuat",
+      "data structures and algorithms",
+      "cấu trúc dữ liệu và giải thuật",
+      "cau truc du lieu va giai thuat",
+      "cấu trúc dữ liệu",
+      "cau truc du lieu",
+      "ctdl&gt",
+      "csd201",
+      "ctdl"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 3, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_DBI202",
+    "entity_type": "course",
+    "code": "DBI202",
+    "canonical_name": "Introduction to Databases",
+    "canonical_name_vi": "Cơ sở dữ liệu",
+    "aliases": [
+      "môn introduction to databases",
+      "mon introduction to databases",
+      "introduction to databases",
+      "môn cơ sở dữ liệu",
+      "mon cơ sở dữ liệu",
+      "mon co so du lieu",
+      "cơ sở dữ liệu",
+      "co so du lieu",
+      "dbi202",
+      "csdl",
+      "sql"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 3, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_MAS291",
+    "entity_type": "course",
+    "code": "MAS291",
+    "canonical_name": "Statistics and Probability",
+    "canonical_name_vi": "Xác suất thống kê",
+    "aliases": [
+      "môn statistics and probability",
+      "mon statistics and probability",
+      "statistics and probability",
+      "môn xác suất thống kê",
+      "mon xác suất thống kê",
+      "mon xac suat thong ke",
+      "xác suất thống kê",
+      "xac suat thong ke",
+      "mas291"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 3, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_OSG202",
+    "entity_type": "course",
+    "code": "OSG202",
+    "canonical_name": "Operating Systems",
+    "canonical_name_vi": "Hệ điều hành",
+    "aliases": [
+      "môn operating systems",
+      "mon operating systems",
+      "operating systems",
+      "môn hệ điều hành",
+      "mon hệ điều hành",
+      "mon he dieu hanh",
+      "hệ điều hành",
+      "he dieu hanh",
+      "osg202"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 3, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_NWC203C",
+    "entity_type": "course",
+    "code": "NWC203C",
+    "canonical_name": "Computer Networking",
+    "canonical_name_vi": "Mạng máy tính",
+    "aliases": [
+      "môn computer networking",
+      "mon computer networking",
+      "computer networking",
+      "môn mạng máy tính",
+      "mon mạng máy tính",
+      "mon mang may tinh",
+      "mạng máy tính",
+      "mang may tinh",
+      "nwc203c"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 3, Ngành: An toàn thông tin"
+  },
+  {
+    "entity_id": "COURSE_JPD113",
+    "entity_type": "course",
+    "code": "JPD113",
+    "canonical_name": "Elementary Japanese 1-A1",
+    "canonical_name_vi": "Tiếng Nhật sơ cấp 1 cho ngành CNTT",
+    "aliases": [
+      "môn tiếng nhật sơ cấp 1 cho ngành cntt",
+      "mon tiếng nhật sơ cấp 1 cho ngành cntt",
+      "mon tieng nhat so cap 1 cho nganh cntt",
+      "tiếng nhật sơ cấp 1 cho ngành cntt",
+      "tieng nhat so cap 1 cho nganh cntt",
+      "môn elementary japanese 1-a1",
+      "mon elementary japanese 1-a1",
+      "elementary japanese 1-a1",
+      "jpd113"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 3, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_SWE201C",
+    "entity_type": "course",
+    "code": "SWE201C",
+    "canonical_name": "Introduction to Software Engineering",
+    "canonical_name_vi": "Nhập môn Kỹ nghệ phần mềm",
+    "aliases": [
+      "môn introduction to software engineering",
+      "mon introduction to software engineering",
+      "introduction to software engineering",
+      "môn nhập môn kỹ nghệ phần mềm",
+      "mon nhập môn kỹ nghệ phần mềm",
+      "mon nhap mon ky nghe phan mem",
+      "nhập môn kỹ nghệ phần mềm",
+      "nhap mon ky nghe phan mem",
+      "swe201c"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 4, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_PRJ301",
+    "entity_type": "course",
+    "code": "PRJ301",
+    "canonical_name": "Java Web Application Development",
+    "canonical_name_vi": "Lập trình Web với Java",
+    "aliases": [
+      "môn java web application development",
+      "mon java web application development",
+      "java web application development",
+      "môn lập trình web với java",
+      "mon lập trình web với java",
+      "mon lap trinh web voi java",
+      "lập trình web với java",
+      "lap trinh web voi java",
+      "prj301"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 4, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_PRN211",
+    "entity_type": "course",
+    "code": "PRN211",
+    "canonical_name": "Basic Cross-Platform Application Programming With .NET",
+    "canonical_name_vi": "Lập trình ứng dụng đa nền tảng với .NET",
+    "aliases": [
+      "môn basic cross-platform application programming with .net",
+      "mon basic cross-platform application programming with .net",
+      "basic cross-platform application programming with .net",
+      "môn lập trình ứng dụng đa nền tảng với .net",
+      "mon lập trình ứng dụng đa nền tảng với .net",
+      "mon lap trinh ung dung da nen tang voi .net",
+      "lập trình ứng dụng đa nền tảng với .net",
+      "lap trinh ung dung da nen tang voi .net",
+      "prn211"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_SWP391",
+    "entity_type": "course",
+    "code": "SWP391",
+    "canonical_name": "Application Development Project",
+    "canonical_name_vi": "Dự án phát triển ứng dụng phần mềm",
+    "aliases": [
+      "môn dự án phát triển ứng dụng phần mềm",
+      "mon dự án phát triển ứng dụng phần mềm",
+      "mon du an phat trien ung dung phan mem",
+      "môn application development project",
+      "mon application development project",
+      "dự án phát triển ứng dụng phần mềm",
+      "du an phat trien ung dung phan mem",
+      "application development project",
+      "swp391"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_SWT301",
+    "entity_type": "course",
+    "code": "SWT301",
+    "canonical_name": "Software Testing",
+    "canonical_name_vi": "Kiểm thử phần mềm",
+    "aliases": [
+      "môn kiểm thử phần mềm",
+      "mon kiểm thử phần mềm",
+      "mon kiem thu phan mem",
+      "môn software testing",
+      "mon software testing",
+      "kiểm thử phần mềm",
+      "kiem thu phan mem",
+      "software testing",
+      "swt301"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_SWR302",
+    "entity_type": "course",
+    "code": "SWR302",
+    "canonical_name": "Software Requirement Engineering",
+    "canonical_name_vi": "Kỹ nghệ yêu cầu phần mềm",
+    "aliases": [
+      "môn software requirement engineering",
+      "mon software requirement engineering",
+      "software requirement engineering",
+      "môn kỹ nghệ yêu cầu phần mềm",
+      "mon kỹ nghệ yêu cầu phần mềm",
+      "mon ky nghe yeu cau phan mem",
+      "kỹ nghệ yêu cầu phần mềm",
+      "ky nghe yeu cau phan mem",
+      "swr302"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_SWD392",
+    "entity_type": "course",
+    "code": "SWD392",
+    "canonical_name": "Software Architecture and Design",
+    "canonical_name_vi": "Kiến trúc và thiết kế phần mềm",
+    "aliases": [
+      "môn software architecture and design",
+      "mon software architecture and design",
+      "môn kiến trúc và thiết kế phần mềm",
+      "mon kiến trúc và thiết kế phần mềm",
+      "mon kien truc va thiet ke phan mem",
+      "software architecture and design",
+      "kiến trúc và thiết kế phần mềm",
+      "kien truc va thiet ke phan mem",
+      "swd392"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 6, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_SEP490",
+    "entity_type": "course",
+    "code": "SEP490",
+    "canonical_name": "Software Engineering Capstone Project",
+    "canonical_name_vi": "Khóa luận tốt nghiệp Kỹ thuật phần mềm",
+    "aliases": [
+      "môn khóa luận tốt nghiệp kỹ thuật phần mềm",
+      "mon khóa luận tốt nghiệp kỹ thuật phần mềm",
+      "mon khoa luan tot nghiep ky thuat phan mem",
+      "môn software engineering capstone project",
+      "mon software engineering capstone project",
+      "khóa luận tốt nghiệp kỹ thuật phần mềm",
+      "khoa luan tot nghiep ky thuat phan mem",
+      "software engineering capstone project",
+      "khóa luận ktpm",
+      "đồ án ktpm",
+      "kltn ktpm",
+      "đatn ktpm",
+      "sep490"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 10, Học kỳ: 9, Ngành: Kỹ thuật phần mềm"
+  },
+  {
+    "entity_id": "COURSE_AIL302M",
+    "entity_type": "course",
+    "code": "AIL302M",
+    "canonical_name": "Machine Learning",
+    "canonical_name_vi": "Học máy",
+    "aliases": [
+      "môn machine learning",
+      "mon machine learning",
+      "machine learning",
+      "môn học máy",
+      "mon học máy",
+      "mon hoc may",
+      "ail302m",
+      "học máy",
+      "hoc may"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 4, Ngành: Trí tuệ nhân tạo"
+  },
+  {
+    "entity_id": "COURSE_NLP301C",
+    "entity_type": "course",
+    "code": "NLP301C",
+    "canonical_name": "Natural Language Processing",
+    "canonical_name_vi": "Xử lý ngôn ngữ tự nhiên",
+    "aliases": [
+      "môn natural language processing",
+      "mon natural language processing",
+      "natural language processing",
+      "môn xử lý ngôn ngữ tự nhiên",
+      "mon xử lý ngôn ngữ tự nhiên",
+      "mon xu ly ngon ngu tu nhien",
+      "xử lý ngôn ngữ tự nhiên",
+      "xu ly ngon ngu tu nhien",
+      "nlp301c"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Trí tuệ nhân tạo"
+  },
+  {
+    "entity_id": "COURSE_CVL301C",
+    "entity_type": "course",
+    "code": "CVL301C",
+    "canonical_name": "Computer Vision",
+    "canonical_name_vi": "Thị giác máy tính",
+    "aliases": [
+      "môn thị giác máy tính",
+      "mon thị giác máy tính",
+      "mon thi giac may tinh",
+      "môn computer vision",
+      "mon computer vision",
+      "thị giác máy tính",
+      "thi giac may tinh",
+      "computer vision",
+      "cvl301c"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Trí tuệ nhân tạo"
+  },
+  {
+    "entity_id": "COURSE_DLG301",
+    "entity_type": "course",
+    "code": "DLG301",
+    "canonical_name": "Deep Learning",
+    "canonical_name_vi": "Học sâu",
+    "aliases": [
+      "môn deep learning",
+      "mon deep learning",
+      "deep learning",
+      "môn học sâu",
+      "mon học sâu",
+      "mon hoc sau",
+      "học sâu",
+      "hoc sau",
+      "dlg301"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 6, Ngành: Trí tuệ nhân tạo"
+  },
+  {
+    "entity_id": "COURSE_AIP391",
+    "entity_type": "course",
+    "code": "AIP391",
+    "canonical_name": "AI Application Development Project",
+    "canonical_name_vi": "Dự án phát triển ứng dụng AI",
+    "aliases": [
+      "môn ai application development project",
+      "mon ai application development project",
+      "ai application development project",
+      "môn dự án phát triển ứng dụng ai",
+      "mon dự án phát triển ứng dụng ai",
+      "mon du an phat trien ung dung ai",
+      "dự án phát triển ứng dụng ai",
+      "du an phat trien ung dung ai",
+      "aip391"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 6, Ngành: Trí tuệ nhân tạo"
+  },
+  {
+    "entity_id": "COURSE_AIP490",
+    "entity_type": "course",
+    "code": "AIP490",
+    "canonical_name": "Artificial Intelligence Capstone Project",
+    "canonical_name_vi": "Khóa luận tốt nghiệp Trí tuệ nhân tạo",
+    "aliases": [
+      "môn artificial intelligence capstone project",
+      "mon artificial intelligence capstone project",
+      "môn khóa luận tốt nghiệp trí tuệ nhân tạo",
+      "mon khóa luận tốt nghiệp trí tuệ nhân tạo",
+      "mon khoa luan tot nghiep tri tue nhan tao",
+      "artificial intelligence capstone project",
+      "khóa luận tốt nghiệp trí tuệ nhân tạo",
+      "khoa luan tot nghiep tri tue nhan tao",
+      "khóa luận ai",
+      "đồ án ai",
+      "kltn ai",
+      "đatn ai",
+      "aip490"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 10, Học kỳ: 9, Ngành: Trí tuệ nhân tạo"
+  },
+  {
+    "entity_id": "COURSE_CRY301",
+    "entity_type": "course",
+    "code": "CRY301",
+    "canonical_name": "Cryptography",
+    "canonical_name_vi": "Mật mã học",
+    "aliases": [
+      "môn cryptography",
+      "mon cryptography",
+      "môn mật mã học",
+      "mon mật mã học",
+      "mon mat ma hoc",
+      "cryptography",
+      "mật mã học",
+      "mat ma hoc",
+      "cry301"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 4, Ngành: An toàn thông tin"
+  },
+  {
+    "entity_id": "COURSE_IAL201",
+    "entity_type": "course",
+    "code": "IAL201",
+    "canonical_name": "System and Network Security",
+    "canonical_name_vi": "An toàn hệ thống và mạng",
+    "aliases": [
+      "môn system and network security",
+      "mon system and network security",
+      "môn an toàn hệ thống và mạng",
+      "mon an toàn hệ thống và mạng",
+      "mon an toan he thong va mang",
+      "system and network security",
+      "an toàn hệ thống và mạng",
+      "an toan he thong va mang",
+      "ial201"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: An toàn thông tin"
+  },
+  {
+    "entity_id": "COURSE_IAR301",
+    "entity_type": "course",
+    "code": "IAR301",
+    "canonical_name": "Information Assurance & Security Assessment",
+    "canonical_name_vi": "Đánh giá an toàn thông tin",
+    "aliases": [
+      "môn information assurance & security assessment",
+      "mon information assurance & security assessment",
+      "information assurance & security assessment",
+      "môn đánh giá an toàn thông tin",
+      "mon đánh giá an toàn thông tin",
+      "mon danh gia an toan thong tin",
+      "đánh giá an toàn thông tin",
+      "danh gia an toan thong tin",
+      "iar301"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: An toàn thông tin"
+  },
+  {
+    "entity_id": "COURSE_FOR301",
+    "entity_type": "course",
+    "code": "FOR301",
+    "canonical_name": "Digital Forensics",
+    "canonical_name_vi": "Điều tra kỹ thuật số",
+    "aliases": [
+      "môn điều tra kỹ thuật số",
+      "mon điều tra kỹ thuật số",
+      "mon dieu tra ky thuat so",
+      "môn digital forensics",
+      "mon digital forensics",
+      "điều tra kỹ thuật số",
+      "dieu tra ky thuat so",
+      "digital forensics",
+      "for301"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 6, Ngành: An toàn thông tin"
+  },
+  {
+    "entity_id": "COURSE_IAP490",
+    "entity_type": "course",
+    "code": "IAP490",
+    "canonical_name": "Information Assurance Capstone Project",
+    "canonical_name_vi": "Khóa luận tốt nghiệp An toàn thông tin",
+    "aliases": [
+      "môn information assurance capstone project",
+      "mon information assurance capstone project",
+      "môn khóa luận tốt nghiệp an toàn thông tin",
+      "mon khóa luận tốt nghiệp an toàn thông tin",
+      "mon khoa luan tot nghiep an toan thong tin",
+      "information assurance capstone project",
+      "khóa luận tốt nghiệp an toàn thông tin",
+      "khoa luan tot nghiep an toan thong tin",
+      "iap490"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 10, Học kỳ: 9, Ngành: An toàn thông tin"
+  },
+  {
+    "entity_id": "COURSE_MKT101",
+    "entity_type": "course",
+    "code": "MKT101",
+    "canonical_name": "Principles of Marketing",
+    "canonical_name_vi": "Nguyên lý Marketing",
+    "aliases": [
+      "môn principles of marketing",
+      "mon principles of marketing",
+      "principles of marketing",
+      "môn nguyên lý marketing",
+      "mon nguyên lý marketing",
+      "mon nguyen ly marketing",
+      "nguyên lý marketing",
+      "nguyen ly marketing",
+      "mkt101"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 1, Ngành: Digital Marketing"
+  },
+  {
+    "entity_id": "COURSE_MGT103",
+    "entity_type": "course",
+    "code": "MGT103",
+    "canonical_name": "Principles of Management",
+    "canonical_name_vi": "Nguyên lý Quản trị",
+    "aliases": [
+      "môn principles of management",
+      "mon principles of management",
+      "principles of management",
+      "môn nguyên lý quản trị",
+      "mon nguyên lý quản trị",
+      "mon nguyen ly quan tri",
+      "nguyên lý quản trị",
+      "nguyen ly quan tri",
+      "mgt103"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 1, Ngành: Quản trị kinh doanh"
+  },
+  {
+    "entity_id": "COURSE_ECO111",
+    "entity_type": "course",
+    "code": "ECO111",
+    "canonical_name": "Microeconomics",
+    "canonical_name_vi": "Kinh tế vi mô",
+    "aliases": [
+      "môn microeconomics",
+      "mon microeconomics",
+      "môn kinh tế vi mô",
+      "mon kinh tế vi mô",
+      "microeconomics",
+      "kinh tế vi mô",
+      "eco111"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 2, Ngành: Quản trị kinh doanh"
+  },
+  {
+    "entity_id": "COURSE_ECO121",
+    "entity_type": "course",
+    "code": "ECO121",
+    "canonical_name": "Macroeconomics",
+    "canonical_name_vi": "Kinh tế vĩ mô",
+    "aliases": [
+      "môn macroeconomics",
+      "mon macroeconomics",
+      "môn kinh tế vĩ mô",
+      "mon kinh tế vĩ mô",
+      "macroeconomics",
+      "kinh tế vĩ mô",
+      "eco121"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 2, Ngành: Quản trị kinh doanh"
+  },
+  {
+    "entity_id": "COURSE_ACC101",
+    "entity_type": "course",
+    "code": "ACC101",
+    "canonical_name": "Principles of Accounting",
+    "canonical_name_vi": "Nguyên lý Kế toán",
+    "aliases": [
+      "môn principles of accounting",
+      "mon principles of accounting",
+      "principles of accounting",
+      "môn nguyên lý kế toán",
+      "mon nguyên lý kế toán",
+      "mon nguyen ly ke toan",
+      "nguyên lý kế toán",
+      "nguyen ly ke toan",
+      "acc101"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 3, Ngành: Quản trị kinh doanh"
+  },
+  {
+    "entity_id": "COURSE_FIN202",
+    "entity_type": "course",
+    "code": "FIN202",
+    "canonical_name": "Corporate Finance",
+    "canonical_name_vi": "Tài chính doanh nghiệp",
+    "aliases": [
+      "môn tài chính doanh nghiệp",
+      "mon tài chính doanh nghiệp",
+      "mon tai chinh doanh nghiep",
+      "tài chính doanh nghiệp",
+      "tai chinh doanh nghiep",
+      "môn corporate finance",
+      "mon corporate finance",
+      "corporate finance",
+      "fin202"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 4, Ngành: Quản trị kinh doanh"
+  },
+  {
+    "entity_id": "COURSE_OBE102",
+    "entity_type": "course",
+    "code": "OBE102",
+    "canonical_name": "Organizational Behavior",
+    "canonical_name_vi": "Hành vi tổ chức",
+    "aliases": [
+      "môn organizational behavior",
+      "mon organizational behavior",
+      "organizational behavior",
+      "môn hành vi tổ chức",
+      "mon hành vi tổ chức",
+      "mon hanh vi to chuc",
+      "hành vi tổ chức",
+      "hanh vi to chuc",
+      "obe102"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 4, Ngành: Quản trị kinh doanh"
+  },
+  {
+    "entity_id": "COURSE_MKP391",
+    "entity_type": "course",
+    "code": "MKP391",
+    "canonical_name": "Marketing Project",
+    "canonical_name_vi": "Dự án thực tế Marketing",
+    "aliases": [
+      "môn dự án thực tế marketing",
+      "mon dự án thực tế marketing",
+      "mon du an thuc te marketing",
+      "dự án thực tế marketing",
+      "du an thuc te marketing",
+      "môn marketing project",
+      "mon marketing project",
+      "marketing project",
+      "mkp391"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Digital Marketing"
+  },
+  {
+    "entity_id": "COURSE_BAP490",
+    "entity_type": "course",
+    "code": "BAP490",
+    "canonical_name": "Business Administration Capstone Project",
+    "canonical_name_vi": "Khóa luận tốt nghiệp Quản trị kinh doanh",
+    "aliases": [
+      "môn business administration capstone project",
+      "mon business administration capstone project",
+      "môn khóa luận tốt nghiệp quản trị kinh doanh",
+      "mon khóa luận tốt nghiệp quản trị kinh doanh",
+      "mon khoa luan tot nghiep quan tri kinh doanh",
+      "business administration capstone project",
+      "khóa luận tốt nghiệp quản trị kinh doanh",
+      "khoa luan tot nghiep quan tri kinh doanh",
+      "bap490"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 10, Học kỳ: 9, Ngành: Quản trị kinh doanh"
+  },
+  {
+    "entity_id": "COURSE_DGT101",
+    "entity_type": "course",
+    "code": "DGT101",
+    "canonical_name": "Introduction to Graphic Design",
+    "canonical_name_vi": "Nhập môn Thiết kế đồ họa",
+    "aliases": [
+      "môn introduction to graphic design",
+      "mon introduction to graphic design",
+      "introduction to graphic design",
+      "môn nhập môn thiết kế đồ họa",
+      "mon nhập môn thiết kế đồ họa",
+      "mon nhap mon thiet ke do hoa",
+      "nhập môn thiết kế đồ họa",
+      "nhap mon thiet ke do hoa",
+      "dgt101"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 1, Ngành: Thiết kế Mỹ thuật số"
+  },
+  {
+    "entity_id": "COURSE_VWS101",
+    "entity_type": "course",
+    "code": "VWS101",
+    "canonical_name": "Visual Arts & Workshop",
+    "canonical_name_vi": "Nghệ thuật thị giác",
+    "aliases": [
+      "môn visual arts & workshop",
+      "mon visual arts & workshop",
+      "môn nghệ thuật thị giác",
+      "mon nghệ thuật thị giác",
+      "mon nghe thuat thi giac",
+      "visual arts & workshop",
+      "nghệ thuật thị giác",
+      "nghe thuat thi giac",
+      "vws101"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 2, Ngành: Thiết kế Mỹ thuật số"
+  },
+  {
+    "entity_id": "COURSE_GRA201",
+    "entity_type": "course",
+    "code": "GRA201",
+    "canonical_name": "2D Graphic Design",
+    "canonical_name_vi": "Thiết kế đồ họa 2D",
+    "aliases": [
+      "môn thiết kế đồ họa 2d",
+      "mon thiết kế đồ họa 2d",
+      "mon thiet ke do hoa 2d",
+      "môn 2d graphic design",
+      "mon 2d graphic design",
+      "thiết kế đồ họa 2d",
+      "thiet ke do hoa 2d",
+      "2d graphic design",
+      "gra201"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 3, Ngành: Thiết kế Mỹ thuật số"
+  },
+  {
+    "entity_id": "COURSE_TYP201",
+    "entity_type": "course",
+    "code": "TYP201",
+    "canonical_name": "Typography",
+    "canonical_name_vi": "Nghệ thuật chữ",
+    "aliases": [
+      "môn nghệ thuật chữ",
+      "mon nghệ thuật chữ",
+      "mon nghe thuat chu",
+      "môn typography",
+      "mon typography",
+      "nghệ thuật chữ",
+      "nghe thuat chu",
+      "typography",
+      "typ201"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 4, Ngành: Thiết kế Mỹ thuật số"
+  },
+  {
+    "entity_id": "COURSE_ANM301",
+    "entity_type": "course",
+    "code": "ANM301",
+    "canonical_name": "2D/3D Animation Fundamentals",
+    "canonical_name_vi": "Nguyên lý Hoạt hình 2D/3D",
+    "aliases": [
+      "môn 2d/3d animation fundamentals",
+      "mon 2d/3d animation fundamentals",
+      "môn nguyên lý hoạt hình 2d/3d",
+      "mon nguyên lý hoạt hình 2d/3d",
+      "mon nguyen ly hoat hinh 2d/3d",
+      "2d/3d animation fundamentals",
+      "nguyên lý hoạt hình 2d/3d",
+      "nguyen ly hoat hinh 2d/3d",
+      "anm301"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Thiết kế Mỹ thuật số"
+  },
+  {
+    "entity_id": "COURSE_GDP490",
+    "entity_type": "course",
+    "code": "GDP490",
+    "canonical_name": "Graphic Design Capstone Project",
+    "canonical_name_vi": "Đồ án tốt nghiệp Thiết kế Mỹ thuật số",
+    "aliases": [
+      "môn đồ án tốt nghiệp thiết kế mỹ thuật số",
+      "mon đồ án tốt nghiệp thiết kế mỹ thuật số",
+      "mon do an tot nghiep thiet ke my thuat so",
+      "đồ án tốt nghiệp thiết kế mỹ thuật số",
+      "do an tot nghiep thiet ke my thuat so",
+      "môn graphic design capstone project",
+      "mon graphic design capstone project",
+      "graphic design capstone project",
+      "gdp490"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 10, Học kỳ: 9, Ngành: Thiết kế Mỹ thuật số"
+  },
+  {
+    "entity_id": "COURSE_ENG101",
+    "entity_type": "course",
+    "code": "ENG101",
+    "canonical_name": "English for Academic Purposes 1",
+    "canonical_name_vi": "Tiếng Anh học thuật 1",
+    "aliases": [
+      "môn english for academic purposes 1",
+      "mon english for academic purposes 1",
+      "english for academic purposes 1",
+      "môn tiếng anh học thuật 1",
+      "mon tiếng anh học thuật 1",
+      "mon tieng anh hoc thuat 1",
+      "tiếng anh học thuật 1",
+      "tieng anh hoc thuat 1",
+      "eng101"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 1, Ngành: Ngôn ngữ Anh"
+  },
+  {
+    "entity_id": "COURSE_ENG102",
+    "entity_type": "course",
+    "code": "ENG102",
+    "canonical_name": "English for Academic Purposes 2",
+    "canonical_name_vi": "Tiếng Anh học thuật 2",
+    "aliases": [
+      "môn english for academic purposes 2",
+      "mon english for academic purposes 2",
+      "english for academic purposes 2",
+      "môn tiếng anh học thuật 2",
+      "mon tiếng anh học thuật 2",
+      "mon tieng anh hoc thuat 2",
+      "tiếng anh học thuật 2",
+      "tieng anh hoc thuat 2",
+      "eng102"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 2, Ngành: Ngôn ngữ Anh"
+  },
+  {
+    "entity_id": "COURSE_ENB301",
+    "entity_type": "course",
+    "code": "ENB301",
+    "canonical_name": "Business English Communication",
+    "canonical_name_vi": "Giao tiếp Tiếng Anh thương mại",
+    "aliases": [
+      "môn business english communication",
+      "mon business english communication",
+      "môn giao tiếp tiếng anh thương mại",
+      "mon giao tiếp tiếng anh thương mại",
+      "mon giao tiep tieng anh thuong mai",
+      "business english communication",
+      "giao tiếp tiếng anh thương mại",
+      "giao tiep tieng anh thuong mai",
+      "enb301"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 4, Ngành: Ngôn ngữ Anh"
+  },
+  {
+    "entity_id": "COURSE_ENT301",
+    "entity_type": "course",
+    "code": "ENT301",
+    "canonical_name": "Translation and Interpretation",
+    "canonical_name_vi": "Biên dịch và Phiên dịch Tiếng Anh",
+    "aliases": [
+      "môn biên dịch và phiên dịch tiếng anh",
+      "mon biên dịch và phiên dịch tiếng anh",
+      "mon bien dich va phien dich tieng anh",
+      "môn translation and interpretation",
+      "mon translation and interpretation",
+      "biên dịch và phiên dịch tiếng anh",
+      "bien dich va phien dich tieng anh",
+      "translation and interpretation",
+      "ent301"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Ngôn ngữ Anh"
+  },
+  {
+    "entity_id": "COURSE_ENP490",
+    "entity_type": "course",
+    "code": "ENP490",
+    "canonical_name": "English Language Capstone Project",
+    "canonical_name_vi": "Khóa luận tốt nghiệp Ngôn ngữ Anh",
+    "aliases": [
+      "môn english language capstone project",
+      "mon english language capstone project",
+      "môn khóa luận tốt nghiệp ngôn ngữ anh",
+      "mon khóa luận tốt nghiệp ngôn ngữ anh",
+      "mon khoa luan tot nghiep ngon ngu anh",
+      "english language capstone project",
+      "khóa luận tốt nghiệp ngôn ngữ anh",
+      "khoa luan tot nghiep ngon ngu anh",
+      "enp490"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 10, Học kỳ: 9, Ngành: Ngôn ngữ Anh"
+  },
+  {
+    "entity_id": "COURSE_JAP101",
+    "entity_type": "course",
+    "code": "JAP101",
+    "canonical_name": "Elementary Japanese 1",
+    "canonical_name_vi": "Tiếng Nhật sơ cấp 1",
+    "aliases": [
+      "môn elementary japanese 1",
+      "mon elementary japanese 1",
+      "môn tiếng nhật sơ cấp 1",
+      "mon tiếng nhật sơ cấp 1",
+      "mon tieng nhat so cap 1",
+      "elementary japanese 1",
+      "tiếng nhật sơ cấp 1",
+      "tieng nhat so cap 1",
+      "jap101"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 1, Ngành: Ngôn ngữ Nhật"
+  },
+  {
+    "entity_id": "COURSE_JAP102",
+    "entity_type": "course",
+    "code": "JAP102",
+    "canonical_name": "Elementary Japanese 2",
+    "canonical_name_vi": "Tiếng Nhật sơ cấp 2",
+    "aliases": [
+      "môn elementary japanese 2",
+      "mon elementary japanese 2",
+      "môn tiếng nhật sơ cấp 2",
+      "mon tiếng nhật sơ cấp 2",
+      "mon tieng nhat so cap 2",
+      "elementary japanese 2",
+      "tiếng nhật sơ cấp 2",
+      "tieng nhat so cap 2",
+      "jap102"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 2, Ngành: Ngôn ngữ Nhật"
+  },
+  {
+    "entity_id": "COURSE_JIT301",
+    "entity_type": "course",
+    "code": "JIT301",
+    "canonical_name": "Japanese for IT Professionals",
+    "canonical_name_vi": "Tiếng Nhật chuyên ngành CNTT",
+    "aliases": [
+      "môn japanese for it professionals",
+      "mon japanese for it professionals",
+      "môn tiếng nhật chuyên ngành cntt",
+      "mon tiếng nhật chuyên ngành cntt",
+      "mon tieng nhat chuyen nganh cntt",
+      "japanese for it professionals",
+      "tiếng nhật chuyên ngành cntt",
+      "tieng nhat chuyen nganh cntt",
+      "jit301"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Ngôn ngữ Nhật"
+  },
+  {
+    "entity_id": "COURSE_JAP490",
+    "entity_type": "course",
+    "code": "JAP490",
+    "canonical_name": "Japanese Language Capstone Project",
+    "canonical_name_vi": "Khóa luận tốt nghiệp Ngôn ngữ Nhật",
+    "aliases": [
+      "môn japanese language capstone project",
+      "mon japanese language capstone project",
+      "môn khóa luận tốt nghiệp ngôn ngữ nhật",
+      "mon khóa luận tốt nghiệp ngôn ngữ nhật",
+      "mon khoa luan tot nghiep ngon ngu nhat",
+      "japanese language capstone project",
+      "khóa luận tốt nghiệp ngôn ngữ nhật",
+      "khoa luan tot nghiep ngon ngu nhat",
+      "jap490"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 10, Học kỳ: 9, Ngành: Ngôn ngữ Nhật"
+  },
+  {
+    "entity_id": "COURSE_KOR101",
+    "entity_type": "course",
+    "code": "KOR101",
+    "canonical_name": "Elementary Korean 1",
+    "canonical_name_vi": "Tiếng Hàn sơ cấp 1",
+    "aliases": [
+      "môn elementary korean 1",
+      "mon elementary korean 1",
+      "môn tiếng hàn sơ cấp 1",
+      "mon tiếng hàn sơ cấp 1",
+      "mon tieng han so cap 1",
+      "elementary korean 1",
+      "tiếng hàn sơ cấp 1",
+      "tieng han so cap 1",
+      "kor101"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 1, Ngành: Ngôn ngữ Hàn"
+  },
+  {
+    "entity_id": "COURSE_KOR102",
+    "entity_type": "course",
+    "code": "KOR102",
+    "canonical_name": "Elementary Korean 2",
+    "canonical_name_vi": "Tiếng Hàn sơ cấp 2",
+    "aliases": [
+      "môn elementary korean 2",
+      "mon elementary korean 2",
+      "môn tiếng hàn sơ cấp 2",
+      "mon tiếng hàn sơ cấp 2",
+      "mon tieng han so cap 2",
+      "elementary korean 2",
+      "tiếng hàn sơ cấp 2",
+      "tieng han so cap 2",
+      "kor102"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 2, Ngành: Ngôn ngữ Hàn"
+  },
+  {
+    "entity_id": "COURSE_KOR490",
+    "entity_type": "course",
+    "code": "KOR490",
+    "canonical_name": "Korean Language Capstone Project",
+    "canonical_name_vi": "Khóa luận tốt nghiệp Ngôn ngữ Hàn",
+    "aliases": [
+      "môn khóa luận tốt nghiệp ngôn ngữ hàn",
+      "mon khóa luận tốt nghiệp ngôn ngữ hàn",
+      "mon khoa luan tot nghiep ngon ngu han",
+      "môn korean language capstone project",
+      "mon korean language capstone project",
+      "khóa luận tốt nghiệp ngôn ngữ hàn",
+      "khoa luan tot nghiep ngon ngu han",
+      "korean language capstone project",
+      "kor490"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 10, Học kỳ: 9, Ngành: Ngôn ngữ Hàn"
+  },
+  {
+    "entity_id": "COURSE_VOV114",
+    "entity_type": "course",
+    "code": "VOV114",
+    "canonical_name": "Vovinam 1",
+    "canonical_name_vi": "Võ Vovinam 1 (Giáo dục thể chất)",
+    "aliases": [
+      "môn võ vovinam 1 (giáo dục thể chất)",
+      "mon võ vovinam 1 (giáo dục thể chất)",
+      "mon vo vovinam 1 (giao duc the chat)",
+      "võ vovinam 1 (giáo dục thể chất)",
+      "vo vovinam 1 (giao duc the chat)",
+      "môn vovinam 1",
+      "mon vovinam 1",
+      "võ vovinam 1",
+      "vovinam 1",
+      "vov114",
+      "vov1"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 0, Học kỳ: 1, Ngành: Chung"
+  },
+  {
+    "entity_id": "COURSE_VOV124",
+    "entity_type": "course",
+    "code": "VOV124",
+    "canonical_name": "Vovinam 2",
+    "canonical_name_vi": "Võ Vovinam 2 (Giáo dục thể chất)",
+    "aliases": [
+      "môn võ vovinam 2 (giáo dục thể chất)",
+      "mon võ vovinam 2 (giáo dục thể chất)",
+      "mon vo vovinam 2 (giao duc the chat)",
+      "võ vovinam 2 (giáo dục thể chất)",
+      "vo vovinam 2 (giao duc the chat)",
+      "môn vovinam 2",
+      "mon vovinam 2",
+      "võ vovinam 2",
+      "vovinam 2",
+      "vov124",
+      "vov2"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 0, Học kỳ: 2, Ngành: Chung"
+  },
+  {
+    "entity_id": "COURSE_VOV134",
+    "entity_type": "course",
+    "code": "VOV134",
+    "canonical_name": "Vovinam 3",
+    "canonical_name_vi": "Võ Vovinam 3 (Giáo dục thể chất)",
+    "aliases": [
+      "môn võ vovinam 3 (giáo dục thể chất)",
+      "mon võ vovinam 3 (giáo dục thể chất)",
+      "mon vo vovinam 3 (giao duc the chat)",
+      "võ vovinam 3 (giáo dục thể chất)",
+      "vo vovinam 3 (giao duc the chat)",
+      "môn vovinam 3",
+      "mon vovinam 3",
+      "võ vovinam 3",
+      "vovinam 3",
+      "vov134",
+      "vov3"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 0, Học kỳ: 3, Ngành: Chung"
+  },
+  {
+    "entity_id": "COURSE_MIL111",
+    "entity_type": "course",
+    "code": "MIL111",
+    "canonical_name": "National Defense Education 1",
+    "canonical_name_vi": "Giáo dục Quốc phòng và An ninh 1",
+    "aliases": [
+      "môn giáo dục quốc phòng và an ninh 1",
+      "mon giáo dục quốc phòng và an ninh 1",
+      "mon giao duc quoc phong va an ninh 1",
+      "môn national defense education 1",
+      "mon national defense education 1",
+      "giáo dục quốc phòng và an ninh 1",
+      "giao duc quoc phong va an ninh 1",
+      "national defense education 1",
+      "mil111"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 0, Học kỳ: 1, Ngành: Chung"
+  },
+  {
+    "entity_id": "COURSE_MIL121",
+    "entity_type": "course",
+    "code": "MIL121",
+    "canonical_name": "National Defense Education 2",
+    "canonical_name_vi": "Giáo dục Quốc phòng và An ninh 2",
+    "aliases": [
+      "môn giáo dục quốc phòng và an ninh 2",
+      "mon giáo dục quốc phòng và an ninh 2",
+      "mon giao duc quoc phong va an ninh 2",
+      "môn national defense education 2",
+      "mon national defense education 2",
+      "giáo dục quốc phòng và an ninh 2",
+      "giao duc quoc phong va an ninh 2",
+      "national defense education 2",
+      "mil121"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 0, Học kỳ: 1, Ngành: Chung"
+  },
+  {
+    "entity_id": "COURSE_SSL101C",
+    "entity_type": "course",
+    "code": "SSL101C",
+    "canonical_name": "Academic Skills for University Success",
+    "canonical_name_vi": "Kỹ năng học tập đại học",
+    "aliases": [
+      "môn academic skills for university success",
+      "mon academic skills for university success",
+      "academic skills for university success",
+      "môn kỹ năng học tập đại học",
+      "mon kỹ năng học tập đại học",
+      "mon ky nang hoc tap dai hoc",
+      "kỹ năng học tập đại học",
+      "ky nang hoc tap dai hoc",
+      "ssl101c"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 1, Ngành: Chung"
+  },
+  {
+    "entity_id": "COURSE_EXE101",
+    "entity_type": "course",
+    "code": "EXE101",
+    "canonical_name": "Experiential Entrepreneurship 1",
+    "canonical_name_vi": "Trải nghiệm khởi nghiệp 1",
+    "aliases": [
+      "môn experiential entrepreneurship 1",
+      "mon experiential entrepreneurship 1",
+      "experiential entrepreneurship 1",
+      "môn trải nghiệm khởi nghiệp 1",
+      "mon trải nghiệm khởi nghiệp 1",
+      "mon trai nghiem khoi nghiep 1",
+      "trải nghiệm khởi nghiệp 1",
+      "trai nghiem khoi nghiep 1",
+      "exe101"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 4, Ngành: Chung"
+  },
+  {
+    "entity_id": "COURSE_EXE201",
+    "entity_type": "course",
+    "code": "EXE201",
+    "canonical_name": "Experiential Entrepreneurship 2",
+    "canonical_name_vi": "Trải nghiệm khởi nghiệp 2",
+    "aliases": [
+      "môn experiential entrepreneurship 2",
+      "mon experiential entrepreneurship 2",
+      "experiential entrepreneurship 2",
+      "môn trải nghiệm khởi nghiệp 2",
+      "mon trải nghiệm khởi nghiệp 2",
+      "mon trai nghiem khoi nghiep 2",
+      "trải nghiệm khởi nghiệp 2",
+      "trai nghiem khoi nghiep 2",
+      "exe201"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 5, Ngành: Chung"
+  },
+  {
+    "entity_id": "COURSE_IOT102",
+    "entity_type": "course",
+    "code": "IOT102",
+    "canonical_name": "Internet of Things",
+    "canonical_name_vi": "Internet vạn vật",
+    "aliases": [
+      "môn internet of things",
+      "mon internet of things",
+      "môn internet vạn vật",
+      "mon internet vạn vật",
+      "mon internet van vat",
+      "internet of things",
+      "internet vạn vật",
+      "internet van vat",
+      "iot102"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data_courses.json",
+      "section": "courses"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Tín chỉ: 3, Học kỳ: 4, Ngành: Kỹ thuật phần mềm"
+  }
+]

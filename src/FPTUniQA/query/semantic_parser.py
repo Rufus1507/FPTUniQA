@@ -213,15 +213,21 @@ def _parse_with_llm(question: str) -> Optional[Dict[str, Any]]:
         return None
 
 
-def _parse_with_regex(question: str) -> Dict[str, Any]:
+def _parse_with_regex(question: str, norm_res: Optional[Any] = None) -> Dict[str, Any]:
     """Phân tích dự phòng bằng Regex / Rule-based khi LLM gặp sự cố."""
     q_lower = question.lower()
     slots: Dict[str, Any] = {}
 
-    # 1. Kiểm tra course_lookup trước (Nếu câu hỏi chứa mã môn học thuộc CKB hợp lệ thì không bị chặn bởi OOD)
+    # 1. Kiểm tra course_lookup trước (Nếu câu hỏi chứa mã môn học thuộc CKB hoặc nhận diện từ EntityNormalizer)
     course_match = COURSE_CODE_REGEX.search(question)
-    if course_match and course_match.group(1).upper() in _get_known_course_codes():
+    c_code = None
+    known_codes = _get_known_course_codes()
+    if course_match and course_match.group(1).upper() in known_codes:
         c_code = course_match.group(1).upper()
+    elif norm_res and norm_res.slots_hint.get('course_code') in known_codes:
+        c_code = norm_res.slots_hint['course_code']
+
+    if c_code:
         if any(w in q_lower for w in ["học những gì", "học gì", "nội dung", "kiến thức", "chủ đề", "kỹ năng", "dạy những gì", "học cái gì", "học môn này được gì"]):
             aspect = "syllabus"
         elif any(w in q_lower for w in ["giáo trình", "sách", "tài liệu", "sách giáo trình", "tác giả", "ai viết", "nhà xuất bản"]):
@@ -280,6 +286,15 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
             "confidence": 0.88,
         }
 
+    # 3.5. Kiểm tra quy định điểm F hoặc quyền hạn học vụ khi nợ học phí -> policy_lookup
+    if any(kw in q_lower for kw in ["điểm f", "diem f", "nợ học phí thì có", "nợ học phí có", "được đkm"]):
+        slots["topic"] = "quy_che_chung"
+        return {
+            "intent": QueryIntent.POLICY_LOOKUP.value,
+            "slots": slots,
+            "confidence": 0.88,
+        }
+
     # 4. Kiểm tra tuition_lookup (Học phí và Lệ phí có cấu trúc)
     is_common_fee = any(kw in q_lower for kw in [
         "lệ phí thi lại", "phí thi lại", "thi lại bao nhiêu", "lệ phí thi",
@@ -287,15 +302,30 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
         "phí ký túc", "ký túc xá", "phí ktx", "ký túc xá một kỳ",
         "lệ phí tốt nghiệp", "phí tốt nghiệp", "cấp bằng là bao nhiêu"
     ])
-    is_tuition = is_common_fee or any(kw in q_lower for kw in [
-        "học phí", "tiền học", "chi phí", "khoản phí", "lệ phí", "biểu phí", "phí bảo hiểm", "bảo hiểm y tế"
+    has_tuition_entity = False
+    if norm_res and getattr(norm_res, "entities", None):
+        has_tuition_entity = any(
+            e.entity_id == "TERM_HOC_PHI" or getattr(e, "code", "") == "TUITION"
+            for e in norm_res.entities
+        )
+    is_tuition = is_common_fee or has_tuition_entity or any(kw in q_lower for kw in [
+        "học phí", "hoc phi", "tiền học", "tien hoc", "chi phí", "chi phi", "khoản phí", "khoan phi",
+        "lệ phí", "le phi", "biểu phí", "bieu phi", "phí bảo hiểm", "bảo hiểm y tế"
     ]) or (
-        "tín chỉ" in q_lower and any(kw in q_lower for kw in ["bao nhiêu tiền", "giá", "mức phí", "đóng tiền", "một tín chỉ", "1 tín chỉ"])
+        ("tín chỉ" in q_lower or "tin chi" in q_lower) and any(kw in q_lower for kw in [
+            "bao nhiêu tiền", "giá", "mức phí", "đóng tiền", "một tín chỉ", "1 tín chỉ", "bao nhieu tien"
+        ])
     )
     if is_tuition:
         if is_common_fee:
             slots["topic"] = "common_fee"
             slots["program"] = "chung"
+        elif norm_res and norm_res.slots_hint.get("program"):
+            slots["program"] = norm_res.slots_hint["program"]
+        if norm_res and norm_res.slots_hint.get("cohort"):
+            slots["cohort"] = norm_res.slots_hint["cohort"]
+        if norm_res and norm_res.slots_hint.get("campus"):
+            slots["campus"] = norm_res.slots_hint["campus"]
 
         # Trích xuất ngành học qua SSOT PROGRAM_ALIAS_MAP và MAJOR_TO_SHORT_CODE
         matched_prog = None
@@ -371,11 +401,19 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
         }
 
     # 6. Fallback thông minh: nếu chứa từ khóa học đường FPT -> policy_lookup, ngược lại -> OOD
+    has_academic_entities = False
+    if norm_res and getattr(norm_res, "entities", None):
+        has_academic_entities = any(
+            e.entity_type in ["major", "course", "cohort", "campus", "academic_term"]
+            for e in norm_res.entities
+        )
     academic_keywords = [
-        "học", "sinh viên", "trường", "thi", "điểm", "học kỳ", "tiếng anh",
-        "ngoại ngữ", "chương trình", "đào tạo", "chứng chỉ", "môn", "ngành"
+        "học", "hoc", "sinh viên", "sinh vien", "trường", "truong", "thi", "điểm", "diem",
+        "học kỳ", "hoc ky", "tiếng anh", "tieng anh", "ngoại ngữ", "ngoai ngu",
+        "chương trình", "chuong trinh", "đào tạo", "dao tao", "chứng chỉ", "chung chi",
+        "môn", "mon", "ngành", "nganh", "khóa", "khoa", "tín chỉ", "tin chi"
     ]
-    if any(kw in q_lower for kw in academic_keywords) or re.search(r"\b(kỳ|kỳ học|mức độ)\b", q_lower):
+    if has_academic_entities or any(kw in q_lower for kw in academic_keywords) or re.search(r"\b(kỳ|ky|kỳ học|ky hoc|mức độ|muc do|k\d{2})\b", q_lower):
         return {
             "intent": QueryIntent.POLICY_LOOKUP.value,
             "slots": {},
@@ -402,6 +440,14 @@ def parse_query(question: str, force_regex: bool = False) -> ParsedQuery:
     start_time = time.time()
     clean_query = normalize_query(question)
 
+    # Chuẩn hóa thực thể học vụ qua Domain Dictionary (EntityNormalizer)
+    norm_res = None
+    try:
+        from FPTUniQA.normalization.engine import get_entity_normalizer
+        norm_res = get_entity_normalizer().normalize(question)
+    except Exception as e:
+        logger.warning(f"Không thể khởi chạy EntityNormalizer: {e}")
+
     # 1. Thử phân tích bằng LLM Structured Output
     llm_result = None if force_regex else _parse_with_llm(question)
 
@@ -418,7 +464,7 @@ def parse_query(question: str, force_regex: bool = False) -> ParsedQuery:
     else:
         # 2. Tự động rơi về Regex Fallback khi LLM thất bại
         logger.info(f"Kích hoạt Regex Fallback cho câu hỏi: '{question}'")
-        regex_result = _parse_with_regex(clean_query)
+        regex_result = _parse_with_regex(clean_query, norm_res=norm_res)
 
         parsed = ParsedQuery(
             intent=regex_result["intent"],
@@ -429,6 +475,21 @@ def parse_query(question: str, force_regex: bool = False) -> ParsedQuery:
             original_query=question,
             normalized_query=clean_query,
         )
+
+    # Bổ sung thực thể đã chuẩn hóa từ Domain Dictionary vào Contract 3
+    if norm_res and norm_res.entities:
+        parsed.entities = {e.entity_id: e.to_dict() for e in norm_res.entities}
+        # Nếu đã tìm thấy thực thể học vụ trong từ điển và không chứa OOD_KEYWORDS, ngăn chặn OOD giả
+        if parsed.intent == QueryIntent.OOD.value and not any(kw in clean_query.lower() for kw in OOD_KEYWORDS):
+            if any(e.entity_id == "TERM_HOC_PHI" or getattr(e, "code", "") == "TUITION" for e in norm_res.entities):
+                parsed.intent = QueryIntent.TUITION_LOOKUP.value
+            else:
+                parsed.intent = QueryIntent.POLICY_LOOKUP.value
+
+        if parsed.intent != QueryIntent.OOD.value:
+            for k, v in norm_res.slots_hint.items():
+                if k not in parsed.slots or not parsed.slots[k]:
+                    parsed.slots[k] = v
 
     # Kiểm tra tính hợp lệ của course_lookup
     if parsed.intent == "course_lookup":

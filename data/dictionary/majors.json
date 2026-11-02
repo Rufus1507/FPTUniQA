@@ -1,0 +1,569 @@
+[
+  {
+    "entity_id": "MAJOR_KTPM",
+    "entity_type": "major",
+    "code": "7480103",
+    "canonical_name": "Software Engineering",
+    "canonical_name_vi": "Kỹ thuật phần mềm",
+    "aliases": [
+      "ngành kỹ thuật phần mềm",
+      "ky su ky thuat phan mem",
+      "kỹ sư kỹ thuật phần mềm",
+      "nganh ky thuat phan mem",
+      "software engineering",
+      "ky thuat phan mem",
+      "kỹ thuật phần mềm",
+      "ktpm",
+      "se",
+      "ngành kỹ thuật pm",
+      "nganh ky thuat pm",
+      "kỹ thuật pm",
+      "ky thuat pm",
+      "kt phần mềm",
+      "kt phan mem"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7480103, thuộc khối Công nghệ thông tin"
+  },
+  {
+    "entity_id": "MAJOR_AI",
+    "entity_type": "major",
+    "code": "7480107",
+    "canonical_name": "Artificial Intelligence",
+    "canonical_name_vi": "Trí tuệ nhân tạo",
+    "aliases": [
+      "trí tuệ nhân tạo và khoa học dữ liệu",
+      "tri tue nhan tao va khoa hoc du lieu",
+      "chuyen nganh tri tue nhan tao",
+      "chuyên ngành trí tuệ nhân tạo",
+      "artificial intelligence",
+      "nganh tri tue nhan tao",
+      "ngành trí tuệ nhân tạo",
+      "trí tuệ nhân tạo",
+      "tri tue nhan tao",
+      "chuyen nganh ai",
+      "chuyên ngành ai",
+      "ngành ai",
+      "nganh ai",
+      "a.i.",
+      "ai"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7480107, thuộc khối Công nghệ thông tin",
+    "disambiguation_rules": {
+      "prefer_course_if_preceded_by": [
+        "môn",
+        "học phần",
+        "mã môn"
+      ],
+      "prefer_major_if_preceded_by": [
+        "ngành",
+        "chuyên ngành",
+        "khoa"
+      ]
+    }
+  },
+  {
+    "entity_id": "MAJOR_ATTT",
+    "entity_type": "major",
+    "code": "7480202",
+    "canonical_name": "Information Assurance",
+    "canonical_name_vi": "An toàn thông tin",
+    "aliases": [
+      "an ninh mạng và an toàn số",
+      "an ninh mang va an toan so",
+      "ngành an toàn thông tin",
+      "nganh an toan thong tin",
+      "information assurance",
+      "an toàn thông tin",
+      "an toan thong tin",
+      "cyber security",
+      "an ninh mang",
+      "an ninh mạng",
+      "attt",
+      "ia",
+      "ngành an toàn tt",
+      "nganh an toan tt",
+      "an toàn tt",
+      "an toan tt",
+      "an toàn tin học",
+      "an toan tin hoc"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7480202, thuộc khối Công nghệ thông tin"
+  },
+  {
+    "entity_id": "MAJOR_KHMT",
+    "entity_type": "major",
+    "code": "7480201",
+    "canonical_name": "Computer Science",
+    "canonical_name_vi": "Khoa học máy tính",
+    "aliases": [
+      "ngành khoa học máy tính",
+      "nganh khoa hoc may tinh",
+      "khoa học máy tính",
+      "khoa hoc may tinh",
+      "computer science",
+      "khmt",
+      "cs",
+      "khoa học mt",
+      "khoa hoc mt"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7480201, thuộc khối Công nghệ thông tin"
+  },
+  {
+    "entity_id": "MAJOR_HTTT",
+    "entity_type": "major",
+    "code": "7480104",
+    "canonical_name": "Information Systems",
+    "canonical_name_vi": "Hệ thống thông tin",
+    "aliases": [
+      "nganh he thong thong tin",
+      "ngành hệ thống thông tin",
+      "information systems",
+      "hệ thống thông tin",
+      "he thong thong tin",
+      "httt",
+      "is",
+      "hệ thống tt",
+      "he thong tt"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7480104, thuộc khối Công nghệ thông tin"
+  },
+  {
+    "entity_id": "MAJOR_TKDH",
+    "entity_type": "major",
+    "code": "7210403",
+    "canonical_name": "Digital Art & Design",
+    "canonical_name_vi": "Thiết kế đồ họa và mỹ thuật số",
+    "aliases": [
+      "thiết kế đồ họa và mỹ thuật số",
+      "thiet ke do hoa va my thuat so",
+      "digital art & design",
+      "thiet ke my thuat so",
+      "thiết kế mỹ thuật số",
+      "thiết kế đồ họa",
+      "thiet ke do hoa",
+      "graphic design",
+      "my thuat so",
+      "mỹ thuật số",
+      "do hoa",
+      "đồ họa",
+      "gd",
+      "ngành thiết kế dh",
+      "nganh thiet ke dh",
+      "thiết kế dh",
+      "thiet ke dh"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7210403, thuộc khối Thiết kế & Nghệ thuật số"
+  },
+  {
+    "entity_id": "MAJOR_QTKD",
+    "entity_type": "major",
+    "code": "7340101",
+    "canonical_name": "Business Administration",
+    "canonical_name_vi": "Quản trị kinh doanh",
+    "aliases": [
+      "cu nhan quan tri kinh doanh",
+      "cử nhân quản trị kinh doanh",
+      "nganh quan tri kinh doanh",
+      "ngành quản trị kinh doanh",
+      "business administration",
+      "quản trị kinh doanh",
+      "quan tri kinh doanh",
+      "qtkd",
+      "ba",
+      "ngành quản trị kd",
+      "nganh quan tri kd",
+      "quản trị kd",
+      "quan tri kd"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7340101, thuộc khối Kinh tế & Quản trị"
+  },
+  {
+    "entity_id": "MAJOR_MARKETING",
+    "entity_type": "major",
+    "code": "7340114",
+    "canonical_name": "Digital Marketing",
+    "canonical_name_vi": "Digital Marketing",
+    "aliases": [
+      "digital marketing",
+      "ngành marketing",
+      "nganh marketing",
+      "tiếp thị số",
+      "tiep thi so",
+      "marketing",
+      "tiep thi",
+      "tiếp thị"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7340114, thuộc khối Kinh tế"
+  },
+  {
+    "entity_id": "MAJOR_KDQT",
+    "entity_type": "major",
+    "code": "7340120",
+    "canonical_name": "International Business",
+    "canonical_name_vi": "Kinh doanh quốc tế",
+    "aliases": [
+      "nganh kinh doanh quoc te",
+      "ngành kinh doanh quốc tế",
+      "international business",
+      "kinh doanh quoc te",
+      "kinh doanh quốc tế",
+      "kdqt",
+      "ib"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7340120, thuộc khối Kinh tế"
+  },
+  {
+    "entity_id": "MAJOR_TTDPT",
+    "entity_type": "major",
+    "code": "7320104",
+    "canonical_name": "Multimedia Communications",
+    "canonical_name_vi": "Truyền thông đa phương tiện",
+    "aliases": [
+      "truyền thông đa phương tiện",
+      "truyen thong da phuong tien",
+      "multimedia communications",
+      "ngành truyền thông",
+      "nganh truyen thong",
+      "truyền thông",
+      "truyen thong",
+      "mc",
+      "truyền thông dpt",
+      "truyen thong dpt",
+      "đa phương tiện",
+      "da phuong tien"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7320104, thuộc khối Truyền thông"
+  },
+  {
+    "entity_id": "MAJOR_NNA",
+    "entity_type": "major",
+    "code": "7220201",
+    "canonical_name": "English Language",
+    "canonical_name_vi": "Ngôn ngữ Anh",
+    "aliases": [
+      "cử nhân ngôn ngữ anh",
+      "cu nhan ngon ngu anh",
+      "ngon ngu anh",
+      "ngôn ngữ anh",
+      "tiếng anh",
+      "tieng anh",
+      "english"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7220201, thuộc khối Ngoại ngữ"
+  },
+  {
+    "entity_id": "MAJOR_NNN",
+    "entity_type": "major",
+    "code": "7220209",
+    "canonical_name": "Japanese Language",
+    "canonical_name_vi": "Ngôn ngữ Nhật",
+    "aliases": [
+      "cử nhân ngôn ngữ nhật",
+      "cu nhan ngon ngu nhat",
+      "ngôn ngữ nhật",
+      "ngon ngu nhat",
+      "tiếng nhật",
+      "tieng nhat",
+      "japanese"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7220209, thuộc khối Ngoại ngữ"
+  },
+  {
+    "entity_id": "MAJOR_NNH",
+    "entity_type": "major",
+    "code": "7220210",
+    "canonical_name": "Korean Language",
+    "canonical_name_vi": "Ngôn ngữ Hàn Quốc",
+    "aliases": [
+      "ngon ngu han quoc",
+      "ngôn ngữ hàn quốc",
+      "ngon ngu han",
+      "ngôn ngữ hàn",
+      "tiếng hàn",
+      "tieng han",
+      "korean"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Mã ngành Bộ GD&ĐT: 7220210, thuộc khối Ngoại ngữ"
+  },
+  {
+    "entity_id": "MAJOR_CNTT",
+    "entity_type": "major",
+    "code": "CNTT",
+    "canonical_name": "Information Technology",
+    "canonical_name_vi": "Công nghệ thông tin",
+    "aliases": [
+      "nganh cong nghe thong tin",
+      "ngành công nghệ thông tin",
+      "information technology",
+      "cong nghe thong tin",
+      "công nghệ thông tin",
+      "cntt",
+      "it",
+      "ngành công nghệ tt",
+      "nganh cong nghe tt",
+      "công nghệ tt",
+      "cong nghe tt",
+      "cntt/it",
+      "it/cntt"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Ngành chung / nhóm ngành Công nghệ thông tin"
+  },
+  {
+    "entity_id": "MAJOR_AUTOMOTIVE",
+    "entity_type": "major",
+    "code": "AUTO",
+    "canonical_name": "Automotive Digital Technology",
+    "canonical_name_vi": "Công nghệ ô tô số (Automotive)",
+    "aliases": [
+      "công nghệ ô tô số (automotive)",
+      "cong nghe o to so (automotive)",
+      "công nghệ ô tô số",
+      "cong nghe o to so",
+      "automotive",
+      "ô tô",
+      "o to"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Định hướng đào tạo mới theo đề án tuyển sinh 2026"
+  },
+  {
+    "entity_id": "MAJOR_SEMICONDUCTOR",
+    "entity_type": "major",
+    "code": "SEMI",
+    "canonical_name": "Semiconductor IC Design",
+    "canonical_name_vi": "Vi mạch bán dẫn",
+    "aliases": [
+      "thiet ke vi mach ban dan",
+      "thiết kế vi mạch bán dẫn",
+      "vi mach ban dan",
+      "vi mạch bán dẫn",
+      "semiconductor",
+      "ban dan",
+      "bán dẫn",
+      "vi mach",
+      "vi mạch"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Định hướng đào tạo mới theo đề án tuyển sinh 2026"
+  },
+  {
+    "entity_id": "MAJOR_DATA_SCIENCE",
+    "entity_type": "major",
+    "code": "DS",
+    "canonical_name": "Data Science and Applications",
+    "canonical_name_vi": "Khoa học dữ liệu và ứng dụng",
+    "aliases": [
+      "khoa hoc du lieu va ung dung",
+      "khoa học dữ liệu và ứng dụng",
+      "khoa hoc du lieu ung dung",
+      "khoa học dữ liệu ứng dụng",
+      "khoa học dữ liệu",
+      "khoa hoc du lieu",
+      "data science",
+      "khdl"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Chuyên ngành thuộc khối CNTT"
+  },
+  {
+    "entity_id": "MAJOR_LAW",
+    "entity_type": "major",
+    "code": "LAW",
+    "canonical_name": "Economic Law",
+    "canonical_name_vi": "Luật kinh tế",
+    "aliases": [
+      "luat kinh te",
+      "luật kinh tế",
+      "nganh luat",
+      "ngành luật",
+      "luật",
+      "luat"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Khối ngành Luật ĐH FPT"
+  },
+  {
+    "entity_id": "MAJOR_NNT",
+    "entity_type": "major",
+    "code": "NNT",
+    "canonical_name": "Chinese Language",
+    "canonical_name_vi": "Ngôn ngữ Trung Quốc",
+    "aliases": [
+      "ngôn ngữ trung quốc",
+      "ngon ngu trung quoc",
+      "ngon ngu trung",
+      "ngôn ngữ trung",
+      "tiếng trung",
+      "tieng trung",
+      "chinese"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "data/processed/structured_data.json",
+      "section": "tuition_rates"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Khối Ngoại ngữ"
+  }
+]
