@@ -1,9 +1,11 @@
 """Lớp giao tiếp với mô hình ngôn ngữ lớn (LLM Client) hỗ trợ OpenAI-compatible API và Anthropic API."""
 
 import requests
-from typing import Optional
+from pathlib import Path
+from typing import Any, Dict, Optional
 from FPTUniQA.utils.config import config
 from FPTUniQA.utils.exceptions import CircuitBreaker, CircuitBreakerOpenError
+from FPTUniQA.utils.io import read_json
 from FPTUniQA.utils.logger import get_logger
 
 try:
@@ -13,6 +15,62 @@ except ImportError:
 
 logger = get_logger("FPTUniQA.llm")
 _llm_breaker = CircuitBreaker(failure_threshold=2, recovery_timeout=60.0, name="llm_generation")
+
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+FALLBACK_TEMPLATES_PATH = Path("data/fallback_templates.json")
+if not FALLBACK_TEMPLATES_PATH.exists():
+    FALLBACK_TEMPLATES_PATH = _PROJECT_ROOT / "data/fallback_templates.json"
+
+_FALLBACK_TEMPLATES_CACHE: Optional[Dict[str, Any]] = None
+
+_BUILTIN_FALLBACK_TEMPLATES = {
+    "disciplinary_warning": {
+        "keywords": ["cảnh báo", "cảnh cáo"],
+        "answer": (
+            "Theo quy chế của Đại học FPT [Nguồn 1], sinh viên sẽ bị cảnh cáo học vụ nếu: "
+            "(1) Điểm trung bình học kỳ (GPA) dưới 1.0 trong học kỳ đầu tiên, hoặc dưới 1.2 trong các kỳ tiếp theo; "
+            "(2) Điểm trung bình tích lũy (CGPA) dưới 1.2 đối với năm nhất, dưới 1.4 đối với năm hai, và dưới 1.6 đối với năm ba trở đi. "
+            "Đặc biệt, sinh viên bị cảnh cáo học vụ 3 lần liên tiếp sẽ bị xử lý buộc thôi học [Nguồn 1]."
+        ),
+    },
+    "graduation": {
+        "keywords": ["tốt nghiệp"],
+        "answer": (
+            "Theo quy định xét tốt nghiệp của ĐH FPT [Nguồn 2], sinh viên cần đáp ứng các điều kiện: "
+            "hoàn thành đủ số tín chỉ, điểm CGPA đạt từ 2.00 trở lên, đạt chuẩn ngoại ngữ tương đương IELTS 5.5/TOEIC 550, "
+            "hoàn thành GDQP, GDTC và kỳ thực tập OJT [Nguồn 2]."
+        ),
+    },
+    "tuition": {
+        "keywords": ["học phí"],
+        "answer": (
+            "Theo chính sách học phí ĐH FPT [Nguồn 3], học phí chuyên ngành tiêu chuẩn là 28.700.000 VNĐ/học kỳ. "
+            "Học phí phải được hoàn tất trước ngày học đầu tiên ít nhất 7 ngày qua cổng FAP hoặc ngân hàng liên kết [Nguồn 3]."
+        ),
+    },
+    "generic": {
+        "keywords": [],
+        "answer": (
+            "Dựa trên các tài liệu quy chế được trích xuất [Nguồn 1], thông tin liên quan đến câu hỏi của bạn "
+            "đã được ghi nhận. Vui lòng tham khảo kỹ các điều khoản trích dẫn bên dưới để nắm rõ chi tiết [Nguồn 1]."
+        ),
+    },
+}
+
+
+def _load_fallback_templates() -> Dict[str, Any]:
+    """Nạp templates câu trả lời dự phòng từ file JSON hoặc dùng built-in an toàn."""
+    global _FALLBACK_TEMPLATES_CACHE
+    if _FALLBACK_TEMPLATES_CACHE is not None:
+        return _FALLBACK_TEMPLATES_CACHE
+    if FALLBACK_TEMPLATES_PATH.exists():
+        try:
+            _FALLBACK_TEMPLATES_CACHE = read_json(FALLBACK_TEMPLATES_PATH)
+            return _FALLBACK_TEMPLATES_CACHE
+        except Exception as e:
+            logger.warning(f"Lỗi khi đọc file fallback_templates.json: {e}. Sử dụng built-in.")
+    _FALLBACK_TEMPLATES_CACHE = _BUILTIN_FALLBACK_TEMPLATES
+    return _FALLBACK_TEMPLATES_CACHE
 
 
 class LLMClient:
@@ -84,8 +142,8 @@ class LLMClient:
                 response = self._openai_client.chat.completions.create(
                     model=self.model_name,
                     messages=messages,
-                    temperature=0.1,
-                    max_tokens=1024,
+                    temperature=config.temperature_generation,
+                    max_tokens=config.max_tokens_generation,
                     stream=False,
                 )
                 choice = response.choices[0]
@@ -104,8 +162,8 @@ class LLMClient:
             try:
                 response = self._anthropic_client.messages.create(
                     model=self.model_name,
-                    max_tokens=1024,
-                    temperature=0.1,
+                    max_tokens=config.max_tokens_generation,
+                    temperature=config.temperature_generation,
                     system=system_prompt,
                     messages=[{"role": "user", "content": user_prompt}],
                 )
@@ -139,8 +197,8 @@ class LLMClient:
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
                 ],
-                "temperature": 0.1,
-                "max_tokens": 1024,
+                "temperature": config.temperature_generation,
+                "max_tokens": config.max_tokens_generation,
                 "stream": False,
             }
             res = requests.post(endpoint, headers=headers, json=payload, timeout=self.timeout)
@@ -174,27 +232,18 @@ class LLMClient:
                     if extracted_parts:
                         return " ".join(extracted_parts)
 
+        templates = _load_fallback_templates()
         lower_prompt = user_prompt.lower()
-        if "cảnh báo" in lower_prompt or "cảnh cáo" in lower_prompt:
-            return (
-                "Theo quy chế của Đại học FPT [Nguồn 1], sinh viên sẽ bị cảnh cáo học vụ nếu: "
-                "(1) Điểm trung bình học kỳ (GPA) dưới 1.0 trong học kỳ đầu tiên, hoặc dưới 1.2 trong các kỳ tiếp theo; "
-                "(2) Điểm trung bình tích lũy (CGPA) dưới 1.2 đối với năm nhất, dưới 1.4 đối với năm hai, và dưới 1.6 đối với năm ba trở đi. "
-                "Đặc biệt, sinh viên bị cảnh cáo học vụ 3 lần liên tiếp sẽ bị xử lý buộc thôi học [Nguồn 1]."
-            )
-        elif "tốt nghiệp" in lower_prompt:
-            return (
-                "Theo quy định xét tốt nghiệp của ĐH FPT [Nguồn 2], sinh viên cần đáp ứng các điều kiện: "
-                "hoàn thành đủ số tín chỉ, điểm CGPA đạt từ 2.00 trở lên, đạt chuẩn ngoại ngữ tương đương IELTS 5.5/TOEIC 550, "
-                "hoàn thành GDQP, GDTC và kỳ thực tập OJT [Nguồn 2]."
-            )
-        elif "học phí" in lower_prompt:
-            return (
-                "Theo chính sách học phí ĐH FPT [Nguồn 3], học phí chuyên ngành tiêu chuẩn là 28.700.000 VNĐ/học kỳ. "
-                "Học phí phải được hoàn tất trước ngày học đầu tiên ít nhất 7 ngày qua cổng FAP hoặc ngân hàng liên kết [Nguồn 3]."
-            )
-        else:
-            return (
-                "Dựa trên các tài liệu quy chế được trích xuất [Nguồn 1], thông tin liên quan đến câu hỏi của bạn "
-                "đã được ghi nhận. Vui lòng tham khảo kỹ các điều khoản trích dẫn bên dưới để nắm rõ chi tiết [Nguồn 1]."
-            )
+
+        for key in ["disciplinary_warning", "graduation", "tuition"]:
+            entry = templates.get(key, {})
+            keywords = entry.get("keywords", [])
+            if any(kw in lower_prompt for kw in keywords):
+                return entry.get("answer", "")
+
+        generic_entry = templates.get("generic", {})
+        return generic_entry.get(
+            "answer",
+            "Dựa trên các tài liệu quy chế được trích xuất [Nguồn 1], thông tin liên quan đến câu hỏi của bạn "
+            "đã được ghi nhận. Vui lòng tham khảo kỹ các điều khoản trích dẫn bên dưới để nắm rõ chi tiết [Nguồn 1]."
+        )

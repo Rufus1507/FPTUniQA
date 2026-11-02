@@ -38,12 +38,18 @@ class Settings(BaseSettings):
     rate_limit_rpm: int = Field(default=60, description="Số lượng request tối đa trong 1 phút cho mỗi IP")
     max_payload_bytes: int = Field(default=10485760, description="Kích thước payload tối đa (bytes, mặc định 10MB)")
 
-    # LLM Provider
+    # LLM Provider & Generation Hyperparameters
     llm_base_url: str = Field(default="http://localhost:20128/v1", description="Endpoint OpenAI-compatible LLM")
     llm_api_key: str = Field(default="", description="API Key cho LLM")
     anthropic_api_key: str = Field(default="", description="API Key cho Anthropic Claude")
     model_name: str = Field(default="gemini/gemini-3.5-flash-lite", description="Tên mô hình LLM")
     llm_timeout: float = Field(default=2.0, description="Timeout gọi LLM (giây)")
+    temperature_generation: float = Field(default=0.1, description="Temperature cho câu trả lời RAG")
+    max_tokens_generation: int = Field(default=1024, description="Max tokens cho câu trả lời RAG")
+    temperature_parser: float = Field(default=0.0, description="Temperature cho Semantic Parser")
+    max_tokens_parser: int = Field(default=1024, description="Max tokens cho Semantic Parser")
+    temperature_rewriter: float = Field(default=0.0, description="Temperature cho Query Rewriter")
+    max_tokens_rewriter: int = Field(default=512, description="Max tokens cho Query Rewriter")
 
     # Retrieval & Reranking
     default_top_k: int = Field(default=5, description="Số lượng tài liệu truy xuất mặc định")

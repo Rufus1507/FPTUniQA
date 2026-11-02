@@ -59,9 +59,20 @@ logs/*
 *.jsonl
 !data/processed/*.jsonl
 !data/evaluation/*.jsonl
+!data/evaluation/**/*.jsonl
 !tests/fixtures/*.jsonl
 response*.json
 scratch/
+
+# Temporary patch & inspection scripts
+scripts/patch_*.py
+scripts/inspect_*.py
+scripts/call_claude_planner.py
+
+# Claude & Assistant temporary files
+.claude*
+.claude_request.md
+.claude_plan.md
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/

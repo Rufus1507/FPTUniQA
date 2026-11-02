@@ -58,6 +58,7 @@ CAMPUS_PATTERNS = [
             "tp.hcm",
             "sài gòn",
             "sai gon",
+            "quận 9",
         ],
         r"h[oồ\?]\s*ch[ií\?]\s*m[ií\?]nh",
     ),

@@ -51,6 +51,10 @@ generation:
   model: "gemini-1.5-flash"
   temperature: 0.1
   max_output_tokens: 1024
+  parser_temperature: 0.0
+  parser_max_tokens: 1024
+  rewriter_temperature: 0.0
+  rewriter_max_tokens: 512
   system_instruction: "Bạn là trợ lý ảo thông minh giải đáp quy chế và đào tạo đại học. Chỉ trả lời dựa trên tài liệu được cung cấp. Nếu không tìm thấy thông tin, hãy thẳng thắn thông báo."
 
 api:
@@ -58,3 +62,26 @@ api:
   port: 8000
   title: "FPTUniQA API"
   version: "v1"
+
+fees:
+  common_fees_fallback:
+    retake_exam_fee_vnd: 300000
+    relearn_per_credit_vnd: 650000
+    transcript_confirmation_fee_vnd: 50000
+    dormitory_fuhl_per_term_vnd: 4000000
+    graduation_fee_vnd: 1500000
+    dormitory_note_campus: "FUHL Hòa Lạc"
+  regional_discount_fallback:
+    rate: 0.3
+    campuses: ["Cần Thơ", "Đà Nẵng"]
+  discount_notes:
+    "Đà Nẵng": 0.3
+    "Cần Thơ": 0.3
+    "Quy Nhơn": 0.5
+  ojt_policy:
+    message: "Theo quy định đào tạo của Đại học FPT, trong giai đoạn thực tập tại doanh nghiệp (OJT - On the Job Training), sinh viên không phải đóng học phí chuyên ngành mà chỉ đóng chi phí quản lý thực tập (hoặc miễn học phí tùy chương trình)."
+    source: "Quy chế đào tạo và thực tập OJT ĐH FPT"
+  defaults:
+    total_specialized_terms: 9
+    cohort: "K22"
+    academic_year: "2026"

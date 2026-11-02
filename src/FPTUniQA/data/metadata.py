@@ -47,7 +47,8 @@ _DOC_TYPE_RULES: List[Dict[str, Any]] = [
 ]
 
 # ---------------------------------------------------------------------------- #
-# Quy tắc xác định campus
+# Quy tắc xác định campus cho pipeline nạp dữ liệu thô (Ingest-time).
+# Lưu ý: Đối với tầng truy vấn người dùng (Query-time), SSOT là FPTUniQA.query.campus_matcher.
 # ---------------------------------------------------------------------------- #
 _CAMPUS_RULES: List[Dict[str, Any]] = [
     {"campus": "ha_noi", "keywords": ["hà nội", "ha-noi", "campus hà nội", "/hn/", "hoa lạc"]},

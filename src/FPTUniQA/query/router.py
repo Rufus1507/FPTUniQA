@@ -14,10 +14,33 @@ from pathlib import Path
 from typing import Any, Dict, List, Literal, Optional, Tuple
 
 from contracts import ParsedQuery
-from FPTUniQA.query.campus_matcher import match_campus
+from FPTUniQA.query.campus_matcher import CAMPUS_DISPLAY_NAMES, match_campus
+from FPTUniQA.query.constants import (
+    COHORT_WIDE_KEYWORDS,
+    COMMON_FEE_KEYWORDS,
+    OOD_KEYWORDS,
+    PROGRAM_ALIAS_MAP,
+    REGIONAL_DISCOUNT_KEYWORDS,
+)
+from FPTUniQA.utils.config import load_config
 from FPTUniQA.utils.logger import get_logger
 
 logger = get_logger("FPTUniQA.query.router")
+
+_FEES_CONFIG_CACHE = None
+
+
+def _get_fees_config() -> Dict[str, Any]:
+    """Nạp cấu hình fees từ base.yaml có bộ nhớ đệm."""
+    global _FEES_CONFIG_CACHE
+    if _FEES_CONFIG_CACHE is None:
+        try:
+            cfg = load_config()
+            _FEES_CONFIG_CACHE = cfg.get("fees", {})
+        except Exception as e:
+            logger.warning(f"Không thể nạp cấu hình fees từ base.yaml: {e}")
+            _FEES_CONFIG_CACHE = {}
+    return _FEES_CONFIG_CACHE
 
 RouteType = Literal["structured_lookup", "rag_pipeline", "clarification", "ood", "uncertain"]
 
@@ -160,6 +183,10 @@ def route_query(
     if parsed.intent == "OOD":
         return RouteResult("ood", None, level=10)
 
+    q_lower = (parsed.normalized_query or parsed.original_query or "").lower()
+    if any(kw in q_lower for kw in OOD_KEYWORDS):
+        return RouteResult("ood", None, level=10)
+
     # 0. Kiểm tra ngưỡng tin cậy an toàn (Tuần 6 Guardrail)
     if parsed.confidence is not None and parsed.confidence < 0.5:
         return RouteResult(
@@ -169,6 +196,11 @@ def route_query(
         )
 
     # 2. Nhánh tra cứu học phí / số liệu (tuition_lookup)
+    # 1.8. Nhận diện các câu hỏi lệ phí chung (bảng điểm, tốt nghiệp, định hướng, học lại, thi lại)
+    if any(kw in q_lower for kw in COMMON_FEE_KEYWORDS) and "chuyên ngành" not in q_lower:
+        lvl = determine_query_level(parsed, "structured_lookup", history)
+        return RouteResult("structured_lookup", None, level=lvl)
+
     if parsed.intent == "tuition_lookup":
         slots = parsed.slots or {}
         has_program = bool(slots.get("program")) and slots.get("program") not in ["chung", "chuyên ngành"]
@@ -177,12 +209,12 @@ def route_query(
         q_text = (parsed.normalized_query or parsed.original_query or "").lower()
 
         # Kiểm tra các câu hỏi về lệ phí chung hoặc chính sách ưu đãi phân hiệu
-        is_regional_discount = any(w in q_text for w in ["ưu đãi", "giảm", "bao nhiêu %", "phần trăm", "hỗ trợ học phí", "chính sách ưu đãi"]) and any(c in q_text for c in ["quy nhơn", "cần thơ", "đà nẵng", "phân hiệu", "cơ sở"])
+        is_regional_discount = any(w in q_text for w in REGIONAL_DISCOUNT_KEYWORDS) and any(c in q_text for c in ["quy nhơn", "cần thơ", "đà nẵng", "phân hiệu", "cơ sở"])
         is_ojt_fee = ("ojt" in q_text or "thực tập" in q_text) and ("học phí" in q_text or "phí" in q_text or "đóng" in q_text)
-        is_common_fee = (slots.get("topic") == "common_fee") or any(w in q_text for w in ["thi lại", "học lại", "ký túc xá", "lệ phí tốt nghiệp", "lệ phí cấp bằng"]) or is_regional_discount or is_ojt_fee
+        is_common_fee = (slots.get("topic") == "common_fee") or any(w in q_text for w in COMMON_FEE_KEYWORDS) or is_regional_discount or is_ojt_fee
 
-        # Câu hỏi tra cứu biểu phí toàn khóa (cohort-wide): có cohort và yêu cầu biểu phí chung/chuyên ngành/toàn khóa
-        is_cohort_wide = has_cohort and any(w in q_text for w in ["chuyên ngành", "toàn khóa", "biểu phí chung", "tất cả các ngành", "khung học phí"])
+        # Câu hỏi tra cứu biểu phí toàn khóa (cohort-wide): có cohort và yêu cầu biểu phí chung/chuyên ngành/toàn khóa/tiếng anh/lệ phí/kỳ học
+        is_cohort_wide = has_cohort and any(w in q_text for w in COHORT_WIDE_KEYWORDS)
 
         # Đủ ngành và khóa tuyển sinh (hoặc phân hiệu) hoặc biểu phí chung -> Tra cứu bảng số liệu (Zero Hallucination)
         if ((has_program and (has_cohort or has_campus)) or is_common_fee or is_cohort_wide):
@@ -228,6 +260,13 @@ def route_query(
         lvl = determine_query_level(parsed, "structured_lookup", history)
         return RouteResult("structured_lookup", None, level=lvl)
 
+    # 2.8. Backstop cho các câu hỏi theo khóa (K17-K22) hỏi về kỳ học, lệ phí, tiếng Anh chuẩn bị
+    cm_backstop = re.search(r"\b(K1[7-9]|K2[0-2]|202[0-6])\b", q_raw, re.IGNORECASE)
+    is_grad_kw = any(w in q_raw.lower() for w in ["chuẩn đầu ra", "tốt nghiệp", "chứng chỉ"])
+    if cm_backstop and not is_grad_kw and any(w in q_raw.lower() for w in ["học kỳ", "kỳ học", "chuyên ngành", "tiếng anh", "dự bị", "chuẩn bị", "thi lại", "học lại", "ký túc", "ktx", "biểu phí"]):
+        lvl = determine_query_level(parsed, "structured_lookup", history)
+        return RouteResult("structured_lookup", None, level=lvl)
+
     # 3. Nhánh quy chế và tốt nghiệp -> Chuyển vào RAG Pipeline
     lvl = determine_query_level(parsed, "rag_pipeline", history)
     return RouteResult("rag_pipeline", None, level=lvl)
@@ -267,56 +306,17 @@ def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:
                     raw_campus = found_c
                     break
 
-    # Chuẩn hóa tên ngành
-    program_alias_map = {
-        "ai": "Trí tuệ nhân tạo",
-        "trí tuệ nhân tạo": "Trí tuệ nhân tạo",
-        "tri tue nhan tao": "Trí tuệ nhân tạo",
-        "cntt": "Công nghệ thông tin",
-        "công nghệ thông tin": "Công nghệ thông tin",
-        "cong nghe thong tin": "Công nghệ thông tin",
-        "ktpm": "Kỹ thuật phần mềm",
-        "kỹ thuật phần mềm": "Kỹ thuật phần mềm",
-        "ky thuat phan mem": "Kỹ thuật phần mềm",
-        "attt": "An toàn thông tin",
-        "an toàn thông tin": "An toàn thông tin",
-        "an toan thong tin": "An toàn thông tin",
-        "khdl": "Khoa học dữ liệu và ứng dụng",
-        "khoa học dữ liệu": "Khoa học dữ liệu và ứng dụng",
-        "khoa học dữ liệu và ứng dụng": "Khoa học dữ liệu và ứng dụng",
-        "vi mạch": "Vi mạch bán dẫn",
-        "bán dẫn": "Vi mạch bán dẫn",
-        "vi mạch bán dẫn": "Vi mạch bán dẫn",
-        "ô tô": "Công nghệ ô tô số (Automotive)",
-        "công nghệ ô tô số": "Công nghệ ô tô số (Automotive)",
-        "httt": "Hệ thống thông tin",
-        "hệ thống thông tin": "Hệ thống thông tin",
-        "đồ họa": "Thiết kế đồ họa và mỹ thuật số",
-        "mỹ thuật số": "Thiết kế đồ họa và mỹ thuật số",
-        "thiết kế đồ họa": "Thiết kế đồ họa và mỹ thuật số",
-        "truyền thông": "Truyền thông đa phương tiện",
-        "truyền thông đa phương tiện": "Truyền thông đa phương tiện",
-        "qtkd": "Quản trị kinh doanh",
-        "quản trị kinh doanh": "Quản trị kinh doanh",
-        "kdqt": "Kinh doanh quốc tế",
-        "kinh doanh quốc tế": "Kinh doanh quốc tế",
-        "marketing": "Marketing",
-        "ngôn ngữ anh": "Ngôn ngữ Anh",
-        "tiếng anh": "Ngôn ngữ Anh",
-        "ngôn ngữ hàn": "Ngôn ngữ Hàn Quốc",
-        "ngôn ngữ hàn quốc": "Ngôn ngữ Hàn Quốc",
-        "tiếng hàn": "Ngôn ngữ Hàn Quốc",
-        "ngôn ngữ trung": "Ngôn ngữ Trung Quốc",
-        "ngôn ngữ trung quốc": "Ngôn ngữ Trung Quốc",
-        "tiếng trung": "Ngôn ngữ Trung Quốc",
-        "ngôn ngữ nhật": "Ngôn ngữ Nhật",
-        "tiếng nhật": "Ngôn ngữ Nhật",
-        "luật": "Luật",
-        "luật kinh tế": "Luật kinh tế",
-    }
+    # Nạp cấu hình fees từ base.yaml
+    fees_cfg = _get_fees_config()
+    common_fallback = fees_cfg.get("common_fees_fallback", {})
+    regional_fallback = fees_cfg.get("regional_discount_fallback", {})
+    discount_notes = fees_cfg.get("discount_notes", {})
+    ojt_policy = fees_cfg.get("ojt_policy", {})
+    defaults = fees_cfg.get("defaults", {})
 
+    # Chuẩn hóa tên ngành từ SSOT constants
     target_program = raw_program
-    for alias, full_name in program_alias_map.items():
+    for alias, full_name in PROGRAM_ALIAS_MAP.items():
         if alias.lower() == raw_program.lower() or alias.lower() in raw_program.lower():
             target_program = full_name
             break
@@ -374,58 +374,90 @@ def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:
                 "source": "Curriculum Knowledge Base (CKB)",
             }
 
+    # 0. Tra cứu chính sách học phí OJT (kể cả khi có khóa K17-K22)
+    ojt_ans = ojt_policy.get(
+        "message",
+        "Theo quy định đào tạo của Đại học FPT, trong giai đoạn thực tập tại doanh nghiệp (OJT - On the Job Training), sinh viên không phải đóng học phí chuyên ngành mà chỉ đóng chi phí quản lý thực tập (hoặc miễn học phí tùy chương trình)."
+    )
+    ojt_source = ojt_policy.get("source", "Quy chế đào tạo và thực tập OJT ĐH FPT")
+    if ("ojt" in query_str or "thực tập" in query_str) and any(w in query_str for w in ["học phí", "đóng", "phí"]):
+        return {"found": True, "answer": ojt_ans, "text": ojt_ans, "data": {"fee": 0}, "source": ojt_source}
+
+    # 1. Tra cứu biểu phí theo khóa (fpt_cohort_fees) - Ưu tiên khi có khóa cụ thể
+    target_cohort_clean = raw_cohort.upper().strip()
+    if not target_cohort_clean:
+        cm = re.search(r"\b(K1[7-9]|K2[0-2]|202[0-6])\b", query_str, re.IGNORECASE)
+        if cm:
+            target_cohort_clean = cm.group(1).upper()
+
+    is_cohort_subfee = any(w in query_str for w in ["thi lại", "học lại", "ký túc", "ktx", "tiếng anh", "dự bị", "chuẩn bị", "học kỳ", "kỳ học", "biểu phí", "toàn khóa", "khung học phí"])
+    is_specific_major_campus = bool(target_program and target_program not in ["chuyên ngành", "chung"]) and bool(target_campus)
+
+    if real_data and "fpt_cohort_fees" in real_data and target_cohort_clean and (is_cohort_subfee or not is_specific_major_campus):
+        c_fees_list = real_data["fpt_cohort_fees"]
+        default_tot_terms = defaults.get("total_specialized_terms", 9)
+        for item in c_fees_list:
+            if target_cohort_clean == item.get("cohort"):
+                spec_fee = item.get("specialized_term_tuition_vnd", 0)
+                prep_fee = item.get("prep_english_per_level_vnd", 0)
+                relearn_fee = item.get("relearn_per_credit_vnd", 0)
+                retake_fee = item.get("retake_exam_fee_vnd", 0)
+                dorm_fee = item.get("dormitory_fee_per_term_vnd", 0)
+                tot_terms = item.get("total_specialized_terms", default_tot_terms)
+                cam = item.get("campus", "ALL")
+                ans = (
+                    f"Biểu phí tuyển sinh & đào tạo Đại học FPT khóa {target_cohort_clean} (Cơ sở: {cam}):\n"
+                    f"- Học phí chuyên ngành: {spec_fee:,} VNĐ / học kỳ (tổng {tot_terms} học kỳ chuyên ngành).\n"
+                    f"- Học phí tiếng Anh chuẩn bị: {prep_fee:,} VNĐ / mức (level) (tối đa 6 mức).\n"
+                    f"- Lệ phí thi lại: {retake_fee:,} VNĐ / lần thi.\n"
+                    f"- Lệ phí học lại: {relearn_fee:,} VNĐ / tín chỉ.\n"
+                    f"- Phí ký túc xá: {dorm_fee:,} VNĐ / học kỳ."
+                )
+                return {"found": True, "answer": ans, "text": ans, "data": item, "source": f"Biểu phí khóa {target_cohort_clean} ĐH FPT"}
+
     # Tra cứu các loại lệ phí phổ biến (common_fees)
     if real_data and "common_fees" in real_data:
         c_fees = real_data["common_fees"]
         if "thi lại" in query_str:
-            fee = c_fees.get("retake_exam_fee_vnd", 300000)
+            fee = c_fees.get("retake_exam_fee_vnd", common_fallback.get("retake_exam_fee_vnd"))
             ans = f"Lệ phí thi lại của trường Đại học FPT là {fee:,} VNĐ / lần thi."
             return {"found": True, "answer": ans, "text": ans, "data": {"fee": fee}, "source": "Quy định biểu phí ĐH FPT (common_fees)"}
         elif "học lại" in query_str:
-            fee = c_fees.get("relearn_per_credit_vnd", 650000)
+            fee = c_fees.get("relearn_per_credit_vnd", common_fallback.get("relearn_per_credit_vnd"))
             ans = f"Lệ phí đăng ký học lại của Đại học FPT là {fee:,} VNĐ / tín chỉ."
             return {"found": True, "answer": ans, "text": ans, "data": {"fee": fee}, "source": "Quy định biểu phí ĐH FPT (common_fees)"}
+        elif any(w in query_str for w in ["bảng điểm", "bản sao", "xác nhận sinh viên", "giấy xác nhận"]):
+            fee = c_fees.get("transcript_confirmation_fee_vnd", common_fallback.get("transcript_confirmation_fee_vnd"))
+            ans = f"Lệ phí cấp bản sao bảng điểm hoặc giấy xác nhận sinh viên là {fee:,} VNĐ / bản."
+            return {"found": True, "answer": ans, "text": ans, "data": {"fee": fee}, "source": "Quy định biểu phí ĐH FPT (common_fees)"}
         elif "ký túc xá" in query_str or "ktx" in query_str:
-            fee = c_fees.get("dormitory_fuhl_per_term_vnd", 4000000)
-            ans = f"Phí ký túc xá tại phân hiệu FUHL Hòa Lạc là {fee:,} VNĐ / học kỳ."
+            fee = c_fees.get("dormitory_fuhl_per_term_vnd", common_fallback.get("dormitory_fuhl_per_term_vnd"))
+            dorm_campus = common_fallback.get("dormitory_note_campus", "FUHL Hòa Lạc")
+            ans = f"Phí ký túc xá tại phân hiệu {dorm_campus} là {fee:,} VNĐ / học kỳ."
             return {"found": True, "answer": ans, "text": ans, "data": {"fee": fee}, "source": "Quy định biểu phí ĐH FPT (common_fees)"}
         elif "tốt nghiệp" in query_str and ("lệ phí" in query_str or "phí" in query_str or "cấp bằng" in query_str):
-            fee = c_fees.get("graduation_fee_vnd", 1500000)
+            fee = c_fees.get("graduation_fee_vnd", common_fallback.get("graduation_fee_vnd"))
             ans = f"Lệ phí công nhận tốt nghiệp và cấp bằng là {fee:,} VNĐ."
             return {"found": True, "answer": ans, "text": ans, "data": {"fee": fee}, "source": "Quy định biểu phí ĐH FPT (common_fees)"}
         elif "ojt" in query_str and ("học phí" in query_str or "đóng" in query_str or "phí" in query_str):
-            ans = "Theo quy định đào tạo của Đại học FPT, trong giai đoạn thực tập tại doanh nghiệp (OJT - On the Job Training), sinh viên không phải đóng học phí chuyên ngành mà chỉ đóng chi phí quản lý thực tập (hoặc miễn học phí tùy chương trình)."
-            return {"found": True, "answer": ans, "text": ans, "data": {"fee": 0}, "source": "Quy chế đào tạo và thực tập OJT ĐH FPT"}
+            return {"found": True, "answer": ojt_ans, "text": ojt_ans, "data": {"fee": 0}, "source": ojt_source}
 
     # Tra cứu chính sách ưu đãi phân hiệu (regional_discount_policy)
     if real_data and "regional_discount_policy" in real_data:
         discounts = real_data["regional_discount_policy"]
-        if any(k in query_str for k in ["ưu đãi", "giảm", "hỗ trợ học phí", "chính sách ưu đãi", "bao nhiêu %", "phần trăm"]):
+        if any(k in query_str for k in REGIONAL_DISCOUNT_KEYWORDS):
             for camp, rate in discounts.items():
                 if camp.lower() in query_str:
                     pct = int(rate * 100)
                     ans = f"Theo chính sách ưu đãi phân hiệu của Đại học FPT, sinh viên theo học tại phân hiệu {camp} được hỗ trợ ưu đãi học phí là {pct}%."
                     return {"found": True, "answer": ans, "text": ans, "data": {"campus": camp, "discount_rate": rate}, "source": "Chính sách ưu đãi phân hiệu ĐH FPT"}
-            if "cần thơ" in query_str or "đà nẵng" in query_str:
-                ans = "Theo chính sách ưu đãi phân hiệu của Đại học FPT, sinh viên theo học tại phân hiệu Cần Thơ hoặc Đà Nẵng được hỗ trợ ưu đãi học phí là 30%."
-                return {"found": True, "answer": ans, "text": ans, "data": {"discount_rate": 0.3}, "source": "Chính sách ưu đãi phân hiệu ĐH FPT"}
-
-    # Tra cứu biểu phí theo khóa (fpt_cohort_fees)
-    if real_data and "fpt_cohort_fees" in real_data:
-        c_fees_list = real_data["fpt_cohort_fees"]
-        target_cohort_clean = raw_cohort.upper().strip()
-        for item in c_fees_list:
-            if target_cohort_clean == item.get("cohort"):
-                spec_fee = item.get("specialized_term_tuition_vnd", 0)
-                prep_fee = item.get("prep_english_per_level_vnd", 0)
-                cam = item.get("campus", "ALL")
-                ans = (
-                    f"Biểu phí tuyển sinh Đại học FPT khóa {target_cohort_clean} (Cơ sở: {cam}):\n"
-                    f"- Học phí chuyên ngành: {spec_fee:,} VNĐ / học kỳ (tổng 9 học kỳ chuyên ngành).\n"
-                    f"- Học phí tiếng Anh chuẩn bị: {prep_fee:,} VNĐ / mức (level) (tối đa 6 mức)."
-                )
-                if not target_program or target_program in ["chuyên ngành", "chung"]:
-                    return {"found": True, "answer": ans, "text": ans, "data": item, "source": f"Biểu phí khóa {target_cohort_clean} ĐH FPT"}
+            disc_campuses = regional_fallback.get("campuses", ["Cần Thơ", "Đà Nẵng"])
+            disc_rate = float(regional_fallback.get("rate", defaults.get("regional_discount_rate", 0.0)))
+            if any(c.lower() in query_str for c in disc_campuses):
+                disc_pct = int(disc_rate * 100)
+                camp_names_str = " hoặc ".join(disc_campuses)
+                ans = f"Theo chính sách ưu đãi phân hiệu của Đại học FPT, sinh viên theo học tại phân hiệu {camp_names_str} được hỗ trợ ưu đãi học phí là {disc_pct}%."
+                return {"found": True, "answer": ans, "text": ans, "data": {"discount_rate": disc_rate}, "source": "Chính sách ưu đãi phân hiệu ĐH FPT"}
 
     if real_data and "tuition_by_campus" in real_data:
         tuition_by_campus = real_data["tuition_by_campus"]
@@ -477,21 +509,21 @@ def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:
                         "source": f"Biểu phí tuyển sinh ĐH FPT phân hiệu {target_campus} (Khóa 2026/K22)",
                     }
 
-            # Nếu không chỉ định phân hiệu -> Trả về biểu phí tổng hợp cả 5 phân hiệu
+            # Nếu không chỉ định phân hiệu -> Trả về biểu phí tổng hợp các phân hiệu
+            def_year = defaults.get("academic_year", "2026")
+            def_cohort = defaults.get("cohort", "K22")
             lines = [
-                f"Theo biểu phí chính thức tuyển sinh Đại học FPT (Khóa 2026 / K22) cho ngành {matched_major}:"
+                f"Theo biểu phí chính thức tuyển sinh Đại học FPT (Khóa {def_year} / {def_cohort}) cho ngành {matched_major}:"
             ]
             matched_records = []
-            for c_name in ["Hà Nội", "TP. Hồ Chí Minh", "Đà Nẵng", "Cần Thơ", "Quy Nhơn"]:
+            for c_name in list(CAMPUS_DISPLAY_NAMES.values()):
                 c_rows = tuition_by_campus.get(c_name, [])
                 r_found = next((r for r in c_rows if r.get("major_name") == matched_major), None)
                 if r_found:
                     matched_records.append(r_found)
                     discount_note = ""
-                    if c_name in ["Đà Nẵng", "Cần Thơ"]:
-                        discount_note = " (Ưu đãi 30%)"
-                    elif c_name == "Quy Nhơn":
-                        discount_note = " (Ưu đãi 50%)"
+                    if c_name in discount_notes:
+                        discount_note = f" (Ưu đãi {int(discount_notes[c_name] * 100)}%)"
                     lines.append(
                         f"• Phân hiệu {c_name}{discount_note}: "
                         f"{r_found['tuition_other_kv_vnd']:,} VNĐ/kỳ (KV1: {r_found['tuition_kv1_vnd']:,} VNĐ/kỳ)"
@@ -499,7 +531,7 @@ def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:
 
             if credits_text:
                 lines.append(credits_text)
-            lines.append("\n(Lưu ý: Mức học phí áp dụng cho sinh viên nhập học năm 2026 theo từng học kỳ chuyên ngành).")
+            lines.append(f"\n(Lưu ý: Mức học phí áp dụng cho sinh viên nhập học năm {def_year} theo từng học kỳ chuyên ngành).")
 
             ans = "\n".join(lines)
             return {
@@ -507,7 +539,7 @@ def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:
                 "answer": ans,
                 "text": ans,
                 "data": matched_records,
-                "source": f"Biểu phí tuyển sinh ĐH FPT (Khóa 2026/K22) - {matched_major}",
+                "source": f"Biểu phí tuyển sinh ĐH FPT (Khóa {def_year}/{def_cohort}) - {matched_major}",
             }
 
     # 2. Fallback sang mock_tuition_table.json

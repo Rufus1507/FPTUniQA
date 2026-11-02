@@ -94,6 +94,11 @@ class RAGPipeline:
         score_threshold: Optional[float] = None,
         use_mock_fallback: bool = False,
         rerank: bool = True,
+        parser_mode: str = "auto",
+        router_enabled: bool = True,
+        retrieval_mode: str = "hybrid",
+        use_reranker: bool = True,
+        disable_cache: bool = False,
     ):
         self.llm = llm_client or LLMClient()
         self.top_k = top_k or config.default_top_k
@@ -108,18 +113,33 @@ class RAGPipeline:
                 self.score_threshold = 0.0
         self.use_mock_fallback = use_mock_fallback
         self.rerank = rerank
+        self.parser_mode = parser_mode
+        self.router_enabled = router_enabled
+        self.retrieval_mode = retrieval_mode
+        self.use_reranker = use_reranker
         self.session_manager = SessionManager()
 
-        # Khởi tạo HybridRetriever kết nối với dữ liệu thực tế (TV1 / TV2)
+        # Khởi tạo Retriever kết nối với dữ liệu thực tế (hỗ trợ Ablation modes)
         if retriever is not None:
             self.retriever = retriever
         else:
             try:
-                self.retriever = HybridRetriever(auto_load=False)
-                logger.info("Khởi tạo HybridRetriever với Lazy Loading thành công.")
+                from FPTUniQA.pipeline.ablation_retriever import AblationRetriever
+                base_retriever = HybridRetriever(auto_load=False)
+                if retrieval_mode != "default":
+                    self.retriever = AblationRetriever(base_retriever, default_mode=retrieval_mode, auto_load=False)
+                else:
+                    self.retriever = base_retriever
+                logger.info(f"Khởi tạo Retriever ({retrieval_mode}) thành công.")
             except Exception as e:
-                logger.warning(f"Không thể khởi tạo HybridRetriever: {e}.")
+                logger.warning(f"Không thể khởi tạo Retriever: {e}.")
                 self.retriever = None
+
+        if disable_cache and self.retriever is not None:
+            if hasattr(self.retriever, "cache"):
+                self.retriever.cache = None
+            if hasattr(self.retriever, "_hybrid") and hasattr(self.retriever._hybrid, "cache"):
+                self.retriever._hybrid.cache = None
 
         logger.info(
             f"Khởi tạo RAGPipeline với top_k={self.top_k}, score_threshold={self.score_threshold}, "
@@ -161,13 +181,21 @@ class RAGPipeline:
 
 
             # Bước 2: Semantic Parsing (Contract 3) trên câu hỏi đã viết lại
-            parsed_query = parse_query(rewritten_query)
+            t_parse_start = time.time()
+            force_regex = (self.parser_mode == "regex")
+            parsed_query = parse_query(rewritten_query, force_regex=force_regex)
+            parser_latency_ms = round((time.time() - t_parse_start) * 1000, 2)
             logger.debug(f"Bước 2 - ParsedQuery: intent={parsed_query.intent}, slots={parsed_query.slots}")
 
             # Bước 3: Điều phối qua Router (TV3)
-            route_res = route_query(parsed_query, history=history)
-            route_chosen = str(route_res)
-            clarification_msg = getattr(route_res, "clarification", None)
+            if self.router_enabled:
+                route_res = route_query(parsed_query, history=history)
+                route_chosen = str(route_res)
+                clarification_msg = getattr(route_res, "clarification", None)
+            else:
+                route_res = None
+                route_chosen = "rag_pipeline"
+                clarification_msg = None
 
             retrieved_chunks: List[Dict] = []
             final_context = ""
@@ -206,7 +234,7 @@ class RAGPipeline:
                         retrieved_chunks = self.retriever.retrieve_contract2(
                             clean_query,
                             top_k=effective_top_k,
-                            rerank=self.rerank,
+                            rerank=(self.rerank and self.use_reranker),
                             score_threshold=kwargs.get("score_threshold", self.score_threshold),
                         )
                     except Exception as err:
@@ -278,7 +306,7 @@ class RAGPipeline:
                 "rewritten_query": rewritten_query,
                 "route": route_chosen,
                 "intent": intent_label,
-                "level": getattr(route_res, "level", 1),
+                "level": getattr(route_res, "level", 1) if route_res else 1,
                 "topic_switch_detected": topic_switch_detected,
                 "topic_switch_info": topic_switch_info,
                 "parsed_query": parsed_query.model_dump(),
@@ -289,6 +317,7 @@ class RAGPipeline:
                 "retrieved_chunks": retrieved_chunks,
                 "retrieved_documents": retrieved_chunks,
                 "latency_ms": latency_ms,
+                "parser_latency_ms": parser_latency_ms,
             }
 
         except Exception as e:

@@ -1,15 +1,15 @@
 """Module lọc siêu dữ liệu (Metadata Pre-filtering). Phụ trách: TV2."""
 
 from typing import Any, Dict, Optional
+from FPTUniQA.query.campus_matcher import CAMPUS_DISPLAY_NAMES, CampusCode
 
-
-# Map nhóm campus tương đương (HN <=> FUHL <=> Hòa Lạc)
+# Map nhóm campus tương đương (HN <=> FUHL <=> Hòa Lạc) đồng bộ từ SSOT campus_matcher
 _CAMPUS_EQUIVALENCE_SETS = [
-    {"hn", "fuhl", "hà nội", "ha noi", "hòa lạc", "hoa lac"},
-    {"hcm", "hồ chí minh", "ho chi minh", "tp. hồ chí minh", "tp hồ chí minh"},
-    {"dn", "đà nẵng", "da nang"},
-    {"ct", "cần thơ", "can tho"},
-    {"qn", "quy nhơn", "quy nhon"},
+    {"hn", "fuhl", "hà nội", "ha noi", "hòa lạc", "hoa lac", CampusCode.HANOI.value.lower(), CAMPUS_DISPLAY_NAMES[CampusCode.HANOI.value].lower()},
+    {"hcm", "hồ chí minh", "ho chi minh", "tp. hồ chí minh", "tp hồ chí minh", "sài gòn", "sai gon", CampusCode.HCM.value.lower(), CAMPUS_DISPLAY_NAMES[CampusCode.HCM.value].lower()},
+    {"dn", "đà nẵng", "da nang", CampusCode.DANANG.value.lower(), CAMPUS_DISPLAY_NAMES[CampusCode.DANANG.value].lower()},
+    {"ct", "cần thơ", "can tho", CampusCode.CANTHO.value.lower(), CAMPUS_DISPLAY_NAMES[CampusCode.CANTHO.value].lower()},
+    {"qn", "quy nhơn", "quy nhon", CampusCode.QUYNHON.value.lower(), CAMPUS_DISPLAY_NAMES[CampusCode.QUYNHON.value].lower()},
 ]
 
 

@@ -1,0 +1,65 @@
+{
+  "round": 5,
+  "total_questions": 100,
+  "total_passed": 92,
+  "accuracy_total": 0.92,
+  "target_accuracy": 0.9,
+  "verdict": "PASS",
+  "metrics": {
+    "rewriting_accuracy": 0.95,
+    "routing_accuracy": 0.96,
+    "answer_accuracy": 0.96
+  },
+  "category_breakdown": {
+    "multi_turn_continuation": {
+      "total": 40,
+      "passed": 33,
+      "accuracy": 0.825,
+      "rewrite_acc": 0.875,
+      "route_acc": 0.9,
+      "answer_acc": 0.925
+    },
+    "topic_switch_turn1": {
+      "total": 10,
+      "passed": 10,
+      "accuracy": 1.0,
+      "rewrite_acc": 1.0,
+      "route_acc": 1.0,
+      "answer_acc": 1.0
+    },
+    "topic_switch": {
+      "total": 10,
+      "passed": 9,
+      "accuracy": 0.9,
+      "rewrite_acc": 1.0,
+      "route_acc": 1.0,
+      "answer_acc": 0.9
+    },
+    "cohort_specific": {
+      "total": 20,
+      "passed": 20,
+      "accuracy": 1.0,
+      "rewrite_acc": 1.0,
+      "route_acc": 1.0,
+      "answer_acc": 1.0
+    },
+    "course_deep": {
+      "total": 10,
+      "passed": 10,
+      "accuracy": 1.0,
+      "rewrite_acc": 1.0,
+      "route_acc": 1.0,
+      "answer_acc": 1.0
+    },
+    "ood": {
+      "total": 10,
+      "passed": 10,
+      "accuracy": 1.0,
+      "rewrite_acc": 1.0,
+      "route_acc": 1.0,
+      "answer_acc": 1.0
+    }
+  },
+  "execution_time_seconds": 469.46,
+  "timestamp": "2026-10-29 23:29:41"
+}

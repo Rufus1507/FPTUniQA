@@ -8,7 +8,8 @@ from typing import Any, Dict, List, Optional, Union
 from FPTUniQA.utils.io import read_json
 
 
-# Map campus URL keyword → campus display name
+# Map campus URL keyword → campus display name (Bóc tách HTML website tuyển sinh)
+# Lưu ý: Đối với tầng truy vấn người dùng (Query-time), SSOT là FPTUniQA.query.campus_matcher.
 _CAMPUS_URL_MAP = {
     "ha-noi": "Hà Nội",
     "tp-ho-chi-minh": "TP. Hồ Chí Minh",

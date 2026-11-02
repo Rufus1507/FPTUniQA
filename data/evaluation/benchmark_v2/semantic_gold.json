@@ -1,0 +1,3978 @@
+{
+  "V2_B01_001": {
+    "q_id": "V2_B01_001",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "OSG202",
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_002": {
+    "q_id": "V2_B01_002",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_003": {
+    "q_id": "V2_B01_003",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "NWC203C",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_004": {
+    "q_id": "V2_B01_004",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_005": {
+    "q_id": "V2_B01_005",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "PRJ301",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_006": {
+    "q_id": "V2_B01_006",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_007": {
+    "q_id": "V2_B01_007",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "PRN211"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_008": {
+    "q_id": "V2_B01_008",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_009": {
+    "q_id": "V2_B01_009",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SWP391",
+      "program": "Kỹ thuật phần mềm",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_010": {
+    "q_id": "V2_B01_010",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_011": {
+    "q_id": "V2_B01_011",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SWT301",
+      "program": "Kỹ thuật phần mềm",
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_012": {
+    "q_id": "V2_B01_012",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_013": {
+    "q_id": "V2_B01_013",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SWR302",
+      "program": "Kỹ thuật phần mềm",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_014": {
+    "q_id": "V2_B01_014",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_015": {
+    "q_id": "V2_B01_015",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "AIL302M"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_016": {
+    "q_id": "V2_B01_016",
+    "intent": "course_lookup",
+    "slots": {
+      "program": "Trí tuệ nhân tạo",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_017": {
+    "q_id": "V2_B01_017",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "NLP301C",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_018": {
+    "q_id": "V2_B01_018",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_019": {
+    "q_id": "V2_B01_019",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "CVL301C",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_020": {
+    "q_id": "V2_B01_020",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_021": {
+    "q_id": "V2_B01_021",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "DLG301"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_022": {
+    "q_id": "V2_B01_022",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_023": {
+    "q_id": "V2_B01_023",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "CRY301",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_024": {
+    "q_id": "V2_B01_024",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_025": {
+    "q_id": "V2_B01_025",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "IAL201"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_026": {
+    "q_id": "V2_B01_026",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_027": {
+    "q_id": "V2_B01_027",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "MKT101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_028": {
+    "q_id": "V2_B01_028",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_029": {
+    "q_id": "V2_B01_029",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "MGT103",
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_030": {
+    "q_id": "V2_B01_030",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_031": {
+    "q_id": "V2_B01_031",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ECO111",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_032": {
+    "q_id": "V2_B01_032",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_033": {
+    "q_id": "V2_B01_033",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ECO121"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_034": {
+    "q_id": "V2_B01_034",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_035": {
+    "q_id": "V2_B01_035",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "FIN202",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_036": {
+    "q_id": "V2_B01_036",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_037": {
+    "q_id": "V2_B01_037",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "DGT101",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_038": {
+    "q_id": "V2_B01_038",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_039": {
+    "q_id": "V2_B01_039",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "GRA201",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_040": {
+    "q_id": "V2_B01_040",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_041": {
+    "q_id": "V2_B01_041",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ENG101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_042": {
+    "q_id": "V2_B01_042",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_043": {
+    "q_id": "V2_B01_043",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "JAP101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_044": {
+    "q_id": "V2_B01_044",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_045": {
+    "q_id": "V2_B01_045",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "KOR101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_046": {
+    "q_id": "V2_B01_046",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_047": {
+    "q_id": "V2_B01_047",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "VOV124",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_048": {
+    "q_id": "V2_B01_048",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_049": {
+    "q_id": "V2_B01_049",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "MIL111",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B01_050": {
+    "q_id": "V2_B01_050",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_001": {
+    "q_id": "V2_B02_001",
+    "intent": "tuition_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_002": {
+    "q_id": "V2_B02_002",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "PRN211",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_003": {
+    "q_id": "V2_B02_003",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_004": {
+    "q_id": "V2_B02_004",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_005": {
+    "q_id": "V2_B02_005",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_006": {
+    "q_id": "V2_B02_006",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_007": {
+    "q_id": "V2_B02_007",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_008": {
+    "q_id": "V2_B02_008",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "NWC203C",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_009": {
+    "q_id": "V2_B02_009",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_010": {
+    "q_id": "V2_B02_010",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_011": {
+    "q_id": "V2_B02_011",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "CSD201"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_012": {
+    "q_id": "V2_B02_012",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_013": {
+    "q_id": "V2_B02_013",
+    "intent": "policy_lookup",
+    "slots": {
+      "program": "Công nghệ thông tin",
+      "course_aspect": "objective"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_014": {
+    "q_id": "V2_B02_014",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "VOV124",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_015": {
+    "q_id": "V2_B02_015",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_016": {
+    "q_id": "V2_B02_016",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Quy Nhơn",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_017": {
+    "q_id": "V2_B02_017",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K20"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_018": {
+    "q_id": "V2_B02_018",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "AIL302M",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_019": {
+    "q_id": "V2_B02_019",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_020": {
+    "q_id": "V2_B02_020",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_021": {
+    "q_id": "V2_B02_021",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_022": {
+    "q_id": "V2_B02_022",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "CRY301",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_023": {
+    "q_id": "V2_B02_023",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_024": {
+    "q_id": "V2_B02_024",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_025": {
+    "q_id": "V2_B02_025",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "MGT103"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_026": {
+    "q_id": "V2_B02_026",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_027": {
+    "q_id": "V2_B02_027",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "MIL111",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_028": {
+    "q_id": "V2_B02_028",
+    "intent": "course_lookup",
+    "slots": {
+      "campus": "Cần Thơ"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_029": {
+    "q_id": "V2_B02_029",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_030": {
+    "q_id": "V2_B02_030",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "PRJ301"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_031": {
+    "q_id": "V2_B02_031",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_032": {
+    "q_id": "V2_B02_032",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_033": {
+    "q_id": "V2_B02_033",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SWT301",
+      "program": "Kỹ thuật phần mềm",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_034": {
+    "q_id": "V2_B02_034",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_035": {
+    "q_id": "V2_B02_035",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_036": {
+    "q_id": "V2_B02_036",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K21",
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_037": {
+    "q_id": "V2_B02_037",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ECO111",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_038": {
+    "q_id": "V2_B02_038",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_039": {
+    "q_id": "V2_B02_039",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Đà Nẵng"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_040": {
+    "q_id": "V2_B02_040",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SWP391",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_041": {
+    "q_id": "V2_B02_041",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K17"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_042": {
+    "q_id": "V2_B02_042",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_043": {
+    "q_id": "V2_B02_043",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ENG101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_044": {
+    "q_id": "V2_B02_044",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_045": {
+    "q_id": "V2_B02_045",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_046": {
+    "q_id": "V2_B02_046",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "DGT101",
+      "program": "Thiết kế mỹ thuật số",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_047": {
+    "q_id": "V2_B02_047",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_048": {
+    "q_id": "V2_B02_048",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B02_049": {
+    "q_id": "V2_B02_049",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "JAP101",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B02_050": {
+    "q_id": "V2_B02_050",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_001": {
+    "q_id": "V2_B03_001",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_002": {
+    "q_id": "V2_B03_002",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_003": {
+    "q_id": "V2_B03_003",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_004": {
+    "q_id": "V2_B03_004",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_005": {
+    "q_id": "V2_B03_005",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_006": {
+    "q_id": "V2_B03_006",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K17"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_007": {
+    "q_id": "V2_B03_007",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K17"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_008": {
+    "q_id": "V2_B03_008",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_009": {
+    "q_id": "V2_B03_009",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_010": {
+    "q_id": "V2_B03_010",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_011": {
+    "q_id": "V2_B03_011",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_012": {
+    "q_id": "V2_B03_012",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_013": {
+    "q_id": "V2_B03_013",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_014": {
+    "q_id": "V2_B03_014",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K18"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_015": {
+    "q_id": "V2_B03_015",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K18"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_016": {
+    "q_id": "V2_B03_016",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_017": {
+    "q_id": "V2_B03_017",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_018": {
+    "q_id": "V2_B03_018",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_019": {
+    "q_id": "V2_B03_019",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_020": {
+    "q_id": "V2_B03_020",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_021": {
+    "q_id": "V2_B03_021",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_022": {
+    "q_id": "V2_B03_022",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K19"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_023": {
+    "q_id": "V2_B03_023",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K19"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_024": {
+    "q_id": "V2_B03_024",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_025": {
+    "q_id": "V2_B03_025",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_026": {
+    "q_id": "V2_B03_026",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_027": {
+    "q_id": "V2_B03_027",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_028": {
+    "q_id": "V2_B03_028",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_029": {
+    "q_id": "V2_B03_029",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_030": {
+    "q_id": "V2_B03_030",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K20"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_031": {
+    "q_id": "V2_B03_031",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K20"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_032": {
+    "q_id": "V2_B03_032",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_033": {
+    "q_id": "V2_B03_033",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_034": {
+    "q_id": "V2_B03_034",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_035": {
+    "q_id": "V2_B03_035",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_036": {
+    "q_id": "V2_B03_036",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_037": {
+    "q_id": "V2_B03_037",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_038": {
+    "q_id": "V2_B03_038",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K21"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_039": {
+    "q_id": "V2_B03_039",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K21"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_040": {
+    "q_id": "V2_B03_040",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_041": {
+    "q_id": "V2_B03_041",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_042": {
+    "q_id": "V2_B03_042",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_043": {
+    "q_id": "V2_B03_043",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_044": {
+    "q_id": "V2_B03_044",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_045": {
+    "q_id": "V2_B03_045",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_046": {
+    "q_id": "V2_B03_046",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_047": {
+    "q_id": "V2_B03_047",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_048": {
+    "q_id": "V2_B03_048",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_049": {
+    "q_id": "V2_B03_049",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B03_050": {
+    "q_id": "V2_B03_050",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_001": {
+    "q_id": "V2_B04_001",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "OSG202",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_002": {
+    "q_id": "V2_B04_002",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "NWC203C"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_003": {
+    "q_id": "V2_B04_003",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "PRJ301",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_004": {
+    "q_id": "V2_B04_004",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "PRN211",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_005": {
+    "q_id": "V2_B04_005",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SWP391",
+      "program": "Kỹ thuật phần mềm",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_006": {
+    "q_id": "V2_B04_006",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SWT301",
+      "program": "Kỹ thuật phần mềm",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_007": {
+    "q_id": "V2_B04_007",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SWR302",
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_008": {
+    "q_id": "V2_B04_008",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SWD392",
+      "program": "Kỹ thuật phần mềm",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_009": {
+    "q_id": "V2_B04_009",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SEP490",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_010": {
+    "q_id": "V2_B04_010",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "AIL302M",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_011": {
+    "q_id": "V2_B04_011",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "NLP301C"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_012": {
+    "q_id": "V2_B04_012",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "CVL301C",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_013": {
+    "q_id": "V2_B04_013",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "DLG301",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_014": {
+    "q_id": "V2_B04_014",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "AIP391",
+      "program": "Trí tuệ nhân tạo",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_015": {
+    "q_id": "V2_B04_015",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "AIP490",
+      "program": "Trí tuệ nhân tạo",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_016": {
+    "q_id": "V2_B04_016",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "CRY301",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_017": {
+    "q_id": "V2_B04_017",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "IAL201",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_018": {
+    "q_id": "V2_B04_018",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "IAR301",
+      "program": "An toàn thông tin",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_019": {
+    "q_id": "V2_B04_019",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "FOR301",
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_020": {
+    "q_id": "V2_B04_020",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "IAP490",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_021": {
+    "q_id": "V2_B04_021",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "MKT101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_022": {
+    "q_id": "V2_B04_022",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "MGT103",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_023": {
+    "q_id": "V2_B04_023",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ECO111",
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_024": {
+    "q_id": "V2_B04_024",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ECO121",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_025": {
+    "q_id": "V2_B04_025",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ACC101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_026": {
+    "q_id": "V2_B04_026",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "FIN202",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_027": {
+    "q_id": "V2_B04_027",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "OBE102",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_028": {
+    "q_id": "V2_B04_028",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "MKP391",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_029": {
+    "q_id": "V2_B04_029",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "BAP490",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_030": {
+    "q_id": "V2_B04_030",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "DGT101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_031": {
+    "q_id": "V2_B04_031",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "VWS101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_032": {
+    "q_id": "V2_B04_032",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "GRA201",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_033": {
+    "q_id": "V2_B04_033",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "TYP201",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_034": {
+    "q_id": "V2_B04_034",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ANM301",
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_035": {
+    "q_id": "V2_B04_035",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "GDP490",
+      "program": "Thiết kế mỹ thuật số",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_036": {
+    "q_id": "V2_B04_036",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ENG101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_037": {
+    "q_id": "V2_B04_037",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ENG102",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_038": {
+    "q_id": "V2_B04_038",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ENB301",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_039": {
+    "q_id": "V2_B04_039",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ENT301",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_040": {
+    "q_id": "V2_B04_040",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "ENP490",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_041": {
+    "q_id": "V2_B04_041",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "JAP101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_042": {
+    "q_id": "V2_B04_042",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "JAP102",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_043": {
+    "q_id": "V2_B04_043",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "JIT301",
+      "program": "Công nghệ thông tin",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_044": {
+    "q_id": "V2_B04_044",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "JAP490",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_045": {
+    "q_id": "V2_B04_045",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "KOR101",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_046": {
+    "q_id": "V2_B04_046",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "KOR102",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_047": {
+    "q_id": "V2_B04_047",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "KOR490",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_048": {
+    "q_id": "V2_B04_048",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "VOV124",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_049": {
+    "q_id": "V2_B04_049",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "VOV134",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B04_050": {
+    "q_id": "V2_B04_050",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "MIL111",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B05_001": {
+    "q_id": "V2_B05_001",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_002": {
+    "q_id": "V2_B05_002",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_003": {
+    "q_id": "V2_B05_003",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_004": {
+    "q_id": "V2_B05_004",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_005": {
+    "q_id": "V2_B05_005",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B05_006": {
+    "q_id": "V2_B05_006",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B05_007": {
+    "q_id": "V2_B05_007",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_008": {
+    "q_id": "V2_B05_008",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_009": {
+    "q_id": "V2_B05_009",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_010": {
+    "q_id": "V2_B05_010",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_011": {
+    "q_id": "V2_B05_011",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_012": {
+    "q_id": "V2_B05_012",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_013": {
+    "q_id": "V2_B05_013",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_014": {
+    "q_id": "V2_B05_014",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_015": {
+    "q_id": "V2_B05_015",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_016": {
+    "q_id": "V2_B05_016",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_017": {
+    "q_id": "V2_B05_017",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_018": {
+    "q_id": "V2_B05_018",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_019": {
+    "q_id": "V2_B05_019",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_020": {
+    "q_id": "V2_B05_020",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_021": {
+    "q_id": "V2_B05_021",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_022": {
+    "q_id": "V2_B05_022",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_023": {
+    "q_id": "V2_B05_023",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_024": {
+    "q_id": "V2_B05_024",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_025": {
+    "q_id": "V2_B05_025",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_026": {
+    "q_id": "V2_B05_026",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_027": {
+    "q_id": "V2_B05_027",
+    "intent": "tuition_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B05_028": {
+    "q_id": "V2_B05_028",
+    "intent": "tuition_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B05_029": {
+    "q_id": "V2_B05_029",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_030": {
+    "q_id": "V2_B05_030",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_031": {
+    "q_id": "V2_B05_031",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_032": {
+    "q_id": "V2_B05_032",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_033": {
+    "q_id": "V2_B05_033",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_034": {
+    "q_id": "V2_B05_034",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_035": {
+    "q_id": "V2_B05_035",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_036": {
+    "q_id": "V2_B05_036",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_037": {
+    "q_id": "V2_B05_037",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B05_038": {
+    "q_id": "V2_B05_038",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B05_039": {
+    "q_id": "V2_B05_039",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_040": {
+    "q_id": "V2_B05_040",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_041": {
+    "q_id": "V2_B05_041",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_042": {
+    "q_id": "V2_B05_042",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_043": {
+    "q_id": "V2_B05_043",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_044": {
+    "q_id": "V2_B05_044",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_045": {
+    "q_id": "V2_B05_045",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_046": {
+    "q_id": "V2_B05_046",
+    "intent": "policy_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_047": {
+    "q_id": "V2_B05_047",
+    "intent": "policy_lookup",
+    "slots": {
+      "program": "Thiết kế mỹ thuật số",
+      "course_aspect": "credits"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_048": {
+    "q_id": "V2_B05_048",
+    "intent": "policy_lookup",
+    "slots": {
+      "program": "Thiết kế mỹ thuật số",
+      "course_aspect": "credits"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_049": {
+    "q_id": "V2_B05_049",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B05_050": {
+    "q_id": "V2_B05_050",
+    "intent": "policy_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B06_001": {
+    "q_id": "V2_B06_001",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_002": {
+    "q_id": "V2_B06_002",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Hà Nội",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_003": {
+    "q_id": "V2_B06_003",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội",
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_004": {
+    "q_id": "V2_B06_004",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Hà Nội",
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_005": {
+    "q_id": "V2_B06_005",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội",
+      "program": "An toàn thông tin"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_006": {
+    "q_id": "V2_B06_006",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Hà Nội",
+      "program": "An toàn thông tin"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_007": {
+    "q_id": "V2_B06_007",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội",
+      "program": "Quản trị kinh doanh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_008": {
+    "q_id": "V2_B06_008",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Hà Nội",
+      "program": "Quản trị kinh doanh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_009": {
+    "q_id": "V2_B06_009",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_010": {
+    "q_id": "V2_B06_010",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_011": {
+    "q_id": "V2_B06_011",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội",
+      "program": "Thiết kế mỹ thuật số",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_012": {
+    "q_id": "V2_B06_012",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Hà Nội",
+      "program": "Thiết kế mỹ thuật số",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_013": {
+    "q_id": "V2_B06_013",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_014": {
+    "q_id": "V2_B06_014",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_015": {
+    "q_id": "V2_B06_015",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_016": {
+    "q_id": "V2_B06_016",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_017": {
+    "q_id": "V2_B06_017",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_018": {
+    "q_id": "V2_B06_018",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_019": {
+    "q_id": "V2_B06_019",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Công nghệ thông tin"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_020": {
+    "q_id": "V2_B06_020",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Công nghệ thông tin"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_021": {
+    "q_id": "V2_B06_021",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_022": {
+    "q_id": "V2_B06_022",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_023": {
+    "q_id": "V2_B06_023",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_024": {
+    "q_id": "V2_B06_024",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_025": {
+    "q_id": "V2_B06_025",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Quản trị kinh doanh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_026": {
+    "q_id": "V2_B06_026",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Quản trị kinh doanh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_027": {
+    "q_id": "V2_B06_027",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "TP. Hồ Chí Minh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_028": {
+    "q_id": "V2_B06_028",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "TP. Hồ Chí Minh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_029": {
+    "q_id": "V2_B06_029",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Thiết kế mỹ thuật số",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_030": {
+    "q_id": "V2_B06_030",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Thiết kế mỹ thuật số",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_031": {
+    "q_id": "V2_B06_031",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Đà Nẵng",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_032": {
+    "q_id": "V2_B06_032",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Đà Nẵng",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_033": {
+    "q_id": "V2_B06_033",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Đà Nẵng",
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_034": {
+    "q_id": "V2_B06_034",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Đà Nẵng",
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_035": {
+    "q_id": "V2_B06_035",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Đà Nẵng",
+      "program": "An toàn thông tin"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_036": {
+    "q_id": "V2_B06_036",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Đà Nẵng",
+      "program": "An toàn thông tin"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_037": {
+    "q_id": "V2_B06_037",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Đà Nẵng",
+      "program": "Quản trị kinh doanh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_038": {
+    "q_id": "V2_B06_038",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Đà Nẵng",
+      "program": "Quản trị kinh doanh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_039": {
+    "q_id": "V2_B06_039",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Đà Nẵng"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_040": {
+    "q_id": "V2_B06_040",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Đà Nẵng"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_041": {
+    "q_id": "V2_B06_041",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Cần Thơ",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_042": {
+    "q_id": "V2_B06_042",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Cần Thơ",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_043": {
+    "q_id": "V2_B06_043",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Cần Thơ",
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_044": {
+    "q_id": "V2_B06_044",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Cần Thơ",
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_045": {
+    "q_id": "V2_B06_045",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Cần Thơ",
+      "program": "Quản trị kinh doanh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_046": {
+    "q_id": "V2_B06_046",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Cần Thơ",
+      "program": "Quản trị kinh doanh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_047": {
+    "q_id": "V2_B06_047",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Cần Thơ"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_048": {
+    "q_id": "V2_B06_048",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Cần Thơ"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_049": {
+    "q_id": "V2_B06_049",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Quy Nhơn",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B06_050": {
+    "q_id": "V2_B06_050",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "campus": "Quy Nhơn",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B07_001": {
+    "q_id": "V2_B07_001",
+    "intent": "graduation_lookup",
+    "slots": {
+      "program": "Công nghệ thông tin"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_002": {
+    "q_id": "V2_B07_002",
+    "intent": "graduation_lookup",
+    "slots": {
+      "program": "Công nghệ thông tin"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_003": {
+    "q_id": "V2_B07_003",
+    "intent": "graduation_lookup",
+    "slots": {
+      "program": "Quản trị kinh doanh",
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B07_004": {
+    "q_id": "V2_B07_004",
+    "intent": "graduation_lookup",
+    "slots": {
+      "program": "Quản trị kinh doanh",
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B07_005": {
+    "q_id": "V2_B07_005",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "objective"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_006": {
+    "q_id": "V2_B07_006",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "objective"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_007": {
+    "q_id": "V2_B07_007",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "objective"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_008": {
+    "q_id": "V2_B07_008",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "objective"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_009": {
+    "q_id": "V2_B07_009",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_010": {
+    "q_id": "V2_B07_010",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_011": {
+    "q_id": "V2_B07_011",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_012": {
+    "q_id": "V2_B07_012",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_013": {
+    "q_id": "V2_B07_013",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B07_014": {
+    "q_id": "V2_B07_014",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B07_015": {
+    "q_id": "V2_B07_015",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_016": {
+    "q_id": "V2_B07_016",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_017": {
+    "q_id": "V2_B07_017",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B07_018": {
+    "q_id": "V2_B07_018",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B07_019": {
+    "q_id": "V2_B07_019",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_020": {
+    "q_id": "V2_B07_020",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_021": {
+    "q_id": "V2_B07_021",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_022": {
+    "q_id": "V2_B07_022",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_023": {
+    "q_id": "V2_B07_023",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_024": {
+    "q_id": "V2_B07_024",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_025": {
+    "q_id": "V2_B07_025",
+    "intent": "graduation_lookup",
+    "slots": {
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_026": {
+    "q_id": "V2_B07_026",
+    "intent": "graduation_lookup",
+    "slots": {
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_027": {
+    "q_id": "V2_B07_027",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_028": {
+    "q_id": "V2_B07_028",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_029": {
+    "q_id": "V2_B07_029",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_030": {
+    "q_id": "V2_B07_030",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_031": {
+    "q_id": "V2_B07_031",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_032": {
+    "q_id": "V2_B07_032",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_033": {
+    "q_id": "V2_B07_033",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_034": {
+    "q_id": "V2_B07_034",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_035": {
+    "q_id": "V2_B07_035",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_036": {
+    "q_id": "V2_B07_036",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_037": {
+    "q_id": "V2_B07_037",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_038": {
+    "q_id": "V2_B07_038",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_039": {
+    "q_id": "V2_B07_039",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_040": {
+    "q_id": "V2_B07_040",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_041": {
+    "q_id": "V2_B07_041",
+    "intent": "graduation_lookup",
+    "slots": {
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_042": {
+    "q_id": "V2_B07_042",
+    "intent": "graduation_lookup",
+    "slots": {
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_043": {
+    "q_id": "V2_B07_043",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_044": {
+    "q_id": "V2_B07_044",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_045": {
+    "q_id": "V2_B07_045",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_046": {
+    "q_id": "V2_B07_046",
+    "intent": "graduation_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_047": {
+    "q_id": "V2_B07_047",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_048": {
+    "q_id": "V2_B07_048",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_049": {
+    "q_id": "V2_B07_049",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B07_050": {
+    "q_id": "V2_B07_050",
+    "intent": "graduation_lookup",
+    "slots": {},
+    "expected_route": "rag_pipeline"
+  },
+  "V2_B08_001": {
+    "q_id": "V2_B08_001",
+    "intent": "tuition_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_002": {
+    "q_id": "V2_B08_002",
+    "intent": "tuition_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_003": {
+    "q_id": "V2_B08_003",
+    "intent": "tuition_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_004": {
+    "q_id": "V2_B08_004",
+    "intent": "tuition_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_005": {
+    "q_id": "V2_B08_005",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_006": {
+    "q_id": "V2_B08_006",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_007": {
+    "q_id": "V2_B08_007",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_008": {
+    "q_id": "V2_B08_008",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_009": {
+    "q_id": "V2_B08_009",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_010": {
+    "q_id": "V2_B08_010",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_011": {
+    "q_id": "V2_B08_011",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_012": {
+    "q_id": "V2_B08_012",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_013": {
+    "q_id": "V2_B08_013",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Cần Thơ",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_014": {
+    "q_id": "V2_B08_014",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Cần Thơ",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_015": {
+    "q_id": "V2_B08_015",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Đà Nẵng",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_016": {
+    "q_id": "V2_B08_016",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Đà Nẵng",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_017": {
+    "q_id": "V2_B08_017",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Quy Nhơn",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_018": {
+    "q_id": "V2_B08_018",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Quy Nhơn",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_019": {
+    "q_id": "V2_B08_019",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_020": {
+    "q_id": "V2_B08_020",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_021": {
+    "q_id": "V2_B08_021",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18",
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_022": {
+    "q_id": "V2_B08_022",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18",
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_023": {
+    "q_id": "V2_B08_023",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_024": {
+    "q_id": "V2_B08_024",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_025": {
+    "q_id": "V2_B08_025",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K20",
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_026": {
+    "q_id": "V2_B08_026",
+    "intent": "course_lookup",
+    "slots": {
+      "cohort": "K20",
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_027": {
+    "q_id": "V2_B08_027",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_028": {
+    "q_id": "V2_B08_028",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_029": {
+    "q_id": "V2_B08_029",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_030": {
+    "q_id": "V2_B08_030",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_031": {
+    "q_id": "V2_B08_031",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_032": {
+    "q_id": "V2_B08_032",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_033": {
+    "q_id": "V2_B08_033",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_034": {
+    "q_id": "V2_B08_034",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_035": {
+    "q_id": "V2_B08_035",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_036": {
+    "q_id": "V2_B08_036",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_037": {
+    "q_id": "V2_B08_037",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_038": {
+    "q_id": "V2_B08_038",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_039": {
+    "q_id": "V2_B08_039",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_040": {
+    "q_id": "V2_B08_040",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K17",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_041": {
+    "q_id": "V2_B08_041",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_042": {
+    "q_id": "V2_B08_042",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_043": {
+    "q_id": "V2_B08_043",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_044": {
+    "q_id": "V2_B08_044",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K19",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_045": {
+    "q_id": "V2_B08_045",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_046": {
+    "q_id": "V2_B08_046",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20",
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_047": {
+    "q_id": "V2_B08_047",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_048": {
+    "q_id": "V2_B08_048",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_049": {
+    "q_id": "V2_B08_049",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B08_050": {
+    "q_id": "V2_B08_050",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_001": {
+    "q_id": "V2_B09_001",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_002": {
+    "q_id": "V2_B09_002",
+    "intent": "course_lookup",
+    "slots": {
+      "campus": "Cần Thơ"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_003": {
+    "q_id": "V2_B09_003",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_004": {
+    "q_id": "V2_B09_004",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "AIL302M"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_005": {
+    "q_id": "V2_B09_005",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_006": {
+    "q_id": "V2_B09_006",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_007": {
+    "q_id": "V2_B09_007",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K21"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_008": {
+    "q_id": "V2_B09_008",
+    "intent": "tuition_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_009": {
+    "q_id": "V2_B09_009",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_010": {
+    "q_id": "V2_B09_010",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "NWC203C",
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_011": {
+    "q_id": "V2_B09_011",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_012": {
+    "q_id": "V2_B09_012",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_013": {
+    "q_id": "V2_B09_013",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "TP. Hồ Chí Minh",
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_014": {
+    "q_id": "V2_B09_014",
+    "intent": "course_lookup",
+    "slots": {
+      "campus": "Quy Nhơn"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_015": {
+    "q_id": "V2_B09_015",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Quy Nhơn"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_016": {
+    "q_id": "V2_B09_016",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "PRJ301",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_017": {
+    "q_id": "V2_B09_017",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_018": {
+    "q_id": "V2_B09_018",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_019": {
+    "q_id": "V2_B09_019",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K22"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_020": {
+    "q_id": "V2_B09_020",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_021": {
+    "q_id": "V2_B09_021",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_022": {
+    "q_id": "V2_B09_022",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "OSG202",
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_023": {
+    "q_id": "V2_B09_023",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_024": {
+    "q_id": "V2_B09_024",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_025": {
+    "q_id": "V2_B09_025",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội",
+      "program": "Quản trị kinh doanh"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_026": {
+    "q_id": "V2_B09_026",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Đà Nẵng"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_027": {
+    "q_id": "V2_B09_027",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_028": {
+    "q_id": "V2_B09_028",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K18"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_029": {
+    "q_id": "V2_B09_029",
+    "intent": "tuition_lookup",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_030": {
+    "q_id": "V2_B09_030",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_031": {
+    "q_id": "V2_B09_031",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "SWT301",
+      "program": "Kỹ thuật phần mềm"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_032": {
+    "q_id": "V2_B09_032",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_033": {
+    "q_id": "V2_B09_033",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "prerequisite"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_034": {
+    "q_id": "V2_B09_034",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội",
+      "program": "An toàn thông tin"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_035": {
+    "q_id": "V2_B09_035",
+    "intent": "course_lookup",
+    "slots": {
+      "campus": "Cần Thơ"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_036": {
+    "q_id": "V2_B09_036",
+    "intent": "course_lookup",
+    "slots": {
+      "campus": "Cần Thơ",
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_037": {
+    "q_id": "V2_B09_037",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "CRY301",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_038": {
+    "q_id": "V2_B09_038",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "textbook"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_039": {
+    "q_id": "V2_B09_039",
+    "intent": "course_lookup",
+    "slots": {
+      "course_aspect": "objective"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_040": {
+    "q_id": "V2_B09_040",
+    "intent": "tuition_lookup",
+    "slots": {
+      "cohort": "K20"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_041": {
+    "q_id": "V2_B09_041",
+    "intent": "tuition_lookup",
+    "slots": {
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_042": {
+    "q_id": "V2_B09_042",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_043": {
+    "q_id": "V2_B09_043",
+    "intent": "course_lookup",
+    "slots": {
+      "course_code": "NLP301C",
+      "course_aspect": "credits"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_044": {
+    "q_id": "V2_B09_044",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_045": {
+    "q_id": "V2_B09_045",
+    "intent": "course_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_046": {
+    "q_id": "V2_B09_046",
+    "intent": "tuition_lookup",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_047": {
+    "q_id": "V2_B09_047",
+    "intent": "course_lookup",
+    "slots": {
+      "campus": "Đà Nẵng"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_048": {
+    "q_id": "V2_B09_048",
+    "intent": "course_lookup",
+    "slots": {
+      "campus": "Đà Nẵng"
+    },
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_049": {
+    "q_id": "V2_B09_049",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B09_050": {
+    "q_id": "V2_B09_050",
+    "intent": "tuition_lookup",
+    "slots": {},
+    "expected_route": "structured_lookup"
+  },
+  "V2_B10_001": {
+    "q_id": "V2_B10_001",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_002": {
+    "q_id": "V2_B10_002",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_003": {
+    "q_id": "V2_B10_003",
+    "intent": "OOD",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "ood"
+  },
+  "V2_B10_004": {
+    "q_id": "V2_B10_004",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_005": {
+    "q_id": "V2_B10_005",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_006": {
+    "q_id": "V2_B10_006",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_007": {
+    "q_id": "V2_B10_007",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_008": {
+    "q_id": "V2_B10_008",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_009": {
+    "q_id": "V2_B10_009",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_010": {
+    "q_id": "V2_B10_010",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_011": {
+    "q_id": "V2_B10_011",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_012": {
+    "q_id": "V2_B10_012",
+    "intent": "OOD",
+    "slots": {
+      "campus": "Đà Nẵng"
+    },
+    "expected_route": "ood"
+  },
+  "V2_B10_013": {
+    "q_id": "V2_B10_013",
+    "intent": "OOD",
+    "slots": {
+      "campus": "Hà Nội"
+    },
+    "expected_route": "ood"
+  },
+  "V2_B10_014": {
+    "q_id": "V2_B10_014",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_015": {
+    "q_id": "V2_B10_015",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_016": {
+    "q_id": "V2_B10_016",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_017": {
+    "q_id": "V2_B10_017",
+    "intent": "OOD",
+    "slots": {
+      "course_aspect": "assessment"
+    },
+    "expected_route": "ood"
+  },
+  "V2_B10_018": {
+    "q_id": "V2_B10_018",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_019": {
+    "q_id": "V2_B10_019",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_020": {
+    "q_id": "V2_B10_020",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_021": {
+    "q_id": "V2_B10_021",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_022": {
+    "q_id": "V2_B10_022",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_023": {
+    "q_id": "V2_B10_023",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_024": {
+    "q_id": "V2_B10_024",
+    "intent": "OOD",
+    "slots": {
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "ood"
+  },
+  "V2_B10_025": {
+    "q_id": "V2_B10_025",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_026": {
+    "q_id": "V2_B10_026",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_027": {
+    "q_id": "V2_B10_027",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_028": {
+    "q_id": "V2_B10_028",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_029": {
+    "q_id": "V2_B10_029",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_030": {
+    "q_id": "V2_B10_030",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_031": {
+    "q_id": "V2_B10_031",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_032": {
+    "q_id": "V2_B10_032",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_033": {
+    "q_id": "V2_B10_033",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_034": {
+    "q_id": "V2_B10_034",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_035": {
+    "q_id": "V2_B10_035",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_036": {
+    "q_id": "V2_B10_036",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_037": {
+    "q_id": "V2_B10_037",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_038": {
+    "q_id": "V2_B10_038",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_039": {
+    "q_id": "V2_B10_039",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_040": {
+    "q_id": "V2_B10_040",
+    "intent": "OOD",
+    "slots": {
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "ood"
+  },
+  "V2_B10_041": {
+    "q_id": "V2_B10_041",
+    "intent": "OOD",
+    "slots": {
+      "program": "Quản trị kinh doanh"
+    },
+    "expected_route": "ood"
+  },
+  "V2_B10_042": {
+    "q_id": "V2_B10_042",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_043": {
+    "q_id": "V2_B10_043",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_044": {
+    "q_id": "V2_B10_044",
+    "intent": "OOD",
+    "slots": {
+      "program": "Trí tuệ nhân tạo"
+    },
+    "expected_route": "ood"
+  },
+  "V2_B10_045": {
+    "q_id": "V2_B10_045",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_046": {
+    "q_id": "V2_B10_046",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_047": {
+    "q_id": "V2_B10_047",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_048": {
+    "q_id": "V2_B10_048",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_049": {
+    "q_id": "V2_B10_049",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  },
+  "V2_B10_050": {
+    "q_id": "V2_B10_050",
+    "intent": "OOD",
+    "slots": {},
+    "expected_route": "ood"
+  }
+}

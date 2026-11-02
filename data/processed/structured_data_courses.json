@@ -3224,6 +3224,59 @@
           "Running Lean: Iterate from Plan A to a Plan That Works (Ash Maurya)"
         ]
       }
+    },
+    {
+      "course_code": "IOT102",
+      "course_name": "Internet of Things",
+      "vietnamese_name": "Internet vạn vật",
+      "program": "Kỹ thuật phần mềm",
+      "programs": [
+        "Kỹ thuật phần mềm",
+        "Trí tuệ nhân tạo",
+        "An toàn thông tin",
+        "Khoa học máy tính",
+        "Hệ thống thông tin"
+      ],
+      "category": "core",
+      "credits": 3,
+      "semester": 4,
+      "prerequisites": [
+        "PRF192"
+      ],
+      "assessment": {
+        "practical_exam": true,
+        "eos": true,
+        "project": true,
+        "assignment": true
+      },
+      "source": "user_spec_2026_curriculum",
+      "confidence": "specified",
+      "topics_covered": [
+        "Tổng quan về kiến trúc IoT và các ứng dụng Internet vạn vật",
+        "Nguyên lý hoạt động và giao tiếp các loại cảm biến",
+        "Lập trình vi điều khiển và phần cứng nhúng",
+        "Thực hành kit Arduino và module kết nối không dây",
+        "Giao thức mạng IoT (MQTT, HTTP, CoAP)",
+        "Thu thập dữ liệu cảm biến và điều khiển thiết bị từ xa",
+        "Xây dựng dự án ứng dụng IoT thực tế"
+      ],
+      "syllabus": [
+        "Tổng quan về kiến trúc IoT và các ứng dụng Internet vạn vật",
+        "Nguyên lý hoạt động và giao tiếp các loại cảm biến",
+        "Lập trình vi điều khiển và phần cứng nhúng",
+        "Thực hành kit Arduino và module kết nối không dây",
+        "Giao thức mạng IoT (MQTT, HTTP, CoAP)",
+        "Thu thập dữ liệu cảm biến và điều khiển thiết bị từ xa",
+        "Xây dựng dự án ứng dụng IoT thực tế"
+      ],
+      "textbook": {
+        "main": "Internet of Things: A Hands-On Approach",
+        "author": "Arshdeep Bahga, Vijay Madisetti",
+        "publisher": "Orient Blackswan",
+        "references": [
+          "Programming Arduino: Getting Started with Sketches (Simon Monk)"
+        ]
+      }
     }
   ]
 }

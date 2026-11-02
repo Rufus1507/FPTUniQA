@@ -1,0 +1,235 @@
+{
+  "ablation_matrix": [
+    {
+      "config_id": "c1_bm25",
+      "pipeline_config": "1. BM25 Baseline",
+      "recall_at_5": 0.25,
+      "mrr": 0.5,
+      "faithfulness": 1.0,
+      "ood_rejection": 0.0,
+      "latency_p50": 12576.8,
+      "latency_p95": 49710.4,
+      "total_questions": 20
+    },
+    {
+      "config_id": "c2_dense",
+      "pipeline_config": "2. FAISS Only (Dense)",
+      "recall_at_5": 0.5,
+      "mrr": 0.5,
+      "faithfulness": 1.0,
+      "ood_rejection": 0.0,
+      "latency_p50": 32514.3,
+      "latency_p95": 50098.1,
+      "total_questions": 10
+    },
+    {
+      "config_id": "c3_hybrid",
+      "pipeline_config": "3. Hybrid (BM25 + FAISS)",
+      "recall_at_5": 0.75,
+      "mrr": 0.75,
+      "faithfulness": 1.0,
+      "ood_rejection": 0.0,
+      "latency_p50": 10951.9,
+      "latency_p95": 42246.0,
+      "total_questions": 10
+    },
+    {
+      "config_id": "c4_hybrid_rrf_filter",
+      "pipeline_config": "4. Hybrid + RRF + Metadata Filter",
+      "recall_at_5": 0.75,
+      "mrr": 0.75,
+      "faithfulness": 1.0,
+      "ood_rejection": 0.0,
+      "latency_p50": 12210.2,
+      "latency_p95": 23227.5,
+      "total_questions": 10
+    },
+    {
+      "config_id": "c5_full_noparser",
+      "pipeline_config": "5. Full (Reranker + Structured, không Semantic Parsing)",
+      "recall_at_5": 0.75,
+      "mrr": 0.2917,
+      "faithfulness": 1.0,
+      "ood_rejection": 1.0,
+      "latency_p50": 9.2,
+      "latency_p95": 37915.4,
+      "total_questions": 10
+    },
+    {
+      "config_id": "c6_full",
+      "pipeline_config": "6. Full + Semantic Parsing Routing (mới)",
+      "recall_at_5": 0.75,
+      "mrr": 0.2917,
+      "faithfulness": 1.0,
+      "ood_rejection": 1.0,
+      "latency_p50": 5769.6,
+      "latency_p95": 27981.2,
+      "total_questions": 10
+    }
+  ],
+  "five_metric_groups": {
+    "c1_bm25": {
+      "label": "1. BM25 Baseline",
+      "retrieval": {
+        "recall_at_5": 0.25,
+        "mrr": 0.5
+      },
+      "semantic_parsing": {
+        "intent_accuracy": "N/A",
+        "slot_accuracy": "N/A",
+        "exact_match": "N/A",
+        "fallback_rate": "N/A"
+      },
+      "generation": {
+        "faithfulness": 1.0,
+        "citation_correctness": 0.98
+      },
+      "safety": {
+        "ood_rejection_rate": 0.0,
+        "hallucination_rate": 0.0
+      },
+      "system": {
+        "latency_p50_ms": 12576.8,
+        "latency_p95_ms": 49710.4,
+        "parser_latency_ms": 4.52,
+        "api_success_rate": 1.0
+      }
+    },
+    "c2_dense": {
+      "label": "2. FAISS Only (Dense)",
+      "retrieval": {
+        "recall_at_5": 0.5,
+        "mrr": 0.5
+      },
+      "semantic_parsing": {
+        "intent_accuracy": "N/A",
+        "slot_accuracy": "N/A",
+        "exact_match": "N/A",
+        "fallback_rate": "N/A"
+      },
+      "generation": {
+        "faithfulness": 1.0,
+        "citation_correctness": 0.98
+      },
+      "safety": {
+        "ood_rejection_rate": 0.0,
+        "hallucination_rate": 0.0
+      },
+      "system": {
+        "latency_p50_ms": 32514.3,
+        "latency_p95_ms": 50098.1,
+        "parser_latency_ms": 5.0,
+        "api_success_rate": 1.0
+      }
+    },
+    "c3_hybrid": {
+      "label": "3. Hybrid (BM25 + FAISS)",
+      "retrieval": {
+        "recall_at_5": 0.75,
+        "mrr": 0.75
+      },
+      "semantic_parsing": {
+        "intent_accuracy": "N/A",
+        "slot_accuracy": "N/A",
+        "exact_match": "N/A",
+        "fallback_rate": "N/A"
+      },
+      "generation": {
+        "faithfulness": 1.0,
+        "citation_correctness": 0.98
+      },
+      "safety": {
+        "ood_rejection_rate": 0.0,
+        "hallucination_rate": 0.0
+      },
+      "system": {
+        "latency_p50_ms": 10951.9,
+        "latency_p95_ms": 42246.0,
+        "parser_latency_ms": 4.25,
+        "api_success_rate": 1.0
+      }
+    },
+    "c4_hybrid_rrf_filter": {
+      "label": "4. Hybrid + RRF + Metadata Filter",
+      "retrieval": {
+        "recall_at_5": 0.75,
+        "mrr": 0.75
+      },
+      "semantic_parsing": {
+        "intent_accuracy": "N/A",
+        "slot_accuracy": "N/A",
+        "exact_match": "N/A",
+        "fallback_rate": "N/A"
+      },
+      "generation": {
+        "faithfulness": 1.0,
+        "citation_correctness": 0.98
+      },
+      "safety": {
+        "ood_rejection_rate": 0.0,
+        "hallucination_rate": 0.0
+      },
+      "system": {
+        "latency_p50_ms": 12210.2,
+        "latency_p95_ms": 23227.5,
+        "parser_latency_ms": 3.9,
+        "api_success_rate": 1.0
+      }
+    },
+    "c5_full_noparser": {
+      "label": "5. Full (Reranker + Structured, không Semantic Parsing)",
+      "retrieval": {
+        "recall_at_5": 0.75,
+        "mrr": 0.2917
+      },
+      "semantic_parsing": {
+        "intent_accuracy": 1.0,
+        "slot_accuracy": 0.2857,
+        "exact_match": 0.2,
+        "fallback_rate": 1.0
+      },
+      "generation": {
+        "faithfulness": 1.0,
+        "citation_correctness": 0.98
+      },
+      "safety": {
+        "ood_rejection_rate": 1.0,
+        "hallucination_rate": 0.0
+      },
+      "system": {
+        "latency_p50_ms": 9.2,
+        "latency_p95_ms": 37915.4,
+        "parser_latency_ms": 4.9,
+        "api_success_rate": 1.0
+      }
+    },
+    "c6_full": {
+      "label": "6. Full + Semantic Parsing Routing (mới)",
+      "retrieval": {
+        "recall_at_5": 0.75,
+        "mrr": 0.2917
+      },
+      "semantic_parsing": {
+        "intent_accuracy": 1.0,
+        "slot_accuracy": 0.3077,
+        "exact_match": 0.2,
+        "fallback_rate": 0.0
+      },
+      "generation": {
+        "faithfulness": 1.0,
+        "citation_correctness": 0.98
+      },
+      "safety": {
+        "ood_rejection_rate": 1.0,
+        "hallucination_rate": 0.0
+      },
+      "system": {
+        "latency_p50_ms": 5769.6,
+        "latency_p95_ms": 27981.2,
+        "parser_latency_ms": 5684.62,
+        "api_success_rate": 1.0
+      }
+    }
+  },
+  "comparison_c6_vs_c5": {}
+}

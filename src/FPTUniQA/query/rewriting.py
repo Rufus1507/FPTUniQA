@@ -12,6 +12,12 @@ import re
 from typing import Any, Dict, List, Optional
 import requests
 
+from FPTUniQA.query.constants import (
+    CAMPUS_CODES_REGEX,
+    CAMPUS_NAMES_REGEX,
+    MAJOR_NAMES,
+    OOD_KEYWORDS,
+)
 from FPTUniQA.utils.config import config
 from FPTUniQA.utils.exceptions import CircuitBreaker, CircuitBreakerOpenError
 from FPTUniQA.utils.logger import get_logger
@@ -58,8 +64,8 @@ def _call_llm_rewriter(prompt: str) -> Optional[str]:
             {"role": "system", "content": REWRITER_SYSTEM_PROMPT},
             {"role": "user", "content": prompt},
         ],
-        "temperature": 0.0,
-        "max_tokens": 512,
+        "temperature": config.temperature_rewriter,
+        "max_tokens": config.max_tokens_rewriter,
         "stream": False,
     }
 
@@ -131,6 +137,12 @@ TOPIC_PATTERNS = {
     "exam_appeal": [
         "phúc khảo", "khiếu nại", "chấm lại", "bài thi", "thời hạn phúc khảo", "lệ phí phúc khảo"
     ],
+    "admin_services": [
+        "bảng điểm", "bản sao", "giấy xác nhận", "thẻ sinh viên", "dịch vụ sinh viên"
+    ],
+    "exam_regulations": [
+        "thi eos", "phòng thi", "quy chế thi", "mang tài liệu", "coi thi", "đình chỉ thi"
+    ],
     "dormitory_campus": [
         "ký túc xá", "ktx", "phòng trọ", "nội trú", "xe buýt"
     ],
@@ -140,10 +152,7 @@ TOPIC_PATTERNS = {
     "curriculum_credits": [
         "khung chương trình", "số tín chỉ", "tiến độ", "rút môn", "đăng ký môn", "chuyển ngành", "bảo lưu"
     ],
-    "ood": [
-        "thời tiết", "món ăn", "nấu ăn", "phở bò", "du lịch", "ca sĩ",
-        "bóng đá", "thủ đô", "tổng thống", "quán cà phê", "chơi game", "phim ảnh"
-    ],
+    "ood": OOD_KEYWORDS,
 }
 
 CONTINUATION_PATTERNS = [
@@ -151,13 +160,14 @@ CONTINUATION_PATTERNS = [
     r"^vậy\s+(nếu|thì|còn)\b",
     r"^nếu\s+(vậy|thế|bị|học)\b",
     r"^(ở|tại)\s+(đó|đấy|cơ sở|campus)\b",
-    r"^(ngành|khóa|năm)\s+(đó|đấy|này)\b",
+    r"^(ngành|khóa|năm|môn|học phần)\s+(đó|đấy|này)\b",
+    r"\b(môn|học phần|ngành|khóa|năm|phân hiệu|cơ sở)\s+(này|đó|đấy|kia)\b",
+    r"\bmôn\s+(này|đó)\b",
     r"\b(thì\s+sao|thế\s+nào|bao\s+nhiêu)\??$",
     r"^(bao\s+nhiêu|khi\s+nào|ở\s+đâu)\??$",
-    r"\bở\s+(hà\s+nội|cần\s+thơ|đà\s+nẵng|hồ\s+chí\s+minh|quy\s+nhơn)\s+thì\s+sao\b",
-    r"\bcòn\s+(hà\s+nội|cần\s+thơ|đà\s+nẵng|hồ\s+chí\s+minh|quy\s+nhơn|hcm|hn|ct|dn|qn)\b",
+    rf"\bở\s+{CAMPUS_NAMES_REGEX}\s+thì\s+sao\b",
+    rf"\bcòn\s+({CAMPUS_NAMES_REGEX}|{CAMPUS_CODES_REGEX})\b",
     r"\bcòn\s+(k\d{2}|khóa\s+\d{2})\b",
-    r"\bcòn\s+ngành\s+[\w\s]+\s+thì\s+sao\b",
 ]
 
 
@@ -173,6 +183,8 @@ def detect_topic_from_text(text: str) -> str:
 def is_continuation_query(query: str) -> bool:
     """Kiểm tra xem câu hỏi có dấu hiệu tỉnh lược/hỏi tiếp lượt trước hay không."""
     q_clean = query.strip().lower()
+    if re.search(r"\b(môn này|môn đó|học phần này|học phần đó|khóa này|khóa đó|ngành này|ngành đó|phân hiệu này|cơ sở này)\b", q_clean, flags=re.IGNORECASE):
+        return True
     for pattern in CONTINUATION_PATTERNS:
         if re.search(pattern, q_clean, flags=re.IGNORECASE):
             return True
@@ -223,6 +235,14 @@ def detect_topic_switch(
     last_topic = prev_topics[-1] if prev_topics else "general_policy"
 
     # Nếu câu hỏi hiện tại có chủ đề xác định và khác hoàn toàn chủ đề trước đó
+    # Nếu câu hỏi hiện tại khác chủ đề với câu trước (kể cả khi một câu là general_policy)
+    if curr_topic != last_topic and not is_continuation_query(current_question):
+        return {
+            "is_topic_switch": True,
+            "current_topic": curr_topic,
+            "previous_topic": last_topic,
+            "confidence": 0.9,
+        }
     if curr_topic != "general_policy" and last_topic != "general_policy" and curr_topic != last_topic:
         return {
             "is_topic_switch": True,
@@ -271,14 +291,11 @@ def _rule_based_rewrite(clean_q: str, history: List[Dict[str, Any]]) -> Optional
     cohort_match = re.search(r"\b(K1[7-9]|K2[0-2]|202[0-6])\b", prev_q, re.IGNORECASE)
     prev_cohort = cohort_match.group(0) if cohort_match else ""
 
-    campus_match = re.search(r"\b(Hà Nội|TP\.?\s*Hồ Chí Minh|Đà Nẵng|Cần Thơ|Quy Nhơn|FUHL|HN|HCM|DN|CT|QN)\b", prev_q, re.IGNORECASE)
+    campus_match = re.search(rf"\b({CAMPUS_NAMES_REGEX}|{CAMPUS_CODES_REGEX})\b", prev_q, re.IGNORECASE)
     prev_campus = campus_match.group(0) if campus_match else ""
 
-    # Nhận diện ngành từ lượt trước
-    majors = ["Công nghệ thông tin", "Kỹ thuật phần mềm", "Trí tuệ nhân tạo", "An toàn thông tin",
-              "Khoa học dữ liệu", "Quản trị kinh doanh", "Marketing", "Kinh doanh quốc tế",
-              "Truyền thông đa phương tiện", "Ngôn ngữ Anh", "Ngôn ngữ Nhật", "Ngôn ngữ Hàn",
-              "CNTT", "KTPM", "AI", "ATTT", "KHDL", "QTKD"]
+    # Nhận diện ngành từ lượt trước qua SSOT constants
+    majors = MAJOR_NAMES
     prev_major = ""
     for m in majors:
         if m.lower() in prev_q.lower():
@@ -286,7 +303,7 @@ def _rule_based_rewrite(clean_q: str, history: List[Dict[str, Any]]) -> Optional
             break
 
     # Trường hợp 1: Đổi campus ("Còn ở Cần Thơ thì sao?", "Còn Đà Nẵng?", "Nếu học ở Quy Nhơn thì có rẻ hơn không?")
-    new_campus_match = re.search(r"\b(ở\s+)?(Hà Nội|TP\.?\s*Hồ Chí Minh|Đà Nẵng|Cần Thơ|Quy Nhơn)\b", clean_q, re.IGNORECASE)
+    new_campus_match = re.search(rf"\b(ở\s+)?{CAMPUS_NAMES_REGEX}\b", clean_q, re.IGNORECASE)
     if new_campus_match and ("còn" in q_lower or "thế" in q_lower or "thì sao" in q_lower or "nếu" in q_lower or "rẻ hơn" in q_lower or "đắt hơn" in q_lower):
         new_campus = new_campus_match.group(2)
         base_topic = "Học phí" if "học phí" in prev_q.lower() else "Quy chế"

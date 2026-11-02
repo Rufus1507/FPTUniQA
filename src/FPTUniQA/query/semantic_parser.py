@@ -20,6 +20,11 @@ except ImportError:
         sys.path.insert(0, str(_root))
     from contracts import ParsedQuery
 from FPTUniQA.query.campus_matcher import match_campus
+from FPTUniQA.query.constants import (
+    MAJOR_TO_SHORT_CODE,
+    OOD_KEYWORDS,
+    PROGRAM_ALIAS_MAP,
+)
 from FPTUniQA.query.intent import QueryIntent, SUPPORTED_INTENTS
 from FPTUniQA.query.normalizer import normalize_query
 from FPTUniQA.utils.config import config
@@ -107,8 +112,8 @@ def _parse_with_llm(question: str) -> Optional[Dict[str, Any]]:
             {"role": "system", "content": PARSER_SYSTEM_PROMPT},
             {"role": "user", "content": f"Câu hỏi: {question}"},
         ],
-        "temperature": 0.0,
-        "max_tokens": 1024,
+        "temperature": config.temperature_parser,
+        "max_tokens": config.max_tokens_parser,
         "stream": False,
     }
 
@@ -181,6 +186,11 @@ def _parse_with_llm(question: str) -> Optional[Dict[str, Any]]:
                         if cand in _get_known_course_codes():
                             slots["course_code"] = cand
 
+                # Điều chỉnh câu hỏi về học bổng luôn là policy_lookup
+                if "học bổng" in question.lower():
+                    intent = QueryIntent.POLICY_LOOKUP.value
+                    slots["topic"] = "hoc_bong"
+
                 # Điều chỉnh quy chế đăng ký tín chỉ tối đa -> policy_lookup
                 if any(w in question.lower() for w in ["đăng ký tối đa", "tối đa bao nhiêu tín chỉ"]):
                     intent = QueryIntent.POLICY_LOOKUP.value
@@ -237,15 +247,8 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
             "confidence": 0.95,
         }
 
-    # 2. Kiểm tra OOD (các chủ đề ngoài miền học vụ FPT)
-    ood_keywords = [
-        "thời tiết", "bách khoa", "kinh tế quốc dân", "quốc gia", "nấu ăn", "phở bò",
-        "phở", "bánh mì", "cà phê", "món ăn", "ẩm thực", "du lịch", "bóng đá",
-        "pháp", "everest", "hồ gươm", "tỉnh thành", "thủ đô", "truyện kiều",
-        "phát minh", "tác giả", "điện thoại", "miền trung", "thế giới", "ca sĩ", "diễn viên",
-        "tổng thống", "hoa kỳ", "game", "giá vàng", "cảm cúm", "chữa bệnh"
-    ]
-    if any(kw in q_lower for kw in ood_keywords):
+    # 2. Kiểm tra OOD (các chủ đề ngoài miền học vụ FPT từ SSOT constants)
+    if any(kw in q_lower for kw in OOD_KEYWORDS):
         return {
             "intent": QueryIntent.OOD.value,
             "slots": {},
@@ -294,41 +297,23 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
             slots["topic"] = "common_fee"
             slots["program"] = "chung"
 
-        # Trích xuất ngành học
-        if "ai" in q_lower or "trí tuệ nhân tạo" in q_lower:
-            slots["program"] = "AI"
-        elif "cntt" in q_lower or "công nghệ thông tin" in q_lower:
-            slots["program"] = "CNTT"
-        elif "ktpm" in q_lower or "kỹ thuật phần mềm" in q_lower:
-            slots["program"] = "KTPM"
-        elif "an toàn thông tin" in q_lower or "attt" in q_lower:
-            slots["program"] = "An toàn thông tin"
-        elif "khoa học dữ liệu" in q_lower:
-            slots["program"] = "Khoa học dữ liệu và ứng dụng"
-        elif "vi mạch" in q_lower or "bán dẫn" in q_lower:
-            slots["program"] = "Vi mạch bán dẫn"
-        elif "ô tô" in q_lower:
-            slots["program"] = "Công nghệ ô tô số"
-        elif "hệ thống thông tin" in q_lower:
-            slots["program"] = "Hệ thống thông tin"
-        elif "đồ họa" in q_lower or "mỹ thuật" in q_lower:
-            slots["program"] = "Thiết kế đồ họa và mỹ thuật số"
-        elif "truyền thông" in q_lower:
-            slots["program"] = "Truyền thông đa phương tiện"
-        elif "quản trị kinh doanh" in q_lower or "qtkd" in q_lower:
-            slots["program"] = "Quản trị kinh doanh"
-        elif "kinh doanh quốc tế" in q_lower or "kdqt" in q_lower:
-            slots["program"] = "Kinh doanh quốc tế"
-        elif "marketing" in q_lower:
-            slots["program"] = "Marketing"
-        elif "ngôn ngữ anh" in q_lower or "tiếng anh" in q_lower:
-            slots["program"] = "Ngôn ngữ Anh"
-        elif "ngôn ngữ hàn" in q_lower or "tiếng hàn" in q_lower:
-            slots["program"] = "Ngôn ngữ Hàn Quốc"
-        elif "ngôn ngữ trung" in q_lower or "tiếng trung" in q_lower:
-            slots["program"] = "Ngôn ngữ Trung Quốc"
-        elif "ngôn ngữ nhật" in q_lower or "tiếng nhật" in q_lower:
-            slots["program"] = "Ngôn ngữ Nhật"
+        # Trích xuất ngành học qua SSOT PROGRAM_ALIAS_MAP và MAJOR_TO_SHORT_CODE
+        matched_prog = None
+        sorted_aliases = sorted(PROGRAM_ALIAS_MAP.keys(), key=len, reverse=True)
+        for alias in sorted_aliases:
+            if alias in ["luật", "luật kinh tế"]:
+                continue
+            full_major = PROGRAM_ALIAS_MAP[alias]
+            if len(alias) <= 4:
+                if re.search(rf"\b{re.escape(alias)}\b", q_lower):
+                    matched_prog = MAJOR_TO_SHORT_CODE.get(full_major, full_major)
+                    break
+            else:
+                if alias in q_lower:
+                    matched_prog = MAJOR_TO_SHORT_CODE.get(full_major, full_major)
+                    break
+        if matched_prog:
+            slots["program"] = matched_prog
         elif "chuyên ngành" in q_lower and not slots.get("program"):
             slots["program"] = "chuyên ngành"
         # Ngành Luật không gán mặc định để kích hoạt làm rõ (clarification giữa Luật vs Luật kinh tế hoặc khu vực)
@@ -404,7 +389,7 @@ def _parse_with_regex(question: str) -> Dict[str, Any]:
     }
 
 
-def parse_query(question: str) -> ParsedQuery:
+def parse_query(question: str, force_regex: bool = False) -> ParsedQuery:
     """Chuyển đổi câu hỏi của sinh viên thành đối tượng ParsedQuery (Contract 3) và ghi log parsing_events.jsonl.
 
     Ưu tiên 1: LLM Structured Output.
@@ -418,7 +403,7 @@ def parse_query(question: str) -> ParsedQuery:
     clean_query = normalize_query(question)
 
     # 1. Thử phân tích bằng LLM Structured Output
-    llm_result = _parse_with_llm(question)
+    llm_result = None if force_regex else _parse_with_llm(question)
 
     if llm_result:
         parsed = ParsedQuery(
@@ -452,14 +437,7 @@ def parse_query(question: str) -> ParsedQuery:
         if c_code not in known_codes:
             # Nếu không có mã môn học hợp lệ mà bị LLM gán nhầm
             q_norm = clean_query.lower()
-            ood_kws = [
-                "thời tiết", "bách khoa", "kinh tế quốc dân", "quốc gia", "nấu ăn", "phở bò",
-                "phở", "bánh mì", "cà phê", "món ăn", "ẩm thực", "du lịch", "bóng đá",
-                "pháp", "everest", "hồ gươm", "tỉnh thành", "thủ đô", "truyện kiều",
-                "phát minh", "điện thoại", "miền trung", "thế giới", "ca sĩ", "diễn viên",
-                "tổng thống", "hoa kỳ", "game", "giá vàng", "cảm cúm", "chữa bệnh"
-            ]
-            if any(kw in q_norm for kw in ood_kws):
+            if any(kw in q_norm for kw in OOD_KEYWORDS):
                 parsed.intent = QueryIntent.OOD.value
             else:
                 parsed.intent = QueryIntent.POLICY_LOOKUP.value
