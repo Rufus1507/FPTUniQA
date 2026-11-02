@@ -68,6 +68,13 @@ class Settings(BaseSettings):
     log_dir: str = Field(default="logs", description="Thư mục ghi log")
     data_dir: str = Field(default="data", description="Thư mục chứa dữ liệu")
 
+    @field_validator("debug", mode="before")
+    @classmethod
+    def validate_debug(cls, v: Any) -> bool:
+        if isinstance(v, str):
+            return v.strip().lower() in ("true", "1", "yes", "on", "debug")
+        return bool(v)
+
     @field_validator("api_port")
     @classmethod
     def validate_port(cls, v: int) -> int:
