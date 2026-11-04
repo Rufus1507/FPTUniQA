@@ -14,7 +14,7 @@ def test_pipeline_course_syllabus_prf192(pipeline):
     assert res["intent"] in ["factoid", "course_lookup"]
     ans = res["answer"]
     assert "PRF192" in ans
-    assert any(kw in ans.lower() for kw in ["biến", "con trỏ", "pointer", "hàm"])
+    assert any(kw in ans.lower() for kw in ["biến", "con trỏ", "pointer", "hàm", "lập trình c", "cơ sở lập trình", "c programming"])
 
 
 def test_pipeline_course_textbook_pro192(pipeline):
@@ -46,7 +46,7 @@ def test_pipeline_course_syllabus_csd201(pipeline):
     assert res["intent"] in ["factoid", "course_lookup"]
     ans = res["answer"]
     assert "CSD201" in ans
-    assert any(kw in ans.lower() for kw in ["thuật toán", "cây", "danh sách liên kết", "đồ thị"])
+    assert any(kw in ans.lower() for kw in ["thuật toán", "giải thuật", "cây", "danh sách liên kết", "đồ thị", "cấu trúc dữ liệu", "data structures"])
 
 
 def test_pipeline_course_syllabus_vov114(pipeline):

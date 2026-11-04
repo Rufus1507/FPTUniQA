@@ -1,0 +1,88 @@
+{
+  "git_commit_history": [
+    {
+      "file": "data/dictionary/entities.json",
+      "recent_commits": []
+    },
+    {
+      "file": "data/dictionary/alias_patterns.json",
+      "recent_commits": []
+    },
+    {
+      "file": "src/FPTUniQA/normalization/engine.py",
+      "recent_commits": [
+        "9a42795 - 2026-11-04 - feat(retrieval): implement soft boost ranking c4-soft, parallel c3p, equiv recall metrics and benchmark ablation",
+        "c0a3bb4 - 2026-11-03 - feat(tv1-data): hoan thien he thong tu dien thuc the, khu doc ngu canh da luot va chuan hoa du lieu RAG"
+      ]
+    },
+    {
+      "file": "src/FPTUniQA/pipeline/router.py",
+      "recent_commits": []
+    },
+    {
+      "file": "src/FPTUniQA/pipeline/semantic_parser.py",
+      "recent_commits": []
+    },
+    {
+      "file": "src/FPTUniQA/generation/prompts.py",
+      "recent_commits": []
+    }
+  ],
+  "heldout_test_set": {
+    "heldout_file": "experiments/audit/heldout_test_set_50.json",
+    "num_heldout_queries": 50,
+    "query_ids": [
+      "V2_B02_013",
+      "V2_B02_015",
+      "V2_B02_020",
+      "V2_B02_024",
+      "V2_B02_029",
+      "V2_B02_032",
+      "V2_B02_035",
+      "V2_B02_038",
+      "V2_B02_042",
+      "V2_B02_045",
+      "V2_B02_048",
+      "V2_B05_011",
+      "V2_B05_012",
+      "V2_B05_013",
+      "V2_B05_014",
+      "V2_B05_015",
+      "V2_B05_016",
+      "V2_B05_017",
+      "V2_B05_018",
+      "V2_B05_019",
+      "V2_B05_020",
+      "V2_B05_021",
+      "V2_B05_022",
+      "V2_B05_023",
+      "V2_B05_024",
+      "V2_B05_025",
+      "V2_B05_026",
+      "V2_B05_029",
+      "V2_B05_030",
+      "V2_B05_031",
+      "V2_B05_032",
+      "V2_B05_033",
+      "V2_B05_034",
+      "V2_B05_035",
+      "V2_B05_036",
+      "V2_B05_039",
+      "V2_B05_040",
+      "V2_B05_041",
+      "V2_B05_042",
+      "V2_B05_043",
+      "V2_B05_044",
+      "V2_B05_045",
+      "V2_B05_046",
+      "V2_B05_047",
+      "V2_B05_048",
+      "V2_B05_049",
+      "V2_B05_050",
+      "V2_B07_011",
+      "V2_B07_012",
+      "V2_B07_015"
+    ],
+    "note": "Tập Held-out Test Set độc lập gồm các câu hỏi chưa từng nằm trong tập 100 câu Canonical V2 của bài toán Ablation."
+  }
+}

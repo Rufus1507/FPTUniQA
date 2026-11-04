@@ -1,0 +1,42 @@
+Total drops: 5
+
+DROP 1: V2_B05_002
+Query: Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?
+Gold: ['doc_fpt_k17_0605', 'doc_fpt_k18_0751']
+C3:  ['doc_fpt_k20_0051', 'doc_fpt_k17_0605', 'doc_fpt_k21_0406', 'doc_fpt_k17_0587', 'doc_fpt_k18_0717']
+C4h: ['doc_fpt_k21_0406', 'doc_fpt_k17_0587', 'doc_fpt_k17_0590', 'doc_fpt_k18_0717', 'doc_fpt_k22_0299']
+EquivHit: 1.0
+Reason: Equivalent Doc Hit (Trượt giả do lấy doc cùng nội dung khác ID)
+
+DROP 2: V2_B05_003
+Query: Điều kiện để sinh viên được đăng ký học vượt là gì?
+Gold: ['doc_fpt_k20_0152', 'doc_fpt_k19_0550']
+C3:  ['doc_fpt_k20_0042', 'doc_fpt_k20_0039', 'doc_fpt_k19_0550', 'doc_fpt_k18_0711', 'doc_fpt_k17_0585']
+C4h: ['doc_fpt_k20_0042', 'doc_fpt_k20_0039', 'doc_fpt_k18_0711', 'doc_fpt_k17_0585', 'doc_fpt_k21_0400']
+EquivHit: 1.0
+Reason: Equivalent Doc Hit (Trượt giả do lấy doc cùng nội dung khác ID)
+
+DROP 3: V2_B07_002
+Query: Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?
+Gold: ['doc_fpt_k21_0405', 'doc_fpt_k20_0033']
+C3:  ['doc_fpt_k21_0405', 'doc_fpt_k18_0729', 'doc_fpt_k21_0418', 'doc_fpt_k21_0419', 'doc_fpt_k20_0077']
+C4h: ['doc_fpt_k20_0077', 'doc_fpt_k20_0073', 'doc_fpt_k20_0071', 'doc_fpt_k20_0052', 'doc_fpt_k20_0050']
+EquivHit: 0.0
+Reason: Parser không nhận diện được cohort -> lọc nhầm hoặc mất rank
+
+DROP 4: V2_B07_005
+Query: Chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?
+Gold: ['doc_fpt_k21_0488']
+C3:  ['doc_fpt_k21_0488', 'doc_fpt_k17_0652', 'doc_fpt_k21_0487', 'doc_fpt_k21_0391', 'doc_fpt_k20_0207']
+C4h: ['doc_fpt_k17_0652', 'doc_fpt_k20_0207', 'doc_fpt_k17_0576', 'doc_fpt_k20_0204', 'doc_fpt_k22_0366']
+EquivHit: 1.0
+Reason: Equivalent Doc Hit (Trượt giả do lấy doc cùng nội dung khác ID)
+
+DROP 5: V2_B07_006
+Query: Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?
+Gold: ['doc_fpt_k21_0488']
+C3:  ['doc_fpt_k21_0488', 'doc_fpt_k21_0391', 'doc_fpt_k17_0652', 'doc_fpt_k17_0576', 'doc_fpt_k18_0729']
+C4h: ['doc_fpt_k17_0652', 'doc_fpt_k17_0576', 'doc_fpt_k20_0077', 'doc_fpt_k20_0035', 'doc_fpt_k20_0207']
+EquivHit: 1.0
+Reason: Equivalent Doc Hit (Trượt giả do lấy doc cùng nội dung khác ID)
+

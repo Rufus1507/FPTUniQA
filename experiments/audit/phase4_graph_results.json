@@ -1,0 +1,148 @@
+{
+  "circularity_prereq_analysis": [
+    {
+      "q_id": "GR_001",
+      "query": "Muốn học môn SWP391 thì cần hoàn thành chuỗi môn nào trước?",
+      "is_verbatim_exact": true,
+      "gold_preview": "**Lộ trình điều kiện tiên quyết cho môn SWP391 (Dự án phát triển ứng dụng phần mềm):**\n• **Môn tiên quyết trực tiếp:** SWE201C (Nhập môn Kỹ nghệ phần ",
+      "ans_preview": "**Lộ trình điều kiện tiên quyết cho môn SWP391 (Dự án phát triển ứng dụng phần mềm):**\n• **Môn tiên quyết trực tiếp:** SWE201C (Nhập môn Kỹ nghệ phần "
+    },
+    {
+      "q_id": "GR_002",
+      "query": "Để học được môn Lập trình Web PRJ301 thì phải qua những môn gì?",
+      "is_verbatim_exact": true,
+      "gold_preview": "**Lộ trình điều kiện tiên quyết cho môn PRJ301 (Lập trình Web với Java):**\n• **Môn tiên quyết trực tiếp:** DBI202 (Cơ sở dữ liệu), PRO192 (Lập trình h",
+      "ans_preview": "**Lộ trình điều kiện tiên quyết cho môn PRJ301 (Lập trình Web với Java):**\n• **Môn tiên quyết trực tiếp:** DBI202 (Cơ sở dữ liệu), PRO192 (Lập trình h"
+    },
+    {
+      "q_id": "GR_003",
+      "query": "Môn Cấu trúc dữ liệu CSD201 yêu cầu môn tiên quyết nào?",
+      "is_verbatim_exact": true,
+      "gold_preview": "**Lộ trình điều kiện tiên quyết cho môn CSD201 (Cấu trúc dữ liệu và giải thuật):**\n• **Môn tiên quyết trực tiếp:** PRO192 (Lập trình hướng đối tượng v",
+      "ans_preview": "**Lộ trình điều kiện tiên quyết cho môn CSD201 (Cấu trúc dữ liệu và giải thuật):**\n• **Môn tiên quyết trực tiếp:** PRO192 (Lập trình hướng đối tượng v"
+    },
+    {
+      "q_id": "GR_004",
+      "query": "Môn Lập trình Java PRO192 có môn tiên quyết là gì?",
+      "is_verbatim_exact": true,
+      "gold_preview": "**Lộ trình điều kiện tiên quyết cho môn PRO192 (Lập trình hướng đối tượng với Java):**\n• **Môn tiên quyết trực tiếp:** PRF192 (Cơ sở lập trình C)\n• **",
+      "ans_preview": "**Lộ trình điều kiện tiên quyết cho môn PRO192 (Lập trình hướng đối tượng với Java):**\n• **Môn tiên quyết trực tiếp:** PRF192 (Cơ sở lập trình C)\n• **"
+    },
+    {
+      "q_id": "GR_005",
+      "query": "Điều kiện tiên quyết để đăng ký môn PRN211 là gì?",
+      "is_verbatim_exact": true,
+      "gold_preview": "**Lộ trình điều kiện tiên quyết cho môn PRN211 (Lập trình ứng dụng đa nền tảng với .NET):**\n• **Môn tiên quyết trực tiếp:** PRO192 (Lập trình hướng đố",
+      "ans_preview": "**Lộ trình điều kiện tiên quyết cho môn PRN211 (Lập trình ứng dụng đa nền tảng với .NET):**\n• **Môn tiên quyết trực tiếp:** PRO192 (Lập trình hướng đố"
+    },
+    {
+      "q_id": "GR_006",
+      "query": "Môn Dự án AI AIP391 cần hoàn thành những môn tiên quyết nào?",
+      "is_verbatim_exact": true,
+      "gold_preview": "**Lộ trình điều kiện tiên quyết cho môn AIP391 (Dự án phát triển ứng dụng AI):**\n• **Môn tiên quyết trực tiếp:** AIL302M (Học máy)\n• **Toàn bộ chuỗi m",
+      "ans_preview": "**Lộ trình điều kiện tiên quyết cho môn AIP391 (Dự án phát triển ứng dụng AI):**\n• **Môn tiên quyết trực tiếp:** AIL302M (Học máy)\n• **Toàn bộ chuỗi m"
+    }
+  ],
+  "overall_metrics": {
+    "with_graph": {
+      "mean_rouge_l": 0.8382866666666667,
+      "mean_entity_precision": 0.9583333333333334,
+      "mean_entity_recall": 0.975,
+      "mean_entity_f1": 0.913888888888889
+    },
+    "without_graph_flat_rag": {
+      "mean_rouge_l": 0.13698333333333332,
+      "mean_entity_precision": 0.7333333333333333,
+      "mean_entity_recall": 0.4861507936507936,
+      "mean_entity_f1": 0.49699134199134204
+    },
+    "stronger_baseline_table_augmented": {
+      "mean_rouge_l": 0.4069833333333333,
+      "mean_entity_f1": 0.7314357864357864
+    }
+  },
+  "bootstrap_tests": {
+    "with_vs_without_rouge": {
+      "delta_mean": 0.7013,
+      "ci_low": 0.5926,
+      "ci_high": 0.7944,
+      "p_value": 0.0,
+      "significant_at_0_05": true,
+      "n_pairs": 30,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    },
+    "with_vs_without_f1": {
+      "delta_mean": 0.4169,
+      "ci_low": 0.27,
+      "ci_high": 0.5594,
+      "p_value": 0.0,
+      "significant_at_0_05": true,
+      "n_pairs": 30,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    },
+    "with_vs_strong_rouge": {
+      "delta_mean": 0.4313,
+      "ci_low": 0.3512,
+      "ci_high": 0.5022,
+      "p_value": 0.0,
+      "significant_at_0_05": true,
+      "n_pairs": 30,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    },
+    "with_vs_strong_f1": {
+      "delta_mean": 0.1825,
+      "ci_low": 0.0809,
+      "ci_high": 0.284,
+      "p_value": 0.0007,
+      "significant_at_0_05": true,
+      "n_pairs": 30,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    }
+  },
+  "per_class_summary": {
+    "prereq_chain": {
+      "with_rouge": 1.0,
+      "wo_rouge": 0.22668333333333335,
+      "strong_rouge": 0.5266833333333333,
+      "with_f1": 1.0,
+      "wo_f1": 0.5924963924963925,
+      "strong_f1": 0.9147186147186148
+    },
+    "next_course": {
+      "with_rouge": 0.9448,
+      "wo_rouge": 0.21245,
+      "strong_rouge": 0.51245,
+      "with_f1": 1.0,
+      "wo_f1": 0.4757936507936509,
+      "strong_f1": 0.800793650793651
+    },
+    "program_compare": {
+      "with_rouge": 0.8333333333333334,
+      "wo_rouge": 0.06668333333333333,
+      "strong_rouge": 0.31668333333333326,
+      "with_f1": 0.9166666666666666,
+      "wo_f1": 0.16666666666666666,
+      "strong_f1": 0.4583333333333333
+    },
+    "ojt_conditions": {
+      "with_rouge": 0.5443000000000001,
+      "wo_rouge": 0.07468333333333334,
+      "strong_rouge": 0.27468333333333333,
+      "with_f1": 0.7083333333333334,
+      "wo_f1": 0.25,
+      "strong_f1": 0.48333333333333334
+    },
+    "f_grade_policy": {
+      "with_rouge": 0.8690000000000001,
+      "wo_rouge": 0.10441666666666667,
+      "strong_rouge": 0.40441666666666665,
+      "with_f1": 0.9444444444444445,
+      "wo_f1": 1.0,
+      "strong_f1": 1.0
+    }
+  }
+}

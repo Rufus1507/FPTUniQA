@@ -1,0 +1,34 @@
+{
+  "canonical_v2_stratified": {
+    "structured_lookup": {
+      "count": 68,
+      "percentage": 68.0,
+      "latency_p50": 2846.97,
+      "latency_p95": 3374.305,
+      "latency_mean": 2880.7827941176474,
+      "mean_faithfulness": 1.0,
+      "route_accuracy": 97.05882352941177
+    },
+    "rag_pipeline": {
+      "count": 22,
+      "percentage": 22.0,
+      "latency_p50": 11974.485,
+      "latency_p95": 14149.335000000001,
+      "latency_mean": 12225.932272727274,
+      "mean_faithfulness": 0.4319403104756857,
+      "route_accuracy": 81.81818181818183
+    },
+    "ood": {
+      "count": 10,
+      "percentage": 10.0,
+      "latency_p50": 2556.29,
+      "latency_p95": 2668.73,
+      "latency_mean": 2549.7950000000005,
+      "mean_faithfulness": 1.0,
+      "route_accuracy": 100.0
+    }
+  },
+  "multiturn_1000_stratified": {
+    "error": "details file not found"
+  }
+}

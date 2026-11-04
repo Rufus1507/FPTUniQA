@@ -1,0 +1,1272 @@
+{
+  "part_a_denominators": {
+    "c1_bm25": {
+      "total_lines": 100,
+      "uniq_qids": 100,
+      "gold_recs_count": 26,
+      "uniq_gold_count": 26,
+      "sum_hits_doc": 7.0,
+      "recall_doc_n26": 0.2692307692307692,
+      "sum_hits_equiv": 11.0,
+      "recall_equiv_n26": 0.4230769230769231,
+      "mean_mrr_n26": 0.2467948717948718
+    },
+    "c2_dense": {
+      "total_lines": 100,
+      "uniq_qids": 100,
+      "gold_recs_count": 26,
+      "uniq_gold_count": 26,
+      "sum_hits_doc": 12.0,
+      "recall_doc_n26": 0.46153846153846156,
+      "sum_hits_equiv": 14.5,
+      "recall_equiv_n26": 0.5576923076923077,
+      "mean_mrr_n26": 0.4230769230769231
+    },
+    "c3_hybrid": {
+      "total_lines": 100,
+      "uniq_qids": 100,
+      "gold_recs_count": 26,
+      "uniq_gold_count": 26,
+      "sum_hits_doc": 16.0,
+      "recall_doc_n26": 0.6153846153846154,
+      "sum_hits_equiv": 17.0,
+      "recall_equiv_n26": 0.6538461538461539,
+      "mean_mrr_n26": 0.5897435897435896
+    },
+    "c3p_hybrid_parallel": {
+      "total_lines": 100,
+      "uniq_qids": 100,
+      "gold_recs_count": 26,
+      "uniq_gold_count": 26,
+      "sum_hits_doc": 15.0,
+      "recall_doc_n26": 0.5769230769230769,
+      "sum_hits_equiv": 17.0,
+      "recall_equiv_n26": 0.6538461538461539,
+      "mean_mrr_n26": 0.5384615384615384
+    },
+    "c4_hybrid_rrf_filter": {
+      "total_lines": 200,
+      "uniq_qids": 100,
+      "gold_recs_count": 52,
+      "uniq_gold_count": 26,
+      "sum_hits_doc": 12.0,
+      "recall_doc_n26": 0.46153846153846156,
+      "sum_hits_equiv": 16.0,
+      "recall_equiv_n26": 0.6153846153846154,
+      "mean_mrr_n26": 0.4519230769230769
+    },
+    "c4_hybrid_rrf_soft": {
+      "total_lines": 100,
+      "uniq_qids": 100,
+      "gold_recs_count": 26,
+      "uniq_gold_count": 26,
+      "sum_hits_doc": 13.0,
+      "recall_doc_n26": 0.5,
+      "sum_hits_equiv": 15.0,
+      "recall_equiv_n26": 0.5769230769230769,
+      "mean_mrr_n26": 0.5269230769230769
+    },
+    "c5_full_noparser": {
+      "total_lines": 100,
+      "uniq_qids": 100,
+      "gold_recs_count": 26,
+      "uniq_gold_count": 26,
+      "sum_hits_doc": 9.0,
+      "recall_doc_n26": 0.34615384615384615,
+      "sum_hits_equiv": 9.5,
+      "recall_equiv_n26": 0.36538461538461536,
+      "mean_mrr_n26": 0.25
+    },
+    "c6_full": {
+      "total_lines": 200,
+      "uniq_qids": 100,
+      "gold_recs_count": 52,
+      "uniq_gold_count": 26,
+      "sum_hits_doc": 9.0,
+      "recall_doc_n26": 0.34615384615384615,
+      "sum_hits_equiv": 9.5,
+      "recall_equiv_n26": 0.36538461538461536,
+      "mean_mrr_n26": 0.25
+    }
+  },
+  "part_b_bootstrap": {
+    "latency_100": {
+      "delta_mean": -1969.9345,
+      "ci_low": -2623.1375,
+      "ci_high": -1295.8149,
+      "p_value": 0.0,
+      "significant_at_0_05": true,
+      "n_pairs": 100,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    },
+    "recall_100": {
+      "delta_mean": -0.01,
+      "ci_low": -0.025,
+      "ci_high": 0.0,
+      "p_value": 0.2719,
+      "significant_at_0_05": false,
+      "n_pairs": 100,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    },
+    "mrr_100": {
+      "delta_mean": -0.0133,
+      "ci_low": -0.03,
+      "ci_high": 0.0,
+      "p_value": 0.1096,
+      "significant_at_0_05": false,
+      "n_pairs": 100,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    },
+    "latency_26": {
+      "delta_mean": -2150.2008,
+      "ci_low": -2611.7852,
+      "ci_high": -1677.4569,
+      "p_value": 0.0,
+      "significant_at_0_05": true,
+      "n_pairs": 26,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    },
+    "recall_26": {
+      "delta_mean": -0.0385,
+      "ci_low": -0.0962,
+      "ci_high": 0.0,
+      "p_value": 0.2628,
+      "significant_at_0_05": false,
+      "n_pairs": 26,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    },
+    "equiv_recall_26": {
+      "delta_mean": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p_value": 1.0,
+      "significant_at_0_05": false,
+      "n_pairs": 26,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    },
+    "mrr_26": {
+      "delta_mean": -0.0513,
+      "ci_low": -0.109,
+      "ci_high": 0.0,
+      "p_value": 0.0969,
+      "significant_at_0_05": false,
+      "n_pairs": 26,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    }
+  },
+  "part_d_wrong_cohort": [
+    {
+      "config": "c1_bm25",
+      "q_id": "V2_B02_003",
+      "query": "Học phí chuyên ngành khóa K18 là bao nhiêu?",
+      "expected_cohorts": [
+        "K18"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k18_0728",
+        "doc_fpt_k18_0763",
+        "doc_fpt_k18_0721",
+        "doc_fpt_k18_0703",
+        "doc_fpt_k18_0790"
+      ],
+      "top5_cohorts": [
+        "K18",
+        "K18",
+        "K18",
+        "K18",
+        "K18"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c1_bm25",
+      "q_id": "V2_B03_001",
+      "query": "Học phí chuyên ngành một kỳ của sinh viên khóa K17",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0638",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0633",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0639"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c1_bm25",
+      "q_id": "V2_B03_002",
+      "query": "Học phí tiếng Anh dự bị khóa K17 thu bao nhiêu tiề",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0676",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0650"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c1_bm25",
+      "q_id": "V2_B03_003",
+      "query": "Lệ phí học lại một tín chỉ của khóa K17 quy định l",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0674",
+        "doc_fpt_k17_0673",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k17_0633",
+        "doc_fpt_k17_0597"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c1_bm25",
+      "q_id": "V2_B03_004",
+      "query": "Lệ phí thi lại của sinh viên khóa K17 là bao nhiêu",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0674",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k17_0593",
+        "doc_fpt_k17_0673",
+        "doc_fpt_k17_0597"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c1_bm25",
+      "q_id": "V2_B03_005",
+      "query": "Mức phí ký túc xá mỗi học kỳ cho khóa K17 là bao n",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0633",
+        "doc_fpt_k17_0664",
+        "doc_fpt_k17_0591",
+        "doc_fpt_k17_0632",
+        "doc_fpt_k17_0634"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c2_dense",
+      "q_id": "V2_B02_003",
+      "query": "Học phí chuyên ngành khóa K18 là bao nhiêu?",
+      "expected_cohorts": [
+        "K18"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k18_0707",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k18_0763",
+        "doc_fpt_k18_0703",
+        "doc_fpt_k18_0773"
+      ],
+      "top5_cohorts": [
+        "K18",
+        "K18",
+        "K18",
+        "K18",
+        "K18"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c2_dense",
+      "q_id": "V2_B03_001",
+      "query": "Học phí chuyên ngành một kỳ của sinh viên khóa K17",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0638",
+        "doc_fpt_k17_0620",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0578"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c2_dense",
+      "q_id": "V2_B03_002",
+      "query": "Học phí tiếng Anh dự bị khóa K17 thu bao nhiêu tiề",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0638",
+        "doc_fpt_k17_0650",
+        "doc_fpt_k17_0639"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c2_dense",
+      "q_id": "V2_B03_003",
+      "query": "Lệ phí học lại một tín chỉ của khóa K17 quy định l",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0640",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0638"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c2_dense",
+      "q_id": "V2_B03_004",
+      "query": "Lệ phí thi lại của sinh viên khóa K17 là bao nhiêu",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0629",
+        "doc_fpt_k17_0640",
+        "doc_fpt_k17_0620",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0626"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c2_dense",
+      "q_id": "V2_B03_005",
+      "query": "Mức phí ký túc xá mỗi học kỳ cho khóa K17 là bao n",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0618",
+        "doc_fpt_k17_0617",
+        "doc_fpt_k17_0620",
+        "doc_fpt_k17_0619",
+        "doc_fpt_k17_0640"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c3_hybrid",
+      "q_id": "V2_B02_003",
+      "query": "Học phí chuyên ngành khóa K18 là bao nhiêu?",
+      "expected_cohorts": [
+        "K18"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k20_0170",
+        "doc_fpt_k20_0167",
+        "doc_fpt_k18_0763",
+        "doc_fpt_k21_0471",
+        "doc_fpt_k17_0638"
+      ],
+      "top5_cohorts": [
+        "K20",
+        "K20",
+        "K18",
+        "K21",
+        "K17"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3_hybrid",
+      "q_id": "V2_B03_001",
+      "query": "Học phí chuyên ngành một kỳ của sinh viên khóa K17",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0638",
+        "doc_fpt_k20_0167",
+        "doc_fpt_k20_0170",
+        "doc_fpt_k21_0471",
+        "doc_fpt_k19_0560"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K20",
+        "K20",
+        "K21",
+        "K19"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3_hybrid",
+      "q_id": "V2_B03_002",
+      "query": "Học phí tiếng Anh dự bị khóa K17 thu bao nhiêu tiề",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k19_0556",
+        "doc_fpt_k21_0468"
+      ],
+      "top5_cohorts": [
+        "K18",
+        "K17",
+        "K17",
+        "K19",
+        "K21"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3_hybrid",
+      "q_id": "V2_B03_003",
+      "query": "Lệ phí học lại một tín chỉ của khóa K17 quy định l",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k18_0804",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k20_0175",
+        "doc_fpt_k20_0155"
+      ],
+      "top5_cohorts": [
+        "K18",
+        "K17",
+        "K18",
+        "K20",
+        "K20"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3_hybrid",
+      "q_id": "V2_B03_004",
+      "query": "Lệ phí thi lại của sinh viên khóa K17 là bao nhiêu",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0626",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k18_0759",
+        "doc_fpt_k20_0139"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K22",
+        "K18",
+        "K18",
+        "K20"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3_hybrid",
+      "q_id": "V2_B03_005",
+      "query": "Mức phí ký túc xá mỗi học kỳ cho khóa K17 là bao n",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k19_0564",
+        "doc_fpt_k19_0546",
+        "doc_fpt_k21_0476",
+        "doc_fpt_k18_0794",
+        "doc_fpt_k18_0773"
+      ],
+      "top5_cohorts": [
+        "K19",
+        "K19",
+        "K21",
+        "K18",
+        "K18"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3p_hybrid_parallel",
+      "q_id": "V2_B02_003",
+      "query": "Học phí chuyên ngành khóa K18 là bao nhiêu?",
+      "expected_cohorts": [
+        "K18"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k20_0170",
+        "doc_fpt_k20_0167",
+        "doc_fpt_k18_0763",
+        "doc_fpt_k21_0471",
+        "doc_fpt_k17_0638"
+      ],
+      "top5_cohorts": [
+        "K20",
+        "K20",
+        "K18",
+        "K21",
+        "K17"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3p_hybrid_parallel",
+      "q_id": "V2_B03_001",
+      "query": "Học phí chuyên ngành một kỳ của sinh viên khóa K17",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0638",
+        "doc_fpt_k20_0167",
+        "doc_fpt_k20_0170",
+        "doc_fpt_k21_0471",
+        "doc_fpt_k19_0560"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K20",
+        "K20",
+        "K21",
+        "K19"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3p_hybrid_parallel",
+      "q_id": "V2_B03_002",
+      "query": "Học phí tiếng Anh dự bị khóa K17 thu bao nhiêu tiề",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k19_0556",
+        "doc_fpt_k21_0468"
+      ],
+      "top5_cohorts": [
+        "K18",
+        "K17",
+        "K17",
+        "K19",
+        "K21"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3p_hybrid_parallel",
+      "q_id": "V2_B03_003",
+      "query": "Lệ phí học lại một tín chỉ của khóa K17 quy định l",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k18_0804",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k20_0175",
+        "doc_fpt_k20_0155"
+      ],
+      "top5_cohorts": [
+        "K18",
+        "K17",
+        "K18",
+        "K20",
+        "K20"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3p_hybrid_parallel",
+      "q_id": "V2_B03_004",
+      "query": "Lệ phí thi lại của sinh viên khóa K17 là bao nhiêu",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0626",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k18_0759",
+        "doc_fpt_k20_0139"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K22",
+        "K18",
+        "K18",
+        "K20"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c3p_hybrid_parallel",
+      "q_id": "V2_B03_005",
+      "query": "Mức phí ký túc xá mỗi học kỳ cho khóa K17 là bao n",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k19_0564",
+        "doc_fpt_k19_0546",
+        "doc_fpt_k21_0476",
+        "doc_fpt_k18_0794",
+        "doc_fpt_k18_0773"
+      ],
+      "top5_cohorts": [
+        "K19",
+        "K19",
+        "K21",
+        "K18",
+        "K18"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c4_hybrid_rrf_filter",
+      "q_id": "V2_B02_003",
+      "query": "Học phí chuyên ngành khóa K18 là bao nhiêu?",
+      "expected_cohorts": [
+        "K18"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k18_0763",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k18_0703",
+        "doc_fpt_k18_0721",
+        "doc_fpt_k18_0713"
+      ],
+      "top5_cohorts": [
+        "K18",
+        "K18",
+        "K18",
+        "K18",
+        "K18"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c4_hybrid_rrf_filter",
+      "q_id": "V2_B03_001",
+      "query": "Học phí chuyên ngành một kỳ của sinh viên khóa K17",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0638",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0633"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c4_hybrid_rrf_filter",
+      "q_id": "V2_B03_002",
+      "query": "Học phí tiếng Anh dự bị khóa K17 thu bao nhiêu tiề",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0650",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0578"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c4_hybrid_rrf_filter",
+      "q_id": "V2_B03_003",
+      "query": "Lệ phí học lại một tín chỉ của khóa K17 quy định l",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0581",
+        "doc_fpt_k17_0633",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k17_0639"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c4_hybrid_rrf_filter",
+      "q_id": "V2_B03_004",
+      "query": "Lệ phí thi lại của sinh viên khóa K17 là bao nhiêu",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0626",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0629",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k17_0619"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c4_hybrid_rrf_filter",
+      "q_id": "V2_B03_005",
+      "query": "Mức phí ký túc xá mỗi học kỳ cho khóa K17 là bao n",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0664",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0629"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K17"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c4_hybrid_rrf_soft",
+      "q_id": "V2_B02_003",
+      "query": "Học phí chuyên ngành khóa K18 là bao nhiêu?",
+      "expected_cohorts": [
+        "K18"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k18_0763",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k18_0703",
+        "doc_fpt_k18_0721",
+        "doc_fpt_k18_0770"
+      ],
+      "top5_cohorts": [
+        "K18",
+        "K18",
+        "K18",
+        "K18",
+        "K18"
+      ],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c4_hybrid_rrf_soft",
+      "q_id": "V2_B03_001",
+      "query": "Học phí chuyên ngành một kỳ của sinh viên khóa K17",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0638",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k20_0167",
+        "doc_fpt_k20_0170"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K20",
+        "K20"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c4_hybrid_rrf_soft",
+      "q_id": "V2_B03_002",
+      "query": "Học phí tiếng Anh dự bị khóa K17 thu bao nhiêu tiề",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0650",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k18_0765"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K18"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c4_hybrid_rrf_soft",
+      "q_id": "V2_B03_003",
+      "query": "Lệ phí học lại một tín chỉ của khóa K17 quy định l",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0581",
+        "doc_fpt_k17_0633",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k17_0640",
+        "doc_fpt_k18_0804"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K17",
+        "K17",
+        "K18"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c4_hybrid_rrf_soft",
+      "q_id": "V2_B03_004",
+      "query": "Lệ phí thi lại của sinh viên khóa K17 là bao nhiêu",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0626",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k17_0629",
+        "doc_fpt_k18_0804"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K17",
+        "K22",
+        "K17",
+        "K18"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c4_hybrid_rrf_soft",
+      "q_id": "V2_B03_005",
+      "query": "Mức phí ký túc xá mỗi học kỳ cho khóa K17 là bao n",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [
+        "doc_fpt_k17_0664",
+        "doc_fpt_k19_0564",
+        "doc_fpt_k18_0794",
+        "doc_fpt_k17_0618",
+        "doc_fpt_k19_0546"
+      ],
+      "top5_cohorts": [
+        "K17",
+        "K19",
+        "K18",
+        "K17",
+        "K19"
+      ],
+      "wrong_cohort_rate": 1.0
+    },
+    {
+      "config": "c5_full_noparser",
+      "q_id": "V2_B02_003",
+      "query": "Học phí chuyên ngành khóa K18 là bao nhiêu?",
+      "expected_cohorts": [
+        "K18"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c5_full_noparser",
+      "q_id": "V2_B03_001",
+      "query": "Học phí chuyên ngành một kỳ của sinh viên khóa K17",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c5_full_noparser",
+      "q_id": "V2_B03_002",
+      "query": "Học phí tiếng Anh dự bị khóa K17 thu bao nhiêu tiề",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c5_full_noparser",
+      "q_id": "V2_B03_003",
+      "query": "Lệ phí học lại một tín chỉ của khóa K17 quy định l",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c5_full_noparser",
+      "q_id": "V2_B03_004",
+      "query": "Lệ phí thi lại của sinh viên khóa K17 là bao nhiêu",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c5_full_noparser",
+      "q_id": "V2_B03_005",
+      "query": "Mức phí ký túc xá mỗi học kỳ cho khóa K17 là bao n",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c6_full",
+      "q_id": "V2_B02_003",
+      "query": "Học phí chuyên ngành khóa K18 là bao nhiêu?",
+      "expected_cohorts": [
+        "K18"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c6_full",
+      "q_id": "V2_B03_001",
+      "query": "Học phí chuyên ngành một kỳ của sinh viên khóa K17",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c6_full",
+      "q_id": "V2_B03_002",
+      "query": "Học phí tiếng Anh dự bị khóa K17 thu bao nhiêu tiề",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c6_full",
+      "q_id": "V2_B03_003",
+      "query": "Lệ phí học lại một tín chỉ của khóa K17 quy định l",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c6_full",
+      "q_id": "V2_B03_004",
+      "query": "Lệ phí thi lại của sinh viên khóa K17 là bao nhiêu",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    },
+    {
+      "config": "c6_full",
+      "q_id": "V2_B03_005",
+      "query": "Mức phí ký túc xá mỗi học kỳ cho khóa K17 là bao n",
+      "expected_cohorts": [
+        "K17"
+      ],
+      "top5_doc_ids": [],
+      "top5_cohorts": [],
+      "wrong_cohort_rate": 0.0
+    }
+  ],
+  "part_e_c3_vs_c4_hard": [
+    {
+      "q_id": "V2_B05_002",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+      "gold_docs": [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0751"
+      ],
+      "c3_top5": [
+        "doc_fpt_k20_0051",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717"
+      ],
+      "c4_top5": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k22_0299"
+      ],
+      "c3_hit": 0.5,
+      "c4_hit": 0.0,
+      "c4_eq_hit": 1.0,
+      "reason": "Equivalent Doc Hit (Trượt giả do lấy doc cùng nội dung khác ID)"
+    },
+    {
+      "q_id": "V2_B05_003",
+      "query": "Điều kiện để sinh viên được đăng ký học vượt là gì?",
+      "gold_docs": [
+        "doc_fpt_k20_0152",
+        "doc_fpt_k19_0550"
+      ],
+      "c3_top5": [
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k19_0550",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585"
+      ],
+      "c4_top5": [
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400"
+      ],
+      "c3_hit": 0.5,
+      "c4_hit": 0.0,
+      "c4_eq_hit": 1.0,
+      "reason": "Equivalent Doc Hit (Trượt giả do lấy doc cùng nội dung khác ID)"
+    },
+    {
+      "q_id": "V2_B07_002",
+      "query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "gold_docs": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0033"
+      ],
+      "c3_top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0077"
+      ],
+      "c4_top5": [
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0073",
+        "doc_fpt_k20_0071",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050"
+      ],
+      "c3_hit": 0.5,
+      "c4_hit": 0.0,
+      "c4_eq_hit": 0.0,
+      "reason": "Parser không nhận diện được cohort -> lọc nhầm hoặc mất rank"
+    },
+    {
+      "q_id": "V2_B07_005",
+      "query": "Chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+      "gold_docs": [
+        "doc_fpt_k21_0488"
+      ],
+      "c3_top5": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0207"
+      ],
+      "c4_top5": [
+        "doc_fpt_k17_0652",
+        "doc_fpt_k20_0207",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k22_0366"
+      ],
+      "c3_hit": 1.0,
+      "c4_hit": 0.0,
+      "c4_eq_hit": 1.0,
+      "reason": "Equivalent Doc Hit (Trượt giả do lấy doc cùng nội dung khác ID)"
+    },
+    {
+      "q_id": "V2_B07_006",
+      "query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+      "gold_docs": [
+        "doc_fpt_k21_0488"
+      ],
+      "c3_top5": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k18_0729"
+      ],
+      "c4_top5": [
+        "doc_fpt_k17_0652",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0035",
+        "doc_fpt_k20_0207"
+      ],
+      "c3_hit": 1.0,
+      "c4_hit": 0.0,
+      "c4_eq_hit": 1.0,
+      "reason": "Equivalent Doc Hit (Trượt giả do lấy doc cùng nội dung khác ID)"
+    }
+  ],
+  "part_f_c5_vs_c6": {
+    "common_count": 100,
+    "identical_retrieval_count": 95,
+    "mean_f5": 0.865612829963817,
+    "mean_f6": 0.8291440395692347,
+    "bootstrap_faithfulness_c6_vs_c5": {
+      "delta_mean": -0.0365,
+      "ci_low": -0.0932,
+      "ci_high": 0.0148,
+      "p_value": 0.1892,
+      "significant_at_0_05": false,
+      "n_pairs": 100,
+      "bootstrap_resamples": 10000,
+      "random_seed": 42
+    }
+  }
+}

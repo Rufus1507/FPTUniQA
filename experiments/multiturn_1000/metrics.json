@@ -1,0 +1,50 @@
+{
+  "total_turns": 1000,
+  "api_success_rate": 100.0,
+  "multi_turn": {
+    "evaluated_turns": 157,
+    "turn_pass_rate": 59.24,
+    "macro_keyword_recall": 73.66,
+    "topic_switch_evaluated": 1000,
+    "topic_switch_accuracy": 96.9
+  },
+  "routing": {
+    "overall_accuracy": 82.2,
+    "per_route": {
+      "structured_lookup": {
+        "total": 742,
+        "correct": 584,
+        "accuracy": 78.70619946091644
+      },
+      "rag_pipeline": {
+        "total": 148,
+        "correct": 129,
+        "accuracy": 87.16216216216216
+      },
+      "ood": {
+        "total": 110,
+        "correct": 109,
+        "accuracy": 99.0909090909091
+      }
+    }
+  },
+  "generation": {
+    "evaluated_turns": 1000,
+    "turn_pass_rate": 36.1,
+    "macro_keyword_coverage": 53.0
+  },
+  "guardrail": {
+    "ood_total": 110,
+    "ood_rejected": 109,
+    "ood_rejection_accuracy": 99.09,
+    "rag_turns_evaluated": 143,
+    "hallucination_flagged": 3,
+    "hallucination_rate": 2.1
+  },
+  "latency": {
+    "p50_ms": 10.0,
+    "p90_ms": 5218.32,
+    "p95_ms": 6221.02,
+    "mean_ms": 1411.21
+  }
+}

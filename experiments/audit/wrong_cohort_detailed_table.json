@@ -1,0 +1,356 @@
+[
+  {
+    "q_id": "V2_B02_003",
+    "query": "Học phí chuyên ngành khóa K18 là bao nhiêu?",
+    "expected_cohorts": [
+      "K18"
+    ],
+    "c1_bm25_cohorts": [
+      "K18",
+      "K18",
+      "K18",
+      "K18",
+      "K18"
+    ],
+    "c1_bm25_wc_rate": 0.0,
+    "c2_dense_cohorts": [
+      "K18",
+      "K18",
+      "K18",
+      "K18",
+      "K18"
+    ],
+    "c2_dense_wc_rate": 0.0,
+    "c3_hybrid_cohorts": [
+      "K20",
+      "K20",
+      "K18",
+      "K21",
+      "K17"
+    ],
+    "c3_hybrid_wc_rate": 1.0,
+    "c3p_hybrid_parallel_cohorts": [
+      "K20",
+      "K20",
+      "K18",
+      "K21",
+      "K17"
+    ],
+    "c3p_hybrid_parallel_wc_rate": 1.0,
+    "c4_hybrid_rrf_filter_cohorts": [
+      "K18",
+      "K18",
+      "K18",
+      "K18",
+      "K18"
+    ],
+    "c4_hybrid_rrf_filter_wc_rate": 0.0,
+    "c4_hybrid_rrf_soft_cohorts": [
+      "K18",
+      "K18",
+      "K18",
+      "K18",
+      "K18"
+    ],
+    "c4_hybrid_rrf_soft_wc_rate": 0.0,
+    "c5_full_noparser_cohorts": [],
+    "c5_full_noparser_wc_rate": 0.0,
+    "c6_full_cohorts": [],
+    "c6_full_wc_rate": 0.0
+  },
+  {
+    "q_id": "V2_B03_001",
+    "query": "Học phí chuyên ngành một kỳ của sinh viên khóa K17",
+    "expected_cohorts": [
+      "K17"
+    ],
+    "c1_bm25_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c1_bm25_wc_rate": 0.0,
+    "c2_dense_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c2_dense_wc_rate": 0.0,
+    "c3_hybrid_cohorts": [
+      "K17",
+      "K20",
+      "K20",
+      "K21",
+      "K19"
+    ],
+    "c3_hybrid_wc_rate": 1.0,
+    "c3p_hybrid_parallel_cohorts": [
+      "K17",
+      "K20",
+      "K20",
+      "K21",
+      "K19"
+    ],
+    "c3p_hybrid_parallel_wc_rate": 1.0,
+    "c4_hybrid_rrf_filter_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c4_hybrid_rrf_filter_wc_rate": 0.0,
+    "c4_hybrid_rrf_soft_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K20",
+      "K20"
+    ],
+    "c4_hybrid_rrf_soft_wc_rate": 1.0,
+    "c5_full_noparser_cohorts": [],
+    "c5_full_noparser_wc_rate": 0.0,
+    "c6_full_cohorts": [],
+    "c6_full_wc_rate": 0.0
+  },
+  {
+    "q_id": "V2_B03_002",
+    "query": "Học phí tiếng Anh dự bị khóa K17 thu bao nhiêu tiề",
+    "expected_cohorts": [
+      "K17"
+    ],
+    "c1_bm25_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c1_bm25_wc_rate": 0.0,
+    "c2_dense_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c2_dense_wc_rate": 0.0,
+    "c3_hybrid_cohorts": [
+      "K18",
+      "K17",
+      "K17",
+      "K19",
+      "K21"
+    ],
+    "c3_hybrid_wc_rate": 1.0,
+    "c3p_hybrid_parallel_cohorts": [
+      "K18",
+      "K17",
+      "K17",
+      "K19",
+      "K21"
+    ],
+    "c3p_hybrid_parallel_wc_rate": 1.0,
+    "c4_hybrid_rrf_filter_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c4_hybrid_rrf_filter_wc_rate": 0.0,
+    "c4_hybrid_rrf_soft_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K18"
+    ],
+    "c4_hybrid_rrf_soft_wc_rate": 1.0,
+    "c5_full_noparser_cohorts": [],
+    "c5_full_noparser_wc_rate": 0.0,
+    "c6_full_cohorts": [],
+    "c6_full_wc_rate": 0.0
+  },
+  {
+    "q_id": "V2_B03_003",
+    "query": "Lệ phí học lại một tín chỉ của khóa K17 quy định l",
+    "expected_cohorts": [
+      "K17"
+    ],
+    "c1_bm25_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c1_bm25_wc_rate": 0.0,
+    "c2_dense_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c2_dense_wc_rate": 0.0,
+    "c3_hybrid_cohorts": [
+      "K18",
+      "K17",
+      "K18",
+      "K20",
+      "K20"
+    ],
+    "c3_hybrid_wc_rate": 1.0,
+    "c3p_hybrid_parallel_cohorts": [
+      "K18",
+      "K17",
+      "K18",
+      "K20",
+      "K20"
+    ],
+    "c3p_hybrid_parallel_wc_rate": 1.0,
+    "c4_hybrid_rrf_filter_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c4_hybrid_rrf_filter_wc_rate": 0.0,
+    "c4_hybrid_rrf_soft_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K18"
+    ],
+    "c4_hybrid_rrf_soft_wc_rate": 1.0,
+    "c5_full_noparser_cohorts": [],
+    "c5_full_noparser_wc_rate": 0.0,
+    "c6_full_cohorts": [],
+    "c6_full_wc_rate": 0.0
+  },
+  {
+    "q_id": "V2_B03_004",
+    "query": "Lệ phí thi lại của sinh viên khóa K17 là bao nhiêu",
+    "expected_cohorts": [
+      "K17"
+    ],
+    "c1_bm25_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c1_bm25_wc_rate": 0.0,
+    "c2_dense_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c2_dense_wc_rate": 0.0,
+    "c3_hybrid_cohorts": [
+      "K17",
+      "K22",
+      "K18",
+      "K18",
+      "K20"
+    ],
+    "c3_hybrid_wc_rate": 1.0,
+    "c3p_hybrid_parallel_cohorts": [
+      "K17",
+      "K22",
+      "K18",
+      "K18",
+      "K20"
+    ],
+    "c3p_hybrid_parallel_wc_rate": 1.0,
+    "c4_hybrid_rrf_filter_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c4_hybrid_rrf_filter_wc_rate": 0.0,
+    "c4_hybrid_rrf_soft_cohorts": [
+      "K17",
+      "K17",
+      "K22",
+      "K17",
+      "K18"
+    ],
+    "c4_hybrid_rrf_soft_wc_rate": 1.0,
+    "c5_full_noparser_cohorts": [],
+    "c5_full_noparser_wc_rate": 0.0,
+    "c6_full_cohorts": [],
+    "c6_full_wc_rate": 0.0
+  },
+  {
+    "q_id": "V2_B03_005",
+    "query": "Mức phí ký túc xá mỗi học kỳ cho khóa K17 là bao n",
+    "expected_cohorts": [
+      "K17"
+    ],
+    "c1_bm25_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c1_bm25_wc_rate": 0.0,
+    "c2_dense_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c2_dense_wc_rate": 0.0,
+    "c3_hybrid_cohorts": [
+      "K19",
+      "K19",
+      "K21",
+      "K18",
+      "K18"
+    ],
+    "c3_hybrid_wc_rate": 1.0,
+    "c3p_hybrid_parallel_cohorts": [
+      "K19",
+      "K19",
+      "K21",
+      "K18",
+      "K18"
+    ],
+    "c3p_hybrid_parallel_wc_rate": 1.0,
+    "c4_hybrid_rrf_filter_cohorts": [
+      "K17",
+      "K17",
+      "K17",
+      "K17",
+      "K17"
+    ],
+    "c4_hybrid_rrf_filter_wc_rate": 0.0,
+    "c4_hybrid_rrf_soft_cohorts": [
+      "K17",
+      "K19",
+      "K18",
+      "K17",
+      "K19"
+    ],
+    "c4_hybrid_rrf_soft_wc_rate": 1.0,
+    "c5_full_noparser_cohorts": [],
+    "c5_full_noparser_wc_rate": 0.0,
+    "c6_full_cohorts": [],
+    "c6_full_wc_rate": 0.0
+  }
+]

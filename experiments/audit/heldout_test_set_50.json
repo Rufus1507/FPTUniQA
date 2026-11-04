@@ -1,0 +1,933 @@
+[
+  {
+    "q_id": "V2_B02_013",
+    "batch": "batch_02",
+    "category": "topic_switch_turn1",
+    "session_id": "v2_b02_sess_007",
+    "turn_index": 1,
+    "query": "Chuẩn đầu ra tiếng Anh ngành CNTT yêu cầu chứng chỉ gì?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chủ đề ban đầu.",
+    "expected_answer_contains": [
+      "IELTS",
+      "TOEFL",
+      "VSTEP"
+    ]
+  },
+  {
+    "q_id": "V2_B02_015",
+    "batch": "batch_02",
+    "category": "topic_switch_turn1",
+    "session_id": "v2_b02_sess_008",
+    "turn_index": 1,
+    "query": "Quy chế thôi học áp dụng khi sinh viên nhận bao nhiêu lần cảnh báo học tập?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chủ đề ban đầu.",
+    "expected_answer_contains": [
+      "cảnh báo",
+      "buộc thôi học",
+      "lần"
+    ]
+  },
+  {
+    "q_id": "V2_B02_020",
+    "batch": "batch_02",
+    "category": "topic_switch",
+    "session_id": "v2_b02_sess_010",
+    "turn_index": 2,
+    "query": "Quy định về việc mang tài liệu vào phòng thi EOS như thế nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": true,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chuyển đổi chủ đề hoàn toàn độc lập.",
+    "expected_answer_contains": [
+      "tài liệu",
+      "quy chế",
+      "thi"
+    ],
+    "avoid_bleed": [
+      "K22",
+      "học kỳ"
+    ]
+  },
+  {
+    "q_id": "V2_B02_024",
+    "batch": "batch_02",
+    "category": "topic_switch",
+    "session_id": "v2_b02_sess_012",
+    "turn_index": 2,
+    "query": "Cách tính điểm trung bình tích lũy GPA tại FPT?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": true,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chuyển đổi chủ đề hoàn toàn độc lập.",
+    "expected_answer_contains": [
+      "GPA",
+      "tích lũy",
+      "tín chỉ"
+    ],
+    "avoid_bleed": [
+      "K17",
+      "học lại"
+    ]
+  },
+  {
+    "q_id": "V2_B02_029",
+    "batch": "batch_02",
+    "category": "topic_switch_turn1",
+    "session_id": "v2_b02_sess_015",
+    "turn_index": 1,
+    "query": "Trong giai đoạn OJT sinh viên có phải đóng học phí chuyên ngành không?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chủ đề ban đầu.",
+    "expected_answer_contains": [
+      "không phải đóng học phí chuyên ngành",
+      "miễn học phí"
+    ]
+  },
+  {
+    "q_id": "V2_B02_032",
+    "batch": "batch_02",
+    "category": "topic_switch",
+    "session_id": "v2_b02_sess_016",
+    "turn_index": 2,
+    "query": "Quy định về trang phục sinh viên khi đến trường Đại học FPT?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": true,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chuyển đổi chủ đề hoàn toàn độc lập.",
+    "expected_answer_contains": [
+      "trang phục",
+      "đồng phục",
+      "áo cam"
+    ],
+    "avoid_bleed": [
+      "K19",
+      "tiếng Anh"
+    ]
+  },
+  {
+    "q_id": "V2_B02_035",
+    "batch": "batch_02",
+    "category": "topic_switch_turn1",
+    "session_id": "v2_b02_sess_018",
+    "turn_index": 1,
+    "query": "Sinh viên nợ bao nhiêu tín chỉ thì không được làm đồ án tốt nghiệp?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chủ đề ban đầu.",
+    "expected_answer_contains": [
+      "tín chỉ",
+      "nợ",
+      "đồ án"
+    ]
+  },
+  {
+    "q_id": "V2_B02_038",
+    "batch": "batch_02",
+    "category": "topic_switch",
+    "session_id": "v2_b02_sess_019",
+    "turn_index": 2,
+    "query": "Chính sách học bổng Nguyễn Văn Đạo xét theo tiêu chí nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": true,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chuyển đổi chủ đề hoàn toàn độc lập.",
+    "expected_answer_contains": [
+      "học bổng",
+      "Nguyễn Văn Đạo",
+      "kỳ thi"
+    ],
+    "avoid_bleed": [
+      "ECO111"
+    ]
+  },
+  {
+    "q_id": "V2_B02_042",
+    "batch": "batch_02",
+    "category": "topic_switch",
+    "session_id": "v2_b02_sess_021",
+    "turn_index": 2,
+    "query": "Hồ sơ chuyển ngành học tại Đại học FPT gồm những gì?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": true,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chuyển đổi chủ đề hoàn toàn độc lập.",
+    "expected_answer_contains": [
+      "chuyển ngành",
+      "đơn",
+      "phòng đào tạo"
+    ],
+    "avoid_bleed": [
+      "K17",
+      "học kỳ"
+    ]
+  },
+  {
+    "q_id": "V2_B02_045",
+    "batch": "batch_02",
+    "category": "topic_switch_turn1",
+    "session_id": "v2_b02_sess_023",
+    "turn_index": 1,
+    "query": "Điểm thi PE được phúc khảo trong vòng bao nhiêu ngày?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chủ đề ban đầu.",
+    "expected_answer_contains": [
+      "ngày",
+      "phúc khảo"
+    ]
+  },
+  {
+    "q_id": "V2_B02_048",
+    "batch": "batch_02",
+    "category": "topic_switch",
+    "session_id": "v2_b02_sess_024",
+    "turn_index": 2,
+    "query": "Thủ tục đăng ký học đi lại như thế nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": true,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Câu hỏi chuyển đổi chủ đề hoàn toàn độc lập.",
+    "expected_answer_contains": [
+      "học lại",
+      "đăng ký",
+      "học vụ"
+    ],
+    "avoid_bleed": [
+      "K22",
+      "ký túc xá"
+    ]
+  },
+  {
+    "q_id": "V2_B05_011",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_011",
+    "turn_index": 1,
+    "query": "Quy chế xử lý kỷ luật đối với sinh viên gian lận thi cử tại Đại học FPT?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "kỷ luật",
+      "đình chỉ",
+      "gian lận"
+    ]
+  },
+  {
+    "q_id": "V2_B05_012",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_012",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: quy chế xử lý kỷ luật đối với sinh viên gian lận thi cử tại Đại học FPT?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "kỷ luật",
+      "đình chỉ",
+      "gian lận"
+    ]
+  },
+  {
+    "q_id": "V2_B05_013",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_013",
+    "turn_index": 1,
+    "query": "Thủ tục xin bảo lưu kết quả học tập cần chuẩn bị những giấy tờ gì?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "bảo lưu",
+      "đơn",
+      "học kỳ"
+    ]
+  },
+  {
+    "q_id": "V2_B05_014",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_014",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: thủ tục xin bảo lưu kết quả học tập cần chuẩn bị những giấy tờ gì?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "bảo lưu",
+      "đơn",
+      "học kỳ"
+    ]
+  },
+  {
+    "q_id": "V2_B05_015",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_015",
+    "turn_index": 1,
+    "query": "Thời gian bảo lưu học tập tối đa của sinh viên là bao lâu?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "bảo lưu",
+      "học kỳ",
+      "năm"
+    ]
+  },
+  {
+    "q_id": "V2_B05_016",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_016",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: thời gian bảo lưu học tập tối đa của sinh viên là bao lâu?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "bảo lưu",
+      "học kỳ",
+      "năm"
+    ]
+  },
+  {
+    "q_id": "V2_B05_017",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_017",
+    "turn_index": 1,
+    "query": "Sinh viên có được phép học cải thiện điểm đối với các môn đã qua không?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "cải thiện",
+      "học lại",
+      "điểm"
+    ]
+  },
+  {
+    "q_id": "V2_B05_018",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_018",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được phép học cải thiện điểm đối với các môn đã qua không?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "cải thiện",
+      "học lại",
+      "điểm"
+    ]
+  },
+  {
+    "q_id": "V2_B05_019",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_019",
+    "turn_index": 1,
+    "query": "Điều kiện để sinh viên được chuyển ngành đào tạo là gì?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "chuyển ngành",
+      "xét",
+      "học kỳ"
+    ]
+  },
+  {
+    "q_id": "V2_B05_020",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_020",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: điều kiện để sinh viên được chuyển ngành đào tạo là gì?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "chuyển ngành",
+      "xét",
+      "học kỳ"
+    ]
+  },
+  {
+    "q_id": "V2_B05_021",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_021",
+    "turn_index": 1,
+    "query": "Cách tính điểm trung bình chung học kỳ (GPA) và tích lũy (CPA)?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "GPA",
+      "CPA",
+      "trung bình",
+      "tín chỉ"
+    ]
+  },
+  {
+    "q_id": "V2_B05_022",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_022",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: cách tính điểm trung bình chung học kỳ (GPA) và tích lũy (CPA)?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "GPA",
+      "CPA",
+      "trung bình",
+      "tín chỉ"
+    ]
+  },
+  {
+    "q_id": "V2_B05_023",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_023",
+    "turn_index": 1,
+    "query": "Sinh viên nợ bao nhiêu tín chỉ thì bị xếp loại học lực yếu?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "học lực",
+      "yếu",
+      "tín chỉ"
+    ]
+  },
+  {
+    "q_id": "V2_B05_024",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_024",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: sinh viên nợ bao nhiêu tín chỉ thì bị xếp loại học lực yếu?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "học lực",
+      "yếu",
+      "tín chỉ"
+    ]
+  },
+  {
+    "q_id": "V2_B05_025",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_025",
+    "turn_index": 1,
+    "query": "Quy định về việc vắng thi có lý do chính đáng được xử lý như thế nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "hoãn thi",
+      "vắng thi",
+      "lý do",
+      "đơn"
+    ]
+  },
+  {
+    "q_id": "V2_B05_026",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_026",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: quy định về việc vắng thi có lý do chính đáng được xử lý như thế nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "hoãn thi",
+      "vắng thi",
+      "lý do",
+      "đơn"
+    ]
+  },
+  {
+    "q_id": "V2_B05_029",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_029",
+    "turn_index": 1,
+    "query": "Quy định về việc công nhận chứng chỉ ngoại ngữ quốc tế để miễn học tiếng Anh?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "miễn học",
+      "IELTS",
+      "TOEFL",
+      "chứng chỉ"
+    ]
+  },
+  {
+    "q_id": "V2_B05_030",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_030",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: quy định về việc công nhận chứng chỉ ngoại ngữ quốc tế để miễn học tiếng Anh?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "miễn học",
+      "IELTS",
+      "TOEFL",
+      "chứng chỉ"
+    ]
+  },
+  {
+    "q_id": "V2_B05_031",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_031",
+    "turn_index": 1,
+    "query": "Thời gian tối đa để hoàn thành chương trình đào tạo đại học tại FPT?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "thời gian",
+      "năm",
+      "tối đa",
+      "đào tạo"
+    ]
+  },
+  {
+    "q_id": "V2_B05_032",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_032",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: thời gian tối đa để hoàn thành chương trình đào tạo đại học tại FPT?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "thời gian",
+      "năm",
+      "tối đa",
+      "đào tạo"
+    ]
+  },
+  {
+    "q_id": "V2_B05_033",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_033",
+    "turn_index": 1,
+    "query": "Sinh viên có được đăng ký học 2 ngành cùng một lúc (song bằng) không?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "song bằng",
+      "hai ngành",
+      "ngành"
+    ]
+  },
+  {
+    "q_id": "V2_B05_034",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_034",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được đăng ký học 2 ngành cùng một lúc (song bằng) không?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "song bằng",
+      "hai ngành",
+      "ngành"
+    ]
+  },
+  {
+    "q_id": "V2_B05_035",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_035",
+    "turn_index": 1,
+    "query": "Trường hợp nào sinh viên bị đình chỉ học tập có thời hạn?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "đình chỉ",
+      "kỷ luật",
+      "thời hạn"
+    ]
+  },
+  {
+    "q_id": "V2_B05_036",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_036",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: trường hợp nào sinh viên bị đình chỉ học tập có thời hạn?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "đình chỉ",
+      "kỷ luật",
+      "thời hạn"
+    ]
+  },
+  {
+    "q_id": "V2_B05_039",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_039",
+    "turn_index": 1,
+    "query": "Sinh viên có được phép rút bớt môn học sau khi đã bắt đầu kỳ học không?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "rút môn",
+      "học phần",
+      "hủy"
+    ]
+  },
+  {
+    "q_id": "V2_B05_040",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_040",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được phép rút bớt môn học sau khi đã bắt đầu kỳ học không?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "rút môn",
+      "học phần",
+      "hủy"
+    ]
+  },
+  {
+    "q_id": "V2_B05_041",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_041",
+    "turn_index": 1,
+    "query": "Điều kiện để được xét nhận học bổng khuyến khích học tập từng kỳ?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "học bổng",
+      "GPA",
+      "khuyến khích"
+    ]
+  },
+  {
+    "q_id": "V2_B05_042",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_042",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: điều kiện để được xét nhận học bổng khuyến khích học tập từng kỳ?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "học bổng",
+      "GPA",
+      "khuyến khích"
+    ]
+  },
+  {
+    "q_id": "V2_B05_043",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_043",
+    "turn_index": 1,
+    "query": "Mức điểm rèn luyện được đánh giá theo những tiêu chí nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "điểm rèn luyện",
+      "hoạt động",
+      "tiêu chí"
+    ]
+  },
+  {
+    "q_id": "V2_B05_044",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_044",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: mức điểm rèn luyện được đánh giá theo những tiêu chí nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "điểm rèn luyện",
+      "hoạt động",
+      "tiêu chí"
+    ]
+  },
+  {
+    "q_id": "V2_B05_045",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_045",
+    "turn_index": 1,
+    "query": "Sinh viên có được xem lại bài thi tự luận hoặc thực hành không?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "xem bài thi",
+      "phúc khảo",
+      "điểm"
+    ]
+  },
+  {
+    "q_id": "V2_B05_046",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_046",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được xem lại bài thi tự luận hoặc thực hành không?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "xem bài thi",
+      "phúc khảo",
+      "điểm"
+    ]
+  },
+  {
+    "q_id": "V2_B05_047",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_047",
+    "turn_index": 1,
+    "query": "Quy chế đào tạo theo hệ thống tín chỉ của Bộ GD&ĐT áp dụng tại trường như thế nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "tín chỉ",
+      "quy chế",
+      "đào tạo"
+    ]
+  },
+  {
+    "q_id": "V2_B05_048",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_048",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: quy chế đào tạo theo hệ thống tín chỉ của Bộ GD&ĐT áp dụng tại trường như thế nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "tín chỉ",
+      "quy chế",
+      "đào tạo"
+    ]
+  },
+  {
+    "q_id": "V2_B05_049",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_049",
+    "turn_index": 1,
+    "query": "Thủ tục xin thôi học tự nguyện cần nộp đơn cho phòng ban nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT",
+    "expected_answer_contains": [
+      "thôi học",
+      "tự nguyện",
+      "phòng đào tạo"
+    ]
+  },
+  {
+    "q_id": "V2_B05_050",
+    "batch": "batch_05",
+    "category": "academic_regulations",
+    "session_id": "v2_b05_sess_050",
+    "turn_index": 1,
+    "query": "Cho tôi hỏi quy định cụ thể: thủ tục xin thôi học tự nguyện cần nộp đơn cho phòng ban nào?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy chế học vụ ĐH FPT chi tiết",
+    "expected_answer_contains": [
+      "thôi học",
+      "tự nguyện",
+      "phòng đào tạo"
+    ]
+  },
+  {
+    "q_id": "V2_B07_011",
+    "batch": "batch_07",
+    "category": "graduation_ojt",
+    "session_id": "v2_b07_sess_011",
+    "turn_index": 1,
+    "query": "Thời gian thực tập OJT kéo dài trong bao lâu?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy định tốt nghiệp & OJT",
+    "expected_answer_contains": [
+      "học kỳ",
+      "tháng",
+      "thời gian",
+      "kỳ"
+    ]
+  },
+  {
+    "q_id": "V2_B07_012",
+    "batch": "batch_07",
+    "category": "graduation_ojt",
+    "session_id": "v2_b07_sess_012",
+    "turn_index": 1,
+    "query": "Quy định xét tốt nghiệp: thời gian thực tập OJT kéo dài trong bao lâu?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy định tốt nghiệp & OJT chi tiết",
+    "expected_answer_contains": [
+      "học kỳ",
+      "tháng",
+      "thời gian",
+      "kỳ"
+    ]
+  },
+  {
+    "q_id": "V2_B07_015",
+    "batch": "batch_07",
+    "category": "graduation_ojt",
+    "session_id": "v2_b07_sess_015",
+    "turn_index": 1,
+    "query": "Điều kiện về số tín chỉ tích lũy để được đi thực tập OJT là gì?",
+    "is_continuation": false,
+    "expected_rewrite_contains": [],
+    "is_topic_switch": false,
+    "expected_route": "rag_pipeline",
+    "golden_answer": "Quy định tốt nghiệp & OJT",
+    "expected_answer_contains": [
+      "tín chỉ",
+      "tiên quyết",
+      "OJT"
+    ]
+  }
+]

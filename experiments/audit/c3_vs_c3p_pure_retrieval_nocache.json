@@ -1,0 +1,14 @@
+{
+  "c3_median_p50_ms": 0.02,
+  "c3_p95_ms": 0.02,
+  "c3_mean_ms": 0.02,
+  "c3p_median_p50_ms": 0.02,
+  "c3p_p95_ms": 0.02,
+  "c3p_mean_ms": 0.02,
+  "delta_mean_ms": 0.0,
+  "ci_low_ms": -0.0,
+  "ci_high_ms": 0.0,
+  "p_value": 0.9747,
+  "iterations": 5,
+  "sample_size": 100
+}

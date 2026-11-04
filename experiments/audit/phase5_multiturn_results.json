@@ -1,0 +1,103 @@
+{
+  "benchmark_origin": {
+    "runner_script_exists": true,
+    "runner_script": "scripts/run_1000_multiturn_benchmark.py",
+    "sample_data_sources": [
+      "data/evaluation/benchmark_v2\\batch_01.jsonl",
+      "data/evaluation/benchmark_v2\\batch_02.jsonl",
+      "data/evaluation/benchmark_v2\\batch_03.jsonl",
+      "data/evaluation/benchmark_v2\\batch_04.jsonl",
+      "data/evaluation/benchmark_v2\\batch_05.jsonl",
+      "data/evaluation/benchmark_v2\\batch_06.jsonl",
+      "data/evaluation/benchmark_v2\\batch_07.jsonl",
+      "data/evaluation/benchmark_v2\\batch_08.jsonl",
+      "data/evaluation/benchmark_v2\\batch_09.jsonl",
+      "data/evaluation/benchmark_v2\\batch_10.jsonl"
+    ],
+    "generator_method": "Synthetic production sessions generated from 15 canonical dialogue templates covering 768 multi-turn sessions (1,000 turns total)."
+  },
+  "topic_switch_evaluation": {
+    "total_turns": 1000,
+    "confusion_matrix": {
+      "TP_topic_switch": 67,
+      "FP_false_switch": 23,
+      "FN_missed_switch": 8,
+      "TN_continuation": 902
+    },
+    "class_distribution": {
+      "topic_switch_count": 75,
+      "topic_switch_ratio": 0.075,
+      "continuation_count": 925,
+      "continuation_ratio": 0.925
+    },
+    "accuracy": 0.969,
+    "topic_switch_class": {
+      "precision": 0.7444,
+      "recall": 0.8933,
+      "f1": 0.8121
+    },
+    "continuation_class": {
+      "precision": 0.9912,
+      "recall": 0.9751,
+      "f1": 0.9831
+    },
+    "macro_f1": 0.8976
+  },
+  "macro_keyword_evaluation": {
+    "total_selected_turns": 157,
+    "selection_criteria": "Lượt hội thoại thứ >= 2 có chứa đại từ thay thế / tỉnh lược thực thể (anaphora/ellipsis), được chuyên gia gán nhãn danh sách từ khóa thực thể bắt buộc phải khôi phục trong expected_rewrite_contains.",
+    "mean_macro_keyword_recall": 0.7738853503184714,
+    "sample_evaluations": [
+      {
+        "q_id": "R1_002",
+        "query": "Còn phí ký túc xá thì sao?",
+        "expected_keywords": [
+          "K21",
+          "ký túc xá"
+        ],
+        "actual_rewrite": "học phí k21 ngành chuyên ngành là bao nhiêu?",
+        "keyword_recall": 0.5
+      },
+      {
+        "q_id": "R1_004",
+        "query": "Vậy lệ phí thi lại khóa này là bao nhiêu?",
+        "expected_keywords": [
+          "K18",
+          "thi lại"
+        ],
+        "actual_rewrite": "học phí k18 ngành chuyên ngành là bao nhiêu?",
+        "keyword_recall": 0.5
+      },
+      {
+        "q_id": "R1_006",
+        "query": "Thế học phí tiếng Anh dự bị mỗi mức là bao nhiêu?",
+        "expected_keywords": [
+          "K20",
+          "tiếng Anh"
+        ],
+        "actual_rewrite": "thế học phí tiếng anh dự bị mỗi mức là bao nhiêu?",
+        "keyword_recall": 0.5
+      },
+      {
+        "q_id": "R1_008",
+        "query": "Còn tiền học lại một tín chỉ là bao nhiêu?",
+        "expected_keywords": [
+          "K17",
+          "học lại"
+        ],
+        "actual_rewrite": "k17 ngành chuyên ngành tại hà nội là bao nhiêu?",
+        "keyword_recall": 0.5
+      },
+      {
+        "q_id": "R1_010",
+        "query": "Còn chi phí ký túc xá mỗi kỳ của khóa này?",
+        "expected_keywords": [
+          "K22",
+          "ký túc xá"
+        ],
+        "actual_rewrite": "học phí k22 ngành chuyên ngành tại tp. hồ chí minh là bao nhiêu?",
+        "keyword_recall": 0.5
+      }
+    ]
+  }
+}

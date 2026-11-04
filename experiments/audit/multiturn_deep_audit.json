@@ -1,0 +1,150 @@
+{
+  "total_turns": 1000,
+  "topic_switch_confusion_matrix": {
+    "true_positive_switch": 67,
+    "false_positive_switch": 23,
+    "false_negative_continuation": 8,
+    "true_negative_continuation": 902,
+    "switch_precision": 74.44,
+    "switch_recall": 89.33,
+    "switch_f1": 81.21,
+    "continuation_precision": 99.12,
+    "continuation_recall": 97.51,
+    "continuation_f1": 98.31,
+    "macro_f1": 89.76,
+    "accuracy": 96.9
+  },
+  "total_misrouted": 178,
+  "policy_aware_clarification_count": 144,
+  "policy_aware_sample_cases": [
+    {
+      "q_id": "R1_001",
+      "turn_index": 1,
+      "query": "Học phí chuyên ngành khóa K21 là bao nhiêu?",
+      "expected_route": "structured_lookup",
+      "actual_route": "clarification",
+      "actual_answer": "Bạn đang hỏi về học phí khóa K21. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?"
+    },
+    {
+      "q_id": "R1_002",
+      "turn_index": 2,
+      "query": "Còn phí ký túc xá thì sao?",
+      "expected_route": "structured_lookup",
+      "actual_route": "clarification",
+      "actual_answer": "Bạn đang hỏi về học phí khóa K21. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?"
+    },
+    {
+      "q_id": "R1_003",
+      "turn_index": 1,
+      "query": "Học phí chuyên ngành của khóa K18 là bao nhiêu?",
+      "expected_route": "structured_lookup",
+      "actual_route": "clarification",
+      "actual_answer": "Bạn đang hỏi về học phí khóa K18. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?"
+    },
+    {
+      "q_id": "R1_004",
+      "turn_index": 2,
+      "query": "Vậy lệ phí thi lại khóa này là bao nhiêu?",
+      "expected_route": "structured_lookup",
+      "actual_route": "clarification",
+      "actual_answer": "Bạn đang hỏi về học phí khóa K18. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?"
+    },
+    {
+      "q_id": "R1_005",
+      "turn_index": 1,
+      "query": "Khóa K20 đóng học phí chuyên ngành một kỳ là bao nhiêu tiền?",
+      "expected_route": "structured_lookup",
+      "actual_route": "clarification",
+      "actual_answer": "Bạn đang hỏi về học phí khóa K20. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?"
+    },
+    {
+      "q_id": "R1_007",
+      "turn_index": 1,
+      "query": "Biểu phí chuyên ngành khóa K17 tại Hà Nội như thế nào?",
+      "expected_route": "structured_lookup",
+      "actual_route": "clarification",
+      "actual_answer": "Bạn đang hỏi về học phí khóa K17. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?"
+    },
+    {
+      "q_id": "R1_009",
+      "turn_index": 1,
+      "query": "Học phí chuyên ngành khóa K22 tại TP.HCM là bao nhiêu?",
+      "expected_route": "structured_lookup",
+      "actual_route": "clarification",
+      "actual_answer": "Bạn đang hỏi về học phí khóa K22. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?"
+    },
+    {
+      "q_id": "R1_010",
+      "turn_index": 2,
+      "query": "Còn chi phí ký túc xá mỗi kỳ của khóa này?",
+      "expected_route": "structured_lookup",
+      "actual_route": "clarification",
+      "actual_answer": "Bạn đang hỏi về học phí khóa K22. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?"
+    },
+    {
+      "q_id": "R1_030",
+      "turn_index": 2,
+      "query": "Trong kỳ đó có phải nộp học phí chuyên ngành không?",
+      "expected_route": "structured_lookup",
+      "actual_route": "clarification",
+      "actual_answer": "Vui lòng cung cấp thêm ngành học và khóa tuyển sinh (ví dụ: ngành AI khóa 2026) để tôi tra cứu học phí chính xác cho bạn"
+    },
+    {
+      "q_id": "R1_037",
+      "turn_index": 1,
+      "query": "Học phí chuyên ngành của sinh viên khóa K19 là bao nhiêu?",
+      "expected_route": "structured_lookup",
+      "actual_route": "clarification",
+      "actual_answer": "Bạn đang hỏi về học phí khóa K19. Vui lòng cho biết bạn muốn tra cứu cho ngành học nào (ví dụ: AI, CNTT, KTPM)?"
+    }
+  ],
+  "latency_by_route": {
+    "clarification": {
+      "count": 144,
+      "percentage": 14.4,
+      "p50_ms": 3.87,
+      "p90_ms": 15.09,
+      "p95_ms": 2483.81,
+      "mean_ms": 239.09,
+      "min_ms": 2.23,
+      "max_ms": 3289.9
+    },
+    "structured_lookup": {
+      "count": 599,
+      "percentage": 59.9,
+      "p50_ms": 10.57,
+      "p90_ms": 2747.73,
+      "p95_ms": 2877.92,
+      "mean_ms": 791.9,
+      "min_ms": 2.14,
+      "max_ms": 5758.89
+    },
+    "rag_pipeline": {
+      "count": 143,
+      "percentage": 14.3,
+      "p50_ms": 5752.3,
+      "p90_ms": 7813.69,
+      "p95_ms": 8841.29,
+      "mean_ms": 6306.6,
+      "min_ms": 3675.96,
+      "max_ms": 37944.56
+    },
+    "ood": {
+      "count": 114,
+      "percentage": 11.4,
+      "p50_ms": 3.27,
+      "p90_ms": 10.01,
+      "p95_ms": 20.5,
+      "mean_ms": 5.18,
+      "min_ms": 0.87,
+      "max_ms": 37.55
+    }
+  },
+  "overall_latency": {
+    "count": 1000,
+    "p50_ms": 10.0,
+    "p90_ms": 5218.32,
+    "p95_ms": 6221.02,
+    "mean_ms": 1411.21
+  }
+}

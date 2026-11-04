@@ -459,8 +459,8 @@
       "q_id": "V2_B02_004",
       "query": "Thời hạn nộp đơn phúc khảo bài thi là mấy ngày?",
       "gold_ids": [
-        "doc_fpt_k20_0127",
-        "doc_fpt_k21_0448"
+        "doc_fpt_k21_0448",
+        "doc_fpt_k20_0127"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -567,8 +567,8 @@
       "q_id": "V2_B02_009",
       "query": "Quy định về việc bảo lưu học tập tại trường như thế nào?",
       "gold_ids": [
-        "doc_fpt_k17_0584",
-        "doc_fpt_k20_0048"
+        "doc_fpt_k20_0048",
+        "doc_fpt_k17_0584"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -603,8 +603,8 @@
       "q_id": "V2_B05_001",
       "query": "Sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
       "gold_ids": [
-        "doc_fpt_k20_0051",
-        "doc_fpt_k17_0605"
+        "doc_fpt_k17_0605",
+        "doc_fpt_k20_0051"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -639,8 +639,8 @@
       "q_id": "V2_B05_002",
       "query": "Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
       "gold_ids": [
-        "doc_fpt_k18_0751",
-        "doc_fpt_k17_0605"
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0751"
       ],
       "c3_hit": true,
       "c4h_hit": false,
@@ -1033,8 +1033,8 @@
       "q_id": "V2_B07_007",
       "query": "Chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh là gì?",
       "gold_ids": [
-        "doc_fpt_k17_0650",
-        "doc_fpt_k18_0781"
+        "doc_fpt_k18_0781",
+        "doc_fpt_k17_0650"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -1069,8 +1069,8 @@
       "q_id": "V2_B07_008",
       "query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh là gì?",
       "gold_ids": [
-        "doc_fpt_k17_0650",
-        "doc_fpt_k20_0035"
+        "doc_fpt_k20_0035",
+        "doc_fpt_k17_0650"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -1105,8 +1105,8 @@
       "q_id": "V2_B07_009",
       "query": "Sinh viên đi thực tập doanh nghiệp OJT vào học kỳ thứ mấy?",
       "gold_ids": [
-        "doc_fpt_k22_0305",
-        "doc_fpt_k20_0201"
+        "doc_fpt_k20_0201",
+        "doc_fpt_k22_0305"
       ],
       "c3_hit": true,
       "c4h_hit": true,

@@ -412,3 +412,135 @@ Hệ thống có được trang bị cơ chế lưu bộ nhớ không? **Có, v�
 | **Truy xuất Lai ghép (Hybrid)** | [`src/FPTUniQA/retrieval/retriever.py`](file:///c:/Users/Admin/Desktop/5/TMG301/FPTUniQA/src/FPTUniQA/retrieval/retriever.py) | FAISS Dense + BM25Okapi + RRF Fusion (k=60) + Soft Metadata Filter |
 | **Đồ thị Tri thức Học vụ** | [`src/FPTUniQA/graph/knowledge_graph.py`](file:///c:/Users/Admin/Desktop/5/TMG301/FPTUniQA/src/FPTUniQA/graph/knowledge_graph.py) | Topological Sort chuỗi tiên quyết, lộ trình OJT, so sánh CTĐT |
 | **Kiểm soát Ảo giác (Guardrails)** | [`src/FPTUniQA/generation/guardrails.py`](file:///c:/Users/Admin/Desktop/5/TMG301/FPTUniQA/src/FPTUniQA/generation/guardrails.py) | Quét Ungrounded Numbers, xác thực số liệu so với Context |
+
+
+---
+
+## 10. KẾT QUẢ KIỂM THỬ ĐA LƯỢT TRÊN TẬP BENCHMARK 1.000 LƯỢT
+
+### 10.1. Phạm vi kiểm thử
+
+Pipeline FPTUniQA đã được chạy trên tập benchmark gồm **1.000 lượt hội thoại thuộc 768 session**, tổng hợp từ 15 tệp dữ liệu trong `multiturn_rounds/` và `benchmark_v2/`.
+
+Cấu hình thực thi:
+
+- Ollama `qwen2.5:3b-instruct`;
+- embedding `multilingual-e5-base`;
+- Hybrid BM25 + FAISS;
+- `K=80`, trọng số `[0.4, 0.6]`;
+- `auto_load=True`;
+- `use_reranker=False`.
+
+Runner sử dụng cùng session semantics và cùng pipeline entrypoint với ứng dụng để kiểm tra hành vi của các thành phần:
+
+- Query Rewriter;
+- Semantic Router;
+- CKB tra cứu bảng biểu;
+- Academic Knowledge Graph;
+- RAG Retrieval và LLM Generation;
+- Hallucination Guardrail.
+
+Phạm vi của kết quả được giới hạn ở tập benchmark và cấu hình triển khai nêu trên. Các kết quả này không tự động đại diện cho mọi truy vấn người dùng hoặc chứng minh tương đương tuyệt đối với giao diện Web UI.
+
+### 10.2. Kết quả tổng hợp
+
+| Hạng mục | Chỉ số | Kết quả | Diễn giải |
+|---|---|:---:|---|
+| Ổn định hạ tầng | Request Success Rate | **100,00%** (1.000/1.000) | Không ghi nhận exception, timeout hoặc lỗi request theo định nghĩa của runner. |
+| Hội thoại đa lượt | Topic-switch Accuracy | **96,90%** (969/1.000) | Phần lớn lượt được nhận diện đúng là chuyển chủ đề. |
+| Hội thoại đa lượt | Macro Keyword Recall | **73,66%** (157 lượt có nhãn) | Đo mức độ khôi phục thực thể và từ khóa kỳ vọng. |
+| Định tuyến | Raw Route Accuracy | **82,20%** (822/1.000) | Tỷ lệ route thực tế khớp nhãn route gốc. |
+| Định tuyến | Policy-aware Acceptable Behavior Rate | **98,00%** (980/1.000) | Gồm 822 lượt đúng route gốc và 158 lượt thực hiện hành vi làm rõ hợp lệ. |
+| Chất lượng đáp án | Answer Keyword Coverage | **53,00%** | Proxy về độ bao phủ nội dung theo từ khóa; không phải factual accuracy. |
+| Chất lượng đáp án | Answer Turn Full Pass Rate | **36,10%** (361/1.000) | Tỷ lệ câu trả lời chứa đủ từ khóa kỳ vọng. |
+| An toàn | OOD Rejection Accuracy | **99,09%** (109/110) | Hệ thống từ chối đúng 109/110 lượt OOD. |
+| Guardrail | Guardrail Flagged Rate | **2,10%** (3/143) | Ba lượt trong nhóm đủ điều kiện đánh giá bị gắn cờ; không đồng nghĩa với tỷ lệ ảo giác thực sự. |
+| Hiệu năng | Latency p50 | **10,00 ms** | Phân vị trung vị trên toàn bộ lượt đo. |
+| Hiệu năng | Latency p90 | **5.218,32 ms** | 90% lượt có độ trễ không vượt quá giá trị này. |
+| Hiệu năng | Latency p95 | **6.221,02 ms** | 95% lượt có độ trễ không vượt quá giá trị này. |
+| Hiệu năng | Latency Mean | **1.411,21 ms** | Độ trễ trung bình trên toàn bộ lượt đo. |
+
+### 10.3. Ý nghĩa của định tuyến và hành vi làm rõ
+
+Trong 1.000 lượt:
+
+- **822 lượt** khớp route gốc;
+- **158 lượt** không khớp route gốc nhưng hệ thống chủ động sử dụng `ClarificationRoute` khi câu hỏi thiếu thông tin phân hiệu bắt buộc;
+- **20 lượt còn lại** được giữ là lỗi định tuyến trong raw accuracy.
+
+Do đó:
+
+- `Raw Route Accuracy = 822 / 1.000 = 82,20%`;
+- `Policy-aware Acceptable Behavior Rate = (822 + 158) / 1.000 = 98,00%`.
+
+Hành vi làm rõ được đánh giá là phù hợp với chính sách hệ thống khi dữ liệu đầu vào không đủ để xác định câu trả lời. Tuy nhiên, đây là chỉ số chính sách riêng biệt, không thay thế route accuracy theo nhãn gốc.
+
+Quy tắc tính điều kiện “làm rõ hợp lệ” phải được kiểm tra trên từng lượt và lưu trong artifact kiểm thử. Không được mặc định mọi câu trả lời `ClarificationRoute` đều đạt điều kiện này.
+
+### 10.4. Chất lượng câu trả lời và giới hạn của chỉ số
+
+`Answer Keyword Coverage = 53,00%` đo mức độ xuất hiện của từ khóa kỳ vọng trong câu trả lời. Sự khác biệt giữa câu trả lời dạng bảng cô đọng của CKB và câu văn xuôi dài trong benchmark có thể làm giảm chỉ số này.
+
+Tuy nhiên, keyword coverage không định lượng tính đúng của nội dung. Vì vậy:
+
+- không suy ra factual accuracy từ giá trị 53,00%;
+- không sử dụng cụm “độ đúng sự thật 80–85%” nếu chưa có phương pháp đánh giá nội dung độc lập;
+- `Answer Turn Full Pass Rate = 36,10%` chỉ phản ánh độ bao phủ theo từ khóa của benchmark.
+
+Để đo chất lượng nội dung ở mức sự thật, cần bổ sung gold answer đã được kiểm chứng hoặc rubric chấm điểm có định nghĩa rõ về tính đúng, tính đầy đủ và mâu thuẫn.
+
+### 10.5. An toàn và Guardrail
+
+OOD Rejection Accuracy đạt **99,09%**, tương ứng 109/110 lượt được từ chối đúng. Một lượt chưa được từ chối đúng cần được phân tích riêng.
+
+Guardrail gắn cờ 3/143 lượt đủ điều kiện đánh giá, tương đương **2,10%**. Chỉ số này chỉ phản ánh tần suất kích hoạt guardrail, không phải tỷ lệ ảo giác thực sự. Độ nhạy và độ chính xác của guardrail chỉ có thể đánh giá khi có tập dữ liệu đối chiếu gồm cả câu đúng và câu thực sự chứa lỗi.
+
+Nhóm đánh giá guardrail gồm 143 lượt, trong khi route RAG có 148 lượt. Cần lưu giải thích cho 5 lượt không đủ điều kiện đánh giá trước khi công bố báo cáo cuối cùng.
+
+### 10.6. Hiệu năng
+
+Kết quả độ trễ trên toàn bộ 1.000 lượt:
+
+- p50: **10,00 ms**;
+- p90: **5.218,32 ms**;
+- p95: **6.221,02 ms**;
+- mean: **1.411,21 ms**.
+
+Độ trễ phụ thuộc đáng kể vào loại truy vấn. Vì vậy, các giá trị trên chỉ mô tả phân phối tổng thể của tập benchmark. Báo cáo kỹ thuật nên bổ sung phân tách latency theo route, theo loại CKB/RAG và theo kích thước ngữ cảnh trước khi dùng các giá trị này để thiết lập SLA vận hành.
+
+### 10.7. Cơ chế tự động nạp chỉ mục
+
+Trong `src/FPTUniQA/pipeline/rag_pipeline.py`, cấu hình:
+
+```python
+base_retriever = HybridRetriever(auto_load=True)
+```
+
+được sử dụng để các entrypoint dựa trên `RAGPipeline` có thể nạp chỉ mục theo mặc định. Corpus lập chỉ mục gồm 824 tài liệu; BM25 và FAISS sử dụng cùng nguồn corpus.
+
+Cơ chế này giảm rủi ro retriever được khởi tạo với cấu hình không nạp chỉ mục. Tuy nhiên, `auto_load=True` không bảo đảm tuyệt đối rằng chỉ mục tồn tại, đúng phiên bản và có thể đọc được. Hệ thống triển khai cần kiểm tra:
+
+- artifact chỉ mục tồn tại;
+- checksum và kích thước FAISS hợp lệ;
+- số tài liệu nạp được bằng 824;
+- lỗi nạp chỉ mục được ghi log và trả về trạng thái rõ ràng;
+- API, Streamlit và CLI runner đều khởi động được từ môi trường sạch.
+
+### 10.8. Điều kiện tái lập và giới hạn kết luận
+
+Artifact kiểm thử cần lưu:
+
+- commit hash của mã nguồn;
+- lệnh chạy chính xác;
+- phiên bản dependency;
+- checksum của 15 tệp dữ liệu và checkpoint;
+- cấu hình máy, Ollama và tham số runtime;
+- số request retry;
+- danh sách các lượt được gắn cờ, làm rõ hoặc phân loại lỗi.
+
+Do 1.000 lượt thuộc 768 session, các quan sát giữa các lượt trong cùng session có thể phụ thuộc lẫn nhau. Khi so sánh các phiên bản hoặc xây dựng khoảng tin cậy, nên bootstrap theo session thay vì coi từng lượt là một mẫu độc lập hoàn toàn.
+
+Kết luận phù hợp:
+
+> Trên tập benchmark 1.000 lượt, FPTUniQA đạt Request Success Rate 100,00%, Topic-switch Accuracy 96,90% và Raw Route Accuracy 82,20%. Khi tính riêng các trường hợp hỏi lại hợp lệ, Policy-aware Acceptable Behavior Rate đạt 98,00%. Kết quả cho thấy hệ thống ổn định và xử lý thiếu thông tin phù hợp trên tập đo; chưa đủ căn cứ để tuyên bố factual accuracy toàn phần, tương đương tuyệt đối với Web UI hoặc hiệu năng đại diện cho toàn bộ người dùng.
+```

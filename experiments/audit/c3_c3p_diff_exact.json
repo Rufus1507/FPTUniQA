@@ -1,0 +1,136 @@
+[
+  {
+    "q_id": "V2_B05_001",
+    "query": "Sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+    "gold_docs": [
+      "doc_fpt_k17_0605",
+      "doc_fpt_k20_0051"
+    ],
+    "equiv_group": [
+      [
+        "doc_fpt_k21_0451",
+        "doc_fpt_k17_0591",
+        "doc_fpt_k18_0737"
+      ]
+    ],
+    "c3_top5": [
+      "doc_fpt_k17_0605",
+      "doc_fpt_k20_0051",
+      "doc_fpt_k17_0609",
+      "doc_fpt_k17_0590",
+      "doc_fpt_k22_0303"
+    ],
+    "c3p_top5": [
+      "doc_fpt_k17_0590",
+      "doc_fpt_k20_0051",
+      "doc_fpt_k17_0605",
+      "doc_fpt_k22_0303",
+      "doc_fpt_k17_0608"
+    ],
+    "c3_hit_doc": true,
+    "c3p_hit_doc": true,
+    "c3_hit_eq": true,
+    "c3p_hit_eq": true
+  },
+  {
+    "q_id": "V2_B05_002",
+    "query": "Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+    "gold_docs": [
+      "doc_fpt_k17_0605",
+      "doc_fpt_k18_0751"
+    ],
+    "equiv_group": [
+      [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0751",
+        "doc_fpt_k20_0051",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k22_0299",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717"
+      ]
+    ],
+    "c3_top5": [
+      "doc_fpt_k20_0051",
+      "doc_fpt_k17_0605",
+      "doc_fpt_k21_0406",
+      "doc_fpt_k17_0587",
+      "doc_fpt_k18_0717"
+    ],
+    "c3p_top5": [
+      "doc_fpt_k21_0406",
+      "doc_fpt_k17_0587",
+      "doc_fpt_k17_0590",
+      "doc_fpt_k18_0717",
+      "doc_fpt_k22_0299"
+    ],
+    "c3_hit_doc": true,
+    "c3p_hit_doc": false,
+    "c3_hit_eq": true,
+    "c3p_hit_eq": true
+  },
+  {
+    "q_id": "V2_B05_003",
+    "query": "Điều kiện để sinh viên được đăng ký học vượt là gì?",
+    "gold_docs": [
+      "doc_fpt_k19_0550",
+      "doc_fpt_k20_0152"
+    ],
+    "equiv_group": [
+      [
+        "doc_fpt_k19_0550",
+        "doc_fpt_k20_0152",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400"
+      ]
+    ],
+    "c3_top5": [
+      "doc_fpt_k20_0042",
+      "doc_fpt_k20_0039",
+      "doc_fpt_k19_0550",
+      "doc_fpt_k18_0711",
+      "doc_fpt_k17_0585"
+    ],
+    "c3p_top5": [
+      "doc_fpt_k20_0042",
+      "doc_fpt_k20_0039",
+      "doc_fpt_k18_0711",
+      "doc_fpt_k17_0585",
+      "doc_fpt_k21_0400"
+    ],
+    "c3_hit_doc": true,
+    "c3p_hit_doc": false,
+    "c3_hit_eq": true,
+    "c3p_hit_eq": true
+  },
+  {
+    "q_id": "V2_B05_004",
+    "query": "Cho tôi hỏi quy định cụ thể: điều kiện để sinh viên được đăng ký học vượt là gì?",
+    "gold_docs": [
+      "doc_fpt_k19_0550",
+      "doc_fpt_k20_0152"
+    ],
+    "equiv_group": [],
+    "c3_top5": [
+      "doc_fpt_k17_0587",
+      "doc_fpt_k18_0711",
+      "doc_fpt_k20_0042",
+      "doc_fpt_k20_0039",
+      "doc_fpt_k17_0585"
+    ],
+    "c3p_top5": [
+      "doc_fpt_k18_0711",
+      "doc_fpt_k20_0042",
+      "doc_fpt_k17_0587",
+      "doc_fpt_k20_0039",
+      "doc_fpt_k17_0585"
+    ],
+    "c3_hit_doc": false,
+    "c3p_hit_doc": false,
+    "c3_hit_eq": false,
+    "c3p_hit_eq": false
+  }
+]

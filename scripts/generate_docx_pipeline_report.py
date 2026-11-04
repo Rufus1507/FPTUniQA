@@ -317,6 +317,36 @@ def main():
     ]
     populate_table(doc, repo_headers, repo_data, col_widths=[1.6, 2.4, 3.0])
 
+    # SECTION 7: 1,000-TURN BENCHMARK EVALUATION
+    add_heading_with_spacing(doc, "6. KẾT QUẢ KIỂM THỬ ĐA LƯỢT TRÊN TẬP BENCHMARK 1.000 LƯỢT", level=1)
+    add_styled_paragraph(doc,
+        "Pipeline FPTUniQA đã được đánh giá thực nghiệm toàn diện trên tập benchmark gồm 1.000 lượt hội thoại thuộc 768 session (tổng hợp từ 15 tệp dữ liệu chuẩn trong multiturn_rounds/ và benchmark_v2/). Cấu hình thực thi: Ollama qwen2.5:3b-instruct, embedding multilingual-e5-base, Hybrid BM25 + FAISS (K=80, trọng số [0.4, 0.6]), auto_load=True, use_reranker=False trên môi trường local on-premise, production-like.")
+    
+    bench_headers = ["Hạng mục", "Chỉ số", "Kết quả Đạt được", "Diễn giải Kỹ thuật"]
+    bench_data = [
+        ["Ổn định hạ tầng", "Request Success Rate", "100,00% (1.000/1.000)", "Không ghi nhận exception, timeout hoặc lỗi request theo định nghĩa runner."],
+        ["Hội thoại đa lượt", "Topic-switch Accuracy", "96,90% (969/1.000)", "Phần lớn lượt được nhận diện đúng khi chuyển chủ đề."],
+        ["Hội thoại đa lượt", "Macro Keyword Recall", "73,66% (157 lượt có nhãn)", "Đo mức độ khôi phục thực thể và từ khóa kỳ vọng qua các lượt."],
+        ["Định tuyến", "Raw Route Accuracy", "82,20% (822/1.000)", "Tỷ lệ route thực tế khớp đúng nhãn route gốc của benchmark."],
+        ["Định tuyến", "Policy-aware Behavior Rate", "98,00% (980/1.000)", "Gồm 822 lượt đúng route gốc và 158 lượt làm rõ hợp lệ khi thiếu thông tin phân hiệu."],
+        ["Chất lượng đáp án", "Answer Keyword Coverage", "53,00%", "Proxy về độ bao phủ từ khóa; không đồng nghĩa với factual accuracy."],
+        ["Chất lượng đáp án", "Answer Turn Full Pass Rate", "36,10% (361/1.000)", "Tỷ lệ câu trả lời chứa đủ toàn bộ từ khóa kỳ vọng theo benchmark."],
+        ["An toàn", "OOD Rejection Accuracy", "99,09% (109/110)", "Hệ thống từ chối chính xác 109/110 lượt câu hỏi ngoài phạm vi."],
+        ["Guardrail", "Guardrail Flagged Rate", "2,10% (3/143)", "Ba lượt trong nhóm đủ điều kiện bị gắn cờ; không đồng nghĩa với tỷ lệ ảo giác thực."],
+        ["Hiệu năng", "Latency p50 (Median)", "10,00 ms", "Phân vị trung vị trên toàn bộ lượt đo (tra cứu bảng CKB tức thì)."],
+        ["Hiệu năng", "Latency p90", "5.218,32 ms", "90% lượt có độ trễ không vượt quá giá trị này."],
+        ["Hiệu năng", "Latency p95", "6.221,02 ms", "95% lượt có độ trễ không vượt quá giá trị này (đạt chuẩn UX < 10s)."],
+        ["Hiệu năng", "Latency Mean", "1.411,21 ms", "Độ trễ trung bình trên toàn bộ 1.000 lượt đo."]
+    ]
+    populate_table(doc, bench_headers, bench_data, col_widths=[1.5, 1.8, 1.6, 2.1])
+
+    add_styled_paragraph(doc,
+        "Trong src/FPTUniQA/pipeline/rag_pipeline.py, cấu hình base_retriever = HybridRetriever(auto_load=True) đảm bảo toàn bộ 824 tài liệu BM25 và FAISS vector index luôn được nạp sẵn sàng vào bộ nhớ khi khởi động từ bất kỳ entrypoint nào (Streamlit UI, FastAPI REST API, Runner), loại bỏ nguy cơ retriever rỗng.",
+        bold_prefix="Cơ chế Tự động Nạp Chỉ mục: ")
+
+    add_callout_box(doc, "KẾT LUẬN NGHIỆM THU KIẾN TRÚC PIPELINE",
+        "Trên tập benchmark 1.000 lượt, FPTUniQA đạt Request Success Rate 100,00%, Topic-switch Accuracy 96,90% và Raw Route Accuracy 82,20%. Khi tính riêng các trường hợp hỏi lại hợp lệ khi thiếu cơ sở, Policy-aware Acceptable Behavior Rate đạt 98,00%. Kết quả cho thấy hệ thống ổn định và xử lý thiếu thông tin phù hợp trên tập đo; chưa đủ căn cứ để tuyên bố factual accuracy toàn phần, tương đương tuyệt đối với Web UI hoặc hiệu năng đại diện cho toàn bộ người dùng.")
+
     # Save to Word format (.docx and .doc)
     out_docx = os.path.abspath("docs/Bao_Cao_Kien_Truc_Pipeline_FPTUniQA.docx")
     out_doc = os.path.abspath("docs/Bao_Cao_Kien_Truc_Pipeline_FPTUniQA.doc")

@@ -1,0 +1,289 @@
+{
+  "c3": {
+    "q_id": "V2_B07_002",
+    "config": "c3_hybrid",
+    "batch": "batch_07",
+    "category": "graduation_ojt",
+    "query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+    "session_id": "v2_b07_sess_002",
+    "turn_index": 1,
+    "expected_route": "rag_pipeline",
+    "route": "rag_pipeline",
+    "answer": "Theo quy định trong tài liệu [Nguồn 1] và [Nguồn 5], sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh như sau để được xét tốt nghiệp:\n\n- Theo tài liệu [Nguồn 1], sinh viên cần đáp ứng điều kiện về ngoại ngữ như sau: \"Khối ngành CNTT yêu cầu IELTS 6.0 hoặc TOEFL iBT 60 hoặc VSTEP B2\". \n\n- Theo tài liệu [Nguồn 5], sinh viên cần đáp ứng điều kiện về ngoại ngữ như sau: \"Khối ngành CNTT yêu cầu IELTS 6.0\".\n\nVì vậy, sinh viên ngành CNTT cần đạt chứng chỉ IELTS 6.0 để được xét tốt nghiệp.",
+    "top5_doc_ids": [
+      "doc_fpt_k21_0405",
+      "doc_fpt_k18_0729",
+      "doc_fpt_k21_0418",
+      "doc_fpt_k21_0419",
+      "doc_fpt_k20_0077"
+    ],
+    "citations": [
+      "doc_fpt_k21_0405",
+      "doc_fpt_k20_0077"
+    ],
+    "possible_hallucination": false,
+    "ungrounded_numbers": [],
+    "retrieved_context": "1.2.7 Điều kiện chuyển giai đoạn \n \nSinh viên chỉ được chuyển sang giai đoạn sau của chương trình đào tạo khi đã hoàn thành \ncác nhiệm vụ học tập chính được xác định cho giai đoạn trước đó. Cụ thể: \n \n➢ Điều kiện chuyển sang giai đoạn học chuyên môn: \n \n- \nĐạt trình độ tiếng Anh theo quy định cụ thể của trường. \n \n➢ Điều kiện chuyển sang giai đoạn OJT: \n \n- \nHoàn thành tối thiểu 90% tổng số tín chỉ của các học phần chuyên môn (không bao gồm \nGiáo dục quốc phòng, Giáo dục thể chất) được nhà trường quy định trong giai đoạn \ntrước OJT của chương trình giáo dục đại học theo ngành được đào tạo. \n \n➢ Điều kiện chuyển sang giai đoạn OJT: \n \n- \nĐạt chương trình OJT theo quy định cụ thể của trường. \n \n➢ Điều kiện tốt nghiệp: \n \n- \nNhư quy định trong Điều 1.5 Xét và công nhận tốt nghiệp. \n \nTrường sẽ coi như sinh viên chủ động thôi học nếu không làm thủ tục tạm ngừng (bảo \nlưu) theo quy định, cũng không đăng ký học đi hoặc học lại. 1.5.2 Điều kiện xét và công nhận tốt nghiệp\n1.\nSinh viên đáp ứng đủ các điều kiện sau thì được xét công nhận tốt nghiệp:\na)\nTại thời điểm xét tốt nghiệp không bị truy cứu trách nhiệm hình sự\nb)\nCó các chứng chỉ hoàn thành Giáo dục quốc phòng, Giáo dục thể chất và OJT\nc)\nHoàn thành nghĩa vụ tài chính với Trường\nd)\nHoàn thành đủkhối lượng tín chỉtích lũy quy định trong chương trình đào tạo và có\nđiểm trung bình tích lũy (với các học phần tại Trường) đạt từ 5 trở lên.\n2.\nHạng tốt nghiệp của những sinh viên có kết quảhọc tập toàn khoá loại xuất sắc và giỏi sẽbị\ngiảm đi một mức, nếu thuộc một trong các trường hợp sau:\na)\nKhối lượng của các học phần phải học lại vượt quá 5% so với tổng sốtín chỉquy\nđịnh cho toàn chương trình.\nb)\nSinh viên đã bị kỷ luật từ mức cảnh cáo trở lên trong thời gian học. 1.5.2 Điều kiện xét và công nhận tốt nghiệp \n1. Sinh viên đáp ứng đủ các điều kiện sau thì được xét công nhận tốt nghiệp: \n➢ Tại thời điểm xét tốt nghiệp không bị truy cứu trách nhiệm hình sự; \n \n➢ Hoàn thành chương trình Giáo dục quốc phòng, Giáo dục thể chất v",
+    "parsed_query": {
+      "intent": "graduation_lookup",
+      "slots": {
+        "topic": "tot_nghiep",
+        "target": "dieu_kien",
+        "program": "Ngôn ngữ Anh",
+        "campus": "Tất cả các cơ sở"
+      },
+      "confidence": 0.88,
+      "parser_method": "regex_fallback",
+      "fallback_used": true,
+      "original_query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "normalized_query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "keywords": [],
+      "entities": {
+        "TERM_TOT_NGHIEP": {
+          "entity_id": "TERM_TOT_NGHIEP",
+          "entity_type": "academic_term",
+          "code": "GRADUATION",
+          "canonical_name": "Graduation Requirements",
+          "canonical_name_vi": "Điều kiện tốt nghiệp",
+          "matched_alias": "tốt nghiệp",
+          "span": [
+            85,
+            95
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+            "section": "Quy chế & Biểu phí"
+          },
+          "notes": "Yêu cầu: hoàn thành tín chỉ, CGPA >= 2.0, ngoại ngữ IELTS 5.5, OJT, GDTC, GDQP."
+        },
+        "TERM_SINH_VIEN": {
+          "entity_id": "TERM_SINH_VIEN",
+          "entity_type": "academic_term",
+          "code": "STUDENT",
+          "canonical_name": "Student",
+          "canonical_name_vi": "Sinh viên",
+          "matched_alias": "sinh viên",
+          "span": [
+            25,
+            34
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "Sổ tay sinh viên ĐH FPT",
+            "section": "Quy chế sinh viên"
+          },
+          "notes": "Đối tượng người học bậc đại học tại FPTU"
+        },
+        "MAJOR_CNTT": {
+          "entity_id": "MAJOR_CNTT",
+          "entity_type": "major",
+          "code": "CNTT",
+          "canonical_name": "Information Technology",
+          "canonical_name_vi": "Công nghệ thông tin",
+          "matched_alias": "cntt",
+          "span": [
+            41,
+            45
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json",
+            "section": "tuition_rates"
+          },
+          "notes": "Ngành chung / nhóm ngành Công nghệ thông tin"
+        },
+        "CAMPUS_ALL": {
+          "entity_id": "CAMPUS_ALL",
+          "entity_type": "campus",
+          "code": "ALL",
+          "canonical_name": "All Campuses",
+          "canonical_name_vi": "Tất cả các cơ sở",
+          "matched_alias": "chứng",
+          "span": [
+            54,
+            59
+          ],
+          "confidence": 0.95,
+          "verified": true,
+          "source_reference": {
+            "file": "src/FPTUniQA/query/campus_matcher.py",
+            "section": "CAMPUS_PATTERNS"
+          },
+          "notes": "Áp dụng cho quy chế đào tạo và biểu phí chung toàn quốc [Diacritic-folded match 'chung']"
+        },
+        "MAJOR_NNA": {
+          "entity_id": "MAJOR_NNA",
+          "entity_type": "major",
+          "code": "7220201",
+          "canonical_name": "English Language",
+          "canonical_name_vi": "Ngôn ngữ Anh",
+          "matched_alias": "tiếng anh",
+          "span": [
+            64,
+            73
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json",
+            "section": "tuition_rates"
+          },
+          "notes": "Mã ngành Bộ GD&ĐT: 7220201, thuộc khối Ngoại ngữ"
+        }
+      },
+      "is_valid": true,
+      "metadata": {}
+    },
+    "fallback_used": true,
+    "latency_ms": 3695.79,
+    "parser_latency_ms": 10.16,
+    "success": true
+  },
+  "c4_hard": {
+    "q_id": "V2_B07_002",
+    "config": "c4_hybrid_rrf_filter",
+    "batch": "batch_07",
+    "category": "graduation_ojt",
+    "query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+    "session_id": "v2_b07_sess_002",
+    "turn_index": 1,
+    "expected_route": "rag_pipeline",
+    "route": "rag_pipeline",
+    "answer": "Theo quy định trong tài liệu [Nguồn 5] (Điều kiện chuyển giai đoạn), sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh IELTS 6.0 để được tốt nghiệp. \n\n[Mã nguồn: [Nguồn 5]]",
+    "top5_doc_ids": [
+      "doc_fpt_k20_0077",
+      "doc_fpt_k20_0073",
+      "doc_fpt_k20_0071",
+      "doc_fpt_k20_0052",
+      "doc_fpt_k20_0050"
+    ],
+    "citations": [
+      "doc_fpt_k20_0050"
+    ],
+    "possible_hallucination": false,
+    "ungrounded_numbers": [],
+    "retrieved_context": "1.5.2 Điều kiện xét và công nhận tốt nghiệp\n1.\nSinh viên đáp ứng đủcác điều kiện sau thì được xét công nhận tốt nghiệp:\na)\nTại thời điểm xét tốt nghiệp không bịtruy cứu trách nhiệm hình sự\nb)\nCó các chứng chỉhoàn thành Giáo dục quốc phòng, Giáo dục thểchất và OJT\nc)\nHoàn thành nghĩa vụtài chính với Trường\nd)\nHoàn thành đủkhối lượng tín chỉtích lũy quy định trong chương trình đào tạo\nvà có điểm trung bình tích lũy (với các học phần tại Trường) đạt từ5 trởlên.\n2.\nHạng tốt nghiệp của những sinh viên có kết quảhọc tập toàn khoá loại xuất sắc và\ngiỏi sẽbịgiảm đi một mức, nếu thuộc một trong các trường hợp sau:\na)\nKhối lượng của các học phần phải học lại vượt quá 5% so với tổng sốtín chỉ\nquy định cho toàn chương trình.\n\n--- [Trang 24] ---\nb)\nSinh viên đã bịkỷluật từmức cảnh cáo cấp trường trởlên trong thời gian\nhọc. 1.5.1 Đồán/Khóa luận tốt nghiệp\n➢Khóa luận tốt nghiệp tại Trường đại học FPT được coi là một môn học chuyên ngành\ncủa sinh viên hội đủcác điều kiện theo Quy định; được viết và bảo vệtrước Hội đồng\nchấm bảo vệkhóa luận tốt nghiệp. Đồán tốt nghiệp là tên gọi khóa luận tốt nghiệp\ncủa sinh viên các ngành kỹthuật - công nghệ. Luận văn tốt nghiệp là tên gọi khóa\nluận tốt nghiệp của sinh viên các ngành kinh tế- xã hội.\n➢Khóa luận được đăng ký đềtài theo nhóm. Mỗi giảng viên hướng dẫn không quá 04\nnhóm/1 học kỳ. Trường hợp thay đổi tên đềtài so với đăng ký ban đầu phải có xác\nnhận của giảng viên hướng dẫn. Trường sẽxem xét phê duyệt nếu sốlượng sinh viên\nđăng ký trong một nhóm ngoài sốquy định trên.\n\n--- [Trang 23] ---\n➢Việc chấm bảo vệĐồán/Khóa luận tốt nghiệp do Hội đồng bảo vệtốt nghiệp của\nTrường do Hiệu trưởng quyết định thành lập đảm trách. Mỗi Hội đồng chấm khóa\nluận tốt nghiệp gồm 3 đến 5 thành viên gồm 01 Chủtịch Hội đồng, 01 thư ký và các\nủy viên Hội đồng.\n➢Chủtịch Hội đồng chấm khóa luận TN nhận xét kết quảkhóa luận TN ngay tại buổi\nbảo vệsau khi nhóm đềtài bảo vệxong. Đối với những khóa luận không đạt, Chủtịch\nHội đồng chấm khóa luận phải nêu nhận xét có n",
+    "parsed_query": {
+      "intent": "graduation_lookup",
+      "slots": {
+        "topic": "tot_nghiep",
+        "target": "dieu_kien",
+        "program": "Ngôn ngữ Anh",
+        "campus": "Tất cả các cơ sở"
+      },
+      "confidence": 0.88,
+      "parser_method": "regex_fallback",
+      "fallback_used": true,
+      "original_query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "normalized_query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "keywords": [],
+      "entities": {
+        "TERM_TOT_NGHIEP": {
+          "entity_id": "TERM_TOT_NGHIEP",
+          "entity_type": "academic_term",
+          "code": "GRADUATION",
+          "canonical_name": "Graduation Requirements",
+          "canonical_name_vi": "Điều kiện tốt nghiệp",
+          "matched_alias": "tốt nghiệp",
+          "span": [
+            85,
+            95
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+            "section": "Quy chế & Biểu phí"
+          },
+          "notes": "Yêu cầu: hoàn thành tín chỉ, CGPA >= 2.0, ngoại ngữ IELTS 5.5, OJT, GDTC, GDQP."
+        },
+        "TERM_SINH_VIEN": {
+          "entity_id": "TERM_SINH_VIEN",
+          "entity_type": "academic_term",
+          "code": "STUDENT",
+          "canonical_name": "Student",
+          "canonical_name_vi": "Sinh viên",
+          "matched_alias": "sinh viên",
+          "span": [
+            25,
+            34
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "Sổ tay sinh viên ĐH FPT",
+            "section": "Quy chế sinh viên"
+          },
+          "notes": "Đối tượng người học bậc đại học tại FPTU"
+        },
+        "MAJOR_CNTT": {
+          "entity_id": "MAJOR_CNTT",
+          "entity_type": "major",
+          "code": "CNTT",
+          "canonical_name": "Information Technology",
+          "canonical_name_vi": "Công nghệ thông tin",
+          "matched_alias": "cntt",
+          "span": [
+            41,
+            45
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json",
+            "section": "tuition_rates"
+          },
+          "notes": "Ngành chung / nhóm ngành Công nghệ thông tin"
+        },
+        "CAMPUS_ALL": {
+          "entity_id": "CAMPUS_ALL",
+          "entity_type": "campus",
+          "code": "ALL",
+          "canonical_name": "All Campuses",
+          "canonical_name_vi": "Tất cả các cơ sở",
+          "matched_alias": "chứng",
+          "span": [
+            54,
+            59
+          ],
+          "confidence": 0.95,
+          "verified": true,
+          "source_reference": {
+            "file": "src/FPTUniQA/query/campus_matcher.py",
+            "section": "CAMPUS_PATTERNS"
+          },
+          "notes": "Áp dụng cho quy chế đào tạo và biểu phí chung toàn quốc [Diacritic-folded match 'chung']"
+        },
+        "MAJOR_NNA": {
+          "entity_id": "MAJOR_NNA",
+          "entity_type": "major",
+          "code": "7220201",
+          "canonical_name": "English Language",
+          "canonical_name_vi": "Ngôn ngữ Anh",
+          "matched_alias": "tiếng anh",
+          "span": [
+            64,
+            73
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json",
+            "section": "tuition_rates"
+          },
+          "notes": "Mã ngành Bộ GD&ĐT: 7220201, thuộc khối Ngoại ngữ"
+        }
+      },
+      "is_valid": true,
+      "metadata": {}
+    },
+    "fallback_used": true,
+    "latency_ms": 1192.7,
+    "parser_latency_ms": 14.66,
+    "success": true
+  }
+}

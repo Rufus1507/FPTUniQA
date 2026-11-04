@@ -126,9 +126,9 @@ class RAGPipeline:
         else:
             try:
                 from FPTUniQA.pipeline.ablation_retriever import AblationRetriever
-                base_retriever = HybridRetriever(auto_load=False)
+                base_retriever = HybridRetriever(auto_load=True)
                 if retrieval_mode != "default":
-                    self.retriever = AblationRetriever(base_retriever, default_mode=retrieval_mode, auto_load=False)
+                    self.retriever = AblationRetriever(base_retriever, default_mode=retrieval_mode, auto_load=True)
                 else:
                     self.retriever = base_retriever
                 logger.info(f"Khởi tạo Retriever ({retrieval_mode}) thành công.")

@@ -1,0 +1,908 @@
+{
+  "num_heldout_queries": 50,
+  "recall_at_5_doc": 0.75,
+  "recall_at_5_equiv": 0.75,
+  "mrr": 0.7390000000000001,
+  "hits_doc_count": 37,
+  "hits_equiv_count": 37,
+  "details": [
+    {
+      "q_id": "V2_B02_013",
+      "query": "Chuẩn đầu ra tiếng Anh ngành CNTT yêu cầu chứng chỉ gì?",
+      "top5": [
+        "doc_fpt_k22_0314",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0579",
+        "doc_fpt_k18_0703"
+      ],
+      "gold": [
+        "doc_fpt_k20_0265",
+        "doc_fpt_k20_0269"
+      ],
+      "hit_doc": 0.0,
+      "hit_eq": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "q_id": "V2_B02_015",
+      "query": "Quy chế thôi học áp dụng khi sinh viên nhận bao nhiêu lần cảnh báo học tập?",
+      "top5": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k17_0623",
+        "doc_fpt_k21_0443",
+        "doc_fpt_k17_0605"
+      ],
+      "gold": [
+        "doc_fpt_k21_0443",
+        "doc_fpt_k17_0623"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 0.3333333333333333
+    },
+    {
+      "q_id": "V2_B02_020",
+      "query": "Quy định về việc mang tài liệu vào phòng thi EOS như thế nào?",
+      "top5": [
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0441",
+        "doc_fpt_k20_0117",
+        "doc_fpt_k18_0750",
+        "doc_fpt_k18_0749"
+      ],
+      "gold": [
+        "doc_fpt_k21_0441",
+        "doc_fpt_k17_0622"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B02_024",
+      "query": "Cách tính điểm trung bình tích lũy GPA tại FPT?",
+      "top5": [
+        "doc_fpt_k18_0726",
+        "doc_fpt_k17_0595",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k20_0072",
+        "doc_fpt_k20_0070"
+      ],
+      "gold": [
+        "doc_fpt_k18_0726",
+        "doc_fpt_k17_0595"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B02_029",
+      "query": "Trong giai đoạn OJT sinh viên có phải đóng học phí chuyên ngành không?",
+      "top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k17_0587"
+      ],
+      "gold": [
+        "doc_fpt_k21_0405"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B02_032",
+      "query": "Quy định về trang phục sinh viên khi đến trường Đại học FPT?",
+      "top5": [
+        "doc_fpt_k22_0300",
+        "doc_fpt_k17_0602",
+        "doc_fpt_k17_0608",
+        "doc_fpt_k18_0739",
+        "doc_fpt_k18_0750"
+      ],
+      "gold": [
+        "doc_fpt_k22_0300"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B02_035",
+      "query": "Sinh viên nợ bao nhiêu tín chỉ thì không được làm đồ án tốt nghiệp?",
+      "top5": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k22_0306",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k21_0417"
+      ],
+      "gold": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k22_0306"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B02_038",
+      "query": "Chính sách học bổng Nguyễn Văn Đạo xét theo tiêu chí nào?",
+      "top5": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k18_0762",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k20_0083"
+      ],
+      "gold": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k20_0150"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B02_042",
+      "query": "Hồ sơ chuyển ngành học tại Đại học FPT gồm những gì?",
+      "top5": [
+        "doc_fpt_k18_0761",
+        "doc_fpt_k17_0586",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k20_0049"
+      ],
+      "gold": [
+        "doc_fpt_k18_0761",
+        "doc_fpt_k18_0803"
+      ],
+      "hit_doc": 0.5,
+      "hit_eq": 0.5,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B02_045",
+      "query": "Điểm thi PE được phúc khảo trong vòng bao nhiêu ngày?",
+      "top5": [
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "gold": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k21_0448"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B02_048",
+      "query": "Thủ tục đăng ký học đi lại như thế nào?",
+      "top5": [
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0588",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k20_0042"
+      ],
+      "gold": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_011",
+      "query": "Quy chế xử lý kỷ luật đối với sinh viên gian lận thi cử tại Đại học FPT?",
+      "top5": [
+        "doc_fpt_k22_0303",
+        "doc_fpt_k17_0624",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0724",
+        "doc_fpt_k21_0413"
+      ],
+      "gold": [
+        "doc_fpt_k22_0303",
+        "doc_fpt_k17_0605"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_012",
+      "query": "Cho tôi hỏi quy định cụ thể: quy chế xử lý kỷ luật đối với sinh viên gian lận thi cử tại Đại học FPT?",
+      "top5": [
+        "doc_fpt_k17_0624",
+        "doc_fpt_k22_0303",
+        "doc_fpt_k18_0724",
+        "doc_fpt_k21_0413",
+        "doc_fpt_k17_0605"
+      ],
+      "gold": [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k17_0624"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_013",
+      "query": "Thủ tục xin bảo lưu kết quả học tập cần chuẩn bị những giấy tờ gì?",
+      "top5": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0588",
+        "doc_fpt_k21_0403"
+      ],
+      "gold": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0584"
+      ],
+      "hit_doc": 0.5,
+      "hit_eq": 0.5,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_014",
+      "query": "Cho tôi hỏi quy định cụ thể: thủ tục xin bảo lưu kết quả học tập cần chuẩn bị những giấy tờ gì?",
+      "top5": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0588"
+      ],
+      "gold": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k17_0584"
+      ],
+      "hit_doc": 0.5,
+      "hit_eq": 0.5,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_015",
+      "query": "Thời gian bảo lưu học tập tối đa của sinh viên là bao lâu?",
+      "top5": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k21_0397"
+      ],
+      "gold": [
+        "doc_fpt_k20_0048",
+        "doc_fpt_k18_0714"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_016",
+      "query": "Cho tôi hỏi quy định cụ thể: thời gian bảo lưu học tập tối đa của sinh viên là bao lâu?",
+      "top5": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0045"
+      ],
+      "gold": [
+        "doc_fpt_k21_0403",
+        "doc_fpt_k18_0714"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_017",
+      "query": "Sinh viên có được phép học cải thiện điểm đối với các môn đã qua không?",
+      "top5": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k18_0720",
+        "doc_fpt_k21_0409",
+        "doc_fpt_k19_0539",
+        "doc_fpt_k17_0590"
+      ],
+      "gold": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k19_0539"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_018",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được phép học cải thiện điểm đối với các môn đã qua không?",
+      "top5": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k18_0720",
+        "doc_fpt_k19_0539",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k22_0308"
+      ],
+      "gold": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k19_0539"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_019",
+      "query": "Điều kiện để sinh viên được chuyển ngành đào tạo là gì?",
+      "top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k21_0456",
+        "doc_fpt_k18_0716"
+      ],
+      "gold": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0405"
+      ],
+      "hit_doc": 0.5,
+      "hit_eq": 0.5,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_020",
+      "query": "Cho tôi hỏi quy định cụ thể: điều kiện để sinh viên được chuyển ngành đào tạo là gì?",
+      "top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k17_0587"
+      ],
+      "gold": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0405"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_021",
+      "query": "Cách tính điểm trung bình chung học kỳ (GPA) và tích lũy (CPA)?",
+      "top5": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k21_0415"
+      ],
+      "gold": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_022",
+      "query": "Cho tôi hỏi quy định cụ thể: cách tính điểm trung bình chung học kỳ (GPA) và tích lũy (CPA)?",
+      "top5": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k17_0591"
+      ],
+      "gold": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_023",
+      "query": "Sinh viên nợ bao nhiêu tín chỉ thì bị xếp loại học lực yếu?",
+      "top5": [
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0462",
+        "doc_fpt_k21_0409",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k19_0550"
+      ],
+      "gold": [
+        "doc_fpt_k21_0462",
+        "doc_fpt_k22_0313"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_024",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên nợ bao nhiêu tín chỉ thì bị xếp loại học lực yếu?",
+      "top5": [
+        "doc_fpt_k21_0462",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k19_0550"
+      ],
+      "gold": [
+        "doc_fpt_k21_0462",
+        "doc_fpt_k17_0581"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_025",
+      "query": "Quy định về việc vắng thi có lý do chính đáng được xử lý như thế nào?",
+      "top5": [
+        "doc_fpt_k18_0753",
+        "doc_fpt_k17_0624",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k18_0752",
+        "doc_fpt_k21_0446"
+      ],
+      "gold": [
+        "doc_fpt_k20_0125",
+        "doc_fpt_k21_0401"
+      ],
+      "hit_doc": 0.0,
+      "hit_eq": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "q_id": "V2_B05_026",
+      "query": "Cho tôi hỏi quy định cụ thể: quy định về việc vắng thi có lý do chính đáng được xử lý như thế nào?",
+      "top5": [
+        "doc_fpt_k17_0624",
+        "doc_fpt_k18_0753",
+        "doc_fpt_k21_0446",
+        "doc_fpt_k17_0607",
+        "doc_fpt_k18_0724"
+      ],
+      "gold": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k22_0312"
+      ],
+      "hit_doc": 0.0,
+      "hit_eq": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "q_id": "V2_B05_029",
+      "query": "Quy định về việc công nhận chứng chỉ ngoại ngữ quốc tế để miễn học tiếng Anh?",
+      "top5": [
+        "doc_fpt_k21_0487",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k20_0200",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k21_0405"
+      ],
+      "gold": [
+        "doc_fpt_k17_0650",
+        "doc_fpt_k18_0715"
+      ],
+      "hit_doc": 0.0,
+      "hit_eq": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "q_id": "V2_B05_030",
+      "query": "Cho tôi hỏi quy định cụ thể: quy định về việc công nhận chứng chỉ ngoại ngữ quốc tế để miễn học tiếng Anh?",
+      "top5": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k18_0716"
+      ],
+      "gold": [
+        "doc_fpt_k20_0049",
+        "doc_fpt_k18_0715"
+      ],
+      "hit_doc": 0.0,
+      "hit_eq": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "q_id": "V2_B05_031",
+      "query": "Thời gian tối đa để hoàn thành chương trình đào tạo đại học tại FPT?",
+      "top5": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580",
+        "doc_fpt_k18_0708",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k20_0036"
+      ],
+      "gold": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_032",
+      "query": "Cho tôi hỏi quy định cụ thể: thời gian tối đa để hoàn thành chương trình đào tạo đại học tại FPT?",
+      "top5": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580",
+        "doc_fpt_k18_0708",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k20_0036"
+      ],
+      "gold": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_033",
+      "query": "Sinh viên có được đăng ký học 2 ngành cùng một lúc (song bằng) không?",
+      "top5": [
+        "doc_fpt_k22_0308",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k20_0039"
+      ],
+      "gold": [
+        "doc_fpt_k21_0456",
+        "doc_fpt_k20_0176"
+      ],
+      "hit_doc": 0.0,
+      "hit_eq": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "q_id": "V2_B05_034",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được đăng ký học 2 ngành cùng một lúc (song bằng) không?",
+      "top5": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k22_0314"
+      ],
+      "gold": [
+        "doc_fpt_k20_0052",
+        "doc_fpt_k17_0578"
+      ],
+      "hit_doc": 0.5,
+      "hit_eq": 0.5,
+      "mrr": 0.25
+    },
+    {
+      "q_id": "V2_B05_035",
+      "query": "Trường hợp nào sinh viên bị đình chỉ học tập có thời hạn?",
+      "top5": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k17_0623"
+      ],
+      "gold": [
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0406"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_036",
+      "query": "Cho tôi hỏi quy định cụ thể: trường hợp nào sinh viên bị đình chỉ học tập có thời hạn?",
+      "top5": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k18_0752"
+      ],
+      "gold": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0445"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_039",
+      "query": "Sinh viên có được phép rút bớt môn học sau khi đã bắt đầu kỳ học không?",
+      "top5": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k18_0714"
+      ],
+      "gold": [
+        "doc_fpt_k17_0582",
+        "doc_fpt_k21_0400"
+      ],
+      "hit_doc": 0.0,
+      "hit_eq": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "q_id": "V2_B05_040",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được phép rút bớt môn học sau khi đã bắt đầu kỳ học không?",
+      "top5": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0403"
+      ],
+      "gold": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 0.3333333333333333
+    },
+    {
+      "q_id": "V2_B05_041",
+      "query": "Điều kiện để được xét nhận học bổng khuyến khích học tập từng kỳ?",
+      "top5": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k18_0762"
+      ],
+      "gold": [
+        "doc_fpt_k20_0147",
+        "doc_fpt_k20_0150"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_042",
+      "query": "Cho tôi hỏi quy định cụ thể: điều kiện để được xét nhận học bổng khuyến khích học tập từng kỳ?",
+      "top5": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k21_0460",
+        "doc_fpt_k17_0585"
+      ],
+      "gold": [
+        "doc_fpt_k20_0147",
+        "doc_fpt_k20_0150"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_043",
+      "query": "Mức điểm rèn luyện được đánh giá theo những tiêu chí nào?",
+      "top5": [
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k18_0721",
+        "doc_fpt_k17_0589"
+      ],
+      "gold": [
+        "doc_fpt_k20_0060",
+        "doc_fpt_k20_0062"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_044",
+      "query": "Cho tôi hỏi quy định cụ thể: mức điểm rèn luyện được đánh giá theo những tiêu chí nào?",
+      "top5": [
+        "doc_fpt_k17_0589",
+        "doc_fpt_k17_0591",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0066",
+        "doc_fpt_k20_0062"
+      ],
+      "gold": [
+        "doc_fpt_k17_0591",
+        "doc_fpt_k17_0589"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_045",
+      "query": "Sinh viên có được xem lại bài thi tự luận hoặc thực hành không?",
+      "top5": [
+        "doc_fpt_k21_0411",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k18_0753",
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0447"
+      ],
+      "gold": [
+        "doc_fpt_k21_0447",
+        "doc_fpt_k17_0590"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 0.5
+    },
+    {
+      "q_id": "V2_B05_046",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được xem lại bài thi tự luận hoặc thực hành không?",
+      "top5": [
+        "doc_fpt_k21_0411",
+        "doc_fpt_k17_0622",
+        "doc_fpt_k18_0750",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0441"
+      ],
+      "gold": [
+        "doc_fpt_k21_0447",
+        "doc_fpt_k21_0441"
+      ],
+      "hit_doc": 0.5,
+      "hit_eq": 0.5,
+      "mrr": 0.2
+    },
+    {
+      "q_id": "V2_B05_047",
+      "query": "Quy chế đào tạo theo hệ thống tín chỉ của Bộ GD&ĐT áp dụng tại trường như thế nào?",
+      "top5": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k18_0705",
+        "doc_fpt_k21_0398"
+      ],
+      "gold": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_048",
+      "query": "Cho tôi hỏi quy định cụ thể: quy chế đào tạo theo hệ thống tín chỉ của Bộ GD&ĐT áp dụng tại trường như thế nào?",
+      "top5": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k21_0398",
+        "doc_fpt_k18_0705"
+      ],
+      "gold": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B05_049",
+      "query": "Thủ tục xin thôi học tự nguyện cần nộp đơn cho phòng ban nào?",
+      "top5": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k19_0557",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k21_0400"
+      ],
+      "gold": [
+        "doc_fpt_k19_0557",
+        "doc_fpt_k18_0804"
+      ],
+      "hit_doc": 0.5,
+      "hit_eq": 0.5,
+      "mrr": 0.3333333333333333
+    },
+    {
+      "q_id": "V2_B05_050",
+      "query": "Cho tôi hỏi quy định cụ thể: thủ tục xin thôi học tự nguyện cần nộp đơn cho phòng ban nào?",
+      "top5": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k18_0711"
+      ],
+      "gold": [
+        "doc_fpt_k19_0557",
+        "doc_fpt_k18_0804"
+      ],
+      "hit_doc": 0.0,
+      "hit_eq": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "q_id": "V2_B07_011",
+      "query": "Thời gian thực tập OJT kéo dài trong bao lâu?",
+      "top5": [
+        "doc_fpt_k18_0782",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k21_0397",
+        "doc_fpt_k20_0204"
+      ],
+      "gold": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    },
+    {
+      "q_id": "V2_B07_012",
+      "query": "Quy định xét tốt nghiệp: thời gian thực tập OJT kéo dài trong bao lâu?",
+      "top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0597"
+      ],
+      "gold": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782"
+      ],
+      "hit_doc": 0.0,
+      "hit_eq": 0.0,
+      "mrr": 0.0
+    },
+    {
+      "q_id": "V2_B07_015",
+      "query": "Điều kiện về số tín chỉ tích lũy để được đi thực tập OJT là gì?",
+      "top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0489"
+      ],
+      "gold": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0405"
+      ],
+      "hit_doc": 1.0,
+      "hit_eq": 1.0,
+      "mrr": 1.0
+    }
+  ]
+}

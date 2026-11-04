@@ -148,6 +148,27 @@ university-qa/
 
 ---
 
+
+
+---
+
+## 4.3. KẾT QUẢ THỰC NGHIỆM ĐA LƯỢT TOÀN DIỆN (1.000 LƯỢT HỘI THOẠI)
+
+Ngày 04/11/2026, hệ thống FPTUniQA đã được đánh giá thực nghiệm toàn diện trên tập benchmark gồm **1.000 lượt hội thoại** (768 session) tổng hợp từ 15 tệp dữ liệu chuẩn (multiturn_rounds/ và enchmark_v2/), sử dụng runner với cùng session semantics và pipeline entrypoint tương đương ứng dụng trên cấu hình local on-premise, production-like:
+
+* **Độ ổn định hạ tầng (Request Success Rate):** **100,00%** (1.000/1.000 lượt thành công, không gặp exception hay timeout).
+* **Định tuyến nhãn gốc (Raw Route Accuracy):** **82,20%** (822/1.000 lượt khớp nhãn route gốc).
+* **Hành vi làm rõ an toàn (Policy-aware Acceptable Behavior Rate):** **98,00%** (980/1.000 lượt, bao gồm 822 lượt đúng route gốc + 158 lượt CKB thiếu thông tin phân hiệu được chuyển sang ClarificationRoute đúng theo chính sách an toàn).
+* **Phát hiện chuyển chủ đề (Topic-Switch Accuracy):** **96,90%** (969/1.000 lượt).
+* **Thu hồi từ khóa ngữ cảnh (Macro Keyword Recall):** **73,66%** trên 157 lượt tỉnh lược phức tạp có nhãn.
+* **Độ bao phủ từ khóa đáp án (Answer Keyword Coverage):** **53,00%** (proxy về độ bao phủ từ khóa, không đồng nghĩa với factual accuracy).
+* **Hàng rào an toàn (OOD Rejection Accuracy):** **99,09%** (109/110 lượt ngoài phạm vi bị chặn chính xác).
+* **Tỷ lệ gắn cờ Guardrail (Guardrail Flagged Rate):** **2,10%** (3/143 lượt RAG đủ điều kiện bị gắn cờ cảnh báo số học).
+* **Độ trễ trung vị (Latency p50):** **10,00 ms** (tra cứu CKB tức thì trên CPU).
+* **Độ trễ p95:** **6.221,02 ms** (đáp ứng tốt ngưỡng trải nghiệm < 10 giây cho các lượt sinh văn bản qua LLM).
+
+Kết quả thực nghiệm cho thấy hệ thống vận hành ổn định và có cơ chế xử lý thiếu thông tin phù hợp trên tập đo hiện tại, cung cấp căn cứ thực nghiệm tin cậy cho báo cáo kiến trúc và quy trình nghiệm thu đề tài.
+
 ## 5. RỦI RO KỸ THUẬT & KHUYẾN NGHỊ HÀNH ĐỘNG
 
 1. **Về kho dữ liệu văn bản pháp quy:**

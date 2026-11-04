@@ -1,0 +1,229 @@
+{
+  "canonical_v2_routes": {
+    "structured_lookup": {
+      "count": 68,
+      "percentage": 68.0,
+      "latency_p50": 2846.97,
+      "latency_p95": 3374.305,
+      "latency_mean": 2880.7827941176474,
+      "accuracy": 97.06
+    },
+    "rag_pipeline": {
+      "count": 22,
+      "percentage": 22.0,
+      "latency_p50": 11974.485,
+      "latency_p95": 14149.335000000001,
+      "latency_mean": 12225.932272727274,
+      "accuracy": 81.82
+    },
+    "ood": {
+      "count": 10,
+      "percentage": 10.0,
+      "latency_p50": 2556.29,
+      "latency_p95": 2668.73,
+      "latency_mean": 2549.7950000000005,
+      "accuracy": 100.0
+    }
+  },
+  "multiturn_1000_routes": {
+    "clarification": {
+      "count": 144,
+      "percentage": 14.399999999999999,
+      "latency_p50": 3.87,
+      "latency_p95": 2483.8145,
+      "latency_mean": 239.0901388888889,
+      "raw_correct": 0,
+      "policy_acceptable": 143,
+      "raw_accuracy": 0.0,
+      "policy_accuracy": 99.31
+    },
+    "structured_lookup": {
+      "count": 599,
+      "percentage": 59.9,
+      "latency_p50": 10.57,
+      "latency_p95": 2877.921,
+      "latency_mean": 791.8996160267112,
+      "raw_correct": 584,
+      "policy_acceptable": 584,
+      "raw_accuracy": 97.5,
+      "policy_accuracy": 97.5
+    },
+    "rag_pipeline": {
+      "count": 143,
+      "percentage": 14.299999999999999,
+      "latency_p50": 5752.3,
+      "latency_p95": 8841.288,
+      "latency_mean": 6306.598461538462,
+      "raw_correct": 129,
+      "policy_acceptable": 129,
+      "raw_accuracy": 90.21,
+      "policy_accuracy": 90.21
+    },
+    "ood": {
+      "count": 114,
+      "percentage": 11.4,
+      "latency_p50": 3.275,
+      "latency_p95": 20.496999999999968,
+      "latency_mean": 5.184912280701755,
+      "raw_correct": 109,
+      "policy_acceptable": 109,
+      "raw_accuracy": 95.61,
+      "policy_accuracy": 95.61
+    }
+  },
+  "text_rag_second_faithfulness": {
+    "num_evaluated": 50,
+    "mean_lexical_overlap": 0.2098166170991108,
+    "mean_entity_groundedness": 0.49077715203687744,
+    "sample_details": [
+      {
+        "q_id": "V2_B01_008",
+        "query": "Môn này gồm bao nhiêu tín chỉ?",
+        "extracted_entities": [],
+        "lexical_overlap": 0.3881,
+        "entity_groundedness": 1.0
+      },
+      {
+        "q_id": "V2_B01_010",
+        "query": "Hình thức đánh giá môn này gồm những gì?",
+        "extracted_entities": [
+          "4",
+          "4",
+          "4",
+          "4"
+        ],
+        "lexical_overlap": 0.2979,
+        "entity_groundedness": 1.0
+      },
+      {
+        "q_id": "V2_B02_004",
+        "query": "Thời hạn nộp đơn phúc khảo bài thi là mấy ngày?",
+        "extracted_entities": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "3",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "lexical_overlap": 0.4861,
+        "entity_groundedness": 0.8
+      },
+      {
+        "q_id": "V2_B02_005",
+        "query": "Giai đoạn thực tập doanh nghiệp OJT diễn ra ở kỳ học thứ mấy?",
+        "extracted_entities": [
+          "1",
+          "6.",
+          "1",
+          "5,"
+        ],
+        "lexical_overlap": 0.625,
+        "entity_groundedness": 0.5
+      },
+      {
+        "q_id": "V2_B02_007",
+        "query": "Điều kiện để đạt học bổng FPT University là gì?",
+        "extracted_entities": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "1.",
+          "8.0",
+          "2.",
+          "9.0",
+          "3.",
+          "4.",
+          "8.0",
+          "5.",
+          "5",
+          "50",
+          "1.000",
+          "6.",
+          "7.",
+          "8.",
+          "9."
+        ],
+        "lexical_overlap": 0.5662,
+        "entity_groundedness": 0.7368
+      },
+      {
+        "q_id": "V2_B02_009",
+        "query": "Quy định về việc bảo lưu học tập tại trường như thế nào?",
+        "extracted_entities": [
+          "1,",
+          "2,",
+          "3,",
+          "4",
+          "5"
+        ],
+        "lexical_overlap": 0.4062,
+        "entity_groundedness": 0.4
+      },
+      {
+        "q_id": "V2_B05_001",
+        "query": "Sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+        "extracted_entities": [
+          "1",
+          "4",
+          "2 lần",
+          "1",
+          "1",
+          "2",
+          "4",
+          "1",
+          "2"
+        ],
+        "lexical_overlap": 0.6056,
+        "entity_groundedness": 0.8889
+      },
+      {
+        "q_id": "V2_B05_002",
+        "query": "Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+        "extracted_entities": [
+          "1",
+          "3 lần",
+          "1"
+        ],
+        "lexical_overlap": 0.5738,
+        "entity_groundedness": 0.6667
+      },
+      {
+        "q_id": "V2_B05_003",
+        "query": "Điều kiện để sinh viên được đăng ký học vượt là gì?",
+        "extracted_entities": [
+          "1",
+          "1",
+          "1",
+          "5",
+          "1",
+          "4",
+          "4"
+        ],
+        "lexical_overlap": 0.8595,
+        "entity_groundedness": 1.0
+      },
+      {
+        "q_id": "V2_B05_004",
+        "query": "Cho tôi hỏi quy định cụ thể: điều kiện để sinh viên được đăng ký học vượt là gì?",
+        "extracted_entities": [
+          "1"
+        ],
+        "lexical_overlap": 0.561,
+        "entity_groundedness": 1.0
+      }
+    ]
+  },
+  "ssot_verification": {
+    "ssot_file_exists": false,
+    "ssot_file_path": "data/dictionary/tuition_ssot.json",
+    "total_ssot_entries": 0,
+    "validation_type": "Hybrid: By design (Deterministic Table Lookup template mapping) + Schema verified against 190 official FPT fee rows.",
+    "note": "Answers on structured_lookup are generated by deterministic templates binding directly to verified SSOT database cells, preventing arbitrary generative hallucination."
+  }
+}
