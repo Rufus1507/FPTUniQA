@@ -3,233 +3,1121 @@
     {
       "config_id": "c1_bm25",
       "pipeline_config": "1. BM25 Baseline",
-      "recall_at_5": 0.25,
-      "mrr": 0.5,
-      "faithfulness": 1.0,
+      "recall_at_5": 0.325,
+      "equiv_recall_at_5": 0.525,
+      "mrr": 0.2708,
+      "wrong_cohort_rate": 0.8,
+      "faithfulness": 0.4621,
       "ood_rejection": 0.0,
-      "latency_p50": 12576.8,
-      "latency_p95": 49710.4,
-      "total_questions": 20
+      "latency_p50": 1802.0,
+      "latency_p95": 3637.3,
+      "total_questions": 100
     },
     {
       "config_id": "c2_dense",
       "pipeline_config": "2. FAISS Only (Dense)",
-      "recall_at_5": 0.5,
-      "mrr": 0.5,
-      "faithfulness": 1.0,
+      "recall_at_5": 0.575,
+      "equiv_recall_at_5": 0.725,
+      "mrr": 0.5333,
+      "wrong_cohort_rate": 0.75,
+      "faithfulness": 0.473,
       "ood_rejection": 0.0,
-      "latency_p50": 32514.3,
-      "latency_p95": 50098.1,
-      "total_questions": 10
+      "latency_p50": 2005.8,
+      "latency_p95": 4716.4,
+      "total_questions": 100
     },
     {
       "config_id": "c3_hybrid",
-      "pipeline_config": "3. Hybrid (BM25 + FAISS)",
-      "recall_at_5": 0.75,
-      "mrr": 0.75,
-      "faithfulness": 1.0,
+      "pipeline_config": "3. Hybrid (BM25 + FAISS Tuần tự)",
+      "recall_at_5": 0.775,
+      "equiv_recall_at_5": 0.85,
+      "mrr": 0.7417,
+      "wrong_cohort_rate": 0.75,
+      "faithfulness": 0.4663,
       "ood_rejection": 0.0,
-      "latency_p50": 10951.9,
-      "latency_p95": 42246.0,
-      "total_questions": 10
+      "latency_p50": 4131.0,
+      "latency_p95": 7797.9,
+      "total_questions": 100
+    },
+    {
+      "config_id": "c3p_hybrid_parallel",
+      "pipeline_config": "3p. Hybrid (BM25 + FAISS Song song)",
+      "recall_at_5": 0.725,
+      "equiv_recall_at_5": 0.85,
+      "mrr": 0.675,
+      "wrong_cohort_rate": 0.75,
+      "faithfulness": 0.4675,
+      "ood_rejection": 0.0,
+      "latency_p50": 2024.4,
+      "latency_p95": 4572.7,
+      "total_questions": 100
     },
     {
       "config_id": "c4_hybrid_rrf_filter",
-      "pipeline_config": "4. Hybrid + RRF + Metadata Filter",
-      "recall_at_5": 0.75,
-      "mrr": 0.75,
-      "faithfulness": 1.0,
+      "pipeline_config": "4. Hybrid + Hard Filter (C4-hard)",
+      "recall_at_5": 0.5875,
+      "equiv_recall_at_5": 0.8125,
+      "mrr": 0.5437,
+      "wrong_cohort_rate": 0.75,
+      "faithfulness": 0.4804,
       "ood_rejection": 0.0,
-      "latency_p50": 12210.2,
-      "latency_p95": 23227.5,
-      "total_questions": 10
+      "latency_p50": 2021.8,
+      "latency_p95": 4135.1,
+      "total_questions": 200
+    },
+    {
+      "config_id": "c4_hybrid_rrf_soft",
+      "pipeline_config": "4s. Hybrid + Soft Boost (C4-soft)",
+      "recall_at_5": 0.625,
+      "equiv_recall_at_5": 0.75,
+      "mrr": 0.635,
+      "wrong_cohort_rate": 0.75,
+      "faithfulness": 0.481,
+      "ood_rejection": 0.0,
+      "latency_p50": 2126.3,
+      "latency_p95": 3291.7,
+      "total_questions": 100
     },
     {
       "config_id": "c5_full_noparser",
       "pipeline_config": "5. Full (Reranker + Structured, không Semantic Parsing)",
-      "recall_at_5": 0.75,
-      "mrr": 0.2917,
-      "faithfulness": 1.0,
+      "recall_at_5": 0.5,
+      "equiv_recall_at_5": 0.5556,
+      "mrr": 0.3611,
+      "wrong_cohort_rate": 0.8889,
+      "faithfulness": 0.8656,
       "ood_rejection": 1.0,
-      "latency_p50": 9.2,
-      "latency_p95": 37915.4,
-      "total_questions": 10
+      "latency_p50": 9.5,
+      "latency_p95": 15873.2,
+      "total_questions": 100
     },
     {
       "config_id": "c6_full",
       "pipeline_config": "6. Full + Semantic Parsing Routing (mới)",
-      "recall_at_5": 0.75,
-      "mrr": 0.2917,
-      "faithfulness": 1.0,
+      "recall_at_5": 0.5,
+      "equiv_recall_at_5": 0.5556,
+      "mrr": 0.3611,
+      "wrong_cohort_rate": 0.8889,
+      "faithfulness": 0.8671,
       "ood_rejection": 1.0,
-      "latency_p50": 5769.6,
-      "latency_p95": 27981.2,
-      "total_questions": 10
+      "latency_p50": 2703.2,
+      "latency_p95": 13034.8,
+      "total_questions": 200
     }
   ],
   "five_metric_groups": {
     "c1_bm25": {
       "label": "1. BM25 Baseline",
       "retrieval": {
-        "recall_at_5": 0.25,
-        "mrr": 0.5
+        "recall_at_5": 0.325,
+        "equiv_recall_at_5": 0.525,
+        "mrr": 0.2708,
+        "wrong_cohort_rate": 0.8
       },
       "semantic_parsing": {
         "intent_accuracy": "N/A",
         "slot_accuracy": "N/A",
+        "slot_f1": "N/A",
         "exact_match": "N/A",
         "fallback_rate": "N/A"
       },
       "generation": {
-        "faithfulness": 1.0,
-        "citation_correctness": 0.98
+        "faithfulness": 0.4621,
+        "citation_correctness": 1.0
       },
       "safety": {
         "ood_rejection_rate": 0.0,
         "hallucination_rate": 0.0
       },
       "system": {
-        "latency_p50_ms": 12576.8,
-        "latency_p95_ms": 49710.4,
-        "parser_latency_ms": 4.52,
+        "latency_p50_ms": 1802.0,
+        "latency_p95_ms": 3637.3,
+        "parser_latency_ms": 43.92,
         "api_success_rate": 1.0
       }
     },
     "c2_dense": {
       "label": "2. FAISS Only (Dense)",
       "retrieval": {
-        "recall_at_5": 0.5,
-        "mrr": 0.5
+        "recall_at_5": 0.575,
+        "equiv_recall_at_5": 0.725,
+        "mrr": 0.5333,
+        "wrong_cohort_rate": 0.75
       },
       "semantic_parsing": {
         "intent_accuracy": "N/A",
         "slot_accuracy": "N/A",
+        "slot_f1": "N/A",
         "exact_match": "N/A",
         "fallback_rate": "N/A"
       },
       "generation": {
-        "faithfulness": 1.0,
-        "citation_correctness": 0.98
+        "faithfulness": 0.473,
+        "citation_correctness": 1.0
       },
       "safety": {
         "ood_rejection_rate": 0.0,
         "hallucination_rate": 0.0
       },
       "system": {
-        "latency_p50_ms": 32514.3,
-        "latency_p95_ms": 50098.1,
-        "parser_latency_ms": 5.0,
+        "latency_p50_ms": 2005.8,
+        "latency_p95_ms": 4716.4,
+        "parser_latency_ms": 11.15,
         "api_success_rate": 1.0
       }
     },
     "c3_hybrid": {
-      "label": "3. Hybrid (BM25 + FAISS)",
+      "label": "3. Hybrid (BM25 + FAISS Tuần tự)",
       "retrieval": {
-        "recall_at_5": 0.75,
-        "mrr": 0.75
+        "recall_at_5": 0.775,
+        "equiv_recall_at_5": 0.85,
+        "mrr": 0.7417,
+        "wrong_cohort_rate": 0.75
       },
       "semantic_parsing": {
         "intent_accuracy": "N/A",
         "slot_accuracy": "N/A",
+        "slot_f1": "N/A",
         "exact_match": "N/A",
         "fallback_rate": "N/A"
       },
       "generation": {
-        "faithfulness": 1.0,
-        "citation_correctness": 0.98
+        "faithfulness": 0.4663,
+        "citation_correctness": 1.0
       },
       "safety": {
         "ood_rejection_rate": 0.0,
         "hallucination_rate": 0.0
       },
       "system": {
-        "latency_p50_ms": 10951.9,
-        "latency_p95_ms": 42246.0,
-        "parser_latency_ms": 4.25,
+        "latency_p50_ms": 4131.0,
+        "latency_p95_ms": 7797.9,
+        "parser_latency_ms": 9.2,
+        "api_success_rate": 1.0
+      }
+    },
+    "c3p_hybrid_parallel": {
+      "label": "3p. Hybrid (BM25 + FAISS Song song)",
+      "retrieval": {
+        "recall_at_5": 0.725,
+        "equiv_recall_at_5": 0.85,
+        "mrr": 0.675,
+        "wrong_cohort_rate": 0.75
+      },
+      "semantic_parsing": {
+        "intent_accuracy": "N/A",
+        "slot_accuracy": "N/A",
+        "slot_f1": "N/A",
+        "exact_match": "N/A",
+        "fallback_rate": "N/A"
+      },
+      "generation": {
+        "faithfulness": 0.4675,
+        "citation_correctness": 1.0
+      },
+      "safety": {
+        "ood_rejection_rate": 0.0,
+        "hallucination_rate": 0.03
+      },
+      "system": {
+        "latency_p50_ms": 2024.4,
+        "latency_p95_ms": 4572.7,
+        "parser_latency_ms": 90.63,
         "api_success_rate": 1.0
       }
     },
     "c4_hybrid_rrf_filter": {
-      "label": "4. Hybrid + RRF + Metadata Filter",
+      "label": "4. Hybrid + Hard Filter (C4-hard)",
       "retrieval": {
-        "recall_at_5": 0.75,
-        "mrr": 0.75
+        "recall_at_5": 0.5875,
+        "equiv_recall_at_5": 0.8125,
+        "mrr": 0.5437,
+        "wrong_cohort_rate": 0.75
       },
       "semantic_parsing": {
         "intent_accuracy": "N/A",
         "slot_accuracy": "N/A",
+        "slot_f1": "N/A",
         "exact_match": "N/A",
         "fallback_rate": "N/A"
       },
       "generation": {
-        "faithfulness": 1.0,
-        "citation_correctness": 0.98
+        "faithfulness": 0.4804,
+        "citation_correctness": 1.0
       },
       "safety": {
         "ood_rejection_rate": 0.0,
-        "hallucination_rate": 0.0
+        "hallucination_rate": 0.02
       },
       "system": {
-        "latency_p50_ms": 12210.2,
-        "latency_p95_ms": 23227.5,
-        "parser_latency_ms": 3.9,
+        "latency_p50_ms": 2021.8,
+        "latency_p95_ms": 4135.1,
+        "parser_latency_ms": 43.0,
+        "api_success_rate": 1.0
+      }
+    },
+    "c4_hybrid_rrf_soft": {
+      "label": "4s. Hybrid + Soft Boost (C4-soft)",
+      "retrieval": {
+        "recall_at_5": 0.625,
+        "equiv_recall_at_5": 0.75,
+        "mrr": 0.635,
+        "wrong_cohort_rate": 0.75
+      },
+      "semantic_parsing": {
+        "intent_accuracy": "N/A",
+        "slot_accuracy": "N/A",
+        "slot_f1": "N/A",
+        "exact_match": "N/A",
+        "fallback_rate": "N/A"
+      },
+      "generation": {
+        "faithfulness": 0.481,
+        "citation_correctness": 1.0
+      },
+      "safety": {
+        "ood_rejection_rate": 0.0,
+        "hallucination_rate": 0.01
+      },
+      "system": {
+        "latency_p50_ms": 2126.3,
+        "latency_p95_ms": 3291.7,
+        "parser_latency_ms": 15.26,
         "api_success_rate": 1.0
       }
     },
     "c5_full_noparser": {
       "label": "5. Full (Reranker + Structured, không Semantic Parsing)",
       "retrieval": {
-        "recall_at_5": 0.75,
-        "mrr": 0.2917
+        "recall_at_5": 0.5,
+        "equiv_recall_at_5": 0.5556,
+        "mrr": 0.3611,
+        "wrong_cohort_rate": 0.8889
       },
       "semantic_parsing": {
-        "intent_accuracy": 1.0,
-        "slot_accuracy": 0.2857,
-        "exact_match": 0.2,
+        "intent_accuracy": 0.83,
+        "slot_accuracy": 0.4747,
+        "slot_f1": 0.6303,
+        "exact_match": 0.28,
         "fallback_rate": 1.0
       },
       "generation": {
-        "faithfulness": 1.0,
-        "citation_correctness": 0.98
+        "faithfulness": 0.8656,
+        "citation_correctness": 1.0
       },
       "safety": {
         "ood_rejection_rate": 1.0,
         "hallucination_rate": 0.0
       },
       "system": {
-        "latency_p50_ms": 9.2,
-        "latency_p95_ms": 37915.4,
-        "parser_latency_ms": 4.9,
+        "latency_p50_ms": 9.5,
+        "latency_p95_ms": 15873.2,
+        "parser_latency_ms": 7.52,
         "api_success_rate": 1.0
       }
     },
     "c6_full": {
       "label": "6. Full + Semantic Parsing Routing (mới)",
       "retrieval": {
-        "recall_at_5": 0.75,
-        "mrr": 0.2917
+        "recall_at_5": 0.5,
+        "equiv_recall_at_5": 0.5556,
+        "mrr": 0.3611,
+        "wrong_cohort_rate": 0.8889
       },
       "semantic_parsing": {
-        "intent_accuracy": 1.0,
-        "slot_accuracy": 0.3077,
-        "exact_match": 0.2,
+        "intent_accuracy": 0.86,
+        "slot_accuracy": 0.5641,
+        "slot_f1": 0.7169,
+        "exact_match": 0.355,
         "fallback_rate": 0.0
       },
       "generation": {
-        "faithfulness": 1.0,
-        "citation_correctness": 0.98
+        "faithfulness": 0.8671,
+        "citation_correctness": 1.0
       },
       "safety": {
         "ood_rejection_rate": 1.0,
-        "hallucination_rate": 0.0
+        "hallucination_rate": 0.005
       },
       "system": {
-        "latency_p50_ms": 5769.6,
-        "latency_p95_ms": 27981.2,
-        "parser_latency_ms": 5684.62,
+        "latency_p50_ms": 2703.2,
+        "latency_p95_ms": 13034.8,
+        "parser_latency_ms": 2038.66,
         "api_success_rate": 1.0
       }
     }
   },
-  "comparison_c6_vs_c5": {}
+  "diagnostic_summary": {},
+  "diagnostic_rows": [
+    {
+      "q_id": "V2_B02_004",
+      "query": "Thời hạn nộp đơn phúc khảo bài thi là mấy ngày?",
+      "gold_ids": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B02_005",
+      "query": "Giai đoạn thực tập doanh nghiệp OJT diễn ra ở kỳ học thứ mấy?",
+      "gold_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k22_0305"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k20_0201"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k20_0201"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k20_0201"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B02_007",
+      "query": "Điều kiện để đạt học bổng FPT University là gì?",
+      "gold_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k20_0049"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k20_0049",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k20_0049",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k20_0049",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B02_009",
+      "query": "Quy định về việc bảo lưu học tập tại trường như thế nào?",
+      "gold_ids": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k20_0048"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k17_0583",
+        "doc_fpt_k18_0714"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k17_0583",
+        "doc_fpt_k18_0714"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k17_0583",
+        "doc_fpt_k18_0714"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B05_001",
+      "query": "Sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+      "gold_ids": [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k20_0051"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": false,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": false,
+      "c3_top5": [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k20_0051",
+        "doc_fpt_k17_0609",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k22_0303"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k17_0590",
+        "doc_fpt_k20_0051",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k22_0303",
+        "doc_fpt_k17_0608"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k17_0590",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0602",
+        "doc_fpt_k17_0582",
+        "doc_fpt_k17_0624"
+      ],
+      "category": "D (Khớp/Khác)",
+      "reason": "Đồng thuận hoặc không lệch"
+    },
+    {
+      "q_id": "V2_B05_002",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+      "gold_ids": [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0751"
+      ],
+      "c3_hit": true,
+      "c4h_hit": false,
+      "c4s_hit": false,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k20_0051",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k22_0299"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k17_0624"
+      ],
+      "category": "C (Trượt giả - Tài liệu tương đương)",
+      "reason": "Nội dung quy chế tương đương qua các khóa nhưng Doc ID khác nhau."
+    },
+    {
+      "q_id": "V2_B05_003",
+      "query": "Điều kiện để sinh viên được đăng ký học vượt là gì?",
+      "gold_ids": [
+        "doc_fpt_k19_0550",
+        "doc_fpt_k20_0152"
+      ],
+      "c3_hit": true,
+      "c4h_hit": false,
+      "c4s_hit": false,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k19_0550",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400"
+      ],
+      "category": "C (Trượt giả - Tài liệu tương đương)",
+      "reason": "Nội dung quy chế tương đương qua các khóa nhưng Doc ID khác nhau."
+    },
+    {
+      "q_id": "V2_B05_004",
+      "query": "Cho tôi hỏi quy định cụ thể: điều kiện để sinh viên được đăng ký học vượt là gì?",
+      "gold_ids": [
+        "doc_fpt_k19_0550",
+        "doc_fpt_k20_0152"
+      ],
+      "c3_hit": false,
+      "c4h_hit": false,
+      "c4s_hit": false,
+      "c4h_equiv_hit": false,
+      "c4s_equiv_hit": false,
+      "c3_top5": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k17_0585"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k17_0585"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k17_0585"
+      ],
+      "category": "D (Khớp/Khác)",
+      "reason": "Đồng thuận hoặc không lệch"
+    },
+    {
+      "q_id": "V2_B05_007",
+      "query": "Thời hạn nộp đơn xin phúc khảo bài thi sau khi có điểm là bao lâu?",
+      "gold_ids": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k18_0755"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B05_008",
+      "query": "Cho tôi hỏi quy định cụ thể: thời hạn nộp đơn xin phúc khảo bài thi sau khi có điểm là bao lâu?",
+      "gold_ids": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k18_0755"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B05_009",
+      "query": "Sinh viên nghỉ học quá bao nhiêu % số buổi thì bị cấm thi?",
+      "gold_ids": [
+        "doc_fpt_k20_0092",
+        "doc_fpt_k18_0736"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k20_0092",
+        "doc_fpt_k20_0088"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k20_0092",
+        "doc_fpt_k20_0088"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k17_0623"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B05_010",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên nghỉ học quá bao nhiêu % số buổi thì bị cấm thi?",
+      "gold_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0736"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0750"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0750"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0750"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B07_001",
+      "query": "Sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "gold_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k22_0346"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0022",
+        "doc_fpt_k18_0703"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k17_0579",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k22_0306",
+        "doc_fpt_k20_0022"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k17_0579",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k22_0346"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B07_002",
+      "query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "gold_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0033"
+      ],
+      "c3_hit": true,
+      "c4h_hit": false,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0077"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0073",
+        "doc_fpt_k20_0071",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0077"
+      ],
+      "category": "C (Trượt giả - Tài liệu tương đương)",
+      "reason": "Nội dung quy chế tương đương qua các khóa nhưng Doc ID khác nhau."
+    },
+    {
+      "q_id": "V2_B07_005",
+      "query": "Chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+      "gold_ids": [
+        "doc_fpt_k21_0488"
+      ],
+      "c3_hit": true,
+      "c4h_hit": false,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0207"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k17_0652",
+        "doc_fpt_k20_0207",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k22_0366"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0207"
+      ],
+      "category": "C (Trượt giả - Tài liệu tương đương)",
+      "reason": "Nội dung quy chế tương đương qua các khóa nhưng Doc ID khác nhau."
+    },
+    {
+      "q_id": "V2_B07_006",
+      "query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+      "gold_ids": [
+        "doc_fpt_k21_0488"
+      ],
+      "c3_hit": true,
+      "c4h_hit": false,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k18_0729"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k17_0652",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0035",
+        "doc_fpt_k20_0207"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k18_0729"
+      ],
+      "category": "C (Trượt giả - Tài liệu tương đương)",
+      "reason": "Nội dung quy chế tương đương qua các khóa nhưng Doc ID khác nhau."
+    },
+    {
+      "q_id": "V2_B07_007",
+      "query": "Chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh là gì?",
+      "gold_ids": [
+        "doc_fpt_k17_0650",
+        "doc_fpt_k18_0781"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": false,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": false,
+      "c3_top5": [
+        "doc_fpt_k20_0161",
+        "doc_fpt_k20_0164",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0650",
+        "doc_fpt_k22_0314"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k20_0161",
+        "doc_fpt_k20_0164",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0650",
+        "doc_fpt_k22_0314"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k20_0161",
+        "doc_fpt_k20_0164",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k18_0703"
+      ],
+      "category": "D (Khớp/Khác)",
+      "reason": "Đồng thuận hoặc không lệch"
+    },
+    {
+      "q_id": "V2_B07_008",
+      "query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh là gì?",
+      "gold_ids": [
+        "doc_fpt_k20_0035",
+        "doc_fpt_k17_0650"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k20_0035",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0161",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0650"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k20_0035",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0161",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0650"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k20_0035",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0033",
+        "doc_fpt_k20_0164"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B07_009",
+      "query": "Sinh viên đi thực tập doanh nghiệp OJT vào học kỳ thứ mấy?",
+      "gold_ids": [
+        "doc_fpt_k20_0201",
+        "doc_fpt_k22_0305"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0489",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0201"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0489",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0201"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0489",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0201"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    },
+    {
+      "q_id": "V2_B07_010",
+      "query": "Quy định xét tốt nghiệp: sinh viên đi thực tập doanh nghiệp OJT vào học kỳ thứ mấy?",
+      "gold_ids": [
+        "doc_fpt_k22_0306",
+        "doc_fpt_k22_0305"
+      ],
+      "c3_hit": true,
+      "c4h_hit": true,
+      "c4s_hit": true,
+      "c4h_equiv_hit": true,
+      "c4s_equiv_hit": true,
+      "c3_top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488"
+      ],
+      "c4h_top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488"
+      ],
+      "c4s_top5": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k22_0305"
+      ],
+      "category": "Thành công (C4-soft hit)",
+      "reason": "Soft boosting đã đưa tài liệu mục tiêu vào top-5."
+    }
+  ],
+  "graph_rag_ablation": {
+    "classes": {
+      "f_grade_policy": {
+        "total_questions": 6,
+        "with_graph_pass_rate": 1.0,
+        "without_graph_pass_rate": 1.0,
+        "pass_delta": 0.0,
+        "with_rouge_l": 0.869,
+        "without_rouge_l": 0.1044
+      },
+      "next_course": {
+        "total_questions": 6,
+        "with_graph_pass_rate": 1.0,
+        "without_graph_pass_rate": 1.0,
+        "pass_delta": 0.0,
+        "with_rouge_l": 0.9448,
+        "without_rouge_l": 0.2124
+      },
+      "ojt_conditions": {
+        "total_questions": 6,
+        "with_graph_pass_rate": 1.0,
+        "without_graph_pass_rate": 1.0,
+        "pass_delta": 0.0,
+        "with_rouge_l": 0.5443,
+        "without_rouge_l": 0.0747
+      },
+      "prereq_chain": {
+        "total_questions": 6,
+        "with_graph_pass_rate": 1.0,
+        "without_graph_pass_rate": 1.0,
+        "pass_delta": 0.0,
+        "with_rouge_l": 1.0,
+        "without_rouge_l": 0.2267
+      },
+      "program_compare": {
+        "total_questions": 6,
+        "with_graph_pass_rate": 1.0,
+        "without_graph_pass_rate": 1.0,
+        "pass_delta": 0.0,
+        "with_rouge_l": 0.8333,
+        "without_rouge_l": 0.0667
+      }
+    },
+    "overall": {
+      "total_questions": 30,
+      "with_graph_pass_rate": 1.0,
+      "without_graph_pass_rate": 1.0,
+      "pass_delta": 0.0,
+      "with_rouge_l": 0.8383,
+      "without_rouge_l": 0.137
+    }
+  }
 }

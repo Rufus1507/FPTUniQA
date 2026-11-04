@@ -87,3 +87,8 @@ desktop.ini
 .idea/
 *.swp
 *.swo
+
+~$*.docx
+~$*.doc
+.claude_request.md
+.claude_plan.md

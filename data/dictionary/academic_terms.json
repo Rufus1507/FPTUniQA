@@ -136,6 +136,11 @@
     "canonical_name": "On the Job Training",
     "canonical_name_vi": "Thực tập doanh nghiệp (OJT)",
     "aliases": [
+      "on-the-job training",
+      "ojt",
+      "thuc tap ojt",
+      "thực tập ojt",
+      "đi thực tập ojt",
       "thực tập tại doanh nghiệp",
       "thuc tap doanh nghiep",
       "thực tập doanh nghiệp",
@@ -237,6 +242,11 @@
     "canonical_name": "Dormitory Fee",
     "canonical_name_vi": "Phí ký túc xá",
     "aliases": [
+      "tiền ký túc xá",
+      "ky tuc",
+      "ktx",
+      "o ky tuc xa",
+      "ở ký túc xá",
       "phí ký túc xá",
       "ký túc xá",
       "ky tuc xa",
@@ -253,5 +263,239 @@
     "valid_from": "2021-09-01",
     "valid_to": null,
     "notes": "Định mức 4.000.000 VNĐ / học kỳ tại phân hiệu Hòa Lạc"
+  },
+  {
+    "entity_id": "TERM_SINH_VIEN",
+    "entity_type": "academic_term",
+    "code": "STUDENT",
+    "canonical_name": "Student",
+    "canonical_name_vi": "Sinh viên",
+    "aliases": [
+      "sinh viên",
+      "sinh vien",
+      "học viên",
+      "hoc vien",
+      "tân sinh viên",
+      "tan sinh vien"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Sổ tay sinh viên ĐH FPT",
+      "section": "Quy chế sinh viên"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Đối tượng người học bậc đại học tại FPTU"
+  },
+  {
+    "entity_id": "TERM_CTDT",
+    "entity_type": "academic_term",
+    "code": "CURRICULUM",
+    "canonical_name": "Curriculum",
+    "canonical_name_vi": "Chương trình đào tạo",
+    "aliases": [
+      "chương trình đào tạo",
+      "chuong trinh dao tao",
+      "khung chương trình",
+      "khung chuong trinh",
+      "lộ trình học",
+      "lo trinh hoc",
+      "chương trình học",
+      "chuong trinh hoc"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Quy chế đào tạo ĐH FPT",
+      "section": "Chương trình đào tạo"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Cấu trúc khung chương trình đào tạo các ngành"
+  },
+  {
+    "entity_id": "TERM_GDTC",
+    "entity_type": "academic_term",
+    "code": "GDTC",
+    "canonical_name": "Physical Education",
+    "canonical_name_vi": "Giáo dục thể chất",
+    "aliases": [
+      "giáo dục thể chất",
+      "giao duc the chat",
+      "thể dục",
+      "the duc",
+      "vovinam",
+      "môn thể dục"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Quy chế đào tạo ĐH FPT",
+      "section": "Giáo dục thể chất"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Học phần Giáo dục thể chất (Vovinam) bắt buộc trong chương trình"
+  },
+  {
+    "entity_id": "TERM_GDQP",
+    "entity_type": "academic_term",
+    "code": "GDQP",
+    "canonical_name": "National Defense Education",
+    "canonical_name_vi": "Giáo dục quốc phòng",
+    "aliases": [
+      "giáo dục quốc phòng",
+      "giao duc quoc phong",
+      "quốc phòng an ninh",
+      "quoc phong an ninh",
+      "học quân sự",
+      "hoc quan su",
+      "học kỳ quân sự"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Quy chế đào tạo ĐH FPT",
+      "section": "Giáo dục quốc phòng"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Chương trình Giáo dục quốc phòng và an ninh tập trung"
+  },
+  {
+    "entity_id": "TERM_PE",
+    "entity_type": "academic_term",
+    "code": "PRACTICAL_EXAM",
+    "canonical_name": "Practical Exam",
+    "canonical_name_vi": "Thi thực hành",
+    "aliases": [
+      "thi thực hành",
+      "thi thuc hanh",
+      "bài thi thực hành",
+      "bai thi thuc hanh",
+      "practical exam"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Quy chế khảo thí ĐH FPT",
+      "section": "Hình thức đánh giá"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Kỳ thi đánh giá kỹ năng thực hành máy tính / đồ án môn học"
+  },
+  {
+    "entity_id": "TERM_EOS",
+    "entity_type": "academic_term",
+    "code": "EOS",
+    "canonical_name": "End of Semester Exam",
+    "canonical_name_vi": "Thi cuối kỳ",
+    "aliases": [
+      "thi cuối kỳ",
+      "thi cuoi ky",
+      "thi kết thúc môn",
+      "thi ket thuc mon",
+      "bài thi cuối kỳ",
+      "lịch thi cuối kỳ",
+      "end of semester"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Quy chế khảo thí ĐH FPT",
+      "section": "Kỳ thi cuối kỳ"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Kỳ thi đánh giá kết thúc môn học (End of Semester)"
+  },
+  {
+    "entity_id": "TERM_GPA",
+    "entity_type": "academic_term",
+    "code": "GPA",
+    "canonical_name": "Grade Point Average",
+    "canonical_name_vi": "Điểm trung bình học kỳ",
+    "aliases": [
+      "điểm trung bình học kỳ",
+      "diem trung binh hoc ky",
+      "điểm gpa",
+      "diem gpa",
+      "gpa học kỳ"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Quy chế đào tạo ĐH FPT",
+      "section": "Đánh giá kết quả học tập"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Điểm trung bình chung học tập trong một học kỳ"
+  },
+  {
+    "entity_id": "TERM_CGPA",
+    "entity_type": "academic_term",
+    "code": "CGPA",
+    "canonical_name": "Cumulative Grade Point Average",
+    "canonical_name_vi": "Điểm trung bình tích lũy",
+    "aliases": [
+      "điểm trung bình tích lũy",
+      "diem trung binh tich luy",
+      "điểm cgpa",
+      "diem cgpa",
+      "cgpa tích lũy",
+      "điểm tích lũy",
+      "diem tich luy"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Quy chế đào tạo ĐH FPT",
+      "section": "Đánh giá kết quả học tập"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Điểm trung bình chung tích lũy qua tất cả các học kỳ"
+  },
+  {
+    "entity_id": "TERM_DIEM_F",
+    "entity_type": "academic_term",
+    "code": "GRADE_F",
+    "canonical_name": "Grade F (Fail Course)",
+    "canonical_name_vi": "Điểm F (Chưa đạt / Trượt môn)",
+    "aliases": [
+      "bị điểm f",
+      "bi diem f",
+      "điểm f",
+      "diem f",
+      "điểm liệt",
+      "diem liet",
+      "trượt môn",
+      "truot mon",
+      "rớt môn",
+      "rot mon",
+      "không qua môn",
+      "khong qua mon"
+    ],
+    "status": "active",
+    "verified": true,
+    "confidence": 1.0,
+    "source_reference": {
+      "file": "Quy chế đào tạo ĐH FPT",
+      "section": "Quy định đánh giá và thang điểm học phần"
+    },
+    "valid_from": "2021-09-01",
+    "valid_to": null,
+    "notes": "Điểm tổng kết học phần < 5.0 (thang 10), sinh viên phải đăng ký học lại môn học."
   }
 ]

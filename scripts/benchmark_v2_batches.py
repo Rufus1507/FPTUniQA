@@ -142,12 +142,25 @@ def percentile(data: List[float], p: float) -> float:
 
 
 def cleanup_memory(pipeline: Optional[RAGPipeline] = None):
-    """Giải phóng bộ nhớ an toàn sau mỗi batch."""
+    """Giải phóng bộ nhớ an toàn sau mỗi batch và kiểm soát an toàn phần cứng."""
     if pipeline and hasattr(pipeline, "session_manager"):
         pipeline.session_manager.clear()
     gc.collect()
     if HAS_TORCH and torch.cuda.is_available():
         torch.cuda.empty_cache()
+
+    try:
+        import psutil
+        vm = psutil.virtual_memory()
+        ram_used_gb = vm.used / (1024**3)
+        ram_avail_gb = vm.available / (1024**3)
+        print(f"  [Hardware Guard] RAM: {ram_used_gb:.2f} GB used ({vm.percent}%) | {ram_avail_gb:.2f} GB available - Status: SAFE")
+        if ram_avail_gb < 1.0:
+            print("  [Hardware Guard] CẢNH BÁO: Bộ nhớ RAM khả dụng dưới 1GB! Tạm dừng 2s để HĐH dọn dẹp...")
+            time.sleep(2.0)
+            gc.collect()
+    except Exception:
+        pass
 
 
 def run_batch(

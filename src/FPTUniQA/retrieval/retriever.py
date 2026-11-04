@@ -24,11 +24,23 @@ class HybridRetriever:
         weights: Optional[List[float]] = None,
         auto_load: bool = True,
         cache: Optional[RetrievalCache] = None,
+        metadata_mode: str = 'soft',
+        alpha: float = 0.25,
+        beta: float = 0.25,
+        parallel: bool = True,
     ):
         self.rrf_k = rrf_k
         self.weights = weights
         self._auto_load = auto_load
         self._is_loaded = False
+        self.metadata_mode = metadata_mode
+        self.alpha = float(alpha)
+        self.beta = float(beta)
+        self.parallel = bool(parallel)
+        if not (0.0 <= self.beta < 1.0):
+            raise ValueError(f'beta must be in [0.0, 1.0), got {beta}')
+        if self.alpha < 0.0:
+            raise ValueError(f'alpha must be >= 0.0, got {alpha}')
 
         try:
             from FPTUniQA.utils.config import load_config
@@ -162,10 +174,30 @@ class HybridRetriever:
         metadata_filter: Optional[Dict[str, Any]] = None,
         rerank: bool = True,
         score_threshold: Optional[float] = None,
+        metadata_mode: Optional[str] = None,
+        alpha: Optional[float] = None,
+        beta: Optional[float] = None,
+        parallel: Optional[bool] = None,
     ) -> List[Tuple[Dict[str, Any], float]]:
-        """Quy trình truy xuất 2 giai đoạn: Candidate Retrieval (BM25+Dense+RRF) -> Reranking (Cross-Encoder)."""
+        """Quy trình truy xuất 2 giai đoạn: Candidate Retrieval (BM25+Dense+RRF) -> Reranking (Cross-Encoder).
+        
+        Hỗ trợ các chiến lược metadata_mode:
+        - 'soft': Thu ứng viên rộng (k_wide=40..60) không pre-filter, sau đó boost score sau RRF.
+        - 'hard': Hard pre-filter tại BM25 & Dense, loại bỏ hẳn tài liệu không khớp.
+        - 'none': Không áp dụng lọc hay boost metadata.
+        """
         if not query or not str(query).strip():
             return []
+
+        active_mode = (metadata_mode or self.metadata_mode or "soft").lower()
+        active_alpha = self.alpha if alpha is None else float(alpha)
+        active_beta = self.beta if beta is None else float(beta)
+        active_parallel = self.parallel if parallel is None else bool(parallel)
+
+        if not (0.0 <= active_beta < 1.0):
+            raise ValueError(f"beta must be in [0.0, 1.0), got {active_beta}")
+        if active_alpha < 0.0:
+            raise ValueError(f"alpha must be >= 0.0, got {active_alpha}")
 
         cache_key = None
         if self.cache is not None:
@@ -176,6 +208,7 @@ class HybridRetriever:
                 metadata_filter=metadata_filter,
                 rerank=rerank,
                 score_threshold=score_threshold,
+                metadata_mode=active_mode,
             )
             cached_res = self.cache.get(cache_key)
             if cached_res is not None:
@@ -186,20 +219,66 @@ class HybridRetriever:
         if candidate_k is None:
             candidate_k = self.default_candidate_k
 
-        # Tăng candidate_k nếu có metadata_filter để đảm bảo sau filter vẫn đủ ứng viên
-        cand_k = max(candidate_k, top_k * 3) if metadata_filter else candidate_k
+        # Cấu hình candidate pool và pre-filter theo active_mode
+        if active_mode == "hard":
+            pre_filter = metadata_filter
+            cand_k = max(candidate_k, top_k * 3) if metadata_filter else candidate_k
+        elif active_mode == "soft":
+            pre_filter = None  # Không lọc trước, bảo toàn 100% ứng viên trước RRF
+            cand_k = max(candidate_k, 40)
+        else:  # 'none'
+            pre_filter = None
+            cand_k = candidate_k
+
+        # Chuẩn hóa truy vấn phục vụ retrieval đồng nhất (Bước 6)
+        try:
+            from FPTUniQA.query.normalizer import normalize_for_retrieval
+            norm_query_obj = normalize_for_retrieval(query)
+            effective_query = norm_query_obj.retrieval_query or query
+            expansion_variants = list(norm_query_obj.entity_expansion) if norm_query_obj.is_unaccented else None
+        except Exception as _e_norm:
+            logger.warning(f"Lỗi chuẩn hóa query retrieval: {_e_norm}")
+            effective_query = query
+            expansion_variants = None
 
         # Giai đoạn 1: Truy xuất ứng viên từ BM25 và Dense
-        bm25_results = self.bm25_retriever.retrieve(
-            query, top_k=cand_k, metadata_filter=metadata_filter
-        )
+        def _get_bm25():
+            try:
+                return self.bm25_retriever.retrieve(
+                    effective_query,
+                    top_k=cand_k,
+                    metadata_filter=pre_filter,
+                    query_variants=expansion_variants,
+                )
+            except Exception as e:
+                logger.warning(f"Lỗi BM25 retrieval: {e}")
+                return []
 
-        if self.dense_retriever._faiss_index is None:
-            fused_results = bm25_results
+        def _get_dense():
+            if self.dense_retriever._faiss_index is None:
+                return []
+            try:
+                return self.dense_retriever.retrieve(effective_query, top_k=cand_k, metadata_filter=pre_filter)
+            except Exception as e:
+                logger.warning(f"Lỗi Dense retrieval: {e}")
+                return []
+
+        if active_parallel:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                fut_bm25 = executor.submit(_get_bm25)
+                fut_dense = executor.submit(_get_dense)
+                bm25_results = fut_bm25.result()
+                dense_results = fut_dense.result()
         else:
-            dense_results = self.dense_retriever.retrieve(
-                query, top_k=cand_k, metadata_filter=metadata_filter
-            )
+            bm25_results = _get_bm25()
+            dense_results = _get_dense()
+
+        if not dense_results:
+            fused_results = bm25_results
+        elif not bm25_results:
+            fused_results = dense_results
+        else:
             fused_results = reciprocal_rank_fusion(
                 ranked_runs=[bm25_results, dense_results],
                 k=self.rrf_k,
@@ -207,8 +286,23 @@ class HybridRetriever:
                 weights=self.weights,
             )
 
-        # Lọc metadata nếu có
-        if metadata_filter:
+        # Xử lý Metadata sau RRF:
+        if metadata_filter and active_mode == "soft":
+            from FPTUniQA.retrieval.filter import classify_metadata_match
+            adjusted_candidates = []
+            for doc, score in fused_results:
+                match_status = classify_metadata_match(doc, metadata_filter)
+                if match_status == "match":
+                    factor = 1.0 + active_alpha
+                elif match_status == "mismatch":
+                    factor = max(0.0, 1.0 - active_beta)
+                else:  # 'neutral' (shared, missing, unknown)
+                    factor = 1.0
+                adjusted_candidates.append((doc, score * factor))
+            # Sắp xếp lại theo điểm đã điều chỉnh
+            fused_results = sorted(adjusted_candidates, key=lambda x: x[1], reverse=True)
+
+        elif metadata_filter and active_mode == "hard":
             from FPTUniQA.retrieval.filter import matches_metadata_filter
             fused_results = [
                 (doc, score) for doc, score in fused_results
@@ -220,7 +314,7 @@ class HybridRetriever:
             candidate_docs = [doc for doc, _ in fused_results[:candidate_k]]
             if candidate_docs:
                 reranked = self.reranker.rerank(
-                    query=query,
+                    query=effective_query,
                     documents=candidate_docs,
                     top_n=top_k,
                     score_threshold=score_threshold,
@@ -250,6 +344,10 @@ class HybridRetriever:
         metadata_filter: Optional[Dict[str, Any]] = None,
         rerank: bool = True,
         score_threshold: Optional[float] = None,
+        metadata_mode: Optional[str] = None,
+        alpha: Optional[float] = None,
+        beta: Optional[float] = None,
+        parallel: Optional[bool] = None,
     ) -> List[Dict[str, Any]]:
         """Truy xuất tài liệu theo chuẩn Contract 2 với các trường định danh và điểm số bounded [0.0, 1.0]."""
         if not query or not str(query).strip():
@@ -262,6 +360,10 @@ class HybridRetriever:
             metadata_filter=metadata_filter,
             rerank=rerank,
             score_threshold=score_threshold,
+            metadata_mode=metadata_mode,
+            alpha=alpha,
+            beta=beta,
+            parallel=parallel,
         )
         output = []
         is_reranked = rerank and self.reranker is not None

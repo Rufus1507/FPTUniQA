@@ -21,18 +21,38 @@ VIETNAMESE_STOPWORDS = {
     "nhưng", "vì", "hay", "cũng", "đã", "sẽ", "đang", "rất", "không", "chưa"
 }
 
+ACADEMIC_COMPOUND_TERMS = [
+    (r"\bmôn\s+tiên\s+quyết\b", "môn_tiên_quyết"),
+    (r"\bhọc\s+vượt\b", "học_vượt"),
+    (r"\bđiểm\s+[fF]\b", "điểm_f"),
+    (r"\bcảnh\s+báo\s+học\s+vụ\b", "cảnh_báo_học_vụ"),
+    (r"\bbuộc\s+thôi\s+học\b", "buộc_thôi_học"),
+    (r"\bthực\s+tập\s+doanh\s+nghiệp\b", "thực_tập_doanh_nghiệp"),
+    (r"\bchuẩn\s+tốt\s+nghiệp\b", "chuẩn_tốt_nghiệp"),
+    (r"\btạm\s+dừng\s+tiến\s+độ\b", "tạm_dừng_tiến_độ"),
+    (r"\bhọc\s+phí\b", "học_phí"),
+    (r"\bchuyên\s+ngành\b", "chuyên_ngành"),
+    (r"\bkỳ\s+chuyên\s+ngành\b", "kỳ_chuyên_ngành"),
+    (r"\bkhóa\s+tuyển\s+sinh\b", "khóa_tuyển_sinh"),
+]
+
 def tokenize_vietnamese(text: str, tokenizer_type: str = "pyvi") -> List[str]:
-    """Tách từ tiếng Việt có hỗ trợ pyvi, làm sạch dấu câu và loại bỏ stopwords."""
+    """Tách từ tiếng Việt có hỗ trợ pyvi, bảo toàn thuật ngữ học vụ và loại bỏ stopwords."""
     if not text:
         return []
-    # Loại bỏ dấu câu / ký tự đặc biệt, thay bằng khoảng trắng để tránh đưa dấu câu vào từ vựng BM25
-    clean_text = re.sub(r"[^\w\s_]", " ", text)
+
+    # 1. Loại bỏ dấu câu / ký tự đặc biệt
+    clean_text = re.sub(r"[^\w\s]", " ", text)
     if tokenizer_type == "pyvi" and HAS_PYVI:
-        tokens = ViTokenizer.tokenize(clean_text).lower().split()
+        tokenized = ViTokenizer.tokenize(clean_text).lower()
     else:
-        clean_text = clean_text.lower()
-        tokens = re.findall(r"\b[\w_]+\b", clean_text)
-        
+        tokenized = clean_text.lower()
+
+    # 2. Bảo toàn các cụm từ chuyên ngành học vụ cốt lõi sau khi pyvi tokenize
+    for pattern, comp in ACADEMIC_COMPOUND_TERMS:
+        tokenized = re.sub(pattern, comp, tokenized, flags=re.IGNORECASE)
+
+    tokens = tokenized.split()
     return [t for t in tokens if t and t not in VIETNAMESE_STOPWORDS and not re.match(r"^[^\w_]+$", t)]
 
 class BM25Retriever:
@@ -71,14 +91,35 @@ class BM25Retriever:
         query: str,
         top_k: int = 10,
         metadata_filter: Optional[Dict[str, Any]] = None,
+        query_variants: Optional[List[str]] = None,
     ) -> List[Tuple[Dict[str, Any], float]]:
-        """Truy xuất top-k tài liệu liên quan nhất kèm điểm BM25."""
+        """Truy xuất top-k tài liệu liên quan nhất kèm điểm BM25 (hỗ trợ unaccented query expansion)."""
         if not query or not str(query).strip():
             return []
         if self.bm25 is None or not self.documents:
             return []
 
-        tokenized_query = tokenize_vietnamese(query, self.tokenizer_type)
+        # Tự động phục hồi dấu và mở rộng từ khóa nếu query không dấu (Bước 5)
+        effective_query = query
+        from FPTUniQA.normalization.accent import has_vietnamese_accents
+        if not has_vietnamese_accents(str(query)):
+            try:
+                from FPTUniQA.query.normalizer import normalize_for_retrieval
+                norm_q = normalize_for_retrieval(query)
+                effective_query = norm_q.retrieval_query
+            except Exception:
+                effective_query = query
+
+        tokenized_query = tokenize_vietnamese(effective_query, self.tokenizer_type)
+
+        if query_variants:
+            seen_tokens = set(tokenized_query)
+            for v in query_variants:
+                v_tokens = tokenize_vietnamese(v, self.tokenizer_type)
+                for vt in v_tokens:
+                    if vt not in seen_tokens:
+                        seen_tokens.add(vt)
+                        tokenized_query.append(vt)
         if not tokenized_query:
             return []
         scores = self.bm25.get_scores(tokenized_query)
@@ -95,6 +136,22 @@ class BM25Retriever:
             if len(results) >= top_k:
                 break
         return results
+
+
+    def search(
+        self,
+        query: str,
+        top_k: int = 10,
+        query_variants: Optional[List[str]] = None,
+        metadata_filter: Optional[Dict[str, Any]] = None,
+    ) -> List[Tuple[Dict[str, Any], float]]:
+        """API tìm kiếm BM25 hỗ trợ query variants theo chuẩn Claude Architecture Plan."""
+        return self.retrieve(
+            query=query,
+            top_k=top_k,
+            metadata_filter=metadata_filter,
+            query_variants=query_variants,
+        )
 
     def retrieve_contract2(
         self,

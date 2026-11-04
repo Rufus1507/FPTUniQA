@@ -1,0 +1,476 @@
+[
+  {
+    "qid": "V2_B05_002",
+    "query": "Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+    "gold": [
+      "doc_fpt_k17_0605",
+      "doc_fpt_k18_0751"
+    ],
+    "c3_hit": true,
+    "c4_hit": false,
+    "c3_top5": [
+      "doc_fpt_k20_0051",
+      "doc_fpt_k17_0605",
+      "doc_fpt_k21_0406",
+      "doc_fpt_k17_0587",
+      "doc_fpt_k18_0717"
+    ],
+    "c4_top5": [
+      "doc_fpt_k21_0406",
+      "doc_fpt_k17_0587",
+      "doc_fpt_k17_0590",
+      "doc_fpt_k18_0717",
+      "doc_fpt_k22_0299"
+    ],
+    "c4_parsed_filter": {
+      "intent": "policy_lookup",
+      "slots": {
+        "topic": "ky_luat"
+      },
+      "confidence": 0.88,
+      "parser_method": "regex_fallback",
+      "fallback_used": true,
+      "original_query": "Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+      "normalized_query": "Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+      "keywords": [],
+      "entities": {
+        "TERM_SINH_VIEN": {
+          "entity_id": "TERM_SINH_VIEN",
+          "entity_type": "academic_term",
+          "code": "STUDENT",
+          "canonical_name": "Student",
+          "canonical_name_vi": "Sinh viên",
+          "matched_alias": "sinh viên",
+          "span": [
+            29,
+            38
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "Sổ tay sinh viên ĐH FPT",
+            "section": "Quy chế sinh viên"
+          },
+          "notes": "Đối tượng người học bậc đại học tại FPTU"
+        },
+        "TERM_CANH_BAO_HOC_VU": {
+          "entity_id": "TERM_CANH_BAO_HOC_VU",
+          "entity_type": "academic_term",
+          "code": "WARNING",
+          "canonical_name": "Academic Warning",
+          "canonical_name_vi": "Cảnh báo học vụ",
+          "matched_alias": "cảnh báo học vụ",
+          "span": [
+            56,
+            71
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+            "section": "Quy chế & Biểu phí"
+          },
+          "notes": "Xử lý khi GPA hoặc CGPA dưới ngưỡng quy định. Bị cảnh cáo 3 lần liên tiếp sẽ bị buộc thôi học."
+        }
+      },
+      "is_valid": true,
+      "metadata": {}
+    }
+  },
+  {
+    "qid": "V2_B05_003",
+    "query": "Điều kiện để sinh viên được đăng ký học vượt là gì?",
+    "gold": [
+      "doc_fpt_k19_0550",
+      "doc_fpt_k20_0152"
+    ],
+    "c3_hit": true,
+    "c4_hit": false,
+    "c3_top5": [
+      "doc_fpt_k20_0042",
+      "doc_fpt_k20_0039",
+      "doc_fpt_k19_0550",
+      "doc_fpt_k18_0711",
+      "doc_fpt_k17_0585"
+    ],
+    "c4_top5": [
+      "doc_fpt_k20_0042",
+      "doc_fpt_k20_0039",
+      "doc_fpt_k18_0711",
+      "doc_fpt_k17_0585",
+      "doc_fpt_k21_0400"
+    ],
+    "c4_parsed_filter": {
+      "intent": "policy_lookup",
+      "slots": {
+        "topic": "tin_chi",
+        "target": "dieu_kien"
+      },
+      "confidence": 0.88,
+      "parser_method": "regex_fallback",
+      "fallback_used": true,
+      "original_query": "Điều kiện để sinh viên được đăng ký học vượt là gì?",
+      "normalized_query": "Điều kiện để sinh viên được đăng ký học vượt là gì?",
+      "keywords": [],
+      "entities": {
+        "TERM_SINH_VIEN": {
+          "entity_id": "TERM_SINH_VIEN",
+          "entity_type": "academic_term",
+          "code": "STUDENT",
+          "canonical_name": "Student",
+          "canonical_name_vi": "Sinh viên",
+          "matched_alias": "sinh viên",
+          "span": [
+            13,
+            22
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "Sổ tay sinh viên ĐH FPT",
+            "section": "Quy chế sinh viên"
+          },
+          "notes": "Đối tượng người học bậc đại học tại FPTU"
+        }
+      },
+      "is_valid": true,
+      "metadata": {}
+    }
+  },
+  {
+    "qid": "V2_B07_002",
+    "query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+    "gold": [
+      "doc_fpt_k20_0033",
+      "doc_fpt_k21_0405"
+    ],
+    "c3_hit": true,
+    "c4_hit": false,
+    "c3_top5": [
+      "doc_fpt_k21_0405",
+      "doc_fpt_k18_0729",
+      "doc_fpt_k21_0418",
+      "doc_fpt_k21_0419",
+      "doc_fpt_k20_0077"
+    ],
+    "c4_top5": [
+      "doc_fpt_k20_0077",
+      "doc_fpt_k20_0073",
+      "doc_fpt_k20_0071",
+      "doc_fpt_k20_0052",
+      "doc_fpt_k20_0050"
+    ],
+    "c4_parsed_filter": {
+      "intent": "graduation_lookup",
+      "slots": {
+        "topic": "tot_nghiep",
+        "target": "dieu_kien",
+        "program": "Ngôn ngữ Anh",
+        "campus": "Tất cả các cơ sở"
+      },
+      "confidence": 0.88,
+      "parser_method": "regex_fallback",
+      "fallback_used": true,
+      "original_query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "normalized_query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "keywords": [],
+      "entities": {
+        "TERM_TOT_NGHIEP": {
+          "entity_id": "TERM_TOT_NGHIEP",
+          "entity_type": "academic_term",
+          "code": "GRADUATION",
+          "canonical_name": "Graduation Requirements",
+          "canonical_name_vi": "Điều kiện tốt nghiệp",
+          "matched_alias": "tốt nghiệp",
+          "span": [
+            85,
+            95
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+            "section": "Quy chế & Biểu phí"
+          },
+          "notes": "Yêu cầu: hoàn thành tín chỉ, CGPA >= 2.0, ngoại ngữ IELTS 5.5, OJT, GDTC, GDQP."
+        },
+        "TERM_SINH_VIEN": {
+          "entity_id": "TERM_SINH_VIEN",
+          "entity_type": "academic_term",
+          "code": "STUDENT",
+          "canonical_name": "Student",
+          "canonical_name_vi": "Sinh viên",
+          "matched_alias": "sinh viên",
+          "span": [
+            25,
+            34
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "Sổ tay sinh viên ĐH FPT",
+            "section": "Quy chế sinh viên"
+          },
+          "notes": "Đối tượng người học bậc đại học tại FPTU"
+        },
+        "MAJOR_CNTT": {
+          "entity_id": "MAJOR_CNTT",
+          "entity_type": "major",
+          "code": "CNTT",
+          "canonical_name": "Information Technology",
+          "canonical_name_vi": "Công nghệ thông tin",
+          "matched_alias": "cntt",
+          "span": [
+            41,
+            45
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json",
+            "section": "tuition_rates"
+          },
+          "notes": "Ngành chung / nhóm ngành Công nghệ thông tin"
+        },
+        "CAMPUS_ALL": {
+          "entity_id": "CAMPUS_ALL",
+          "entity_type": "campus",
+          "code": "ALL",
+          "canonical_name": "All Campuses",
+          "canonical_name_vi": "Tất cả các cơ sở",
+          "matched_alias": "chứng",
+          "span": [
+            54,
+            59
+          ],
+          "confidence": 0.95,
+          "verified": true,
+          "source_reference": {
+            "file": "src/FPTUniQA/query/campus_matcher.py",
+            "section": "CAMPUS_PATTERNS"
+          },
+          "notes": "Áp dụng cho quy chế đào tạo và biểu phí chung toàn quốc [Diacritic-folded match 'chung']"
+        },
+        "MAJOR_NNA": {
+          "entity_id": "MAJOR_NNA",
+          "entity_type": "major",
+          "code": "7220201",
+          "canonical_name": "English Language",
+          "canonical_name_vi": "Ngôn ngữ Anh",
+          "matched_alias": "tiếng anh",
+          "span": [
+            64,
+            73
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json",
+            "section": "tuition_rates"
+          },
+          "notes": "Mã ngành Bộ GD&ĐT: 7220201, thuộc khối Ngoại ngữ"
+        }
+      },
+      "is_valid": true,
+      "metadata": {}
+    }
+  },
+  {
+    "qid": "V2_B07_005",
+    "query": "Chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+    "gold": [
+      "doc_fpt_k21_0488"
+    ],
+    "c3_hit": true,
+    "c4_hit": false,
+    "c3_top5": [
+      "doc_fpt_k21_0488",
+      "doc_fpt_k17_0652",
+      "doc_fpt_k21_0487",
+      "doc_fpt_k21_0391",
+      "doc_fpt_k20_0207"
+    ],
+    "c4_top5": [
+      "doc_fpt_k17_0652",
+      "doc_fpt_k20_0207",
+      "doc_fpt_k17_0576",
+      "doc_fpt_k20_0204",
+      "doc_fpt_k22_0366"
+    ],
+    "c4_parsed_filter": {
+      "intent": "graduation_lookup",
+      "slots": {
+        "topic": "tot_nghiep",
+        "target": "dieu_kien",
+        "program": "Ngôn ngữ Nhật",
+        "campus": "Tất cả các cơ sở"
+      },
+      "confidence": 0.88,
+      "parser_method": "regex_fallback",
+      "fallback_used": true,
+      "original_query": "Chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+      "normalized_query": "Chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+      "keywords": [],
+      "entities": {
+        "TERM_TOT_NGHIEP": {
+          "entity_id": "TERM_TOT_NGHIEP",
+          "entity_type": "academic_term",
+          "code": "GRADUATION",
+          "canonical_name": "Graduation Requirements",
+          "canonical_name_vi": "Điều kiện tốt nghiệp",
+          "matched_alias": "chuẩn đầu ra",
+          "span": [
+            0,
+            12
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+            "section": "Quy chế & Biểu phí"
+          },
+          "notes": "Yêu cầu: hoàn thành tín chỉ, CGPA >= 2.0, ngoại ngữ IELTS 5.5, OJT, GDTC, GDQP."
+        },
+        "MAJOR_NNN": {
+          "entity_id": "MAJOR_NNN",
+          "entity_type": "major",
+          "code": "7220209",
+          "canonical_name": "Japanese Language",
+          "canonical_name_vi": "Ngôn ngữ Nhật",
+          "matched_alias": "ngôn ngữ nhật",
+          "span": [
+            33,
+            46
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json",
+            "section": "tuition_rates"
+          },
+          "notes": "Mã ngành Bộ GD&ĐT: 7220209, thuộc khối Ngoại ngữ"
+        },
+        "CAMPUS_ALL": {
+          "entity_id": "CAMPUS_ALL",
+          "entity_type": "campus",
+          "code": "ALL",
+          "canonical_name": "All Campuses",
+          "canonical_name_vi": "Tất cả các cơ sở",
+          "matched_alias": "chứng",
+          "span": [
+            50,
+            55
+          ],
+          "confidence": 0.95,
+          "verified": true,
+          "source_reference": {
+            "file": "src/FPTUniQA/query/campus_matcher.py",
+            "section": "CAMPUS_PATTERNS"
+          },
+          "notes": "Áp dụng cho quy chế đào tạo và biểu phí chung toàn quốc [Diacritic-folded match 'chung']"
+        }
+      },
+      "is_valid": true,
+      "metadata": {}
+    }
+  },
+  {
+    "qid": "V2_B07_006",
+    "query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+    "gold": [
+      "doc_fpt_k21_0488"
+    ],
+    "c3_hit": true,
+    "c4_hit": false,
+    "c3_top5": [
+      "doc_fpt_k21_0488",
+      "doc_fpt_k21_0391",
+      "doc_fpt_k17_0652",
+      "doc_fpt_k17_0576",
+      "doc_fpt_k18_0729"
+    ],
+    "c4_top5": [
+      "doc_fpt_k17_0652",
+      "doc_fpt_k17_0576",
+      "doc_fpt_k20_0077",
+      "doc_fpt_k20_0035",
+      "doc_fpt_k20_0207"
+    ],
+    "c4_parsed_filter": {
+      "intent": "graduation_lookup",
+      "slots": {
+        "topic": "tot_nghiep",
+        "target": "dieu_kien",
+        "program": "Ngôn ngữ Nhật",
+        "campus": "Tất cả các cơ sở"
+      },
+      "confidence": 0.88,
+      "parser_method": "regex_fallback",
+      "fallback_used": true,
+      "original_query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+      "normalized_query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+      "keywords": [],
+      "entities": {
+        "TERM_TOT_NGHIEP": {
+          "entity_id": "TERM_TOT_NGHIEP",
+          "entity_type": "academic_term",
+          "code": "GRADUATION",
+          "canonical_name": "Graduation Requirements",
+          "canonical_name_vi": "Điều kiện tốt nghiệp",
+          "matched_alias": "chuẩn đầu ra",
+          "span": [
+            25,
+            37
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json & Quy chế đào tạo ĐH FPT",
+            "section": "Quy chế & Biểu phí"
+          },
+          "notes": "Yêu cầu: hoàn thành tín chỉ, CGPA >= 2.0, ngoại ngữ IELTS 5.5, OJT, GDTC, GDQP."
+        },
+        "MAJOR_NNN": {
+          "entity_id": "MAJOR_NNN",
+          "entity_type": "major",
+          "code": "7220209",
+          "canonical_name": "Japanese Language",
+          "canonical_name_vi": "Ngôn ngữ Nhật",
+          "matched_alias": "ngôn ngữ nhật",
+          "span": [
+            58,
+            71
+          ],
+          "confidence": 1.0,
+          "verified": true,
+          "source_reference": {
+            "file": "data/processed/structured_data.json",
+            "section": "tuition_rates"
+          },
+          "notes": "Mã ngành Bộ GD&ĐT: 7220209, thuộc khối Ngoại ngữ"
+        },
+        "CAMPUS_ALL": {
+          "entity_id": "CAMPUS_ALL",
+          "entity_type": "campus",
+          "code": "ALL",
+          "canonical_name": "All Campuses",
+          "canonical_name_vi": "Tất cả các cơ sở",
+          "matched_alias": "chứng",
+          "span": [
+            75,
+            80
+          ],
+          "confidence": 0.95,
+          "verified": true,
+          "source_reference": {
+            "file": "src/FPTUniQA/query/campus_matcher.py",
+            "section": "CAMPUS_PATTERNS"
+          },
+          "notes": "Áp dụng cho quy chế đào tạo và biểu phí chung toàn quốc [Diacritic-folded match 'chung']"
+        }
+      },
+      "is_valid": true,
+      "metadata": {}
+    }
+  }
+]

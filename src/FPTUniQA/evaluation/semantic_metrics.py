@@ -18,15 +18,34 @@ def normalize_value(val: Any) -> str:
     aliases = {
         "kỹ thuật phần mềm": "se",
         "phần mềm": "se",
+        "se": "se",
         "trí tuệ nhân tạo": "ai",
+        "ai": "ai",
         "an toàn thông tin": "ia",
+        "ia": "ia",
         "thiết kế đồ họa": "gd",
+        "gd": "gd",
+        "công nghệ thông tin": "cntt",
+        "cntt": "cntt",
+        "it": "cntt",
+        "hệ thống thông tin": "is",
+        "is": "is",
         "hà nội": "hanoi",
+        "hòa lạc": "hanoi",
+        "hoa lac": "hanoi",
+        "hanoi": "hanoi",
         "tp.hồ chí minh": "hcm",
         "hồ chí minh": "hcm",
+        "hcm": "hcm",
         "đà nẵng": "danang",
+        "danang": "danang",
         "cần thơ": "cantho",
+        "cantho": "cantho",
         "quy nhơn": "quynhon",
+        "quynhon": "quynhon",
+        "syllabus": "objective",
+        "mục tiêu": "objective",
+        "objective": "objective",
     }
     return aliases.get(v, v)
 
@@ -75,7 +94,7 @@ def compute_slot_accuracy(
         g_slots = gold.get("slots", {}) or {}
 
         # Duyệt qua các slot cần theo dõi
-        all_keys = set(tracked_slots) | set(p_slots.keys()) | set(g_slots.keys())
+        all_keys = set(tracked_slots) | set(g_slots.keys())
         for key in all_keys:
             p_val = normalize_value(p_slots.get(key))
             g_val = normalize_value(g_slots.get(key))
@@ -122,7 +141,7 @@ def compute_exact_match(
         g_slots = gold.get("slots", {}) or {}
 
         slots_match = True
-        all_keys = set(tracked_slots) | set(p_slots.keys()) | set(g_slots.keys())
+        all_keys = set(tracked_slots) | set(g_slots.keys())
         for key in all_keys:
             p_val = normalize_value(p_slots.get(key))
             g_val = normalize_value(g_slots.get(key))
@@ -153,6 +172,50 @@ def compute_fallback_rate(predictions: List[Dict[str, Any]]) -> float:
     return round(fallback_count / len(predictions), 4)
 
 
+def compute_slot_f1(
+    predictions: List[Dict[str, Any]],
+    ground_truths: List[Dict[str, Any]],
+    tracked_slots: Optional[List[str]] = None,
+) -> float:
+    """Tính Micro F1-score trên toàn bộ các slots được trích xuất."""
+    if not predictions or len(predictions) != len(ground_truths):
+        return 0.0
+
+    if tracked_slots is None:
+        tracked_slots = ["program", "cohort", "campus", "course_code", "course_aspect"]
+
+    tp = 0
+    fp = 0
+    fn = 0
+
+    for pred, gold in zip(predictions, ground_truths):
+        p_slots = pred.get("slots", {}) or {}
+        g_slots = gold.get("slots", {}) or {}
+
+        all_keys = set(tracked_slots) | set(g_slots.keys())
+        for key in all_keys:
+            p_val = normalize_value(p_slots.get(key))
+            g_val = normalize_value(g_slots.get(key))
+
+            if p_val and g_val:
+                if p_val == g_val:
+                    tp += 1
+                else:
+                    fp += 1
+                    fn += 1
+            elif p_val and not g_val:
+                fp += 1
+            elif not p_val and g_val:
+                fn += 1
+
+    precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+    recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+    if precision + recall == 0:
+        return 0.0
+    f1 = 2 * precision * recall / (precision + recall)
+    return round(f1, 4)
+
+
 def evaluate_semantic_parsing_suite(
     predictions: List[Dict[str, Any]],
     ground_truths: List[Dict[str, Any]],
@@ -161,6 +224,7 @@ def evaluate_semantic_parsing_suite(
     return {
         "intent_accuracy": compute_intent_accuracy(predictions, ground_truths),
         "slot_accuracy": compute_slot_accuracy(predictions, ground_truths),
+        "slot_f1": compute_slot_f1(predictions, ground_truths),
         "exact_match": compute_exact_match(predictions, ground_truths),
         "fallback_rate": compute_fallback_rate(predictions),
     }

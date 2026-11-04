@@ -50,7 +50,7 @@ generation:
   provider: "gemini" # or "openai"
   model: "gemini-1.5-flash"
   temperature: 0.1
-  max_output_tokens: 1024
+  max_output_tokens: 320
   parser_temperature: 0.0
   parser_max_tokens: 1024
   rewriter_temperature: 0.0

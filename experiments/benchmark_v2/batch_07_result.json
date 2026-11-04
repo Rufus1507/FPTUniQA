@@ -4,18 +4,18 @@
     "batch_name": "batch_07",
     "category": "graduation_ojt",
     "total_questions": 50,
-    "passed_questions": 37,
-    "overall_accuracy_pct": 74.0,
+    "passed_questions": 45,
+    "overall_accuracy_pct": 90.0,
     "rewriting_accuracy_pct": 100.0,
-    "routing_accuracy_pct": 94.0,
-    "answer_correctness_pct": 76.0,
+    "routing_accuracy_pct": 98.0,
+    "answer_correctness_pct": 92.0,
     "fallback_rate_pct": 0.0,
     "context_bleeding_rate_pct": 0.0,
-    "latency_p50_ms": 4504.35,
-    "latency_p95_ms": 7661.67,
-    "latency_avg_ms": 4822.97,
-    "total_time_seconds": 241.15,
-    "verdict": "FAIL"
+    "latency_p50_ms": 4705.9,
+    "latency_p95_ms": 6240.0,
+    "latency_avg_ms": 4845.16,
+    "total_time_seconds": 242.27,
+    "verdict": "PASS"
   },
   "details": [
     {
@@ -35,12 +35,12 @@
         "thông tin",
         "tài liệu"
       ],
-      "answer_snippet": "Tôi xin lỗi, nhưng trong các tài liệu được cung cấp, không có thông tin cụ thể về chứng chỉ tiếng Anh sinh viên ngành CNTT cần đạt để tốt nghiệp. Chúng tôi không tìm thấy thông tin này trong tài liệu ...",
+      "answer_snippet": "Theo thông tin từ tài liệu [Nguồn 5], sinh viên ngành CNTT của Trường Đại học FPT cần đạt chứng chỉ tiếng Anh IELTS 7.0 để được tốt nghiệp. Điều này tuân theo chuẩn đầu ra ngoại ngữ và tốt nghiệp của ...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 6722.72,
+      "latency_ms": 15185.02,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -62,12 +62,12 @@
         "thông tin",
         "tài liệu"
       ],
-      "answer_snippet": "Theo quy chế đào tạo tại [Nguồn 1] và [Nguồn 2], sinh viên ngành Công nghệ thông tin (CNTT) tại Đại học FPT cần đạt chứng chỉ tiếng Anh IELTS 6.0 hoặc TOEFL 70 để được xét tốt nghiệp. Đây là thông tin...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 4] - 1.3.4 (Phần 1) trong Sổ tay sinh viên K17 - Đại Học FPT, chuẩn đầu ra Ngoại ngữ & Tốt nghiệp cho ngành Công nghệ thông tin (CNTT) yêu cầu IELTS 6.0 hoặc TOEFL...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 5018.77,
+      "latency_ms": 5513.29,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -79,22 +79,22 @@
       "query": "Chuẩn đầu ra ngoại ngữ của sinh viên ngành Quản trị kinh doanh là bao nhiêu?",
       "rewritten_query": "Chuẩn đầu ra ngoại ngữ của sinh viên ngành Quản trị kinh doanh là bao nhiêu?",
       "expected_route": "structured_lookup",
-      "actual_route": "rag_pipeline",
+      "actual_route": "structured_lookup",
       "expected_contains": [
         "IELTS",
         "TOEIC",
         "5.5",
         "600"
       ],
-      "answer_snippet": "Tôi xin lỗi, nhưng trong các tài liệu được cung cấp, không có thông tin cụ thể về chuẩn đầu ra ngoại ngữ của sinh viên ngành Quản trị Kinh doanh tại Trường Đại học FPT. Vui lòng liên hệ Phòng Dịch vụ ...",
-      "item_passed": false,
+      "answer_snippet": "Theo quy định chuẩn đầu ra ngoại ngữ của Đại học FPT cho ngành Quản trị kinh doanh (Digital Marketing): Sinh viên cần đạt chứng chỉ tiếng Anh quốc tế IELTS 5.5 hoặc TOEIC 600 điểm.",
+      "item_passed": true,
       "rewrite_ok": true,
-      "route_ok": false,
-      "answer_ok": false,
-      "latency_ms": 4335.66,
+      "route_ok": true,
+      "answer_ok": true,
+      "latency_ms": 2699.19,
       "rewrite_msg": "Turn 1 / Câu độc lập",
-      "route_msg": "Sai route: mong đợi 'structured_lookup', thực tế 'rag_pipeline'",
-      "answer_msg": "Thiếu thông tin ['IELTS', 'TOEIC', '5.5', '600'] trong câu trả lời"
+      "route_msg": "Route chuẩn: structured_lookup",
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_004",
@@ -103,22 +103,22 @@
       "query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của sinh viên ngành Quản trị kinh doanh là bao nhiêu?",
       "rewritten_query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của sinh viên ngành Quản trị kinh doanh là bao nhiêu?",
       "expected_route": "structured_lookup",
-      "actual_route": "rag_pipeline",
+      "actual_route": "structured_lookup",
       "expected_contains": [
         "IELTS",
         "TOEIC",
         "5.5",
         "600"
       ],
-      "answer_snippet": "Tôi xin lỗi vì đã gây hiểu lầm, nhưng câu hỏi của sinh viên về chuẩn đầu ra ngoại ngữ không được tìm thấy trong các tài liệu quy chế được cung cấp. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ...",
-      "item_passed": false,
+      "answer_snippet": "Theo quy định chuẩn đầu ra ngoại ngữ của Đại học FPT cho ngành Quản trị kinh doanh (Digital Marketing): Sinh viên cần đạt chứng chỉ tiếng Anh quốc tế IELTS 5.5 hoặc TOEIC 600 điểm.",
+      "item_passed": true,
       "rewrite_ok": true,
-      "route_ok": false,
-      "answer_ok": false,
-      "latency_ms": 4136.55,
+      "route_ok": true,
+      "answer_ok": true,
+      "latency_ms": 2773.56,
       "rewrite_msg": "Turn 1 / Câu độc lập",
-      "route_msg": "Sai route: mong đợi 'structured_lookup', thực tế 'rag_pipeline'",
-      "answer_msg": "Thiếu thông tin ['IELTS', 'TOEIC', '5.5', '600'] trong câu trả lời"
+      "route_msg": "Route chuẩn: structured_lookup",
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_005",
@@ -132,15 +132,15 @@
         "JLPT",
         "N2"
       ],
-      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1]",
-      "item_passed": false,
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 5], chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ JLPT N2. \n\n[Mã nguồn: [Nguồn 5]]",
+      "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": false,
-      "latency_ms": 3453.3,
+      "answer_ok": true,
+      "latency_ms": 5932.62,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Thiếu thông tin ['JLPT', 'N2'] trong câu trả lời"
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_006",
@@ -154,12 +154,12 @@
         "JLPT",
         "N2"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], sinh viên ngành Ngôn ngữ Nhật có thể đăng ký tham gia học kỳ tiếng Nhật tại các đối tác của Trường Đại học FPT tại Nhật Bản. Tuy nhiên, tài liệu này không cung...",
+      "answer_snippet": "Theo thông tin từ tài liệu [Nguồn 5] - Tiêu đề: 4.3 Ngành đào tạo | Danh mục: handbook | Căn cứ: sotaysinhvienK18HN.pdf, ngành Ngôn ngữ Nhật yêu cầu chứng chỉ JLPT N2 để đạt chuẩn đầu ra ngoại ngữ. \n\n...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 5641.23,
+      "latency_ms": 4882.95,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -181,12 +181,12 @@
         "thông tin",
         "tài liệu"
       ],
-      "answer_snippet": "Tôi xin lỗi vì đã gây hiểu lầm, nhưng trong các tài liệu được cung cấp, không có thông tin cụ thể về chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh. Vui lòng liên hệ Phòng Dịch vụ Sinh viên h...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 5], chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh là IELTS 7.0. Đây là chuẩn đầu ra được quy định cho khối ngành CNTT, và ngành Ngôn ngữ Anh cũng thuộc k...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 3777.88,
+      "latency_ms": 4513.0,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -208,12 +208,12 @@
         "thông tin",
         "tài liệu"
       ],
-      "answer_snippet": "Tôi xin lỗi, nhưng trong các tài liệu được cung cấp, không có thông tin cụ thể về quy định xét tốt nghiệp, chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh. Vui lòng liên hệ Phòng Dịch vụ Sinh ...",
+      "answer_snippet": "Theo quy định trong tài liệu [Nguồn 5], chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh là IELTS 7.0. Đây là điều kiện để xét tốt nghiệp cho sinh viên ngành Ngôn ngữ Anh tại Trường Đại học FPT...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4045.61,
+      "latency_ms": 3882.84,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -233,15 +233,15 @@
         "7",
         "giai đoạn"
       ],
-      "answer_snippet": "Tôi xin lỗi, nhưng trong các tài liệu được cung cấp, không có thông tin cụ thể về học kỳ OJT của sinh viên. Tài liệu chỉ đề cập đến quá trình học tập tại Trường Đại học FPT và các dịch vụ thư viện. Để...",
-      "item_passed": false,
+      "answer_snippet": "Sinh viên đi thực tập doanh nghiệp OJT vào học kỳ thứ 6. \n\n[Nguồn 1] - Tiêu đề: 6.4 Trong bất cứ trường hợp vi phạm (Phần 12) | Danh mục: handbook | Căn cứ: 2026_So-tay-k22_compressed.pdf\n\nĐây là thôn...",
+      "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": false,
-      "latency_ms": 4742.74,
+      "answer_ok": true,
+      "latency_ms": 4486.06,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Thiếu thông tin ['kỳ 6', '6', 'kỳ 7', '7', 'giai đoạn'] trong câu trả lời"
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_010",
@@ -258,15 +258,15 @@
         "7",
         "giai đoạn"
       ],
-      "answer_snippet": "Theo quy chế đào tạo tại [Nguồn 1], sinh viên đáp ứng đủ các điều kiện để được xét công nhận tốt nghiệp, trong đó có điều kiện b) \"Có các chứng chỉ hoàn thành Giáo dục quốc phòng, Giáo dục thể chất và...",
-      "item_passed": false,
+      "answer_snippet": "Theo quy chế đào tạo tại [Nguồn 1], sinh viên phải hoàn thành Khóa học OJT vào Học kỳ 6. Điều kiện để tham gia Khóa học OJT bao gồm: đã hoàn thành các môn cơ sở từ Học kỳ 1 đến Học kỳ 5, đạt chuẩn tiế...",
+      "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": false,
-      "latency_ms": 5566.49,
+      "answer_ok": true,
+      "latency_ms": 4574.33,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Thiếu thông tin ['kỳ 6', '6', 'kỳ 7', '7', 'giai đoạn'] trong câu trả lời"
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_011",
@@ -282,15 +282,15 @@
         "thời gian",
         "kỳ"
       ],
-      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1]",
-      "item_passed": false,
+      "answer_snippet": "Tôi xin lỗi vì đã gây hiểu lầm, nhưng câu hỏi của bạn về thời gian thực tập OJT kéo dài trong bao lâu không được tìm thấy trong các tài liệu được cung cấp. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặ...",
+      "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": false,
-      "latency_ms": 3801.46,
+      "answer_ok": true,
+      "latency_ms": 4047.47,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Thiếu thông tin ['học kỳ', 'tháng', 'thời gian', 'kỳ'] trong câu trả lời"
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_012",
@@ -306,15 +306,15 @@
         "thời gian",
         "kỳ"
       ],
-      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1], [Nguồn 2], [Nguồn 3], [N...",
-      "item_passed": false,
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 6] - Tiêu đề: 6.3.7 Nhập học lại: Áp dụng đối với các trường hợp sinh viên đã có quyết định cho thôi học sau đó được nhà trường đồng ý cho quay lại học tiếp, chúng...",
+      "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": false,
-      "latency_ms": 4326.52,
+      "answer_ok": true,
+      "latency_ms": 5888.64,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Thiếu thông tin ['học kỳ', 'tháng', 'thời gian', 'kỳ'] trong câu trả lời"
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_013",
@@ -331,12 +331,12 @@
         "miễn",
         "quản lý"
       ],
-      "answer_snippet": "Theo quy định đào tạo của Đại học FPT, trong giai đoạn thực tập tại doanh nghiệp (OJT - On the Job Training), sinh viên không phải đóng học phí chuyên ngành mà chỉ đóng chi phí quản lý thực tập (hoặc ...",
+      "answer_snippet": "📌 **Quy định & Điều kiện tham gia Học kỳ Thực tập tại Doanh nghiệp (OJT) - Ngành OJT:**\n• **Thời điểm:** Học kỳ 6 trong lộ trình đào tạo chuẩn.\n• **Thời lượng:** 1 học kỳ làm việc full-time thực tế tạ...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 2946.44,
+      "latency_ms": 2955.94,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: structured_lookup",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -356,12 +356,12 @@
         "miễn",
         "quản lý"
       ],
-      "answer_snippet": "Tôi xin lỗi, nhưng thông tin về quy định xét tốt nghiệp và việc tính học phí trong giai đoạn thực tập OJT tại doanh nghiệp không được tìm thấy trong các tài liệu được cung cấp. Vui lòng liên hệ Phòng ...",
+      "answer_snippet": "Theo quy chế đào tạo tại [Nguồn 1], việc xét tốt nghiệp của sinh viên không liên quan đến học phí trong giai đoạn thực tập OJT tại doanh nghiệp. Quy chế chỉ đề cập đến việc sinh viên phải hoàn thành đ...",
       "item_passed": false,
       "rewrite_ok": true,
       "route_ok": false,
       "answer_ok": true,
-      "latency_ms": 9128.1,
+      "latency_ms": 7092.22,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Sai route: mong đợi 'structured_lookup', thực tế 'rag_pipeline'",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -379,12 +379,12 @@
         "tiên quyết",
         "OJT"
       ],
-      "answer_snippet": "Tôi xin lỗi, nhưng câu hỏi của sinh viên liên quan đến điều kiện số tín chỉ tích lũy để được đi thực tập OJT không được tìm thấy trong các tài liệu được cung cấp. Vui lòng liên hệ Phòng Dịch vụ Sinh v...",
+      "answer_snippet": "Tôi xin lỗi vì đã gây hiểu lầm, nhưng câu hỏi của sinh viên về điều kiện số tín chỉ tích lũy để đi thực tập OJT không được tìm thấy trong các tài liệu quy chế được cung cấp. Vui lòng liên hệ Phòng Dịc...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 3946.05,
+      "latency_ms": 4129.29,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -402,15 +402,15 @@
         "tiên quyết",
         "OJT"
       ],
-      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1]",
-      "item_passed": false,
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 5] - Quy định về Y tế - phòng dịch, điều kiện để sinh viên tham gia chương trình OJT (On the Job Training) là hoàn thành các môn cơ sở kỳ 1-5, đạt chuẩn tiếng Anh ...",
+      "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": false,
-      "latency_ms": 3620.63,
+      "answer_ok": true,
+      "latency_ms": 4826.64,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Thiếu thông tin ['tín chỉ', 'tiên quyết', 'OJT'] trong câu trả lời"
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_017",
@@ -429,7 +429,7 @@
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 2535.22,
+      "latency_ms": 2663.92,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: structured_lookup",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -446,15 +446,15 @@
         "1.500.000",
         "1,500,000"
       ],
-      "answer_snippet": "Lệ phí công nhận tốt nghiệp và cấp bằng là 1,500,000 VNĐ.",
-      "item_passed": true,
+      "answer_snippet": "🎓 **Điều kiện nhận Đồ án / Khóa luận tốt nghiệp (KLTN / Capstone Project) - Ngành Kỹ thuật phần mềm:**\n• **Thời điểm:** Học kỳ 9 (Học kỳ cuối cùng của chương trình).\n• **Số tín chỉ:** 10 tín chỉ (Học ...",
+      "item_passed": false,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": true,
-      "latency_ms": 2731.84,
+      "answer_ok": false,
+      "latency_ms": 2759.22,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: structured_lookup",
-      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
+      "answer_msg": "Thiếu thông tin ['1.500.000', '1,500,000'] trong câu trả lời"
     },
     {
       "q_id": "V2_B07_019",
@@ -468,12 +468,12 @@
         "2.0",
         "GPA"
       ],
-      "answer_snippet": "Tôi xin lỗi, nhưng trong các tài liệu quy chế được cung cấp, không có thông tin cụ thể về điểm trung bình tích lũy tối thiểu (GPA) để được xét tốt nghiệp. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 5] - Tiêu đề: 1.3.2 Đánh giá kết quả học phần (Phần 2), điểm trung bình tích lũy tối thiểu (GPA) để được xét tốt nghiệp là 2.0. \n\n[Mong rằng thông tin này sẽ giúp ...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 6118.95,
+      "latency_ms": 6019.82,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -490,15 +490,15 @@
         "2.0",
         "GPA"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], Trường Đại học FPT xác định nền tảng phát triển dựa trên quan điểm 5 tốt nhằm đạt được Sứ mệnh, Tầm nhìn, Triết lý giáo dục. Tuy nhiên, tài liệu không cung cấp...",
-      "item_passed": false,
+      "answer_snippet": "Theo thông tin từ tài liệu [Nguồn 5], chuẩn đầu ra GPA tối thiểu để được xét tốt nghiệp là 2.0. \n\n[Mã nguồn: [Nguồn 5]]",
+      "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": false,
-      "latency_ms": 4645.27,
+      "answer_ok": true,
+      "latency_ms": 3994.1,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Thiếu thông tin ['2.0', 'GPA'] trong câu trả lời"
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_021",
@@ -514,12 +514,12 @@
         "bắt buộc",
         "điều kiện"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], sinh viên không bắt buộc phải hoàn thành chứng chỉ Giáo dục quốc phòng để tốt nghiệp. Tài liệu chỉ đề cập đến các chương trình học tiếng Nhật, tiếng Trung, tiế...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 5] - Tiêu đề: V. Một số địa chỉ lưu ý (Phần 3) - Danh mục: handbook - Căn cứ: 970569429-So-Tay-Sinh-Vien-K21-FUHL-1.pdf, sinh viên không bắt buộc phải hoàn thành c...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4081.03,
+      "latency_ms": 4722.68,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -538,12 +538,12 @@
         "bắt buộc",
         "điều kiện"
       ],
-      "answer_snippet": "Theo quy chế đào tạo được nêu trong tài liệu [Nguồn 1], sinh viên không bắt buộc phải hoàn thành chứng chỉ Giáo dục quốc phòng để tốt nghiệp. Điều kiện chính để sinh viên được xét công nhận tốt nghiệp...",
+      "answer_snippet": "Theo quy chế đào tạo được ghi trong [Nguồn 1], sinh viên không bắt buộc phải hoàn thành chứng chỉ Giáo dục quốc phòng để tốt nghiệp. Điều kiện chính để sinh viên được xét công nhận tốt nghiệp là tại t...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4263.35,
+      "latency_ms": 4840.68,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -562,12 +562,12 @@
         "bắt buộc",
         "điều kiện"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], chứng chỉ Giáo dục thể chất Vovinam không được nêu ra là một điều kiện xét tốt nghiệp. Tài liệu chỉ đề cập đến các tiêu chí đánh giá học phần và quy định về th...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], chứng chỉ Giáo dục thể chất Vovinam không được nêu ra là một trong những điều kiện xét tốt nghiệp. Tài liệu chỉ đề cập đến các chuẩn đầu ra ngoại ngữ và tốt ng...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 3904.15,
+      "latency_ms": 4914.77,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -586,12 +586,12 @@
         "bắt buộc",
         "điều kiện"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], Chương trình đào tạo của Trường được xây dựng với các học phần bắt buộc và học phần tự chọn. Trong đó, có một số học phần mà kết quả học phần không dùng để tín...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], Chương trình đào tạo của Trường được cấu trúc với các học phần điều kiện như Rèn luyện tập trung, Giáo dục thể chất, OJT... trong đó có các học phần mà kết quả...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 6638.18,
+      "latency_ms": 5625.06,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -609,12 +609,12 @@
         "học kỳ",
         "đồ án"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], [Nguồn 2], [Nguồn 3], và [Nguồn 4], chương trình đào tạo của Trường Đại học FPT không cung cấp thông tin cụ thể về số lượng học kỳ để thực hiện đồ án tốt nghiệ...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], [Nguồn 2], [Nguồn 3], và [Nguồn 4], chương trình đào tạo của Trường Đại học FPT không cung cấp thông tin cụ thể về thời gian thực hiện đồ án tốt nghiệp ngành K...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4941.81,
+      "latency_ms": 4816.81,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -632,15 +632,15 @@
         "học kỳ",
         "đồ án"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], quy định xét tốt nghiệp của Trường Đại học FPT không được nêu rõ cụ thể về số học kỳ để thực hiện đồ án tốt nghiệp ngành Kỹ thuật phần mềm. \n\nTôi không tìm thấ...",
-      "item_passed": true,
+      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1]",
+      "item_passed": false,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": true,
-      "latency_ms": 4354.86,
+      "answer_ok": false,
+      "latency_ms": 4003.39,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
+      "answer_msg": "Thiếu thông tin ['kỳ', 'học kỳ', 'đồ án'] trong câu trả lời"
     },
     {
       "q_id": "V2_B07_027",
@@ -655,12 +655,12 @@
         "thi tốt nghiệp",
         "QTKD"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], sinh viên không được phép chọn thi tốt nghiệp thay cho khóa luận tốt nghiệp. Tài liệu chỉ cho biết sinh viên có thể đề nghị Trường xem xét công nhận học phần đ...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], sinh viên không được phép công nhận học phần ngoại trừ một số ngoại lệ như Khóa luận tốt nghiệp, Rèn luyện tập trung, Giáo dục thể chất. Việc này cho thấy Khóa...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4257.02,
+      "latency_ms": 4689.11,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -678,12 +678,12 @@
         "thi tốt nghiệp",
         "QTKD"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], Trường Đại học FPT xác định nền tảng phát triển dựa trên các quan điểm 5 tốt nhằm đạt được sứ mệnh, tầm nhìn, triết lý giáo dục. Tuy nhiên, tài liệu không cung...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], Trường Đại học FPT xác định chuẩn đầu ra ngoại ngữ và tốt nghiệp như sau: Khối ngành CNTT yêu cầu IELTS 6.0 hoặc TOEFL iBT 60 hoặc VSTEP B2; ngành QTKD yêu cầu...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4822.25,
+      "latency_ms": 5726.16,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -702,12 +702,12 @@
         "nhà trường",
         "OJT"
       ],
-      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1], [Nguồn 2], [Nguồn 3], [N...",
+      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết về lộ trình Thực tập Doanh nghiệp (O...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4397.02,
+      "latency_ms": 4457.87,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -726,12 +726,12 @@
         "nhà trường",
         "OJT"
       ],
-      "answer_snippet": "Theo quy chế đào tạo tại [Nguồn 1], doanh nghiệp thực tập OJT được giới thiệu bởi nhà trường. Sinh viên không cần tự liên hệ doanh nghiệp OJT. \n\nĐiều này được nêu rõ trong điểm b) của điều kiện xét và...",
+      "answer_snippet": "Theo quy chế đào tạo tại [Nguồn 1], quy định về việc thực tập doanh nghiệp (OJT) được thực hiện như sau:\n\n- Sinh viên đáp ứng các điều kiện như đã nêu trong [Nguồn 1] thì được phép thực hiện OJT.\n- Đi...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 5225.72,
+      "latency_ms": 5903.26,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -750,12 +750,12 @@
         "GPA",
         "OJT"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], sinh viên đi OJT (Operating Job Training) ở nước ngoài cần đáp ứng một số điều kiện sau:\n\n1. Sinh viên cần tự nhận thức được bản thân, biết điểm mạnh, điểm yếu...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], sinh viên muốn tham gia lộ trình Thực tập Doanh nghiệp (OJT) cần đáp ứng các điều kiện sau:\n\n1. Hoàn thành các môn cơ sở trong các học kỳ từ 1 đến 5.\n2. Đạt ch...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 8251.22,
+      "latency_ms": 5415.11,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -774,12 +774,12 @@
         "GPA",
         "OJT"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], quy định về xét tốt nghiệp của Trường Đại học FPT không đề cập đến trường hợp sinh viên đi làm OJT ở nước ngoài. Tài liệu chỉ đề cập đến các điều kiện bị buộc ...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 5], sinh viên cần đáp ứng các điều kiện sau để được xét tốt nghiệp:\n\n1. Đạt điểm trung bình cộng (CGPA) >= 2.0.\n2. Hoàn thành đủ tín chỉ học tập.\n3. Hoàn thành kỳ ...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4403.99,
+      "latency_ms": 5252.75,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -797,15 +797,15 @@
         "OJT",
         "kỳ sau"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1] và [Nguồn 2], nếu sinh viên không đạt kỳ thực tập OJT, họ cần giải quyết vấn đề theo cách sau:\n\n1. **K: Sự hiểu biết – Kiến thức (Knowledge)**: Thầy cô thường c...",
-      "item_passed": true,
+      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1], [Nguồn 2], [Nguồn 3], [N...",
+      "item_passed": false,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": true,
-      "latency_ms": 6331.56,
+      "answer_ok": false,
+      "latency_ms": 3973.72,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
+      "answer_msg": "Thiếu thông tin ['thực tập lại', 'OJT', 'kỳ sau'] trong câu trả lời"
     },
     {
       "q_id": "V2_B07_034",
@@ -820,12 +820,12 @@
         "OJT",
         "kỳ sau"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], quy định về xét tốt nghiệp của Trường Đại học FPT không trực tiếp đề cập đến trường hợp không đạt kỳ thực tập OJT. Tài liệu chỉ đề cập đến các loại phí như phí...",
+      "answer_snippet": "Theo quy chế đào tạo của Trường Đại học FPT, nếu sinh viên không hoàn thành kỳ thực tập OJT (Đoàn kết nghiệp thực tập doanh nghiệp), họ sẽ phải tiếp tục thực hiện kỳ OJT đó. \n\nQuy định cụ thể về điều ...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4821.4,
+      "latency_ms": 6420.15,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -844,12 +844,12 @@
         "tín chỉ",
         "GPA"
       ],
-      "answer_snippet": "Để được bảo vệ đồ án tốt nghiệp khóa luận, sinh viên cần tuân thủ các điều kiện sau:\n\n- [Nguồn 3] - Điều kiện bị buộc thôi học: Sinh viên sẽ bị buộc thôi học nếu vi phạm một trong các điều sau, trong ...",
+      "answer_snippet": "Để được bảo vệ đồ án tốt nghiệp khóa luận tại Trường Đại học FPT, sinh viên cần tuân thủ các điều kiện sau:\n\n- Đã hoàn thành đủ tín chỉ theo chương trình đào tạo của trường [Nguồn 4].\n- Đã hoàn thành ...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 6947.91,
+      "latency_ms": 4859.19,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -868,12 +868,12 @@
         "tín chỉ",
         "GPA"
       ],
-      "answer_snippet": "Theo quy chế đào tạo tại [Nguồn 1], sinh viên đáp ứng đủ các điều kiện sau thì được xét công nhận tốt nghiệp:\n\na) Tại thời điểm xét tốt nghiệp không bị truy cứu trách nhiệm hình sự;\nb) Có các chứng ch...",
+      "answer_snippet": "Theo quy chế đào tạo tại [Nguồn 1], sinh viên được xét bảo vệ đồ án tốt nghiệp khóa luận sau khi đáp ứng các điều kiện sau:\n\na) Tại thời điểm xét tốt nghiệp không bị truy cứu trách nhiệm hình sự; \nb) ...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4509.5,
+      "latency_ms": 4628.33,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -891,15 +891,15 @@
         "học thêm",
         "môn học"
       ],
-      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1], [Nguồn 2], [Nguồn 3], [N...",
-      "item_passed": false,
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], [Nguồn 2], [Nguồn 3], [Nguồn 4], và [Nguồn 5], chúng tôi không tìm thấy thông tin cụ thể về việc sinh viên có được đăng ký học thêm môn học khác trong học kỳ O...",
+      "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": false,
-      "latency_ms": 4127.54,
+      "answer_ok": true,
+      "latency_ms": 4965.06,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Thiếu thông tin ['OJT', 'học thêm', 'môn học'] trong câu trả lời"
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_038",
@@ -914,15 +914,15 @@
         "học thêm",
         "môn học"
       ],
-      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1], [Nguồn 2]",
-      "item_passed": false,
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 4], quy định về học kỳ OJT (Điều 13) không đề cập đến việc sinh viên có được đăng ký học thêm môn học khác. Tài liệu chỉ đề cập đến việc sinh viên phải hoàn thành ...",
+      "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": false,
-      "latency_ms": 3663.05,
+      "answer_ok": true,
+      "latency_ms": 4546.02,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Thiếu thông tin ['OJT', 'học thêm', 'môn học'] trong câu trả lời"
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     },
     {
       "q_id": "V2_B07_039",
@@ -937,15 +937,15 @@
         "xét tốt nghiệp",
         "năm"
       ],
-      "answer_snippet": "Tôi xin lỗi, nhưng câu hỏi của sinh viên về thời gian xét tốt nghiệp trong một năm có mấy đợt không liên quan đến các tài liệu quy chế được cung cấp trong phần [NGỮ CẢNH HỌC VỤ]. Các tài liệu này chủ ...",
-      "item_passed": true,
+      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1], [Nguồn 2], [Nguồn 3], [N...",
+      "item_passed": false,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": true,
-      "latency_ms": 4738.1,
+      "answer_ok": false,
+      "latency_ms": 3758.52,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
+      "answer_msg": "Thiếu thông tin ['đợt', 'xét tốt nghiệp', 'năm'] trong câu trả lời"
     },
     {
       "q_id": "V2_B07_040",
@@ -960,12 +960,12 @@
         "xét tốt nghiệp",
         "năm"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], quy chế đào tạo của trường Đại học FPT không cung cấp thông tin cụ thể về thời gian xét tốt nghiệp trong một năm. Tài liệu này chủ yếu đề cập đến hệ thống giám...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 4], quy chế đào tạo của trường Đại học FPT không cung cấp thông tin cụ thể về số đợt xét tốt nghiệp trong một năm. Tài liệu chỉ đề cập đến quy định về việc sinh vi...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4266.08,
+      "latency_ms": 4981.93,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -983,12 +983,12 @@
         "Đại học FPT",
         "Hiệu trưởng"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], Bằng tốt nghiệp đại học của trường Đại học FPT do Hội đồng Đánh giá Học vấn của trường cấp. \n\nTuy nhiên, cần lưu ý rằng thông tin này chỉ liên quan đến việc cấ...",
+      "answer_snippet": "Theo thông tin trong [Nguồn 1] của tài liệu quy chế, Bằng tốt nghiệp đại học của trường Đại học FPT do Hội đồng Đánh giá và Chấp thuận của trường cấp. \n\n[Tài liệu quy chế đề cập đến việc cấp bằng tốt ...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4879.94,
+      "latency_ms": 4387.27,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -1006,12 +1006,12 @@
         "Đại học FPT",
         "Hiệu trưởng"
       ],
-      "answer_snippet": "Theo quy chế đào tạo của Trường Đại học FPT, bằng tốt nghiệp đại học do Trường Đại học FPT cấp. \n\n[Nguồn 1] - Tiêu đề: 1.1.3 Chương trình và thời gian học tập (Phần 1) | Danh mục: handbook | Căn cứ: s...",
+      "answer_snippet": "Theo quy chế đào tạo của Trường Đại học FPT, bằng tốt nghiệp đại học do Trường Đại học FPT cấp. \n\nQuy chế đào tạo của Trường Đại học FPT quy định như sau: \n\n1.1.1 Phạm vi điều chỉnh và đối tượng áp dụ...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 8245.66,
+      "latency_ms": 5174.44,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -1029,12 +1029,12 @@
         "xuất sắc",
         "GPA"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1] và [Nguồn 2], sinh viên tốt nghiệp loại xuất sắc cần đạt điểm GPA từ 9,0 đến 10,0. Điểm GPA này tương ứng với thang điểm 10 và điểm chữ A+. \n\nĐiểm GPA này được ...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], sinh viên tốt nghiệp loại xuất sắc cần đạt điểm GPA từ 9,0 đến 10,0. Điểm GPA này tương ứng với thang điểm 10, tức là đạt điểm A+. \n\nĐể cụ thể hóa hơn, sinh vi...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4754.81,
+      "latency_ms": 4327.8,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -1052,12 +1052,12 @@
         "xuất sắc",
         "GPA"
       ],
-      "answer_snippet": "Tôi xin lỗi, nhưng trong các tài liệu được cung cấp, không có thông tin cụ thể về quy định xét tốt nghiệp sinh viên, bao gồm GPA cần đạt để tốt nghiệp loại xuất sắc. \n\n[Tài liệu 1] không liên quan trự...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 5], chuẩn đầu ra GPA (GPA) của sinh viên tốt nghiệp loại xuất sắc tại Trường Đại học FPT là >= 3.0. \n\nHãy trích dẫn nguồn: [Nguồn 5]",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4554.04,
+      "latency_ms": 3733.92,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -1075,12 +1075,12 @@
         "giỏi",
         "GPA"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], sinh viên tốt nghiệp loại giỏi cần đạt GPA tối thiểu là 3.0. Đây là thông tin chính xác nhất mà tôi có thể trích dẫn từ tài liệu hiện có.",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 5], chuẩn đầu ra GPA tối thiểu để sinh viên tốt nghiệp loại giỏi là 3.0. \n\n[Mã nguồn: [Nguồn 5]]",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 3821.95,
+      "latency_ms": 3719.39,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -1098,12 +1098,12 @@
         "giỏi",
         "GPA"
       ],
-      "answer_snippet": "Tôi xin lỗi, nhưng câu hỏi của bạn liên quan đến quy định xét tốt nghiệp, cụ thể là GPA tối thiểu cần đạt để tốt nghiệp loại giỏi. Tuy nhiên, trong các tài liệu được cung cấp, tôi không tìm thấy thông...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 5], quy định về chuẩn đầu ra GPA (GPA >= 2.0) là điều kiện để sinh viên tốt nghiệp loại giỏi. Tuy nhiên, thông tin về GPA tối thiểu để đạt loại giỏi không được cun...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4546.7,
+      "latency_ms": 4938.84,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -1121,12 +1121,12 @@
         "xếp loại",
         "học lực"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], quy chế đào tạo của Đại học FPT không đề cập đến việc tính điểm rèn luyện vào xếp loại tốt nghiệp. \n\n[Tài liệu này chỉ đề cập đến các giải thưởng và khen thưởn...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 5], không có thông tin cụ thể về việc xếp loại tốt nghiệp có tính điểm rèn luyện không. Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòn...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 4499.21,
+      "latency_ms": 4189.67,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -1144,12 +1144,12 @@
         "xếp loại",
         "học lực"
       ],
-      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], [Nguồn 2], [Nguồn 3], và [Nguồn 4], quy chế đào tạo của Trường Đại học FPT không quy định xếp loại tốt nghiệp dựa trên điểm rèn luyện. \n\nTuy nhiên, trong chươn...",
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 1], [Nguồn 2], [Nguồn 3], và [Nguồn 4], quy định về việc xét tốt nghiệp của Trường Đại học FPT không đề cập đến việc xếp loại tốt nghiệp có tính điểm rèn luyện. Tr...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 5466.94,
+      "latency_ms": 4844.52,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -1168,12 +1168,12 @@
         "bằng",
         "tiếng Anh"
       ],
-      "answer_snippet": "Theo thông tin từ tài liệu [Nguồn 1], [Nguồn 2], [Nguồn 3], và [Nguồn 5], sinh viên chưa có chứng chỉ tiếng Anh không được hoãn nộp để nhận bằng. Trường khuyến cáo sinh viên hoàn thành các học phần bắ...",
+      "answer_snippet": "Theo thông tin từ tài liệu [Nguồn 1], [Nguồn 2], [Nguồn 3], [Nguồn 4], sinh viên cần hoàn thành các học phần tự chọn như chứng chỉ tiếng Anh để đủ điều kiện tốt nghiệp. Tuy nhiên, tài liệu không cung ...",
       "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
       "answer_ok": true,
-      "latency_ms": 6535.85,
+      "latency_ms": 5140.12,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
       "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
@@ -1192,15 +1192,15 @@
         "bằng",
         "tiếng Anh"
       ],
-      "answer_snippet": "Tôi không tìm thấy thông tin này trong tài liệu hiện có của trường. Vui lòng liên hệ Phòng Dịch vụ Sinh viên hoặc Cán bộ Quản lý Đào tạo để được hướng dẫn chi tiết. [Nguồn 1]",
-      "item_passed": false,
+      "answer_snippet": "Theo thông tin trong tài liệu [Nguồn 4], quy định về xét tốt nghiệp không đề cập đến việc hoãn nộp chứng chỉ tiếng Anh. Tài liệu chỉ đề cập đến các điều kiện như CGPA >= 2.0, hoàn thành đủ tín chỉ, ho...",
+      "item_passed": true,
       "rewrite_ok": true,
       "route_ok": true,
-      "answer_ok": false,
-      "latency_ms": 3656.14,
+      "answer_ok": true,
+      "latency_ms": 4481.21,
       "rewrite_msg": "Turn 1 / Câu độc lập",
       "route_msg": "Route chuẩn: rag_pipeline",
-      "answer_msg": "Thiếu thông tin ['chứng chỉ', 'hoãn', 'bằng', 'tiếng Anh'] trong câu trả lời"
+      "answer_msg": "Câu trả lời chính xác, chuẩn xác số liệu"
     }
   ]
 }

@@ -10,7 +10,8 @@ from FPTUniQA.generation.llm import LLMClient
 from FPTUniQA.generation.prompt import SYSTEM_PROMPT, build_prompt
 from FPTUniQA.query.normalizer import normalize_query
 from FPTUniQA.query.rewriting import detect_topic_switch, rewrite_query
-from FPTUniQA.query.semantic_parser import parse_query
+from FPTUniQA.query.semantic_parser import parse_query, try_rule_fast_parse
+from FPTUniQA.query.safety_gate import safety_precheck
 from FPTUniQA.query.router import route_query, execute_structured_lookup
 from FPTUniQA.pipeline.mock_retriever import retrieve
 from FPTUniQA.retrieval.retriever import HybridRetriever
@@ -172,6 +173,29 @@ class RAGPipeline:
         logger.info(f"Bắt đầu xử lý truy vấn: '{query}' (session_id={session_id}, top_k={effective_top_k})")
 
         try:
+            # Bước 0: Safety Pre-gate (tiền kiểm tra an toàn và Near-OOD <50ms)
+            gate_res = safety_precheck(query)
+            if gate_res and gate_res.get("blocked"):
+                latency_ms = round((time.time() - start_time) * 1000, 2)
+                log_query_event(
+                    original_query=query,
+                    rewritten_query=query,
+                    parsed_query={"intent": "ood", "slots": {}},
+                    answer=gate_res.get("answer", ""),
+                    route_chosen="ood",
+                    latency_ms=latency_ms,
+                    session_id=session_id,
+                )
+                return {
+                    "answer": gate_res.get("answer", ""),
+                    "route": "ood",
+                    "sources": [],
+                    "latency_ms": latency_ms,
+                    "confidence": 1.0,
+                    "model": "safety_gate",
+                    "history": [],
+                }
+
             # Lấy lịch sử hội thoại của session (nếu có)
             history = self.session_manager.get_history(session_id) if session_id else []
             turn_index = len(history) + 1
@@ -185,7 +209,14 @@ class RAGPipeline:
             # Bước 2: Semantic Parsing (Contract 3) trên câu hỏi đã viết lại
             t_parse_start = time.time()
             force_regex = (self.parser_mode == "regex")
-            parsed_query = parse_query(rewritten_query, force_regex=force_regex)
+            if not force_regex:
+                fast_parsed = try_rule_fast_parse(rewritten_query)
+                if fast_parsed is not None:
+                    parsed_query = fast_parsed
+                else:
+                    parsed_query = parse_query(rewritten_query, force_regex=False)
+            else:
+                parsed_query = parse_query(rewritten_query, force_regex=True)
             parser_latency_ms = round((time.time() - t_parse_start) * 1000, 2)
             logger.debug(f"Bước 2 - ParsedQuery: intent={parsed_query.intent}, slots={parsed_query.slots}")
 
@@ -273,6 +304,15 @@ class RAGPipeline:
                     answer_fallback = True
                 else:
                     final_context = format_context(retrieved_chunks)
+                    # Bổ trợ tri thức cấu trúc từ Academic Knowledge Graph (Graph RAG Context Injection)
+                    try:
+                        from FPTUniQA.graph.knowledge_graph import get_knowledge_graph
+                        kg = get_knowledge_graph()
+                        kg_summary = kg.get_context_summary(rewritten_query)
+                        if kg_summary:
+                            final_context += f"\n\n[Thông tin chuẩn từ Academic Knowledge Graph]:\n{kg_summary}"
+                    except Exception as _e_kg:
+                        logger.warning(f"Lỗi khi inject context từ Knowledge Graph: {_e_kg}")
                     prompt = build_prompt(
                         query=rewritten_query,
                         context=final_context,
@@ -284,8 +324,8 @@ class RAGPipeline:
 
                     # Guardrail: Kiểm tra ảo giác trích xuất số liệu
                     guardrail_res = check_hallucination(answer_text, final_context)
-                    possible_hallucination = guardrail_res.get("is_hallucinated", False)
-                    ungrounded_numbers = guardrail_res.get("ungrounded_entities", [])
+                    possible_hallucination = guardrail_res.get("possible_hallucination", False)
+                    ungrounded_numbers = guardrail_res.get("ungrounded_numbers", [])
 
             # Phát hiện topic switch
             topic_switch_info = detect_topic_switch(query, history=history) if history else {

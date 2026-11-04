@@ -1,4 +1,4 @@
-"""Adapter Retrieval cho Khung Ablation Study Matrix (BM25, Dense, Hybrid, Hybrid+Filter, Reranker)."""
+"""Adapter Retrieval cho Khung Ablation Study Matrix (BM25, Dense, C3, C3p, C4-hard, C4-soft, Reranker)."""
 
 from typing import Any, Dict, List, Optional, Tuple
 import re
@@ -14,8 +14,10 @@ class AblationRetriever:
     """Retriever linh hoạt cho phép kích hoạt / ngắt từng thành phần:
     - bm25: Chỉ dùng BM25 lexical search
     - dense: Chỉ dùng FAISS dense vector search
-    - hybrid: Kết hợp BM25 + FAISS qua RRF (không lọc metadata, không rerank)
-    - hybrid_filter: Kết hợp BM25 + FAISS qua RRF + Lọc metadata (campus, cohort)
+    - c3_hybrid / c3_hybrid_sequential: Hybrid (BM25 + FAISS) tuần tự, không metadata
+    - c3p_hybrid_parallel: Hybrid (BM25 + FAISS) song song hóa, không metadata
+    - c4_hybrid_rrf_filter / c4_hard: Hybrid RRF song song + Lọc cứng Metadata (Hard Pre-filtering)
+    - c4_hybrid_rrf_soft / c4_soft: Hybrid RRF song song + Xếp hạng mềm Metadata (Soft Boost Ranking)
     """
 
     def __init__(
@@ -42,7 +44,7 @@ class AblationRetriever:
         return self._hybrid.reranker
 
     def _extract_heuristic_filter(self, query: str) -> Optional[Dict[str, Any]]:
-        """Trích xuất metadata filter cơ bản từ query (cohort, campus)."""
+        """Trích xuất metadata filter cơ bản từ query (cohort, campus) khi caller không cung cấp."""
         filt: Dict[str, Any] = {}
         # Cohort regex
         m_cohort = re.search(r"\b(k1[5-9]|k2[0-5])\b", query, re.IGNORECASE)
@@ -82,24 +84,58 @@ class AblationRetriever:
                 query, top_k=top_k, metadata_filter=metadata_filter
             )
 
-        elif active_mode == "hybrid":
-            # RRF giữa BM25 và Dense, không lọc metadata, không rerank trừ khi rerank=True
+        elif active_mode in ("hybrid", "c3_hybrid", "c3_hybrid_sequential"):
+            # C3: Hybrid tuần tự, không lọc metadata, không rerank
             return self._hybrid.retrieve(
                 query=query,
                 top_k=top_k,
                 candidate_k=candidate_k,
                 metadata_filter=None,
+                metadata_mode="none",
+                parallel=False,
                 rerank=rerank,
                 score_threshold=score_threshold,
             )
 
-        elif active_mode in ("hybrid_filter", "hybrid_rrf_filter"):
+        elif active_mode in ("c3p_hybrid", "c3p_hybrid_parallel"):
+            # C3p: Hybrid song song hóa, không lọc metadata, không rerank
+            return self._hybrid.retrieve(
+                query=query,
+                top_k=top_k,
+                candidate_k=candidate_k,
+                metadata_filter=None,
+                metadata_mode="none",
+                parallel=True,
+                rerank=rerank,
+                score_threshold=score_threshold,
+            )
+
+        elif active_mode in ("hybrid_filter", "hybrid_rrf_filter", "c4_hybrid_rrf_filter", "c4_hard"):
+            # C4-hard: Hybrid RRF song song + Lọc cứng metadata
             effective_filter = metadata_filter or self._extract_heuristic_filter(query)
             return self._hybrid.retrieve(
                 query=query,
                 top_k=top_k,
                 candidate_k=candidate_k,
                 metadata_filter=effective_filter,
+                metadata_mode="hard",
+                parallel=True,
+                rerank=rerank,
+                score_threshold=score_threshold,
+            )
+
+        elif active_mode in ("hybrid_soft", "hybrid_rrf_soft", "c4_hybrid_rrf_soft", "c4_soft"):
+            # C4-soft: Hybrid RRF song song + Xếp hạng mềm metadata (Soft Boost)
+            effective_filter = metadata_filter or self._extract_heuristic_filter(query)
+            return self._hybrid.retrieve(
+                query=query,
+                top_k=top_k,
+                candidate_k=candidate_k,
+                metadata_filter=effective_filter,
+                metadata_mode="soft",
+                alpha=0.25,
+                beta=0.25,
+                parallel=True,
                 rerank=rerank,
                 score_threshold=score_threshold,
             )
@@ -140,10 +176,20 @@ class AblationRetriever:
             score_threshold=score_threshold,
         )
 
-        output: List[Dict[str, Any]] = []
-        is_reranked = rerank and self._hybrid.reranker is not None
-        max_rrf = sum(self._hybrid.weights) / (self._hybrid.rrf_k + 1.0) if self._hybrid.weights and self._hybrid.rrf_k > 0 else 1.0
+        max_rrf = (
+            sum(self._hybrid.weights) / (self._hybrid.rrf_k + 1.0)
+            if self._hybrid.weights and self._hybrid.rrf_k > 0
+            else 1.0
+        )
 
+        if active_mode in ("bm25",):
+            strategy = "bm25"
+        elif active_mode in ("dense",):
+            strategy = "dense"
+        else:
+            strategy = "hybrid"
+
+        output = []
         for doc, score in results:
             raw_meta = doc.get("metadata", {})
             meta = dict(raw_meta) if isinstance(raw_meta, dict) else {}
@@ -154,13 +200,7 @@ class AblationRetriever:
             if "doc_type" not in meta:
                 meta["doc_type"] = raw_meta.get("category", doc.get("doc_type", "quy_che"))
 
-            if is_reranked:
-                norm_score = round(min(1.0, max(0.0, float(score))), 4)
-            elif active_mode in ("bm25", "dense"):
-                norm_score = round(min(1.0, max(0.0, float(score) / 100.0 if active_mode == "bm25" else float(score))), 4)
-            else:
-                norm_score = round(min(1.0, max(0.0, float(score / max_rrf))), 4)
-
+            norm_score = round(min(1.0, max(0.0, float(score / max_rrf))), 4) if max_rrf > 0 else 0.5
             text_val = doc.get("text") or doc.get("content") or ""
             doc_id_val = str(doc.get("id") or doc.get("doc_id") or meta.get("doc_id") or "doc_unknown")
 
@@ -172,8 +212,7 @@ class AblationRetriever:
                 "score": norm_score,
                 "source": doc.get("source") or meta.get("url") or doc.get("title", ""),
                 "category": doc.get("doc_type") or meta.get("doc_type", meta.get("category", "quy_che")),
-                "retrieval_strategy": active_mode,
+                "retrieval_strategy": strategy,
                 "metadata": meta,
             })
-
         return output

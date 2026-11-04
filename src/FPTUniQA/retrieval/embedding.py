@@ -1,84 +1,87 @@
-"""Khởi tạo và tạo vector embedding (multilingual-e5 / bge-m3). Phụ trách: TV2."""
-
-from typing import List, Optional
-import numpy as np
-from FPTUniQA.utils.logger import get_logger
-
-logger = get_logger("FPTUniQA.retrieval.embedding")
-
-
-class EmbeddingModel:
-    """Lớp sinh vector embedding cho văn bản và câu hỏi."""
-
-    def __init__(
-        self,
-        model_name: str = "intfloat/multilingual-e5-base",
-        device: str = "cpu",
-        normalize: bool = True,
-        batch_size: int = 32,
-    ):
-        self.model_name = model_name
-        if device == "auto":
-            try:
-                import torch
-                self.device = "cuda" if torch.cuda.is_available() else "cpu"
-            except Exception:
-                self.device = "cpu"
-        else:
-            self.device = device
-        self.normalize = normalize
-        self.batch_size = batch_size
-        self._model = None
-
-    def _load_model(self):
-        if self._model is None:
-            try:
-                from sentence_transformers import SentenceTransformer
-                logger.info(f"Đang nạp mô hình embedding '{self.model_name}' trên thiết bị: {self.device}")
-                self._model = SentenceTransformer(self.model_name, device=self.device)
-            except Exception as e:
-                logger.warning(f"Không thể nạp mô hình {self.model_name} ({e}). Dùng fallback dummy mode.")
-                self._model = "dummy"
-
-    def embed_documents(self, texts: List[str]) -> np.ndarray:
-        """Tạo embeddings cho danh sách tài liệu/đoạn văn bản."""
-        self._load_model()
-        if self._model == "dummy":
-            # Tạo vector ngẫu nhiên cố định phục vụ kiểm thử nhanh
-            np.random.seed(42)
-            return np.random.randn(len(texts), 768).astype(np.float32)
-
-        # Với E5, quy ước thêm prefix 'passage: ' cho văn bản
-        if "e5" in self.model_name.lower():
-            formatted_texts = [f"passage: {t}" for t in texts]
-        elif "bge" in self.model_name.lower():
-            formatted_texts = [f"Represent this sentence: {t}" for t in texts]
-        else:
-            formatted_texts = texts
-
-        embeddings = self._model.encode(
-            formatted_texts,
-            normalize_embeddings=self.normalize,
-            batch_size=self.batch_size,
-            show_progress_bar=True,
-        )
-        return np.array(embeddings, dtype=np.float32)
-
-    def embed_query(self, query: str) -> np.ndarray:
-        """Tạo embedding cho một câu truy vấn."""
-        self._load_model()
-        if self._model == "dummy":
-            np.random.seed(len(query))
-            return np.random.randn(768).astype(np.float32)
-
-        # Với E5, quy ước thêm prefix 'query: ' cho câu hỏi
-        if "e5" in self.model_name.lower():
-            formatted_query = f"query: {query}"
-        else:
-            formatted_query = query
-        embedding = self._model.encode(
-            formatted_query,
-            normalize_embeddings=self.normalize,
-            show_progress_bar=False,
-        )
-        return np.array(embedding, dtype=np.float32)
+"""Khởi tạo và tạo vector embedding (multilingual-e5 / bge-m3). Phụ trách: TV2."""
+
+from typing import List, Optional
+import numpy as np
+from FPTUniQA.utils.logger import get_logger
+
+logger = get_logger("FPTUniQA.retrieval.embedding")
+
+
+class EmbeddingModel:
+    """Lớp sinh vector embedding cho văn bản và câu hỏi."""
+
+    def __init__(
+        self,
+        model_name: str = "intfloat/multilingual-e5-base",
+        device: str = "cpu",
+        normalize: bool = True,
+        batch_size: int = 32,
+    ):
+        self.model_name = model_name
+        if device == "auto":
+            try:
+                import torch
+                self.device = "cuda" if torch.cuda.is_available() else "cpu"
+            except Exception:
+                self.device = "cpu"
+        else:
+            self.device = device
+        self.normalize = normalize
+        self.batch_size = batch_size
+        self._model = None
+
+    def _load_model(self):
+        if self._model is None:
+            try:
+                from sentence_transformers import SentenceTransformer
+                logger.info(f"Đang nạp mô hình embedding '{self.model_name}' trên thiết bị: {self.device}")
+                self._model = SentenceTransformer(self.model_name, device=self.device)
+            except Exception as e:
+                import os
+                if os.getenv('STRICT_EMBEDDING', '0') == '1':
+                    raise RuntimeError(f"Không thể nạp mô hình embedding thực '{self.model_name}': {e}. Chế độ benchmark cấm fallback dummy.")
+                logger.warning(f"Không thể nạp mô hình {self.model_name} ({e}). Dùng fallback dummy mode.")
+                self._model = "dummy"
+
+    def embed_documents(self, texts: List[str]) -> np.ndarray:
+        """Tạo embeddings cho danh sách tài liệu/đoạn văn bản."""
+        self._load_model()
+        if self._model == "dummy":
+            # Tạo vector ngẫu nhiên cố định phục vụ kiểm thử nhanh
+            np.random.seed(42)
+            return np.random.randn(len(texts), 768).astype(np.float32)
+
+        # Với E5, quy ước thêm prefix 'passage: ' cho văn bản
+        if "e5" in self.model_name.lower():
+            formatted_texts = [f"passage: {t}" for t in texts]
+        elif "bge" in self.model_name.lower():
+            formatted_texts = [f"Represent this sentence: {t}" for t in texts]
+        else:
+            formatted_texts = texts
+
+        embeddings = self._model.encode(
+            formatted_texts,
+            normalize_embeddings=self.normalize,
+            batch_size=self.batch_size,
+            show_progress_bar=True,
+        )
+        return np.array(embeddings, dtype=np.float32)
+
+    def embed_query(self, query: str) -> np.ndarray:
+        """Tạo embedding cho một câu truy vấn."""
+        self._load_model()
+        if self._model == "dummy":
+            np.random.seed(len(query))
+            return np.random.randn(768).astype(np.float32)
+
+        # Với E5, quy ước thêm prefix 'query: ' cho câu hỏi
+        if "e5" in self.model_name.lower():
+            formatted_query = f"query: {query}"
+        else:
+            formatted_query = query
+        embedding = self._model.encode(
+            formatted_query,
+            normalize_embeddings=self.normalize,
+            show_progress_bar=False,
+        )
+        return np.array(embedding, dtype=np.float32)

@@ -75,6 +75,23 @@ class NormalizedEntity:
 
 
 @dataclass
+class EntityReplacement:
+    original_text: str
+    canonical_text: str
+    start: int
+    end: int
+    entity_id: str
+
+
+@dataclass
+class EntityAnalysisResult:
+    canonical_text: str
+    entities: List[NormalizedEntity] = field(default_factory=list)
+    replacements: List[EntityReplacement] = field(default_factory=list)
+    slots_hint: Dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
 class NormalizationResult:
     """Đầu ra có cấu trúc từ quá trình chuẩn hóa câu hỏi."""
     original_query: str
@@ -188,6 +205,8 @@ class EntityNormalizer:
         """Thực hiện chuẩn hóa câu hỏi và trích xuất thực thể."""
         if not query or not str(query).strip():
             return NormalizationResult(original_query=query, normalized_query="")
+
+
 
         raw_query = str(query)
         clean_query = normalize_n1(raw_query)
@@ -325,6 +344,36 @@ class EntityNormalizer:
             unresolved_terms=[],
         )
 
+    def analyze_with_spans(self, text: str) -> EntityAnalysisResult:
+        norm_res = self.normalize(text)
+        entities = norm_res.entities
+
+        replacements: List[EntityReplacement] = []
+        clean_text = normalize_n1(text)
+        chars = list(clean_text)
+
+        sorted_entities = sorted(entities, key=lambda e: e.span[0], reverse=True)
+        for e in sorted_entities:
+            s, end = e.span
+            canon = e.canonical_name_vi or e.canonical_name
+            if canon:
+                replacements.append(EntityReplacement(
+                    original_text=clean_text[s:end],
+                    canonical_text=canon,
+                    start=s,
+                    end=end,
+                    entity_id=e.entity_id,
+                ))
+                chars[s:end] = list(canon)
+
+        canonical_text = "".join(chars)
+        return EntityAnalysisResult(
+            canonical_text=canonical_text,
+            entities=entities,
+            replacements=replacements,
+            slots_hint=norm_res.slots_hint,
+        )
+
     def _check_disambiguation(
         self,
         query: str,
@@ -333,19 +382,90 @@ class EntityNormalizer:
         eid: str,
     ) -> bool:
         """Kiểm tra các quy tắc phân giải ngữ cảnh khi từ khóa có nhiều nghĩa."""
-        rules = entry.get("disambiguation_rules")
-        if not rules:
-            return True
+        rules = entry.get("disambiguation_rules") or {}
 
         start, end = span
-        before_text = query[max(0, start - 25):start].strip()
+        matched_str = query[start:end].strip().lower()
+        before_text = query[max(0, start - 30):start].strip().lower()
+        after_text = query[end:min(len(query), end + 30)].strip().lower()
 
-        # Quy tắc cho AI (ngành học vs môn học)
+        # Quy tắc cho CAMPUS_ALL (Tránh match nhầm 'chứng chỉ' / 'minh chứng' thành cơ sở 'chung')
+        if eid == "CAMPUS_ALL":
+            raw_span = query[start:end].lower()
+            if "chứng" in raw_span or "chưng" in raw_span:
+                return False
+            if any(before_text.endswith(w) for w in ["chứng", "chung", "minh", "bằng", "làm"]):
+                return False
+            if any(after_text.startswith(w) for w in ["chỉ", "chi", "nhận", "nhan", "từ", "tu"]):
+                return False
+
+        # Quy tắc cho MAJOR_NNA (Ngôn ngữ Anh vs Chứng chỉ/Ngoại ngữ tiếng Anh)
+        if eid == "MAJOR_NNA":
+            cert_signals = (
+                "chứng chỉ", "chung chi", "chuẩn", "chuan", "chuẩn đầu ra", "chuan dau ra",
+                "trình độ", "trinh do", "tiêu chuẩn", "tieu chuan", "bằng", "bang",
+                "ngoại ngữ", "ngoai ngu", "môn", "mon", "học phần", "hoc phan"
+            )
+            if any(before_text.endswith(p) or f"{p} " in before_text for p in cert_signals):
+                return False
+            q_full = query.lower()
+            if "chứng chỉ tiếng anh" in q_full or "chuẩn tiếng anh" in q_full or "ngoại ngữ tiếng anh" in q_full:
+                return False
+
+        # Quy tắc cho Môn học NWC203C (Mạng máy tính)
+        if eid == "COURSE_NWC203C":
+            q_full = query.lower()
+            if any(w in q_full for w in ["casio", "bỏ túi", "bo tui", "cầm tay", "cam tay", "fx-", "fx "]):
+                return False
+            if "mang" in matched_str and "mạng" not in matched_str:
+                return False
+
+        # Quy tắc cho AI (ngành học vs môn học vs đại từ nghi vấn tiếng Việt)
         if eid == "MAJOR_AI":
             prefer_courses = rules.get("prefer_course_if_preceded_by", [])
             if any(before_text.endswith(w) for w in prefer_courses):
                 # Nếu từ đứng trước chỉ môn học (môn ai, học phần ai), bỏ qua MAJOR_AI
                 return False
+
+            # Nếu alias khớp là "ai" hoặc "a.i."
+            if matched_str in ("ai", "a.i."):
+                # 1. Các tiền tố khẳng định là ngành học/học vụ:
+                major_prefixes = (
+                    "ngành", "nganh", "chuyên ngành", "chuyen nganh", "khoa",
+                    "học phí", "hoc phi", "chương trình", "chuong trinh", "tuyển sinh", "tuyen sinh",
+                    "điểm chuẩn", "diem chuan", "lớp", "lop", "khóa", "khoa", "kỳ", "ky"
+                )
+                if any(before_text.endswith(p) or f"{p} " in before_text for p in major_prefixes):
+                    return True
+
+                # 2. Các giới từ hỏi người (hỏi ai, gặp ai, liên hệ ai, nhờ ai, cho ai, với ai...):
+                pronoun_before = (
+                    "hỏi", "hoi", "gặp", "gap", "liên hệ", "lien he", "nhờ", "nho",
+                    "cho", "với", "voi", "tìm", "tim", "bảo", "bao", "do"
+                )
+                if any(before_text.endswith(b) for b in pronoun_before):
+                    return False
+
+                # 3. Đại từ nghi vấn đi kèm vị ngữ nhân xưng:
+                pronoun_after_patterns = [
+                    r"^là\s+(người|thầy|cô|giảng\s+viên|hiệu\s+trưởng|trưởng\s+khoa|ai|cán\s+bộ|chủ\s+nhiệm|sinh\s+viên\s+nào)",
+                    r"^la\s+(nguoi|thay|co|giang\s+vien|hieu\s+truong|truong\s+khoa|ai|can\s+bo|chu\s+nhiem|sinh\s+vien\s+nao)",
+                    r"^(dạy|day|sáng\s+lập|sang\s+lap|viết|viet|phụ\s+trách|phu\s+trach|quản\s+lý|quan\s+ly|chịu\s+trách\s+nhiệm|chiu\s+trach\s+nhiem)(|\s|$)",
+                    r"^(có\s+thể\s+(giải\s+đáp|hỗ\s+trợ|giúp|cho\s+biết)|co\s+the\s+(giai\s+dap|ho\s+tro|giup|cho\s+biet))(|\s|$)",
+                    r"^(hướng\s+dẫn|huong\s+dan|ra\s+đề|ra\s+de|chấm\s+thi|cham\s+thi)(|\s|$)",
+                ]
+                for pat in pronoun_after_patterns:
+                    if re.search(pat, after_text, re.IGNORECASE):
+                        return False
+
+                # 4. Nếu "ai" đứng ở đầu câu và theo sau là "là":
+                # "AI là gì?", "AI là ngành gì?" -> True
+                # "Ai là người...", "Ai là..." không có từ hỏi định nghĩa -> False
+                if re.match(r"^(là|la)", after_text):
+                    if re.search(r"(gì|gi|như\s+thế\s+nào|nhu\s+the\s+nao|ra\s+sao|viết\s+tắt|viet\s+tat)", after_text):
+                        return True
+                    if start == 0 or any(before_text.endswith(w) for w in ("cho em hỏi", "cho hỏi", "xin hỏi", "em hỏi")):
+                        return False
 
         return True
 
@@ -399,17 +519,20 @@ class EntityNormalizer:
         # Tự động gán course_aspect nếu câu hỏi có mã môn
         if "course_code" in slots and not slots.get("course_aspect"):
             q_lower = query.lower()
-            if any(w in q_lower for w in ["học những gì", "học gì", "nội dung", "kiến thức", "chủ đề", "syllabus"]):
+            q_unacc = remove_accents(q_lower)
+            if any(w in q_lower for w in ["học những gì", "học gì", "nội dung", "kiến thức", "chủ đề", "syllabus"]) or any(w in q_unacc for w in ["hoc nhung gi", "hoc gi", "noi dung", "kien thuc", "chu de"]):
                 slots["course_aspect"] = "syllabus"
-            elif any(w in q_lower for w in ["giáo trình", "sách", "tài liệu", "tác giả", "ai viết"]):
+            elif any(w in q_lower for w in ["giáo trình", "sách", "tài liệu", "tác giả", "ai viết"]) or any(w in q_unacc for w in ["giao trinh", "sach", "tai lieu", "tac gia", "ai viet"]):
                 slots["course_aspect"] = "textbook"
-            elif any(w in q_lower for w in ["tiên quyết", "trước", "cần qua môn"]):
+            elif any(w in q_lower for w in ["tiên quyết", "trước", "cần qua môn"]) or any(w in q_unacc for w in ["tien quyet", "truoc", "can qua mon"]):
                 slots["course_aspect"] = "prerequisite"
-            elif any(w in q_lower for w in ["tín chỉ", "bao nhiêu tín", "số tín"]):
+            elif any(w in q_lower for w in ["tín chỉ", "bao nhiêu tín", "số tín"]) or any(w in q_unacc for w in ["tin chi", "bao nhieu tin", "so tin"]):
                 slots["course_aspect"] = "credits"
-            elif any(w in q_lower for w in ["thi", "kiểm tra", "pe", "eos", "đánh giá", "hình thức"]):
+            elif any(w in q_lower for w in ["học tiếp", "kỳ sau", "tiếp theo", "kế tiếp", "sau môn", "tiếp nối"]):
+                slots["course_aspect"] = "next_course"
+            elif any(w in q_lower for w in ["thi", "kiểm tra", "pe", "eos", "đánh giá", "hình thức", "bài tập lớn", "assignment", "asm", "bài tập"]) or any(w in q_unacc for w in ["kiem tra", "danh gia", "hinh thuc", "bai tap lon"]):
                 slots["course_aspect"] = "assessment"
-            elif any(w in q_lower for w in ["kỳ", "học kỳ", "kỳ mấy"]):
+            elif any(w in q_lower for w in ["kỳ", "học kỳ", "kỳ mấy"]) or any(w in q_unacc for w in ["ky", "hoc ky", "ky may"]):
                 slots["course_aspect"] = "semester"
 
         return slots

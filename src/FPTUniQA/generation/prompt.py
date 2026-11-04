@@ -35,9 +35,14 @@ def build_prompt(
     if history:
         history_lines = []
         for turn in history[-3:]:
+            ans = (turn.get("answer") or "").strip()
+            # Bỏ qua câu trả lời negative fallback để tránh LLM lặp lại nội dung cũ
+            if "không tìm thấy thông tin này trong tài liệu" in ans:
+                continue
             history_lines.append(f"Sinh viên: {turn.get('query', '')}")
-            history_lines.append(f"Trợ lý: {turn.get('answer', '')}")
-        history_text = "\n[LỊCH SỬ HỘI THOẠI TRƯỚC ĐÓ]\n" + "\n".join(history_lines) + "\n"
+            history_lines.append(f"Trợ lý: {ans}")
+        if history_lines:
+            history_text = "\n[LỊCH SỬ HỘI THOẠI TRƯỚC ĐÓ]\n" + "\n".join(history_lines) + "\n"
 
     user_prompt = f"""Dưới đây là các tài liệu quy chế được trích xuất liên quan đến câu hỏi của sinh viên:
 {history_text}
@@ -50,4 +55,3 @@ def build_prompt(
 Hãy trả lời câu hỏi trên dựa trên [NGỮ CẢNH HỌC VỤ], trích dẫn đúng ký hiệu [Nguồn N] cho từng ý:"""
 
     return user_prompt
-

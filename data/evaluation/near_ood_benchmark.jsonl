@@ -1,0 +1,20 @@
+{"q_id": "NEAR_OOD_001", "query": "Học phí Đại học Bách Khoa Hà Nội năm nay là bao nhiêu một tín chỉ?", "category": "near_ood", "expected_action": "refuse", "target_school": "Bách Khoa HN"}
+{"q_id": "NEAR_OOD_002", "query": "Điểm chuẩn ngành Công nghệ thông tin Đại học Kinh tế Quốc dân NEU lấy bao nhiêu điểm?", "category": "near_ood", "expected_action": "refuse", "target_school": "NEU"}
+{"q_id": "NEAR_OOD_003", "query": "Lộ trình học thạc sĩ tại Đại học Quốc gia Hà Nội có yêu cầu IELTS bao nhiêu?", "category": "near_ood", "expected_action": "refuse", "target_school": "VNU"}
+{"q_id": "NEAR_OOD_004", "query": "Điều kiện xin học bổng chính phủ Chevening đi Anh gồm những gì?", "category": "near_ood", "expected_action": "refuse", "target_school": "Chevening"}
+{"q_id": "NEAR_OOD_005", "query": "Quy chế thi lại và xét tốt nghiệp của Đại học Bách Khoa TP.HCM như thế nào?", "category": "near_ood", "expected_action": "refuse", "target_school": "Bách Khoa HCM"}
+{"q_id": "NEAR_OOD_006", "query": "Học bổng Fulbright tài trợ bao nhiêu phần trăm chi phí?", "category": "near_ood", "expected_action": "refuse", "target_school": "Fulbright"}
+{"q_id": "NEAR_OOD_007", "query": "Học viện Công nghệ Bưu chính Viễn thông PTIT có những chuyên ngành nào?", "category": "near_ood", "expected_action": "refuse", "target_school": "PTIT"}
+{"q_id": "NEAR_OOD_008", "query": "Thủ tục xin visa du học Nhật Bản sau khi tốt nghiệp đại học?", "category": "near_ood", "expected_action": "refuse", "target_school": "General"}
+{"q_id": "NEAR_OOD_009", "query": "Điểm sàn xét tuyển Đại học Ngoại thương FTU khối A00 là bao nhiêu?", "category": "near_ood", "expected_action": "refuse", "target_school": "FTU"}
+{"q_id": "NEAR_OOD_010", "query": "Học phí Đại học RMIT Việt Nam cho ngành Kinh doanh quốc tế?", "category": "near_ood", "expected_action": "refuse", "target_school": "RMIT"}
+{"q_id": "NEAR_OOD_011", "query": "Chương trình tiên tiến Đại học Khoa học Tự nhiên có môn tiên quyết gì?", "category": "near_ood", "expected_action": "refuse", "target_school": "KHTN"}
+{"q_id": "NEAR_OOD_012", "query": "Điều kiện nhận học bổng Erasmus Mundus của Liên minh Châu Âu?", "category": "near_ood", "expected_action": "refuse", "target_school": "Erasmus"}
+{"q_id": "NEAR_OOD_013", "query": "Ký túc xá Đại học Sư phạm Kỹ thuật TP.HCM giá bao nhiêu một tháng?", "category": "near_ood", "expected_action": "refuse", "target_school": "HCMUTE"}
+{"q_id": "NEAR_OOD_014", "query": "Chính sách miễn giảm học phí cho con thương binh liệt sĩ tại các trường công lập?", "category": "near_ood", "expected_action": "refuse", "target_school": "State Policy"}
+{"q_id": "NEAR_OOD_015", "query": "Đại học Cần Thơ có đào tạo ngành Trí tuệ nhân tạo không?", "category": "near_ood", "expected_action": "refuse", "target_school": "Can Tho Uni"}
+{"q_id": "NEAR_OOD_016", "query": "Học bổng MEXT của chính phủ Nhật Bản nộp hồ sơ qua đại sứ quán vào tháng mấy?", "category": "near_ood", "expected_action": "refuse", "target_school": "MEXT"}
+{"q_id": "NEAR_OOD_017", "query": "Đại học Sài Gòn có xét tuyển theo học bạ THPT không?", "category": "near_ood", "expected_action": "refuse", "target_school": "SGU"}
+{"q_id": "NEAR_OOD_018", "query": "Chương trình trao đổi sinh viên tại Đại học Tokyo yêu cầu JLPT N mấy?", "category": "near_ood", "expected_action": "refuse", "target_school": "Univ of Tokyo"}
+{"q_id": "NEAR_OOD_019", "query": "Quy chế bảo lưu kết quả học tập của Đại học Mở Hà Nội?", "category": "near_ood", "expected_action": "refuse", "target_school": "HOU"}
+{"q_id": "NEAR_OOD_020", "query": "Học phí trường Đại học Tôn Đức Thắng phân hệ chất lượng cao?", "category": "near_ood", "expected_action": "refuse", "target_school": "TDTU"}

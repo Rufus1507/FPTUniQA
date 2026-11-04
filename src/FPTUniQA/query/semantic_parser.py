@@ -58,7 +58,7 @@ Nhiệm vụ của bạn là đọc câu hỏi của sinh viên và trích xuấ
     "cohort": "string hoặc null (ví dụ: 2026, 2023, K18)",
     "campus": "string hoặc null (ví dụ: Cần Thơ, Hà Nội, TP. Hồ Chí Minh, Đà Nẵng, Quy Nhơn)",
     "course_code": "string hoặc null (ví dụ: PRF192, PRO192, CSD201, DBI202, SEP490)",
-    "course_aspect": "string hoặc null (ví dụ: syllabus, textbook, prerequisite, credits, assessment, semester, programs, general)",
+    "course_aspect": "string hoặc null (ví dụ: objective, textbook, prerequisite, credits, assessment)",
     "topic": "string hoặc null (ví dụ: canh_bao_hoc_vu, tot_nghiep, hoc_phi, hoc_bong, mon_hoc)",
     "target": "string hoặc null (ví dụ: dieu_kien, muc_phi, ty_le_vang, tien_quyet)"
   },
@@ -71,7 +71,7 @@ Quy tắc phân loại:
 3. "course_lookup": Các câu hỏi về mã môn học cụ thể (ví dụ PRF192, PRO192, CSD201, DBI202, SEP490, SWP391...).
    Quy ước cụ thể cho `course_aspect`:
    - "textbook": hỏi về giáo trình, sách học tập, tài liệu học tập, tác giả (ví dụ: "giáo trình môn PRO192 là sách nào?", "dùng sách gì", "ai viết").
-   - "syllabus": hỏi môn đó học những gì, nội dung học, kiến thức, các chủ đề đào tạo (ví dụ: "môn PRF192 học những gì?", "nội dung học môn DBI202").
+   - "objective": hỏi môn đó học những gì, nội dung học, kiến thức, các chủ đề đào tạo (ví dụ: "môn PRF192 học những gì?", "nội dung học môn DBI202").
    - "prerequisite": môn học tiên quyết.
    - "credits": số tín chỉ môn học.
    - "assessment": hình thức thi, đánh giá (PE, EOS, assignment, đồ án).
@@ -115,6 +115,8 @@ def _parse_with_llm(question: str) -> Optional[Dict[str, Any]]:
         "temperature": config.temperature_parser,
         "max_tokens": config.max_tokens_parser,
         "stream": False,
+        "response_format": {"type": "json_object"},
+        "keep_alive": -1,
     }
 
     try:
@@ -173,6 +175,18 @@ def _parse_with_llm(question: str) -> Optional[Dict[str, Any]]:
             if intent == QueryIntent.OOD.value:
                 slots = {}
             else:
+                # Chuẩn hóa & loại bỏ placeholder rò rỉ từ prompt (ví dụ: "ví dụ: CSD201", "string hoặc null")
+                cleaned_slots = {}
+                for sk, sv in slots.items():
+                    if sv is None:
+                        continue
+                    sv_str = str(sv).strip()
+                    if not sv_str or sv_str.lower() in ["none", "null", "string", "n/a", "string hoặc null"] or sv_str.startswith("ví dụ:"):
+                        continue
+                    if sk == "course_aspect" and sv_str.lower() in ["objective", "syllabus", "nội dung", "mục tiêu"]:
+                        sv_str = "objective"
+                    cleaned_slots[sk] = sv_str
+                slots = cleaned_slots
                 # Bổ sung trích xuất phân hiệu (campus) nếu LLM bỏ sót
                 if not slots.get("campus"):
                     matched_c = match_campus(question)
@@ -229,7 +243,7 @@ def _parse_with_regex(question: str, norm_res: Optional[Any] = None) -> Dict[str
 
     if c_code:
         if any(w in q_lower for w in ["học những gì", "học gì", "nội dung", "kiến thức", "chủ đề", "kỹ năng", "dạy những gì", "học cái gì", "học môn này được gì"]):
-            aspect = "syllabus"
+            aspect = "objective"
         elif any(w in q_lower for w in ["giáo trình", "sách", "tài liệu", "sách giáo trình", "tác giả", "ai viết", "nhà xuất bản"]):
             aspect = "textbook"
         elif any(w in q_lower for w in ["tiên quyết", "trước", "cần qua môn", "yêu cầu"]):
@@ -487,6 +501,13 @@ def parse_query(question: str, force_regex: bool = False) -> ParsedQuery:
                 parsed.intent = QueryIntent.POLICY_LOOKUP.value
 
         if parsed.intent != QueryIntent.OOD.value:
+            dict_course = norm_res.slots_hint.get("course_code")
+            if dict_course:
+                parsed.slots["course_code"] = dict_course
+                parsed.intent = QueryIntent.COURSE_LOOKUP.value
+                if norm_res.slots_hint.get("course_aspect"):
+                    parsed.slots["course_aspect"] = norm_res.slots_hint["course_aspect"]
+
             for k, v in norm_res.slots_hint.items():
                 if k not in parsed.slots or not parsed.slots[k]:
                     parsed.slots[k] = v
@@ -508,12 +529,12 @@ def parse_query(question: str, force_regex: bool = False) -> ParsedQuery:
             if any(w in q_norm for w in ["giáo trình", "sách", "tài liệu", "tác giả", "ai viết", "nhà xuất bản"]):
                 parsed.slots["course_aspect"] = "textbook"
             elif any(w in q_norm for w in ["học những gì", "học gì", "nội dung", "kiến thức", "chủ đề", "kỹ năng", "dạy những gì"]):
-                parsed.slots["course_aspect"] = "syllabus"
+                parsed.slots["course_aspect"] = "objective"
             elif aspect in ["topics", "content", "curriculum"]:
-                parsed.slots["course_aspect"] = "syllabus"
+                parsed.slots["course_aspect"] = "objective"
             elif aspect in ["materials", "book", "books"]:
                 parsed.slots["course_aspect"] = "textbook"
-            elif aspect not in ["syllabus", "textbook", "prerequisite", "credits", "assessment", "semester", "programs", "general"]:
+            elif aspect not in ["objective", "syllabus", "textbook", "prerequisite", "credits", "assessment", "semester", "programs", "general"]:
                 parsed.slots["course_aspect"] = "general"
 
     # Đo latency và điều phối router
@@ -529,3 +550,41 @@ def parse_query(question: str, force_regex: bool = False) -> ParsedQuery:
     )
 
     return parsed
+
+
+def try_rule_fast_parse(question: str) -> Optional[ParsedQuery]:
+    """Bỏ qua LLM Parser đối với các câu hỏi rule-based có độ tin cậy cao để giảm p95 latency."""
+    norm_res = None
+    try:
+        norm_res = normalizer.normalize(question)
+    except Exception:
+        pass
+
+    regex_dict = _parse_with_regex(question, norm_res=norm_res)
+    conf = regex_dict.get("confidence", 0.0)
+    intent = regex_dict.get("intent", "")
+    slots = regex_dict.get("slots", {}) or {}
+
+    # 1. Câu hỏi OOD rõ ràng
+    is_ood = (intent == QueryIntent.OOD.value) or any(kw in question.lower() for kw in OOD_KEYWORDS)
+    # 2. Câu hỏi course đã xác thực mã môn trong CKB
+    has_valid_course = bool(slots.get("course_code")) and (slots.get("course_code") in _get_known_course_codes())
+    # 3. Câu hỏi structured tuition đủ program và (cohort hoặc campus)
+    is_structured_tuition = (
+        intent in [QueryIntent.TUITION_LOOKUP.value, QueryIntent.POLICY_LOOKUP.value]
+        and bool(slots.get("program"))
+        and (bool(slots.get("cohort")) or bool(slots.get("campus")))
+    )
+
+    if (is_ood and conf >= 0.85) or (has_valid_course and conf >= 0.85) or (is_structured_tuition and conf >= 0.85):
+        parsed = ParsedQuery(
+            intent=intent,
+            slots=slots,
+            confidence=conf,
+            raw_query=question,
+            parser_method="rule_fast_path",
+            fallback_used=False,
+        )
+        return parsed
+
+    return None

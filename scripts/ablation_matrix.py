@@ -29,7 +29,10 @@ ALL_CONFIGS = [
     "c1_bm25",
     "c2_dense",
     "c3_hybrid",
+    "c3_hybrid_sequential",
+    "c3p_hybrid_parallel",
     "c4_hybrid_rrf_filter",
+    "c4_hybrid_rrf_soft",
     "c5_full_noparser",
     "c6_full",
 ]
@@ -85,8 +88,8 @@ def create_pipeline(cfg_name: str, shared_hybrid: HybridRetriever, shared_llm: L
             parser_mode="regex",
             disable_cache=True,
         )
-    elif cfg_name == "c3_hybrid":
-        r = AblationRetriever(shared_hybrid, default_mode="hybrid", auto_load=False)
+    elif cfg_name in ("c3_hybrid", "c3_hybrid_sequential"):
+        r = AblationRetriever(shared_hybrid, default_mode="c3_hybrid_sequential", auto_load=False)
         return RAGPipeline(
             llm_client=shared_llm,
             retriever=r,
@@ -95,8 +98,28 @@ def create_pipeline(cfg_name: str, shared_hybrid: HybridRetriever, shared_llm: L
             parser_mode="regex",
             disable_cache=True,
         )
-    elif cfg_name == "c4_hybrid_rrf_filter":
-        r = AblationRetriever(shared_hybrid, default_mode="hybrid_filter", auto_load=False)
+    elif cfg_name in ("c3p_hybrid", "c3p_hybrid_parallel"):
+        r = AblationRetriever(shared_hybrid, default_mode="c3p_hybrid_parallel", auto_load=False)
+        return RAGPipeline(
+            llm_client=shared_llm,
+            retriever=r,
+            router_enabled=False,
+            use_reranker=False,
+            parser_mode="regex",
+            disable_cache=True,
+        )
+    elif cfg_name in ("c4_hybrid_rrf_filter", "c4_hard"):
+        r = AblationRetriever(shared_hybrid, default_mode="c4_hybrid_rrf_filter", auto_load=False)
+        return RAGPipeline(
+            llm_client=shared_llm,
+            retriever=r,
+            router_enabled=False,
+            use_reranker=False,
+            parser_mode="regex",
+            disable_cache=True,
+        )
+    elif cfg_name in ("c4_hybrid_rrf_soft", "c4_soft"):
+        r = AblationRetriever(shared_hybrid, default_mode="c4_hybrid_rrf_soft", auto_load=False)
         return RAGPipeline(
             llm_client=shared_llm,
             retriever=r,
@@ -180,6 +203,13 @@ def run_configuration(
                 parsed = res.get("parsed_query", {})
                 route = res.get("route", "")
                 success = bool(ans and len(ans.strip()) > 0)
+                citations = [c.get("doc_id") for c in res.get("citations", [])]
+                possible_hallucination = res.get("possible_hallucination", False)
+                ungrounded_numbers = res.get("ungrounded_numbers", [])
+                if route in ["structured_lookup", "ood", "clarification"]:
+                    retrieved_context = ""
+                else:
+                    retrieved_context = " ".join(str(c.get("text", "")) for c in res.get("retrieved_chunks", [])).strip()[:2000]
             except Exception as e:
                 logger.error(f"[{cfg_name}] Lỗi tại {q_id}: {e}")
                 lat_ms = (time.time() - t0) * 1000.0
@@ -189,6 +219,10 @@ def run_configuration(
                 parsed = {}
                 route = "error"
                 success = False
+                citations = []
+                possible_hallucination = False
+                ungrounded_numbers = []
+                retrieved_context = ""
 
             record = {
                 "q_id": q_id,
@@ -202,6 +236,10 @@ def run_configuration(
                 "route": route,
                 "answer": ans,
                 "top5_doc_ids": top5_docs,
+                "citations": citations,
+                "possible_hallucination": possible_hallucination,
+                "ungrounded_numbers": ungrounded_numbers,
+                "retrieved_context": retrieved_context,
                 "parsed_query": parsed,
                 "fallback_used": parsed.get("fallback_used", False),
                 "latency_ms": round(lat_ms, 2),
@@ -226,7 +264,8 @@ def run_configuration(
 
 def main():
     parser = argparse.ArgumentParser(description="Ablation Matrix Runner for FPTUniQA")
-    parser.add_argument("--configs", type=str, default="", help="Comma-separated configs (e.g. c1_bm25,c6_full)")
+    parser.add_argument("--configs", "--config", type=str, default="", help="Comma-separated configs (e.g. c1_bm25,c6_full)")
+    parser.add_argument("--output-dir", "--output_dir", type=str, default="experiments/ablation", help="Output directory")
     parser.add_argument("--limit", type=int, default=0, help="Limit number of questions to evaluate (0 for all 500)")
     parser.add_argument("--resume", action="store_true", default=True, help="Resume previously processed questions")
     parser.add_argument("--no-resume", dest="resume", action="store_false")
@@ -238,7 +277,7 @@ def main():
         print(f"Lỗi: Các cấu hình không hợp lệ: {invalid}. Chọn trong {ALL_CONFIGS}")
         sys.exit(1)
 
-    output_dir = "experiments/ablation"
+    output_dir = args.output_dir
     os.makedirs(output_dir, exist_ok=True)
 
     print(f"Đang nạp bộ câu hỏi Benchmark v2 (limit={args.limit})...")

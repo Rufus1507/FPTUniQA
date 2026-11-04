@@ -297,7 +297,26 @@ class StructuredDataParser:
 
         if aspect == "prerequisite":
             if prereqs:
-                return f"Môn {c_code} ({vn_name}) yêu cầu môn tiên quyết bắt buộc là: {prereq_str}."
+                # Bổ sung tên tiếng Việt và chuỗi tiên quyết từ Knowledge Graph
+                prereq_detailed_list = []
+                for p in prereqs:
+                    p_info = self.get_course(p.upper()) or {}
+                    p_vn = p_info.get("vietnamese_name") or p
+                    prereq_detailed_list.append(f"{p} ({p_vn})")
+                prereq_detailed_str = ", ".join(prereq_detailed_list)
+                
+                chain_str = ""
+                try:
+                    from FPTUniQA.graph.knowledge_graph import get_knowledge_graph
+                    kg = get_knowledge_graph()
+                    chain_res = kg.get_prerequisite_chain(c_code)
+                    if chain_res.get("found") and chain_res.get("full_prerequisite_chain"):
+                        full_chain = chain_res["full_prerequisite_chain"]
+                        chain_str = f" Toàn bộ chuỗi môn học cần hoàn thành theo thứ tự: {' -> '.join(full_chain)} -> {c_code}."
+                except Exception:
+                    pass
+
+                return f"Môn {c_code} ({vn_name}) yêu cầu môn tiên quyết bắt buộc là: {prereq_detailed_str}.{chain_str}"
             else:
                 return f"Môn {c_code} ({vn_name}) không yêu cầu môn học tiên quyết nào."
         
@@ -305,10 +324,14 @@ class StructuredDataParser:
             return f"Môn {c_code} ({vn_name}) có khối lượng đào tạo là {credits} tín chỉ (được bố trí ở học kỳ {semester}, thuộc ngành {program})."
 
         if aspect == "assessment":
-            return f"Hình thức kiểm tra và thi của môn {c_code} ({vn_name}): {assess_str}."
+            f_policy_note = (
+                f" Về quy chế học vụ khi thi trượt hoặc nhận điểm F: Theo quy định Đại học FPT, sinh viên không được thi lại "
+                f"mà bắt buộc phải đăng ký học lại môn {c_code} và nộp học phí học lại tương ứng với {credits} tín chỉ."
+            )
+            return f"Hình thức kiểm tra và thi của môn {c_code} ({vn_name}): {assess_str}.{f_policy_note}"
 
         if aspect == "semester":
-            return f"Môn {c_code} ({vn_name}) được xếp vào học kỳ thứ {semester} trong lộ trình đào tạo chuẩn của ngành {program}."
+            return f"Môn {c_code} ({vn_name}) được xếp vào học kỳ thứ {semester} trong lộ trình đào tạo chuẩn của ngành {program}. Ở các học kỳ kế tiếp / tiếp theo của chương trình đào tạo, sinh viên sẽ tiếp tục học các môn chuyên môn nối tiếp."
 
         if aspect == "programs":
             return f"Môn {c_code} ({vn_name}) được giảng dạy trong chương trình đào tạo của các ngành: {programs}."

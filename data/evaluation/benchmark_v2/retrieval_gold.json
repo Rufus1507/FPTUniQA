@@ -1,409 +1,1166 @@
 {
-  "V2_B02_004": [
-    "doc_fpt_k20_0127",
-    "doc_fpt_k21_0448"
-  ],
-  "V2_B02_005": [
-    "doc_fpt_k22_0305",
-    "doc_fpt_k21_0397"
-  ],
-  "V2_B02_007": [
-    "doc_fpt_k21_0460",
-    "doc_fpt_k20_0049"
-  ],
-  "V2_B02_009": [
-    "doc_fpt_k17_0584",
-    "doc_fpt_k20_0048"
-  ],
-  "V2_B02_013": [
-    "doc_fpt_k20_0265",
-    "doc_fpt_k20_0269"
-  ],
-  "V2_B02_015": [
-    "doc_fpt_k17_0623",
-    "doc_fpt_k21_0443"
-  ],
-  "V2_B02_020": [
-    "doc_fpt_k17_0622",
-    "doc_fpt_k21_0441"
-  ],
-  "V2_B02_024": [
-    "doc_fpt_k18_0726",
-    "doc_fpt_k17_0595"
-  ],
-  "V2_B02_029": [
-    "doc_fpt_k21_0405"
-  ],
-  "V2_B02_032": [
-    "doc_fpt_k22_0300"
-  ],
-  "V2_B02_035": [
-    "doc_fpt_k17_0597",
-    "doc_fpt_k22_0306"
-  ],
-  "V2_B02_038": [
-    "doc_fpt_k21_0460",
-    "doc_fpt_k20_0150"
-  ],
-  "V2_B02_042": [
-    "doc_fpt_k18_0803",
-    "doc_fpt_k18_0761"
-  ],
-  "V2_B02_045": [
-    "doc_fpt_k21_0448",
-    "doc_fpt_k18_0755"
-  ],
-  "V2_B02_048": [
-    "doc_fpt_k21_0400",
-    "doc_fpt_k18_0711"
-  ],
-  "V2_B05_001": [
-    "doc_fpt_k17_0605",
-    "doc_fpt_k20_0051"
-  ],
-  "V2_B05_002": [
-    "doc_fpt_k17_0605",
-    "doc_fpt_k18_0751"
-  ],
-  "V2_B05_003": [
-    "doc_fpt_k19_0550",
-    "doc_fpt_k20_0152"
-  ],
-  "V2_B05_004": [
-    "doc_fpt_k19_0550",
-    "doc_fpt_k20_0152"
-  ],
-  "V2_B05_007": [
-    "doc_fpt_k18_0755",
-    "doc_fpt_k20_0127"
-  ],
-  "V2_B05_008": [
-    "doc_fpt_k18_0755",
-    "doc_fpt_k20_0127"
-  ],
-  "V2_B05_009": [
-    "doc_fpt_k18_0736",
-    "doc_fpt_k20_0092"
-  ],
-  "V2_B05_010": [
-    "doc_fpt_k17_0587",
-    "doc_fpt_k18_0736"
-  ],
-  "V2_B05_011": [
-    "doc_fpt_k17_0605",
-    "doc_fpt_k22_0303"
-  ],
-  "V2_B05_012": [
-    "doc_fpt_k17_0605",
-    "doc_fpt_k17_0624"
-  ],
-  "V2_B05_013": [
-    "doc_fpt_k17_0584",
-    "doc_fpt_k18_0711"
-  ],
-  "V2_B05_014": [
-    "doc_fpt_k17_0584",
-    "doc_fpt_k17_0585"
-  ],
-  "V2_B05_015": [
-    "doc_fpt_k18_0714",
-    "doc_fpt_k20_0048"
-  ],
-  "V2_B05_016": [
-    "doc_fpt_k18_0714",
-    "doc_fpt_k21_0403"
-  ],
-  "V2_B05_017": [
-    "doc_fpt_k21_0452",
-    "doc_fpt_k19_0539"
-  ],
-  "V2_B05_018": [
-    "doc_fpt_k21_0452",
-    "doc_fpt_k19_0539"
-  ],
-  "V2_B05_019": [
-    "doc_fpt_k17_0587",
-    "doc_fpt_k21_0405"
-  ],
-  "V2_B05_020": [
-    "doc_fpt_k17_0587",
-    "doc_fpt_k21_0405"
-  ],
-  "V2_B05_021": [
-    "doc_fpt_k18_0721",
-    "doc_fpt_k21_0410"
-  ],
-  "V2_B05_022": [
-    "doc_fpt_k18_0721",
-    "doc_fpt_k21_0410"
-  ],
-  "V2_B05_023": [
-    "doc_fpt_k22_0313",
-    "doc_fpt_k21_0462"
-  ],
-  "V2_B05_024": [
-    "doc_fpt_k17_0581",
-    "doc_fpt_k21_0462"
-  ],
-  "V2_B05_025": [
-    "doc_fpt_k21_0401",
-    "doc_fpt_k20_0125"
-  ],
-  "V2_B05_026": [
-    "doc_fpt_k22_0312",
-    "doc_fpt_k17_0587"
-  ],
-  "V2_B05_029": [
-    "doc_fpt_k18_0715",
-    "doc_fpt_k17_0650"
-  ],
-  "V2_B05_030": [
-    "doc_fpt_k18_0715",
-    "doc_fpt_k20_0049"
-  ],
-  "V2_B05_031": [
-    "doc_fpt_k21_0397",
-    "doc_fpt_k17_0580"
-  ],
-  "V2_B05_032": [
-    "doc_fpt_k21_0397",
-    "doc_fpt_k17_0580"
-  ],
-  "V2_B05_033": [
-    "doc_fpt_k21_0456",
-    "doc_fpt_k20_0176"
-  ],
-  "V2_B05_034": [
-    "doc_fpt_k17_0578",
-    "doc_fpt_k20_0052"
-  ],
-  "V2_B05_035": [
-    "doc_fpt_k21_0406",
-    "doc_fpt_k21_0445"
-  ],
-  "V2_B05_036": [
-    "doc_fpt_k17_0587",
-    "doc_fpt_k21_0445"
-  ],
-  "V2_B05_039": [
-    "doc_fpt_k21_0400",
-    "doc_fpt_k17_0582"
-  ],
-  "V2_B05_040": [
-    "doc_fpt_k21_0400",
-    "doc_fpt_k18_0711"
-  ],
-  "V2_B05_041": [
-    "doc_fpt_k20_0150",
-    "doc_fpt_k20_0147"
-  ],
-  "V2_B05_042": [
-    "doc_fpt_k20_0150",
-    "doc_fpt_k20_0147"
-  ],
-  "V2_B05_043": [
-    "doc_fpt_k20_0062",
-    "doc_fpt_k20_0060"
-  ],
-  "V2_B05_044": [
-    "doc_fpt_k17_0589",
-    "doc_fpt_k17_0591"
-  ],
-  "V2_B05_045": [
-    "doc_fpt_k17_0590",
-    "doc_fpt_k21_0447"
-  ],
-  "V2_B05_046": [
-    "doc_fpt_k21_0441",
-    "doc_fpt_k21_0447"
-  ],
-  "V2_B05_047": [
-    "doc_fpt_k21_0394",
-    "doc_fpt_k17_0578"
-  ],
-  "V2_B05_048": [
-    "doc_fpt_k21_0394",
-    "doc_fpt_k17_0578"
-  ],
-  "V2_B05_049": [
-    "doc_fpt_k19_0557",
-    "doc_fpt_k18_0804"
-  ],
-  "V2_B05_050": [
-    "doc_fpt_k18_0804",
-    "doc_fpt_k19_0557"
-  ],
-  "V2_B07_001": [
-    "doc_fpt_k22_0346",
-    "doc_fpt_k22_0305"
-  ],
-  "V2_B07_002": [
-    "doc_fpt_k20_0033",
-    "doc_fpt_k21_0405"
-  ],
-  "V2_B07_005": [
-    "doc_fpt_k21_0488"
-  ],
-  "V2_B07_006": [
-    "doc_fpt_k21_0488"
-  ],
-  "V2_B07_007": [
-    "doc_fpt_k17_0650",
-    "doc_fpt_k18_0781"
-  ],
-  "V2_B07_008": [
-    "doc_fpt_k20_0035",
-    "doc_fpt_k17_0650"
-  ],
-  "V2_B07_009": [
-    "doc_fpt_k22_0305",
-    "doc_fpt_k20_0201"
-  ],
-  "V2_B07_010": [
-    "doc_fpt_k22_0305",
-    "doc_fpt_k22_0306"
-  ],
-  "V2_B07_011": [
-    "doc_fpt_k21_0488",
-    "doc_fpt_k18_0782"
-  ],
-  "V2_B07_012": [
-    "doc_fpt_k21_0488",
-    "doc_fpt_k18_0782"
-  ],
-  "V2_B07_015": [
-    "doc_fpt_k21_0405",
-    "doc_fpt_k22_0305"
-  ],
-  "V2_B07_016": [
-    "doc_fpt_k21_0418",
-    "doc_fpt_k21_0405"
-  ],
-  "V2_B07_019": [
-    "doc_fpt_k20_0166",
-    "doc_fpt_k20_0169"
-  ],
-  "V2_B07_020": [
-    "doc_fpt_k20_0166",
-    "doc_fpt_k20_0169"
-  ],
-  "V2_B07_021": [
-    "doc_fpt_k20_0033",
-    "doc_fpt_k18_0729"
-  ],
-  "V2_B07_022": [
-    "doc_fpt_k20_0033",
-    "doc_fpt_k18_0729"
-  ],
-  "V2_B07_023": [
-    "doc_fpt_k21_0418",
-    "doc_fpt_k18_0729"
-  ],
-  "V2_B07_024": [
-    "doc_fpt_k18_0729",
-    "doc_fpt_k21_0418"
-  ],
-  "V2_B07_025": [
-    "doc_fpt_k18_0727",
-    "doc_fpt_k17_0596"
-  ],
-  "V2_B07_026": [
-    "doc_fpt_k18_0727",
-    "doc_fpt_k17_0596"
-  ],
-  "V2_B07_027": [
-    "doc_fpt_k21_0416",
-    "doc_fpt_k20_0071"
-  ],
-  "V2_B07_028": [
-    "doc_fpt_k20_0071",
-    "doc_fpt_k18_0727"
-  ],
-  "V2_B07_029": [
-    "doc_fpt_k21_0485",
-    "doc_fpt_k20_0193"
-  ],
-  "V2_B07_030": [
-    "doc_fpt_k21_0485",
-    "doc_fpt_k21_0405"
-  ],
-  "V2_B07_031": [
-    "doc_fpt_k22_0323",
-    "doc_fpt_k20_0204"
-  ],
-  "V2_B07_032": [
-    "doc_fpt_k21_0405",
-    "doc_fpt_k20_0052"
-  ],
-  "V2_B07_033": [
-    "doc_fpt_k21_0405",
-    "doc_fpt_k17_0587"
-  ],
-  "V2_B07_034": [
-    "doc_fpt_k21_0418",
-    "doc_fpt_k21_0405"
-  ],
-  "V2_B07_035": [
-    "doc_fpt_k17_0597",
-    "doc_fpt_k22_0306"
-  ],
-  "V2_B07_036": [
-    "doc_fpt_k17_0597",
-    "doc_fpt_k21_0416"
-  ],
-  "V2_B07_037": [
-    "doc_fpt_k22_0305",
-    "doc_fpt_k17_0587"
-  ],
-  "V2_B07_038": [
-    "doc_fpt_k21_0405",
-    "doc_fpt_k17_0587"
-  ],
-  "V2_B07_039": [
-    "doc_fpt_k21_0418",
-    "doc_fpt_k21_0419"
-  ],
-  "V2_B07_040": [
-    "doc_fpt_k21_0418",
-    "doc_fpt_k18_0729"
-  ],
-  "V2_B07_041": [
-    "doc_fpt_k22_0296",
-    "doc_fpt_k18_0715"
-  ],
-  "V2_B07_042": [
-    "doc_fpt_k20_0073",
-    "doc_fpt_k18_0727"
-  ],
-  "V2_B07_043": [
-    "doc_fpt_k17_0597",
-    "doc_fpt_k21_0418"
-  ],
-  "V2_B07_044": [
-    "doc_fpt_k21_0418",
-    "doc_fpt_k18_0729"
-  ],
-  "V2_B07_045": [
-    "doc_fpt_k21_0418",
-    "doc_fpt_k17_0597"
-  ],
-  "V2_B07_046": [
-    "doc_fpt_k21_0418",
-    "doc_fpt_k18_0729"
-  ],
-  "V2_B07_047": [
-    "doc_fpt_k21_0415",
-    "doc_fpt_k21_0404"
-  ],
-  "V2_B07_048": [
-    "doc_fpt_k21_0404"
-  ],
-  "V2_B07_049": [
-    "doc_fpt_k17_0634",
-    "doc_fpt_k22_0315"
-  ],
-  "V2_B07_050": [
-    "doc_fpt_k17_0598",
-    "doc_fpt_k18_0730"
-  ]
+  "V2_B02_004": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0127",
+      "doc_fpt_k21_0448"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20",
+      "K21"
+    ]
+  },
+  "V2_B02_005": {
+    "relevant_doc_ids": [
+      "doc_fpt_k22_0305",
+      "doc_fpt_k21_0397"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21",
+      "K22"
+    ]
+  },
+  "V2_B02_007": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0460",
+      "doc_fpt_k20_0049"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20",
+      "K21"
+    ]
+  },
+  "V2_B02_009": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0584",
+      "doc_fpt_k20_0048"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K20"
+    ]
+  },
+  "V2_B02_013": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0265",
+      "doc_fpt_k20_0269"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20"
+    ]
+  },
+  "V2_B02_015": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0623",
+      "doc_fpt_k21_0443"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B02_020": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0622",
+      "doc_fpt_k21_0441"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B02_024": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0726",
+      "doc_fpt_k17_0595"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K18"
+    ]
+  },
+  "V2_B02_029": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0405"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21"
+    ]
+  },
+  "V2_B02_032": {
+    "relevant_doc_ids": [
+      "doc_fpt_k22_0300"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K22"
+    ]
+  },
+  "V2_B02_035": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0597",
+      "doc_fpt_k22_0306"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K22"
+    ]
+  },
+  "V2_B02_038": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0460",
+      "doc_fpt_k20_0150"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20",
+      "K21"
+    ]
+  },
+  "V2_B02_042": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0803",
+      "doc_fpt_k18_0761"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18"
+    ]
+  },
+  "V2_B02_045": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0448",
+      "doc_fpt_k18_0755"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B02_048": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0400",
+      "doc_fpt_k18_0711"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B05_001": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0605",
+      "doc_fpt_k20_0051"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K20"
+    ]
+  },
+  "V2_B05_002": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0605",
+      "doc_fpt_k18_0751"
+    ],
+    "equiv_group": [
+      [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0751",
+        "doc_fpt_k20_0051",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k22_0299",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717"
+      ]
+    ],
+    "expected_cohorts": [
+      "K17",
+      "K18",
+      "K20",
+      "K21",
+      "K22"
+    ]
+  },
+  "V2_B05_003": {
+    "relevant_doc_ids": [
+      "doc_fpt_k19_0550",
+      "doc_fpt_k20_0152"
+    ],
+    "equiv_group": [
+      [
+        "doc_fpt_k19_0550",
+        "doc_fpt_k20_0152",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400"
+      ]
+    ],
+    "expected_cohorts": [
+      "K17",
+      "K18",
+      "K19",
+      "K20",
+      "K21"
+    ]
+  },
+  "V2_B05_004": {
+    "relevant_doc_ids": [
+      "doc_fpt_k19_0550",
+      "doc_fpt_k20_0152"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K19",
+      "K20"
+    ]
+  },
+  "V2_B05_007": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0755",
+      "doc_fpt_k20_0127"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K20"
+    ]
+  },
+  "V2_B05_008": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0755",
+      "doc_fpt_k20_0127"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K20"
+    ]
+  },
+  "V2_B05_009": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0736",
+      "doc_fpt_k20_0092"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K20"
+    ]
+  },
+  "V2_B05_010": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0587",
+      "doc_fpt_k18_0736"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K18"
+    ]
+  },
+  "V2_B05_011": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0605",
+      "doc_fpt_k22_0303"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K22"
+    ]
+  },
+  "V2_B05_012": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0605",
+      "doc_fpt_k17_0624"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17"
+    ]
+  },
+  "V2_B05_013": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0584",
+      "doc_fpt_k18_0711"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K18"
+    ]
+  },
+  "V2_B05_014": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0584",
+      "doc_fpt_k17_0585"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17"
+    ]
+  },
+  "V2_B05_015": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0714",
+      "doc_fpt_k20_0048"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K20"
+    ]
+  },
+  "V2_B05_016": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0714",
+      "doc_fpt_k21_0403"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B05_017": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0452",
+      "doc_fpt_k19_0539"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K19",
+      "K21"
+    ]
+  },
+  "V2_B05_018": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0452",
+      "doc_fpt_k19_0539"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K19",
+      "K21"
+    ]
+  },
+  "V2_B05_019": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0587",
+      "doc_fpt_k21_0405"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B05_020": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0587",
+      "doc_fpt_k21_0405"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B05_021": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0721",
+      "doc_fpt_k21_0410"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B05_022": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0721",
+      "doc_fpt_k21_0410"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B05_023": {
+    "relevant_doc_ids": [
+      "doc_fpt_k22_0313",
+      "doc_fpt_k21_0462"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21",
+      "K22"
+    ]
+  },
+  "V2_B05_024": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0581",
+      "doc_fpt_k21_0462"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B05_025": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0401",
+      "doc_fpt_k20_0125"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20",
+      "K21"
+    ]
+  },
+  "V2_B05_026": {
+    "relevant_doc_ids": [
+      "doc_fpt_k22_0312",
+      "doc_fpt_k17_0587"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K22"
+    ]
+  },
+  "V2_B05_029": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0715",
+      "doc_fpt_k17_0650"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K18"
+    ]
+  },
+  "V2_B05_030": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0715",
+      "doc_fpt_k20_0049"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K20"
+    ]
+  },
+  "V2_B05_031": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0397",
+      "doc_fpt_k17_0580"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B05_032": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0397",
+      "doc_fpt_k17_0580"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B05_033": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0456",
+      "doc_fpt_k20_0176"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20",
+      "K21"
+    ]
+  },
+  "V2_B05_034": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0578",
+      "doc_fpt_k20_0052"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K20"
+    ]
+  },
+  "V2_B05_035": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0406",
+      "doc_fpt_k21_0445"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21"
+    ]
+  },
+  "V2_B05_036": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0587",
+      "doc_fpt_k21_0445"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B05_039": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0400",
+      "doc_fpt_k17_0582"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B05_040": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0400",
+      "doc_fpt_k18_0711"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B05_041": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0150",
+      "doc_fpt_k20_0147"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20"
+    ]
+  },
+  "V2_B05_042": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0150",
+      "doc_fpt_k20_0147"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20"
+    ]
+  },
+  "V2_B05_043": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0062",
+      "doc_fpt_k20_0060"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20"
+    ]
+  },
+  "V2_B05_044": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0589",
+      "doc_fpt_k17_0591"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17"
+    ]
+  },
+  "V2_B05_045": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0590",
+      "doc_fpt_k21_0447"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B05_046": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0441",
+      "doc_fpt_k21_0447"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21"
+    ]
+  },
+  "V2_B05_047": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0394",
+      "doc_fpt_k17_0578"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B05_048": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0394",
+      "doc_fpt_k17_0578"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B05_049": {
+    "relevant_doc_ids": [
+      "doc_fpt_k19_0557",
+      "doc_fpt_k18_0804"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K19"
+    ]
+  },
+  "V2_B05_050": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0804",
+      "doc_fpt_k19_0557"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K19"
+    ]
+  },
+  "V2_B07_001": {
+    "relevant_doc_ids": [
+      "doc_fpt_k22_0346",
+      "doc_fpt_k22_0305"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K22"
+    ]
+  },
+  "V2_B07_002": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0033",
+      "doc_fpt_k21_0405"
+    ],
+    "equiv_group": [
+      [
+        "doc_fpt_k20_0033",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k20_0077"
+      ]
+    ],
+    "expected_cohorts": [
+      "K18",
+      "K20",
+      "K21"
+    ]
+  },
+  "V2_B07_005": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0488"
+    ],
+    "equiv_group": [
+      [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k20_0207",
+        "doc_fpt_k22_0366",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k21_0391"
+      ]
+    ],
+    "expected_cohorts": [
+      "K17",
+      "K20",
+      "K21",
+      "K22"
+    ]
+  },
+  "V2_B07_006": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0488"
+    ],
+    "equiv_group": [
+      [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k20_0207",
+        "doc_fpt_k22_0366",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k18_0729"
+      ]
+    ],
+    "expected_cohorts": [
+      "K17",
+      "K18",
+      "K20",
+      "K21",
+      "K22"
+    ]
+  },
+  "V2_B07_007": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0650",
+      "doc_fpt_k18_0781"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K18"
+    ]
+  },
+  "V2_B07_008": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0035",
+      "doc_fpt_k17_0650"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K20"
+    ]
+  },
+  "V2_B07_009": {
+    "relevant_doc_ids": [
+      "doc_fpt_k22_0305",
+      "doc_fpt_k20_0201"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20",
+      "K22"
+    ]
+  },
+  "V2_B07_010": {
+    "relevant_doc_ids": [
+      "doc_fpt_k22_0305",
+      "doc_fpt_k22_0306"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K22"
+    ]
+  },
+  "V2_B07_011": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0488",
+      "doc_fpt_k18_0782"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B07_012": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0488",
+      "doc_fpt_k18_0782"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B07_015": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0405",
+      "doc_fpt_k22_0305"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21",
+      "K22"
+    ]
+  },
+  "V2_B07_016": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0418",
+      "doc_fpt_k21_0405"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21"
+    ]
+  },
+  "V2_B07_019": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0166",
+      "doc_fpt_k20_0169"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20"
+    ]
+  },
+  "V2_B07_020": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0166",
+      "doc_fpt_k20_0169"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20"
+    ]
+  },
+  "V2_B07_021": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0033",
+      "doc_fpt_k18_0729"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K20"
+    ]
+  },
+  "V2_B07_022": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0033",
+      "doc_fpt_k18_0729"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K20"
+    ]
+  },
+  "V2_B07_023": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0418",
+      "doc_fpt_k18_0729"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B07_024": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0729",
+      "doc_fpt_k21_0418"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B07_025": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0727",
+      "doc_fpt_k17_0596"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K18"
+    ]
+  },
+  "V2_B07_026": {
+    "relevant_doc_ids": [
+      "doc_fpt_k18_0727",
+      "doc_fpt_k17_0596"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K18"
+    ]
+  },
+  "V2_B07_027": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0416",
+      "doc_fpt_k20_0071"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20",
+      "K21"
+    ]
+  },
+  "V2_B07_028": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0071",
+      "doc_fpt_k18_0727"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K20"
+    ]
+  },
+  "V2_B07_029": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0485",
+      "doc_fpt_k20_0193"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20",
+      "K21"
+    ]
+  },
+  "V2_B07_030": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0485",
+      "doc_fpt_k21_0405"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21"
+    ]
+  },
+  "V2_B07_031": {
+    "relevant_doc_ids": [
+      "doc_fpt_k22_0323",
+      "doc_fpt_k20_0204"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20",
+      "K22"
+    ]
+  },
+  "V2_B07_032": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0405",
+      "doc_fpt_k20_0052"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K20",
+      "K21"
+    ]
+  },
+  "V2_B07_033": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0405",
+      "doc_fpt_k17_0587"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B07_034": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0418",
+      "doc_fpt_k21_0405"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21"
+    ]
+  },
+  "V2_B07_035": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0597",
+      "doc_fpt_k22_0306"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K22"
+    ]
+  },
+  "V2_B07_036": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0597",
+      "doc_fpt_k21_0416"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B07_037": {
+    "relevant_doc_ids": [
+      "doc_fpt_k22_0305",
+      "doc_fpt_k17_0587"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K22"
+    ]
+  },
+  "V2_B07_038": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0405",
+      "doc_fpt_k17_0587"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B07_039": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0418",
+      "doc_fpt_k21_0419"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21"
+    ]
+  },
+  "V2_B07_040": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0418",
+      "doc_fpt_k18_0729"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B07_041": {
+    "relevant_doc_ids": [
+      "doc_fpt_k22_0296",
+      "doc_fpt_k18_0715"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K22"
+    ]
+  },
+  "V2_B07_042": {
+    "relevant_doc_ids": [
+      "doc_fpt_k20_0073",
+      "doc_fpt_k18_0727"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K20"
+    ]
+  },
+  "V2_B07_043": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0597",
+      "doc_fpt_k21_0418"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B07_044": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0418",
+      "doc_fpt_k18_0729"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B07_045": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0418",
+      "doc_fpt_k17_0597"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K21"
+    ]
+  },
+  "V2_B07_046": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0418",
+      "doc_fpt_k18_0729"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K18",
+      "K21"
+    ]
+  },
+  "V2_B07_047": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0415",
+      "doc_fpt_k21_0404"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21"
+    ]
+  },
+  "V2_B07_048": {
+    "relevant_doc_ids": [
+      "doc_fpt_k21_0404"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K21"
+    ]
+  },
+  "V2_B07_049": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0634",
+      "doc_fpt_k22_0315"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K22"
+    ]
+  },
+  "V2_B07_050": {
+    "relevant_doc_ids": [
+      "doc_fpt_k17_0598",
+      "doc_fpt_k18_0730"
+    ],
+    "equiv_group": [],
+    "expected_cohorts": [
+      "K17",
+      "K18"
+    ]
+  }
 }

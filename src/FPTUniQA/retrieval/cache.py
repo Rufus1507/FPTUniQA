@@ -49,6 +49,8 @@ class RetrievalCache:
         metadata_filter: Optional[Dict[str, Any]] = None,
         rerank: bool = True,
         score_threshold: Optional[float] = None,
+        metadata_mode: Optional[str] = None,
+        **kwargs: Any,
     ) -> str:
         """Tạo khóa băm duy nhất cho tham số truy vấn."""
         data = {
@@ -58,7 +60,10 @@ class RetrievalCache:
             "metadata_filter": metadata_filter,
             "rerank": rerank,
             "score_threshold": score_threshold,
+            "metadata_mode": metadata_mode,
         }
+        if kwargs:
+            data.update(kwargs)
         serialized = json.dumps(data, sort_keys=True, ensure_ascii=False)
         return hashlib.sha256(serialized.encode("utf-8")).hexdigest()
 

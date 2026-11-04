@@ -1,5 +1,6 @@
 """Lớp giao tiếp với mô hình ngôn ngữ lớn (LLM Client) hỗ trợ OpenAI-compatible API và Anthropic API."""
 
+import re
 import requests
 from pathlib import Path
 from typing import Any, Dict, Optional
@@ -150,7 +151,13 @@ class LLMClient:
                 content = choice.message.content
                 if content:
                     _llm_breaker._on_success()
-                    return content.strip()
+                    text = content.strip()
+                    if "Trợ lý:" in text:
+                        text = text.split("Trợ lý:")[-1].strip()
+                    elif "Assistant:" in text:
+                        text = text.split("Assistant:")[-1].strip()
+                    text = re.sub(r"^(Trả lời|Câu trả lời|Phản hồi):\s*", "", text, flags=re.IGNORECASE).strip()
+                    return text
                 return "Không nhận được phản hồi văn bản từ mô hình."
             except Exception as exc:
                 _llm_breaker._on_failure(exc)
@@ -200,6 +207,7 @@ class LLMClient:
                 "temperature": config.temperature_generation,
                 "max_tokens": config.max_tokens_generation,
                 "stream": False,
+                "keep_alive": -1,
             }
             res = requests.post(endpoint, headers=headers, json=payload, timeout=self.timeout)
             if res.status_code == 200:

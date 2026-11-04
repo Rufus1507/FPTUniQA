@@ -196,10 +196,16 @@ def route_query(
         )
 
     # 2. Nhánh tra cứu học phí / số liệu (tuition_lookup)
-    # 1.8. Nhận diện các câu hỏi lệ phí chung (bảng điểm, tốt nghiệp, định hướng, học lại, thi lại)
-    # Loại trừ trường hợp hỏi về quy chế điểm F (học lại hay thi lại)
-    is_f_grade_policy = any(w in q_lower for w in ["điểm f", "diem f", "điểm liệt", "diem liet"]) and not any(w in q_lower for w in ["bao nhiêu tiền", "lệ phí", "chi phí", "giá", "tiền", "bao nhieu tien"])
-    if any(kw in q_lower for kw in COMMON_FEE_KEYWORDS) and "chuyên ngành" not in q_lower and not is_f_grade_policy:
+    # 1.7. Nhận diện các câu hỏi quy chế điểm F (học lại hay thi lại) -> Route trực tiếp vào structured_lookup (Graph RAG)
+    is_f_grade_policy = any(w in q_lower for w in ["điểm f", "diem f", "điểm liệt", "diem liet", "trượt môn", "rớt môn"]) and any(w in q_lower for w in ["thi lại hay học lại", "thi lại", "học lại", "phải làm sao", "thế nào", "quy chế"])
+    if is_f_grade_policy:
+        lvl = determine_query_level(parsed, "structured_lookup", history)
+        return RouteResult("structured_lookup", None, level=lvl)
+
+    # 1.8. Nhận diện các câu hỏi lệ phí chung (bảng điểm, tốt nghiệp, định hướng, học lại, thi lại, KTX)
+    is_contact_or_procedure = any(w in q_lower for w in ["liên hệ", "lien he", "ở đâu", "o dau", "gặp ai", "gap ai", "hỏi ai", "hoi ai", "thủ tục", "thu tuc", "quy trình", "quy trinh", "cách xin", "cach xin"]) and not any(w in q_lower for w in ["bao nhiêu tiền", "bao nhieu tien", "lệ phí", "le phi", "chi phí", "chi phi", "giá", "gia", "tiền", "tien", "bao nhiêu", "bao nhieu"])
+    is_language_benchmark_number = ("chuẩn đầu ra" in q_lower or "ngoại ngữ" in q_lower) and ("bao nhiêu" in q_lower) and any(w in q_lower for w in ["quản trị kinh doanh", "qtkd", "công nghệ thông tin", "cntt"])
+    if (any(kw in q_lower for kw in COMMON_FEE_KEYWORDS) and "chuyên ngành" not in q_lower and not is_f_grade_policy and not is_contact_or_procedure) or is_language_benchmark_number:
         lvl = determine_query_level(parsed, "structured_lookup", history)
         return RouteResult("structured_lookup", None, level=lvl)
 
@@ -268,6 +274,15 @@ def route_query(
     if cm_backstop and not is_grad_kw and any(w in q_raw.lower() for w in ["học kỳ", "kỳ học", "chuyên ngành", "tiếng anh", "dự bị", "chuẩn bị", "thi lại", "học lại", "ký túc", "ktx", "biểu phí"]):
         lvl = determine_query_level(parsed, "structured_lookup", history)
         return RouteResult("structured_lookup", None, level=lvl)
+
+    # 2.9. Nhánh quan hệ đồ thị học vụ (Graph RAG: So sánh ngành, chuỗi quan hệ, OJT, môn tiếp theo, tín chỉ ngành)
+    is_graph_comparison = any(w in q_raw.lower() for w in ['so sánh', 'khác biệt', 'khác nhau', 'học chung môn nào', 'giống nhau', 'khác gì', 'so with']) and any(w in q_raw.lower() for w in ['ngành', 'chương trình', 'đào tạo', 'môn học'])
+    is_next_course_query = any(w in q_raw.lower() for w in ["kỳ sau học tiếp", "kỳ sau học môn", "học tiếp môn", "học xong môn", "môn tiếp theo", "môn kế tiếp", "sau môn này", "môn lập trình nào", "tiếp tục học môn nào", "kỳ tới học môn gì", "kỳ tới", "qua môn"])
+    is_ojt_graph_query = any(w in q_raw.lower() for w in ["ojt", "thực tập doanh nghiệp", "thực tập tại doanh nghiệp"]) and any(w in q_raw.lower() for w in ["kỳ mấy", "học kỳ", "điều kiện", "bao nhiêu tín chỉ", "môn dự án", "được đi", "chuẩn bị"])
+    is_program_credits_query = ("tín chỉ" in q_raw.lower() or "bao nhiêu tín" in q_raw.lower()) and any(w in q_raw.lower() for w in ["ngành", "chuyên ngành"])
+    if is_graph_comparison or is_next_course_query or is_ojt_graph_query or is_program_credits_query:
+        lvl = determine_query_level(parsed, 'structured_lookup', history)
+        return RouteResult('structured_lookup', None, level=lvl)
 
     # 3. Nhánh quy chế và tốt nghiệp -> Chuyển vào RAG Pipeline
     lvl = determine_query_level(parsed, "rag_pipeline", history)
@@ -338,8 +353,22 @@ def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:
     if not query_str and isinstance(slots_or_parsed, dict):
         query_str = str(slots_or_parsed.get("query", "")).lower()
 
+    # 0.0. Tra cứu suy diễn quan hệ đồ thị học vụ (Graph RAG)
+    try:
+        from FPTUniQA.graph.knowledge_graph import get_knowledge_graph
+        kg = get_knowledge_graph()
+        graph_res = kg.query_graph(query_str, slots)
+        if graph_res and graph_res.get('found'):
+            return graph_res
+    except Exception as _e_graph:
+        logger.warning(f'Lỗi khi tra cứu qua Academic Knowledge Graph: {_e_graph}')
+
     # 0. Tra cứu môn học theo Curriculum Knowledge Base (CKB) nếu có mã môn
     course_code = slots.get("course_code")
+    # Nếu câu hỏi hỏi về ngành/chuyên ngành và không có mã môn cụ thể trong câu hỏi -> Purge course_code để không đè lên ngành
+    if any(w in query_str for w in ["ngành", "chuyên ngành"]) and not re.search(r"\b[A-Za-z]{3}\d{3}\b", query_str):
+        course_code = None
+
     if not course_code:
         c_match = re.search(r"\b([A-Z]{3}\d{3}[a-z]?)\b", query_str.upper())
         if c_match:
@@ -360,7 +389,7 @@ def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:
                     aspect = "prerequisite"
                 elif any(w in query_str for w in ["tín chỉ", "bao nhiêu tín", "số tín"]):
                     aspect = "credits"
-                elif any(w in query_str for w in ["thi", "kiểm tra", "pe", "eos", "đánh giá", "thực hành", "hình thức", "bảo vệ"]):
+                elif any(w in query_str for w in ["thi", "kiểm tra", "pe", "eos", "đánh giá", "thực hành", "hình thức", "bảo vệ", "bài tập lớn", "assignment", "asm", "bài tập"]):
                     aspect = "assessment"
                 elif any(w in query_str for w in ["kỳ", "học kỳ", "kỳ mấy", "kỳ thứ"]):
                     aspect = "semester"
@@ -392,7 +421,22 @@ def execute_structured_lookup(slots_or_parsed: Any) -> Dict[str, Any]:
         if cm:
             target_cohort_clean = cm.group(1).upper()
 
-    is_cohort_subfee = any(w in query_str for w in ["thi lại", "học lại", "ký túc", "ktx", "tiếng anh", "dự bị", "chuẩn bị", "học kỳ", "kỳ học", "biểu phí", "toàn khóa", "khung học phí"])
+    # 0.5. Tra cứu chi phí Ký túc xá (KTX) độc lập - ưu tiên trả lời đúng trọng tâm thay vì cả bảng biểu phí
+    if "ký túc xá" in query_str or "ktx" in query_str or "ký túc" in query_str:
+        c_fees = real_data.get("common_fees", {}) if real_data else {}
+        dorm_fee = c_fees.get("dormitory_fuhl_per_term_vnd", 4000000)
+        dorm_campus = target_campus or common_fallback.get("dormitory_note_campus", "Hà Nội")
+        if target_cohort_clean and real_data and "fpt_cohort_fees" in real_data:
+            for item in real_data["fpt_cohort_fees"]:
+                if target_cohort_clean == item.get("cohort"):
+                    d_val = item.get("dormitory_fee_per_term_vnd")
+                    if d_val:
+                        dorm_fee = d_val
+                        break
+        ans = f"Theo quy định của Đại học FPT, chi phí ở ký túc xá tại phân hiệu {dorm_campus} là {dorm_fee:,} VNĐ / học kỳ (tùy thuộc vào loại phòng tiêu chuẩn từ 3 đến 8 sinh viên/phòng)."
+        return {"found": True, "answer": ans, "text": ans, "data": {"campus": dorm_campus, "fee": dorm_fee}, "source": f"Biểu phí dịch vụ ký túc xá ĐH FPT ({dorm_campus})"}
+
+    is_cohort_subfee = any(w in query_str for w in ["thi lại", "học lại", "tiếng anh", "dự bị", "chuẩn bị", "học kỳ", "kỳ học", "biểu phí", "toàn khóa", "khung học phí"])
     is_specific_major_campus = bool(target_program and target_program not in ["chuyên ngành", "chung"]) and bool(target_campus)
     is_legacy_cohort = target_cohort_clean in ["K17", "K18", "K19", "K20", "K21"]
 

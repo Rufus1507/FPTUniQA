@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-11-03T17:42:07.055798",
+  "ram": {
+    "total_gb": 15.24,
+    "available_gb": 2.53,
+    "percent_used": 83.4
+  },
+  "ollama_models": [
+    "bge-m3:latest",
+    "qwen2.5:3b-instruct",
+    "qwen3:4b-instruct-2507",
+    "qwen2.5:3b"
+  ],
+  "reranker_model_type": "NoneType",
+  "reranker_mode": "dummy_fallback",
+  "llm_endpoint": "http://localhost:11434/v1",
+  "primary_llm_model": "qwen2.5:3b-instruct"
+}
