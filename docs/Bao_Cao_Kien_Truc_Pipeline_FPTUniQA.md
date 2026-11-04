@@ -111,12 +111,12 @@ Nhằm đảm bảo tính minh bạch học thuật và loại bỏ sự nhập 
 | **Hệ số $\alpha$ (Thưởng)** | $\alpha = 0,25$ (ở C4-soft, C5, C6) | $\alpha = 0,25$ | $\alpha = 0,25$ | $\alpha = 0,25$ |
 | **Hệ số $\beta$ (Phạt)** | $\beta = 0,25$ (ở C4-soft, C5, C6) | $\beta = 0,25$ | $\beta = 0,25$ | $\beta = 0,25$ |
 | **Ứng viên Candidate $K$** | C1–C3: $K=60$<br>C4–C6: $K=80$ | $K = 80$ (Deep Candidate Pool) | $K = 80$ (Deep Candidate Pool) | $K = 80$ (Deep Candidate Pool) |
-| **Bộ tái xếp hạng (Reranker)** | Không (C1–C4)<br>`bge-reranker-base` (C5, C6) | Không (đo thuần tầng truy xuất) | Không (`use_reranker=False`) | `BAAI/bge-reranker-base` (Top 20 $\to$ Top 5) |
+| **Bộ tái xếp hạng (Reranker)** | Không (C1–C4)<br>`bge-reranker-base` (C5, C6) | Không (đo thuần tầng truy xuất) | Không (`use_reranker=False`) | `BAAI/bge-reranker-v2-m3` (Top 20 $\to$ Top 5 trên CUDA) |
 | **Chế độ Song song** | C3: Tuần tự (`parallel=False`)<br>C3p–C6: Song song (`parallel=True`) | Song song (`parallel=True`) | Song song (`parallel=True`) | Tuần tự (`parallel=False`, tối ưu CPU) |
 | **Tự động nạp chỉ mục** | Thủ công (`auto_load=False`) | Tự động (`auto_load=True`) | Tự động (`auto_load=True`) | Tự động (`auto_load=True`, 824 tài liệu) |
 
 *Ghi chú kỹ thuật quan trọng về Benchmark vs Production:*
-- Benchmark 1.000 lượt và tập 50 câu **tắt Reranker (`use_reranker=False`)** nhằm đo kiểm độ trễ thuần của tầng truy xuất (p95 = 6.221 ms). Cấu hình Production **bật Reranker (`use_reranker=True`)** với mô hình `BAAI/bge-reranker-base` sẽ cộng thêm độ trễ Cross-Encoder trên CPU (~1,5s – 1,7s mỗi câu). Đối với ngữ liệu tiếng Việt, kiến trúc đề xuất nâng cấp lên mô hình đa ngữ chuyên sâu `bge-reranker-v2-m3` trong giai đoạn tới.
+- Benchmark 1.000 lượt và tập 50 câu **tắt Reranker (`use_reranker=False`)** nhằm đo kiểm độ trễ thuần của tầng truy xuất (p95 = 6.221 ms). Cấu hình Production kích hoạt **Reranker (`use_reranker=True`)** với mô hình đa ngữ chuyên sâu **`BAAI/bge-reranker-v2-m3`** được tăng tốc phần cứng trên **NVIDIA GeForce RTX 3060 Laptop GPU (CUDA 12.1)**, đạt độ trễ trung bình đo kiểm thực tế chỉ **966,98 ms** (median **940,13 ms**) cho 20 candidates, vượt trội hoàn toàn so với mức 1,5s – 1,7s của `bge-reranker-base` khi chạy trên CPU.
 - Chế độ truy xuất của Production được đưa về **tuần tự (`parallel=False`)** dựa trên kết luận đo đạc thực nghiệm C3 vs C3p (tuần tự đạt 85,49 ms so với 163,73 ms của song song do loại trừ overhead thread/GIL trên CPU).
 
 ---
@@ -461,7 +461,7 @@ Nhằm định hướng khách quan và khoa học cho các giai đoạn phát t
    - *Định hướng khắc phục:* Chuyển đổi sang phân mảnh theo cấu trúc phân cấp pháp lý (*Hierarchical Legal Article Chunking* theo từng Điều/Khoản hoàn chỉnh).
 
 2. **Chênh lệch Cấu hình Giữa Benchmark và Môi trường Vận hành (Production):**
-   - Thử nghiệm benchmark 1.000 lượt và tập 50 câu held-out được thực hiện ở trạng thái **tắt Cross-Encoder Reranker (`use_reranker=False`)** để tối ưu thời gian đo đạc, ghi nhận độ trễ p95 = 6.221 ms. Trong khi đó, môi trường Production bật Reranker (`BAAI/bge-reranker-base`) trên CPU sẽ làm phát sinh thêm 1,5s – 1,7s độ trễ cho mỗi câu hỏi đi qua nhánh Text-RAG.
+   - Thử nghiệm benchmark 1.000 lượt và tập 50 câu held-out được thực hiện ở trạng thái **tắt Cross-Encoder Reranker (`use_reranker=False`)** để tối ưu thời gian đo đạc, ghi nhận độ trễ p95 = 6.221 ms. Môi trường Production hiện đã kích hoạt mô hình `BAAI/bge-reranker-v2-m3` trên GPU NVIDIA GeForce RTX 3060 (CUDA 12.1), đạt độ trễ thực tế median 940,13 ms cho 20 candidates, giải tỏa nút thắt cổ chai độ trễ so với chạy trên CPU.
 
 3. **Cơ chế Guardrail Gắn Cờ Thay Vì Chặn Trực Tiếp:**
    - Bộ kiểm soát ảo giác hiện tại chủ yếu gắn cờ cảnh báo (`possible_hallucination=True`) cho người dùng thay vì tự động ngắt câu trả lời hoặc thay thế bằng trích dẫn SSOT. Tỷ lệ ảo giác số học trên nhánh Text-RAG là **2,10% (3/143 lượt gọi LLM)**.

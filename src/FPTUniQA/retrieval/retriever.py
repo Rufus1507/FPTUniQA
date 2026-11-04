@@ -112,8 +112,8 @@ class HybridRetriever:
             try:
                 from FPTUniQA.reranking.cross_encoder import CrossEncoderReranker
                 self._reranker = CrossEncoderReranker(
-                    model_name=self._rerank_cfg.get("model_name", "BAAI/bge-reranker-base"),
-                    device=self._rerank_cfg.get("device", "cpu"),
+                    model_name=self._rerank_cfg.get("model_name", "BAAI/bge-reranker-v2-m3"),
+                    device=self._rerank_cfg.get("device", "cuda"),
                     batch_size=self._rerank_cfg.get("batch_size", 16),
                     score_threshold=self._rerank_cfg.get("score_threshold", 0.0),
                 )

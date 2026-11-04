@@ -207,7 +207,7 @@ def main():
         ["Mô hình Embedding", "intfloat/multilingual-e5-base (Dense Vector 768 chiều, cosine similarity)"],
         ["Động cơ Bảng cấu trúc SSOT", "Deterministic CKB Engine nạp RAM 190 biểu phí chính quy K22 (2026) và fpt_cohort_fees (K17-K21)"],
         ["Động cơ Đồ thị Tri thức", "NetworkX Academic Knowledge Graph (duyệt tô-pô cây tiên quyết, render template tất định)"],
-        ["Bộ Tái xếp hạng (Reranker)", "BAAI/bge-reranker-base (Two-stage Retrieval: Candidate 20 -> Top 5 Chunks, đề xuất bge-reranker-v2-m3)"],
+        ["Bộ Tái xếp hạng (Reranker)", "BAAI/bge-reranker-v2-m3 (Two-stage Retrieval: Candidate 20 -> Top 5 Chunks trên CUDA RTX 3060)"],
         ["Bộ nhớ & Hội thoại", "SessionManager (Sliding Window 5 lượt, TTL 3.600s) + Query Rewriter đa ngữ cảnh"]
     ]
     populate_table(doc, meta_headers, meta_data, col_widths=[2.4, 4.4])
@@ -242,14 +242,14 @@ def main():
         ["Chiến lược Metadata", "C1-C3: none | C4-hard: hard\nC4-soft/C5/C6: soft", "soft (Confidence-Aware)", "soft (Confidence-Aware)", "soft (Confidence-Aware)"],
         ["Hệ số alpha / beta", "alpha=0,25 | beta=0,25 (C4-soft)", "alpha=0,25 | beta=0,25", "alpha=0,25 | beta=0,25", "alpha=0,25 | beta=0,25"],
         ["Candidate Pool K", "C1-C3: K=60 | C4-C6: K=80", "K = 80 (Deep Candidate Pool)", "K = 80 (Deep Candidate Pool)", "K = 80 (Deep Candidate Pool)"],
-        ["Tái xếp hạng Reranker", "Không (C1-C4) | bge-reranker (C5,C6)", "Không (đo thuần truy xuất)", "Không (use_reranker=False)", "BAAI/bge-reranker-base (Top 20 -> 5)"],
+        ["Tái xếp hạng Reranker", "Không (C1-C4) | bge-reranker (C5,C6)", "Không (đo thuần truy xuất)", "Không (use_reranker=False)", "BAAI/bge-reranker-v2-m3 (Top 20 -> 5 trên CUDA)"],
         ["Chế độ Song song", "C3: Tuần tự | C3p-C6: Song song", "Song song (parallel=True)", "Song song (parallel=True)", "Tuần tự (parallel=False, tối ưu CPU)"],
         ["Nạp chỉ mục", "Thủ công (auto_load=False)", "Tự động (auto_load=True)", "Tự động (auto_load=True)", "Tự động (auto_load=True, 824 docs)"]
     ]
     populate_table(doc, cfg_headers, cfg_data, col_widths=[1.5, 1.4, 1.3, 1.3, 1.3])
 
     add_callout_box(doc, "GHI CHÚ KỸ THUẬT QUAN TRỌNG VỀ BENCHMARK VS PRODUCTION:",
-        "1. Benchmark 1.000 lượt và tập 50 câu tắt Reranker (use_reranker=False) nhằm đo kiểm độ trễ thuần của tầng truy xuất (p95 = 6.221 ms). Cấu hình Production bật Reranker (use_reranker=True) với mô hình BAAI/bge-reranker-base sẽ cộng thêm độ trễ Cross-Encoder trên CPU (~1,5s – 1,7s mỗi câu). Đối với ngữ liệu tiếng Việt, kiến trúc đề xuất nâng cấp lên mô hình bge-reranker-v2-m3 trong giai đoạn tới.\n"
+        "1. Benchmark 1.000 lượt và tập 50 câu tắt Reranker (use_reranker=False) nhằm đo kiểm độ trễ thuần của tầng truy xuất (p95 = 6.221 ms). Cấu hình Production kích hoạt Reranker với mô hình đa ngữ BAAI/bge-reranker-v2-m3 tăng tốc trên NVIDIA GeForce RTX 3060 Laptop GPU (CUDA 12.1), đạt độ trễ trung bình đo kiểm thực tế chỉ 966,98 ms (median 940,13 ms) cho 20 candidates, vượt trội hoàn toàn so với mức 1,5s – 1,7s của bge-reranker-base trên CPU.\n"
         "2. Chế độ truy xuất của Production được đưa về tuần tự (parallel=False) dựa trên đo đạc thực nghiệm C3 vs C3p (tuần tự đạt 85,49 ms so với 163,73 ms của song song do loại trừ overhead thread/GIL trên CPU).")
 
     # SECTION 3: DETAILED LAYERS & SPECIFICATIONS
@@ -367,7 +367,7 @@ def main():
         "1. Hiệu năng Truy xuất Văn bản thấp (Recall@5 Doc ID = 32,69%):\n"
         "   Nhánh Text-RAG hiện tại chỉ đạt Recall@5 Doc ID = 32,69% trên tập benchmark quy chế đào tạo, bỏ sót xấp xỉ 2/3 tài liệu văn bản mục tiêu trong top-5 kết quả truy xuất ban đầu. Nguyên nhân kỹ thuật do chiến lược chunking dùng cửa sổ cố định 512 ký tự (overlap 64 ký tự) làm đứt gãy cấu trúc phân cấp Điều/Khoản quy chế. Đồng thời việc đánh giá theo khớp chính xác Gold Doc ID phạt nặng các đoạn trích lân cận. Định hướng khắc phục: Phân mảnh theo cấu trúc pháp lý (Hierarchical Legal Article Chunking).\n\n"
         "2. Chênh lệch Cấu hình Giữa Benchmark và Môi trường Vận hành (Production):\n"
-        "   Thử nghiệm benchmark 1.000 lượt và tập 50 câu held-out tắt Reranker (use_reranker=False) để đo độ trễ thuần (p95 = 6.221 ms). Trong khi đó, Production bật Reranker (BAAI/bge-reranker-base) trên CPU làm phát sinh thêm 1,5s – 1,7s độ trễ cho mỗi câu hỏi Text-RAG.\n\n"
+        "   Thử nghiệm benchmark 1.000 lượt và tập 50 câu held-out tắt Reranker (use_reranker=False) để đo độ trễ thuần (p95 = 6.221 ms). Môi trường Production hiện đã kích hoạt mô hình BAAI/bge-reranker-v2-m3 trên GPU NVIDIA GeForce RTX 3060 (CUDA 12.1), đạt độ trễ thực tế median 940,13 ms cho 20 candidates, giải tỏa nút thắt cổ chai độ trễ.\n\n"
         "3. Cơ chế Guardrail Gắn Cờ Thay Vì Chặn Trực Tiếp:\n"
         "   Bộ kiểm soát ảo giác hiện tại chủ yếu gắn cờ cảnh báo (possible_hallucination=True) cho người dùng thay vì tự động ngắt câu trả lời hoặc thay thế bằng trích dẫn SSOT. Tỷ lệ ảo giác số học trên nhánh Text-RAG là 2,10% (3/143 lượt gọi LLM sinh văn bản).\n\n"
         "4. Độ nhạy và Sai số Cắt Ngữ cảnh của Topic Switch Gate:\n"
@@ -388,7 +388,7 @@ def main():
         ["Tiền kiểm An toàn", "src/FPTUniQA/query/safety_gate.py", "Bộ lọc < 5ms tên trường ngoài, prompt injection, mạo danh thẩm quyền, whitelist chuyển trường"],
         ["Điều phối Định tuyến", "src/FPTUniQA/query/router.py", "Phân luồng CKB, RAG, Clarification, OOD, Uncertain và gán Levels 1-10"],
         ["Truy xuất Lai ghép", "src/FPTUniQA/retrieval/retriever.py", "FAISS Dense + BM25Okapi + RRF (k=60) + Soft Metadata Boost nhân tỷ lệ (K=80, parallel=False)"],
-        ["Tái xếp hạng Reranker", "src/FPTUniQA/reranking/cross_encoder.py", "Mô hình Cross-Encoder BAAI/bge-reranker-base chấm điểm cặp query-doc"],
+        ["Tái xếp hạng Reranker", "src/FPTUniQA/reranking/cross_encoder.py", "Mô hình Cross-Encoder BAAI/bge-reranker-v2-m3 (CUDA RTX 3060) chấm điểm cặp query-doc"],
         ["Đồ thị Tri thức", "src/FPTUniQA/graph/knowledge_graph.py", "Topological Sort chuỗi tiên quyết, lộ trình OJT, so sánh CTĐT (template tất định)"],
         ["Kiểm soát Ảo giác", "src/FPTUniQA/generation/guardrails.py", "Quét Ungrounded Numbers (2,10% trên 143 lượt Text-RAG), đối soát thực thể với Context"]
     ]

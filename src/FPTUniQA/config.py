@@ -56,7 +56,7 @@ class Settings(BaseSettings):
     score_threshold: float = Field(default=0.0, description="Ngưỡng điểm tối thiểu chấp nhận tài liệu")
     rerank_enabled: bool = Field(default=True, description="Kích hoạt Cross-Encoder Reranker")
     rerank_candidate_k: int = Field(default=20, description="Số ứng viên chuyển sang reranker")
-    rerank_model_name: str = Field(default="BAAI/bge-reranker-base", description="Tên model Cross-Encoder")
+    rerank_model_name: str = Field(default="BAAI/bge-reranker-v2-m3", description="Tên model Cross-Encoder")
 
     # Caching
     cache_enabled: bool = Field(default=True, description="Bật/tắt tầng bộ nhớ đệm truy xuất")

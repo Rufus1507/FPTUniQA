@@ -24,8 +24,14 @@ class CrossEncoderReranker(BaseReranker):
         except Exception:
             cfg = {}
 
-        self.model_name = model_name or cfg.get("model_name", "BAAI/bge-reranker-large")
-        self.device = device or cfg.get("device", "cpu")
+        try:
+            import torch
+            default_device = "cuda" if torch.cuda.is_available() else "cpu"
+        except Exception:
+            default_device = "cpu"
+
+        self.model_name = model_name or cfg.get("model_name", "BAAI/bge-reranker-v2-m3")
+        self.device = device or cfg.get("device", default_device)
         self.batch_size = batch_size or cfg.get("batch_size", 16)
         self.score_threshold = (
             score_threshold if score_threshold is not None else float(cfg.get("score_threshold", 0.0))
@@ -42,14 +48,14 @@ class CrossEncoderReranker(BaseReranker):
 
             logger.info(f"Đang nạp mô hình CrossEncoder '{self.model_name}' trên thiết bị: {self.device}")
             try:
-                self._model = CrossEncoder(self.model_name, device=self.device, activation_fn=nn.Sigmoid())
+                self._model = CrossEncoder(self.model_name, max_length=512, device=self.device, activation_fn=nn.Sigmoid())
             except TypeError:
                 try:
                     self._model = CrossEncoder(
-                        self.model_name, device=self.device, default_activation_function=nn.Sigmoid()
+                        self.model_name, max_length=512, device=self.device, default_activation_function=nn.Sigmoid()
                     )
                 except Exception:
-                    self._model = CrossEncoder(self.model_name, device=self.device)
+                    self._model = CrossEncoder(self.model_name, max_length=512, device=self.device)
             logger.info(f"Nạp thành công mô hình CrossEncoder '{self.model_name}'")
         except Exception as e:
             logger.warning(
