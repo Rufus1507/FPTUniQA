@@ -219,16 +219,16 @@ class HybridRetriever:
         if candidate_k is None:
             candidate_k = self.default_candidate_k
 
-        # Cấu hình candidate pool và pre-filter theo active_mode
+        # Cấu hình candidate pool và pre-filter theo active_mode (Deep Candidate Pool K=80 khi lọc cứng)
         if active_mode == "hard":
             pre_filter = metadata_filter
-            cand_k = max(candidate_k, top_k * 3) if metadata_filter else candidate_k
+            cand_k = max(candidate_k, 80) if metadata_filter else max(candidate_k, 60)
         elif active_mode == "soft":
             pre_filter = None  # Không lọc trước, bảo toàn 100% ứng viên trước RRF
-            cand_k = max(candidate_k, 40)
+            cand_k = max(candidate_k, 80)
         else:  # 'none'
             pre_filter = None
-            cand_k = candidate_k
+            cand_k = max(candidate_k, 60)
 
         # Chuẩn hóa truy vấn phục vụ retrieval đồng nhất (Bước 6)
         try:
