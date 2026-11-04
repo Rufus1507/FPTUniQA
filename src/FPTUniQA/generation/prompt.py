@@ -36,8 +36,12 @@ def build_prompt(
         history_lines = []
         for turn in history[-3:]:
             ans = (turn.get("answer") or "").strip()
-            # Bỏ qua câu trả lời negative fallback để tránh LLM lặp lại nội dung cũ
-            if "không tìm thấy thông tin này trong tài liệu" in ans:
+            # Bỏ qua câu trả lời negative fallback và OOD refusal để tránh LLM lặp lại lời từ chối cũ
+            if any(phrase in ans.lower() for phrase in [
+                "không tìm thấy thông tin này trong tài liệu",
+                "nằm ngoài phạm vi",
+                "ngoài phạm vi"
+            ]):
                 continue
             history_lines.append(f"Sinh viên: {turn.get('query', '')}")
             history_lines.append(f"Trợ lý: {ans}")

@@ -196,6 +196,34 @@ class RAGPipeline:
                     "history": [],
                 }
 
+            # Bước 0.1: Chitchat / Persona Gate (<5ms, không làm bẩn ngữ cảnh đa lượt)
+            from FPTUniQA.query.safety_gate import check_chitchat
+            chitchat_res = check_chitchat(query)
+            if chitchat_res:
+                latency_ms = round((time.time() - start_time) * 1000, 2)
+                if session_id:
+                    self.session_manager.add_turn(
+                        session_id=session_id,
+                        query=query,
+                        rewritten_query=query,
+                        answer=chitchat_res["answer"],
+                        route_chosen="chitchat",
+                        parsed_query={"intent": "chitchat", "slots": {}},
+                        topic_switch_detected=True,
+                    )
+                return {
+                    "answer": chitchat_res["answer"],
+                    "route": "chitchat",
+                    "citations": [],
+                    "sources": [],
+                    "latency_ms": latency_ms,
+                    "confidence": 1.0,
+                    "model": "chitchat_gate",
+                    "rewritten_query": query,
+                    "session_id": session_id,
+                    "possible_hallucination": False,
+                }
+
             # Lấy lịch sử hội thoại của session (nếu có)
             history = self.session_manager.get_history(session_id) if session_id else []
             turn_index = len(history) + 1

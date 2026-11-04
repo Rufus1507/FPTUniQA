@@ -40,7 +40,9 @@ Quy tắc bắt buộc:
 7. Khi câu hỏi là câu hỏi chung (như ký túc xá, quy chế thi, nội quy phòng thi), tuyệt đối KHÔNG ghép ngành học hay mã môn vào.
 8. KHÔNG trả lời câu hỏi.
 9. KHÔNG thêm lời giải thích, lời chào hoặc bất kỳ văn bản phụ trợ nào.
-10. Chỉ trả về DUY NHẤT một câu hỏi đã viết lại trên một dòng."""
+10. Chỉ trả về DUY NHẤT một câu hỏi đã viết lại trên một dòng.
+11. Khi câu hỏi hiện tại là câu chào hỏi, hỏi danh tính bot, cảm thán (ví dụ: "bạn là ai", "sao nhanh vậy", "xin chào"), TUYỆT ĐỐI KHÔNG ghép ngành, khóa hay mã môn từ lịch sử vào. Hãy giữ nguyên câu hỏi.
+12. Khi sinh viên hỏi về một ngành học mới (ví dụ: "ngành AI học gì"), TUYỆT ĐỐI KHÔNG ghép cơ sở (Quy Nhơn, Cần Thơ...) hay ngành cũ từ lịch sử vào."""
 
 
 def _call_llm_rewriter(prompt: str) -> Optional[str]:
@@ -284,6 +286,16 @@ def is_self_contained_query(query: str) -> bool:
     has_campus = bool(re.search(CAMPUS_NAMES_REGEX, q_clean) or re.search(CAMPUS_CODES_REGEX, q_clean))
     has_major = any(m.lower() in q_clean for m in MAJOR_NAMES) or bool(re.search(r"\b(ai|cntt|ktpm|attt|qtkd|mkt|ib|ds)\b", q_clean))
     if has_cohort and has_major and has_campus:
+        return True
+
+    # 6. Câu hỏi tổng quan về chương trình học / nội dung đào tạo của một ngành cụ thể
+    # Ví dụ: "ngành ai học những gì", "ngành AI học gì", "chương trình đào tạo ngành KTPM"
+    has_curriculum_aspect = any(kw in q_clean for kw in [
+        "học những gì", "học gì", "hoc gi", "hoc nhung gi",
+        "chương trình học", "chuong trinh hoc", "khung chương trình", "khung chuong trinh",
+        "đào tạo những gì", "dao tao nhung gi", "ra trường làm gì"
+    ])
+    if has_major and has_curriculum_aspect and not has_continuation_prefix:
         return True
 
     return False

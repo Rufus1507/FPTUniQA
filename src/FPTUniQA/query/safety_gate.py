@@ -98,3 +98,74 @@ def safety_precheck(query: str) -> Optional[Dict[str, Any]]:
             }
 
     return None
+
+
+# Bộ nhận diện Chitchat / Greeting / Identity (<5ms)
+_CHITCHAT_PATTERNS = [
+    (
+        "identity",
+        re.compile(
+            r"^\s*(bạn|mày|em|m|bot)\s+(là\s+ai|la\s+ai|tên\s+gì|ten\s+gi|có\s+thể\s+làm\s+gì|giúp\s+được\s+gì)\b|"
+            r"^\s*(ai\s+tạo\s+ra\s+(bạn|mày|em|bot)|who\s+are\s+you|what\s+is\s+your\s+name|giới\s+thiệu\s+(về\s+)?(bản\s+thân|bạn|bot))\b",
+            re.IGNORECASE,
+        ),
+        (
+            "Xin chào! Tôi là **FPTUniQA** — Trợ lý ảo tư vấn Quy chế đào tạo, Chương trình học và Học phí "
+            "của Đại học FPT.\n\nTôi có thể hỗ trợ bạn:\n"
+            "- 💰 **Học phí & Biểu phí:** Tra cứu mức học phí theo khóa (K17–K22) và phân hiệu (Hà Nội, Cần Thơ, Quy Nhơn, Đà Nẵng, TP.HCM).\n"
+            "- 📚 **Môn học & Tiên quyết:** Tra cứu điều kiện tiên quyết (ví dụ: SWP391, PRO192), giáo trình và chuẩn đầu ra.\n"
+            "- 📜 **Quy chế học vụ:** Điều kiện thi, quy định điểm danh, cảnh cáo học vụ, thực tập OJT và xét tốt nghiệp.\n\n"
+            "Bạn có câu hỏi học vụ nào cần tôi hỗ trợ không?"
+        ),
+    ),
+    (
+        "speed",
+        re.compile(
+            r"^\s*(sao\s+)?(m\s+|mày\s+|bạn\s+|bot\s+|em\s+)?(nhanh\s+(v|vậy|the|thế|qua|quá))\b|"
+            r"^\s*sao\s+nhanh\s+(v|vậy|the|thế)\b",
+            re.IGNORECASE,
+        ),
+        (
+            "FPTUniQA được tối ưu hóa với cơ chế truy xuất dữ liệu có cấu trúc (SSOT) và bộ chỉ mục Hybrid Retriever "
+            "cục bộ, giúp tra cứu thông tin học vụ Đại học FPT chính xác với thời gian phản hồi gần như tức thì. "
+            "Bạn cần tra cứu thêm thông tin gì về quy chế hay học phí không?"
+        ),
+    ),
+    (
+        "greeting",
+        re.compile(
+            r"^\s*(xin\s+chào|chào\s+bạn|chào\s+bot|chao\s+ban|chao\s+bot|hello|hi|hey)\s*[!.]*$",
+            re.IGNORECASE,
+        ),
+        (
+            "Xin chào bạn! Tôi là FPTUniQA, trợ lý học vụ Đại học FPT. "
+            "Tôi có thể hỗ trợ bạn tra cứu biểu phí, môn học hay quy chế đào tạo nào hôm nay?"
+        ),
+    ),
+    (
+        "thanks",
+        re.compile(
+            r"^\s*(cảm\s+ơn|cam\s+on|thank\s+you|thanks)(\s+(bạn|bot|nhiều|nhe|nhé))?\s*[!.]*$",
+            re.IGNORECASE,
+        ),
+        (
+            "Rất vui được hỗ trợ bạn! Nếu còn thắc mắc nào về học vụ hoặc quy chế ĐH FPT, bạn cứ hỏi nhé. "
+            "Chúc bạn học tập thật tốt!"
+        ),
+    ),
+]
+
+
+def check_chitchat(query: str) -> Optional[Dict[str, Any]]:
+    """Nhận diện các truy vấn Chitchat / Greeting / Identity để phản hồi nhanh mà không qua RAG."""
+    if not query or not query.strip():
+        return None
+    q_strip = query.strip()
+    for cat, pattern, reply in _CHITCHAT_PATTERNS:
+        if pattern.search(q_strip):
+            return {
+                "category": cat,
+                "answer": reply,
+                "route": "chitchat",
+            }
+    return None

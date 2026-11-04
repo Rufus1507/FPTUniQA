@@ -322,10 +322,17 @@ def _parse_with_regex(question: str, norm_res: Optional[Any] = None) -> Dict[str
             e.entity_id == "TERM_HOC_PHI" or getattr(e, "code", "") == "TUITION"
             for e in norm_res.entities
         )
+    has_money_word = bool(re.search(r"\b(tiền|tien|phí|phi|mức phí|muc phi)\b", q_lower))
     is_tuition = is_common_fee or has_tuition_entity or any(kw in q_lower for kw in [
         "học phí", "hoc phi", "tiền học", "tien hoc", "chi phí", "chi phi", "khoản phí", "khoan phi",
         "lệ phí", "le phi", "biểu phí", "bieu phi", "phí bảo hiểm", "bảo hiểm y tế"
     ]) or (
+        has_money_word and any(kw in q_lower for kw in [
+            "cntt", "ai", "ktpm", "attt", "qtkd", "mkt", "ib", "ds",
+            "k17", "k18", "k19", "k20", "k21", "k22", "2026", "2025", "2024", "2023",
+            "quy nhơn", "quy nhon", "cần thơ", "can tho", "hà nội", "ha noi", "đà nẵng", "da nang", "hcm", "tphcm"
+        ])
+    ) or (
         ("tín chỉ" in q_lower or "tin chi" in q_lower) and any(kw in q_lower for kw in [
             "bao nhiêu tiền", "giá", "mức phí", "đóng tiền", "một tín chỉ", "1 tín chỉ", "bao nhieu tien"
         ])
@@ -425,19 +432,22 @@ def _parse_with_regex(question: str, norm_res: Optional[Any] = None) -> Dict[str
         "học", "hoc", "sinh viên", "sinh vien", "trường", "truong", "thi", "điểm", "diem",
         "học kỳ", "hoc ky", "tiếng anh", "tieng anh", "ngoại ngữ", "ngoai ngu",
         "chương trình", "chuong trinh", "đào tạo", "dao tao", "chứng chỉ", "chung chi",
-        "môn", "mon", "ngành", "nganh", "khóa", "khoa", "tín chỉ", "tin chi"
+        "môn", "mon", "ngành", "nganh", "khóa", "khoa", "tín chỉ", "tin chi",
+        "cntt", "ktpm", "attt", "qtkd", "mkt", "ib", "ds"
     ]
     if has_academic_entities or any(kw in q_lower for kw in academic_keywords) or re.search(r"\b(kỳ|ky|kỳ học|ky hoc|mức độ|muc do|k\d{2})\b", q_lower):
+        prog = norm_res.slots_hint.get("program") if norm_res else None
+        slots_out = {"program": prog} if prog else {}
         return {
             "intent": QueryIntent.POLICY_LOOKUP.value,
-            "slots": {},
+            "slots": slots_out,
             "confidence": 0.75,
         }
 
     return {
         "intent": QueryIntent.OOD.value,
         "slots": {},
-        "confidence": 0.95,
+        "confidence": 0.50,
     }
 
 
@@ -556,7 +566,8 @@ def try_rule_fast_parse(question: str) -> Optional[ParsedQuery]:
     """Bỏ qua LLM Parser đối với các câu hỏi rule-based có độ tin cậy cao để giảm p95 latency."""
     norm_res = None
     try:
-        norm_res = normalizer.normalize(question)
+        from FPTUniQA.normalization.engine import get_entity_normalizer
+        norm_res = get_entity_normalizer().normalize(question)
     except Exception:
         pass
 
@@ -565,8 +576,8 @@ def try_rule_fast_parse(question: str) -> Optional[ParsedQuery]:
     intent = regex_dict.get("intent", "")
     slots = regex_dict.get("slots", {}) or {}
 
-    # 1. Câu hỏi OOD rõ ràng
-    is_ood = (intent == QueryIntent.OOD.value) or any(kw in question.lower() for kw in OOD_KEYWORDS)
+    # 1. Câu hỏi OOD rõ ràng: CHỈ kích hoạt khi câu hỏi thực sự chứa từ khóa ngoài phạm vi (OOD_KEYWORDS)
+    is_explicit_ood = any(kw in question.lower() for kw in OOD_KEYWORDS)
     # 2. Câu hỏi course đã xác thực mã môn trong CKB
     has_valid_course = bool(slots.get("course_code")) and (slots.get("course_code") in _get_known_course_codes())
     # 3. Câu hỏi structured tuition đủ program và (cohort hoặc campus)
@@ -576,7 +587,7 @@ def try_rule_fast_parse(question: str) -> Optional[ParsedQuery]:
         and (bool(slots.get("cohort")) or bool(slots.get("campus")))
     )
 
-    if (is_ood and conf >= 0.85) or (has_valid_course and conf >= 0.85) or (is_structured_tuition and conf >= 0.85):
+    if (is_explicit_ood and conf >= 0.85) or (has_valid_course and conf >= 0.85) or (is_structured_tuition and conf >= 0.85):
         parsed = ParsedQuery(
             intent=intent,
             slots=slots,
