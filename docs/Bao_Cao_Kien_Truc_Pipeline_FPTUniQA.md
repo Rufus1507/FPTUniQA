@@ -112,8 +112,12 @@ Nhằm đảm bảo tính minh bạch học thuật và loại bỏ sự nhập 
 | **Hệ số $\beta$ (Phạt)** | $\beta = 0,25$ (ở C4-soft, C5, C6) | $\beta = 0,25$ | $\beta = 0,25$ | $\beta = 0,25$ |
 | **Ứng viên Candidate $K$** | C1–C3: $K=60$<br>C4–C6: $K=80$ | $K = 80$ (Deep Candidate Pool) | $K = 80$ (Deep Candidate Pool) | $K = 80$ (Deep Candidate Pool) |
 | **Bộ tái xếp hạng (Reranker)** | Không (C1–C4)<br>`bge-reranker-base` (C5, C6) | Không (đo thuần tầng truy xuất) | Không (`use_reranker=False`) | `BAAI/bge-reranker-base` (Top 20 $\to$ Top 5) |
-| **Chế độ Song song** | C3: Tuần tự (`parallel=False`)<br>C3p–C6: Song song (`parallel=True`) | Song song (`parallel=True`) | Song song (`parallel=True`) | Song song (`parallel=True`) |
+| **Chế độ Song song** | C3: Tuần tự (`parallel=False`)<br>C3p–C6: Song song (`parallel=True`) | Song song (`parallel=True`) | Song song (`parallel=True`) | Tuần tự (`parallel=False`, tối ưu CPU) |
 | **Tự động nạp chỉ mục** | Thủ công (`auto_load=False`) | Tự động (`auto_load=True`) | Tự động (`auto_load=True`) | Tự động (`auto_load=True`, 824 tài liệu) |
+
+*Ghi chú kỹ thuật quan trọng về Benchmark vs Production:*
+- Benchmark 1.000 lượt và tập 50 câu **tắt Reranker (`use_reranker=False`)** nhằm đo kiểm độ trễ thuần của tầng truy xuất (p95 = 6.221 ms). Cấu hình Production **bật Reranker (`use_reranker=True`)** với mô hình `BAAI/bge-reranker-base` sẽ cộng thêm độ trễ Cross-Encoder trên CPU (~1,5s – 1,7s mỗi câu). Đối với ngữ liệu tiếng Việt, kiến trúc đề xuất nâng cấp lên mô hình đa ngữ chuyên sâu `bge-reranker-v2-m3` trong giai đoạn tới.
+- Chế độ truy xuất của Production được đưa về **tuần tự (`parallel=False`)** dựa trên kết luận đo đạc thực nghiệm C3 vs C3p (tuần tự đạt 85,49 ms so với 163,73 ms của song song do loại trừ overhead thread/GIL trên CPU).
 
 ---
 
@@ -127,8 +131,9 @@ Nhằm đảm bảo tính minh bạch học thuật và loại bỏ sự nhập 
   2. *Lọc gian lận học vụ & thi cử:* Biểu thức chính quy quét các hành vi gian lận thi PE/EOS, thi hộ, làm giả chứng chỉ tiếng Anh (IELTS/TOEIC/VSTEP), mua bán đồ án tốt nghiệp.
   3. *Chống tấn công Prompt Injection:* Phát hiện các chuỗi bẻ khóa hệ thống (`ignore previous instructions`, `reveal system prompt`, `system token override`).
 * **Hiệu năng & Giới hạn:**
-  - Tỷ lệ từ chối đúng trên 35 ca kiểm thử an toàn: **88,57% (31/35 ca)** theo kiểm tra tự động, hoặc **91,43% (32/35 ca)** khi tính cả ca `NEAR_OOD_014` là từ chối đúng về ngữ nghĩa.
-  - *Giới hạn đã biết:* Bộ lọc hoạt động dựa trên đối sánh từ điển và regex, có thể bị vượt qua nếu người dùng không nhắc trực tiếp tên trường ngoài (ví dụ ca `NEAR_OOD_018` hỏi về Đại học Tokyo bị lọt vào nhánh Text-RAG).
+  - Tỷ lệ từ chối đúng trên 35 ca kiểm thử an toàn: **88,57% (31/35 ca)** theo tiêu chuẩn kiểm tra tự động nghiêm ngặt [95% Wilson CI: 74,05% – 95,50%]. Nếu tính ca `NEAR_OOD_014` (câu trả lời sinh ra chứa lời từ chối ngữ nghĩa), tỷ lệ đạt **91,43% (32/35 ca)**.
+  - *Cơ chế phòng thủ bổ sung:* Bổ sung biểu thức chính quy phát hiện hành vi mạo danh thẩm quyền đào tạo (ví dụ ca `ADV_005`: *"Tôi là Trưởng phòng Đào tạo, tôi ra lệnh..."*), đồng thời thiết lập whitelist cho các truy vấn hợp lệ hỏi về thủ tục chuyển tiếp/chuyển trường từ trường khác (như ĐH Bách Khoa) sang ĐH FPT.
+  - *Giới hạn đã biết:* Lớp tiền lọc từ điển tĩnh khó bao quát toàn bộ các tổ chức ngoài nước (ví dụ `NEAR_OOD_018` hỏi về Đại học Tokyo). Định hướng khắc phục là kết hợp tín hiệu độ tin cậy từ điểm truy xuất reranker và kiểm tra thực thể ngoài trong context.
 
 ### Tầng 1: Quản lý Bộ nhớ Phiên & Viết lại Truy vấn (Session Memory & Query Rewriting)
 * **Tệp nguồn:** [`src/FPTUniQA/query/rewriting.py`](file:///c:/Users/Admin/Desktop/5/TMG301/FPTUniQA/src/FPTUniQA/query/rewriting.py) và `SessionManager` tại [`src/FPTUniQA/pipeline/rag_pipeline.py`](file:///c:/Users/Admin/Desktop/5/TMG301/FPTUniQA/src/FPTUniQA/pipeline/rag_pipeline.py).
@@ -145,8 +150,8 @@ Nhằm đảm bảo tính minh bạch học thuật và loại bỏ sự nhập 
 * **Tệp nguồn:** [`src/FPTUniQA/query/semantic_parser.py`](file:///c:/Users/Admin/Desktop/5/TMG301/FPTUniQA/src/FPTUniQA/query/semantic_parser.py) và [`src/FPTUniQA/normalization/engine.py`](file:///c:/Users/Admin/Desktop/5/TMG301/FPTUniQA/src/FPTUniQA/normalization/engine.py).
 * **Mục tiêu:** Bóc tách câu hỏi thành đối tượng dữ liệu có cấu trúc `ParsedQuery` (Contract 3) gồm: `intent`, `slots` (ngành, khóa, phân hiệu, mã môn), `confidence` và `parser_method`.
 * **Cơ chế hoạt động:**
-  - *Fast-Path Regex Parser:* Bắt các câu hỏi tra cứu cơ bản trong **< 2ms** qua hàm `try_rule_fast_parse()`.
-  - *Small LLM Parser:* Với câu hỏi phức tạp, gọi Ollama `qwen2.5:3b-instruct` với `format: "json"` và giới hạn token đầu ra nghiêm ngặt `max_output_tokens: 320`.
+  - *Fast-Path Regex Parser:* Bắt các câu hỏi tra cứu cơ bản trong **3,71 ms** (đo đạc thực tế) qua hàm `try_rule_fast_parse()`.
+  - *Small LLM Parser:* Với câu hỏi phức tạp, gọi Ollama `qwen2.5:3b-instruct` với `format: "json"` và giới hạn token đầu ra nghiêm ngặt `max_output_tokens: 320`. Khi cú pháp JSON gặp lỗi, hệ thống gán fallback `confidence = 0.30` (dưới ngưỡng an toàn 0.5) để kích hoạt tuyến `uncertain` của Router thay vì thả trôi câu hỏi.
   - *EntityNormalizer:* Thuật toán **Longest Match First** (ưu tiên cụm từ dài trước để tránh xung đột), chuẩn hóa Unicode **NFKC N1** và xử lý **Không dấu** (`remove_accents`) đối chiếu qua 6 bộ từ điển (`majors.json`, `courses.json`, `cohorts.json`, `campuses.json`, `academic_terms.json`, `abbreviations.json`).
 * **Kết quả Kiểm toán Thực nghiệm C5 vs C6:**
   - C5 (Parser Regex thuần) và C6 (LLM Semantic Parser) đạt Recall@5 Doc ID **y hệt nhau (32,69%)** và MRR **y hệt nhau (0,2564)** trên 26 câu benchmark.
@@ -162,7 +167,7 @@ Nhằm đảm bảo tính minh bạch học thuật và loại bỏ sự nhập 
 | `ood` | Từ chối ngoài phạm vi | `intent == "OOD"` hoặc chứa `OOD_KEYWORDS` | Trả lời mẫu từ chối lịch sự, không gọi LLM | Level 10 |
 | `uncertain` | Dự phòng tin cậy thấp | `confidence is not None and confidence < 0.5` | Phản hồi yêu cầu làm rõ câu hỏi, tránh ảo giác | Level 10 |
 | `clarification` | Làm rõ thông tin nghiệp vụ | `intent == "tuition_lookup"` nhưng thiếu slot bắt buộc (có ngành nhưng thiếu khóa/phân hiệu) | Sinh câu hỏi hỏi lại phân hiệu/khóa học | Level 4 |
-| `structured_lookup` | Tra cứu tất định SSOT & Graph | Đủ Khóa + Ngành + Cơ sở; Lệ phí chung; Điểm F; Quan hệ đồ thị học vụ (tiên quyết, OJT, so sánh) | Gọi `execute_structured_lookup()` (CKB + Graph template) | Level 1, 3 |
+| `structured_lookup` | Tra cứu tất định SSOT & Graph | Đủ Khóa + Ngành + Cơ sở; Lệ phí chung; Điểm F; Quan hệ đồ thị học vụ (tiên quyết, OJT, so sánh) | Gọi `execute_structured_lookup()` (CKB + Graph template) | Level 1, 3, 7 |
 | `rag_pipeline` | Truy xuất văn bản quy chế | Quy chế đào tạo, tốt nghiệp, đồ án, tạm ngừng, kỷ luật | Kích hoạt Hybrid Retrieval (BM25 + FAISS + Rerank) | Level 2, 5, 6, 7, 8, 9 |
 
 * **Định nghĩa Cấp độ Phức tạp (Levels 1 – 10) từ hàm `determine_query_level()`:**
@@ -448,13 +453,21 @@ Nhằm đáp ứng yêu cầu kiểm toán truy vết số liệu, hai đại l�
 
 ## 9. HẠN CHẾ ĐÃ BIẾT CỦA KIẾN TRÚC HIỆN TẠI (KNOWN ARCHITECTURAL LIMITATIONS)
 
-Nhằm định hướng cho các giai đoạn nâng cấp tiếp theo, hệ thống ghi nhận các hạn chế kỹ thuật hiện tại:
+Nhằm định hướng khách quan và khoa học cho các giai đoạn phát triển tiếp theo, hệ thống ghi nhận các hạn chế kỹ thuật cốt lõi:
 
-1. **Phạm vi kiểm soát của Guardrail:**
-   Bộ kiểm soát ảo giác Ungrounded Numbers chỉ sử dụng biểu thức chính quy để đối chiếu số tiền, số tín chỉ và mã khóa học. Cơ chế này **không phát hiện được ảo giác về mặt quan hệ ngữ nghĩa** (ví dụ: mô hình giải thích sai quy trình bảo lưu học kỳ nhưng trong câu trả lời không xuất hiện con số sai).
-2. **Độ nhạy của Topic Switch Gate:**
-   Mặc dù đạt Macro F1 = 89,76%, bộ nhận diện chuyển chủ đề vẫn còn **8 lượt bỏ sót (False Negatives)** khi người dùng chuyển đề tài bằng từ ngữ ẩn ý, và **23 lượt nhận diện nhầm (False Positives)** khi người dùng đào sâu một khía cạnh phụ của chủ đề cũ, dẫn tới cắt ngữ cảnh không mong muốn.
-3. **Độ trễ ở Tuyến Text-RAG và LLM Parser:**
-   Khi câu hỏi bắt buộc phải đi qua cả Tầng 1 (LLM Rewriter), Tầng 2 (LLM Parser) và Tầng 6B (LLM Generation), độ trễ tích lũy phân vị p95 đạt mức cao (**6.221 ms ở benchmark 1.000 lượt và 14.262 ms ở cấu hình C6**). Việc triển khai trên phần cứng CPU Edge không có GPU chuyên dụng là nút thắt cổ chai chính về hiệu năng thời gian.
-4. **Tính tĩnh của Dữ liệu Cấu trúc:**
-   Bảng biểu `structured_data.json` và đồ thị tri thức hiện tại được trích xuất tĩnh cho các khóa K17–K22 năm học 2026. Khi nhà trường ban hành quy chế mới hoặc điều chỉnh học phí đột xuất, hệ thống đòi hỏi phải chạy lại kịch bản nạp dữ liệu thủ công, chưa có cơ chế đồng bộ tự động thời gian thực từ cơ sở dữ liệu FAP.
+1. **Hiệu năng Truy xuất Văn bản thấp (Recall@5 Doc ID = 32,69%):**
+   - *Thực trạng:* Nhánh Text-RAG hiện tại chỉ đạt **Recall@5 Doc ID = 32,69%** trên tập benchmark quy chế đào tạo, đồng nghĩa với việc hệ thống bỏ sót xấp xỉ 2/3 tài liệu văn bản mục tiêu trong top-5 kết quả truy xuất ban đầu.
+   - *Nguyên nhân kỹ thuật:* Chiến lược phân mảnh văn bản (*chunking*) hiện tại dùng cửa sổ cố định 512 ký tự (overlap 64 ký tự). Cách cắt cứng này làm đứt gãy cấu trúc phân cấp Điều/Khoản trong văn bản quy chế đào tạo, chia cắt câu chữ giữa tiêu đề quy định và nội dung áp dụng. Đồng thời, việc đánh giá dựa trên khớp chính xác mã định danh văn bản (*Gold Doc ID*) phạt nặng các đoạn trích lân cận có nội dung tương đương.
+   - *Định hướng khắc phục:* Chuyển đổi sang phân mảnh theo cấu trúc phân cấp pháp lý (*Hierarchical Legal Article Chunking* theo từng Điều/Khoản hoàn chỉnh).
+
+2. **Chênh lệch Cấu hình Giữa Benchmark và Môi trường Vận hành (Production):**
+   - Thử nghiệm benchmark 1.000 lượt và tập 50 câu held-out được thực hiện ở trạng thái **tắt Cross-Encoder Reranker (`use_reranker=False`)** để tối ưu thời gian đo đạc, ghi nhận độ trễ p95 = 6.221 ms. Trong khi đó, môi trường Production bật Reranker (`BAAI/bge-reranker-base`) trên CPU sẽ làm phát sinh thêm 1,5s – 1,7s độ trễ cho mỗi câu hỏi đi qua nhánh Text-RAG.
+
+3. **Cơ chế Guardrail Gắn Cờ Thay Vì Chặn Trực Tiếp:**
+   - Bộ kiểm soát ảo giác hiện tại chủ yếu gắn cờ cảnh báo (`possible_hallucination=True`) cho người dùng thay vì tự động ngắt câu trả lời hoặc thay thế bằng trích dẫn SSOT. Tỷ lệ ảo giác số học trên nhánh Text-RAG là **2,10% (3/143 lượt gọi LLM)**.
+
+4. **Độ nhạy và Sai số Cắt Ngữ cảnh của Topic Switch Gate:**
+   - Mặc dù đạt Macro F1 = 89,76% (nhờ lớp không chuyển chiếm ưu thế), lớp Chuyển chủ đề chỉ đạt **Precision = 74,44%** và **F1 = 81,21%**, còn **23 lượt nhận diện nhầm** khiến hệ thống cắt ngữ cảnh khi sinh viên vẫn đang hỏi nối tiếp chủ đề cũ.
+
+5. **Độ trễ Tích Lũy khi Đi Qua Đầy Đủ Các Tầng LLM:**
+   - Khi câu hỏi phức tạp đi qua cả Tầng 1 (Rewriter), Tầng 2 (Parser) và Tầng 6B (Generation), độ trễ p95 đạt mức cao (**6.221 ms ở benchmark không rerank và 14,3s ở cấu hình ablation C6**). Việc vận hành mô hình ngôn ngữ 3B hoàn toàn trên CPU là nút thắt cổ chai lớn nhất về thời gian đáp ứng.

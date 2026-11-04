@@ -27,7 +27,7 @@ class HybridRetriever:
         metadata_mode: str = 'soft',
         alpha: float = 0.25,
         beta: float = 0.25,
-        parallel: bool = True,
+        parallel: bool = False,  # Mặc định tuần tự để tránh overhead thread/GIL trên CPU
     ):
         self.rrf_k = rrf_k
         self.weights = weights

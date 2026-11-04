@@ -187,8 +187,10 @@ def route_query(
     if any(kw in q_lower for kw in OOD_KEYWORDS):
         return RouteResult("ood", None, level=10)
 
-    # 0. Kiểm tra ngưỡng tin cậy an toàn (Tuần 6 Guardrail)
-    if parsed.confidence is not None and parsed.confidence < 0.5:
+    # 0. Kiểm tra ngưỡng tin cậy an toàn (Tuần 6 Guardrail) & Fallback không xác định
+    is_low_conf = parsed.confidence is not None and parsed.confidence < 0.5
+    is_unconfident_fallback = getattr(parsed, "fallback_used", False) and not parsed.slots and parsed.intent in ("policy_lookup", "OOD") and (parsed.confidence is None or parsed.confidence <= 0.5)
+    if is_low_conf or is_unconfident_fallback:
         return RouteResult(
             "uncertain",
             "Hệ thống chưa chắc chắn về câu hỏi này (độ tin cậy phân tích thấp). Vui lòng diễn đạt rõ hơn hoặc cung cấp thêm thông tin học vụ cụ thể.",

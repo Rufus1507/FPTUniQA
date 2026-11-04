@@ -58,8 +58,11 @@ def safety_precheck(query: str) -> Optional[Dict[str, Any]]:
             }
 
     # 2. Kiểm tra câu hỏi trường khác (Near-OOD) và học bổng ngoài FPT
-    # Lưu ý: Whitelist nếu câu hỏi nhấn mạnh Đại học FPT
-    is_fpt_mention = "fpt" in q_lower or "đại học fpt" in q_lower
+    # Lưu ý: Whitelist nếu câu hỏi nhấn mạnh hỏi thủ tục chuyển trường sang FPT
+    is_fpt_mention = "fpt" in q_lower or "đại học fpt" in q_lower or "dh fpt" in q_lower
+    is_transfer = any(w in q_lower for w in ["chuyển trường", "chuyen truong", "chuyển sang", "chuyen sang", "so sánh"])
+    if is_fpt_mention and is_transfer:
+        return None  # Whitelist hợp lệ: sinh viên hỏi chuyển tiếp vào FPT
 
     for uni in _EXTERNAL_UNIS:
         # Kiểm tra từ khóa trường ngoài (dùng word boundary cho từ viết tắt ngắn)

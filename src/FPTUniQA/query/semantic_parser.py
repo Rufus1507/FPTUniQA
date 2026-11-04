@@ -447,7 +447,7 @@ def _parse_with_regex(question: str, norm_res: Optional[Any] = None) -> Dict[str
     return {
         "intent": QueryIntent.OOD.value,
         "slots": {},
-        "confidence": 0.50,
+        "confidence": 0.30,  # Fallback không khớp luật gán 0.30 để router kích hoạt uncertain
     }
 
 
