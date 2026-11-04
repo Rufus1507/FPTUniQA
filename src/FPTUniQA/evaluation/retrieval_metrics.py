@@ -78,18 +78,37 @@ def extract_doc_cohort(doc_or_id: Union[str, Dict[str, Any]]) -> Optional[str]:
 def compute_wrong_cohort_rate(
     retrieved_docs_or_ids: List[Any],
     expected_cohorts: Optional[Set[str]],
+    equiv_groups: Optional[List[List[str]]] = None,
     k: int = 5,
-) -> float:
+) -> Optional[float]:
     """Wrong-Cohort Rate cho 1 truy vấn:
-    Trả về 1.0 nếu trong top K có ít nhất một tài liệu có khóa xác định rõ nhưng KHÔNG thuộc expected_cohorts.
-    Tài liệu chung / không có khóa không bị tính là sai khóa.
-    Nếu expected_cohorts rỗng / None: trả về 0.0 (không đánh giá).
+    - Trả về None nếu expected_cohorts rỗng / None (câu hỏi quy chế chung hoặc không nêu cohort).
+      Giúp loại bỏ câu hỏi neutral ra khỏi denominator một cách chuẩn mực học thuật.
+    - Trả về 1.0 nếu trong top K có tài liệu có cohort rõ ràng nhưng KHÔNG thuộc expected_cohorts
+      VÀ tài liệu đó KHÔNG thuộc bất kỳ equiv_group hợp lệ nào của câu hỏi.
+    - Trả về 0.0 nếu tất cả tài liệu đều đúng cohort, là tài liệu chung, hoặc thuộc nhóm tương đương.
     """
     if not expected_cohorts:
-        return 0.0
+        return None
+
+    # Tập các doc ID được miễn trừ do thuộc nhóm tương đương nội dung
+    allowed_equiv_docs: Set[str] = set()
+    if equiv_groups:
+        for grp in equiv_groups:
+            allowed_equiv_docs.update(grp)
 
     top_k_items = retrieved_docs_or_ids[:k]
     for item in top_k_items:
+        # Lấy doc id string
+        if isinstance(item, dict):
+            did = str(item.get("id") or item.get("doc_id") or "")
+        else:
+            did = str(item)
+
+        # Nếu doc thuộc nhóm tương đương đã được công nhận -> không tính sai
+        if did in allowed_equiv_docs:
+            continue
+
         c = extract_doc_cohort(item)
         if c is not None and c not in expected_cohorts:
             return 1.0

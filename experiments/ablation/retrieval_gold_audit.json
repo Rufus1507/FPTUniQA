@@ -1,0 +1,1128 @@
+{
+  "total_entries": 117,
+  "corpus_doc_ids_count": 824,
+  "cohort_specific_queries": [
+    {
+      "q_id": "V2_B02_003",
+      "query": "Học phí chuyên ngành khóa K18 là bao nhiêu?",
+      "detected_cohorts": [
+        "K18"
+      ],
+      "expected_cohorts": [
+        "K18"
+      ],
+      "doc_ids": [
+        "doc_fpt_k18_0695",
+        "doc_fpt_k18_0728"
+      ]
+    },
+    {
+      "q_id": "V2_B02_012",
+      "query": "Khóa K21 phải đóng bao nhiêu tiền lệ phí thi lại một lần?",
+      "detected_cohorts": [
+        "K21"
+      ],
+      "expected_cohorts": [
+        "K21"
+      ],
+      "doc_ids": [
+        "doc_fpt_k21_0381",
+        "doc_fpt_k21_0447"
+      ]
+    },
+    {
+      "q_id": "V2_B02_017",
+      "query": "Ký túc xá khóa K20 giá bao nhiêu một kỳ?",
+      "detected_cohorts": [
+        "K20"
+      ],
+      "expected_cohorts": [
+        "K20"
+      ],
+      "doc_ids": [
+        "doc_fpt_k20_0005",
+        "doc_fpt_k20_0096"
+      ]
+    },
+    {
+      "q_id": "V2_B02_023",
+      "query": "Lệ phí học lại một tín chỉ khóa K17 là bao nhiêu?",
+      "detected_cohorts": [
+        "K17"
+      ],
+      "expected_cohorts": [
+        "K17"
+      ],
+      "doc_ids": [
+        "doc_fpt_k17_0569",
+        "doc_fpt_k17_0582"
+      ]
+    },
+    {
+      "q_id": "V2_B02_031",
+      "query": "Khóa K19 có mức phí tiếng Anh chuẩn bị là bao nhiêu một mức?",
+      "detected_cohorts": [
+        "K19"
+      ],
+      "expected_cohorts": [
+        "K19"
+      ],
+      "doc_ids": [
+        "doc_fpt_k19_0555",
+        "doc_fpt_k19_0556"
+      ]
+    },
+    {
+      "q_id": "V2_B02_034",
+      "query": "Lệ phí thi lại của khóa K22 là bao nhiêu?",
+      "detected_cohorts": [
+        "K22"
+      ],
+      "expected_cohorts": [
+        "K22"
+      ],
+      "doc_ids": [
+        "doc_fpt_k22_0309",
+        "doc_fpt_k22_0312"
+      ]
+    },
+    {
+      "q_id": "V2_B02_044",
+      "query": "Tiền ký túc xá khóa K18 là bao nhiêu một kỳ?",
+      "detected_cohorts": [
+        "K18"
+      ],
+      "expected_cohorts": [
+        "K18"
+      ],
+      "doc_ids": [
+        "doc_fpt_k18_0695",
+        "doc_fpt_k18_0702"
+      ]
+    },
+    {
+      "q_id": "V2_B02_047",
+      "query": "Khóa K22 phí ký túc xá là bao nhiêu tiền một học kỳ?",
+      "detected_cohorts": [
+        "K22"
+      ],
+      "expected_cohorts": [
+        "K22"
+      ],
+      "doc_ids": [
+        "doc_fpt_k22_0301",
+        "doc_fpt_k22_0373"
+      ]
+    },
+    {
+      "q_id": "V2_B02_050",
+      "query": "Lệ phí thi lại của khóa K20 là bao nhiêu?",
+      "detected_cohorts": [
+        "K20"
+      ],
+      "expected_cohorts": [
+        "K20"
+      ],
+      "doc_ids": [
+        "doc_fpt_k20_0132",
+        "doc_fpt_k20_0139"
+      ]
+    },
+    {
+      "q_id": "V2_B03_001",
+      "query": "Học phí chuyên ngành một kỳ của sinh viên khóa K17 là bao nhiêu?",
+      "detected_cohorts": [
+        "K17"
+      ],
+      "expected_cohorts": [
+        "K17"
+      ],
+      "doc_ids": [
+        "doc_fpt_k17_0582",
+        "doc_fpt_k17_0597"
+      ]
+    },
+    {
+      "q_id": "V2_B03_002",
+      "query": "Học phí tiếng Anh dự bị khóa K17 thu bao nhiêu tiền một level?",
+      "detected_cohorts": [
+        "K17"
+      ],
+      "expected_cohorts": [
+        "K17"
+      ],
+      "doc_ids": [
+        "doc_fpt_k17_0582",
+        "doc_fpt_k17_0605"
+      ]
+    },
+    {
+      "q_id": "V2_B03_003",
+      "query": "Lệ phí học lại một tín chỉ của khóa K17 quy định là bao nhiêu?",
+      "detected_cohorts": [
+        "K17"
+      ],
+      "expected_cohorts": [
+        "K17"
+      ],
+      "doc_ids": [
+        "doc_fpt_k17_0569",
+        "doc_fpt_k17_0581"
+      ]
+    },
+    {
+      "q_id": "V2_B03_004",
+      "query": "Lệ phí thi lại của sinh viên khóa K17 là bao nhiêu tiền một lần?",
+      "detected_cohorts": [
+        "K17"
+      ],
+      "expected_cohorts": [
+        "K17"
+      ],
+      "doc_ids": [
+        "doc_fpt_k17_0569",
+        "doc_fpt_k17_0588"
+      ]
+    },
+    {
+      "q_id": "V2_B03_005",
+      "query": "Mức phí ký túc xá mỗi học kỳ cho khóa K17 là bao nhiêu?",
+      "detected_cohorts": [
+        "K17"
+      ],
+      "expected_cohorts": [
+        "K17"
+      ],
+      "doc_ids": [
+        "doc_fpt_k17_0569",
+        "doc_fpt_k17_0609"
+      ]
+    }
+  ],
+  "cohort_neutral_queries": [
+    {
+      "q_id": "V2_B02_004",
+      "query": "Thời hạn nộp đơn phúc khảo bài thi là mấy ngày?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448"
+      ]
+    },
+    {
+      "q_id": "V2_B02_005",
+      "query": "Giai đoạn thực tập doanh nghiệp OJT diễn ra ở kỳ học thứ mấy?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0397"
+      ]
+    },
+    {
+      "q_id": "V2_B02_007",
+      "query": "Điều kiện để đạt học bổng FPT University là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k20_0049"
+      ]
+    },
+    {
+      "q_id": "V2_B02_009",
+      "query": "Quy định về việc bảo lưu học tập tại trường như thế nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k20_0048"
+      ]
+    },
+    {
+      "q_id": "V2_B02_013",
+      "query": "Chuẩn đầu ra tiếng Anh ngành CNTT yêu cầu chứng chỉ gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0265",
+        "doc_fpt_k20_0269"
+      ]
+    },
+    {
+      "q_id": "V2_B02_015",
+      "query": "Quy chế thôi học áp dụng khi sinh viên nhận bao nhiêu lần cảnh báo học tập?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0623",
+        "doc_fpt_k21_0443"
+      ]
+    },
+    {
+      "q_id": "V2_B02_020",
+      "query": "Quy định về việc mang tài liệu vào phòng thi EOS như thế nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0441"
+      ]
+    },
+    {
+      "q_id": "V2_B02_024",
+      "query": "Cách tính điểm trung bình tích lũy GPA tại FPT?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0726",
+        "doc_fpt_k17_0595"
+      ]
+    },
+    {
+      "q_id": "V2_B02_029",
+      "query": "Trong giai đoạn OJT sinh viên có phải đóng học phí chuyên ngành không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0405"
+      ]
+    },
+    {
+      "q_id": "V2_B02_032",
+      "query": "Quy định về trang phục sinh viên khi đến trường Đại học FPT?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k22_0300"
+      ]
+    },
+    {
+      "q_id": "V2_B02_035",
+      "query": "Sinh viên nợ bao nhiêu tín chỉ thì không được làm đồ án tốt nghiệp?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k22_0306"
+      ]
+    },
+    {
+      "q_id": "V2_B02_038",
+      "query": "Chính sách học bổng Nguyễn Văn Đạo xét theo tiêu chí nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k20_0150"
+      ]
+    },
+    {
+      "q_id": "V2_B02_042",
+      "query": "Hồ sơ chuyển ngành học tại Đại học FPT gồm những gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0803",
+        "doc_fpt_k18_0761"
+      ]
+    },
+    {
+      "q_id": "V2_B02_045",
+      "query": "Điểm thi PE được phúc khảo trong vòng bao nhiêu ngày?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755"
+      ]
+    },
+    {
+      "q_id": "V2_B02_048",
+      "query": "Thủ tục đăng ký học đi lại như thế nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711"
+      ]
+    },
+    {
+      "q_id": "V2_B05_001",
+      "query": "Sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k20_0051"
+      ]
+    },
+    {
+      "q_id": "V2_B05_002",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0751"
+      ]
+    },
+    {
+      "q_id": "V2_B05_003",
+      "query": "Điều kiện để sinh viên được đăng ký học vượt là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k19_0550",
+        "doc_fpt_k20_0152"
+      ]
+    },
+    {
+      "q_id": "V2_B05_004",
+      "query": "Cho tôi hỏi quy định cụ thể: điều kiện để sinh viên được đăng ký học vượt là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k19_0550",
+        "doc_fpt_k20_0152"
+      ]
+    },
+    {
+      "q_id": "V2_B05_007",
+      "query": "Thời hạn nộp đơn xin phúc khảo bài thi sau khi có điểm là bao lâu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127"
+      ]
+    },
+    {
+      "q_id": "V2_B05_008",
+      "query": "Cho tôi hỏi quy định cụ thể: thời hạn nộp đơn xin phúc khảo bài thi sau khi có điểm là bao lâu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127"
+      ]
+    },
+    {
+      "q_id": "V2_B05_009",
+      "query": "Sinh viên nghỉ học quá bao nhiêu % số buổi thì bị cấm thi?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0736",
+        "doc_fpt_k20_0092"
+      ]
+    },
+    {
+      "q_id": "V2_B05_010",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên nghỉ học quá bao nhiêu % số buổi thì bị cấm thi?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0736"
+      ]
+    },
+    {
+      "q_id": "V2_B05_011",
+      "query": "Quy chế xử lý kỷ luật đối với sinh viên gian lận thi cử tại Đại học FPT?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k22_0303"
+      ]
+    },
+    {
+      "q_id": "V2_B05_012",
+      "query": "Cho tôi hỏi quy định cụ thể: quy chế xử lý kỷ luật đối với sinh viên gian lận thi cử tại Đại học FPT?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0605",
+        "doc_fpt_k17_0624"
+      ]
+    },
+    {
+      "q_id": "V2_B05_013",
+      "query": "Thủ tục xin bảo lưu kết quả học tập cần chuẩn bị những giấy tờ gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k18_0711"
+      ]
+    },
+    {
+      "q_id": "V2_B05_014",
+      "query": "Cho tôi hỏi quy định cụ thể: thủ tục xin bảo lưu kết quả học tập cần chuẩn bị những giấy tờ gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k17_0585"
+      ]
+    },
+    {
+      "q_id": "V2_B05_015",
+      "query": "Thời gian bảo lưu học tập tối đa của sinh viên là bao lâu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k20_0048"
+      ]
+    },
+    {
+      "q_id": "V2_B05_016",
+      "query": "Cho tôi hỏi quy định cụ thể: thời gian bảo lưu học tập tối đa của sinh viên là bao lâu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k21_0403"
+      ]
+    },
+    {
+      "q_id": "V2_B05_017",
+      "query": "Sinh viên có được phép học cải thiện điểm đối với các môn đã qua không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k19_0539"
+      ]
+    },
+    {
+      "q_id": "V2_B05_018",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được phép học cải thiện điểm đối với các môn đã qua không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k19_0539"
+      ]
+    },
+    {
+      "q_id": "V2_B05_019",
+      "query": "Điều kiện để sinh viên được chuyển ngành đào tạo là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0405"
+      ]
+    },
+    {
+      "q_id": "V2_B05_020",
+      "query": "Cho tôi hỏi quy định cụ thể: điều kiện để sinh viên được chuyển ngành đào tạo là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0405"
+      ]
+    },
+    {
+      "q_id": "V2_B05_021",
+      "query": "Cách tính điểm trung bình chung học kỳ (GPA) và tích lũy (CPA)?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410"
+      ]
+    },
+    {
+      "q_id": "V2_B05_022",
+      "query": "Cho tôi hỏi quy định cụ thể: cách tính điểm trung bình chung học kỳ (GPA) và tích lũy (CPA)?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410"
+      ]
+    },
+    {
+      "q_id": "V2_B05_023",
+      "query": "Sinh viên nợ bao nhiêu tín chỉ thì bị xếp loại học lực yếu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0462"
+      ]
+    },
+    {
+      "q_id": "V2_B05_024",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên nợ bao nhiêu tín chỉ thì bị xếp loại học lực yếu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0581",
+        "doc_fpt_k21_0462"
+      ]
+    },
+    {
+      "q_id": "V2_B05_025",
+      "query": "Quy định về việc vắng thi có lý do chính đáng được xử lý như thế nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0401",
+        "doc_fpt_k20_0125"
+      ]
+    },
+    {
+      "q_id": "V2_B05_026",
+      "query": "Cho tôi hỏi quy định cụ thể: quy định về việc vắng thi có lý do chính đáng được xử lý như thế nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k22_0312",
+        "doc_fpt_k17_0587"
+      ]
+    },
+    {
+      "q_id": "V2_B05_029",
+      "query": "Quy định về việc công nhận chứng chỉ ngoại ngữ quốc tế để miễn học tiếng Anh?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0715",
+        "doc_fpt_k17_0650"
+      ]
+    },
+    {
+      "q_id": "V2_B05_030",
+      "query": "Cho tôi hỏi quy định cụ thể: quy định về việc công nhận chứng chỉ ngoại ngữ quốc tế để miễn học tiếng Anh?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0715",
+        "doc_fpt_k20_0049"
+      ]
+    },
+    {
+      "q_id": "V2_B05_031",
+      "query": "Thời gian tối đa để hoàn thành chương trình đào tạo đại học tại FPT?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580"
+      ]
+    },
+    {
+      "q_id": "V2_B05_032",
+      "query": "Cho tôi hỏi quy định cụ thể: thời gian tối đa để hoàn thành chương trình đào tạo đại học tại FPT?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580"
+      ]
+    },
+    {
+      "q_id": "V2_B05_033",
+      "query": "Sinh viên có được đăng ký học 2 ngành cùng một lúc (song bằng) không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0456",
+        "doc_fpt_k20_0176"
+      ]
+    },
+    {
+      "q_id": "V2_B05_034",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được đăng ký học 2 ngành cùng một lúc (song bằng) không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0578",
+        "doc_fpt_k20_0052"
+      ]
+    },
+    {
+      "q_id": "V2_B05_035",
+      "query": "Trường hợp nào sinh viên bị đình chỉ học tập có thời hạn?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0445"
+      ]
+    },
+    {
+      "q_id": "V2_B05_036",
+      "query": "Cho tôi hỏi quy định cụ thể: trường hợp nào sinh viên bị đình chỉ học tập có thời hạn?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0445"
+      ]
+    },
+    {
+      "q_id": "V2_B05_039",
+      "query": "Sinh viên có được phép rút bớt môn học sau khi đã bắt đầu kỳ học không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0582"
+      ]
+    },
+    {
+      "q_id": "V2_B05_040",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được phép rút bớt môn học sau khi đã bắt đầu kỳ học không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711"
+      ]
+    },
+    {
+      "q_id": "V2_B05_041",
+      "query": "Điều kiện để được xét nhận học bổng khuyến khích học tập từng kỳ?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147"
+      ]
+    },
+    {
+      "q_id": "V2_B05_042",
+      "query": "Cho tôi hỏi quy định cụ thể: điều kiện để được xét nhận học bổng khuyến khích học tập từng kỳ?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147"
+      ]
+    },
+    {
+      "q_id": "V2_B05_043",
+      "query": "Mức điểm rèn luyện được đánh giá theo những tiêu chí nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060"
+      ]
+    },
+    {
+      "q_id": "V2_B05_044",
+      "query": "Cho tôi hỏi quy định cụ thể: mức điểm rèn luyện được đánh giá theo những tiêu chí nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0589",
+        "doc_fpt_k17_0591"
+      ]
+    },
+    {
+      "q_id": "V2_B05_045",
+      "query": "Sinh viên có được xem lại bài thi tự luận hoặc thực hành không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0590",
+        "doc_fpt_k21_0447"
+      ]
+    },
+    {
+      "q_id": "V2_B05_046",
+      "query": "Cho tôi hỏi quy định cụ thể: sinh viên có được xem lại bài thi tự luận hoặc thực hành không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0441",
+        "doc_fpt_k21_0447"
+      ]
+    },
+    {
+      "q_id": "V2_B05_047",
+      "query": "Quy chế đào tạo theo hệ thống tín chỉ của Bộ GD&ĐT áp dụng tại trường như thế nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578"
+      ]
+    },
+    {
+      "q_id": "V2_B05_048",
+      "query": "Cho tôi hỏi quy định cụ thể: quy chế đào tạo theo hệ thống tín chỉ của Bộ GD&ĐT áp dụng tại trường như thế nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578"
+      ]
+    },
+    {
+      "q_id": "V2_B05_049",
+      "query": "Thủ tục xin thôi học tự nguyện cần nộp đơn cho phòng ban nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k19_0557",
+        "doc_fpt_k18_0804"
+      ]
+    },
+    {
+      "q_id": "V2_B05_050",
+      "query": "Cho tôi hỏi quy định cụ thể: thủ tục xin thôi học tự nguyện cần nộp đơn cho phòng ban nào?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0804",
+        "doc_fpt_k19_0557"
+      ]
+    },
+    {
+      "q_id": "V2_B07_001",
+      "query": "Sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k22_0346",
+        "doc_fpt_k22_0305"
+      ]
+    },
+    {
+      "q_id": "V2_B07_002",
+      "query": "Quy định xét tốt nghiệp: sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0033",
+        "doc_fpt_k21_0405"
+      ]
+    },
+    {
+      "q_id": "V2_B07_005",
+      "query": "Chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0488"
+      ]
+    },
+    {
+      "q_id": "V2_B07_006",
+      "query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của ngành Ngôn ngữ Nhật là chứng chỉ gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0488"
+      ]
+    },
+    {
+      "q_id": "V2_B07_007",
+      "query": "Chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0650",
+        "doc_fpt_k18_0781"
+      ]
+    },
+    {
+      "q_id": "V2_B07_008",
+      "query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0035",
+        "doc_fpt_k17_0650"
+      ]
+    },
+    {
+      "q_id": "V2_B07_009",
+      "query": "Sinh viên đi thực tập doanh nghiệp OJT vào học kỳ thứ mấy?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k20_0201"
+      ]
+    },
+    {
+      "q_id": "V2_B07_010",
+      "query": "Quy định xét tốt nghiệp: sinh viên đi thực tập doanh nghiệp OJT vào học kỳ thứ mấy?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k22_0306"
+      ]
+    },
+    {
+      "q_id": "V2_B07_011",
+      "query": "Thời gian thực tập OJT kéo dài trong bao lâu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782"
+      ]
+    },
+    {
+      "q_id": "V2_B07_012",
+      "query": "Quy định xét tốt nghiệp: thời gian thực tập OJT kéo dài trong bao lâu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782"
+      ]
+    },
+    {
+      "q_id": "V2_B07_015",
+      "query": "Điều kiện về số tín chỉ tích lũy để được đi thực tập OJT là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305"
+      ]
+    },
+    {
+      "q_id": "V2_B07_016",
+      "query": "Quy định xét tốt nghiệp: điều kiện về số tín chỉ tích lũy để được đi thực tập OJT là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405"
+      ]
+    },
+    {
+      "q_id": "V2_B07_019",
+      "query": "Điểm trung bình tích lũy tối thiểu (GPA) để được xét tốt nghiệp là bao nhiêu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0166",
+        "doc_fpt_k20_0169"
+      ]
+    },
+    {
+      "q_id": "V2_B07_020",
+      "query": "Quy định xét tốt nghiệp: điểm trung bình tích lũy tối thiểu (GPA) để được xét tốt nghiệp là bao nhiêu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0166",
+        "doc_fpt_k20_0169"
+      ]
+    },
+    {
+      "q_id": "V2_B07_021",
+      "query": "Sinh viên có bắt buộc phải hoàn thành chứng chỉ Giáo dục quốc phòng để tốt nghiệp không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0033",
+        "doc_fpt_k18_0729"
+      ]
+    },
+    {
+      "q_id": "V2_B07_022",
+      "query": "Quy định xét tốt nghiệp: sinh viên có bắt buộc phải hoàn thành chứng chỉ Giáo dục quốc phòng để tốt nghiệp không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0033",
+        "doc_fpt_k18_0729"
+      ]
+    },
+    {
+      "q_id": "V2_B07_023",
+      "query": "Chứng chỉ Giáo dục thể chất Vovinam có phải là điều kiện xét tốt nghiệp không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729"
+      ]
+    },
+    {
+      "q_id": "V2_B07_024",
+      "query": "Quy định xét tốt nghiệp: chứng chỉ Giáo dục thể chất Vovinam có phải là điều kiện xét tốt nghiệp không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418"
+      ]
+    },
+    {
+      "q_id": "V2_B07_025",
+      "query": "Đồ án tốt nghiệp ngành Kỹ thuật phần mềm thực hiện trong bao nhiêu học kỳ?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0727",
+        "doc_fpt_k17_0596"
+      ]
+    },
+    {
+      "q_id": "V2_B07_026",
+      "query": "Quy định xét tốt nghiệp: đồ án tốt nghiệp ngành Kỹ thuật phần mềm thực hiện trong bao nhiêu học kỳ?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k18_0727",
+        "doc_fpt_k17_0596"
+      ]
+    },
+    {
+      "q_id": "V2_B07_027",
+      "query": "Sinh viên có thể chọn thi tốt nghiệp thay cho làm khóa luận tốt nghiệp không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0071"
+      ]
+    },
+    {
+      "q_id": "V2_B07_028",
+      "query": "Quy định xét tốt nghiệp: sinh viên có thể chọn thi tốt nghiệp thay cho làm khóa luận tốt nghiệp không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727"
+      ]
+    },
+    {
+      "q_id": "V2_B07_029",
+      "query": "Doanh nghiệp thực tập OJT do nhà trường giới thiệu hay sinh viên tự liên hệ?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0485",
+        "doc_fpt_k20_0193"
+      ]
+    },
+    {
+      "q_id": "V2_B07_030",
+      "query": "Quy định xét tốt nghiệp: doanh nghiệp thực tập OJT do nhà trường giới thiệu hay sinh viên tự liên hệ?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0485",
+        "doc_fpt_k21_0405"
+      ]
+    },
+    {
+      "q_id": "V2_B07_031",
+      "query": "Sinh viên đi OJT ở nước ngoài cần đáp ứng những điều kiện gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k22_0323",
+        "doc_fpt_k20_0204"
+      ]
+    },
+    {
+      "q_id": "V2_B07_032",
+      "query": "Quy định xét tốt nghiệp: sinh viên đi OJT ở nước ngoài cần đáp ứng những điều kiện gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052"
+      ]
+    },
+    {
+      "q_id": "V2_B07_033",
+      "query": "Nếu không đạt kỳ thực tập OJT thì sinh viên phải làm gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k17_0587"
+      ]
+    },
+    {
+      "q_id": "V2_B07_034",
+      "query": "Quy định xét tốt nghiệp: nếu không đạt kỳ thực tập OJT thì sinh viên phải làm gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405"
+      ]
+    },
+    {
+      "q_id": "V2_B07_035",
+      "query": "Điều kiện để được bảo vệ đồ án tốt nghiệp khóa luận là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k22_0306"
+      ]
+    },
+    {
+      "q_id": "V2_B07_036",
+      "query": "Quy định xét tốt nghiệp: điều kiện để được bảo vệ đồ án tốt nghiệp khóa luận là gì?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0416"
+      ]
+    },
+    {
+      "q_id": "V2_B07_037",
+      "query": "Học kỳ OJT sinh viên có được đăng ký học thêm môn học khác không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k17_0587"
+      ]
+    },
+    {
+      "q_id": "V2_B07_038",
+      "query": "Quy định xét tốt nghiệp: học kỳ OJT sinh viên có được đăng ký học thêm môn học khác không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k17_0587"
+      ]
+    },
+    {
+      "q_id": "V2_B07_039",
+      "query": "Thời gian xét tốt nghiệp trong một năm có mấy đợt?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419"
+      ]
+    },
+    {
+      "q_id": "V2_B07_040",
+      "query": "Quy định xét tốt nghiệp: thời gian xét tốt nghiệp trong một năm có mấy đợt?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729"
+      ]
+    },
+    {
+      "q_id": "V2_B07_041",
+      "query": "Bằng tốt nghiệp đại học của trường FPT do ai cấp?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k22_0296",
+        "doc_fpt_k18_0715"
+      ]
+    },
+    {
+      "q_id": "V2_B07_042",
+      "query": "Quy định xét tốt nghiệp: bằng tốt nghiệp đại học của trường FPT do ai cấp?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k20_0073",
+        "doc_fpt_k18_0727"
+      ]
+    },
+    {
+      "q_id": "V2_B07_043",
+      "query": "Sinh viên tốt nghiệp loại xuất sắc cần đạt điểm GPA bao nhiêu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0418"
+      ]
+    },
+    {
+      "q_id": "V2_B07_044",
+      "query": "Quy định xét tốt nghiệp: sinh viên tốt nghiệp loại xuất sắc cần đạt điểm GPA bao nhiêu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729"
+      ]
+    },
+    {
+      "q_id": "V2_B07_045",
+      "query": "Sinh viên tốt nghiệp loại giỏi cần đạt GPA tối thiểu là bao nhiêu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0597"
+      ]
+    },
+    {
+      "q_id": "V2_B07_046",
+      "query": "Quy định xét tốt nghiệp: sinh viên tốt nghiệp loại giỏi cần đạt GPA tối thiểu là bao nhiêu?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729"
+      ]
+    },
+    {
+      "q_id": "V2_B07_047",
+      "query": "Xếp loại tốt nghiệp có tính điểm rèn luyện không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0415",
+        "doc_fpt_k21_0404"
+      ]
+    },
+    {
+      "q_id": "V2_B07_048",
+      "query": "Quy định xét tốt nghiệp: xếp loại tốt nghiệp có tính điểm rèn luyện không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k21_0404"
+      ]
+    },
+    {
+      "q_id": "V2_B07_049",
+      "query": "Sinh viên chưa có chứng chỉ tiếng Anh có được hoãn nộp để nhận bằng không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0634",
+        "doc_fpt_k22_0315"
+      ]
+    },
+    {
+      "q_id": "V2_B07_050",
+      "query": "Quy định xét tốt nghiệp: sinh viên chưa có chứng chỉ tiếng Anh có được hoãn nộp để nhận bằng không?",
+      "expected_cohorts": [],
+      "doc_ids": [
+        "doc_fpt_k17_0598",
+        "doc_fpt_k18_0730"
+      ]
+    }
+  ],
+  "missing_doc_ids": [],
+  "entries_with_equiv": 63
+}

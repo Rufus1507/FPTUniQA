@@ -286,21 +286,52 @@ class HybridRetriever:
                 weights=self.weights,
             )
 
-        # Xử lý Metadata sau RRF:
+        # Xử lý Metadata sau RRF (Confidence-Aware Soft Boosting):
         if metadata_filter and active_mode == "soft":
             from FPTUniQA.retrieval.filter import classify_metadata_match
-            adjusted_candidates = []
-            for doc, score in fused_results:
-                match_status = classify_metadata_match(doc, metadata_filter)
-                if match_status == "match":
-                    factor = 1.0 + active_alpha
-                elif match_status == "mismatch":
-                    factor = max(0.0, 1.0 - active_beta)
-                else:  # 'neutral' (shared, missing, unknown)
-                    factor = 1.0
-                adjusted_candidates.append((doc, score * factor))
-            # Sắp xếp lại theo điểm đã điều chỉnh
-            fused_results = sorted(adjusted_candidates, key=lambda x: x[1], reverse=True)
+
+            # Đọc confidence, chuẩn hóa an toàn trong [0.0, 1.0]
+            try:
+                raw_conf = metadata_filter.get("confidence", 1.0)
+                conf = float(raw_conf) if raw_conf is not None else 1.0
+                conf = max(0.0, min(1.0, conf))
+            except (ValueError, TypeError):
+                conf = 1.0
+
+            # Kiểm tra xem metadata filter có chỉ định trường mục tiêu cụ thể không
+            has_cohort = bool(
+                metadata_filter.get("cohort")
+                or metadata_filter.get("applies_to_cohort")
+                or metadata_filter.get("cohort_range")
+            )
+            raw_campus = metadata_filter.get("campus")
+            has_campus = bool(
+                raw_campus
+                and str(raw_campus).strip().lower() not in ("all", "tất cả", "tất cả các cơ sở", "")
+            )
+
+            # Nếu không có cohort/campus rõ ràng, hoặc parser không tự tin (< 0.6) -> neutral hoàn toàn, không phạt
+            if (not has_cohort and not has_campus) or conf < 0.6:
+                conf_weight = 0.0
+            else:
+                conf_weight = conf
+
+            if conf_weight > 0.0:
+                adjusted_candidates = []
+                for doc, score in fused_results:
+                    match_status = classify_metadata_match(doc, metadata_filter)
+                    if match_status == "match":
+                        factor = 1.0 + (active_alpha * conf_weight)
+                    elif match_status == "mismatch":
+                        factor = max(0.0, 1.0 - (active_beta * conf_weight))
+                    else:  # 'neutral' (shared policies, missing cohort, scope toàn trường)
+                        factor = 1.0
+                    adjusted_candidates.append((doc, score * factor))
+                # Sắp xếp lại theo điểm đã điều chỉnh
+                fused_results = sorted(adjusted_candidates, key=lambda x: x[1], reverse=True)
+            else:
+                # Giữ nguyên tuyệt đối thứ tự và điểm RRF gốc khi không có ràng buộc tự tin
+                pass
 
         elif metadata_filter and active_mode == "hard":
             from FPTUniQA.retrieval.filter import matches_metadata_filter

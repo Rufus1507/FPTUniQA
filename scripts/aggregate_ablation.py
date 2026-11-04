@@ -1,4 +1,4 @@
-"""Script tổng hợp kết quả Ablation Study Matrix, Graph RAG và Đối sánh Khoa học.
+"""Script tổng hợp kết quả Ablation Study Matrix, Graph RAG và Đối sánh Thống kê Khoa học.
 Xuất ra:
 - experiments/ablation/matrix.json
 - experiments/ablation/matrix.md
@@ -29,6 +29,7 @@ from FPTUniQA.evaluation.retrieval_metrics import (
     compute_wrong_cohort_rate,
 )
 from FPTUniQA.evaluation.semantic_metrics import evaluate_semantic_parsing_suite
+from FPTUniQA.evaluation.statistical_testing import paired_bootstrap_test
 
 CONFIG_NAMES = [
     ("c1_bm25", "1. BM25 Baseline"),
@@ -136,7 +137,6 @@ def aggregate_graph_rag() -> Dict[str, Any]:
 
 def build_diagnostic_table(results_dir: str, ret_gold: Dict[str, Any]) -> List[Dict[str, Any]]:
     """Xây dựng bảng chẩn đoán chi tiết từng câu trong 20 câu Gold đối sánh C3, C4-hard, C4-soft."""
-    # Nạp records từ các file
     config_records: Dict[str, Dict[str, Any]] = {}
     for cfg in ["c3_hybrid", "c3p_hybrid_parallel", "c4_hybrid_rrf_filter", "c4_hybrid_rrf_soft"]:
         p = os.path.join(results_dir, f"{cfg}.jsonl")
@@ -153,18 +153,17 @@ def build_diagnostic_table(results_dir: str, ret_gold: Dict[str, Any]) -> List[D
     c4s_map = config_records.get("c4_hybrid_rrf_soft", {})
 
     diagnostic_rows = []
-    for q_id, gold_data in ret_gold.items():
-        if q_id not in c3_map and q_id not in c4h_map and q_id not in c4s_map:
-            continue
+    # Chọn ra 20 câu chẩn đoán tiêu biểu
+    gold_keys = [k for k in ret_gold.keys() if k in c3_map or k in c4h_map or k in c4s_map][:20]
 
+    for q_id in gold_keys:
+        gold_data = ret_gold[q_id]
         if isinstance(gold_data, dict):
             target_ids = set(gold_data.get("relevant_doc_ids", []))
             equiv_groups = gold_data.get("equiv_group", [])
-            expected_cohorts = set(gold_data.get("expected_cohorts", []))
         else:
             target_ids = set(gold_data)
             equiv_groups = []
-            expected_cohorts = set()
 
         # Mở rộng equiv
         expanded_target = set(target_ids)
@@ -172,7 +171,6 @@ def build_diagnostic_table(results_dir: str, ret_gold: Dict[str, Any]) -> List[D
             if set(grp) & target_ids:
                 expanded_target.update(grp)
 
-        query_text = ""
         c3_item = c3_map.get(q_id, {})
         c4h_item = c4h_map.get(q_id, {})
         c4s_item = c4s_map.get(q_id, {})
@@ -192,7 +190,7 @@ def build_diagnostic_table(results_dir: str, ret_gold: Dict[str, Any]) -> List[D
 
         # Phân loại nguyên nhân A/B/C/D
         category = "D (Khớp/Khác)"
-        reason = "Đồng thuận hoặc không lệch"
+        reason = "Đồng thuận hoặc cùng trúng"
 
         if c3_hit and not c4h_hit:
             if c4h_equiv_hit:
@@ -240,7 +238,11 @@ def aggregate(input_dir: str = "experiments/ablation", output_dir: Optional[str]
         "ablation_matrix": [],
         "five_metric_groups": {},
         "diagnostic_summary": {},
+        "statistical_tests": {},
     }
+
+    # Lưu điểm theo từng query_id cho từng cấu hình để paired statistical testing
+    per_query_scores: Dict[str, Dict[str, Dict[str, float]]] = {}
 
     for cfg_key, cfg_label in CONFIG_NAMES:
         jsonl_path = os.path.join(results_dir, f"{cfg_key}.jsonl")
@@ -257,10 +259,14 @@ def aggregate(input_dir: str = "experiments/ablation", output_dir: Optional[str]
         if not records:
             continue
 
+        per_query_scores[cfg_key] = {}
+
         recalls = []
         equiv_recalls = []
         mrrs = []
         wrong_cohorts = []
+        wrong_cohort_num = 0
+        wrong_cohort_den = 0
         faithfulness_scores = []
         citation_scores = []
         ood_records = []
@@ -274,7 +280,7 @@ def aggregate(input_dir: str = "experiments/ablation", output_dir: Optional[str]
 
         for r in records:
             q_id = r["q_id"]
-            lat = r.get("latency_ms", 0.0)
+            lat = float(r.get("latency_ms", 0.0))
             latencies.append(lat)
             parser_latencies.append(r.get("parser_latency_ms", 0.0))
             successes.append(1 if r.get("success", False) else 0)
@@ -288,31 +294,44 @@ def aggregate(input_dir: str = "experiments/ablation", output_dir: Optional[str]
                 ood_records.append(r)
 
             # Retrieval test
+            rec_val = 0.0
+            eq_rec_val = 0.0
+            mrr_val = 0.0
+
             if q_id in ret_gold:
-                if route in ["structured_lookup", "ood"]:
-                    pass
+                gold_entry = ret_gold[q_id]
+                if isinstance(gold_entry, dict):
+                    gold_docs = set(gold_entry.get("relevant_doc_ids", []))
+                    equiv_groups = gold_entry.get("equiv_group", [])
+                    expected_cohorts = set(gold_entry.get("expected_cohorts", []))
                 else:
-                    gold_entry = ret_gold[q_id]
-                    if isinstance(gold_entry, dict):
-                        gold_docs = set(gold_entry.get("relevant_doc_ids", []))
-                        equiv_groups = gold_entry.get("equiv_group", [])
-                        expected_cohorts = set(gold_entry.get("expected_cohorts", []))
-                    else:
-                        gold_docs = set(gold_entry)
-                        equiv_groups = []
-                        expected_cohorts = set()
+                    gold_docs = set(gold_entry)
+                    equiv_groups = []
+                    expected_cohorts = set()
 
-                    top5 = r.get("top5_doc_ids", [])
-                    rec = compute_recall_at_k(top5, gold_docs, k=5)
-                    eq_rec = compute_recall_at_k_equivalent(top5, gold_docs, equiv_groups=equiv_groups, k=5)
-                    m = compute_mrr(top5, gold_docs, k=5)
-                    wc = compute_wrong_cohort_rate(top5, expected_cohorts, k=5)
+                top5 = r.get("top5_doc_ids", [])
+                rec_val = compute_recall_at_k(top5, gold_docs, k=5)
+                eq_rec_val = compute_recall_at_k_equivalent(top5, gold_docs, equiv_groups=equiv_groups, k=5)
+                mrr_val = compute_mrr(top5, gold_docs, k=5)
+                wc_val = compute_wrong_cohort_rate(top5, expected_cohorts, equiv_groups=equiv_groups, k=5)
 
-                    recalls.append(rec)
-                    equiv_recalls.append(eq_rec)
-                    mrrs.append(m)
-                    if expected_cohorts:
-                        wrong_cohorts.append(wc)
+                recalls.append(rec_val)
+                equiv_recalls.append(eq_rec_val)
+                mrrs.append(mrr_val)
+
+                # Chỉ tính Wrong-Cohort Rate trên các câu hỏi thực sự có expected_cohorts (loại bỏ neutral)
+                if wc_val is not None:
+                    wrong_cohorts.append(wc_val)
+                    wrong_cohort_den += 1
+                    if wc_val > 0.0:
+                        wrong_cohort_num += 1
+
+            per_query_scores[cfg_key][q_id] = {
+                "recall": rec_val,
+                "equiv_recall": eq_rec_val,
+                "mrr": mrr_val,
+                "latency": lat,
+            }
 
             # Faithfulness
             if route in ["structured_lookup", "ood"]:
@@ -381,6 +400,7 @@ def aggregate(input_dir: str = "experiments/ablation", output_dir: Optional[str]
             "equiv_recall_at_5": avg_equiv_recall5,
             "mrr": avg_mrr,
             "wrong_cohort_rate": avg_wrong_cohort,
+            "wrong_cohort_fraction": f"{wrong_cohort_num}/{wrong_cohort_den}" if wrong_cohort_den > 0 else "0/0",
             "faithfulness": avg_faithfulness,
             "ood_rejection": ood_acc,
             "latency_p50": lat_p50,
@@ -395,6 +415,7 @@ def aggregate(input_dir: str = "experiments/ablation", output_dir: Optional[str]
                 "equiv_recall_at_5": avg_equiv_recall5,
                 "mrr": avg_mrr,
                 "wrong_cohort_rate": avg_wrong_cohort,
+                "wrong_cohort_counts": {"numerator": wrong_cohort_num, "denominator": wrong_cohort_den},
             },
             "semantic_parsing": sem_metrics,
             "generation": {
@@ -412,6 +433,23 @@ def aggregate(input_dir: str = "experiments/ablation", output_dir: Optional[str]
                 "api_success_rate": api_success_rate,
             },
         }
+
+    # BƯỚC THỐNG KÊ: Paired Bootstrap Hypothesis Testing
+    stat_comparisons = [
+        ("c4_hybrid_rrf_soft", "c4_hybrid_rrf_filter", "C4-soft vs C4-hard", ["recall", "equiv_recall", "mrr"]),
+        ("c3p_hybrid_parallel", "c3_hybrid", "C3p vs C3 (Song song vs Tuần tự)", ["latency", "recall", "mrr"]),
+    ]
+
+    for cfg_a, cfg_b, comp_label, metrics_to_test in stat_comparisons:
+        if cfg_a in per_query_scores and cfg_b in per_query_scores:
+            common_qids = sorted(list(set(per_query_scores[cfg_a].keys()) & set(per_query_scores[cfg_b].keys())))
+            if common_qids:
+                matrix_data["statistical_tests"][comp_label] = {}
+                for m_key in metrics_to_test:
+                    vals_a = [per_query_scores[cfg_a][qid][m_key] for qid in common_qids]
+                    vals_b = [per_query_scores[cfg_b][qid][m_key] for qid in common_qids]
+                    boot_res = paired_bootstrap_test(vals_a, vals_b, n_bootstraps=1000, ci=0.95, random_state=42)
+                    matrix_data["statistical_tests"][comp_label][m_key] = boot_res.to_dict()
 
     # Bảng chẩn đoán 20 câu
     diag_rows = build_diagnostic_table(results_dir, ret_gold)
@@ -439,7 +477,7 @@ def generate_markdown_report(data: Dict[str, Any], graph_data: Dict[str, Any]) -
     lines.append("# BÁO CÁO ĐỐI SÁNH THỰC NGHIỆM: KHUNG ABLATION STUDY VÀ BỘ 5 NHÓM CHỈ SỐ")
     lines.append("")
     lines.append("## 1. Khung Đánh giá Đối sánh Thực nghiệm (Ablation Study Matrix)")
-    lines.append("Bảng đối sánh các cấu hình pipeline (bổ sung đo lường song song Recall chuẩn, Equivalent Recall và Wrong-Cohort Rate):\n")
+    lines.append("Bảng đối sánh các cấu hình pipeline (đo lường song song Recall chuẩn, Equivalent Recall, Wrong-Cohort Rate chuẩn hóa và Độ trễ):\n")
     lines.append("| Cấu hình Pipeline | Recall@5 (Doc ID) | Recall@5 (Equiv) | MRR | Wrong-Cohort Rate | Faithfulness | Latency (p50 / p95 ms) |")
     lines.append("| :--- | :---: | :---: | :---: | :---: | :---: | :---: |")
 
@@ -447,21 +485,42 @@ def generate_markdown_report(data: Dict[str, Any], graph_data: Dict[str, Any]) -
         r5 = f"{row['recall_at_5']:.2%}" if isinstance(row.get('recall_at_5'), (int, float)) else str(row.get('recall_at_5'))
         eq_r5 = f"{row['equiv_recall_at_5']:.2%}" if isinstance(row.get('equiv_recall_at_5'), (int, float)) else str(row.get('equiv_recall_at_5'))
         mrr = f"{row['mrr']:.4f}" if isinstance(row.get('mrr'), (int, float)) else str(row.get('mrr'))
-        wc = f"{row['wrong_cohort_rate']:.2%}" if isinstance(row.get('wrong_cohort_rate'), (int, float)) else str(row.get('wrong_cohort_rate'))
+        wc_str = f"{row['wrong_cohort_rate']:.2%}" if isinstance(row.get('wrong_cohort_rate'), (int, float)) else str(row.get('wrong_cohort_rate'))
+        if row.get("wrong_cohort_fraction") and row["wrong_cohort_fraction"] != "0/0":
+            wc_str += f" ({row['wrong_cohort_fraction']})"
         faith = f"{row['faithfulness']:.2%}" if isinstance(row.get('faithfulness'), (int, float)) else str(row.get('faithfulness'))
         lat = f"{row.get('latency_p50', 0)} / {row.get('latency_p95', 0)}"
-        lines.append(f"| **{row['pipeline_config']}** | {r5} | {eq_r5} | {mrr} | {wc} | {faith} | {lat} |")
+        lines.append(f"| **{row['pipeline_config']}** | {r5} | {eq_r5} | {mrr} | {wc_str} | {faith} | {lat} |")
 
-    lines.append("\n> **Nhận định Cốt lõi Về Cải tiến C4-soft so với C4-hard:**")
-    lines.append("> 1. **Khôi phục Recall:** Việc chuyển từ lọc cứng (Hard Pre-filtering) sang xếp hạng mềm (Soft Boosting k_wide=40..60) giúp phục hồi triệt để các ứng viên tiềm năng bị loại sớm.")
-    lines.append("> 2. **Phản ánh Bản chất Trượt giả:** Việc đánh giá bằng `Recall@5 (Equiv)` chứng minh các trường hợp C4-hard trượt chủ yếu là do quy chế áp dụng tương đương qua các khóa (nhóm C) chứ không phải do hệ thống truy xuất sai thông tin.")
-    lines.append("> 3. **Kiểm soát Khóa:** Tỷ lệ tài liệu sai khóa (`Wrong-Cohort Rate`) ở C4-soft vẫn được kiểm soát ở mức thấp nhờ cơ chế phạt điểm (penalty) các khóa xung đột.")
+    lines.append("\n> **Ghi chú Chuẩn mực Học thuật:**")
+    lines.append("> - `Wrong-Cohort Rate` chỉ tính trên các câu hỏi thực sự nêu khóa trong truy vấn (loại bỏ các câu quy chế chung khỏi denominator để phản ánh trung thực bản chất).")
+    lines.append("> - `Recall@5 (Equiv)` đánh giá tính đúng đắn theo nhóm điều khoản quy chế tương đương (Equivalent Groups) giữa các khóa K17/K18/K20/K21/K22.")
     lines.append("")
+
+    # Bảng kiểm định thống kê Paired Bootstrap
+    stat_tests = data.get("statistical_tests", {})
+    if stat_tests:
+        lines.append("## 2. Kiểm định Thống kê Học thuật (Paired Bootstrap Test, B=1000, 95% CI)")
+        lines.append("Phân tích ý nghĩa thống kê cho các chênh lệch thực nghiệm trọng yếu giữa các cấu hình:\n")
+        lines.append("| Cặp Đối sánh | Chỉ số (Metric) | Chênh lệch Trung bình (Δμ) | 95% Confidence Interval (CI) | p-value | Kết luận Thống kê (p < 0.05) |")
+        lines.append("| :--- | :--- | :---: | :---: | :---: | :--- |")
+
+        for comp_name, m_dict in stat_tests.items():
+            for m_name, res in m_dict.items():
+                d_m = f"{res['delta_mean']:+.4f}"
+                ci_str = f"[{res['ci_low']:+.4f}, {res['ci_high']:+.4f}]"
+                p_v = f"{res['p_value']:.4f}"
+                if res["significant_at_0_05"]:
+                    conclusion = "✅ Khác biệt có ý nghĩa thống kê (p < 0.05)"
+                else:
+                    conclusion = "➖ Không phát hiện khác biệt có ý nghĩa thống kê"
+                lines.append(f"| **{comp_name}** | `{m_name}` | **{d_m}** | {ci_str} | {p_v} | {conclusion} |")
+        lines.append("")
 
     # Bảng chẩn đoán chi tiết 20 câu
     diag_rows = data.get("diagnostic_rows", [])
     if diag_rows:
-        lines.append("## 2. Báo cáo Chẩn đoán Chi tiết (20 câu Gold Benchmark)")
+        lines.append("## 3. Báo cáo Chẩn đoán Chi tiết (20 câu Gold Benchmark)")
         lines.append("Đối sánh từng câu giữa C3, C4-hard và C4-soft kèm phân loại nguyên nhân:\n")
         lines.append("| Question ID | Câu hỏi | C3 Hit | C4-hard Hit | C4-soft Hit | Equiv Hit | Phân loại Nguyên nhân |")
         lines.append("| :--- | :--- | :---: | :---: | :---: | :---: | :--- |")
@@ -475,7 +534,7 @@ def generate_markdown_report(data: Dict[str, Any], graph_data: Dict[str, Any]) -
         lines.append("")
 
     if graph_data:
-        lines.append("## 3. Thực nghiệm Đánh giá Ablation Graph RAG (WITH vs WITHOUT Knowledge Graph)")
+        lines.append("## 4. Thực nghiệm Đánh giá Ablation Graph RAG (WITH vs WITHOUT Knowledge Graph)")
         lines.append("Đo lường đóng góp của Đồ thị tri thức (Knowledge Graph) trên 5 lớp câu hỏi cấu trúc đa chặng:\n")
         lines.append("| Lớp bài toán Đồ thị | Số câu | WITH_GRAPH Pass | WITHOUT_GRAPH Pass | Delta Pass | WITH ROUGE-L | WITHOUT ROUGE-L |")
         lines.append("| :--- | :---: | :---: | :---: | :---: | :---: | :---: |")
@@ -508,3 +567,4 @@ if __name__ == "__main__":
         out_d = os.path.dirname(args.output) or out_d
 
     aggregate(input_dir=args.input_dir, output_dir=out_d)
+    print("Hoàn tất tổng hợp ma trận ablation và kiểm định thống kê Paired Bootstrap.")

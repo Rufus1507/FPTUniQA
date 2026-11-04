@@ -1,0 +1,6562 @@
+{
+  "c3_hybrid": {
+    "V2_B02_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0170",
+        "doc_fpt_k20_0167",
+        "doc_fpt_k18_0763",
+        "doc_fpt_k21_0471",
+        "doc_fpt_k17_0638"
+      ],
+      "latency_ms": 52.68,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 72.38,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k20_0201"
+      ],
+      "latency_ms": 58.56,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k20_0049",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147"
+      ],
+      "latency_ms": 58.85,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k17_0583",
+        "doc_fpt_k18_0714"
+      ],
+      "latency_ms": 56.08,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0311",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0139",
+        "doc_fpt_k20_0132"
+      ],
+      "latency_ms": 57.8,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_013": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0314",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0022",
+        "doc_fpt_k20_0023"
+      ],
+      "latency_ms": 58.95,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k17_0623",
+        "doc_fpt_k21_0443",
+        "doc_fpt_k17_0605"
+      ],
+      "latency_ms": 61.32,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B02_017": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0476",
+        "doc_fpt_k20_0180",
+        "doc_fpt_k20_0178",
+        "doc_fpt_k19_0564",
+        "doc_fpt_k20_0184"
+      ],
+      "latency_ms": 52.26,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0441",
+        "doc_fpt_k20_0117",
+        "doc_fpt_k18_0750",
+        "doc_fpt_k18_0749"
+      ],
+      "latency_ms": 55.53,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0804",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k20_0175",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k17_0640"
+      ],
+      "latency_ms": 55.49,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0726",
+        "doc_fpt_k17_0595",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k20_0072",
+        "doc_fpt_k20_0070"
+      ],
+      "latency_ms": 54.01,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 58.38,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0468",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k19_0556",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0637"
+      ],
+      "latency_ms": 60.71,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.3333,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0300",
+        "doc_fpt_k17_0602",
+        "doc_fpt_k17_0608",
+        "doc_fpt_k18_0739",
+        "doc_fpt_k18_0695"
+      ],
+      "latency_ms": 59.12,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0139",
+        "doc_fpt_k20_0132",
+        "doc_fpt_k20_0174",
+        "doc_fpt_k17_0640",
+        "doc_fpt_k20_0172"
+      ],
+      "latency_ms": 57.94,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k22_0306",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k21_0417"
+      ],
+      "latency_ms": 58.93,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_038": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k18_0762",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k20_0083"
+      ],
+      "latency_ms": 54.24,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0761",
+        "doc_fpt_k17_0586",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k18_0715"
+      ],
+      "latency_ms": 58.77,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0773",
+        "doc_fpt_k18_0741",
+        "doc_fpt_k19_0564",
+        "doc_fpt_k21_0476",
+        "doc_fpt_k20_0100"
+      ],
+      "latency_ms": 66.21,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 52.04,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k19_0564",
+        "doc_fpt_k20_0138",
+        "doc_fpt_k19_0546",
+        "doc_fpt_k20_0100",
+        "doc_fpt_k20_0097"
+      ],
+      "latency_ms": 59.24,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0432",
+        "doc_fpt_k17_0588"
+      ],
+      "latency_ms": 49.21,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0139",
+        "doc_fpt_k20_0132",
+        "doc_fpt_k17_0640",
+        "doc_fpt_k18_0759",
+        "doc_fpt_k20_0174"
+      ],
+      "latency_ms": 52.57,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0638",
+        "doc_fpt_k20_0167",
+        "doc_fpt_k20_0170",
+        "doc_fpt_k21_0471",
+        "doc_fpt_k19_0560"
+      ],
+      "latency_ms": 56.62,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k19_0556",
+        "doc_fpt_k21_0468"
+      ],
+      "latency_ms": 59.63,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0804",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k20_0175",
+        "doc_fpt_k20_0155"
+      ],
+      "latency_ms": 57.69,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0626",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k18_0759",
+        "doc_fpt_k20_0139"
+      ],
+      "latency_ms": 52.44,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k19_0564",
+        "doc_fpt_k19_0546",
+        "doc_fpt_k21_0476",
+        "doc_fpt_k18_0794",
+        "doc_fpt_k18_0773"
+      ],
+      "latency_ms": 57.16,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B05_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0590",
+        "doc_fpt_k20_0051",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k22_0303",
+        "doc_fpt_k17_0608"
+      ],
+      "latency_ms": 61.9,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k22_0299"
+      ],
+      "latency_ms": 70.27,
+      "recall": 0.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400"
+      ],
+      "latency_ms": 54.06,
+      "recall": 0.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k17_0585"
+      ],
+      "latency_ms": 62.59,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 59.87,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_008": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 66.26,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k20_0092",
+        "doc_fpt_k20_0088"
+      ],
+      "latency_ms": 55.1,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_010": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0750"
+      ],
+      "latency_ms": 76.14,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_011": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0303",
+        "doc_fpt_k17_0624",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0724",
+        "doc_fpt_k21_0413"
+      ],
+      "latency_ms": 60.0,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0624",
+        "doc_fpt_k22_0303",
+        "doc_fpt_k18_0724",
+        "doc_fpt_k21_0413",
+        "doc_fpt_k17_0605"
+      ],
+      "latency_ms": 64.31,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_013": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0588",
+        "doc_fpt_k21_0403"
+      ],
+      "latency_ms": 59.32,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_014": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0588"
+      ],
+      "latency_ms": 61.38,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k21_0397"
+      ],
+      "latency_ms": 52.83,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_016": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0045"
+      ],
+      "latency_ms": 58.68,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_017": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k18_0720",
+        "doc_fpt_k21_0409",
+        "doc_fpt_k19_0539",
+        "doc_fpt_k17_0590"
+      ],
+      "latency_ms": 55.75,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_018": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k18_0720",
+        "doc_fpt_k19_0539",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k22_0308"
+      ],
+      "latency_ms": 57.82,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_019": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k21_0456",
+        "doc_fpt_k18_0716"
+      ],
+      "latency_ms": 50.45,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 57.24,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_021": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k21_0415"
+      ],
+      "latency_ms": 58.0,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_022": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k17_0591"
+      ],
+      "latency_ms": 63.26,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0462",
+        "doc_fpt_k19_0550",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k21_0409"
+      ],
+      "latency_ms": 54.09,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0581",
+        "doc_fpt_k21_0462",
+        "doc_fpt_k20_0155",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0452"
+      ],
+      "latency_ms": 58.21,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_025": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0753",
+        "doc_fpt_k17_0624",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0446",
+        "doc_fpt_k21_0444"
+      ],
+      "latency_ms": 59.08,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_026": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0624",
+        "doc_fpt_k21_0446",
+        "doc_fpt_k20_0117",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0123"
+      ],
+      "latency_ms": 67.25,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B05_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0487",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k20_0200",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0163"
+      ],
+      "latency_ms": 65.04,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_030": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k21_0457"
+      ],
+      "latency_ms": 69.2,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580",
+        "doc_fpt_k18_0708",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k20_0036"
+      ],
+      "latency_ms": 55.26,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580",
+        "doc_fpt_k18_0708",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k20_0036"
+      ],
+      "latency_ms": 62.41,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_033": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400"
+      ],
+      "latency_ms": 57.69,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k20_0042"
+      ],
+      "latency_ms": 64.12,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k17_0623",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 56.03,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_036": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k18_0752"
+      ],
+      "latency_ms": 63.64,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_039": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0461",
+        "doc_fpt_k22_0312"
+      ],
+      "latency_ms": 61.21,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_040": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0403"
+      ],
+      "latency_ms": 62.18,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_041": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k18_0762"
+      ],
+      "latency_ms": 52.46,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k21_0460",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 60.44,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_043": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k18_0721",
+        "doc_fpt_k17_0589"
+      ],
+      "latency_ms": 53.38,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0589",
+        "doc_fpt_k17_0591",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0066",
+        "doc_fpt_k20_0062"
+      ],
+      "latency_ms": 59.14,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0411",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0447",
+        "doc_fpt_k22_0312"
+      ],
+      "latency_ms": 52.91,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_046": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0411",
+        "doc_fpt_k17_0622",
+        "doc_fpt_k18_0750",
+        "doc_fpt_k21_0441",
+        "doc_fpt_k20_0117"
+      ],
+      "latency_ms": 56.22,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B05_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k18_0705",
+        "doc_fpt_k21_0398"
+      ],
+      "latency_ms": 58.64,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k21_0398",
+        "doc_fpt_k18_0705"
+      ],
+      "latency_ms": 66.3,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_049": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k19_0557",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k21_0512"
+      ],
+      "latency_ms": 68.13,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0583"
+      ],
+      "latency_ms": 60.34,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0022",
+        "doc_fpt_k18_0703"
+      ],
+      "latency_ms": 55.38,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 61.21,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0207"
+      ],
+      "latency_ms": 55.94,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_006": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k18_0729"
+      ],
+      "latency_ms": 58.67,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0161",
+        "doc_fpt_k20_0164",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0650",
+        "doc_fpt_k22_0314"
+      ],
+      "latency_ms": 56.26,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B07_008": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0035",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0161",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0650"
+      ],
+      "latency_ms": 59.0,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0489",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0201"
+      ],
+      "latency_ms": 51.93,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_010": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488"
+      ],
+      "latency_ms": 57.73,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B07_011": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0782",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k21_0397",
+        "doc_fpt_k20_0204"
+      ],
+      "latency_ms": 50.83,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0597"
+      ],
+      "latency_ms": 56.39,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 56.43,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_016": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 61.68,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_019": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k21_0418"
+      ],
+      "latency_ms": 62.71,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0419"
+      ],
+      "latency_ms": 65.02,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_021": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k22_0306"
+      ],
+      "latency_ms": 58.84,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_022": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 60.04,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 76.45,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 59.82,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_025": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k22_0306"
+      ],
+      "latency_ms": 57.44,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_026": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0073"
+      ],
+      "latency_ms": 63.76,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_027": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0071",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k18_0728"
+      ],
+      "latency_ms": 55.13,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_028": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k20_0073"
+      ],
+      "latency_ms": 62.44,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0485",
+        "doc_fpt_k20_0193",
+        "doc_fpt_k20_0201",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 58.87,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_030": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0485",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0201",
+        "doc_fpt_k20_0193",
+        "doc_fpt_k21_0418"
+      ],
+      "latency_ms": 60.65,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0207",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 55.25,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0052"
+      ],
+      "latency_ms": 58.85,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_033": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k18_0716"
+      ],
+      "latency_ms": 50.6,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 61.55,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k18_0728"
+      ],
+      "latency_ms": 53.73,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_036": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k20_0076"
+      ],
+      "latency_ms": 62.1,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_037": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k20_0042"
+      ],
+      "latency_ms": 50.18,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_038": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 59.15,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_039": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k18_0729"
+      ],
+      "latency_ms": 50.67,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_040": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0076"
+      ],
+      "latency_ms": 76.38,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_041": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0641",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k18_0730",
+        "doc_fpt_k22_0296",
+        "doc_fpt_k21_0388"
+      ],
+      "latency_ms": 51.62,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B07_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0641",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0419"
+      ],
+      "latency_ms": 56.32,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_043": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 51.68,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k17_0598"
+      ],
+      "latency_ms": 59.1,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 56.04,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_046": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0597"
+      ],
+      "latency_ms": 59.46,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k20_0074"
+      ],
+      "latency_ms": 51.2,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B07_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 57.48,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_049": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k21_0468",
+        "doc_fpt_k20_0164"
+      ],
+      "latency_ms": 58.23,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0598",
+        "doc_fpt_k18_0730",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0081",
+        "doc_fpt_k20_0078"
+      ],
+      "latency_ms": 59.58,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    }
+  },
+  "c3p_hybrid_parallel": {
+    "V2_B02_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0170",
+        "doc_fpt_k20_0167",
+        "doc_fpt_k18_0763",
+        "doc_fpt_k21_0471",
+        "doc_fpt_k17_0638"
+      ],
+      "latency_ms": 50.23,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 54.41,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k20_0201"
+      ],
+      "latency_ms": 59.5,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k20_0049",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147"
+      ],
+      "latency_ms": 53.16,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k17_0583",
+        "doc_fpt_k18_0714"
+      ],
+      "latency_ms": 54.17,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0311",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0139",
+        "doc_fpt_k20_0132"
+      ],
+      "latency_ms": 55.06,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_013": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0314",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0022",
+        "doc_fpt_k20_0023"
+      ],
+      "latency_ms": 56.23,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k17_0623",
+        "doc_fpt_k21_0443",
+        "doc_fpt_k17_0605"
+      ],
+      "latency_ms": 64.1,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B02_017": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0476",
+        "doc_fpt_k20_0180",
+        "doc_fpt_k20_0178",
+        "doc_fpt_k19_0564",
+        "doc_fpt_k20_0184"
+      ],
+      "latency_ms": 65.48,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0441",
+        "doc_fpt_k20_0117",
+        "doc_fpt_k18_0750",
+        "doc_fpt_k18_0749"
+      ],
+      "latency_ms": 58.44,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0804",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k20_0175",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k17_0640"
+      ],
+      "latency_ms": 55.4,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0726",
+        "doc_fpt_k17_0595",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k20_0072",
+        "doc_fpt_k20_0070"
+      ],
+      "latency_ms": 52.03,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 58.58,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0468",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k19_0556",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0637"
+      ],
+      "latency_ms": 56.7,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.3333,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0300",
+        "doc_fpt_k17_0602",
+        "doc_fpt_k17_0608",
+        "doc_fpt_k18_0739",
+        "doc_fpt_k18_0695"
+      ],
+      "latency_ms": 54.69,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0139",
+        "doc_fpt_k20_0132",
+        "doc_fpt_k20_0174",
+        "doc_fpt_k17_0640",
+        "doc_fpt_k20_0172"
+      ],
+      "latency_ms": 51.6,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k22_0306",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k21_0417"
+      ],
+      "latency_ms": 55.88,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_038": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k18_0762",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k20_0083"
+      ],
+      "latency_ms": 54.27,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0761",
+        "doc_fpt_k17_0586",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k18_0715"
+      ],
+      "latency_ms": 61.6,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0773",
+        "doc_fpt_k18_0741",
+        "doc_fpt_k19_0564",
+        "doc_fpt_k21_0476",
+        "doc_fpt_k20_0100"
+      ],
+      "latency_ms": 62.09,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 55.56,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k19_0564",
+        "doc_fpt_k20_0138",
+        "doc_fpt_k19_0546",
+        "doc_fpt_k20_0100",
+        "doc_fpt_k20_0097"
+      ],
+      "latency_ms": 60.28,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0432",
+        "doc_fpt_k17_0588"
+      ],
+      "latency_ms": 57.71,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0139",
+        "doc_fpt_k20_0132",
+        "doc_fpt_k17_0640",
+        "doc_fpt_k18_0759",
+        "doc_fpt_k20_0174"
+      ],
+      "latency_ms": 64.64,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0638",
+        "doc_fpt_k20_0167",
+        "doc_fpt_k20_0170",
+        "doc_fpt_k21_0471",
+        "doc_fpt_k19_0560"
+      ],
+      "latency_ms": 59.94,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k19_0556",
+        "doc_fpt_k21_0468"
+      ],
+      "latency_ms": 83.9,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0804",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k20_0175",
+        "doc_fpt_k20_0155"
+      ],
+      "latency_ms": 58.45,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0626",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k18_0759",
+        "doc_fpt_k20_0139"
+      ],
+      "latency_ms": 63.71,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k19_0564",
+        "doc_fpt_k19_0546",
+        "doc_fpt_k21_0476",
+        "doc_fpt_k18_0794",
+        "doc_fpt_k18_0773"
+      ],
+      "latency_ms": 58.01,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B05_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0590",
+        "doc_fpt_k20_0051",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k22_0303",
+        "doc_fpt_k17_0608"
+      ],
+      "latency_ms": 63.1,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k22_0299"
+      ],
+      "latency_ms": 70.96,
+      "recall": 0.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400"
+      ],
+      "latency_ms": 54.93,
+      "recall": 0.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k17_0585"
+      ],
+      "latency_ms": 62.54,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 56.47,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_008": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 66.16,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k20_0092",
+        "doc_fpt_k20_0088"
+      ],
+      "latency_ms": 62.31,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_010": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0750"
+      ],
+      "latency_ms": 66.76,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_011": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0303",
+        "doc_fpt_k17_0624",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0724",
+        "doc_fpt_k21_0413"
+      ],
+      "latency_ms": 60.38,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0624",
+        "doc_fpt_k22_0303",
+        "doc_fpt_k18_0724",
+        "doc_fpt_k21_0413",
+        "doc_fpt_k17_0605"
+      ],
+      "latency_ms": 70.91,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_013": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0588",
+        "doc_fpt_k21_0403"
+      ],
+      "latency_ms": 57.03,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_014": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0588"
+      ],
+      "latency_ms": 66.28,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k21_0397"
+      ],
+      "latency_ms": 57.0,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_016": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0045"
+      ],
+      "latency_ms": 67.72,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_017": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k18_0720",
+        "doc_fpt_k21_0409",
+        "doc_fpt_k19_0539",
+        "doc_fpt_k17_0590"
+      ],
+      "latency_ms": 60.9,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_018": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k18_0720",
+        "doc_fpt_k19_0539",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k22_0308"
+      ],
+      "latency_ms": 67.49,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_019": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k21_0456",
+        "doc_fpt_k18_0716"
+      ],
+      "latency_ms": 56.25,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 70.02,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_021": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k21_0415"
+      ],
+      "latency_ms": 58.8,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_022": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k17_0591"
+      ],
+      "latency_ms": 66.87,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0462",
+        "doc_fpt_k19_0550",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k21_0409"
+      ],
+      "latency_ms": 61.65,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0581",
+        "doc_fpt_k21_0462",
+        "doc_fpt_k20_0155",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0452"
+      ],
+      "latency_ms": 65.23,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_025": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0753",
+        "doc_fpt_k17_0624",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0446",
+        "doc_fpt_k21_0444"
+      ],
+      "latency_ms": 60.52,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_026": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0624",
+        "doc_fpt_k21_0446",
+        "doc_fpt_k20_0117",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0123"
+      ],
+      "latency_ms": 70.35,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B05_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0487",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k20_0200",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0163"
+      ],
+      "latency_ms": 61.27,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_030": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k21_0457"
+      ],
+      "latency_ms": 69.63,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580",
+        "doc_fpt_k18_0708",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k20_0036"
+      ],
+      "latency_ms": 59.46,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580",
+        "doc_fpt_k18_0708",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k20_0036"
+      ],
+      "latency_ms": 65.73,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_033": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400"
+      ],
+      "latency_ms": 59.85,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k20_0042"
+      ],
+      "latency_ms": 81.89,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k17_0623",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 57.84,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_036": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k18_0752"
+      ],
+      "latency_ms": 65.17,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_039": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0461",
+        "doc_fpt_k22_0312"
+      ],
+      "latency_ms": 63.59,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_040": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0403"
+      ],
+      "latency_ms": 67.81,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_041": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k18_0762"
+      ],
+      "latency_ms": 56.14,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k21_0460",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 63.91,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_043": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k18_0721",
+        "doc_fpt_k17_0589"
+      ],
+      "latency_ms": 54.28,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0589",
+        "doc_fpt_k17_0591",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0066",
+        "doc_fpt_k20_0062"
+      ],
+      "latency_ms": 63.35,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0411",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0447",
+        "doc_fpt_k22_0312"
+      ],
+      "latency_ms": 62.76,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_046": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0411",
+        "doc_fpt_k17_0622",
+        "doc_fpt_k18_0750",
+        "doc_fpt_k21_0441",
+        "doc_fpt_k20_0117"
+      ],
+      "latency_ms": 78.08,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B05_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k18_0705",
+        "doc_fpt_k21_0398"
+      ],
+      "latency_ms": 69.63,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k21_0398",
+        "doc_fpt_k18_0705"
+      ],
+      "latency_ms": 91.0,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_049": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k19_0557",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k21_0512"
+      ],
+      "latency_ms": 85.53,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0583"
+      ],
+      "latency_ms": 126.38,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0022",
+        "doc_fpt_k18_0703"
+      ],
+      "latency_ms": 75.86,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 81.13,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0207"
+      ],
+      "latency_ms": 67.59,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_006": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k18_0729"
+      ],
+      "latency_ms": 70.4,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0161",
+        "doc_fpt_k20_0164",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0650",
+        "doc_fpt_k22_0314"
+      ],
+      "latency_ms": 60.24,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B07_008": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0035",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0161",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0650"
+      ],
+      "latency_ms": 71.88,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0489",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0201"
+      ],
+      "latency_ms": 60.92,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_010": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488"
+      ],
+      "latency_ms": 64.49,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B07_011": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0782",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k21_0397",
+        "doc_fpt_k20_0204"
+      ],
+      "latency_ms": 54.33,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0597"
+      ],
+      "latency_ms": 63.84,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 60.01,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_016": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 70.0,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_019": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k21_0418"
+      ],
+      "latency_ms": 78.91,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0419"
+      ],
+      "latency_ms": 75.64,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_021": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k22_0306"
+      ],
+      "latency_ms": 81.29,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_022": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 71.13,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 64.25,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 69.64,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_025": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k22_0306"
+      ],
+      "latency_ms": 60.8,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_026": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0073"
+      ],
+      "latency_ms": 67.02,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_027": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0071",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k18_0728"
+      ],
+      "latency_ms": 69.67,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_028": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k20_0073"
+      ],
+      "latency_ms": 70.91,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0485",
+        "doc_fpt_k20_0193",
+        "doc_fpt_k20_0201",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 63.08,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_030": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0485",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0201",
+        "doc_fpt_k20_0193",
+        "doc_fpt_k21_0418"
+      ],
+      "latency_ms": 69.16,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0207",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 59.62,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0052"
+      ],
+      "latency_ms": 67.97,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_033": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k18_0716"
+      ],
+      "latency_ms": 59.76,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 70.28,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k18_0728"
+      ],
+      "latency_ms": 57.78,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_036": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k20_0076"
+      ],
+      "latency_ms": 76.99,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_037": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k20_0042"
+      ],
+      "latency_ms": 58.72,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_038": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 68.15,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_039": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k18_0729"
+      ],
+      "latency_ms": 54.05,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_040": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0076"
+      ],
+      "latency_ms": 60.37,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_041": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0641",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k18_0730",
+        "doc_fpt_k22_0296",
+        "doc_fpt_k21_0388"
+      ],
+      "latency_ms": 54.45,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B07_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0641",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0419"
+      ],
+      "latency_ms": 65.63,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_043": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 65.48,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k17_0598"
+      ],
+      "latency_ms": 66.7,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 60.68,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_046": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0597"
+      ],
+      "latency_ms": 66.8,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k20_0074"
+      ],
+      "latency_ms": 66.57,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B07_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 62.95,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_049": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k21_0468",
+        "doc_fpt_k20_0164"
+      ],
+      "latency_ms": 60.89,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0598",
+        "doc_fpt_k18_0730",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0081",
+        "doc_fpt_k20_0078"
+      ],
+      "latency_ms": 77.19,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    }
+  },
+  "c4_hybrid_rrf_filter": {
+    "V2_B02_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0763",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k18_0703",
+        "doc_fpt_k18_0721",
+        "doc_fpt_k18_0713"
+      ],
+      "latency_ms": 60.08,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B02_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 72.62,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k20_0201"
+      ],
+      "latency_ms": 83.59,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k20_0049",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147"
+      ],
+      "latency_ms": 59.25,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k17_0583",
+        "doc_fpt_k18_0714"
+      ],
+      "latency_ms": 60.3,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0461",
+        "doc_fpt_k21_0452",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k21_0465"
+      ],
+      "latency_ms": 62.46,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B02_013": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0314",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0022",
+        "doc_fpt_k20_0023"
+      ],
+      "latency_ms": 58.87,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k17_0623",
+        "doc_fpt_k21_0443",
+        "doc_fpt_k17_0605"
+      ],
+      "latency_ms": 65.89,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B02_017": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0180",
+        "doc_fpt_k20_0178",
+        "doc_fpt_k20_0100",
+        "doc_fpt_k20_0097",
+        "doc_fpt_k20_0231"
+      ],
+      "latency_ms": 62.31,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B02_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0441",
+        "doc_fpt_k20_0117",
+        "doc_fpt_k18_0750",
+        "doc_fpt_k18_0749"
+      ],
+      "latency_ms": 65.69,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0633",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0585"
+      ],
+      "latency_ms": 63.78,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B02_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0726",
+        "doc_fpt_k17_0595",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k20_0072",
+        "doc_fpt_k20_0070"
+      ],
+      "latency_ms": 56.54,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 65.06,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k19_0556",
+        "doc_fpt_k19_0555",
+        "doc_fpt_k19_0559",
+        "doc_fpt_k19_0561",
+        "doc_fpt_k19_0564"
+      ],
+      "latency_ms": 64.13,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B02_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0300",
+        "doc_fpt_k17_0602",
+        "doc_fpt_k17_0608",
+        "doc_fpt_k18_0739",
+        "doc_fpt_k18_0695"
+      ],
+      "latency_ms": 66.43,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0311",
+        "doc_fpt_k22_0310",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k22_0309",
+        "doc_fpt_k22_0314"
+      ],
+      "latency_ms": 64.38,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": 0.0
+    },
+    "V2_B02_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k22_0306",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k21_0417"
+      ],
+      "latency_ms": 68.98,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_038": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k18_0762",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k20_0083"
+      ],
+      "latency_ms": 75.56,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0761",
+        "doc_fpt_k17_0586",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k18_0715"
+      ],
+      "latency_ms": 72.69,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0773",
+        "doc_fpt_k18_0741",
+        "doc_fpt_k18_0742",
+        "doc_fpt_k18_0771",
+        "doc_fpt_k18_0763"
+      ],
+      "latency_ms": 71.84,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B02_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 62.81,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0311",
+        "doc_fpt_k22_0310",
+        "doc_fpt_k22_0374",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k22_0303"
+      ],
+      "latency_ms": 68.62,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B02_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0432",
+        "doc_fpt_k17_0588"
+      ],
+      "latency_ms": 68.2,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0139",
+        "doc_fpt_k20_0132",
+        "doc_fpt_k20_0148",
+        "doc_fpt_k20_0174",
+        "doc_fpt_k20_0175"
+      ],
+      "latency_ms": 63.19,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B03_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0638",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0633"
+      ],
+      "latency_ms": 67.01,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B03_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0650",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0578"
+      ],
+      "latency_ms": 65.85,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B03_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0581",
+        "doc_fpt_k17_0633",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k17_0639"
+      ],
+      "latency_ms": 69.54,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B03_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0626",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0629",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k17_0619"
+      ],
+      "latency_ms": 68.22,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B03_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0664",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0629"
+      ],
+      "latency_ms": 76.47,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B05_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0590",
+        "doc_fpt_k20_0051",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k22_0303",
+        "doc_fpt_k17_0608"
+      ],
+      "latency_ms": 64.24,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k22_0299"
+      ],
+      "latency_ms": 72.41,
+      "recall": 0.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400"
+      ],
+      "latency_ms": 61.78,
+      "recall": 0.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k17_0585"
+      ],
+      "latency_ms": 94.4,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 60.91,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_008": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 94.61,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k20_0092",
+        "doc_fpt_k20_0088"
+      ],
+      "latency_ms": 92.06,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_010": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0750"
+      ],
+      "latency_ms": 101.25,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_011": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0303",
+        "doc_fpt_k17_0624",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0724",
+        "doc_fpt_k21_0413"
+      ],
+      "latency_ms": 94.35,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0624",
+        "doc_fpt_k22_0303",
+        "doc_fpt_k18_0724",
+        "doc_fpt_k21_0413",
+        "doc_fpt_k17_0605"
+      ],
+      "latency_ms": 111.88,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_013": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0588",
+        "doc_fpt_k21_0403"
+      ],
+      "latency_ms": 92.16,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_014": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0588"
+      ],
+      "latency_ms": 140.39,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k21_0397"
+      ],
+      "latency_ms": 112.56,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_016": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0045"
+      ],
+      "latency_ms": 148.43,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_017": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k18_0720",
+        "doc_fpt_k21_0409",
+        "doc_fpt_k19_0539",
+        "doc_fpt_k17_0590"
+      ],
+      "latency_ms": 97.28,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_018": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k18_0720",
+        "doc_fpt_k19_0539",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k22_0308"
+      ],
+      "latency_ms": 109.84,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_019": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k21_0456",
+        "doc_fpt_k18_0716"
+      ],
+      "latency_ms": 98.8,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 82.83,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_021": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k21_0415"
+      ],
+      "latency_ms": 92.68,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_022": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k17_0591"
+      ],
+      "latency_ms": 95.2,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0462",
+        "doc_fpt_k19_0550",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k21_0409"
+      ],
+      "latency_ms": 77.8,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0581",
+        "doc_fpt_k21_0462",
+        "doc_fpt_k20_0155",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0452"
+      ],
+      "latency_ms": 75.72,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_025": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0753",
+        "doc_fpt_k17_0624",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0446",
+        "doc_fpt_k21_0444"
+      ],
+      "latency_ms": 70.43,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_026": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0624",
+        "doc_fpt_k21_0446",
+        "doc_fpt_k20_0117",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0123"
+      ],
+      "latency_ms": 93.93,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B05_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0487",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k20_0200",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0163"
+      ],
+      "latency_ms": 114.44,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_030": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k21_0457"
+      ],
+      "latency_ms": 89.24,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580",
+        "doc_fpt_k18_0708",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k20_0036"
+      ],
+      "latency_ms": 75.8,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580",
+        "doc_fpt_k18_0708",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k20_0036"
+      ],
+      "latency_ms": 87.1,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_033": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400"
+      ],
+      "latency_ms": 72.31,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k20_0042"
+      ],
+      "latency_ms": 92.13,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k17_0623",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 59.55,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_036": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k18_0752"
+      ],
+      "latency_ms": 67.35,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_039": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0461",
+        "doc_fpt_k22_0312"
+      ],
+      "latency_ms": 68.27,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_040": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0403"
+      ],
+      "latency_ms": 69.74,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_041": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k18_0762"
+      ],
+      "latency_ms": 59.0,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k21_0460",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 69.05,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_043": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k18_0721",
+        "doc_fpt_k17_0589"
+      ],
+      "latency_ms": 64.32,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0589",
+        "doc_fpt_k17_0591",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0066",
+        "doc_fpt_k20_0062"
+      ],
+      "latency_ms": 70.91,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0411",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0447",
+        "doc_fpt_k22_0312"
+      ],
+      "latency_ms": 83.69,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_046": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0411",
+        "doc_fpt_k17_0622",
+        "doc_fpt_k18_0750",
+        "doc_fpt_k21_0441",
+        "doc_fpt_k20_0117"
+      ],
+      "latency_ms": 72.94,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B05_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k18_0705",
+        "doc_fpt_k21_0398"
+      ],
+      "latency_ms": 73.5,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k21_0398",
+        "doc_fpt_k18_0705"
+      ],
+      "latency_ms": 88.29,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_049": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k19_0557",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k21_0512"
+      ],
+      "latency_ms": 70.67,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0583"
+      ],
+      "latency_ms": 73.39,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0022",
+        "doc_fpt_k18_0703"
+      ],
+      "latency_ms": 66.01,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 69.62,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0207"
+      ],
+      "latency_ms": 60.51,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_006": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k18_0729"
+      ],
+      "latency_ms": 64.31,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0161",
+        "doc_fpt_k20_0164",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0650",
+        "doc_fpt_k22_0314"
+      ],
+      "latency_ms": 58.17,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B07_008": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0035",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0161",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0650"
+      ],
+      "latency_ms": 61.55,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0489",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0201"
+      ],
+      "latency_ms": 67.27,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_010": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488"
+      ],
+      "latency_ms": 70.78,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B07_011": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0782",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k21_0397",
+        "doc_fpt_k20_0204"
+      ],
+      "latency_ms": 62.26,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0597"
+      ],
+      "latency_ms": 86.86,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 63.99,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_016": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 88.75,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_019": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k21_0418"
+      ],
+      "latency_ms": 67.86,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0419"
+      ],
+      "latency_ms": 70.4,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_021": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k22_0306"
+      ],
+      "latency_ms": 65.01,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_022": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 74.74,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 65.5,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 75.05,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_025": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k22_0306"
+      ],
+      "latency_ms": 64.18,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_026": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0073"
+      ],
+      "latency_ms": 68.79,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_027": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0071",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k18_0728"
+      ],
+      "latency_ms": 60.87,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_028": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k20_0073"
+      ],
+      "latency_ms": 74.75,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0485",
+        "doc_fpt_k20_0193",
+        "doc_fpt_k20_0201",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 68.32,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_030": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0485",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0201",
+        "doc_fpt_k20_0193",
+        "doc_fpt_k21_0418"
+      ],
+      "latency_ms": 88.11,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0207",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 60.15,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0052"
+      ],
+      "latency_ms": 66.78,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_033": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k18_0716"
+      ],
+      "latency_ms": 64.55,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 67.61,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k18_0728"
+      ],
+      "latency_ms": 59.57,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_036": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k20_0076"
+      ],
+      "latency_ms": 63.61,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_037": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k20_0042"
+      ],
+      "latency_ms": 60.17,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_038": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 64.29,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_039": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k18_0729"
+      ],
+      "latency_ms": 60.14,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_040": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0076"
+      ],
+      "latency_ms": 62.33,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_041": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0641",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k18_0730",
+        "doc_fpt_k22_0296",
+        "doc_fpt_k21_0388"
+      ],
+      "latency_ms": 54.06,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B07_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0641",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0419"
+      ],
+      "latency_ms": 60.97,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_043": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 58.98,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k17_0598"
+      ],
+      "latency_ms": 63.37,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 58.99,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_046": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0597"
+      ],
+      "latency_ms": 85.38,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k20_0074"
+      ],
+      "latency_ms": 58.15,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B07_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 63.47,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_049": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k21_0468",
+        "doc_fpt_k20_0164"
+      ],
+      "latency_ms": 65.3,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0598",
+        "doc_fpt_k18_0730",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0081",
+        "doc_fpt_k20_0078"
+      ],
+      "latency_ms": 69.56,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    }
+  },
+  "c4_hybrid_rrf_soft": {
+    "V2_B02_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0763",
+        "doc_fpt_k18_0768",
+        "doc_fpt_k18_0703",
+        "doc_fpt_k18_0721",
+        "doc_fpt_k18_0770"
+      ],
+      "latency_ms": 53.16,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B02_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 54.62,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0782",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k20_0201"
+      ],
+      "latency_ms": 59.96,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k20_0049",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147"
+      ],
+      "latency_ms": 54.45,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0584",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k17_0583",
+        "doc_fpt_k18_0714"
+      ],
+      "latency_ms": 60.38,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0461",
+        "doc_fpt_k22_0311",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k17_0626"
+      ],
+      "latency_ms": 60.22,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_013": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0314",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k17_0579",
+        "doc_fpt_k22_0346",
+        "doc_fpt_k21_0506"
+      ],
+      "latency_ms": 59.17,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k17_0623",
+        "doc_fpt_k21_0443",
+        "doc_fpt_k17_0605"
+      ],
+      "latency_ms": 62.46,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B02_017": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0180",
+        "doc_fpt_k20_0178",
+        "doc_fpt_k20_0100",
+        "doc_fpt_k20_0097",
+        "doc_fpt_k21_0476"
+      ],
+      "latency_ms": 57.95,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0441",
+        "doc_fpt_k20_0117",
+        "doc_fpt_k18_0750",
+        "doc_fpt_k18_0749"
+      ],
+      "latency_ms": 57.09,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0633",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k17_0640",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k17_0631"
+      ],
+      "latency_ms": 85.31,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0726",
+        "doc_fpt_k17_0595",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k20_0072",
+        "doc_fpt_k20_0070"
+      ],
+      "latency_ms": 119.15,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 89.79,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k19_0556",
+        "doc_fpt_k19_0555",
+        "doc_fpt_k19_0559",
+        "doc_fpt_k21_0468",
+        "doc_fpt_k18_0765"
+      ],
+      "latency_ms": 95.73,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0300",
+        "doc_fpt_k17_0602",
+        "doc_fpt_k17_0608",
+        "doc_fpt_k18_0739",
+        "doc_fpt_k18_0750"
+      ],
+      "latency_ms": 65.83,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0311",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k20_0139",
+        "doc_fpt_k20_0132",
+        "doc_fpt_k17_0626"
+      ],
+      "latency_ms": 64.49,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k22_0306",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k21_0417"
+      ],
+      "latency_ms": 66.59,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_038": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0460",
+        "doc_fpt_k20_0150",
+        "doc_fpt_k18_0762",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k20_0083"
+      ],
+      "latency_ms": 58.6,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0761",
+        "doc_fpt_k17_0586",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k20_0049"
+      ],
+      "latency_ms": 58.96,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0773",
+        "doc_fpt_k18_0741",
+        "doc_fpt_k18_0742",
+        "doc_fpt_k18_0771",
+        "doc_fpt_k18_0763"
+      ],
+      "latency_ms": 59.26,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 0.0
+    },
+    "V2_B02_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0448",
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 59.55,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k19_0564",
+        "doc_fpt_k20_0138",
+        "doc_fpt_k21_0476",
+        "doc_fpt_k19_0546",
+        "doc_fpt_k17_0664"
+      ],
+      "latency_ms": 60.23,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B02_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0588",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k20_0042"
+      ],
+      "latency_ms": 62.63,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B02_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0139",
+        "doc_fpt_k20_0132",
+        "doc_fpt_k20_0174",
+        "doc_fpt_k20_0175",
+        "doc_fpt_k22_0311"
+      ],
+      "latency_ms": 273.95,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0638",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k20_0167",
+        "doc_fpt_k20_0170"
+      ],
+      "latency_ms": 91.7,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0634",
+        "doc_fpt_k17_0637",
+        "doc_fpt_k17_0650",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k18_0765"
+      ],
+      "latency_ms": 117.42,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0581",
+        "doc_fpt_k17_0633",
+        "doc_fpt_k17_0631",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k17_0640"
+      ],
+      "latency_ms": 85.75,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0626",
+        "doc_fpt_k17_0639",
+        "doc_fpt_k22_0312",
+        "doc_fpt_k18_0804",
+        "doc_fpt_k22_0311"
+      ],
+      "latency_ms": 75.09,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B03_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0664",
+        "doc_fpt_k19_0564",
+        "doc_fpt_k18_0794",
+        "doc_fpt_k19_0546",
+        "doc_fpt_k17_0618"
+      ],
+      "latency_ms": 96.63,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": 1.0
+    },
+    "V2_B05_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0590",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0602",
+        "doc_fpt_k17_0582",
+        "doc_fpt_k17_0624"
+      ],
+      "latency_ms": 77.51,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k17_0624"
+      ],
+      "latency_ms": 89.77,
+      "recall": 0.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_003": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0042",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400"
+      ],
+      "latency_ms": 65.6,
+      "recall": 0.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_004": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k20_0042",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0039",
+        "doc_fpt_k17_0585"
+      ],
+      "latency_ms": 77.07,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 83.32,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_008": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0755",
+        "doc_fpt_k20_0127",
+        "doc_fpt_k21_0448",
+        "doc_fpt_k17_0626",
+        "doc_fpt_k20_0125"
+      ],
+      "latency_ms": 95.49,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k17_0623"
+      ],
+      "latency_ms": 100.89,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_010": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k18_0736",
+        "doc_fpt_k18_0750"
+      ],
+      "latency_ms": 109.93,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_011": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0303",
+        "doc_fpt_k17_0624",
+        "doc_fpt_k17_0605",
+        "doc_fpt_k18_0724",
+        "doc_fpt_k21_0413"
+      ],
+      "latency_ms": 84.3,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0624",
+        "doc_fpt_k22_0303",
+        "doc_fpt_k18_0724",
+        "doc_fpt_k21_0413",
+        "doc_fpt_k17_0605"
+      ],
+      "latency_ms": 88.11,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_013": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0588",
+        "doc_fpt_k21_0403"
+      ],
+      "latency_ms": 73.31,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_014": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0588"
+      ],
+      "latency_ms": 129.98,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k20_0045",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k21_0397"
+      ],
+      "latency_ms": 89.62,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_016": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0714",
+        "doc_fpt_k21_0403",
+        "doc_fpt_k20_0048",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0045"
+      ],
+      "latency_ms": 80.71,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_017": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k18_0720",
+        "doc_fpt_k21_0409",
+        "doc_fpt_k19_0539",
+        "doc_fpt_k17_0590"
+      ],
+      "latency_ms": 103.49,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_018": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0452",
+        "doc_fpt_k18_0720",
+        "doc_fpt_k19_0539",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k22_0308"
+      ],
+      "latency_ms": 81.34,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_019": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k21_0456",
+        "doc_fpt_k18_0716"
+      ],
+      "latency_ms": 59.21,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 71.33,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_021": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k21_0415"
+      ],
+      "latency_ms": 93.19,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_022": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0721",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k17_0591"
+      ],
+      "latency_ms": 73.86,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0313",
+        "doc_fpt_k21_0462",
+        "doc_fpt_k21_0409",
+        "doc_fpt_k19_0550",
+        "doc_fpt_k17_0597"
+      ],
+      "latency_ms": 60.95,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0462",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k17_0597"
+      ],
+      "latency_ms": 71.14,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_025": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0753",
+        "doc_fpt_k17_0624",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k18_0752",
+        "doc_fpt_k21_0446"
+      ],
+      "latency_ms": 64.4,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_026": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0624",
+        "doc_fpt_k18_0753",
+        "doc_fpt_k21_0446",
+        "doc_fpt_k17_0607",
+        "doc_fpt_k18_0724"
+      ],
+      "latency_ms": 78.05,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0487",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k20_0200",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k21_0405"
+      ],
+      "latency_ms": 75.3,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_030": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0765",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k18_0716"
+      ],
+      "latency_ms": 107.81,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580",
+        "doc_fpt_k18_0708",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k20_0036"
+      ],
+      "latency_ms": 61.51,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0397",
+        "doc_fpt_k17_0580",
+        "doc_fpt_k18_0708",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k20_0036"
+      ],
+      "latency_ms": 1464.72,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_033": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0308",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k21_0456",
+        "doc_fpt_k18_0769",
+        "doc_fpt_k21_0462"
+      ],
+      "latency_ms": 225.06,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0711",
+        "doc_fpt_k17_0585",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k22_0314"
+      ],
+      "latency_ms": 107.43,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B05_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k17_0623"
+      ],
+      "latency_ms": 102.61,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_036": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0445",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k21_0444",
+        "doc_fpt_k18_0752"
+      ],
+      "latency_ms": 102.23,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_039": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k22_0313",
+        "doc_fpt_k18_0714",
+        "doc_fpt_k21_0409"
+      ],
+      "latency_ms": 90.16,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_040": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0585",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0403"
+      ],
+      "latency_ms": 107.88,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_041": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k21_0460",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k18_0762"
+      ],
+      "latency_ms": 95.71,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0150",
+        "doc_fpt_k20_0147",
+        "doc_fpt_k19_0548",
+        "doc_fpt_k21_0460",
+        "doc_fpt_k17_0585"
+      ],
+      "latency_ms": 103.68,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_043": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0062",
+        "doc_fpt_k20_0060",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k18_0721",
+        "doc_fpt_k17_0589"
+      ],
+      "latency_ms": 136.52,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0589",
+        "doc_fpt_k17_0591",
+        "doc_fpt_k21_0410",
+        "doc_fpt_k20_0066",
+        "doc_fpt_k20_0062"
+      ],
+      "latency_ms": 137.62,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0411",
+        "doc_fpt_k17_0590",
+        "doc_fpt_k18_0753",
+        "doc_fpt_k17_0622",
+        "doc_fpt_k21_0408"
+      ],
+      "latency_ms": 85.42,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B05_046": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0411",
+        "doc_fpt_k17_0622",
+        "doc_fpt_k18_0750",
+        "doc_fpt_k21_0441",
+        "doc_fpt_k21_0408"
+      ],
+      "latency_ms": 99.78,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.25,
+      "wrong_cohort": null
+    },
+    "V2_B05_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k18_0705",
+        "doc_fpt_k21_0398"
+      ],
+      "latency_ms": 103.23,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0578",
+        "doc_fpt_k17_0581",
+        "doc_fpt_k21_0398",
+        "doc_fpt_k18_0705"
+      ],
+      "latency_ms": 105.79,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B05_049": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k19_0557",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k21_0400"
+      ],
+      "latency_ms": 84.67,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.3333,
+      "wrong_cohort": null
+    },
+    "V2_B05_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0400",
+        "doc_fpt_k21_0406",
+        "doc_fpt_k18_0717",
+        "doc_fpt_k18_0711"
+      ],
+      "latency_ms": 96.29,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_001": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k17_0579",
+        "doc_fpt_k18_0716",
+        "doc_fpt_k22_0346"
+      ],
+      "latency_ms": 81.88,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_002": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 101.78,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_005": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0207"
+      ],
+      "latency_ms": 87.92,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_006": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0488",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k17_0652",
+        "doc_fpt_k17_0576",
+        "doc_fpt_k18_0729"
+      ],
+      "latency_ms": 96.45,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_007": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0161",
+        "doc_fpt_k20_0164",
+        "doc_fpt_k21_0487",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k18_0703"
+      ],
+      "latency_ms": 100.35,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_008": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0035",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0391",
+        "doc_fpt_k20_0033",
+        "doc_fpt_k20_0164"
+      ],
+      "latency_ms": 90.94,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_009": {
+      "top5_doc_ids": [
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0489",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0201"
+      ],
+      "latency_ms": 109.84,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_010": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k22_0305"
+      ],
+      "latency_ms": 110.51,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.2,
+      "wrong_cohort": null
+    },
+    "V2_B07_011": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0782",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k20_0034",
+        "doc_fpt_k21_0397",
+        "doc_fpt_k20_0204"
+      ],
+      "latency_ms": 70.52,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_012": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k17_0597"
+      ],
+      "latency_ms": 93.22,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_015": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k22_0305",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 112.83,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_016": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 96.54,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_019": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k21_0415",
+        "doc_fpt_k21_0418"
+      ],
+      "latency_ms": 89.3,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_020": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k21_0419"
+      ],
+      "latency_ms": 103.38,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_021": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k22_0306"
+      ],
+      "latency_ms": 103.77,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_022": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 98.58,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_023": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 88.08,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_024": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 87.92,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_025": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k22_0306"
+      ],
+      "latency_ms": 88.24,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_026": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0073"
+      ],
+      "latency_ms": 85.1,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_027": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0071",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k18_0728"
+      ],
+      "latency_ms": 75.77,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_028": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0071",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0416",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k20_0073"
+      ],
+      "latency_ms": 86.46,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_029": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0485",
+        "doc_fpt_k20_0193",
+        "doc_fpt_k20_0201",
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 81.6,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_030": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0485",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0201",
+        "doc_fpt_k20_0193",
+        "doc_fpt_k21_0418"
+      ],
+      "latency_ms": 82.94,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_031": {
+      "top5_doc_ids": [
+        "doc_fpt_k20_0204",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k20_0207",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0489"
+      ],
+      "latency_ms": 72.7,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_032": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0052"
+      ],
+      "latency_ms": 92.16,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_033": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k20_0052",
+        "doc_fpt_k20_0050",
+        "doc_fpt_k18_0716"
+      ],
+      "latency_ms": 85.24,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_034": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0587"
+      ],
+      "latency_ms": 86.71,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_035": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k18_0728"
+      ],
+      "latency_ms": 76.71,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_036": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0416",
+        "doc_fpt_k18_0727",
+        "doc_fpt_k21_0417",
+        "doc_fpt_k17_0596",
+        "doc_fpt_k20_0076"
+      ],
+      "latency_ms": 82.43,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_037": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0405",
+        "doc_fpt_k21_0488",
+        "doc_fpt_k18_0711",
+        "doc_fpt_k21_0400"
+      ],
+      "latency_ms": 78.28,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_038": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0405",
+        "doc_fpt_k17_0587",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 83.86,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_039": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k18_0729"
+      ],
+      "latency_ms": 76.88,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_040": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0076"
+      ],
+      "latency_ms": 80.66,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_041": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0641",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k18_0730",
+        "doc_fpt_k20_0071",
+        "doc_fpt_k20_0073"
+      ],
+      "latency_ms": 69.08,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_042": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0641",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k21_0394",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k18_0705"
+      ],
+      "latency_ms": 82.15,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_043": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k20_0075"
+      ],
+      "latency_ms": 71.34,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_044": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k17_0598"
+      ],
+      "latency_ms": 91.26,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_045": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 76.38,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_046": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0598",
+        "doc_fpt_k20_0077",
+        "doc_fpt_k17_0597"
+      ],
+      "latency_ms": 84.78,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_047": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k18_0730",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k21_0415"
+      ],
+      "latency_ms": 67.34,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.2,
+      "wrong_cohort": null
+    },
+    "V2_B07_048": {
+      "top5_doc_ids": [
+        "doc_fpt_k21_0418",
+        "doc_fpt_k18_0729",
+        "doc_fpt_k17_0597",
+        "doc_fpt_k20_0076",
+        "doc_fpt_k20_0077"
+      ],
+      "latency_ms": 73.26,
+      "recall": 0.0,
+      "equiv_recall": 0.0,
+      "mrr": 0.0,
+      "wrong_cohort": null
+    },
+    "V2_B07_049": {
+      "top5_doc_ids": [
+        "doc_fpt_k18_0765",
+        "doc_fpt_k17_0634",
+        "doc_fpt_k22_0314",
+        "doc_fpt_k21_0468",
+        "doc_fpt_k20_0164"
+      ],
+      "latency_ms": 76.6,
+      "recall": 0.5,
+      "equiv_recall": 0.5,
+      "mrr": 0.5,
+      "wrong_cohort": null
+    },
+    "V2_B07_050": {
+      "top5_doc_ids": [
+        "doc_fpt_k17_0598",
+        "doc_fpt_k18_0730",
+        "doc_fpt_k21_0419",
+        "doc_fpt_k20_0081",
+        "doc_fpt_k20_0078"
+      ],
+      "latency_ms": 91.94,
+      "recall": 1.0,
+      "equiv_recall": 1.0,
+      "mrr": 1.0,
+      "wrong_cohort": null
+    }
+  }
+}

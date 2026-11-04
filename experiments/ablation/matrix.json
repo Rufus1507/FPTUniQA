@@ -3,10 +3,11 @@
     {
       "config_id": "c1_bm25",
       "pipeline_config": "1. BM25 Baseline",
-      "recall_at_5": 0.325,
-      "equiv_recall_at_5": 0.525,
-      "mrr": 0.2708,
-      "wrong_cohort_rate": 0.8,
+      "recall_at_5": 0.2692,
+      "equiv_recall_at_5": 0.4231,
+      "mrr": 0.2468,
+      "wrong_cohort_rate": 0.0,
+      "wrong_cohort_fraction": "0/6",
       "faithfulness": 0.4621,
       "ood_rejection": 0.0,
       "latency_p50": 1802.0,
@@ -16,10 +17,11 @@
     {
       "config_id": "c2_dense",
       "pipeline_config": "2. FAISS Only (Dense)",
-      "recall_at_5": 0.575,
-      "equiv_recall_at_5": 0.725,
-      "mrr": 0.5333,
-      "wrong_cohort_rate": 0.75,
+      "recall_at_5": 0.4615,
+      "equiv_recall_at_5": 0.5577,
+      "mrr": 0.4231,
+      "wrong_cohort_rate": 0.0,
+      "wrong_cohort_fraction": "0/6",
       "faithfulness": 0.473,
       "ood_rejection": 0.0,
       "latency_p50": 2005.8,
@@ -29,10 +31,11 @@
     {
       "config_id": "c3_hybrid",
       "pipeline_config": "3. Hybrid (BM25 + FAISS Tuần tự)",
-      "recall_at_5": 0.775,
-      "equiv_recall_at_5": 0.85,
-      "mrr": 0.7417,
-      "wrong_cohort_rate": 0.75,
+      "recall_at_5": 0.6154,
+      "equiv_recall_at_5": 0.6538,
+      "mrr": 0.5897,
+      "wrong_cohort_rate": 1.0,
+      "wrong_cohort_fraction": "6/6",
       "faithfulness": 0.4663,
       "ood_rejection": 0.0,
       "latency_p50": 4131.0,
@@ -42,10 +45,11 @@
     {
       "config_id": "c3p_hybrid_parallel",
       "pipeline_config": "3p. Hybrid (BM25 + FAISS Song song)",
-      "recall_at_5": 0.725,
-      "equiv_recall_at_5": 0.85,
-      "mrr": 0.675,
-      "wrong_cohort_rate": 0.75,
+      "recall_at_5": 0.5769,
+      "equiv_recall_at_5": 0.6538,
+      "mrr": 0.5385,
+      "wrong_cohort_rate": 1.0,
+      "wrong_cohort_fraction": "6/6",
       "faithfulness": 0.4675,
       "ood_rejection": 0.0,
       "latency_p50": 2024.4,
@@ -55,10 +59,11 @@
     {
       "config_id": "c4_hybrid_rrf_filter",
       "pipeline_config": "4. Hybrid + Hard Filter (C4-hard)",
-      "recall_at_5": 0.5875,
-      "equiv_recall_at_5": 0.8125,
-      "mrr": 0.5437,
-      "wrong_cohort_rate": 0.75,
+      "recall_at_5": 0.4712,
+      "equiv_recall_at_5": 0.625,
+      "mrr": 0.4567,
+      "wrong_cohort_rate": 0.0,
+      "wrong_cohort_fraction": "0/12",
       "faithfulness": 0.4804,
       "ood_rejection": 0.0,
       "latency_p50": 2021.8,
@@ -68,23 +73,25 @@
     {
       "config_id": "c4_hybrid_rrf_soft",
       "pipeline_config": "4s. Hybrid + Soft Boost (C4-soft)",
-      "recall_at_5": 0.625,
-      "equiv_recall_at_5": 0.75,
-      "mrr": 0.635,
-      "wrong_cohort_rate": 0.75,
+      "recall_at_5": 0.5,
+      "equiv_recall_at_5": 0.5769,
+      "mrr": 0.5269,
+      "wrong_cohort_rate": 0.8333,
+      "wrong_cohort_fraction": "5/6",
       "faithfulness": 0.481,
       "ood_rejection": 0.0,
-      "latency_p50": 2126.3,
-      "latency_p95": 3291.7,
+      "latency_p50": 2034.2,
+      "latency_p95": 4086.0,
       "total_questions": 100
     },
     {
       "config_id": "c5_full_noparser",
       "pipeline_config": "5. Full (Reranker + Structured, không Semantic Parsing)",
-      "recall_at_5": 0.5,
-      "equiv_recall_at_5": 0.5556,
-      "mrr": 0.3611,
-      "wrong_cohort_rate": 0.8889,
+      "recall_at_5": 0.3462,
+      "equiv_recall_at_5": 0.3654,
+      "mrr": 0.25,
+      "wrong_cohort_rate": 0.0,
+      "wrong_cohort_fraction": "0/6",
       "faithfulness": 0.8656,
       "ood_rejection": 1.0,
       "latency_p50": 9.5,
@@ -94,10 +101,11 @@
     {
       "config_id": "c6_full",
       "pipeline_config": "6. Full + Semantic Parsing Routing (mới)",
-      "recall_at_5": 0.5,
-      "equiv_recall_at_5": 0.5556,
-      "mrr": 0.3611,
-      "wrong_cohort_rate": 0.8889,
+      "recall_at_5": 0.3462,
+      "equiv_recall_at_5": 0.3654,
+      "mrr": 0.25,
+      "wrong_cohort_rate": 0.0,
+      "wrong_cohort_fraction": "0/12",
       "faithfulness": 0.8671,
       "ood_rejection": 1.0,
       "latency_p50": 2703.2,
@@ -109,10 +117,14 @@
     "c1_bm25": {
       "label": "1. BM25 Baseline",
       "retrieval": {
-        "recall_at_5": 0.325,
-        "equiv_recall_at_5": 0.525,
-        "mrr": 0.2708,
-        "wrong_cohort_rate": 0.8
+        "recall_at_5": 0.2692,
+        "equiv_recall_at_5": 0.4231,
+        "mrr": 0.2468,
+        "wrong_cohort_rate": 0.0,
+        "wrong_cohort_counts": {
+          "numerator": 0,
+          "denominator": 6
+        }
       },
       "semantic_parsing": {
         "intent_accuracy": "N/A",
@@ -139,10 +151,14 @@
     "c2_dense": {
       "label": "2. FAISS Only (Dense)",
       "retrieval": {
-        "recall_at_5": 0.575,
-        "equiv_recall_at_5": 0.725,
-        "mrr": 0.5333,
-        "wrong_cohort_rate": 0.75
+        "recall_at_5": 0.4615,
+        "equiv_recall_at_5": 0.5577,
+        "mrr": 0.4231,
+        "wrong_cohort_rate": 0.0,
+        "wrong_cohort_counts": {
+          "numerator": 0,
+          "denominator": 6
+        }
       },
       "semantic_parsing": {
         "intent_accuracy": "N/A",
@@ -169,10 +185,14 @@
     "c3_hybrid": {
       "label": "3. Hybrid (BM25 + FAISS Tuần tự)",
       "retrieval": {
-        "recall_at_5": 0.775,
-        "equiv_recall_at_5": 0.85,
-        "mrr": 0.7417,
-        "wrong_cohort_rate": 0.75
+        "recall_at_5": 0.6154,
+        "equiv_recall_at_5": 0.6538,
+        "mrr": 0.5897,
+        "wrong_cohort_rate": 1.0,
+        "wrong_cohort_counts": {
+          "numerator": 6,
+          "denominator": 6
+        }
       },
       "semantic_parsing": {
         "intent_accuracy": "N/A",
@@ -199,10 +219,14 @@
     "c3p_hybrid_parallel": {
       "label": "3p. Hybrid (BM25 + FAISS Song song)",
       "retrieval": {
-        "recall_at_5": 0.725,
-        "equiv_recall_at_5": 0.85,
-        "mrr": 0.675,
-        "wrong_cohort_rate": 0.75
+        "recall_at_5": 0.5769,
+        "equiv_recall_at_5": 0.6538,
+        "mrr": 0.5385,
+        "wrong_cohort_rate": 1.0,
+        "wrong_cohort_counts": {
+          "numerator": 6,
+          "denominator": 6
+        }
       },
       "semantic_parsing": {
         "intent_accuracy": "N/A",
@@ -229,10 +253,14 @@
     "c4_hybrid_rrf_filter": {
       "label": "4. Hybrid + Hard Filter (C4-hard)",
       "retrieval": {
-        "recall_at_5": 0.5875,
-        "equiv_recall_at_5": 0.8125,
-        "mrr": 0.5437,
-        "wrong_cohort_rate": 0.75
+        "recall_at_5": 0.4712,
+        "equiv_recall_at_5": 0.625,
+        "mrr": 0.4567,
+        "wrong_cohort_rate": 0.0,
+        "wrong_cohort_counts": {
+          "numerator": 0,
+          "denominator": 12
+        }
       },
       "semantic_parsing": {
         "intent_accuracy": "N/A",
@@ -259,10 +287,14 @@
     "c4_hybrid_rrf_soft": {
       "label": "4s. Hybrid + Soft Boost (C4-soft)",
       "retrieval": {
-        "recall_at_5": 0.625,
-        "equiv_recall_at_5": 0.75,
-        "mrr": 0.635,
-        "wrong_cohort_rate": 0.75
+        "recall_at_5": 0.5,
+        "equiv_recall_at_5": 0.5769,
+        "mrr": 0.5269,
+        "wrong_cohort_rate": 0.8333,
+        "wrong_cohort_counts": {
+          "numerator": 5,
+          "denominator": 6
+        }
       },
       "semantic_parsing": {
         "intent_accuracy": "N/A",
@@ -277,22 +309,26 @@
       },
       "safety": {
         "ood_rejection_rate": 0.0,
-        "hallucination_rate": 0.01
+        "hallucination_rate": 0.02
       },
       "system": {
-        "latency_p50_ms": 2126.3,
-        "latency_p95_ms": 3291.7,
-        "parser_latency_ms": 15.26,
+        "latency_p50_ms": 2034.2,
+        "latency_p95_ms": 4086.0,
+        "parser_latency_ms": 61.24,
         "api_success_rate": 1.0
       }
     },
     "c5_full_noparser": {
       "label": "5. Full (Reranker + Structured, không Semantic Parsing)",
       "retrieval": {
-        "recall_at_5": 0.5,
-        "equiv_recall_at_5": 0.5556,
-        "mrr": 0.3611,
-        "wrong_cohort_rate": 0.8889
+        "recall_at_5": 0.3462,
+        "equiv_recall_at_5": 0.3654,
+        "mrr": 0.25,
+        "wrong_cohort_rate": 0.0,
+        "wrong_cohort_counts": {
+          "numerator": 0,
+          "denominator": 6
+        }
       },
       "semantic_parsing": {
         "intent_accuracy": 0.83,
@@ -319,10 +355,14 @@
     "c6_full": {
       "label": "6. Full + Semantic Parsing Routing (mới)",
       "retrieval": {
-        "recall_at_5": 0.5,
-        "equiv_recall_at_5": 0.5556,
-        "mrr": 0.3611,
-        "wrong_cohort_rate": 0.8889
+        "recall_at_5": 0.3462,
+        "equiv_recall_at_5": 0.3654,
+        "mrr": 0.25,
+        "wrong_cohort_rate": 0.0,
+        "wrong_cohort_counts": {
+          "numerator": 0,
+          "denominator": 12
+        }
       },
       "semantic_parsing": {
         "intent_accuracy": 0.86,
@@ -348,6 +388,72 @@
     }
   },
   "diagnostic_summary": {},
+  "statistical_tests": {
+    "C4-soft vs C4-hard": {
+      "recall": {
+        "delta_mean": 0.005,
+        "ci_low": -0.03,
+        "ci_high": 0.04,
+        "p_value": 0.909,
+        "significant_at_0_05": false,
+        "n_pairs": 100,
+        "bootstrap_resamples": 1000,
+        "random_seed": 42
+      },
+      "equiv_recall": {
+        "delta_mean": -0.015,
+        "ci_low": -0.045,
+        "ci_high": 0.01,
+        "p_value": 0.389,
+        "significant_at_0_05": false,
+        "n_pairs": 100,
+        "bootstrap_resamples": 1000,
+        "random_seed": 42
+      },
+      "mrr": {
+        "delta_mean": 0.017,
+        "ci_low": -0.016,
+        "ci_high": 0.053,
+        "p_value": 0.39,
+        "significant_at_0_05": false,
+        "n_pairs": 100,
+        "bootstrap_resamples": 1000,
+        "random_seed": 42
+      }
+    },
+    "C3p vs C3 (Song song vs Tuần tự)": {
+      "latency": {
+        "delta_mean": -1969.9345,
+        "ci_low": -2675.7564,
+        "ci_high": -1369.2901,
+        "p_value": 0.0,
+        "significant_at_0_05": true,
+        "n_pairs": 100,
+        "bootstrap_resamples": 1000,
+        "random_seed": 42
+      },
+      "recall": {
+        "delta_mean": -0.01,
+        "ci_low": -0.025,
+        "ci_high": 0.0,
+        "p_value": 0.259,
+        "significant_at_0_05": false,
+        "n_pairs": 100,
+        "bootstrap_resamples": 1000,
+        "random_seed": 42
+      },
+      "mrr": {
+        "delta_mean": -0.0133,
+        "ci_low": -0.03,
+        "ci_high": 0.0,
+        "p_value": 0.097,
+        "significant_at_0_05": false,
+        "n_pairs": 100,
+        "bootstrap_resamples": 1000,
+        "random_seed": 42
+      }
+    }
+  },
   "diagnostic_rows": [
     {
       "q_id": "V2_B02_004",
@@ -425,8 +531,8 @@
       "q_id": "V2_B02_007",
       "query": "Điều kiện để đạt học bổng FPT University là gì?",
       "gold_ids": [
-        "doc_fpt_k21_0460",
-        "doc_fpt_k20_0049"
+        "doc_fpt_k20_0049",
+        "doc_fpt_k21_0460"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -497,8 +603,8 @@
       "q_id": "V2_B05_001",
       "query": "Sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
       "gold_ids": [
-        "doc_fpt_k17_0605",
-        "doc_fpt_k20_0051"
+        "doc_fpt_k20_0051",
+        "doc_fpt_k17_0605"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -527,14 +633,14 @@
         "doc_fpt_k17_0624"
       ],
       "category": "D (Khớp/Khác)",
-      "reason": "Đồng thuận hoặc không lệch"
+      "reason": "Đồng thuận hoặc cùng trúng"
     },
     {
       "q_id": "V2_B05_002",
       "query": "Cho tôi hỏi quy định cụ thể: sinh viên bị bao nhiêu lần cảnh báo học vụ thì bị buộc thôi học tại Đại học FPT?",
       "gold_ids": [
-        "doc_fpt_k17_0605",
-        "doc_fpt_k18_0751"
+        "doc_fpt_k18_0751",
+        "doc_fpt_k17_0605"
       ],
       "c3_hit": true,
       "c4h_hit": false,
@@ -635,7 +741,7 @@
         "doc_fpt_k17_0585"
       ],
       "category": "D (Khớp/Khác)",
-      "reason": "Đồng thuận hoặc không lệch"
+      "reason": "Đồng thuận hoặc cùng trúng"
     },
     {
       "q_id": "V2_B05_007",
@@ -713,8 +819,8 @@
       "q_id": "V2_B05_009",
       "query": "Sinh viên nghỉ học quá bao nhiêu % số buổi thì bị cấm thi?",
       "gold_ids": [
-        "doc_fpt_k20_0092",
-        "doc_fpt_k18_0736"
+        "doc_fpt_k18_0736",
+        "doc_fpt_k20_0092"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -749,8 +855,8 @@
       "q_id": "V2_B05_010",
       "query": "Cho tôi hỏi quy định cụ thể: sinh viên nghỉ học quá bao nhiêu % số buổi thì bị cấm thi?",
       "gold_ids": [
-        "doc_fpt_k17_0587",
-        "doc_fpt_k18_0736"
+        "doc_fpt_k18_0736",
+        "doc_fpt_k17_0587"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -785,8 +891,8 @@
       "q_id": "V2_B07_001",
       "query": "Sinh viên ngành CNTT cần đạt chứng chỉ tiếng Anh gì để được tốt nghiệp?",
       "gold_ids": [
-        "doc_fpt_k22_0305",
-        "doc_fpt_k22_0346"
+        "doc_fpt_k22_0346",
+        "doc_fpt_k22_0305"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -827,7 +933,7 @@
       "c3_hit": true,
       "c4h_hit": false,
       "c4s_hit": true,
-      "c4h_equiv_hit": true,
+      "c4h_equiv_hit": false,
       "c4s_equiv_hit": true,
       "c3_top5": [
         "doc_fpt_k21_0405",
@@ -850,8 +956,8 @@
         "doc_fpt_k21_0419",
         "doc_fpt_k20_0077"
       ],
-      "category": "C (Trượt giả - Tài liệu tương đương)",
-      "reason": "Nội dung quy chế tương đương qua các khóa nhưng Doc ID khác nhau."
+      "category": "A (Parse sai slot/thực thể)",
+      "reason": "Regex parser nhận diện nhầm từ tiếng Anh thành ngành NNA và chứng thành CAMPUS_ALL."
     },
     {
       "q_id": "V2_B07_005",
@@ -957,14 +1063,14 @@
         "doc_fpt_k18_0703"
       ],
       "category": "D (Khớp/Khác)",
-      "reason": "Đồng thuận hoặc không lệch"
+      "reason": "Đồng thuận hoặc cùng trúng"
     },
     {
       "q_id": "V2_B07_008",
       "query": "Quy định xét tốt nghiệp: chuẩn đầu ra ngoại ngữ của sinh viên ngành Ngôn ngữ Anh là gì?",
       "gold_ids": [
-        "doc_fpt_k20_0035",
-        "doc_fpt_k17_0650"
+        "doc_fpt_k17_0650",
+        "doc_fpt_k20_0035"
       ],
       "c3_hit": true,
       "c4h_hit": true,
@@ -999,8 +1105,8 @@
       "q_id": "V2_B07_009",
       "query": "Sinh viên đi thực tập doanh nghiệp OJT vào học kỳ thứ mấy?",
       "gold_ids": [
-        "doc_fpt_k20_0201",
-        "doc_fpt_k22_0305"
+        "doc_fpt_k22_0305",
+        "doc_fpt_k20_0201"
       ],
       "c3_hit": true,
       "c4h_hit": true,
